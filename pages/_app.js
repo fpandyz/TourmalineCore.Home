@@ -1,6 +1,17 @@
 import 'gitalk/dist/gitalk.css';
 import '../styles/main.scss';
 
-const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
+import Head from 'next/head';
 
-export default MyApp;
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tourmaline Core</title>
+      </Head>
+
+      <Component {...pageProps} />
+    </>
+  );
+}
