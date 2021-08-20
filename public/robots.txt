@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://tourmalinecore.com/
+Host: https://tourmalinecore.com
 
 # Sitemaps
 Sitemap: https://tourmalinecore.com/sitemap.xml

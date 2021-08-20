@@ -59,7 +59,11 @@ export default function Home() {
             <p>
               Also we write
               {' '}
-              <Link className="tourmaline-link blue-text" href="/articles">articles</Link>
+              <Link href="/articles">
+                <a className="tourmaline-link blue-text">
+                  articles
+                </a>
+              </Link>
               {' '}
               about technologies we use.
             </p>
