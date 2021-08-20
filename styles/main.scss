@@ -1,0 +1,13 @@
+@import "fonts.scss";
+@import "media.scss";
+@import "globals.scss";
+
+// components
+@import "../components/Characteristics/Characteristic.scss";
+@import "../components/Characteristics/CharacteristicsList.scss";
+@import "../components/TeamMember/TeamMember.scss";
+
+// partials
+@import "../partials/Home/Home.scss";
+@import "../partials/Articles/Articles.scss";
+@import "../partials/Articles/Article/Article.scss";

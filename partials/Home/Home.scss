@@ -1,0 +1,181 @@
+.tourmaline {
+  padding: 10px 15px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tourmaline__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tourmaline__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.tourmaline__logo-text {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.tourmaline__about-title {
+  display: none;
+}
+
+.tourmaline__about {
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+
+.tourmaline__footer {
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 8px;
+  color: #c1dde2;
+}
+
+.tourmaline__contacts {
+  text-decoration: none;
+  color: #c1dde2;
+}
+
+.tourmaline-link {
+  text-decoration: none;
+}
+
+.tourmaline-link:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 375px) {
+  .tourmaline {
+    padding: 20px 24px;
+  }
+
+  .tourmaline__about,
+  .tourmaline__header {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    margin-left: 20px;
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .tourmaline {
+    padding: 30px 126px;
+  }
+
+  .tourmaline__logo {
+    width: 50px;
+  }
+
+  .tourmaline__header {
+    margin-bottom: 54px;
+  }
+
+  .tourmaline__about {
+    margin-bottom: 38px;
+  }
+
+  .tourmaline__footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+  }
+
+  .show-if-tablet {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-if-desktop {
+    display: none;
+  }
+
+  .show-if-desktop {
+    display: block;
+  }
+
+  p + p {
+    margin-top: 40px;
+  }
+
+  .tourmaline {
+    padding: 30px 70px;
+  }
+
+  .tourmaline__info {
+    display: grid;
+    align-items: center;
+    grid-gap: 0;
+    grid-template-areas: "a b c";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .tourmaline__about {
+    margin-right: 60px;
+    margin-bottom: 0;
+    grid-area: a;
+  }
+}
+
+@media (min-width: 1400px) {
+  p {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .tourmaline__header {
+    margin-bottom: 70px;
+  }
+
+  .tourmaline__about-title {
+    display: block;
+    margin: 0;
+    margin-bottom: 80px;
+    font-size: 36px;
+  }
+
+  .tourmaline__container {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  .tourmaline__info {
+    align-items: flex-start;
+    grid-template-areas:
+      "a b"
+      "a c";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tourmaline__footer {
+    font-size: 17px;
+  }
+}
+
+@media (min-height: 667px) {
+  .tourmaline__about {
+    margin-bottom: 38px;
+  }
+
+  .tourmaline__header {
+    margin-bottom: 54px;
+  }
+}
