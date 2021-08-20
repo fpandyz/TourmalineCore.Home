@@ -1,7 +1,11 @@
 import PageHead from '../../components/PageHead/PageHead';
 import Articles from '../../partials/Articles/Articles';
 
-export default function ArticlesPage() {
+import { fetchArticlesList } from '../../partials/Articles/fetchHelpers/fetchArticlesList';
+
+export default function ArticlesPage({
+  articles,
+}) {
   return (
     <>
       <PageHead seoData={{
@@ -15,7 +19,17 @@ export default function ArticlesPage() {
         additionalCode: '',
       }}
       />
-      <Articles />
+      <Articles articles={articles} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const articles = await fetchArticlesList();
+
+  return {
+    props: {
+      articles,
+    },
+  };
 }
