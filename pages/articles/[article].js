@@ -1,3 +1,6 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import Article from '../../partials/Articles/Article/Article';
 import { fetchArticle } from '../../partials/Articles/fetchHelpers/fetchArticle';
@@ -8,18 +11,22 @@ export default function ArticlesPage({
 }) {
   return (
     <>
-      <PageHead seoData={{
-        seo: {
-          title: '',
-          description: '',
-        },
-        keywords: [],
-        metaTags: [],
-        structuredData: '',
-        additionalCode: '',
-      }}
+      <PageHead
+        seoData={{
+          seo: {
+            title: '',
+            description: '',
+          },
+          keywords: [],
+          metaTags: [],
+          structuredData: '',
+          additionalCode: '',
+        }}
       />
-      <Article markdown={article} />
+
+      <Layout>
+        <Article markdown={article} />
+      </Layout>
     </>
   );
 }
@@ -49,6 +56,7 @@ export async function getStaticProps({
 
   return {
     props: {
+      ...(await serverSideTranslations(locale)),
       article,
     },
   };

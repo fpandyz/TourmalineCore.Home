@@ -1,0 +1,32 @@
+{
+  "Alexander": {
+    "strength": "Alex is a full stack developer who has been creating enterprise applications for 9 years",
+    "stamina": "passionate about code quality, loves reading technical literature and playing the guitar",
+    "mana": "bought a mandarine tree for the office to gaze at little tangerines"
+  },
+  "Masha": {
+    "strength": "Masha is a frontend developer, attentive and encouraging reviewer, and a bug fighter",
+    "stamina": "loves travelling around the globe and through the code - she's always got a plan",
+    "mana": "when she’s not looking into someone else’s code, she speaks at conferences on errors, Little Red Riding Hood, and pies"
+  },
+  "Nikita": {
+    "strength": "Nikita is a full stack developer with the background in game dev",
+    "stamina": "loves reading, listening to podcasts and music, playing computer games",
+    "mana": "keeps digging into game dev, sometimes feels shy, inhabits his desk with wire figurines"
+  },
+  "Alexey": {
+    "strength": "Alexey is a frontend developer who creates cool interfaces and has a degree in defectology",
+    "stamina": "likes playing computer games and watching controversial films with poor ratings",
+    "mana": "loves working from home and hasn’t burned out yet! Wants to develop in the field of complex applications and visual part"
+  },
+  "Maxim": {
+    "strength": "Maxim is a fullstack developer with preference in backend and applications architecture",
+    "stamina": "loves football, mixed martial arts, books, appreciates advice, sense of humor, and his colleagues’ patience (more so, Masha’s!)",
+    "mana": "interested in self-development and motivated for professional growth as a software architect"
+  },
+  "Victor": {
+    "strength": "Victor is a DevOps engineer and backend developer with 5 year experience in programming",
+    "stamina": "used to work in electronics engineering and loves soldering",
+    "mana": "describes himself as stubborn and inquisitive - and we cannot but agree!"
+  }
+}

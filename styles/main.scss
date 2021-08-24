@@ -3,6 +3,10 @@
 @import "globals.scss";
 
 // components
+@import "../components/Layout/Layout.scss";
+@import "../components/Header/Header.scss";
+@import "../components/Footer/Footer.scss";
+@import "../components/LangSwitch/LangSwitch.scss";
 @import "../components/Characteristics/Characteristic.scss";
 @import "../components/Characteristics/CharacteristicsList.scss";
 @import "../components/TeamMember/TeamMember.scss";

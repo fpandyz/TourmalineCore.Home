@@ -1,0 +1,30 @@
+.footer {
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 8px;
+  color: #c1dde2;
+}
+
+.footer__contacts {
+  text-decoration: none;
+  color: #c1dde2;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    font-size: 13px;
+  }
+
+  .footer__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1400px) {
+  .footer {
+    font-size: 17px;
+  }
+}

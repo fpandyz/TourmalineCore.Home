@@ -1,9 +1,10 @@
 import 'gitalk/dist/gitalk.css';
 import '../styles/main.scss';
 
+import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -15,3 +16,5 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
+
+export default appWithTranslation(MyApp);

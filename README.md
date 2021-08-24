@@ -35,6 +35,15 @@ npm run lint
 npm run lint:fix
 ```
 
+## Localization
+all i18n strings placed in `public/locales`\
+they are used in components with hooks\
+
+to update localizations simply change json data and rebuild / restart dev server
+
+to add another locale go to `next-i18next.config.js`\
+and create another folder with similar data in `public/locales`
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
