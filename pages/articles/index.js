@@ -1,4 +1,5 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'react-i18next';
 
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
@@ -10,15 +11,17 @@ import { fetchMetadata } from '../../partials/Articles/fetchHelpers/fetchMetadat
 export default function ArticlesPage({
   articles,
 }) {
+  const { t } = useTranslation('articles', { useSuspense: false });
+
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: '',
-            description: '',
+            title: t('title'),
+            description: t('description'),
           },
-          keywords: [],
+          keywords: t('keywords'),
           metaTags: [],
           structuredData: '',
           additionalCode: '',
