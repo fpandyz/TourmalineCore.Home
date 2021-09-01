@@ -5,8 +5,8 @@ import PageHead from '../../components/PageHead/PageHead';
 import Article from '../../partials/Articles/Article/Article';
 
 import { fetchArticle } from '../../partials/Articles/fetchHelpers/fetchArticle';
-import { fetchArticlesList } from '../../partials/Articles/fetchHelpers/fetchArticlesList';
 import { fetchMetadata } from '../../partials/Articles/fetchHelpers/fetchMetadata';
+import { fetchArticlesListWithMeta } from '../../partials/Articles/fetchHelpers/fetchArticlesListWithMeta';
 
 export default function ArticlesPage({
   article,
@@ -35,15 +35,12 @@ export default function ArticlesPage({
 }
 
 export async function getStaticPaths() {
-  const paths = [];
+  const articles = await fetchArticlesListWithMeta();
 
-  const articles = await fetchArticlesList();
-
-  Object.entries(articles).forEach(([locale, articleMeta]) => {
-    articleMeta.forEach((articleItem) => {
-      paths.push({ params: { article: `${articleItem.name }.md` }, locale });
-    });
-  });
+  const paths = articles.map((articleItem) => ({
+    params: { article: `${articleItem.name }.md` },
+    locale: articleItem.locale,
+  }));
 
   return {
     paths,

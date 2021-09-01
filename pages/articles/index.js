@@ -5,8 +5,7 @@ import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import Articles from '../../partials/Articles/Articles';
 
-import { fetchArticlesList } from '../../partials/Articles/fetchHelpers/fetchArticlesList';
-import { fetchMetadata } from '../../partials/Articles/fetchHelpers/fetchMetadata';
+import { fetchArticlesListWithMeta } from '../../partials/Articles/fetchHelpers/fetchArticlesListWithMeta';
 
 export default function ArticlesPage({
   articles,
@@ -36,26 +35,12 @@ export default function ArticlesPage({
 }
 
 export async function getStaticProps({ locale }) {
-  const articles = await fetchArticlesList();
-
-  const localeArticles = articles[locale];
-
-  const currentArticles = await Promise.all(localeArticles.map(async (articleFolder) => {
-    const files = articleFolder.children;
-    const articleFilename = files.filter((file) => file.name !== 'metadata.json')[0].name;
-
-    const metadata = await fetchMetadata(articleFilename, locale);
-
-    return {
-      ...articleFolder,
-      metadata,
-    };
-  }));
+  const articlesWithMeta = await fetchArticlesListWithMeta();
 
   return {
     props: {
       ...(await serverSideTranslations(locale)),
-      articles: currentArticles,
+      articles: articlesWithMeta,
     },
   };
 }
