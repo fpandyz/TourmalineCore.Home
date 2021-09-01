@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   const articles = await fetchArticlesListWithMeta();
 
   const paths = articles.map((articleItem) => ({
-    params: { article: `${articleItem.name }.md` },
+    params: { article: articleItem.metadata.slug },
     locale: articleItem.locale,
   }));
 
@@ -52,8 +52,22 @@ export async function getStaticProps({
   params,
   locale,
 }) {
-  const article = await fetchArticle(params.article, locale);
-  const metadata = await fetchMetadata(params.article, locale);
+  const articles = await fetchArticlesListWithMeta();
+
+  const currentArticleFolder = articles.find((articleItem) => articleItem.metadata.slug === params.article);
+
+  if (!currentArticleFolder) {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale)),
+        article: {},
+        metadata: {},
+      },
+    };
+  }
+
+  const article = await fetchArticle(`${currentArticleFolder.name}.md`, locale);
+  const metadata = await fetchMetadata(`${currentArticleFolder.name}.md`, locale);
 
   return {
     props: {

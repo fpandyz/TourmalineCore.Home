@@ -39,13 +39,11 @@ function ArticleLink({
   articleFolder = {},
   router,
 }) {
-  const files = articleFolder.children;
-  const articleFilename = files.filter((file) => file.name !== 'metadata.json')[0].name;
   const availableLocales = router.locales.filter((locale) => locale !== router.locale);
 
   return (
     <>
-      <Link href={`/articles/${articleFilename}`} locale={router.locale}>
+      <Link href={`/articles/${articleFolder.metadata.slug}`} locale={router.locale}>
         <a className="articles__link">
           {articleFolder.metadata.title}
         </a>
@@ -56,7 +54,7 @@ function ArticleLink({
       {availableLocales.map((locale) => {
         if (articles.find((article) => article.locale === locale)) {
           return (
-            <Link key={locale} href={`/articles/${articleFilename}`} locale={locale}>
+            <Link key={locale} href={`/articles/${articleFolder.metadata.slug}`} locale={locale}>
               <a className="articles__link">
                 {locale.toUpperCase()}
               </a>
