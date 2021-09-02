@@ -1,35 +1,46 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'react-i18next';
+
+import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import Articles from '../../partials/Articles/Articles';
 
-import { fetchArticlesList } from '../../partials/Articles/fetchHelpers/fetchArticlesList';
+import { fetchArticlesListWithMeta } from '../../partials/Articles/fetchHelpers/fetchArticlesListWithMeta';
 
 export default function ArticlesPage({
   articles,
 }) {
+  const { t } = useTranslation('articles', { useSuspense: false });
+
   return (
     <>
-      <PageHead seoData={{
-        seo: {
-          title: '',
-          description: '',
-        },
-        keywords: [],
-        metaTags: [],
-        structuredData: '',
-        additionalCode: '',
-      }}
+      <PageHead
+        seoData={{
+          seo: {
+            title: t('title'),
+            description: t('description'),
+          },
+          keywords: t('keywords'),
+          metaTags: [],
+          structuredData: '',
+          additionalCode: '',
+        }}
       />
-      <Articles articles={articles} />
+
+      <Layout>
+        <Articles articles={articles} />
+      </Layout>
     </>
   );
 }
 
-export async function getStaticProps() {
-  const articles = await fetchArticlesList();
+export async function getStaticProps({ locale }) {
+  const articlesWithMeta = await fetchArticlesListWithMeta();
 
   return {
     props: {
-      articles,
+      ...(await serverSideTranslations(locale)),
+      articles: articlesWithMeta,
     },
   };
 }

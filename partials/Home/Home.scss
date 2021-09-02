@@ -10,17 +10,6 @@
   height: 100%;
 }
 
-.tourmaline__header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.tourmaline__logo-text {
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
 .tourmaline__about-title {
   display: none;
 }
@@ -28,19 +17,6 @@
 .tourmaline__about {
   margin-bottom: 14px;
   font-size: 12px;
-}
-
-.tourmaline__footer {
-  z-index: 1;
-  margin-top: auto;
-  padding-top: 24px;
-  font-size: 8px;
-  color: #c1dde2;
-}
-
-.tourmaline__contacts {
-  text-decoration: none;
-  color: #c1dde2;
 }
 
 .tourmaline-link {
@@ -56,8 +32,7 @@
     padding: 20px 24px;
   }
 
-  .tourmaline__about,
-  .tourmaline__header {
+  .tourmaline__about {
     margin-bottom: 20px;
   }
 }
@@ -77,22 +52,8 @@
     padding: 30px 126px;
   }
 
-  .tourmaline__logo {
-    width: 50px;
-  }
-
-  .tourmaline__header {
-    margin-bottom: 54px;
-  }
-
   .tourmaline__about {
     margin-bottom: 38px;
-  }
-
-  .tourmaline__footer {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
   }
 
   .show-if-tablet {
@@ -141,14 +102,10 @@
     font-size: 36px;
   }
 
-  .tourmaline__header {
-    margin-bottom: 70px;
-  }
-
   .tourmaline__about-title {
     display: block;
     margin: 0;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     font-size: 36px;
   }
 
@@ -164,18 +121,10 @@
       "a c";
     grid-template-columns: 1fr 1fr;
   }
-
-  .tourmaline__footer {
-    font-size: 17px;
-  }
 }
 
 @media (min-height: 667px) {
   .tourmaline__about {
     margin-bottom: 38px;
-  }
-
-  .tourmaline__header {
-    margin-bottom: 54px;
   }
 }

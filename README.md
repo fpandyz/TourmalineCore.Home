@@ -1,5 +1,5 @@
 # TourmalineCore.Home
-Company web site. \
+Company web site \
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -34,6 +34,15 @@ import Logo from '../icons/logo.svg'
 npm run lint
 npm run lint:fix
 ```
+
+## Localization
+all i18n strings placed in `public/locales`\
+they are used in components with hooks\
+
+to update localizations simply change json data and rebuild / restart dev server
+
+to add another locale go to `next-i18next.config.js`\
+and create another folder with similar data in `public/locales`
 
 ## Learn More
 

@@ -14,8 +14,6 @@ export default function PageHead({ seoData }) {
     metaTags,
   } = seoData;
 
-  const keywordsString = keywords.map((keyword) => keyword.value).join();
-
   return (
     <Head>
       <meta charSet="utf-8" />
@@ -26,7 +24,7 @@ export default function PageHead({ seoData }) {
 
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywordsString} />
+      <meta name="keywords" content={keywords} />
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger

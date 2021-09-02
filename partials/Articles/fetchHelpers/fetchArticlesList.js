@@ -22,17 +22,20 @@ function listToTree(list) {
   const result = [];
   const level = { result };
 
-  list.forEach((item) => {
-    item.path.split('/')
-      .reduce((acc, name) => {
-        if (!acc[name]) {
-          acc[name] = { result: [] };
-          acc.result.push({ name, children: acc[name].result });
-        }
+  filterDraftFiles(list)
+    .forEach((item) => {
+      item.path.split('/')
+        .reduce((acc, name) => {
+          if (!acc[name]) {
+            acc[name] = { result: [] };
+            acc.result.push({ name, children: acc[name].result });
+          }
 
-        return acc[name];
-      }, level);
-  });
+          return acc[name];
+        }, level);
+    });
 
   return result;
 }
+
+const filterDraftFiles = (list) => list.filter((listItem) => !listItem.path.includes('[draft]'));
