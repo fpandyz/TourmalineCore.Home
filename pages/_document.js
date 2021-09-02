@@ -21,6 +21,18 @@ class MyDocument extends Document {
         </Head>
 
         <body>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171018032-1" />
+          {/* eslint-disable-next-line react/no-danger */}
+          <script dangerouslySetInnerHTML={{
+            __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-171018032-1');`,
+          }}
+          />
+
           <Main />
           <NextScript />
         </body>
