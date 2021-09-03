@@ -1,6 +1,9 @@
+import { useRouter } from 'next/router';
 import GitalkComponent from 'gitalk/dist/gitalk-component';
 
 export default function Comments() {
+  const router = useRouter();
+
   return (
     <GitalkComponent
       options={{
@@ -11,6 +14,7 @@ export default function Comments() {
         admin: ['fpandyz', 'gggvnr'],
         id: window.location.pathname,
         distractionFreeMode: false,
+        language: router.locale || 'en',
       }}
     />
   );
