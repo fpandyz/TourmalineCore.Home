@@ -12,7 +12,7 @@ export default function Comments() {
         repo: 'TourmalineCore.Articles',
         owner: 'TourmalineCore',
         admin: ['fpandyz', 'gggvnr'],
-        id: window.location.pathname,
+        id: window.location.pathname.substring(0, 50),
         distractionFreeMode: false,
         language: router.locale || 'en',
       }}
