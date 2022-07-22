@@ -1,6 +1,3 @@
-# TourmalineCore.Home
-Company web site \
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -8,41 +5,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm ci
 npm run dev
+# or
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-## In this project following styling strategy used
-.scss files grouped by components, but imports to `/styles/main.scss` file. \
-And this main file imports to `/pages/_app.js`
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-
-## Import images tip
-import svg from `/icons` folder inlines it to markup\
-for other assets options check the next.js docs
-
-```
-import Logo from '../icons/logo.svg'
-```
-
-
-## Linting
-```bash
-npm run lint
-npm run lint:fix
-```
-
-## Localization
-all i18n strings placed in `public/locales`\
-they are used in components with hooks\
-
-to update localizations simply change json data and rebuild / restart dev server
-
-to add another locale go to `next-i18next.config.js`\
-and create another folder with similar data in `public/locales`
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Learn More
 

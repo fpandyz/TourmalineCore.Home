@@ -4,7 +4,7 @@ import '../styles/main.scss';
 import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: any) {
   return (
     <>
       <Head>
