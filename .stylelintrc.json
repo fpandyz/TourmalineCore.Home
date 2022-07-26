@@ -11,6 +11,8 @@
     "**/node_modules/**/*"
   ],
 	"rules": {
+		"color-function-notation": "legacy",
+		"alpha-value-notation": "number",
 		"keyframes-name-pattern": null,
 		"selector-class-pattern": null,
 		"declaration-block-no-duplicate-properties": [
