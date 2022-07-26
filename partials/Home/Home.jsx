@@ -12,8 +12,8 @@ import { useWindowDimensions } from '../../common/hooks/useWindowDimensions';
 export default function Home() {
   const [teamMemberIndex, setTeamMemberIndex] = useState(0);
 
-  const { t } = useTranslation('home', { useSuspense: false });
-  const { t: tTeam } = useTranslation('team', { useSuspense: false });
+  const { t } = useTranslation('home');
+  const { t: tTeam } = useTranslation('team');
 
   const {
     width,

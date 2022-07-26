@@ -3,8 +3,8 @@ import { useTranslation } from 'next-i18next';
 
 import LangSwitch from '../LangSwitch/LangSwitch';
 
-export default function Header() {
-  const { t } = useTranslation('common', { useSuspense: false });
+function Header() {
+  const { t } = useTranslation('common');
 
   return (
     <header className="header">
@@ -27,3 +27,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header;
