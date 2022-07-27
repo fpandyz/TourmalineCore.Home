@@ -1,0 +1,50 @@
+.button {
+  position: relative;
+  z-index: 0;
+  display: block;
+  border: 1px solid #0000;
+  border-radius: 30px;
+  padding: 16px 52px;
+  color: #fff;
+  background-image:
+    linear-gradient(180deg, $color-purple-blacl, $color-purple-blacl),
+    linear-gradient(90deg, $color-pink, $color-green, $color-green, $color-pink);
+  background-position: 0;
+  background-size: 200% 100%;
+  background-clip: padding-box, border-box;
+  background-color: initial;
+  cursor: pointer;
+  transition: background-position 0.3s linear;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: var(--gap);
+    top: var(--gap);
+    z-index: -1;
+    display: block;
+    border: inherit;
+    border-radius: inherit;
+    width: calc(100% - var(--gap) * 2);
+    height: calc(100% - var(--gap) * 2);
+    background: inherit;
+  }
+
+  &::before {
+    --gap: 1px;
+
+    opacity: 0.6;
+  }
+
+  &::after {
+    --gap: 3px;
+
+    opacity: 0.4;
+  }
+
+  &:focus,
+  &:hover {
+    background-position: 100%;
+  }
+}
