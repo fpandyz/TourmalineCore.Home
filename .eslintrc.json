@@ -13,7 +13,7 @@
   "parserOptions": {
     "project": "./tsconfig.json",
     "ecmaFeatures": {
-      "tsx": true
+      "jsx": true
     },
     "ecmaVersion": "latest",
     "sourceType": "module"
@@ -83,7 +83,7 @@
     "jsx-a11y/label-has-associated-control": 0,
     "jsx-a11y/control-has-associated-label": 0,
     "jsx-a11y/anchor-is-valid": "off",
-    "react/prop-types": 0,
+    "react/prop-types": 0, 
     "react/destructuring-assignment": 0,
     "react/jsx-props-no-spreading": 0,
     "react/no-did-update-set-state": 0,
@@ -97,7 +97,6 @@
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
     "no-prototype-builtins": "off",
     "import/no-default-export": 0,
-    "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/no-unsafe-member-access": "error"
+    "@typescript-eslint/no-var-requires": "off"
   }
 }
