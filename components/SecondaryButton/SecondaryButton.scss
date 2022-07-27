@@ -1,0 +1,16 @@
+.secondary-button {
+  display: flex;
+  align-items: center;
+
+  &__button {
+    margin-left: 24px;
+    border-radius: 50%;
+    padding: 17px 14px;
+
+    svg {
+      display: block;
+      width: 12px;
+      height: 6px;
+    }
+  }
+}
