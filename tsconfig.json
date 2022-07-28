@@ -27,12 +27,13 @@
     "noImplicitAny": true,
   },
   "include": [
-    "next-env.d.ts", 
+    "next-env.d.ts",
+    "**/*.js",  
     "**/*.ts", 
     "**/*.tsx", 
     "**/*.jsx", 
     "**/*.config.js", 
-    "next-sitemap.js"
+    "next-sitemap.js" 
   ],
   "exclude": ["node_modules"]
 }
