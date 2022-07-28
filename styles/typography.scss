@@ -15,15 +15,20 @@ ol {
 }
 
 .title-type-1 {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: 34px;
+  line-height: 1.3;
+
+  @include desktop {
+    font-size: 48px;
+    line-height: 1.2;
+  }
 }
 
 .title-type-2 {
   font-size: 26px;
   line-height: 1.3;
 
-  @include tablet {
+  @include desktop {
     font-size: 34px;
   }
 }
@@ -32,14 +37,19 @@ ol {
   font-size: 22px;
   line-height: 1.4;
 
-  @include tablet {
+  @include desktop {
     font-size: 28px;
   }
 }
 
 .title-type-4 {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.6;
+  }
 }
 
 .body-type-2 {
@@ -85,4 +95,19 @@ ol {
   font-weight: 500;
   font-size: 11px;
   line-height: 1.1;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include tablet {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  @include desktop {
+    padding-top: 176px;
+    padding-bottom: 176px;
+  }
 }
