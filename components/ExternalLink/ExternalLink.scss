@@ -1,0 +1,12 @@
+.external-link {
+  color: $color-white-alpha-200;
+
+  &:visited {
+    color: $color-purple;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-pink;
+  }
+}
