@@ -1,6 +1,5 @@
 name: Linting check
 
-
 on: 
   pull_request:
     branches: [develop, feature/*]
