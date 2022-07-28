@@ -4,7 +4,7 @@
   display: block;
   border: 1px solid #0000;
   border-radius: 30px;
-  padding: 16px 52px;
+  padding: 16px 102px;
   color: #fff;
   background-image:
     linear-gradient(180deg, $color-purple-blacl, $color-purple-blacl),
@@ -46,5 +46,9 @@
   &:focus,
   &:hover {
     background-position: 100%;
+  }
+
+  @include tablet {
+    padding: 16px 52px;
   }
 }
