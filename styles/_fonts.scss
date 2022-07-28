@@ -1,9 +1,16 @@
-@font-face {
-  src:
-    url("/fonts/FiraCode-Medium.woff2") format("woff2"),
-    url("/fonts/FiraCode-Medium.woff") format("woff");
-  font-family: FiraCode;
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+$fallback-font: -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  sans-serif;
+$ff-montserrat: Montserrat, $fallback-font;
+$ff-inter: Inter, $fallback-font;

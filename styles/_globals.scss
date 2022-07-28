@@ -14,11 +14,11 @@ body {
   margin: 0;
   height: 100%;
   box-sizing: border-box;
-  font-family: Montserrat, Inter, sans-serif;
+  font-family: $ff-montserrat;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #fff;
+  color: $color-white;
   background: #22252d;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
