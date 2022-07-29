@@ -9,7 +9,7 @@ function Button({
   ...props
 }: ButtonProps) {
   return (
-    <button type="button" className={clsx('button body-type-2', className)} {...props}>
+    <button type="button" className={clsx('button', className)} {...props}>
       {children}
     </button>
   );
