@@ -9,16 +9,16 @@ interface TextareaProps extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTex
 }
 
 function Textarea({
-  label, description, isError = false, className, ...props
+  id, label, description, isError = false, className, ...props
 }: TextareaProps): JSX.Element {
   return (
     <div className={clsx('title-type-4', 'textarea', className, {
-      'input--is-error': isError,
+      'textarea--is-error': isError,
     })}
     >
       <div className="textarea__box">
-        <textarea className="textarea__control" placeholder=" " {...props} />
-        <label className="textarea__label">{label}</label>
+        <textarea id={id} className="textarea__control" placeholder=" " {...props} />
+        <label htmlFor={id} className="textarea__label">{label}</label>
       </div>
       {description && <div className="textarea__description">{description}</div>}
     </div>
