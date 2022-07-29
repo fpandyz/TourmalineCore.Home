@@ -26,7 +26,7 @@ const headerLinks: HeaderLinks = [
 
 function Header() {
   const { t } = useTranslation('common');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <>
