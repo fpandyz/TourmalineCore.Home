@@ -98,16 +98,16 @@ ol {
 }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   @include tablet {
-    padding-top: 96px;
-    padding-bottom: 96px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   @include desktop {
-    padding-top: 176px;
-    padding-bottom: 176px;
+    padding-top: 88px;
+    padding-bottom: 88px;
   }
 }
