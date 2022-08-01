@@ -5,6 +5,7 @@ import { GetServerSideProps } from 'next';
 import PageHead from '../components/PageHead/PageHead';
 
 import Layout from '../components/Layout/Layout';
+import Accordion from '../components/Accordion/Accordion';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -26,6 +27,15 @@ export default function HomePage() {
 
       <Layout>
         <h1>Выделенная команда для создания вашего продукта</h1>
+        <Accordion />
+        <Accordion />
+
+        <h1>Выделенная команда для создания вашего продукта</h1>
+
+        <section>
+          <Accordion />
+
+        </section>
       </Layout>
     </>
   );
