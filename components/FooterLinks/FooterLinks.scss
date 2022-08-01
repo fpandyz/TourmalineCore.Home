@@ -1,0 +1,29 @@
+.footer-links {
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    text-decoration: none;
+
+    svg {
+      display: block;
+      margin-right: 12px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__mail {
+    background: linear-gradient(90.09deg, #e977f6 0.08%, #a1a7ed 78.9%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+
+  &__telegram {
+    background: linear-gradient(90.09deg, #a2a6ee 0.08%, #51dce4 99.92%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+}

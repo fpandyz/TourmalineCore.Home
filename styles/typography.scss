@@ -15,15 +15,20 @@ ol {
 }
 
 .title-type-1 {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: 34px;
+  line-height: 1.3;
+
+  @include desktop {
+    font-size: 48px;
+    line-height: 1.2;
+  }
 }
 
 .title-type-2 {
   font-size: 26px;
   line-height: 1.3;
 
-  @include tablet {
+  @include desktop {
     font-size: 34px;
   }
 }
@@ -32,20 +37,19 @@ ol {
   font-size: 22px;
   line-height: 1.4;
 
-  @include tablet {
+  @include desktop {
     font-size: 28px;
   }
 }
 
 .title-type-4 {
-  font-size: 18px;
-  line-height: 1.6;
-}
+  font-size: 16px;
+  line-height: 1.5;
 
-.body-type-2 {
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.6;
+  }
 }
 
 .caption {
@@ -54,25 +58,20 @@ ol {
   line-height: 1.3;
 }
 
-.caption-type-2 {
-  font-size: 12px;
-  line-height: 1.3;
-}
-
-.sample-body-type-1 {
+.code-example-type-1 {
   font-family: $ff-inter;
   font-size: 14px;
   line-height: 1.7;
 }
 
-.sample-body-type-2 {
+.code-example-type-2 {
   font-family: $ff-inter;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.3;
 }
 
-.sample-body-type-3 {
+.code-example-type-3 {
   font-family: $ff-inter;
   font-weight: 500;
   font-size: 11px;
@@ -80,9 +79,24 @@ ol {
   letter-spacing: 0.02em;
 }
 
-.sample-caption {
+.code-example-caption {
   font-family: $ff-inter;
   font-weight: 500;
   font-size: 11px;
   line-height: 1.1;
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include tablet {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @include desktop {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
 }
