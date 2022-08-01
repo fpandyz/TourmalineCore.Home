@@ -9,7 +9,12 @@ function ExternalLink({
   ...props
 }: ExternalLinkProps) {
   return (
-    <a {...props} className={clsx('external-link', className)}>{children}</a>
+    <a
+      className={clsx('external-link', className)}
+      {...props}
+    >
+      {children}
+    </a>
   );
 }
 
