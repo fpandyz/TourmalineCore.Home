@@ -1,17 +1,22 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
+import clsx from 'clsx';
 
 import IconDownArrow from '../../icons/icon-down-arrow.svg';
-import Button from '../Button/Button';
 
 type SecondaryButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
 function SecondaryButton({
+  className,
   ...props
 }: SecondaryButtonProps) {
   return (
-    <Button className="secondary-button" {...props}>
+    <button
+      type="button"
+      className={clsx('button secondary-button', className)}
+      {...props}
+    >
       <IconDownArrow />
-    </Button>
+    </button>
   );
 }
 
