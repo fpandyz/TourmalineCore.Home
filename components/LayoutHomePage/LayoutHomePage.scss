@@ -1,0 +1,19 @@
+.layout-home-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $color-purple-black;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__nav {
+    display: none;
+    margin-right: 114px;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
