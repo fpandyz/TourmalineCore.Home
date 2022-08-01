@@ -12,7 +12,7 @@ function Footer() {
         <div className="footer__about-us">
           <div className="footer__logo">
             <IconLogo />
-            <span className="footer__discription">{t('discription')}</span>
+            <span className="footer__description">{t('description')}</span>
           </div>
 
           <div className="footer__links">
