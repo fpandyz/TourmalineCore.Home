@@ -75,14 +75,25 @@
     text-decoration: none;
     color: inherit;
 
-    &--active,
     &:hover,
     &:focus {
       animation: opaciteBackground 0.3s forwards;
     }
 
     &--active {
+      background-image:
+        linear-gradient(
+          90.05deg,
+          rgba($color-pink, 0.1) 0.04%,
+          rgba($color-pink, 0.1) 0.05%,
+          rgba($color-green, 0.1) 99.96%
+        );
       cursor: not-allowed;
+
+      &:hover,
+      &:focus {
+        animation: none;
+      }
     }
   }
 }
