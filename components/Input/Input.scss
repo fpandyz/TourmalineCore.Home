@@ -1,0 +1,71 @@
+.input {
+  $this: &;
+
+  color: $color-white-alpha-200;
+
+  &__box {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__control {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $color-white-alpha-200;
+    padding: 24px 0 16px;
+    min-height: 64px;
+    font-family: inherit;
+    font-size: inherit;
+    color: $color-white;
+    background-color: inherit;
+    transition: all 0.3s;
+
+    &:focus {
+      border-bottom: 1px solid $color-pink;
+
+      ~ #{$this}__label {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        color: $color-pink;
+      }
+    }
+
+    &:focus ~ #{$this}__label,
+    &:not(:placeholder-shown) ~ #{$this}__label {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      transform: translateY(30px);
+    }
+  }
+
+  &__label {
+    min-height: 30px;
+    color: inherit;
+    cursor: text;
+    transform: translateY(50px);
+    transform-origin: left top;
+    transition: all 0.3s;
+  }
+
+  &__description {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  &--is-error {
+    color: $color-error;
+
+    #{$this}__control {
+      border-color: $color-error;
+    }
+
+    #{$this}__control:focus ~ #{$this}__label {
+      color: $color-error;
+    }
+  }
+}
