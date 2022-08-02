@@ -1,15 +1,9 @@
 .mobile-lang-switch {
-  --gap: 10px;
-
   &__list {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: var(--gap);
-  }
-
-  &__option {
-    width: calc(33.3% - var(--gap));
+    gap: 24px;
   }
 
   &__link {
