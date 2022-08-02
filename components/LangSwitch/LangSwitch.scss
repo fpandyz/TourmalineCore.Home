@@ -69,15 +69,38 @@
   }
 
   &__link {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 12px;
     text-decoration: none;
     color: inherit;
 
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -100;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(
+          90.05deg,
+          rgba($color-pink, 0.1) 0.04%,
+          rgba($color-pink, 0.1) 0.05%,
+          rgba($color-green, 0.1) 99.96%
+        );
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
     &:hover,
     &:focus {
-      animation: opaciteBackground 0.3s forwards;
+      &::before {
+        opacity: 1;
+      }
     }
 
     &--active {
@@ -90,63 +113,10 @@
         );
       cursor: not-allowed;
 
-      &:hover,
-      &:focus {
-        animation: none;
+      &::before {
+        content: none;
       }
     }
-  }
-}
-
-@keyframes opaciteBackground {
-  0% {
-    background-image:
-      linear-gradient(
-        90.05deg,
-        rgba($color-pink, 0) 0.04%,
-        rgba($color-pink, 0) 0.05%,
-        rgba($color-green, 0) 99.96%
-      );
-  }
-
-  25% {
-    background-image:
-      linear-gradient(
-        90.05deg,
-        rgba($color-pink, 0.025) 0.04%,
-        rgba($color-pink, 0.025) 0.05%,
-        rgba($color-green, 0.025) 99.96%
-      );
-  }
-
-  50% {
-    background-image:
-      linear-gradient(
-        90.05deg,
-        rgba($color-pink, 0.05) 0.04%,
-        rgba($color-pink, 0.05) 0.05%,
-        rgba($color-green, 0.05) 99.96%
-      );
-  }
-
-  75% {
-    background-image:
-      linear-gradient(
-        90.05deg,
-        rgba($color-pink, 0.075) 0.04%,
-        rgba($color-pink, 0.075) 0.05%,
-        rgba($color-green, 0.075) 99.96%
-      );
-  }
-
-  100% {
-    background-image:
-      linear-gradient(
-        90.05deg,
-        rgba($color-pink, 0.1) 0.04%,
-        rgba($color-pink, 0.1) 0.05%,
-        rgba($color-green, 0.1) 99.96%
-      );
   }
 }
 
