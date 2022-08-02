@@ -1,42 +1,16 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import {
   useState, useRef, useMemo,
 } from 'react';
 import clsx from 'clsx';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { useAutoClose } from '../../common/hooks/useAutoClose';
-import IconRussianFlag from '../../icons/flag-for-russia.svg';
-import IconUSAFlag from '../../icons/flag-for-united-states.svg';
+import { languages } from '../../utils/consts/languages';
+
 import IconDownArrow from '../../icons/icon-down-arrow.svg';
 
-type Languages = {
-  [key: string]: {
-    name: string;
-    shortName: string,
-    icon: () => JSX.Element;
-  }
-};
-
-const languages: Languages = {
-  en: {
-    name: 'English',
-    shortName: 'en',
-    icon: () => <IconUSAFlag className="lang-switch__icon" />,
-  },
-  ru: {
-    name: 'Русский',
-    shortName: 'рус',
-    icon: () => <IconRussianFlag className="lang-switch__icon" />,
-  },
-  zh: {
-    name: '中文',
-    shortName: '中文',
-    icon: () => <IconRussianFlag className="lang-switch__icon" />,
-  },
-};
-
-export default function LangSwitch() {
+function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -95,3 +69,5 @@ export default function LangSwitch() {
     </div>
   );
 }
+
+export default LangSwitch;
