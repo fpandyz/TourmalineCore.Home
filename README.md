@@ -18,6 +18,21 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+
+## Husky
+
+We use husky so that all developers follow the standards of conventional commits during the development
+
+To learn more about conventional commits check the following resource:
+
+- [Conventional Commits Documentation](https://www.conventionalcommits.org/ru/v1.0.0-beta.4/)
+
+The rules for conventional commits validation are configured in the file `.commitlintrc`
+
+If you want to change the validation rules, you must:
+
+- check commitlint [rules settings](https://commitlint.js.org/#/reference-rules) 
+- change `rules` section in the `.commitlintrc` file based on your needs
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
