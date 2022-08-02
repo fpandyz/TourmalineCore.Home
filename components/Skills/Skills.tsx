@@ -1,22 +1,22 @@
 import { useTranslation } from 'next-i18next';
 
-import { getAbility } from './getAbility';
+import { getSkills } from './getSkills';
 import Accordion from '../Accordion/Accordion';
 
-function Ability() {
-  const { t } = useTranslation('ability');
+function Skills() {
+  const { t } = useTranslation('skills');
 
-  const teamMembers = getAbility(t);
+  const teamSkills = getSkills(t);
 
   return (
-    <section className="ability">
-      <h2 className="title-type-2 ability__title">
+    <section className="section skills">
+      <h2 className="title-type-2 skills__title">
         Наши
         {' '}
-        <span className="ability__gradient-title">возможности</span>
+        <span className="skills__gradient-title">возможности</span>
       </h2>
 
-      {teamMembers.map((item) => (
+      {teamSkills.map((item) => (
         <Accordion
           key={item.title}
           title={item.title}
@@ -29,4 +29,4 @@ function Ability() {
   );
 }
 
-export default Ability;
+export default Skills;

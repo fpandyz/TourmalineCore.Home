@@ -5,7 +5,7 @@ import { GetServerSideProps } from 'next';
 import PageHead from '../components/PageHead/PageHead';
 
 import Layout from '../components/Layout/Layout';
-import Ability from '../components/Ability/Ability';
+import Skills from '../components/Skills/Skills';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -26,7 +26,7 @@ export default function HomePage() {
       />
 
       <Layout>
-        <Ability />
+        <Skills />
       </Layout>
     </>
   );
@@ -34,6 +34,6 @@ export default function HomePage() {
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string, ['common', 'ability'])),
+    ...(await serverSideTranslations(locale as string, ['common', 'skills'])),
   },
 });

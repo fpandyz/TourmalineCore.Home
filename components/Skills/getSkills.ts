@@ -1,4 +1,4 @@
-export const getAbility = (t: any) => [
+export const getSkills = (t: any) => [
   {
     title: t('Backend.title'),
     scope: t('Backend.scope', { returnObjects: true }),
