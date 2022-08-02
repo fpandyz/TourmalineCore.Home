@@ -10,8 +10,10 @@ function LayoutHomePage({
 }) {
   return (
     <div className="layout-home-page">
-      <Header />
-      <HeroBlock />
+      <div className="layout-home-page__header">
+        <Header />
+        <HeroBlock />
+      </div>
       <main className="container layout-home-page__wrapper">
         <div className="layout-home-page__nav">
           navigations
