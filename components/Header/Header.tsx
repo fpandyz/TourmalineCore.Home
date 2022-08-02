@@ -7,6 +7,7 @@ import MobileMenu from '../MobileMenu/MobileMenu';
 
 import IconLogo from '../../icons/logo.svg';
 import IconBurger from '../../icons/burger.svg';
+import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 type HeaderLinks = {
   id: string;
@@ -27,6 +28,8 @@ const headerLinks: HeaderLinks = [
 function Header() {
   const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useBodyScrollHiden(isMobileMenuOpen);
 
   return (
     <>
@@ -52,7 +55,7 @@ function Header() {
                 </Link>
               ))}
 
-              <LangSwitch className="header__lang" />
+              <LangSwitch />
             </div>
           </div>
         </div>
