@@ -1,9 +1,9 @@
+import { MouseEventHandler } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
-import { MouseEventHandler } from 'react';
-import LangSwitch from '../LangSwitch/LangSwitch';
+import MobileLangSwitch from '../MobileLangSwitch/MobileLangSwitch';
 import FooterLinks from '../FooterLinks/FooterLinks';
 
 import IconLogo from '../../icons/logo.svg';
@@ -47,7 +47,7 @@ function MobileMenu({
         </div>
 
         <div className="mobile-menu__content">
-          <LangSwitch className="body-type-2 mobile-menu__lang" />
+          <MobileLangSwitch />
 
           {headerLinks.map((headerLink) => (
             <Link key={headerLink.id} href={headerLink.link}>

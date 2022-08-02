@@ -55,7 +55,7 @@ function Header() {
                 </Link>
               ))}
 
-              <LangSwitch className="header__lang" />
+              <LangSwitch />
             </div>
           </div>
         </div>

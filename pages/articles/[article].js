@@ -59,7 +59,7 @@ export async function getStaticProps({
   if (!currentArticleFolder) {
     return {
       props: {
-        ...(await serverSideTranslations(locale, ['common', 'heroBlock', 'footer', 'articles', 'home', 'team'])),
+        ...(await serverSideTranslations(locale, ['common', 'heroBlock', 'footer', 'articles'])),
         article: {},
         metadata: {},
       },
@@ -71,7 +71,7 @@ export async function getStaticProps({
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'heroBlock', 'footer', 'articles', 'home', 'team'])),
+      ...(await serverSideTranslations(locale, ['common', 'heroBlock', 'footer', 'articles'])),
       article,
       metadata,
     },
