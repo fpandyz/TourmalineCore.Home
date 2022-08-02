@@ -3,50 +3,19 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, useState } from 'react';
 
 import IconDownArrow from '../../icons/icon-large-arrow.svg';
 
-const data = [
-  {
-    title: 'Фрон',
-    scope: ['.Net Core 3-6', 'C#', 'Python', 'Flask', 'FastAPI', 'JavaScript', 'NestJS', 'NodeJS', 'PostgreSQL', 'Clickhouse'],
-    services: [
-      'Разработка решений на базе фреймворков',
-      'Интеграция со сторонними сервисами, решениями',
-      'Работа с реляционными и аналитическими СУБД',
-      'Проектирование архитектуры и работы с высокими нагрузками',
-      'Разработка встраиваемых систем и интеграция с IoT',
-      'Автоматизация сборки, деплоя, релизов и тестирования',
-      'Рефакторинг',
-      'Разработка библиотек',
-      'TDD и DDD проектирование',
-    ],
-    technologies: [
-      '.Net Core 3-6',
-      'Clickhouse',
-      'React',
-      'PostgreSQL',
-      'k8s',
-      'RabbitMQ',
-      'Redis',
-      'Docker',
-      'Entity Framework Core',
-      'XUnit',
-      'Cypress',
-      'Blazor',
-      'Azure',
-      'Gitlab CI',
-      'Mail.ru Cloud',
-      'Yandex.Cloud',
-      'Postman API',
-      'NestJS',
-      'Flask',
-      'REST',
-    ],
-  }];
-
 interface AccordionProp extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  title?: string;
+  title: string;
+  scope: string[];
+  services: string[];
+  technologies: string[];
 }
-
-function Accordion({ className, ...props }: AccordionProp): JSX.Element {
+function Accordion({
+  title,
+  scope,
+  services,
+  technologies,
+  ...props
+}: AccordionProp): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -54,11 +23,11 @@ function Accordion({ className, ...props }: AccordionProp): JSX.Element {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={clsx('accordion__button', className, {})}
+        className="accordion__button"
         {...props}
       >
         <div className="accordion__inner">
-          <div className="title-type-3 accordion__title">{data[0].title}</div>
+          <div className="title-type-3 accordion__title">{title}</div>
           <IconDownArrow className={clsx('accordion__icon', {
             'accordion__icon--is-open': isOpen,
           })}
@@ -68,7 +37,7 @@ function Accordion({ className, ...props }: AccordionProp): JSX.Element {
           accordion__scope: isOpen,
         })}
         >
-          {data[0].scope.map((scopeItem) => (
+          {scope.map((scopeItem) => (
             <li
               key={scopeItem}
               className="accordion__scope-item"
@@ -84,12 +53,12 @@ function Accordion({ className, ...props }: AccordionProp): JSX.Element {
           <div>
             <h4 className="title-type-4 accordion__sub-title">Услуги</h4>
             <ul className="accordion__services">
-              {data[0].services.map((serviceItem) => (
+              {services.map((service) => (
                 <li
-                  key={serviceItem}
+                  key={service}
                   className="accordion__service-item"
                 >
-                  {serviceItem}
+                  {service}
                 </li>
               ))}
             </ul>
@@ -98,12 +67,12 @@ function Accordion({ className, ...props }: AccordionProp): JSX.Element {
           <div>
             <h3 className="title-type-4 accordion__sub-title">Технологии</h3>
             <ul className="accordion__technologies">
-              {data[0].technologies.map((technologeItem) => (
+              {technologies.map((technology) => (
                 <li
-                  key={technologeItem}
-                  className="accordion__technologe-item"
+                  key={technology}
+                  className="accordion__technology-item"
                 >
-                  {technologeItem}
+                  {technology}
                 </li>
               ))}
             </ul>

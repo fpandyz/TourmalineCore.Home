@@ -5,7 +5,7 @@ import { GetServerSideProps } from 'next';
 import PageHead from '../components/PageHead/PageHead';
 
 import Layout from '../components/Layout/Layout';
-import Accordion from '../components/Accordion/Accordion';
+import Ability from '../components/Ability/Ability';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -26,16 +26,7 @@ export default function HomePage() {
       />
 
       <Layout>
-        <h1>Выделенная команда для создания вашего продукта</h1>
-        <Accordion />
-        <Accordion />
-
-        <h1>Выделенная команда для создания вашего продукта</h1>
-
-        <section>
-          <Accordion />
-
-        </section>
+        <Ability />
       </Layout>
     </>
   );
@@ -43,6 +34,6 @@ export default function HomePage() {
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string)),
+    ...(await serverSideTranslations(locale as string, ['common', 'ability'])),
   },
 });
