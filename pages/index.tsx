@@ -5,7 +5,6 @@ import { GetServerSideProps } from 'next';
 import PageHead from '../components/PageHead/PageHead';
 
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
-import HeroBlock from '../components/HeroBlock/HeroBlock';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -25,7 +24,6 @@ export default function HomePage() {
         }}
       />
 
-      <HeroBlock />
       <LayoutHomePage>
         <h1>Выделенная команда для создания вашего продукта</h1>
       </LayoutHomePage>
