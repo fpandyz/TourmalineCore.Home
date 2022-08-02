@@ -5,7 +5,10 @@
 @import "typography";
 
 // components
+@import "../components/Input/Input";
+@import "../components/Textarea/Textarea";
 @import "../components/Layout/Layout";
+@import "../components/LayoutHomePage/LayoutHomePage";
 @import "../components/Header/Header";
 @import "../components/Footer/Footer";
 @import "../components/LangSwitch/LangSwitch";
@@ -13,6 +16,7 @@
 @import "../components/PrimaryButton/Button";
 @import "../components/MobileMenu/MobileMenu";
 @import "../components/FooterLinks/FooterLinks";
+@import "../components/HeroBlock/HeroBlock";
 
 // partials
 @import "../partials/Articles/Articles";

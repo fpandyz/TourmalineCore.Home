@@ -6,7 +6,7 @@ function FooterLinks() {
     <>
       <a className="footer-links__link" href="mailto:contact@tourmalinecore.com">
         <IconMail />
-        <span className="title-type-4 footer-links__mail">
+        <span className="footer-links__mail">
           contact@tourmalinecore.com
         </span>
       </a>
@@ -14,7 +14,7 @@ function FooterLinks() {
       {/* Добавить, когда будет телега */}
       <a className="footer-links__link" href="/">
         <IconTelegram />
-        <span className="title-type-4 footer-links__telegram">
+        <span className="footer-links__telegram">
           @tourmalinecore
         </span>
       </a>
