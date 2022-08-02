@@ -33,14 +33,11 @@ function Accordion({
           })}
           />
         </div>
-        <ul className={clsx('accordion__scope', {
-          accordion__scope: isOpen,
-        })}
-        >
+        <ul className="accordion__labels">
           {scope.map((scopeItem) => (
             <li
               key={scopeItem}
-              className="accordion__scope-item"
+              className="accordion__label"
             >
               {scopeItem}
             </li>
@@ -51,7 +48,7 @@ function Accordion({
       {isOpen && (
         <div className="accordion__content">
           <div>
-            <h4 className="title-type-4 accordion__sub-title">Услуги</h4>
+            <h4 className="title-type-4 accordion__subtitle">Услуги</h4>
             <ul className="accordion__services">
               {services.map((service) => (
                 <li
@@ -65,7 +62,7 @@ function Accordion({
           </div>
 
           <div>
-            <h3 className="title-type-4 accordion__sub-title">Технологии</h3>
+            <h3 className="title-type-4 accordion__subtitle">Технологии</h3>
             <ul className="accordion__technologies">
               {technologies.map((technology) => (
                 <li
