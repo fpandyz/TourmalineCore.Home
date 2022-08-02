@@ -35,6 +35,11 @@
     margin-right: 32px;
     text-decoration: none;
     color: inherit;
+
+    &:focus,
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &__menu-toggle {

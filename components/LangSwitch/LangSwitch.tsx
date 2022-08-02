@@ -35,7 +35,12 @@ function LangSwitch() {
       >
         {languages[routerLocale].icon()}
         {languages[routerLocale].shortName}
-        <IconDownArrow className="lang-switch__icon-down-arrow" />
+        <IconDownArrow
+          className={clsx(
+            'lang-switch__arrow',
+            { 'lang-switch__arrow--open': isTooltipOpened },
+          )}
+        />
       </button>
 
       {router.locales && isTooltipOpened && (
