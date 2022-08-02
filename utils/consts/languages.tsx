@@ -1,5 +1,6 @@
 import IconRussianFlag from '../../icons/flag-for-russia.svg';
 import IconUSAFlag from '../../icons/flag-for-united-states.svg';
+import IconChinaFlag from '../../icons/flag-for-china.svg';
 
 type Languages = {
   [key: string]: {
@@ -23,6 +24,6 @@ export const languages: Languages = {
   zh: {
     name: '中文',
     shortName: '中文',
-    icon: () => <IconRussianFlag className="lang-switch__flag" />,
+    icon: () => <IconChinaFlag className="lang-switch__flag" />,
   },
 };
