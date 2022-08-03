@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
 import LangSwitch from '../LangSwitch/LangSwitch';
+import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconLogo from '../../icons/logo.svg';
 import IconBurger from '../../icons/burger.svg';
@@ -27,6 +28,8 @@ const headerLinks: HeaderLinks = [
 function Header() {
   const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useBodyScrollHiden(isMobileMenuOpen);
 
   return (
     <>
