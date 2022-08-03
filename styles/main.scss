@@ -1,17 +1,17 @@
-@import "fonts.scss";
-@import "media.scss";
-@import "globals.scss";
+@import "fonts";
+@import "media";
+@import "globals";
 
 // components
-@import "../components/Layout/Layout.scss";
-@import "../components/Header/Header.scss";
-@import "../components/Footer/Footer.scss";
-@import "../components/LangSwitch/LangSwitch.scss";
-@import "../components/Characteristics/Characteristic.scss";
-@import "../components/Characteristics/CharacteristicsList.scss";
-@import "../components/TeamMember/TeamMember.scss";
+@import "../components/Layout/Layout";
+@import "../components/Header/Header";
+@import "../components/Footer/Footer";
+@import "../components/LangSwitch/LangSwitch";
+@import "../components/Characteristics/Characteristic";
+@import "../components/Characteristics/CharacteristicsList";
+@import "../components/TeamMember/TeamMember";
 
 // partials
-@import "../partials/Home/Home.scss";
-@import "../partials/Articles/Articles.scss";
-@import "../partials/Articles/Article/Article.scss";
+@import "../partials/Home/Home";
+@import "../partials/Articles/Articles";
+@import "../partials/Articles/Article/Article";

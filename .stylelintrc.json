@@ -1,15 +1,20 @@
 {
-	"extends": "stylelint-config-standard",
+	"extends": "stylelint-config-standard-scss",
+	"customSyntax": "postcss-scss",
 	"plugins": [
 		"stylelint-scss",
 		"stylelint-order"
   ],
   "ignoreFiles": [
-    "**/*.{js,jsx}",
+    "**/public/**/*",
     "**/dist/**/*",
     "**/node_modules/**/*"
   ],
 	"rules": {
+		"color-function-notation": "legacy",
+		"alpha-value-notation": "number",
+		"keyframes-name-pattern": null,
+		"selector-class-pattern": null,
 		"declaration-block-no-duplicate-properties": [
 			true,
 			{
@@ -49,6 +54,7 @@
 		"indentation": 2,
 		"no-empty-source": null,
 		"string-quotes": "double",
+		"value-keyword-case": null,
 		"scss/at-else-closing-brace-newline-after": "always-last-in-chain",
 		"scss/at-else-closing-brace-space-after": "always-intermediate",
 		"scss/at-if-closing-brace-newline-after": "always-last-in-chain",
@@ -352,3 +358,4 @@
 		]
 	}
 }
+ 

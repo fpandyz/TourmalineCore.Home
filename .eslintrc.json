@@ -1,36 +1,46 @@
 {
   "ignorePatterns": [
-    "public/",
-    "node_modules/",
-    ".next/"
-  ],
+      "sw-*.js"
+    ],
   "env": {
-      "browser": true,
-      "es6": true
-  },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb"
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-      "ecmaFeatures": {
-          "jsx": true
-      },
-      "ecmaVersion": 2018,
-      "sourceType": "module"
+    "browser": true,
+    "es2021": true
   },
   "plugins": [
-      "react"
+    "@typescript-eslint",
+    "react"
   ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "globals": {
+    "Atomics": "readonly", 
+    "SharedArrayBuffer": "readonly"
+  },
+  "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["node_modules", "src"],
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    },
   "rules": {
     "linebreak-style": [
-        "error",
-        "unix"
+      "error",
+      "unix"
     ],
     "max-len": [
       "error",
@@ -47,32 +57,46 @@
         "everything-else"
       ]
     }],
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1 }],
+    "react/require-default-props": 0,
     "object-property-newline": "error",
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
-    "no-use-before-define": 0,
     "no-underscore-dangle": 0,
     "func-names": 0,
     "no-plusplus": 0,
     "no-return-assign": 0,
     "no-param-reassign": 0,
-    "no-unused-vars": 1,
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
     "no-restricted-syntax": ["error", "BinaryExpression[operator='in']"],
     "class-methods-use-this": 0,
+    "no-use-before-define": [
+      "error",
+      { "functions": false, "classes": true, "variables": true }
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { "functions": false, "classes": true, "variables": true, "typedefs": true }
+    ],
     "jsx-a11y/label-has-associated-control": 0,
     "jsx-a11y/control-has-associated-label": 0,
-    "jsx-a11y/anchor-is-valid": 0,
-    "react/prop-types": 0,
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/prop-types": 0, 
     "react/destructuring-assignment": 0,
     "react/jsx-props-no-spreading": 0,
     "react/no-did-update-set-state": 0,
-    "jest/expect-expect": 0,
-    "react/jsx-filename-extension": 0,
     "react/react-in-jsx-scope": 0,
-    "indent": [
-      "error", 2,
-      { "ignoredNodes": ["TemplateLiteral"] }
-    ], // temporary solution to fix bug(lint errors with template strings)
-    "template-curly-spacing" : "off" // temporary solution to fix bug(lint errors with template strings)
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-array-for-each": "off",
+    "default-param-last": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-filename-extension": 0,
+    // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
+    "no-prototype-builtins": "off",
+    "import/no-default-export": 0,
+    "@typescript-eslint/no-var-requires": "off"
   }
 }
