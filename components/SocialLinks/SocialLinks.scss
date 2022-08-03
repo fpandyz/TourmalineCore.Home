@@ -3,6 +3,9 @@
     display: flex;
     align-items: center;
     margin-top: 12px;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1.56;
     text-decoration: none;
 
     svg {
@@ -11,17 +14,27 @@
       width: 24px;
       height: 24px;
     }
+
+    @include desktop-xl {
+      font-size: 22px;
+      line-height: 1.45;
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
   }
 
   &__mail {
-    background: linear-gradient(90.09deg, #e977f6 0.08%, #a1a7ed 78.9%);
+    background: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #81b9e8 99.96%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
   }
 
   &__telegram {
-    background: linear-gradient(90.09deg, #a2a6ee 0.08%, #51dce4 99.92%);
+    background: linear-gradient(90.05deg, #81b9e8 0.04%, #81b9e8 0.05%, #4fdae2 99.96%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
