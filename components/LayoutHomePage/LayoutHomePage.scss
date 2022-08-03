@@ -1,0 +1,23 @@
+.layout-home-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $color-purple-black;
+
+  &__header {
+    background-image: linear-gradient(89.5deg, $color-purple-black 0.45%, $color-black 99.59%);
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__nav {
+    display: none;
+    margin-right: 114px;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
