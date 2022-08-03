@@ -1,0 +1,32 @@
+.mobile-lang-switch {
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    opacity: 0.5;
+
+    &--active,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+  }
+
+  svg {
+    display: block;
+  }
+}
