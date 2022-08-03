@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { GetServerSideProps } from 'next';
 import PageHead from '../components/PageHead/PageHead';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
+import Services from '../components/Services/Services';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -24,7 +25,7 @@ export default function HomePage() {
       />
 
       <LayoutHomePage>
-        <h1>Выделенная команда для создания вашего продукта</h1>
+        <Services />
       </LayoutHomePage>
     </>
   );
