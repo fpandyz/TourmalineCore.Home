@@ -33,6 +33,6 @@ export default function HomePage() {
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string)),
+    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer'])),
   },
 });
