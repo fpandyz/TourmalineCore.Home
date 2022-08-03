@@ -1,0 +1,64 @@
+// Black
+$color-black: #000;
+$color-purple-black: #06040f;
+
+// White
+$color-white: #fff;
+$color-white-alpha-100: rgb(255, 255, 255, 0.8);
+$color-white-alpha-200: rgb(255, 255, 255, 0.5);
+$color-white-alpha-300: rgb(255, 255, 255, 0.3);
+
+// Main gradient
+$main-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #4fdae2 99.96%);
+$main-gradient-100: linear-gradient(
+  90.05deg,
+  rgba(228, 116, 241, 0.6) 0.04%,
+  rgba(228, 116, 241, 0.6) 0.05%,
+  rgba(79, 218, 226, 0.6) 99.96%
+);
+$main-gradient-200: linear-gradient(
+  90.05deg,
+  rgba(228, 116, 241, 0.4) 0.04%,
+  rgba(228, 116, 241, 0.4) 0.05%,
+  rgba(79, 218, 226, 0.4) 99.96%
+);
+$main-gradient-300: linear-gradient(
+  90.05deg,
+  rgba(228, 116, 241, 0.1) 0.04%,
+  rgba(228, 116, 241, 0.1) 0.05%,
+  rgba(79, 218, 226, 0.1) 99.96%
+);
+
+// Primary
+$pink-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #81b9e8 99.96%);
+$green-gradient: linear-gradient(90.05deg, #81b9e8 0.04%, #81b9e8 0.05%, #4fdae2 99.96%);
+$color-pink: #e474f1;
+$color-pink-alpha-100: rgba(228, 116, 241, 0.2);
+$color-purple: #b397ed;
+$color-purple-alpha-100: rgba(179, 151, 237, 0.2);
+$color-blue: #81b9e8;
+$color-blue-alpha-100: rgba(129, 185, 232, 0.2);
+$color-green: #4fdae2;
+$color-green-alpha-100: rgba(79, 218, 226, 0.2);
+
+// Secondary
+$color-light-green: #2dd57e;
+$color-dark-green: #1e5d23;
+$color-soft-green: #d7f5e3;
+$color-bright-red: #fd4482;
+$color-soft-red: #ffdae6;
+$color-bright-purple: #5e44fd;
+$color-soft-purple: #7b6deb;
+$color-bright-pink: #f725e8;
+$color-soft-pink: #fdd3fa;
+$color-bright-lilac: #e984fa;
+$color-soft-lilac: #fbe6fe;
+$color-yellow: #f8d830;
+$color-gray: #1b1926;
+
+// Error
+$color-error: #ff9994;
+
+// z-index
+$top-panel: 10;
+$mobile-menu: 20;
