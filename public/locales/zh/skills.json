@@ -1,6 +1,6 @@
 {
-  "titleServices": "Services",
-  "titleTechnologies": "Technologies",
+  "titleServices": "Услуги zh",
+  "titleTechnologies": "Технологии zh",
   "Backend": {
     "title": "Backend разработка (en)",
     "scope": [".Net Core 3-6", "C#", "Python", "Flask", "FastAPI", "JavaScript", "NestJS", "NodeJS", "PostgreSQL", "Clickhouse"],

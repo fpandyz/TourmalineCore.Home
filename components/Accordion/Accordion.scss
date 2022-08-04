@@ -35,7 +35,8 @@
       bottom: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:active {
       background-image:
         linear-gradient(
           90.05deg,
@@ -86,6 +87,13 @@
       flex-wrap: wrap;
       margin-top: 12px;
       color: $color-green;
+      opacity: 1;
+      transition: all 0.3s;
+
+      &--hiden {
+        height: 0;
+        opacity: 0;
+      }
     }
   }
 
@@ -182,4 +190,8 @@
     margin-right: 0;
     margin-left: 0;
   }
+}
+
+.accordion__labels .accordion__content {
+  display: none;
 }

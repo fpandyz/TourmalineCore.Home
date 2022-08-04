@@ -21,7 +21,9 @@ function Skills() {
           key={item.title}
           title={item.title}
           scope={item.scope}
+          titleServices={t('titleServices')}
           services={item.services}
+          titleTechnologies={t('titleTechnologies')}
           technologies={item.technologies}
         />
       ))}

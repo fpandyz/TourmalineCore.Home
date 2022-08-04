@@ -1,4 +1,6 @@
 {
+  "titleServices": "Услуги",
+  "titleTechnologies": "Технологии",
   "Backend": {
     "title": "Backend разработка",
     "scope": [".Net Core 3-6", "C#", "Python", "Flask", "FastAPI", "JavaScript", "NestJS", "NodeJS", "PostgreSQL", "Clickhouse"],
