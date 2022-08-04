@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 import { GetServerSideProps } from 'next';
 import PageHead from '../components/PageHead/PageHead';
+
+import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
 
 export default function HomePage() {
@@ -24,7 +26,7 @@ export default function HomePage() {
       />
 
       <LayoutHomePage>
-        <h1>Выделенная команда для создания вашего продукта</h1>
+        <Skills />
       </LayoutHomePage>
     </>
   );
@@ -32,6 +34,6 @@ export default function HomePage() {
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer', 'heroBlock'])),
+    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer', 'heroBlock', 'skills'])),
   },
 });
