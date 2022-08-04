@@ -9,15 +9,21 @@
   }
 
   &__wrapper {
-    display: flex;
+    @include tablet-xl {
+      display: flex;
+    }
   }
 
   &__nav {
     display: none;
     margin-right: 114px;
 
-    @include desktop {
+    @include tablet-xl {
       display: block;
     }
+  }
+
+  &__content {
+    flex-grow: 1;
   }
 }
