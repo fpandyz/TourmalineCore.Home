@@ -6,6 +6,7 @@ import PageHead from '../components/PageHead/PageHead';
 
 import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
+import Services from '../components/Services/Services';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -26,6 +27,7 @@ export default function HomePage() {
       />
 
       <LayoutHomePage>
+        <Services />
         <Skills />
       </LayoutHomePage>
     </>
