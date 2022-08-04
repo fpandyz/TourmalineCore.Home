@@ -1,0 +1,139 @@
+.some-complited-projects {
+  &__title {
+    margin-bottom: 32px;
+  }
+
+  &__gradient {
+    background:
+      linear-gradient(
+        90deg,
+        rgba($color-pink, 1),
+        rgba($color-pink, 1),
+        rgba($color-green, 1)
+      );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+
+    @include tablet {
+      background: none;
+      background-clip: none;
+    }
+  }
+
+  &__carousel {
+    .carousel .slide {
+      text-align: left;
+    }
+
+    .control-dots {
+      // bottom: 0;
+
+      // margin: 10px 0;
+      padding: 0;
+      width: 8px;
+      height: 8px;
+
+      // width: 100%;
+      text-align: center;
+      background: $color-white-alpha-200;
+
+      .dot.selected,
+      &:focus,
+      &:hover {
+        position: relative;
+        background-image: $main-gradient;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: var(--gap);
+          top: var(--gap);
+          border-radius: inherit;
+          width: calc(100% - var(--gap) * 2);
+          height: calc(100% - var(--gap) * 2);
+          background: linear-gradient(180deg, $color-purple-black, $color-purple-black);
+          opacity: 0.4;
+        }
+
+        &::before {
+          --gap: 1px;
+        }
+
+        &::after {
+          --gap: 2px;
+        }
+      }
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__container-cards {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      max-width: 100%;
+      gap: 0 24px;
+    }
+
+    @include tablet-xl {
+      gap: 0 24px;
+    }
+
+    @include desktop {
+      gap: 0 32px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__anchor {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    background: $color-white-alpha-200;
+
+    // .dot.selected,
+    &:focus,
+    &:hover {
+      position: relative;
+      background-image: $main-gradient;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: var(--gap);
+        top: var(--gap);
+        border-radius: inherit;
+        width: calc(100% - var(--gap) * 2);
+        height: calc(100% - var(--gap) * 2);
+        background: linear-gradient(180deg, $color-purple-black, $color-purple-black);
+        opacity: 0.4;
+      }
+
+      &::before {
+        --gap: 1px;
+      }
+
+      &::after {
+        --gap: 2px;
+      }
+    }
+  }
+}
