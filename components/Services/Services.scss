@@ -17,10 +17,7 @@
   }
 
   &__gradient-title {
-    display: block;
-    color: transparent;
-    background-image: linear-gradient(90.09deg, #e977f6 0.08%, #51dce4 78.9%);
-    background-clip: text;
+    @include gradient-text;
 
     @include tablet {
       display: inline;
@@ -33,10 +30,7 @@
     color: $color-white;
 
     @include tablet {
-      display: block;
-      color: transparent;
-      background-image: linear-gradient(90.09deg, #e977f6 0.08%, #51dce4 78.9%);
-      background-clip: text;
+      @include gradient-text;
     }
   }
 
