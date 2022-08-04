@@ -59,7 +59,7 @@ export async function getStaticProps({
   if (!currentArticleFolder) {
     return {
       props: {
-        ...(await serverSideTranslations(locale, ['article', 'common', 'home', 'team'])),
+        ...(await serverSideTranslations(locale, ['common', 'footer', 'articles'])),
         article: {},
         metadata: {},
       },
@@ -71,7 +71,7 @@ export async function getStaticProps({
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['article', 'common', 'home', 'team'])),
+      ...(await serverSideTranslations(locale, ['common', 'footer', 'articles'])),
       article,
       metadata,
     },

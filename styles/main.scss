@@ -6,12 +6,20 @@
 
 // components
 @import "../components/Layout/Layout";
+@import "../components/LayoutHomePage/LayoutHomePage";
 @import "../components/Header/Header";
 @import "../components/Footer/Footer";
+@import "../components/PrimaryButton/Button";
+@import "../components/Input/Input";
+@import "../components/Textarea/Textarea";
 @import "../components/LangSwitch/LangSwitch";
+@import "../components/MobileLangSwitch/MobileLangSwitch";
+@import "../components/MobileMenu/MobileMenu";
+@import "../components/SocialLinks/SocialLinks";
 @import "../components/Accordion/Accordion";
 
 // components pages
+@import "../components/HeroBlock/HeroBlock";
 @import "../components/Skills/Skills";
 
 // partials

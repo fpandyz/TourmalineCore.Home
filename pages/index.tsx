@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { GetServerSideProps } from 'next';
 import PageHead from '../components/PageHead/PageHead';
 
-import Layout from '../components/Layout/Layout';
 import Skills from '../components/Skills/Skills';
+import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -25,15 +25,15 @@ export default function HomePage() {
         }}
       />
 
-      <Layout>
+      <LayoutHomePage>
         <Skills />
-      </Layout>
+      </LayoutHomePage>
     </>
   );
 }
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string, ['common', 'skills'])),
+    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer', 'heroBlock', 'skills'])),
   },
 });
