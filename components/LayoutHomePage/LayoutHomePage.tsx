@@ -18,7 +18,7 @@ function LayoutHomePage({
         <div className="layout-home-page__nav">
           navigations
         </div>
-        <div>
+        <div className="layout-home-page__content">
           {children}
         </div>
       </main>
