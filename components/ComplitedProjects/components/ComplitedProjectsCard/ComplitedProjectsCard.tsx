@@ -11,22 +11,21 @@ function ComplitedProjectsCard({
   const { t } = useTranslation('complitedProjects');
 
   return (
-    <div className="complited-project-card">
-      <a
-        href={complitedProject.link}
-        target="_blink"
-        className="complited-project-card__link"
-      >
-        <h3 className="complited-project-card__title">{complitedProject.title}</h3>
-        <span className="complited-project-card__description">{t(complitedProject.descriptionName)}</span>
-        <div className="ratio ratio--16x9 complited-project-card__image">
-          <Image src={`/images/${complitedProject.image}.png`} layout="fill" />
-        </div>
-        <span className="complited-project-card__arrow">
-          {t('goToProject')}
-        </span>
-      </a>
-    </div>
+    <a
+      href={complitedProject.link}
+      target="_blink"
+      className="complited-project-card"
+    >
+      <h3 className="complited-project-card__title">{complitedProject.title}</h3>
+      <span className="complited-project-card__description">{t(complitedProject.descriptionName)}</span>
+      <div className="ratio ratio--16x9 complited-project-card__image">
+        <Image src={`/images/${complitedProject.image}.png`} layout="fill" />
+      </div>
+      <span className="complited-project-card__link">
+        {t('goToProject')}
+        <span className="complited-project-card__arrow" />
+      </span>
+    </a>
   );
 }
 

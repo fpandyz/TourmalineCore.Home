@@ -1,9 +1,4 @@
 .complited-projects {
-  // margin: 0 auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
   &__title {
     margin-bottom: 32px;
   }
@@ -21,7 +16,6 @@
   &__carousel {
     position: relative;
     margin-bottom: 24px;
-    max-width: 350px;
 
     .carousel .slide {
       text-align: left;
@@ -103,6 +97,10 @@
     @include desktop {
       gap: 0 32px;
     }
+  }
+
+  &__card {
+    width: 50%;
   }
 
   @include tablet {

@@ -81,7 +81,7 @@ ol {
 }
 
 @mixin gradient-text {
-  display: block;
+  display: inline-block;
   color: transparent;
   background: linear-gradient(90.09deg, #e977f6 0.08%, #51dce4 78.9%);
   background-clip: text;

@@ -20,7 +20,10 @@ function ComplitedProjects() {
       <ul className="complited-projects__cards-container">
         {
           complitedProjects.map((complitedProject) => (
-            <li key={complitedProject.title}>
+            <li
+              key={complitedProject.title}
+              className="complited-projects__card"
+            >
               <ComplitedProjectsCard complitedProject={complitedProject} />
             </li>
           ))
