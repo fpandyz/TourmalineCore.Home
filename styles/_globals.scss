@@ -90,12 +90,14 @@ p + p {
 
   &--3x4 {
     &::before {
+      /* stylelint-disable-next-line scss/no-global-function-names */
       padding-bottom: percentage(calc(4 / 3));
     }
   }
 
   &--16x9 {
     &::before {
+      /* stylelint-disable-next-line scss/no-global-function-names */
       padding-bottom: percentage(calc(9 / 16));
     }
   }
