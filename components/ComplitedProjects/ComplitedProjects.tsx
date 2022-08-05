@@ -3,16 +3,16 @@ import { Carousel } from 'react-responsive-carousel';
 import { complitedProjects } from '../../utils/consts/complitedProjects';
 import ComplitedProjectsCard from './components/ComplitedProjectsCard/ComplitedProjectsCard';
 
-function SomeComplitedProjects() {
+function ComplitedProjects() {
   return (
-    <section className="section some-complited-projects">
-      <h2 className="some-complited-projects__title">
+    <section className="section complited-projects">
+      <h2 className="complited-projects__title">
         Некоторые
         {' '}
-        <span className="some-complited-projects__gradient">реализованные проекты</span>
+        <span className="complited-projects__gradient">реализованные проекты</span>
       </h2>
 
-      <ul className="some-complited-projects__container-cards">
+      <ul className="complited-projects__cards-container">
         {
           complitedProjects.map((complitedProject) => (
             <li key={complitedProject.title}>
@@ -23,7 +23,7 @@ function SomeComplitedProjects() {
       </ul>
 
       <div
-        className="some-complited-projects__carousel"
+        className="complited-projects__carousel"
       >
         <Carousel
           showArrows={false}
@@ -45,4 +45,4 @@ function SomeComplitedProjects() {
   );
 }
 
-export default SomeComplitedProjects;
+export default ComplitedProjects;

@@ -1,4 +1,4 @@
-.some-complited-projects {
+.complited-projects {
   &__title {
     margin-bottom: 32px;
   }
@@ -84,13 +84,11 @@
     }
   }
 
-  &__container-cards {
+  &__cards-container {
     display: none;
 
     @include tablet {
       display: flex;
-
-      // max-width: 100%;
       gap: 0 24px;
     }
 
