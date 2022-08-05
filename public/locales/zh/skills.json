@@ -93,7 +93,7 @@
   },
   "UI/UX": {
     "title": "UI/UX设计",
-    "scope": ["Figma"],
+    "scope": ["Figma", "Adobe XD", "Photoshop"],
     "services": [
       "Создание адаптивного дизайна (zh)",
       "Разработка дизайн-системы (zh)"
