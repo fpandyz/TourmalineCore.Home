@@ -1,6 +1,6 @@
 export type ComplitedProject = {
   title: string;
-  description: string;
+  descriptionName: string;
   image: string;
   link: string;
 };
@@ -8,13 +8,13 @@ export type ComplitedProject = {
 export const complitedProjects: ComplitedProject[] = [
   {
     title: 'TradeHack',
-    description: 'Разработали сервис аналитики товаров для маркетплейса Wildberries',
+    descriptionName: 'descriptionTradeHack',
     image: 'trade-hack',
     link: 'https://my.tradehack.ru/',
   },
   {
     title: 'FairAction',
-    description: 'Разработали сервис аналитики товаров для маркетплейса Wildberries',
+    descriptionName: 'descriptionFairAction',
     image: 'fair-action',
     link: 'https://fairaction.ngo/',
   },

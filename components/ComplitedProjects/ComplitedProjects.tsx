@@ -1,15 +1,20 @@
+import { useTranslation } from 'next-i18next';
 import { Carousel } from 'react-responsive-carousel';
 
 import { complitedProjects } from '../../utils/consts/complitedProjects';
 import ComplitedProjectsCard from './components/ComplitedProjectsCard/ComplitedProjectsCard';
 
 function ComplitedProjects() {
+  const { t } = useTranslation('complitedProjects');
+
   return (
     <section className="section complited-projects">
       <h2 className="complited-projects__title">
-        Некоторые
+        {t('title')}
         {' '}
-        <span className="complited-projects__gradient">реализованные проекты</span>
+        <span className="complited-projects__gradient">
+          {t('titleGradient')}
+        </span>
       </h2>
 
       <ul className="complited-projects__cards-container">
