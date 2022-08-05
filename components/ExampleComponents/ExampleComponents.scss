@@ -1,0 +1,15 @@
+.example-components {
+  &__title {
+    @include gradient-text;
+
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    &--top {
+      margin-top: 20px;
+    }
+  }
+}
