@@ -13,7 +13,7 @@ function ExampleComponents() {
         <Input id="input" label="Input" description="Input" />
 
         <h3 className="title-type-3 example-components__subtitle example-components__subtitle--top">Input Error</h3>
-        <Input id="input" label="Input" description="Input" isError />
+        <Input id="input-error" label="Input" description="Input" isError />
       </section>
 
       <section className="section">
@@ -21,7 +21,7 @@ function ExampleComponents() {
         <Textarea id="textarea" label="Textarea" description="Textarea" />
 
         <h3 className="title-type-3 example-components__subtitle example-components__subtitle--top">Textarea Error</h3>
-        <Textarea id="textarea" label="Textarea" description="Textarea" isError />
+        <Textarea id="textarea-error" label="Textarea" description="Textarea" isError />
       </section>
 
       <section className="section">
@@ -36,7 +36,7 @@ function ExampleComponents() {
 
       <section className="section">
         <h3 className="title-type-3 example-components__subtitle">ExternalLink</h3>
-        <ExternalLink href="/">ExternalLink</ExternalLink>
+        <ExternalLink href="/" className="example-components__external-link">ExternalLink</ExternalLink>
       </section>
     </div>
 
