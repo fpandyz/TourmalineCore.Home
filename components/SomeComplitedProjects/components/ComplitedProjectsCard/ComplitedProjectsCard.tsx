@@ -8,9 +8,7 @@ function ComplitedProjectsCard({
   complitedProject: ComplitedProject;
 }) {
   return (
-    <li
-      className="complited-project-card"
-    >
+    <div className="complited-project-card">
       <a
         href={complitedProject.link}
         target="_blink"
@@ -25,7 +23,7 @@ function ComplitedProjectsCard({
           Перейти на сайт
         </span>
       </a>
-    </li>
+    </div>
   );
 }
 
