@@ -1,8 +1,10 @@
 {
-  "titleServices": "Услуги zh",
-  "titleTechnologies": "Технологии zh",
+  "titleSection": "",
+  "gradientTitleSection": "工作范围",
+  "titleServices": "服务",
+  "titleTechnologies": "技术",
   "Backend": {
-    "title": "Backend разработка (en)",
+    "title": "后端开发",
     "scope": [".Net Core 3-6", "C#", "Python", "Flask", "FastAPI", "JavaScript", "NestJS", "NodeJS", "PostgreSQL", "Clickhouse"],
     "services": [
       "Разработка решений на базе фреймворков",
@@ -39,7 +41,7 @@
     ]
   },
   "Frontend": {
-    "title": "Frontend разработка (en)",
+    "title": "前端开发",
     "scope": ["React", "NextJS"],
     "services": [
       "Разработка решений на базе фреймворков",
@@ -76,7 +78,7 @@
     ]
   },
   "QA": {
-    "title": "QA (en)",
+    "title": "测试",
     "scope": ["Postman", "Cypress", "Jess"],
     "services": [
       "Разработка решений на базе фреймворков",
@@ -113,7 +115,7 @@
     ]
   },
   "Machine": {
-    "title": "Машинное обучение (en)",
+    "title": "机器学习",
     "scope": ["Python", "Sklem", "Pandas", "Numpy", "OpenCV", "PyTorch", "TensorFlow", "Keras"],
     "services": [
       "Разработка решений на базе фреймворков",
@@ -150,7 +152,7 @@
     ]
   },
   "UI/UX": {
-    "title": "UI/UX дизайн (en)",
+    "title": "UI/UX设计",
     "scope": ["Figma"],
     "services": [
       "Разработка решений на базе фреймворков",

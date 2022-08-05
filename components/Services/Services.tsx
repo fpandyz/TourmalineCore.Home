@@ -1,39 +1,34 @@
+import { useTranslation } from 'next-i18next';
+
 function Services() {
+  const { t } = useTranslation('services');
+
   return (
     <section className="section services">
       <h2 className="title-type-2 services__title">
-        Предоставляем сотрудников
+        {t('titleSection')}
         {' '}
-        <span className="services__gradient-title">владельцам продуктов и командам разработки</span>
+        <span className="services__gradient-title">{t('gradientTitleSection')}</span>
       </h2>
 
       <div className="services__inner">
         <div className="services__block-first">
           <h3 className="title-type-3 services__subtitle">
-            Возьмем на себя
+            {t('firstSubtitle')}
             {' '}
-            <span className="services__gradient-subtitle">технические решения</span>
+            <span className="services__gradient-subtitle">{t('gradientFirstSubtitle')}</span>
           </h3>
 
-          <p className="services__description">
-            Вместе создадим ваш продукт с нуля
-            и превратим идею в реальный проект.
-            Мы разрабатываем корпоративные сайты и сложные системы, задействуя все направления разработки: дизайн,
-            фронтенд, бэкенд, тестирование
-            и машинное обучение.
-          </p>
+          <p className="services__description">{t('firstDescription')}</p>
         </div>
         <div className="services__block-second">
           <h3 className="title-type-3 services__subtitle">
-            Мы усилим вашу команду необходимой
+            {t('secondSubtitle')}
             {' '}
-            <span className="services__gradient-subtitle">экспертизой</span>
+            <span className="services__gradient-subtitle">{t('gradientSecondSubtitle')}</span>
           </h3>
 
-          <p className="services__description">
-            Быстро вольемся в текущие задачи
-            и поможем разрабатывать функционал быстрее. Настроим рабочий процесс, применив практики, которые хорошо работают для нас.
-          </p>
+          <p className="services__description">{t('secondDescription')}</p>
         </div>
       </div>
     </section>

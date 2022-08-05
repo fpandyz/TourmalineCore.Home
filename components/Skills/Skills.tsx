@@ -11,9 +11,9 @@ function Skills() {
   return (
     <section className="section skills">
       <h2 className="title-type-2 skills__title">
-        Наши
+        {t('titleSection')}
         {' '}
-        <span className="skills__gradient-title">возможности</span>
+        <span className="skills__gradient-title">{t('gradientTitleSection')}</span>
       </h2>
 
       {teamSkills.map((item) => (
