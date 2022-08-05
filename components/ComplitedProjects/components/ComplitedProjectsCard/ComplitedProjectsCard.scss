@@ -71,25 +71,14 @@
     position: relative;
     margin-top: 48px;
     margin-bottom: 42px;
-    height: 153px;
-
-    @include tablet {
-      height: 153px;
-    }
-
-    @include tablet-xl {
-      height: 200px;
-    }
 
     @include desktop {
       margin-bottom: 48px;
-      height: 228px;
     }
 
     @include desktop-xl {
       margin-top: 64px;
       margin-bottom: 50px;
-      height: 272px;
     }
   }
 

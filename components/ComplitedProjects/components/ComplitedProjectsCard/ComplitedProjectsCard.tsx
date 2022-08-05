@@ -16,7 +16,7 @@ function ComplitedProjectsCard({
       >
         <h3 className="complited-project-card__title">{complitedProject.title}</h3>
         <span className="complited-project-card__description">{complitedProject.description}</span>
-        <div className="complited-project-card__image">
+        <div className="ratio ratio--16x9 complited-project-card__image">
           <Image src={`/images/${complitedProject.image}.png`} layout="fill" />
         </div>
         <span className="complited-project-card__arrow">
