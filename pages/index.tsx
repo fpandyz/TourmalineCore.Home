@@ -6,7 +6,7 @@ import PageHead from '../components/PageHead/PageHead';
 
 import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
-import ComplitedProjects from '../components/ComplitedProjects/ComplitedProjects';
+import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
 import Services from '../components/Services/Services';
 
 export default function HomePage() {
@@ -31,7 +31,7 @@ export default function HomePage() {
         <h1>Выделенная команда для создания вашего продукта</h1>
         <Services />
         <Skills />
-        <ComplitedProjects />
+        <CompletedProjects />
       </LayoutHomePage>
     </>
   );
@@ -39,6 +39,6 @@ export default function HomePage() {
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer', 'heroBlock', 'skills', 'services', 'complitedProjects'])),
+    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer', 'heroBlock', 'skills', 'services', 'completedProjects'])),
   },
 });

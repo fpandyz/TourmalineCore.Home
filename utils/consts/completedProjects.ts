@@ -1,11 +1,11 @@
-export type ComplitedProject = {
+export type CompletedProject = {
   title: string;
   descriptionName: string;
   image: string;
   link: string;
 };
 
-export const complitedProjects: ComplitedProject[] = [
+export const completedProjects: CompletedProject[] = [
   {
     title: 'TradeHack',
     descriptionName: 'descriptionTradeHack',
