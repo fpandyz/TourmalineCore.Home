@@ -10,7 +10,7 @@ export const completedProjects: CompletedProject[] = [
     title: 'TradeHack',
     descriptionName: 'descriptionTradeHack',
     image: 'trade-hack',
-    link: 'https://my.tradehack.ru/',
+    link: 'https://tradehack.ru/',
   },
   {
     title: 'FairAction',

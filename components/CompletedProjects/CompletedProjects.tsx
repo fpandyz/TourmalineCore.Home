@@ -5,7 +5,7 @@ import { completedProjects } from '../../utils/consts/completedProjects';
 import CompletedProjectsCard from './components/CompletedProjectsCard/CompletedProjectsCard';
 
 function CompletedProjects() {
-  const { t } = useTranslation('complitedProjects');
+  const { t } = useTranslation('completedProjects');
 
   return (
     <section className="section completed-projects">

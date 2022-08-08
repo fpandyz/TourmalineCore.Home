@@ -8,7 +8,7 @@ function CompletedProjectsCard({
 }: {
   completedProject: CompletedProject;
 }) {
-  const { t } = useTranslation('complitedProjects');
+  const { t } = useTranslation('completedProjects');
 
   return (
     <a
