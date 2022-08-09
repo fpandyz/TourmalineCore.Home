@@ -20,7 +20,7 @@ function LayoutHomePage({
         <HeroBlock />
       </div>
       <main className="container layout-home-page__wrapper">
-        <div className="layout-home-page__nav">
+        <div className="section layout-home-page__nav">
           <Navigation navigationLinks={navigationLinks} />
         </div>
         <div className="layout-home-page__content">
