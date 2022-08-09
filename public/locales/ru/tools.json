@@ -1,8 +1,7 @@
 {
-  "titleSection": "Наши",
-  "gradientTitleSection": "возможности",
-  "titleServices": "Услуги",
-  "titleTechnologies": "Технологии",
+  "title": "Инструменты",
+  "subtitle": "Используем в работе доску и начинаем проект с базовых колонок",
+  "caption": "Пример доски проекта в Clickup на начальном этапе работ",
   "back": "back",
   "front": "front",
   "feature": "feature",

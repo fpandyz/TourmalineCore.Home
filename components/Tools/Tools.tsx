@@ -10,9 +10,9 @@ function Tools() {
 
   return (
     <section className="section tools">
-      <h2 className="title-type-3">Инструменты</h2>
+      <h2 className="title-type-3">{t('title')}</h2>
 
-      <div className="tools__subtitle">Используем в работе доску и начинаем проект с базовых колонок</div>
+      <div className="tools__subtitle">{t('subtitle')}</div>
       <div className="tools__list">
         {tools.map((tool) => (
           <div
@@ -42,10 +42,7 @@ function Tools() {
           </div>
         ))}
       </div>
-      <div className="caption tools__caption">
-        Пример доски проекта в Clickup
-        на начальном этапе работ
-      </div>
+      <div className="caption tools__caption">{t('caption')}</div>
     </section>
   );
 }
