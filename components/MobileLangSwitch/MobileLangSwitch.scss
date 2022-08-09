@@ -15,8 +15,15 @@
     opacity: 0.5;
 
     &--active,
-    &:focus {
+    &:focus,
+    &:active {
       opacity: 1;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 

@@ -16,10 +16,6 @@ type HeaderLinks = {
 
 const headerLinks: HeaderLinks = [
   {
-    id: 'ourCompany',
-    link: '/',
-  },
-  {
     id: 'articles',
     link: '/articles',
   },

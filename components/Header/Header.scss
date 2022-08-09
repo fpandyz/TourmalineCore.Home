@@ -38,8 +38,14 @@
     transition: opacity 0.3s;
 
     &:focus,
-    &:hover {
+    &:active {
       opacity: 0.8;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 
@@ -49,6 +55,7 @@
     height: 16px;
     background-color: transparent;
     cursor: pointer;
+    transition: opacity 0.3s;
 
     svg {
       display: block;
@@ -56,8 +63,19 @@
       height: 100%;
     }
 
+    &:focus,
+    &:active {
+      opacity: 0.6;
+    }
+
     @include desktop {
       display: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 
