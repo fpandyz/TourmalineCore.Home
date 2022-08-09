@@ -17,12 +17,17 @@
 @import "../components/MobileMenu/MobileMenu";
 @import "../components/SocialLinks/SocialLinks";
 @import "../components/Accordion/Accordion";
+@import "../components/Tools/ToolCard/ToolCard";
+@import "../components/Tools/ToolHeader/ToolHeader";
 
 // components pages
 @import "../components/ExampleComponents/ExampleComponents";
 @import "../components/HeroBlock/HeroBlock";
 @import "../components/Services/Services";
 @import "../components/Skills/Skills";
+
+// @import "../components/Tools/Tools";
+@import "../components/Tools/Tools";
 
 // partials
 @import "../partials/Articles/Articles";

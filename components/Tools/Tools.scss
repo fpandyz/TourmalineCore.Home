@@ -1,0 +1,78 @@
+.tools {
+  &__subtitle {
+    margin-top: 12px;
+    margin-bottom: 48px;
+    color: $color-white-alpha-100;
+  }
+
+  &__caption {
+    margin-top: 32px;
+    margin-left: auto;
+    width: 282px;
+    text-align: right;
+
+    @include tablet {
+      margin-left: 0;
+      width: auto;
+    }
+
+    @include desktop {
+      margin-top: 48px;
+    }
+
+    @include desktop-xl {
+      margin-top: 64px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 32px;
+    scrollbar-color:
+      linear-gradient(90.09deg, #e977f6 0.08%, #a2a6ee 99.85%)
+      rgba(255, 255, 255, 0.2);
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      border-radius: 20px;
+      height: 1px;
+    }
+
+    &::-webkit-scrollbar-track {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      height: 1px;
+      background-image: linear-gradient(90.09deg, #e977f6 0.08%, #a2a6ee 99.85%);
+    }
+
+    @include tablet {
+      padding-bottom: 100px;
+    }
+
+    @include desktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__item {
+    flex: none;
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include tablet {
+      margin-right: 24px;
+    }
+
+    @include desktop {
+      margin-right: 32px;
+    }
+  }
+}

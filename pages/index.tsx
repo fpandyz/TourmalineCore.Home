@@ -7,6 +7,7 @@ import PageHead from '../components/PageHead/PageHead';
 import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
 import Services from '../components/Services/Services';
+import Tools from '../components/Tools/Tools';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -29,6 +30,7 @@ export default function HomePage() {
       <LayoutHomePage>
         <Services />
         <Skills />
+        <Tools />
       </LayoutHomePage>
     </>
   );
@@ -36,6 +38,6 @@ export default function HomePage() {
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer', 'heroBlock', 'skills', 'services'])),
+    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer', 'heroBlock', 'skills', 'services', 'tools'])),
   },
 });
