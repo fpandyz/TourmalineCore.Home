@@ -8,12 +8,9 @@
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
+    display: block;
     width: 135px;
     height: 40px;
-    text-decoration: none;
-    color: inherit;
 
     svg {
       display: block;
