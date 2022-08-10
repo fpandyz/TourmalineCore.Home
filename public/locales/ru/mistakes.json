@@ -1,0 +1,102 @@
+{
+  "title": "Работа над ошибками",
+  "subtitle": "Всегда стараемся улучшить работу с помощью ретроспектив",
+  "caption": "Ретро команды по проекту в конце спринта",
+  "good": {
+    "title": "Что было хорошо?",
+    "mistakes": [
+      {
+        "text": "Близки к завершению MVP",
+        "developer": "Victor"
+      },
+      {
+        "text": "Сделали сложные преобразователи",
+        "developer": "Yuliya"
+      },
+      {
+        "text": "Юля провела успешное демо",
+        "developer": "Oleg"
+      },
+      {
+        "text": "12 хороших карточек",
+        "developer": "Andrey"
+      }
+    ]
+  },
+  "bad": {
+    "title": "Что было плохо?",
+    "mistakes": [
+      {
+        "text": "Упавшая база",
+        "developer": "Oleg"
+      },
+      {
+        "text": "Не успели протестить все перед демо",
+        "developer": "Victor"
+      },
+      {
+        "text": "Долгое ревью",
+        "developer": "Victor"
+      },
+      {
+        "text": "Упавший интернет за час до демо",
+        "developer": "Yuliya"
+      }
+    ]
+  },
+  "problems": {
+    "title": "Главные проблемы",
+    "mistakes": [
+      {
+        "text": "Копящийся рефакторинг (бэкенд)",
+        "developer": "Oleg"
+      },
+      {
+        "text": "1/8 фронтендера (по времени) на проект",
+        "developer": "Oleg"
+      },
+      {
+        "text": "Тотальная нехватка времени",
+        "developer": "Victor"
+      }
+    ]
+  },
+  "ideas": {
+    "title": "Идеи",
+    "mistakes": [
+      {
+        "text": "Закрыть MVP",
+        "developer": "Oleg"
+      },
+      {
+        "text": "Добавить в сутки 2 часа",
+        "developer": "Victor"
+      },
+      {
+        "text": "Общее напоминание о таймшите в чатик",
+        "developer": "Yuliya"
+      }
+    ]
+  },
+  "study": {
+    "title": "Чему научился?",
+    "mistakes": [
+      {
+        "text": "XML + XPath",
+        "developer": "Victor"
+      },
+      {
+        "text": "pytest параметризация тестовых методов",
+        "developer": "Oleg"
+      },
+      {
+        "text": "Оценивать трудозатраты на задачи",
+        "developer": "Andrey"
+      },
+      {
+        "text": "Интеграция преобразователей",
+        "developer": "Yuliya"
+      }
+    ]
+  }
+}

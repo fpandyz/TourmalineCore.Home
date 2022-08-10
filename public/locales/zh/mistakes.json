@@ -1,0 +1,102 @@
+{
+  "title": "Работа над ошибками (zh)",
+  "subtitle": "Всегда стараемся улучшить работу с помощью ретроспектив (zh)",
+  "caption": "Ретро команды по проекту в конце спринта (zh)",
+  "good": {
+    "title": "Что было хорошо? (zh)",
+    "mistakes": [
+      {
+        "text": "Близки к завершению MVP (zh)",
+        "developer": "Victor"
+      },
+      {
+        "text": "Сделали сложные преобразователи (zh)",
+        "developer": "Yuliya"
+      },
+      {
+        "text": "Юля провела успешное демо (zh)",
+        "developer": "Oleg"
+      },
+      {
+        "text": "12 хороших карточек (zh)",
+        "developer": "Andrey"
+      }
+    ]
+  },
+  "bad": {
+    "title": "Что было плохо? (zh)",
+    "mistakes": [
+      {
+        "text": "Упавшая база (zh)",
+        "developer": "Oleg"
+      },
+      {
+        "text": "Не успели протестить все перед демо (zh)",
+        "developer": "Victor"
+      },
+      {
+        "text": "Долгое ревью (zh)",
+        "developer": "Victor"
+      },
+      {
+        "text": "Упавший интернет за час до демо (zh)",
+        "developer": "Yuliya"
+      }
+    ]
+  },
+  "problems": {
+    "title": "Главные проблемы (zh)",
+    "mistakes": [
+      {
+        "text": "Копящийся рефакторинг (бэкенд) (zh)",
+        "developer": "Oleg"
+      },
+      {
+        "text": "1/8 фронтендера (по времени) на проект (zh)",
+        "developer": "Oleg"
+      },
+      {
+        "text": "Тотальная нехватка времени (zh)",
+        "developer": "Victor"
+      }
+    ]
+  },
+  "ideas": {
+    "title": "Идеи (zh)",
+    "mistakes": [
+      {
+        "text": "Закрыть MVP (zh)",
+        "developer": "Oleg"
+      },
+      {
+        "text": "Добавить в сутки 2 часа (zh)",
+        "developer": "Victor"
+      },
+      {
+        "text": "Общее напоминание о таймшите в чатик (zh)",
+        "developer": "Yuliya"
+      }
+    ]
+  },
+  "study": {
+    "title": "Чему научился? (zh)",
+    "mistakes": [
+      {
+        "text": "XML + XPath (zh)",
+        "developer": "Victor"
+      },
+      {
+        "text": "pytest параметризация тестовых методов (zh)",
+        "developer": "Oleg"
+      },
+      {
+        "text": "Оценивать трудозатраты на задачи (zh)",
+        "developer": "Andrey"
+      },
+      {
+        "text": "Интеграция преобразователей (zh)",
+        "developer": "Yuliya"
+      }
+    ]
+  }
+}
