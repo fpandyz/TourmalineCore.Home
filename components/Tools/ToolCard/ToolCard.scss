@@ -17,7 +17,9 @@
 
   &__icon-link {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 4px;
     border-radius: 14px;
     width: 9px;
@@ -26,20 +28,13 @@
 
     svg {
       position: absolute;
-      left: 1.5px;
-      top: 1.3px;
-      width: 6px;
+      width: 5px;
       height: 6px;
     }
 
     @include desktop-xl {
       width: 12px;
       height: 12px;
-
-      svg {
-        left: 3px;
-        top: 3px;
-      }
     }
   }
 
@@ -140,11 +135,21 @@
       width: 7px;
       height: 10px;
     }
+
+    @include desktop-xl {
+      margin-top: 16px;
+      font-size: 11px;
+    }
   }
 
   &__tags {
     margin-top: 12px;
     font-size: 9px;
+
+    @include desktop-xl {
+      margin-top: 16px;
+      font-size: 11px;
+    }
   }
 
   &__tag {
@@ -177,10 +182,18 @@
       color: $color-bright-lilac;
       background-color: $color-soft-lilac;
     }
+
+    @include desktop-xl {
+      padding: 4px 12px;
+    }
   }
 
   & + & {
     margin-top: 12px;
+
+    @include desktop-xl {
+      margin-top: 16px;
+    }
   }
 
   @include tablet-xl {
@@ -191,5 +204,6 @@
   @include desktop-xl {
     padding: 16px 12px;
     min-width: 216px;
+    font-size: 14px;
   }
 }

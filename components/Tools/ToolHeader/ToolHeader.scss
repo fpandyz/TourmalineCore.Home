@@ -105,6 +105,8 @@
   }
 
   @include desktop-xl {
+    margin-bottom: 16px;
+    padding: 20px 12px;
     min-width: 216px;
   }
 }
