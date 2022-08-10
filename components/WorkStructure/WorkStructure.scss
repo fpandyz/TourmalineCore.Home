@@ -1,6 +1,6 @@
 .work-structure {
-  --margin: 32px;
-  --top: 146px;
+  $margin: 32px;
+  $top: 146px;
 
   &__subtitle {
     margin-top: 12px;
@@ -11,8 +11,8 @@
   &__images {
     position: relative;
     display: flex;
-    margin-top: var(--margin);
-    margin-bottom: calc(var(--margin) + var(--top));
+    margin-top: $margin;
+    margin-bottom: calc($margin + $top);
   }
 
   &__first-image {
@@ -23,7 +23,7 @@
     position: absolute;
     right: 0;
     z-index: 1;
-    margin-top: var(--top);
+    margin-top: $top;
   }
 
   &__caption {
