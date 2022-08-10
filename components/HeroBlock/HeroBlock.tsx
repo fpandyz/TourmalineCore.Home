@@ -14,10 +14,7 @@ function HeroBlock() {
           </h1>
           <div className="title-type-4 hero-block__description">{t('description')}</div>
 
-          <div className="hero-block__box-button">
-            <span>{t('buttonText')}</span>
-            <SecondaryButton className="hero-block__button" />
-          </div>
+          <SecondaryButton onClick={scrollFirstBlock} text={t('buttonText')} />
         </div>
         <div className="hero-block__video">
           <video src="/images/video.mp4" autoPlay loop playsInline muted>
@@ -28,6 +25,13 @@ function HeroBlock() {
       </div>
     </section>
   );
+
+  function scrollFirstBlock() {
+    window.scroll({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  }
 }
 
 export default HeroBlock;

@@ -3,19 +3,29 @@ import clsx from 'clsx';
 
 import IconArrow from '../../icons/icon-arrow.svg';
 
-type SecondaryButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+interface SecondaryButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  text?: string;
+}
 
 function SecondaryButton({
+  text,
   className,
   ...props
 }: SecondaryButtonProps) {
   return (
     <button
       type="button"
-      className={clsx('button secondary-button', className)}
+      className={clsx('secondary-button', className)}
       {...props}
     >
-      <IconArrow />
+      {
+        text && (
+          <span className="secondary-button__text">{text}</span>
+        )
+      }
+      <div className="button secondary-button__icon">
+        <IconArrow />
+      </div>
     </button>
   );
 }
