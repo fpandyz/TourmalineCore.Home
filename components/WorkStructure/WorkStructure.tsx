@@ -1,11 +1,15 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
-function WorkStructure() {
+function WorkStructure({
+  id,
+}: {
+  id: string;
+}) {
   const { t } = useTranslation('workStructure');
 
   return (
-    <section className="section work-structure">
+    <section id={id} className="section work-structure">
       <h2 className="title-type-3">{t('title')}</h2>
       <div className="work-structure__subtitle">{t('subtitle')}</div>
 
