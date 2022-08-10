@@ -1,7 +1,7 @@
 .tool-card {
   border-radius: 5px;
   padding: 12px 8px;
-  max-width: 164px;
+  min-width: 164px;
   font-family: $ff-inter;
   font-size: 11px;
   line-height: 1.1;
@@ -128,6 +128,8 @@
   }
 
   &__time {
+    display: flex;
+    align-items: center;
     margin-top: 12px;
     font-size: 10px;
     color: $color-white-alpha-200;
@@ -183,11 +185,11 @@
 
   @include tablet-xl {
     overflow-x: auto;
-    max-width: 176px;
+    min-width: 176px;
   }
 
   @include desktop-xl {
     padding: 16px 12px;
-    max-width: 216px;
+    min-width: 216px;
   }
 }

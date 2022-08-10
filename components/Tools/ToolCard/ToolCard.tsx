@@ -40,7 +40,6 @@ function ToolCard({
       <div className="tool-card__inner">
         <div className="tool-card__box">
           {isIconLink && (
-            // размер иконки на большом десктопе 12px
             <div className="tool-card__icon-link">
               <IconlLink />
             </div>

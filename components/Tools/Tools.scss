@@ -27,21 +27,31 @@
 
   &__list {
     display: flex;
+    justify-content: space-between;
     overflow-x: auto;
+    margin: 0 -15px;
     padding-bottom: 32px;
+    scroll-padding-left: 20px;
+    scroll-padding-right: 20px;
     scrollbar-color:
       $color-blue
       rgba(255, 255, 255, 0.2);
     scrollbar-width: thin;
 
     &::-webkit-scrollbar {
+      border: 3px solid inherit;
       border-radius: 20px;
       height: 1px;
     }
 
     &::-webkit-scrollbar-track {
+      margin: 0 16px;
       height: 1px;
       background: rgba(255, 255, 255, 0.2);
+
+      @include desktop-xl {
+        margin: 0;
+      }
     }
 
     &::-webkit-scrollbar-thumb {
@@ -60,11 +70,15 @@
   }
 
   &__item {
-    flex: none;
     margin-right: 16px;
+    width: 100%;
+
+    &:first-child {
+      margin-left: 15px;
+    }
 
     &:last-child {
-      margin-right: 0;
+      margin-right: 15px;
     }
 
     @include tablet {
