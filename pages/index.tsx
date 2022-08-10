@@ -8,6 +8,7 @@ import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
 import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
 import Services from '../components/Services/Services';
+import Process from '../components/Process/Process';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -32,6 +33,7 @@ export default function HomePage() {
         <Services />
         <Skills />
         <CompletedProjects />
+        <Process />
       </LayoutHomePage>
     </>
   );

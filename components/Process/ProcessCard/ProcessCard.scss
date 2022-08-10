@@ -1,0 +1,92 @@
+.process-card {
+  color: $color-white;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 16px;
+
+    @include desktop {
+      display: block;
+      margin-bottom: 4px;
+      color: $color-white-alpha-200;
+    }
+  }
+
+  &__time {
+    display: block;
+    color: $color-white-alpha-200;
+
+    @include desktop {
+      display: inline-block;
+    }
+  }
+
+  &__image {
+    position: relative;
+    flex: none;
+    overflow: hidden;
+    margin-right: 16px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+
+    &--mobile {
+      display: block;
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        display: block;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &__content {
+    border-radius: 5px;
+    padding: 24px 24px 32px;
+    font-family: $ff-inter;
+    font-size: 14px;
+    line-height: 1.7;
+    background: rgba(220, 213, 249, 0.1);
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    list-style: auto;
+    list-style-position: inside;
+    margin-bottom: 10px;
+  }
+
+  &__reaction {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+  }
+
+  @include desktop {
+    display: flex;
+  }
+}

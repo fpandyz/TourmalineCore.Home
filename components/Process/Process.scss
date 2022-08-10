@@ -1,0 +1,53 @@
+.process {
+  &__subtitle {
+    margin-top: 12px;
+    margin-bottom: 32px;
+    color: rgba(255, 255, 255, 0.8);
+
+    @include tablet {
+      margin-bottom: 36px;
+    }
+
+    @include desktop {
+      margin-bottom: 48px;
+    }
+
+    @include desktop-xl {
+      margin-top: 16px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__item {
+    // width: calc(50% - 16px);
+
+    & + & {
+      margin-left: 32px;
+    }
+  }
+
+  &__caption {
+    margin-top: 32px;
+    margin-left: auto;
+    max-width: 300px;
+    text-align: right;
+
+    @include tablet {
+      margin-top: 48px;
+      margin-left: 0;
+      max-width: 100%;
+    }
+
+    @include desktop {
+      margin-top: 64px;
+    }
+
+    @include desktop {
+      margin-top: 84px;
+    }
+  }
+}
