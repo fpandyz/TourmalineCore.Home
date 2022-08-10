@@ -3,13 +3,17 @@ import { useTranslation } from 'next-i18next';
 import { getSkills } from './getSkills';
 import Accordion from '../Accordion/Accordion';
 
-function Skills() {
+function Skills({
+  id,
+}: {
+  id: string;
+}) {
   const { t } = useTranslation('skills');
 
   const teamSkills = getSkills(t);
 
   return (
-    <section className="section skills">
+    <section id={id} className="section skills">
       <h2 className="title-type-2 skills__title">
         {t('titleSection')}
         {' '}
