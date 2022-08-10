@@ -1,5 +1,4 @@
 import { useTranslation } from 'next-i18next';
-import React from 'react';
 import { getMistakes } from './getMistakes';
 import MistakeItem from './MistakeItem/MistakeItem';
 
@@ -9,6 +8,7 @@ function Mistakes() {
   const dataMistakes = getMistakes(t);
 
   return (
+
     <section className="section mistakes">
       <h2 className="title-type-3">{t('title')}</h2>
 
