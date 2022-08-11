@@ -2,14 +2,18 @@ import { useTranslation } from 'next-i18next';
 import { getMistakes } from './getMistakes';
 import MistakeItem from './MistakeItem/MistakeItem';
 
-function Mistakes() {
+function Mistakes({
+  id,
+}: {
+  id: string,
+}) {
   const { t } = useTranslation('mistakes');
 
   const dataMistakes = getMistakes(t);
 
   return (
 
-    <section className="section mistakes">
+    <section id={id} className="section mistakes">
       <h2 className="title-type-3">{t('title')}</h2>
 
       <div className="mistakes__subtitle">{t('subtitle')}</div>

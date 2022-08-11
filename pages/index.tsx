@@ -32,7 +32,7 @@ export default function HomePage() {
         <Services id={navigationLinks[0]} />
         <Skills id={navigationLinks[1]} />
         <CompletedProjects id={navigationLinks[2]} />
-        <Mistakes />
+        <Mistakes id={navigationLinks[3]} />
       </LayoutHomePage>
     </>
   );
