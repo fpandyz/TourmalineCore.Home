@@ -1,9 +1,13 @@
 import { Carousel } from 'react-responsive-carousel';
 import ProcessCard from './ProcessCard/ProcessCard';
 
-function Process() {
+function Process({
+  id,
+}: {
+  id: string;
+}) {
   return (
-    <section className="section process">
+    <section id={id} className="section process">
       <h2 className="title-type-3">Процесс</h2>
       <div className="process__subtitle">Двигаемся к конечной цели еженедельными спринтами, проводим планирования и демо клиенту</div>
 

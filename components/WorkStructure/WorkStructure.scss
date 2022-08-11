@@ -1,0 +1,56 @@
+.work-structure {
+  --margin: 32px;
+  --top: 146px;
+
+  &__subtitle {
+    margin-top: 12px;
+    margin-bottom: 32px;
+    color: $color-white-alpha-100;
+  }
+
+  &__images {
+    position: relative;
+    display: flex;
+    margin-top: var(--margin);
+    margin-bottom: calc(var(--margin) + var(--top));
+  }
+
+  &__first-image {
+    position: relative;
+  }
+
+  &__second-image {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    margin-top: var(--top);
+  }
+
+  &__caption {
+    text-align: right;
+  }
+
+  &__first-image,
+  &__second-image {
+    width: 60%;
+    min-width: 253px;
+    min-height: 212px;
+
+    @include tablet {
+      min-width: auto;
+      min-height: auto;
+    }
+  }
+
+  @include tablet {
+    --top: 64px;
+  }
+
+  @include desktop {
+    --margin: 48px;
+  }
+
+  @include desktop-xl {
+    --top: 80px;
+  }
+}
