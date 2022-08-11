@@ -1,5 +1,7 @@
 {
   "services": "Услуги (zh)",
   "skills": "Умения (zh)",
-  "completedProjecs": "Выполненные проекты (zh)"
+  "completedProjecs": "Выполненные проекты (zh)",
+  "workStructure": "Структура работы (zh)",
+  "mistakes": "Работа над ошибками (zh)"
 }
