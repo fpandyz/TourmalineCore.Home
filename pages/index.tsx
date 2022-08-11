@@ -34,9 +34,9 @@ export default function HomePage() {
         <Services id={navigationLinks[0]} />
         <Skills id={navigationLinks[1]} />
         <CompletedProjects id={navigationLinks[2]} />
-        <Tools />
-        <WorkStructure id={navigationLinks[3]} />
-        <Mistakes id={navigationLinks[4]} />
+        <Tools id={navigationLinks[3]} />
+        <WorkStructure id={navigationLinks[4]} />
+        <Mistakes id={navigationLinks[5]} />
       </LayoutHomePage>
     </>
   );

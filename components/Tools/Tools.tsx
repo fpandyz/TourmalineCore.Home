@@ -3,13 +3,17 @@ import { dataTools } from './getTools';
 import ToolCard from './ToolCard/ToolCard';
 import ToolHeader from './ToolHeader/ToolHeader';
 
-function Tools() {
+function Tools({
+  id,
+}: {
+  id: string,
+}) {
   const { t } = useTranslation('tools');
 
   const tools = Object.values(dataTools);
 
   return (
-    <section className="section tools">
+    <section id={id} className="section tools">
       <h2 className="title-type-3">{t('title')}</h2>
 
       <div className="tools__subtitle">{t('subtitle')}</div>
