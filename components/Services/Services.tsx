@@ -1,10 +1,14 @@
 import { useTranslation } from 'next-i18next';
 
-function Services() {
+function Services({
+  id,
+}: {
+  id: string
+}) {
   const { t } = useTranslation('services');
 
   return (
-    <section className="section services">
+    <section id={id} className="section services">
       <h2 className="title-type-2 services__title">
         {t('titleSection')}
         {' '}

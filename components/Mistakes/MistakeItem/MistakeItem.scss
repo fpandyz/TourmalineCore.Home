@@ -1,0 +1,190 @@
+.mistake-item {
+  $this: &;
+  $tag-green: #51dce4;
+  $tag-blue: #7fbeea;
+  $tag-pink: #e878f6;
+  $tag-purple: #b59af0;
+
+  margin-right: 16px;
+  width: 100%;
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 24px;
+
+    @include desktop-xl {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 12px;
+    min-width: 164px;
+    min-height: 98px;
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    background-color: rgba(220, 213, 249, 0.1);
+
+    & + & {
+      @include desktop-xl {}
+
+      margin-top: 12px;
+    }
+
+    @include desktop {
+      min-width: 176px;
+    }
+
+    @include desktop-xl {
+      padding: 16px;
+      min-width: 216px;
+      min-height: 144px;
+      font-size: 17px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+  }
+
+  &__tag {
+    margin-top: auto;
+    border-radius: 3px;
+    padding: 4px 8px;
+    width: max-content;
+    font-size: 9px;
+    line-height: 1.1;
+
+    &--green {
+      color: $tag-green;
+      background: rgba($tag-green, 0.2);
+    }
+
+    &--purple {
+      color: $tag-purple;
+      background: rgba($tag-purple, 0.2);
+    }
+
+    &--blue {
+      color: $tag-blue;
+      background: rgba($tag-blue, 0.2);
+    }
+
+    &--pink {
+      color: $tag-pink;
+      background: rgba($tag-pink, 0.2);
+    }
+
+    @include desktop-xl {
+      font-size: 11px;
+      line-height: 1.1;
+    }
+  }
+
+  &__cursor {
+    display: none;
+
+    @include desktop {
+      position: absolute;
+      display: block;
+      border-radius: 3px;
+      padding: 2px 16px;
+      font-size: 14px;
+      line-height: 24px;
+      color: $color-white;
+
+      &--green {
+        right: -10px;
+        bottom: 0;
+        background: $tag-green;
+
+        #{$this}__cursor-arrow {
+          left: -40%;
+          top: -40%;
+          color: $tag-green;
+
+          @include desktop-xl {
+            left: -50%;
+            top: -70%;
+          }
+        }
+      }
+
+      &--purple {
+        left: -45%;
+        bottom: -40%;
+        background: $tag-purple;
+
+        #{$this}__cursor-arrow {
+          right: -30%;
+          top: -90%;
+          color: $tag-purple;
+          transform: rotate(90deg);
+        }
+
+        @include desktop-xl {
+          left: -40%;
+          bottom: -22%;
+        }
+      }
+
+      &--blue {
+        right: 10%;
+        bottom: -10%;
+        background: $tag-blue;
+
+        #{$this}__cursor-arrow {
+          left: -60%;
+          top: -60%;
+          color: $tag-blue;
+        }
+      }
+
+      &--pink {
+        right: -26%;
+        bottom: 16%;
+        background: $tag-pink;
+
+        #{$this}__cursor-arrow {
+          left: -50%;
+          top: -50%;
+          color: $tag-pink;
+        }
+      }
+    }
+  }
+
+  &__cursor-arrow {
+    display: none;
+
+    @include desktop {
+      position: absolute;
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &:first-child {
+    margin-left: 15px;
+  }
+
+  &:last-child {
+    margin-right: 15px;
+  }
+
+  @include tablet {
+    margin-right: 24px;
+  }
+
+  @include desktop {
+    margin-right: 32px;
+  }
+}
