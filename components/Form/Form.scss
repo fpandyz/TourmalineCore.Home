@@ -1,0 +1,41 @@
+.form {
+  &__footer {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      margin-top: 44px;
+    }
+
+    @include desktop {
+      margin-top: 56px;
+    }
+  }
+
+  &__button {
+    margin-top: 44px;
+    margin-bottom: 28px;
+
+    @include tablet {
+      flex: none;
+      margin: 0;
+      margin-right: 28px;
+    }
+  }
+
+  &__approval {
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.5);
+
+    @include desktop-xl {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__link {
+    font-family: inherit;
+    font-style: normal;
+    font-size: inherit;
+  }
+}
