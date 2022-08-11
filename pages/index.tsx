@@ -56,6 +56,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'navigation',
       'workStructure',
       'mistakes',
+      'process',
     ])),
   },
 });

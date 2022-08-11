@@ -2,9 +2,15 @@ import Image from 'next/image';
 import { ReactNode } from 'react';
 
 function ProcessCard({
+  reactionImg,
+  time,
+  name,
   children,
 }: {
-  children: ReactNode,
+  reactionImg: string;
+  time: string;
+  name: string;
+  children: ReactNode;
 }) {
   return (
     <div className="process-card">
@@ -19,16 +25,16 @@ function ProcessCard({
           </div>
 
           <div>
-            Yuliya,
-            {' '}
-            <span className="process-card__time">17:58</span>
+            {name}
+            {', '}
+            <span className="process-card__time">{time}</span>
           </div>
         </div>
 
         {children}
 
         <div className="process-card__reaction">
-          <Image src="/images/fire.png" layout="fill" />
+          <Image src={reactionImg} layout="fill" />
         </div>
       </div>
 
