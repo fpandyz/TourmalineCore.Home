@@ -20,7 +20,7 @@
 
   &__list {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     margin: 0 -15px;
     padding-bottom: 32px;
     font-family: $ff-inter;
@@ -53,6 +53,10 @@
       border-radius: 20px;
       height: 1px;
       background-image: linear-gradient(90.09deg, #e977f6 0.08%, #a2a6ee 99.85%);
+    }
+
+    @include desktop {
+      overflow-x: hidden;
     }
 
     @include tablet {

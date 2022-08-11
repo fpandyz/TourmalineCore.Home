@@ -1,0 +1,33 @@
+.adaptation-to-project {
+  &__subtitle {
+    margin-top: 12px;
+    margin-bottom: 32px;
+    color: $color-white-alpha-100;
+
+    @include desktop {
+      margin-top: 16px;
+      margin-bottom: 48px;
+    }
+
+    @include desktop-xl {
+      margin-top: 16px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    overflow-x: scroll;
+    width: 100%;
+    min-width: 809px;
+    min-height: 400px;
+
+    @include desktop {
+      overflow-x: hidden;
+    }
+  }
+
+  &__caption {
+    text-align: right;
+  }
+}
