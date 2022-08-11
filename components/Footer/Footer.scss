@@ -17,13 +17,19 @@
     }
   }
 
-  &__logo {
+  &__short-information {
     width: 50%;
+  }
+
+  &__logo {
+    display: block;
+    width: 135px;
+    height: 40px;
 
     svg {
       display: block;
-      width: 135px;
-      height: 40px;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -67,5 +73,9 @@
 
   &__location {
     margin-top: 16px;
+
+    @include tablet {
+      margin-top: 0;
+    }
   }
 }
