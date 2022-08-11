@@ -4,11 +4,15 @@ import { Carousel } from 'react-responsive-carousel';
 import { completedProjects } from '../../utils/consts/completedProjects';
 import CompletedProjectsCard from './components/CompletedProjectsCard/CompletedProjectsCard';
 
-function CompletedProjects() {
+function CompletedProjects({
+  id,
+}: {
+  id: string;
+}) {
   const { t } = useTranslation('completedProjects');
 
   return (
-    <section className="section completed-projects">
+    <section id={id} className="section completed-projects">
       <h2 className="completed-projects__title">
         {t('title')}
         {' '}
