@@ -19,14 +19,10 @@
   }
 
   &__content {
-    display: flex;
-  }
+    display: none;
 
-  &__item {
-    // width: calc(50% - 16px);
-
-    & + & {
-      margin-left: 32px;
+    @include tablet {
+      display: flex;
     }
   }
 
