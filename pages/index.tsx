@@ -9,6 +9,7 @@ import CompletedProjects from '../components/CompletedProjects/CompletedProjects
 import Services from '../components/Services/Services';
 import { navigationLinks } from '../utils/consts/navigation';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
+import Mistakes from '../components/Mistakes/Mistakes';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -33,6 +34,7 @@ export default function HomePage() {
         <Skills id={navigationLinks[1]} />
         <CompletedProjects id={navigationLinks[2]} />
         <WorkStructure id={navigationLinks[3]} />
+        <Mistakes id={navigationLinks[4]} />
       </LayoutHomePage>
     </>
   );
@@ -49,7 +51,6 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'services',
       'completedProjects',
       'navigation',
-      'workStructure',
     ])),
   },
 });
