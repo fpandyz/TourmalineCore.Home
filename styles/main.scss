@@ -17,6 +17,10 @@
 @import "../components/MobileMenu/MobileMenu";
 @import "../components/SocialLinks/SocialLinks";
 @import "../components/Accordion/Accordion";
+@import "../components/CompletedProjects/CompletedProjects";
+@import "../components/CompletedProjects/components/CompletedProjectsCard/CompletedProjectsCard";
+@import "../components/Navigation/Navigation";
+@import "../components/WorkStructure/WorkStructure";
 @import "../components/Tools/ToolCard/ToolCard";
 @import "../components/Tools/ToolHeader/ToolHeader";
 
@@ -25,8 +29,8 @@
 @import "../components/HeroBlock/HeroBlock";
 @import "../components/Services/Services";
 @import "../components/Skills/Skills";
-
-// @import "../components/Tools/Tools";
+@import "../components/Mistakes/MistakeItem/MistakeItem";
+@import "../components/Mistakes/Mistakes";
 @import "../components/Tools/Tools";
 
 // partials
