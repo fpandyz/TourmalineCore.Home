@@ -19,21 +19,6 @@
     }
   }
 
-  &__box-button {
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    color: $color-white;
-  }
-
-  &__button {
-    margin-left: 24px;
-    padding: 18px 16px;
-  }
-
   &__video {
     display: none;
     flex: none;
