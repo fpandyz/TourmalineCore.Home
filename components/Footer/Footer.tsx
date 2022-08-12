@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 
+import Link from 'next/link';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
 import IconLogo from '../../icons/logo.svg';
@@ -11,8 +12,13 @@ function Footer() {
     <footer className="footer" itemScope itemType="http://schema.org/Organization">
       <div className="container footer__inner">
         <div className="footer__about-us">
-          <div className="footer__logo">
-            <IconLogo />
+          <div className="footer__short-information">
+            <Link href="/">
+              <a className="footer__logo">
+                <IconLogo />
+              </a>
+            </Link>
+
             <span className="footer__description">{t('description')}</span>
           </div>
 

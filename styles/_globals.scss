@@ -23,7 +23,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $color-white;
-  background-color: $color-black;
+  background-color: $color-purple-black;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -59,7 +59,7 @@ p + p {
   padding-right: 16px;
   padding-left: 16px;
   width: 100%;
-  max-width: 1456px;
+  max-width: 1606px;
 
   @include tablet {
     padding-right: 32px;

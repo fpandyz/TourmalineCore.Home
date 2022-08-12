@@ -1,7 +1,11 @@
 import { useTranslation } from 'next-i18next';
 import SecondaryButton from '../SecondaryButton/SecondaryButton';
 
-function HeroBlock() {
+function HeroBlock({
+  firstBlockSelector,
+}: {
+  firstBlockSelector: string;
+}) {
   const { t } = useTranslation('heroBlock');
 
   return (
@@ -14,13 +18,10 @@ function HeroBlock() {
           </h1>
           <div className="title-type-4 hero-block__description">{t('description')}</div>
 
-          <div className="hero-block__box-button">
-            <span>{t('buttonText')}</span>
-            <SecondaryButton className="hero-block__button" />
-          </div>
+          <SecondaryButton onClick={scrollFirstBlock} text={t('buttonText')} />
         </div>
         <div className="hero-block__video">
-          <video src="/images/video.mp4" autoPlay loop playsInline muted>
+          <video poster="/images/tourmaline-core-poster.png" src="/images/video.mp4" autoPlay loop playsInline muted>
             <source src="video.mp4" type="video/mp4" />
             <track kind="captions" />
           </video>
@@ -28,6 +29,12 @@ function HeroBlock() {
       </div>
     </section>
   );
+
+  function scrollFirstBlock() {
+    const firstBlock = document.querySelector(`#${firstBlockSelector}`);
+
+    firstBlock?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 export default HeroBlock;

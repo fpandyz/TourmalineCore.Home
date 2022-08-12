@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { Link as ScrollLink } from 'react-scroll';
 
-import useOffset from '../../common/hooks/useMyHook';
+import useOffset from '../../common/hooks/useOffset';
 import { NavigationLinks } from '../../utils/consts/navigation';
 
 function Navigation({

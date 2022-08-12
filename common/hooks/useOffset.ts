@@ -6,16 +6,11 @@ function useOffset() {
   useEffect(() => {
     function getOffset() {
       const { height } = window.screen;
-      if (height >= 1024 && height < 1366) {
-        return -300;
+      if (height < 1366) {
+        return -48;
       }
-      if (height >= 1366 && height < 1920) {
-        return -400;
-      }
-      if (height >= 1920 && height < 2560) {
-        return -500;
-      } if (height >= 2560) {
-        return -600;
+      if (height < 1920) {
+        return -88;
       }
 
       return 0;
