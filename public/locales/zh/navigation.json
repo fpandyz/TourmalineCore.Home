@@ -1,7 +1,10 @@
 {
   "services": "Услуги (zh)",
   "skills": "Наши возможности (zh)",
-  "completedProjecs": "Выполненные проекты (zh)",
+  "completedProjects": "Выполненные проекты (zh)",
+  "adaptationToProject": "Адаптация под проект (zh)",
+  "process": "Процесс (zh)",
   "workStructure": "Структура работы (zh)",
-  "mistakes": "Работа над ошибками (zh)"
+  "mistakes": "Работа над ошибками (zh)",
+  "tools": "Инструменты (zh)"
 }

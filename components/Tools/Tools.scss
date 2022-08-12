@@ -1,0 +1,64 @@
+.tools {
+  &__subtitle {
+    margin-top: 12px;
+    margin-bottom: 48px;
+    color: $color-white-alpha-100;
+  }
+
+  &__caption {
+    margin-top: 32px;
+    margin-left: auto;
+    width: 282px;
+    text-align: right;
+
+    @include tablet {
+      margin-left: 0;
+      width: auto;
+    }
+
+    @include desktop {
+      margin-top: 48px;
+    }
+
+    @include desktop-xl {
+      margin-top: 64px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    margin: 0 -15px;
+    padding-bottom: 32px;
+
+    @include tablet {
+      padding-bottom: 100px;
+    }
+
+    @include desktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__item {
+    margin-right: 16px;
+    width: 100%;
+
+    &:first-child {
+      margin-left: 15px;
+    }
+
+    &:last-child {
+      margin-right: 15px;
+    }
+
+    @include tablet {
+      margin-right: 24px;
+    }
+
+    @include desktop {
+      margin-right: 32px;
+    }
+  }
+}

@@ -3,7 +3,10 @@ export type NavigationLinks = string;
 export const navigationLinks: NavigationLinks[] = [
   'services',
   'skills',
-  'completedProjecs',
+  'completedProjects',
+  'adaptationToProject',
+  'process',
+  'tools',
   'workStructure',
   'mistakes',
 ];

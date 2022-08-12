@@ -1,7 +1,10 @@
 {
   "services": "Services",
   "skills": "Skills",
-  "completedProjecs": "Completed projects",
+  "completedProjects": "Completed projects",
+  "adaptationToProject": "Adaptation to project",
+  "process": "Process",
   "workStructure": "Work structure",
-  "mistakes": "Working on mistakes"
+  "mistakes": "Working on mistakes",
+  "tools": "Tools"
 }

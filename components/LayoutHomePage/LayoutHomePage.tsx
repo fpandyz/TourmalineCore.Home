@@ -17,7 +17,7 @@ function LayoutHomePage({
     <div className="layout-home-page">
       <div className="layout-home-page__header">
         <Header />
-        <HeroBlock />
+        <HeroBlock firstBlockSelector={navigationLinks[0]} />
       </div>
       <main className="container layout-home-page__wrapper">
         <div className="section layout-home-page__nav">

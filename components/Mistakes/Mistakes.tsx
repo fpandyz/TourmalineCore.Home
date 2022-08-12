@@ -18,7 +18,7 @@ function Mistakes({
 
       <div className="mistakes__subtitle">{t('subtitle')}</div>
 
-      <div className="mistakes__list">
+      <div className="scroll mistakes__list">
         {dataMistakes.map((item) => (
           <MistakeItem
             key={item.title}
