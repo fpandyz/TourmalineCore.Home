@@ -5,88 +5,27 @@
   "titleTechnologies": "技术",
   "Backend": {
     "title": "后端开发",
-    "scope": [".Net Core 3-6", "C#", "Python", "Flask", "FastAPI", "JavaScript", "NestJS", "NodeJS", "PostgreSQL", "Clickhouse"],
     "services": [
-      "Проектирование архитектуры решений (zh)",
-      "Работа с реляционными, нереляционными и  аналитическими СУБД (zh)",
-      "Применение лучших практик и подходов к хранению и версионированию кода (Conventional Commits, GitFlow, Trunk based development, Semantic Versioning and Release, Automatic code formatting and linting) (zh)",
-      "Разработка с применением тестирования (unit и integration) и таких подходов к нему, как TDD и BDD (zh)",
-      "Модификация имеющегося решения и/или интеграция со сторонними сервисами (zh)",
+      "Проектирование архитектуры (zh)",
       "Разработка высоконагруженных сервисов (zh)",
       "Разработка библиотек (zh)",
       "Разработка приложений на основе blockchain (zh)",
       "Разработка решений для встраиваемых систем и интеграция с IoT (zh)",
-      "Автоматизация сборки, тестирования, релизов и деплоя (CI/CD) (zh)",
-      "Разработка с применением языков программирования: С, С++, C#, Python,  JavaScript, TypeScript, Swift, Matlab (zh)"
-    ],
-    "technologies": [
-      ".Net Core 3-6", 
-      "Entity Framework Core", 
-      "Blazor", 
-      "NodeJs", 
-      "NestJS", 
-      "Flask", 
-      "SQLAlchemy", 
-      "SolidityPostgreSQL", 
-      "MS SQL Server", 
-      "SQLite", 
-      "MYSQL", 
-      "Mongo DB", 
-      "Clickhouse", 
-      "RabbitMQ", 
-      "Redis", 
-      "S3", 
-      "Docker", 
-      "Kubernetes", 
-      "helm", 
-      "Terraform", 
-      "Azure", 
-      "Azure DevOps", 
-      "GitHub Actions", 
-      "Gitlab CI", 
-      "Concourse CI", 
-      "VK Cloud Solutions", 
-      "Yandex Cloud", 
-      "Nginx", 
-      "IIS", 
-      "Apache", 
-      "NUnit", 
-      "XUnit", 
-      "Postman API", 
-      "WireShark", 
-      "git"
+      "Автоматизация сборки, тестирования, релизов и развертывания (CI/CD) (zh)",
+      "Модификация имеющегося решения и интеграция со сторонними сервисами (zh)"
     ]
   },
   "Frontend": {
     "title": "前端开发",
-    "scope": ["React", "NextJS"],
     "services": [
       "Адаптивная и кроссбраузерная верстка (zh)",
-      "Разработка SPA на JS и TS (zh)",
-      "Разработка с применением тестирования (unit и integration) и таких подходов к нему, как TDD и BDD (zh)",
-      "Рефакторинг (zh)",
-      "Настройка проекта (zh)",
-      "Интеграция со сторонними сервисами (zh)"
-    ],
-    "technologies": [
-      "HTML",
-      "CSS", 
-      "SCSS", 
-      "JS", 
-      "React", 
-      "TypeScript", 
-      "NextJS", 
-      "VueJS", 
-      "Vuex", 
-      "Redux", 
-      "Redux Toolkit", 
-      "MobX", 
-      "Pinia"
+      "Разработка SPA-приложений (zh)",
+      "Разработка публичных веб-сайтов (zh)",
+      "Миграция legacy-проектов на актуальные технологии (zh)"
     ]
   },
   "QA": {
     "title": "测试",
-    "scope": ["Postman", "Cypress", "Jess"],
     "services": [
       "Составление тестовой документации (zh)",
       "Ручное и автоматизированное тестирование (zh)",
@@ -100,58 +39,20 @@
       "Работа с реляционными и нереляционными БД для реализации тестов (zh)",
       "Рефакторинг кода или выставление требований по рефакторингу для повышения тестируемости продукта (zh)",
       "Проведение ручного и автоматизированного функционального/регрессионного тестирования для REST и SOAP проектов на различных стеках технологий (JS, TS, Python, С#, C++) (zh)"
-    ],
-    "technologies": [
-      "Cypress", 
-      "React Testing Library", 
-      "Jest", 
-      "Mocha", 
-      "Cucumber", 
-      "Pytest", 
-      "Robot Framework", 
-      "Google Test library", 
-      "xUnit", 
-      "Selenium", 
-      "jUnit", 
-      "Browser Devtools", 
-      "Swagger", 
-      "Postman", 
-      "Azure Test Plans", 
-      "Gitlab CI", 
-      "GitHub Actions"
     ]
   },
   "Machine": {
     "title": "机器学习",
-    "scope": ["Python", "Sklem", "Pandas", "Numpy", "OpenCV", "PyTorch", "TensorFlow", "Keras"],
     "services": [
       "Детекция объектов на изображении/видеопотоке (zh)",
       "Классификация изображений (zh)",
       "Анализ больших данных (zh)",
       "Обработка текстовой информации (zh)",
       "Обучение в агентной среде (zh)"
-    ],
-    "technologies": [
-      "Classical Machine Learning", 
-      "Neural Networks", 
-      "Computer Vision", 
-      "Natural Language Processing", 
-      "Data Analysis", 
-      "Reinforcement Learning", 
-      "PyTorch", 
-      "Tensorflow/Keras", 
-      "NumPy", 
-      "OpenCV", 
-      "Pandas", 
-      "Transfer Learning", 
-      "Matplotlib", 
-      "Seaborn", 
-      "Scikit Learn"
     ]
   },
   "UI/UX": {
     "title": "UI/UX设计",
-    "scope": ["Figma", "Adobe XD", "Photoshop"],
     "services": [
       "Создание адаптивного дизайна (zh)",
       "Разработка дизайн-системы (zh)",
@@ -163,15 +64,6 @@
       "Конкурентный анализ (zh)",
       "Подготовка макетов к верстке (zh)",
       "Юзабилити-аудит (zh)"
-    ],
-    "technologies": [
-      "Figma", 
-      "Adobe XD", 
-      "Photoshop", 
-      "Illustrator", 
-      "Blender", 
-      "Webflow", 
-      "Tilda"
     ]
   }
 }
