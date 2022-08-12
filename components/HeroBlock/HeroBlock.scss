@@ -1,12 +1,10 @@
 .hero-block {
-  height: 100vh;
-
   &__gradient-title {
     @include gradient-text;
   }
 
   &__inner {
-    max-width: 900px;
+    max-width: 960px;
   }
 
   &__description {
@@ -17,11 +15,18 @@
     @include desktop {
       max-width: 400px;
     }
+
+    @include desktop-xl {
+      max-width: 490px;
+    }
   }
 
   &__video {
     display: none;
     flex: none;
+    background-image: url("/images/tourmaline-core-poster.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 
     video {
       width: 100%;
@@ -52,5 +57,9 @@
       align-items: center;
       justify-content: space-between;
     }
+  }
+
+  @include desktop {
+    height: 100vh;
   }
 }
