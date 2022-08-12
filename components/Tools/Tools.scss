@@ -1,31 +1,36 @@
-.mistakes {
+.tools {
   &__subtitle {
     margin-top: 12px;
-    margin-bottom: 36px;
+    margin-bottom: 48px;
     color: $color-white-alpha-100;
+  }
+
+  &__caption {
+    margin-top: 32px;
+    margin-left: auto;
+    width: 282px;
+    text-align: right;
 
     @include tablet {
-      margin-bottom: 36px;
+      margin-left: 0;
+      width: auto;
     }
 
     @include desktop {
-      margin-bottom: 52px;
+      margin-top: 48px;
     }
 
     @include desktop-xl {
-      margin-top: 16px;
-      margin-bottom: 68px;
+      margin-top: 64px;
     }
   }
 
   &__list {
     display: flex;
-    overflow-x: scroll;
+    justify-content: space-between;
+    overflow-x: auto;
     margin: 0 -15px;
     padding-bottom: 32px;
-    font-family: $ff-inter;
-    text-align: center;
-    color: $color-white-alpha-100;
     scroll-padding-left: 20px;
     scroll-padding-right: 20px;
     scrollbar-color:
@@ -42,7 +47,7 @@
     &::-webkit-scrollbar-track {
       margin: 0 16px;
       height: 1px;
-      background-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.2);
 
       @include desktop-xl {
         margin: 0;
@@ -55,29 +60,33 @@
       background-image: linear-gradient(90.09deg, #e977f6 0.08%, #a2a6ee 99.85%);
     }
 
-    @include desktop {
-      overflow-x: hidden;
-    }
-
     @include tablet {
       padding-bottom: 100px;
     }
 
     @include desktop {
-      padding-bottom: 20px;
+      padding-bottom: 0;
     }
   }
 
-  &__caption {
-    margin-top: 32px;
-    text-align: right;
+  &__item {
+    margin-right: 16px;
+    width: 100%;
 
-    @include desktop {
-      margin-top: 28px;
+    &:first-child {
+      margin-left: 15px;
     }
 
-    @include desktop-xl {
-      margin-top: 44px;
+    &:last-child {
+      margin-right: 15px;
+    }
+
+    @include tablet {
+      margin-right: 24px;
+    }
+
+    @include desktop {
+      margin-right: 32px;
     }
   }
 }

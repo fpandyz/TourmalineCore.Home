@@ -22,14 +22,19 @@
 @import "../components/Navigation/Navigation";
 @import "../components/WorkStructure/WorkStructure";
 @import "../components/AdaptationToProject/AdaptationToProject";
+@import "../components/Tools/ToolCard/ToolCard";
+@import "../components/Tools/ToolHeader/ToolHeader";
 
 // components pages
 @import "../components/ExampleComponents/ExampleComponents";
 @import "../components/HeroBlock/HeroBlock";
 @import "../components/Services/Services";
 @import "../components/Skills/Skills";
+@import "../components/Process/ProcessCard/ProcessCard";
+@import "../components/Process/Process";
 @import "../components/Mistakes/MistakeItem/MistakeItem";
 @import "../components/Mistakes/Mistakes";
+@import "../components/Tools/Tools";
 
 // partials
 @import "../partials/Articles/Articles";

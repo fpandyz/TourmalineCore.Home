@@ -13,7 +13,7 @@ function CompletedProjects({
 
   return (
     <section id={id} className="section completed-projects">
-      <h2 className="completed-projects__title">
+      <h2 className="title-type-2 completed-projects__title">
         {t('title')}
         {' '}
         <span className="completed-projects__gradient">
