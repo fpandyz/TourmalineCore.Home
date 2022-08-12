@@ -60,7 +60,7 @@
     }
 
     @include desktop {
-      padding-bottom: 0;
+      padding-bottom: 20px;
     }
   }
 
@@ -69,11 +69,11 @@
     text-align: right;
 
     @include desktop {
-      margin-top: 48px;
+      margin-top: 28px;
     }
 
     @include desktop-xl {
-      margin-top: 64px;
+      margin-top: 44px;
     }
   }
 }
