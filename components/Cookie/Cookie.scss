@@ -1,0 +1,31 @@
+.cookie {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: $cookie;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  background-image: $main-gradient-300;
+  background-color: $color-black;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    color: $color-white-alpha-100;
+
+    @include desktop {
+      margin-right: 32px;
+      margin-bottom: 0;
+    }
+  }
+}

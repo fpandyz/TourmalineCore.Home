@@ -10,6 +10,7 @@ import Services from '../components/Services/Services';
 import { navigationLinks } from '../utils/consts/navigation';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
+import Cookie from '../components/Cookie/Cookie';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -35,6 +36,7 @@ export default function HomePage() {
         <CompletedProjects id={navigationLinks[2]} />
         <WorkStructure id={navigationLinks[3]} />
         <Mistakes id={navigationLinks[4]} />
+        <Cookie />
       </LayoutHomePage>
     </>
   );
@@ -53,6 +55,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'navigation',
       'workStructure',
       'mistakes',
+      'cookie',
     ])),
   },
 });
