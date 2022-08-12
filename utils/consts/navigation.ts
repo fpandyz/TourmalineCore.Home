@@ -5,6 +5,7 @@ export const navigationLinks: NavigationLinks[] = [
   'skills',
   'completedProjecs',
   'process',
+  'tools',
   'workStructure',
   'mistakes',
 ];

@@ -10,6 +10,7 @@ import Services from '../components/Services/Services';
 import Process from '../components/Process/Process';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
+import Tools from '../components/Tools/Tools';
 
 import { navigationLinks } from '../utils/consts/navigation';
 
@@ -36,8 +37,9 @@ export default function HomePage() {
         <Skills id={navigationLinks[1]} />
         <CompletedProjects id={navigationLinks[2]} />
         <Process id={navigationLinks[3]} />
-        <WorkStructure id={navigationLinks[4]} />
-        <Mistakes id={navigationLinks[5]} />
+        <Tools id={navigationLinks[4]} />
+        <WorkStructure id={navigationLinks[5]} />
+        <Mistakes id={navigationLinks[6]} />
       </LayoutHomePage>
     </>
   );
@@ -57,6 +59,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'workStructure',
       'mistakes',
       'process',
+      'tools',
     ])),
   },
 });
