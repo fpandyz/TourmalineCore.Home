@@ -10,6 +10,8 @@ class MyDocument extends Document {
   }
 
   render() {
+    const isProduction = process.env.NODE_ENV === 'production';
+
     return (
       <Html>
         <Head>
@@ -31,10 +33,13 @@ class MyDocument extends Document {
           {/* eslint-disable-next-line react/no-danger */}
           <script dangerouslySetInnerHTML={{
             __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
+
+            if (${isProduction}) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'UA-171018032-1');`,
+              gtag('config', 'UA-171018032-1');
+            }`,
           }}
           />
 
@@ -46,15 +51,17 @@ class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `
-                  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            if (${isProduction}) {
+              (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+              m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+              (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-                ym(89913543, "init", {
-                      clickmap: true,
-                      trackLinks:true,
-                      accurateTrackBounce:true,
-                })
+              ym(89913543, "init", {
+                    clickmap: true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+              })
+            }
             `,
             }}
           />
