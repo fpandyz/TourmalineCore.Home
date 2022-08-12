@@ -6,7 +6,7 @@ import { useMemo } from 'react';
 enum ImageSrc {
   'en' = '/images/adaptation-to-project-ru.png',
   'ru' = '/images/adaptation-to-project-ru.png',
-  'zh' = '/images/good-code.png',
+  'zh' = '/images/adaptation-to-project-ru.png',
 }
 
 function AdaptationToProject({
@@ -30,11 +30,13 @@ function AdaptationToProject({
       <h2 className="title-type-3">{t('title')}</h2>
       <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
 
-      <div className="adaptation-to-project__image">
-        <Image
-          src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
-          layout="fill"
-        />
+      <div className="scroll adaptation-to-project__scroll">
+        <div className="ratio ratio--16x9 adaptation-to-project__image">
+          <Image
+            src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
+            layout="fill"
+          />
+        </div>
       </div>
 
       <div className="caption adaptation-to-project__caption">{t('caption')}</div>

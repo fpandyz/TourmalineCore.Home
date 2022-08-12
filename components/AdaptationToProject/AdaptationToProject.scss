@@ -15,19 +15,27 @@
     }
   }
 
+  &__scroll {
+    overflow-x: auto;
+    padding-bottom: 32px;
+  }
+
   &__image {
     position: relative;
-    overflow-x: scroll;
-    width: 100%;
     min-width: 809px;
     min-height: 400px;
-
-    @include desktop {
-      overflow-x: hidden;
-    }
   }
 
   &__caption {
+    margin-top: 32px;
     text-align: right;
+
+    @include desktop {
+      margin-top: 48px;
+    }
+
+    @include desktop-xl {
+      margin-top: 64px;
+    }
   }
 }
