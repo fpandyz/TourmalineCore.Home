@@ -1,7 +1,11 @@
 import { useTranslation } from 'next-i18next';
 import SecondaryButton from '../SecondaryButton/SecondaryButton';
 
-function HeroBlock() {
+function HeroBlock({
+  firstBlockSelector,
+}: {
+  firstBlockSelector: string;
+}) {
   const { t } = useTranslation('heroBlock');
 
   return (
@@ -27,10 +31,9 @@ function HeroBlock() {
   );
 
   function scrollFirstBlock() {
-    window.scroll({
-      top: window.innerHeight,
-      behavior: 'smooth',
-    });
+    const firstBlock = document.querySelector(`#${firstBlockSelector}`);
+
+    firstBlock?.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
