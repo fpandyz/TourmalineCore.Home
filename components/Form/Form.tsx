@@ -5,11 +5,9 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import Textarea from '../Textarea/Textarea';
 
 function Form({
-  method,
-  onClick = () => {},
+  onFormSubmit = () => {},
 }: {
-  method?: string;
-  onClick?: () => unknown;
+  onFormSubmit: (formEvent: FormData) => unknown;
 }) {
   return (
     <form
@@ -41,9 +39,6 @@ function Form({
         <PrimaryButton
           type="submit"
           className="form__button"
-          onClick={() => {
-            onClick();
-          }}
         >
           Отправить
         </PrimaryButton>
@@ -60,11 +55,12 @@ function Form({
   function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // const formEvent = new FormData(event.target as HTMLFormElement);
+    // console.log(event.target.values);
+
+    const formEvent = new FormData(event.target as HTMLFormElement);
+    onFormSubmit(formEvent);
 
     // /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
-
-    console.log('hi', method);
   }
 }
 

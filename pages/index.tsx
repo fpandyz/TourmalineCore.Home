@@ -12,6 +12,7 @@ import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
 import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
 import Tools from '../components/Tools/Tools';
+import Form from '../components/Form/Form';
 
 import { navigationLinks } from '../utils/consts/navigation';
 
@@ -42,9 +43,16 @@ export default function HomePage() {
         <Tools id={navigationLinks[5]} />
         <WorkStructure id={navigationLinks[6]} />
         <Mistakes id={navigationLinks[7]} />
+        <Form onFormSubmit={onFormSubmit} />
       </LayoutHomePage>
     </>
   );
+
+  async function onFormSubmit(formEvent: FormData) {
+    for (const key of formEvent.keys()) {
+      console.log(key, formEvent.get(key));
+    }
+  }
 }
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
