@@ -76,7 +76,7 @@ function Process({
       </div>
 
       <div
-        className="completed-projects__carousel"
+        className="responsive-carousel"
       >
         <Carousel
           showArrows={false}

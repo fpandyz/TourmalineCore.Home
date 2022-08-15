@@ -35,12 +35,13 @@ function CompletedProjects({
       </ul>
 
       <div
-        className="completed-projects__carousel"
+        className="responsive-carousel"
       >
         <Carousel
           showArrows={false}
           showStatus={false}
           showThumbs={false}
+          preventMovementUntilSwipeScrollTolerance
         >
           {
             completedProjects.map((completedProject) => (
