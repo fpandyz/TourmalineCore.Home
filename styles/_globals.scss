@@ -25,7 +25,6 @@ body {
   color: $color-white;
   background-color: $color-purple-black;
   -webkit-font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   @include desktop-xl {
@@ -117,7 +116,7 @@ p + p {
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
-    border: 3px solid inherit;
+    border: 3px solid $color-purple-black;
     border-radius: 20px;
     height: 1px;
   }

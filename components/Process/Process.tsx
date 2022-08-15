@@ -82,6 +82,7 @@ function Process({
           showArrows={false}
           showStatus={false}
           showThumbs={false}
+          preventMovementUntilSwipeScrollTolerance
         >
           <FirstCard />
           <SecondCard />

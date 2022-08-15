@@ -61,7 +61,7 @@
           --gap: 2px;
         }
 
-        &:focus,
+        &:active,
         &.selected {
           background-image: $main-gradient;
 
@@ -73,6 +73,17 @@
 
         &:last-child {
           margin-right: 0;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            background-image: $main-gradient;
+
+            &::before,
+            &::after {
+              opacity: 0.4;
+            }
+          }
         }
       }
     }
