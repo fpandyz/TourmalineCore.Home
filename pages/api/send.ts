@@ -1,10 +1,11 @@
 import sgMail from '@sendgrid/mail';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 const apiKey = process.env.SENDGRID_API_KEY || '';
 const emailTo = process.env.SENDGRID_EMAIL_TO || '';
 const emailFrom = process.env.SENDGRID_EMAIL_FROM || '';
 
-export default async function (req: any, res: any) {
+export default async function (req: NextApiRequest, res: NextApiResponse) {
   sgMail.setApiKey(apiKey);
 
   const {
@@ -31,7 +32,7 @@ export default async function (req: any, res: any) {
   try {
     await sgMail.send(content);
     res.status(200).send('Message sent successfully.');
-  } catch (error: any) {
+  } catch (error) {
     res.status(400).send('Message not sent.');
   }
 }
