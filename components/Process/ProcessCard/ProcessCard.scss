@@ -1,0 +1,127 @@
+.process-card {
+  height: 100%;
+  color: $color-white;
+
+  &__header {
+    display: flex;
+    margin-bottom: 16px;
+
+    @include desktop {
+      margin-bottom: 4px;
+      color: $color-white-alpha-200;
+    }
+  }
+
+  &__time {
+    display: block;
+    color: $color-white-alpha-200;
+
+    @include desktop {
+      display: inline-block;
+    }
+  }
+
+  &__image {
+    position: relative;
+    display: block;
+    flex: none;
+    overflow: hidden;
+    margin-right: 16px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+
+    &--desktop {
+      display: none;
+    }
+
+    @include tablet {
+      margin-right: 12px;
+    }
+
+    @include desktop {
+      width: 48px;
+      height: 48px;
+
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+      }
+    }
+
+    @include desktop-xl {
+      width: 68px;
+      height: 68px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__content {
+    position: relative;
+    border-radius: 5px;
+    padding: 24px 24px 32px;
+    height: 100%;
+    font-family: $ff-inter;
+    font-size: 14px;
+    line-height: 1.7;
+    background: rgba(220, 213, 249, 0.1);
+
+    @include desktop-xl {
+      padding: 32px 32px 48px;
+      font-size: 17px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    list-style: auto;
+    list-style-position: inside;
+    margin-bottom: 10px;
+  }
+
+  &__reaction {
+    position: relative;
+    flex: none;
+    margin-top: -16px;
+    margin-left: 24px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+
+    @include desktop-xl {
+      margin-top: -20px;
+      margin-left: 32px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    width: calc(50% - 12px);
+    height: auto;
+
+    & + & {
+      margin-left: 24px;
+    }
+  }
+
+  @include desktop {
+    & + & {
+      margin-left: 32px;
+    }
+  }
+}
