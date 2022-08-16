@@ -53,7 +53,7 @@ function Form({
         <div className="form__approval">
           {t('approvedText')}
           {' '}
-          <ExternalLink className="form__link">{t('approvedLink')}</ExternalLink>
+          <ExternalLink className="form__link" href="/">{t('approvedLink')}</ExternalLink>
         </div>
       </div>
     </form>
