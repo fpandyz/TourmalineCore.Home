@@ -51,7 +51,7 @@ function Discussion({
           onClick={() => setIsOpen(false)}
           content={(
             <>
-              {isSubmit && (
+              {!isSubmit && (
                 <Form onFormSubmit={(formEvent) => {
                   onFormSubmit(formEvent);
                   setIsSubmit(true);
@@ -59,7 +59,7 @@ function Discussion({
                 />
               )}
 
-              {!isSubmit && (
+              {isSubmit && (
                 <>
                   <div className="title-type-4 discussion__list-title">{t('modalListTitle')}</div>
                   <List steps={dataList} />

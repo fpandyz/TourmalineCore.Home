@@ -6,7 +6,10 @@ function List({
   return (
     <ul className="list">
       {steps.map((text, index) => (
-        <li className="list__item">
+        <li
+          key={text}
+          className="list__item"
+        >
           <div className="list__number">{index + 1}</div>
           <span className="list__text">{text}</span>
         </li>

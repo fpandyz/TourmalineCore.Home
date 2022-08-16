@@ -17,7 +17,7 @@
   &__inner {
     position: relative;
     border-radius: 5px;
-    padding: 40px;
+    padding: 56px 16px;
     background-color: $color-gray;
 
     @include tablet {
@@ -34,12 +34,12 @@
 
   &__cross {
     position: absolute;
-    right: 36px;
-    top: 36px;
+    right: 19px;
+    top: 19px;
     border: none;
     padding: 0;
-    width: 24px;
-    height: 24px;
+    width: 19px;
+    height: 19px;
     background-color: inherit;
     cursor: pointer;
     transition: transform 0.3s;
@@ -55,6 +55,13 @@
     &:active,
     &:focus-visible {
       transform: rotate(-0.5turn);
+    }
+
+    @include tablet {
+      right: 36px;
+      top: 36px;
+      width: 24px;
+      height: 24px;
     }
   }
 
