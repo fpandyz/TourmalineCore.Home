@@ -40,7 +40,7 @@ export default function HomePage() {
         <Services id={navigationLinks[0]} />
         <Skills id={navigationLinks[1]} />
         <CompletedProjects id={navigationLinks[2]} />
-        <Discussion id={navigationLinks[3]} />
+        <Discussion id={navigationLinks[3]} onFormSubmit={onFormSubmit} />
         <AdaptationToProject id={navigationLinks[4]} />
         <Process id={navigationLinks[5]} />
         <Tools id={navigationLinks[6]} />

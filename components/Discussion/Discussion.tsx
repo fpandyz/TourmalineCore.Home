@@ -1,5 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+
+import Form from '../Form/Form';
 import List from '../List/List';
 import Modal from '../Modal/Modal';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
@@ -8,8 +10,10 @@ const email = 'pol’zovatel’@gmail.com';
 
 function Discussion({
   id,
+  onFormSubmit,
 }: {
   id: string;
+  onFormSubmit: (formEvent: FormData) => unknown;
 }) {
   const { t } = useTranslation('discussion');
 
@@ -48,7 +52,11 @@ function Discussion({
           content={(
             <>
               {isSubmit && (
-                <div>Form</div>
+                <Form onFormSubmit={(formEvent) => {
+                  onFormSubmit(formEvent);
+                  setIsSubmit(true);
+                }}
+                />
               )}
 
               {!isSubmit && (
