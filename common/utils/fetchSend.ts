@@ -4,7 +4,6 @@ export type SendEmail = {
   name: string,
   email: string,
   message: string,
-  subject: string,
 };
 
 export async function sendEmail(message: SendEmail) {

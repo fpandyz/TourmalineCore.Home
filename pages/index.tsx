@@ -15,6 +15,7 @@ import Tools from '../components/Tools/Tools';
 import Form from '../components/Form/Form';
 
 import { navigationLinks } from '../utils/consts/navigation';
+import { SendEmail, sendEmail } from '../common/utils/fetchSend';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -51,11 +52,22 @@ export default function HomePage() {
   );
 
   async function onFormSubmit(formEvent: FormData) {
-    const messageSend: { [key: string]: string } = {};
+    const messageSend: SendEmail = {
+      name: '',
+      email: '',
+      message: '',
+    };
 
-    for (const key of formEvent.keys()) {
-      messageSend[key] = formEvent.get(key)?.toString() || '';
-    }
+    Object.keys(messageSend).forEach((key) => {
+      const value = formEvent.get(key);
+      if (value) {
+        messageSend[key as keyof SendEmail] = value.toString();
+      } else {
+        messageSend[key as keyof SendEmail] = 'empty';
+      }
+    });
+
+    sendEmail(messageSend);
   }
 }
 
