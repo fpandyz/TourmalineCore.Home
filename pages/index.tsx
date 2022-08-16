@@ -71,6 +71,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'adaptationToProject',
       'process',
       'tools',
+      'form',
     ])),
   },
 });

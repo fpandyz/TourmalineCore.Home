@@ -1,4 +1,6 @@
+import { useTranslation } from 'next-i18next';
 import { FormEvent } from 'react';
+
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
@@ -9,6 +11,8 @@ function Form({
 }: {
   onFormSubmit: (formEvent: FormData) => unknown;
 }) {
+  const { t } = useTranslation('form');
+
   return (
     <form
       className="form"
@@ -16,22 +20,22 @@ function Form({
     >
       <div className="form__content">
         <Input
-          label="Имя"
-          description="Чтобы мы знали, как к вам обращаться"
-          name="name"
           id="name"
+          name="name"
+          label={t('name.label')}
+          description={t('name.description')}
         />
         <Input
-          label="Почта"
-          description="Чтобы мы могли связаться с вами"
-          name="email"
           id="email"
+          name="email"
+          label={t('email.label')}
+          description={t('email.description')}
         />
         <Textarea
-          label="Сообщение"
           id="message"
           name="message"
-          description="Тут можно задать вопрос, рассказать немного о себе, своем бизнесе или задаче, с которой мы можем вам помочь"
+          label={t('message.label')}
+          description={t('message.description')}
         />
       </div>
 
@@ -40,13 +44,12 @@ function Form({
           type="submit"
           className="form__button"
         >
-          Отправить
+          {t('buttonText')}
         </PrimaryButton>
         <div className="form__approval">
-          Нажимая на кнопку, вы даёте согласие на обработку персональных данных
-          и соглашаетесь с
+          {t('approvedText')}
           {' '}
-          <ExternalLink className="form__link">положением о конфиденциальности данных.</ExternalLink>
+          <ExternalLink className="form__link">{t('approvedLink')}</ExternalLink>
         </div>
       </div>
     </form>
