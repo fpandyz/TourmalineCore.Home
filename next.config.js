@@ -7,6 +7,8 @@ module.exports = withReactSvg({
   i18n,
   include: path.resolve(__dirname, 'icons'),
   webpack(webpackConfig) {
+    webpackConfig.resolve.fallback = { fs: false };
+
     return webpackConfig;
   },
 });
