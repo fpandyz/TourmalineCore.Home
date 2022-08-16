@@ -12,7 +12,6 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     name,
     email,
     message,
-    subject,
   } = req.body;
 
   const testMessage = `
@@ -24,7 +23,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
   const content = {
     to: emailTo,
     from: emailFrom,
-    subject: `${subject} - ${email}`,
+    subject: `Subject - ${email}`,
     text: message,
     html: testMessage.replace(/\r\n/g, '<br />'),
   };

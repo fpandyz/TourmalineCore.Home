@@ -13,8 +13,10 @@ import Process from '../components/Process/Process';
 import Tools from '../components/Tools/Tools';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
+import Form from '../components/Form/Form';
 
 import { navigationLinks } from '../utils/consts/navigation';
+import { SendEmail, sendEmail } from '../common/utils/fetchSend';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -44,9 +46,31 @@ export default function HomePage() {
         <Tools id={navigationLinks[6]} />
         <WorkStructure id={navigationLinks[7]} />
         <Mistakes id={navigationLinks[8]} />
+        <section className="section">
+          <Form onFormSubmit={onFormSubmit} />
+        </section>
       </LayoutHomePage>
     </>
   );
+
+  async function onFormSubmit(formEvent: FormData) {
+    const messageSend: SendEmail = {
+      name: '',
+      email: '',
+      message: '',
+    };
+
+    Object.keys(messageSend).forEach((key) => {
+      const value = formEvent.get(key);
+      if (value) {
+        messageSend[key as keyof SendEmail] = value.toString();
+      } else {
+        messageSend[key as keyof SendEmail] = 'empty';
+      }
+    });
+
+    sendEmail(messageSend);
+  }
 }
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
@@ -65,6 +89,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'adaptationToProject',
       'process',
       'tools',
+      'form',
       'discussion',
     ])),
   },
