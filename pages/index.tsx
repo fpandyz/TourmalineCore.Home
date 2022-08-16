@@ -51,8 +51,10 @@ export default function HomePage() {
   );
 
   async function onFormSubmit(formEvent: FormData) {
+    const messageSend: { [key: string]: string } = {};
+
     for (const key of formEvent.keys()) {
-      console.log(key, formEvent.get(key));
+      messageSend[key] = formEvent.get(key)?.toString() || '';
     }
   }
 }

@@ -24,12 +24,15 @@ function Form({
           name="name"
           label={t('name.label')}
           description={t('name.description')}
+          required
         />
         <Input
           id="email"
           name="email"
           label={t('email.label')}
           description={t('email.description')}
+          type="email"
+          required
         />
         <Textarea
           id="message"
@@ -59,12 +62,8 @@ function Form({
   function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // console.log(event.target.values);
-
     const formEvent = new FormData(event.target as HTMLFormElement);
     onFormSubmit(formEvent);
-
-    // /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
   }
 }
 
