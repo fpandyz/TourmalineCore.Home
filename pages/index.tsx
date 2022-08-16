@@ -2,16 +2,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 import { GetServerSideProps } from 'next';
 
-import PageHead from '../components/PageHead/PageHead';
-import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
-import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
+import PageHead from '../components/PageHead/PageHead';
 import Services from '../components/Services/Services';
+import Skills from '../components/Skills/Skills';
+import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
+import Discussion from '../components/Discussion/Discussion';
+import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
 import Process from '../components/Process/Process';
+import Tools from '../components/Tools/Tools';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
-import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
-import Tools from '../components/Tools/Tools';
 
 import { navigationLinks } from '../utils/consts/navigation';
 
@@ -37,11 +38,12 @@ export default function HomePage() {
         <Services id={navigationLinks[0]} />
         <Skills id={navigationLinks[1]} />
         <CompletedProjects id={navigationLinks[2]} />
-        <AdaptationToProject id={navigationLinks[3]} />
-        <Process id={navigationLinks[4]} />
-        <Tools id={navigationLinks[5]} />
-        <WorkStructure id={navigationLinks[6]} />
-        <Mistakes id={navigationLinks[7]} />
+        <Discussion id={navigationLinks[3]} />
+        <AdaptationToProject id={navigationLinks[4]} />
+        <Process id={navigationLinks[5]} />
+        <Tools id={navigationLinks[6]} />
+        <WorkStructure id={navigationLinks[7]} />
+        <Mistakes id={navigationLinks[8]} />
       </LayoutHomePage>
     </>
   );
@@ -63,6 +65,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'adaptationToProject',
       'process',
       'tools',
+      'discussion',
     ])),
   },
 });

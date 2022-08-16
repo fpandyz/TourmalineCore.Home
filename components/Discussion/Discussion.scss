@@ -1,0 +1,71 @@
+.discussion {
+  &__wrapper {
+    margin: 0 -16px;
+    background-image: $main-gradient-300;
+
+    @include tablet {
+      margin: 0 -32px;
+    }
+
+    @include tablet-xl {
+      margin: 0;
+    }
+  }
+
+  &__inner {
+    z-index: 10;
+    margin: 0 16px;
+    padding: 56px 0;
+
+    @include tablet {
+      margin: 0 32px;
+    }
+
+    @include tablet-xl {
+      margin: 0;
+    }
+
+    @include desktop-xl {
+      padding: 72px 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    text-align: center;
+
+    @include desktop {
+      margin-bottom: 48px;
+      text-align: left;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__gradient-title {
+    @include gradient-text;
+
+    display: block;
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include desktop {
+      margin: 0;
+    }
+
+    @include desktop-xl {
+      margin: 0;
+      padding: 16px 52px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+  }
+
+  &__list-title {
+    margin-bottom: 32px;
+  }
+}
