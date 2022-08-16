@@ -43,7 +43,9 @@ export default function HomePage() {
         <Tools id={navigationLinks[5]} />
         <WorkStructure id={navigationLinks[6]} />
         <Mistakes id={navigationLinks[7]} />
-        <Form onFormSubmit={onFormSubmit} />
+        <section className="section">
+          <Form onFormSubmit={onFormSubmit} />
+        </section>
       </LayoutHomePage>
     </>
   );

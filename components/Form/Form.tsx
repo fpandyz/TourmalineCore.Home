@@ -35,6 +35,7 @@ function Form({
           id="message"
           name="message"
           label={t('message.label')}
+          className="form__message"
           description={t('message.description')}
         />
       </div>

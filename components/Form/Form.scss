@@ -1,4 +1,8 @@
 .form {
+  &__message {
+    resize: vertical;
+  }
+
   &__footer {
     @include tablet {
       display: flex;
@@ -37,5 +41,6 @@
     font-family: inherit;
     font-style: normal;
     font-size: inherit;
+    text-decoration: underline;
   }
 }
