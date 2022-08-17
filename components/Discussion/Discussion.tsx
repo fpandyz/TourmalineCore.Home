@@ -24,7 +24,7 @@ function Discussion({
 
   return (
     <section id={id} className="section discussion">
-      <div className="discussion__wrapper">
+      <div className="container container--home-page">
         <div className="discussion__inner">
           <h3 className="title-type-2 discussion__title">
             {t('title')}

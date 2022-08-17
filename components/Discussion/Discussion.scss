@@ -1,29 +1,9 @@
 .discussion {
-  &__wrapper {
-    margin: 0 -16px;
-    background-image: $main-gradient-300;
-
-    @include tablet {
-      margin: 0 -32px;
-    }
-
-    @include tablet-xl {
-      margin: 0;
-    }
-  }
+  background-image: $main-gradient-300;
 
   &__inner {
     z-index: 10;
-    margin: 0 16px;
     padding: 56px 0;
-
-    @include tablet {
-      margin: 0 32px;
-    }
-
-    @include tablet-xl {
-      margin: 0;
-    }
 
     @include desktop-xl {
       padding: 72px 0;
