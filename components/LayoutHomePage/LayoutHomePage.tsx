@@ -19,10 +19,8 @@ function LayoutHomePage({
         <Header />
         <HeroBlock firstBlockSelector={navigationLinks[0]} />
       </div>
-      <main className="container layout-home-page__wrapper">
-        <div className="section layout-home-page__nav">
-          <Navigation navigationLinks={navigationLinks} />
-        </div>
+      <main className="layout-home-page__wrapper">
+        <Navigation navigationLinks={navigationLinks} />
         <div className="layout-home-page__content">
           {children}
         </div>

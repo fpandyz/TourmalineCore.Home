@@ -14,39 +14,41 @@ function Tools({
 
   return (
     <section id={id} className="section tools">
-      <h2 className="title-type-3">{t('title')}</h2>
+      <div className="container container--home-page">
+        <h2 className="title-type-3">{t('title')}</h2>
 
-      <div className="tools__subtitle">{t('subtitle')}</div>
-      <div className="scroll tools__list">
-        {tools.map((tool) => (
-          <div
-            key={tool.localizationTitle}
-            className="tools__item"
-          >
-            <ToolHeader
+        <div className="tools__subtitle">{t('subtitle')}</div>
+        <div className="scroll tools__list">
+          {tools.map((tool) => (
+            <div
               key={tool.localizationTitle}
-              title={t(`${tool.localizationTitle}.title`)}
-              number={tool.tasks.length}
-            />
+              className="tools__item"
+            >
+              <ToolHeader
+                key={tool.localizationTitle}
+                title={t(`${tool.localizationTitle}.title`)}
+                number={tool.tasks.length}
+              />
 
-            {tool.tasks.map((task, indexTasks) => {
-              const dataLocalization: { text: string, time?: string }[] = t(`${tool.localizationTitle}.tasks`, { returnObjects: true });
+              {tool.tasks.map((task, indexTasks) => {
+                const dataLocalization: { text: string, time?: string }[] = t(`${tool.localizationTitle}.tasks`, { returnObjects: true });
 
-              return (
-                <ToolCard
-                  key={`${indexTasks + 1}`}
-                  isIconLink={task.iconLink}
-                  developers={task.developers}
-                  text={dataLocalization[indexTasks].text}
-                  tags={task.tags}
-                  time={dataLocalization[indexTasks].time}
-                />
-              );
-            })}
-          </div>
-        ))}
+                return (
+                  <ToolCard
+                    key={`${indexTasks + 1}`}
+                    isIconLink={task.iconLink}
+                    developers={task.developers}
+                    text={dataLocalization[indexTasks].text}
+                    tags={task.tags}
+                    time={dataLocalization[indexTasks].time}
+                  />
+                );
+              })}
+            </div>
+          ))}
+        </div>
+        <div className="caption tools__caption">{t('caption')}</div>
       </div>
-      <div className="caption tools__caption">{t('caption')}</div>
     </section>
   );
 }

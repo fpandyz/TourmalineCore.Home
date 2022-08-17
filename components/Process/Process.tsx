@@ -67,28 +67,30 @@ function Process({
 
   return (
     <section id={id} className="section process">
-      <h2 className="title-type-3">{t('title')}</h2>
-      <div className="process__subtitle">{t('subtitle')}</div>
+      <div className="container container--home-page">
+        <h2 className="title-type-3">{t('title')}</h2>
+        <div className="process__subtitle">{t('subtitle')}</div>
 
-      <div className="process__content">
-        <FirstCard />
-        <SecondCard />
-      </div>
-
-      <div
-        className="responsive-carousel"
-      >
-        <Carousel
-          showArrows={false}
-          showStatus={false}
-          showThumbs={false}
-          preventMovementUntilSwipeScrollTolerance
-        >
+        <div className="process__content">
           <FirstCard />
           <SecondCard />
-        </Carousel>
+        </div>
+
+        <div
+          className="responsive-carousel"
+        >
+          <Carousel
+            showArrows={false}
+            showStatus={false}
+            showThumbs={false}
+            preventMovementUntilSwipeScrollTolerance
+          >
+            <FirstCard />
+            <SecondCard />
+          </Carousel>
+        </div>
+        <div className="caption process__caption">{t('caption')}</div>
       </div>
-      <div className="caption process__caption">{t('caption')}</div>
     </section>
   );
 }

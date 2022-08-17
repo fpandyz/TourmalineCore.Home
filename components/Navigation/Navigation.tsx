@@ -14,7 +14,7 @@ function Navigation({
   const offset = useOffset();
 
   return (
-    <div className="navigation">
+    <div className="navigation container section">
       <div className="navigation__line" />
       <div className="navigation__links">
         {navigationLinks.map((link) => (

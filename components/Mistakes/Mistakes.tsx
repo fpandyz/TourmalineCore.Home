@@ -14,21 +14,23 @@ function Mistakes({
   return (
 
     <section id={id} className="section mistakes">
-      <h2 className="title-type-3">{t('title')}</h2>
+      <div className="container container--home-page">
+        <h2 className="title-type-3">{t('title')}</h2>
 
-      <div className="mistakes__subtitle">{t('subtitle')}</div>
+        <div className="mistakes__subtitle">{t('subtitle')}</div>
 
-      <div className="scroll mistakes__list">
-        {dataMistakes.map((item) => (
-          <MistakeItem
-            key={item.title}
-            title={item.title}
-            mistakes={item.mistakes}
-          />
-        ))}
+        <div className="scroll mistakes__list">
+          {dataMistakes.map((item) => (
+            <MistakeItem
+              key={item.title}
+              title={item.title}
+              mistakes={item.mistakes}
+            />
+          ))}
+        </div>
+
+        <div className="caption mistakes__caption">{t('caption')}</div>
       </div>
-
-      <div className="caption mistakes__caption">{t('caption')}</div>
     </section>
   );
 }

@@ -27,19 +27,21 @@ function AdaptationToProject({
 
   return (
     <section id={id} className="section adaptation-to-project">
-      <h2 className="title-type-3">{t('title')}</h2>
-      <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
+      <div className="container container--home-page">
+        <h2 className="title-type-3">{t('title')}</h2>
+        <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
 
-      <div className="scroll adaptation-to-project__scroll">
-        <div className="ratio ratio--16x9 adaptation-to-project__image">
-          <Image
-            src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
-            layout="fill"
-          />
+        <div className="scroll adaptation-to-project__scroll">
+          <div className="ratio ratio--16x9 adaptation-to-project__image">
+            <Image
+              src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
+              layout="fill"
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="caption adaptation-to-project__caption">{t('caption')}</div>
+        <div className="caption adaptation-to-project__caption">{t('caption')}</div>
+      </div>
     </section>
   );
 }
