@@ -32,13 +32,21 @@ function Header() {
       <header className="header">
         <div className="container header__inner">
           <Link href="/">
-            <a className="header__logo">
+            <a
+              className="header__logo"
+              aria-label="Header logo"
+            >
               <IconLogo />
             </a>
           </Link>
 
           <div className="header__right-panel">
-            <button type="button" className="header__menu-toggle" onClick={() => setIsMobileMenuOpen(true)}>
+            <button
+              type="button"
+              className="header__menu-toggle"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="open-header"
+            >
               <IconBurger />
             </button>
 

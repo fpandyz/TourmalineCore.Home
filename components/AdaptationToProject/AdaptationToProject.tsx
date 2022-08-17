@@ -34,6 +34,7 @@ function AdaptationToProject({
         <div className="ratio ratio--16x9 adaptation-to-project__image">
           <Image
             src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
+            alt={t('imageAlt')}
             layout="fill"
           />
         </div>

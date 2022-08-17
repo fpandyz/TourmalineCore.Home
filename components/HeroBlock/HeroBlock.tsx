@@ -22,7 +22,6 @@ function HeroBlock({
         </div>
         <div className="hero-block__video">
           <video poster="/images/tourmaline-core-poster.png" src="/images/video.mp4" autoPlay loop playsInline muted>
-            <source src="video.mp4" type="video/mp4" />
             <track kind="captions" />
           </video>
         </div>

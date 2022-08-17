@@ -17,12 +17,14 @@ function WorkStructure({
         <div className="ratio ratio--16x9 work-structure__first-image">
           <Image
             src="/images/good-code.png"
+            alt={t('altImageFirst')}
             layout="fill"
           />
         </div>
         <div className="ratio ratio--16x9 work-structure__second-image">
           <Image
             src="/images/good-work.png"
+            alt={t('altImageSecond')}
             layout="fill"
           />
         </div>

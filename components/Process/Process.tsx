@@ -22,8 +22,10 @@ function Process({
 
   const FirstCard = useCallback(() => (
     <ProcessCard
+      altImageMain={t('altImage')}
       reactionImg="/images/yes.png"
       time="17:58"
+      alt={t('firstCard.alt')}
       name={t('Yuliya')}
     >
       <div className="process-card__content">
@@ -42,7 +44,9 @@ function Process({
 
   const SecondCard = useCallback(() => (
     <ProcessCard
+      altImageMain={t('altImage')}
       reactionImg="/images/fire.png"
+      alt={t('secondCardAlt')}
       time="17:58"
       name={t('Yuliya')}
     >

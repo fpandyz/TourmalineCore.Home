@@ -2,26 +2,30 @@ import Image from 'next/image';
 import { ReactNode } from 'react';
 
 function ProcessCard({
+  altImageMain,
   reactionImg,
   time,
+  alt,
   name,
   children,
 }: {
+  altImageMain: string;
   reactionImg: string;
   time: string;
+  alt: string;
   name: string;
   children: ReactNode;
 }) {
   return (
     <div className="process-card">
       <div className="process-card__image process-card__image--desktop">
-        <Image src="/images/skype-yuilya.png" layout="fill" />
+        <Image src="/images/skype-yuilya.png" alt={altImageMain} layout="fill" />
       </div>
 
       <div className="process-card__inner">
         <div className="process-card__header">
           <div className="process-card__image process-card__image--mobile">
-            <Image src="/images/skype-yuilya.png" layout="fill" />
+            <Image src="/images/skype-yuilya.png" alt={altImageMain} layout="fill" />
           </div>
 
           <div>
@@ -34,7 +38,7 @@ function ProcessCard({
         {children}
 
         <div className="process-card__reaction">
-          <Image src={reactionImg} layout="fill" />
+          <Image src={reactionImg} alt={alt} layout="fill" />
         </div>
       </div>
 

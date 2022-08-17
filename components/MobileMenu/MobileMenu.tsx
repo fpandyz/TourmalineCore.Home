@@ -37,7 +37,12 @@ function MobileMenu({
             </a>
           </Link>
 
-          <button type="button" className="mobile-menu__close" onClick={onCloseClick}>
+          <button
+            type="button"
+            className="mobile-menu__close"
+            onClick={onCloseClick}
+            aria-label="close-header"
+          >
             <IconClose />
           </button>
         </div>
