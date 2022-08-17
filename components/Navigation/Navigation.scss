@@ -4,7 +4,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 0;
+  display: none;
   margin: 0;
   height: 100%;
   max-width: 93px;
@@ -92,13 +92,17 @@
     }
   }
 
+  @include tablet-xl {
+    display: block;
+  }
+
   @include desktop {
     margin: 0;
     max-width: 120px;
   }
 
   @include desktop-xl {
-    margin: 0;
-    max-width: 150px;
+    margin: auto;
+    max-width: 1606px;
   }
 }
