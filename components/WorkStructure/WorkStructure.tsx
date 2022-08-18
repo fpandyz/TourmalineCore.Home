@@ -14,16 +14,23 @@ function WorkStructure({
 
       <div
         className="work-structure__images"
-        data-aos="fade-up"
-        data-aos-delay={100}
       >
-        <div className="ratio ratio--16x9 work-structure__first-image">
+        <div
+          className="ratio ratio--16x9 work-structure__first-image"
+          data-aos="fade-right"
+          data-aos-delay={100}
+        >
           <Image
             src="/images/good-code.png"
             layout="fill"
           />
         </div>
-        <div className="ratio ratio--16x9 work-structure__second-image">
+        <div
+          className="ratio ratio--16x9 work-structure__second-image"
+          data-aos="fade-left"
+          // data-aos="fade-right" //
+          data-aos-delay={150}
+        >
           <Image
             src="/images/good-work.png"
             layout="fill"
@@ -31,7 +38,13 @@ function WorkStructure({
         </div>
       </div>
 
-      <div className="caption work-structure__caption">{t('caption')}</div>
+      <div
+        className="caption work-structure__caption"
+        data-aos="fade-up"
+        data-aos-delay={50}
+      >
+        {t('caption')}
+      </div>
     </section>
   );
 }

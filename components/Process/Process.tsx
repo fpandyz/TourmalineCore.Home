@@ -91,7 +91,14 @@ function Process({
           <SecondCard />
         </Carousel>
       </div>
-      <div className="caption process__caption">{t('caption')}</div>
+      <div
+        className="caption process__caption"
+        data-aos="fade-up"
+        data-aos-delay={50}
+      >
+        {t('caption')}
+
+      </div>
     </section>
   );
 }

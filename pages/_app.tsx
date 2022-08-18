@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({
       delay: 50,
+      duration: 1000,
       easing: 'ease-in-out',
+      once: true,
     });
   });
 

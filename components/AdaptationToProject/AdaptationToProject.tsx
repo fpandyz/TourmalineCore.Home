@@ -42,7 +42,14 @@ function AdaptationToProject({
         </div>
       </div>
 
-      <div className="caption adaptation-to-project__caption">{t('caption')}</div>
+      <div
+        className="caption adaptation-to-project__caption"
+        data-aos="fade-up"
+        data-aos-delay={50}
+      >
+        {t('caption')}
+
+      </div>
     </section>
   );
 }

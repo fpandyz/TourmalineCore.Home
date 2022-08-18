@@ -69,8 +69,6 @@ class MyDocument extends Document {
             }}
           />
           <noscript><div><img src="https://mc.yandex.ru/watch/89913543" style={{ position: 'absolute', left: '-9999px' }} alt="" /></div></noscript>
-
-          <script src="https://unpkg.com/aos@next/dist/aos.js" />
         </body>
       </Html>
     );

@@ -23,13 +23,19 @@ function Mistakes({
             key={item.title}
             title={item.title}
             mistakes={item.mistakes}
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-delay={100 * (index + 1)}
           />
         ))}
       </div>
 
-      <div className="caption mistakes__caption">{t('caption')}</div>
+      <div
+        className="caption mistakes__caption"
+        data-aos="fade-up"
+        data-aos-delay={50}
+      >
+        {t('caption')}
+      </div>
     </section>
   );
 }

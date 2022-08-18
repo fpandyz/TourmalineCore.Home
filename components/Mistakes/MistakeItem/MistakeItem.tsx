@@ -56,7 +56,7 @@ function MistakeItem({
                 'mistake-item__cursor',
                 CursorColor[developer.toLowerCase() as keyof typeof CursorColor],
               )}
-              data-aos="fade-up"
+              data-aos="fade-in"
               data-aos-offset="0"
               data-aos-delay={700}
             >

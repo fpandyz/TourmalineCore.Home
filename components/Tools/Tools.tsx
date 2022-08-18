@@ -21,7 +21,7 @@ function Tools({
           <div
             key={tool.localizationTitle}
             className="tools__item"
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-delay={100 * (index + 1)}
           >
             <ToolHeader
@@ -47,7 +47,14 @@ function Tools({
           </div>
         ))}
       </div>
-      <div className="caption tools__caption">{t('caption')}</div>
+      <div
+        className="caption tools__caption"
+        data-aos="fade-up"
+        data-aos-delay={50}
+      >
+        {t('caption')}
+
+      </div>
     </section>
   );
 }

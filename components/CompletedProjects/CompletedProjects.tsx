@@ -26,7 +26,7 @@ function CompletedProjects({
             <li
               key={completedProject.title}
               className="completed-projects__card"
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay={100 * (index + 1)}
             >
               <CompletedProjectsCard completedProject={completedProject} />
