@@ -1,5 +1,5 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 
 import PageHead from '../components/PageHead/PageHead';
@@ -77,7 +77,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'common',
       'articles',
       'footer',
-      'heroBlock',
+      'heroBlockHomePage',
       'skills',
       'services',
       'completedProjects',

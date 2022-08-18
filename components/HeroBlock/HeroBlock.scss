@@ -1,6 +1,10 @@
 .hero-block {
+  background-color: $color-black;
+
   &__gradient-title {
     @include gradient-text;
+
+    display: block;
   }
 
   &__inner {
