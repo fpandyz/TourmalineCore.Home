@@ -1,19 +1,22 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { SectionProps } from '../../types/globals';
 
 function WorkStructure({
-  id,
-}: {
-  id: string;
-}) {
+  ...props
+}: SectionProps) {
   const { t } = useTranslation('workStructure');
 
   return (
-    <section id={id} className="section work-structure">
+    <section className="section work-structure" {...props}>
       <h2 className="title-type-3">{t('title')}</h2>
       <div className="work-structure__subtitle">{t('subtitle')}</div>
 
-      <div className="work-structure__images">
+      <div
+        className="work-structure__images"
+        data-aos="fade-up"
+        data-aos-delay={100}
+      >
         <div className="ratio ratio--16x9 work-structure__first-image">
           <Image
             src="/images/good-code.png"

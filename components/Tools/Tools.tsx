@@ -1,27 +1,28 @@
 import { useTranslation } from 'next-i18next';
+import { SectionProps } from '../../types/globals';
 import { dataTools } from './getTools';
 import ToolCard from './ToolCard/ToolCard';
 import ToolHeader from './ToolHeader/ToolHeader';
 
 function Tools({
-  id,
-}: {
-  id: string,
-}) {
+  ...props
+}: SectionProps) {
   const { t } = useTranslation('tools');
 
   const tools = Object.values(dataTools);
 
   return (
-    <section id={id} className="section tools">
+    <section className="section tools" {...props}>
       <h2 className="title-type-3">{t('title')}</h2>
 
       <div className="tools__subtitle">{t('subtitle')}</div>
       <div className="scroll tools__list">
-        {tools.map((tool) => (
+        {tools.map((tool, index) => (
           <div
             key={tool.localizationTitle}
             className="tools__item"
+            data-aos="fade-right"
+            data-aos-delay={100 * (index + 1)}
           >
             <ToolHeader
               key={tool.localizationTitle}

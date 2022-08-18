@@ -1,6 +1,16 @@
 import clsx from 'clsx';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import IconCursor from '../../../icons/icon-cursor.svg';
+
+interface MistakeItemProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement > {
+  title: string;
+  mistakes: {
+    text: string;
+    developer?: string;
+    cursor?: boolean;
+  }[];
+}
 
 enum TagColor {
   victor = 'mistake-item__tag--green',
@@ -18,16 +28,10 @@ enum CursorColor {
 function MistakeItem({
   title,
   mistakes,
-}: {
-  title: string;
-  mistakes: {
-    text: string;
-    developer?: string;
-    cursor?: boolean;
-  }[]
-}) {
+  ...props
+}: MistakeItemProps) {
   return (
-    <div className="mistake-item">
+    <div className="mistake-item" {...props}>
       <div className="mistake-item__title">{title}</div>
 
       {mistakes.map(({ text, developer, cursor }) => (
@@ -52,6 +56,9 @@ function MistakeItem({
                 'mistake-item__cursor',
                 CursorColor[developer.toLowerCase() as keyof typeof CursorColor],
               )}
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-delay={700}
             >
               {developer}
 

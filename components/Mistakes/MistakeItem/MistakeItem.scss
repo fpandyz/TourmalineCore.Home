@@ -33,8 +33,6 @@
     background-color: rgba(220, 213, 249, 0.1);
 
     & + & {
-      @include desktop-xl {}
-
       margin-top: 12px;
     }
 
@@ -89,87 +87,77 @@
   }
 
   &__cursor {
-    display: none;
+    position: absolute;
+    border-radius: 3px;
+    padding: 2px 16px;
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-white;
 
-    @include desktop {
-      position: absolute;
-      display: block;
-      border-radius: 3px;
-      padding: 2px 16px;
-      font-size: 14px;
-      line-height: 24px;
-      color: $color-white;
+    &--green {
+      right: -10px;
+      bottom: 0;
+      background: $tag-green;
 
-      &--green {
-        right: -10px;
-        bottom: 0;
-        background: $tag-green;
-
-        #{$this}__cursor-arrow {
-          left: -40%;
-          top: -40%;
-          color: $tag-green;
-
-          @include desktop-xl {
-            left: -50%;
-            top: -70%;
-          }
-        }
-      }
-
-      &--purple {
-        left: -45%;
-        bottom: -40%;
-        background: $tag-purple;
-
-        #{$this}__cursor-arrow {
-          right: -30%;
-          top: -90%;
-          color: $tag-purple;
-          transform: rotate(90deg);
-        }
+      #{$this}__cursor-arrow {
+        left: -40%;
+        top: -40%;
+        color: $tag-green;
 
         @include desktop-xl {
-          left: -40%;
-          bottom: -22%;
-        }
-      }
-
-      &--blue {
-        right: 10%;
-        bottom: -10%;
-        background: $tag-blue;
-
-        #{$this}__cursor-arrow {
-          left: -60%;
-          top: -60%;
-          color: $tag-blue;
-        }
-      }
-
-      &--pink {
-        right: -26%;
-        bottom: 16%;
-        background: $tag-pink;
-
-        #{$this}__cursor-arrow {
           left: -50%;
-          top: -50%;
-          color: $tag-pink;
+          top: -70%;
         }
+      }
+    }
+
+    &--purple {
+      left: -45%;
+      bottom: -40%;
+      background: $tag-purple;
+
+      #{$this}__cursor-arrow {
+        right: -30%;
+        top: -90%;
+        color: $tag-purple;
+        transform: rotate(90deg);
+      }
+
+      @include desktop-xl {
+        left: -40%;
+        bottom: -22%;
+      }
+    }
+
+    &--blue {
+      right: 10%;
+      bottom: -10%;
+      background: $tag-blue;
+
+      #{$this}__cursor-arrow {
+        left: -60%;
+        top: -60%;
+        color: $tag-blue;
+      }
+    }
+
+    &--pink {
+      right: -26%;
+      bottom: 16%;
+      background: $tag-pink;
+
+      #{$this}__cursor-arrow {
+        left: -50%;
+        top: -50%;
+        color: $tag-pink;
       }
     }
   }
 
   &__cursor-arrow {
-    display: none;
-
-    @include desktop {
-      position: absolute;
-      display: block;
-      width: 24px;
-      height: 24px;
-    }
+    position: absolute;
+    width: 24px;
+    height: 24px;
   }
 
   &:first-child {
