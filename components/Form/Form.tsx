@@ -134,7 +134,7 @@ function Form({
 
     onSubmit(formEvent);
 
-    recaptchaRef.current.reset();
+    // recaptchaRef.current.reset();
   }
 }
 
