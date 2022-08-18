@@ -12,7 +12,7 @@ import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
 import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
 import Tools from '../components/Tools/Tools';
-import BlockForm from '../components/BlockForm/BlockForm';
+import FormBlock from '../components/FormBlock/FormBlock';
 
 import { navigationLinks } from '../utils/consts/navigation';
 
@@ -43,7 +43,7 @@ export default function HomePage() {
         <Tools id={navigationLinks[5]} />
         <WorkStructure id={navigationLinks[6]} />
         <Mistakes id={navigationLinks[7]} />
-        <BlockForm />
+        <FormBlock />
       </LayoutHomePage>
     </>
   );
@@ -66,7 +66,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'process',
       'tools',
       'form',
-      'blockForm',
+      'formBlock',
     ])),
   },
 });

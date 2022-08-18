@@ -1,37 +1,36 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
-import Form from '../../../components/Form/Form';
-import PrimaryButton from '../../../components/PrimaryButton/PrimaryButton';
+import { sendEmail, SendEmail } from '../../common/utils/fetchSend';
+import Form from '../Form/Form';
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
-import { sendEmail, SendEmail } from '../../../common/utils/fetchSend';
-
-function BlockForm() {
+function FormBlock() {
   const [email, setEmail] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
 
-  const { t } = useTranslation('blockForm');
+  const { t } = useTranslation('formBlock');
 
   return (
-    <section className="section block-form">
-      <h2 className="title-type-3">
+    <section className="section form-block">
+      <h2 className="title-type-3 form-block__title">
         {t('title')}
         {' '}
-        <span className="block-form__title-gradient">
+        <span className="form-block__title-gradient">
           {t('titleGradient')}
         </span>
       </h2>
       {
         !isSubmit
-          ? (<Form onFormSubmit={onFormSubmit} />)
+          ? (<Form onSubmit={onFormSubmit} />)
           : (
             <div>
-              <span className="block-form__text">
+              <span className="form-block__text">
                 {t('text')}
                 {' '}
                 {email}
               </span>
-              <PrimaryButton>{t('buttonText')}</PrimaryButton>
+              <PrimaryButton onClick={() => setIsSubmit(false)}>{t('buttonText')}</PrimaryButton>
             </div>
           )
       }
@@ -62,4 +61,4 @@ function BlockForm() {
   }
 }
 
-export default BlockForm;
+export default FormBlock;
