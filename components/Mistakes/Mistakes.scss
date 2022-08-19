@@ -21,6 +21,7 @@
   &__list {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     margin: 0 -15px;
     padding-bottom: 32px;
     font-family: $ff-inter;
