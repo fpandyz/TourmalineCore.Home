@@ -21,8 +21,10 @@ function Process({
 
   const FirstCard = useCallback(() => (
     <ProcessCard
+      altHeader={t('altHeader')}
       reactionImg="/images/yes.png"
       time="17:58"
+      altReaction={t('firstCard.altReaction')}
       name={t('Yuliya')}
       data-aos="fade-right"
       data-aos-delay={100}
@@ -43,7 +45,9 @@ function Process({
 
   const SecondCard = useCallback(() => (
     <ProcessCard
+      altHeader={t('altHeader')}
       reactionImg="/images/fire.png"
+      altReaction={t('secondCardAltReaction')}
       time="17:58"
       name={t('Yuliya')}
       data-aos="fade-left"

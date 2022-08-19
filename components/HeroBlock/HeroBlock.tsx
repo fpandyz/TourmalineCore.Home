@@ -23,6 +23,7 @@ function HeroBlock({
 
         </div>
         <div className="hero-block__video">
+
           <video poster="/images/tourmaline-core-poster.webp" src="/images/video.mp4" autoPlay loop playsInline muted>
             <track kind="captions" />
           </video>
