@@ -18,7 +18,7 @@ function Services({
         <div
           className="services__block-first"
           data-aos="fade-up"
-          data-aos-delay="80"
+          data-aos-delay={80}
         >
           <h3 className="title-type-3 services__subtitle">
             {t('firstSubtitle')}
@@ -31,7 +31,7 @@ function Services({
         <div
           className="services__block-second"
           data-aos="fade-up"
-          data-aos-delay="100"
+          data-aos-delay={100}
         >
           <h3 className="title-type-3 services__subtitle">
             {t('secondSubtitle')}

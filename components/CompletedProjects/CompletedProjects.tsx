@@ -43,6 +43,7 @@ function CompletedProjects({
           showStatus={false}
           showThumbs={false}
           preventMovementUntilSwipeScrollTolerance
+
         >
           {
             completedProjects.map((completedProject) => (
