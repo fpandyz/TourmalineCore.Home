@@ -1,6 +1,10 @@
 .hero-block {
+  background-color: $color-black;
+
   &__gradient-title {
     @include gradient-text;
+
+    display: block;
   }
 
   &__inner {
@@ -24,7 +28,7 @@
   &__video {
     display: none;
     flex: none;
-    background-image: url("/images/tourmaline-core-poster.png");
+    background-image: url("/images/tourmaline-core-poster.webp");
     background-size: contain;
     background-repeat: no-repeat;
 
