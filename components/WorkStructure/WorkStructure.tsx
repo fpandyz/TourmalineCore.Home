@@ -22,6 +22,7 @@ function WorkStructure({
         >
           <Image
             src="/images/good-code.png"
+            alt={t('altImageFirst')}
             layout="fill"
           />
         </div>
@@ -32,6 +33,7 @@ function WorkStructure({
         >
           <Image
             src="/images/good-work.png"
+            alt={t('altImageSecond')}
             layout="fill"
           />
         </div>
