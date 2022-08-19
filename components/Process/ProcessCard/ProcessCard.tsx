@@ -43,7 +43,6 @@ function ProcessCard({
           className="process-card__reaction"
           data-aos="fade-in"
           data-aos-delay={350}
-          // data-aos-anchor-placement="center-bottom"
         >
           <Image src={reactionImg} layout="fill" />
         </div>
