@@ -28,7 +28,6 @@ function WorkStructure({
         <div
           className="ratio ratio--16x9 work-structure__second-image"
           data-aos="fade-left"
-          // data-aos="fade-right" //
           data-aos-delay={150}
         >
           <Image
@@ -41,7 +40,8 @@ function WorkStructure({
       <div
         className="caption work-structure__caption"
         data-aos="fade-up"
-        data-aos-delay={50}
+        data-aos-delay={0}
+        data-aos-anchor-placement="center-bottom"
       >
         {t('caption')}
       </div>

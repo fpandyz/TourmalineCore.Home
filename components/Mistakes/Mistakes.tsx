@@ -32,7 +32,8 @@ function Mistakes({
       <div
         className="caption mistakes__caption"
         data-aos="fade-up"
-        data-aos-delay={50}
+        data-aos-delay={0}
+        data-aos-anchor-placement="center-bottom"
       >
         {t('caption')}
       </div>

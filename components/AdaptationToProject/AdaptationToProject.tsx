@@ -45,7 +45,8 @@ function AdaptationToProject({
       <div
         className="caption adaptation-to-project__caption"
         data-aos="fade-up"
-        data-aos-delay={50}
+        data-aos-delay={0}
+        data-aos-anchor-placement="bottom-bottom"
       >
         {t('caption')}
 
