@@ -21,7 +21,7 @@ function WorkStructure({
           data-aos-delay={100}
         >
           <Image
-            src="/images/good-code.png"
+            src="/images/good-code.webp"
             layout="fill"
           />
         </div>
@@ -31,7 +31,7 @@ function WorkStructure({
           data-aos-delay={150}
         >
           <Image
-            src="/images/good-work.png"
+            src="/images/good-work.webp"
             layout="fill"
           />
         </div>

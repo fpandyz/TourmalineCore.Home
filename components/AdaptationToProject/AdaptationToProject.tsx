@@ -5,9 +5,9 @@ import { useMemo } from 'react';
 import { SectionProps } from '../../types/globals';
 
 enum ImageSrc {
-  'en' = '/images/adaptation-to-project-ru.png',
-  'ru' = '/images/adaptation-to-project-ru.png',
-  'zh' = '/images/adaptation-to-project-ru.png',
+  'en' = '/images/adaptation-to-project-ru.webp',
+  'ru' = '/images/adaptation-to-project-ru.webp',
+  'zh' = '/images/adaptation-to-project-ru.webp',
 }
 
 function AdaptationToProject({
