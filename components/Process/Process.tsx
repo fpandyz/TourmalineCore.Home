@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { Fragment, useCallback } from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { SectionProps } from '../../types/globals';
 
 import ProcessCard from './ProcessCard/ProcessCard';
 
@@ -10,10 +11,8 @@ type SecondCardType = {
 };
 
 function Process({
-  id,
-}: {
-  id: string;
-}) {
+  ...props
+}: SectionProps) {
   const { t } = useTranslation('process');
 
   const firstList: string[] = t('firstCard.list', { returnObjects: true });
@@ -25,6 +24,8 @@ function Process({
       reactionImg="/images/yes.png"
       time="17:58"
       name={t('Yuliya')}
+      data-aos="fade-right"
+      data-aos-delay={100}
     >
       <div className="process-card__content">
 
@@ -45,6 +46,8 @@ function Process({
       reactionImg="/images/fire.png"
       time="17:58"
       name={t('Yuliya')}
+      data-aos="fade-left"
+      data-aos-delay={250}
     >
       <div className="process-card__content">
         {secondCard.map((item) => (
@@ -66,7 +69,7 @@ function Process({
   ), [secondCard, secondCardFooter]);
 
   return (
-    <section id={id} className="section process">
+    <section className="section process" {...props}>
       <h2 className="title-type-3">{t('title')}</h2>
       <div className="process__subtitle">{t('subtitle')}</div>
 
@@ -88,7 +91,14 @@ function Process({
           <SecondCard />
         </Carousel>
       </div>
-      <div className="caption process__caption">{t('caption')}</div>
+      <div
+        className="caption process__caption"
+        data-aos="fade-up"
+        data-aos-delay={0}
+        data-aos-anchor-placement="center-bottom"
+      >
+        {t('caption')}
+      </div>
     </section>
   );
 }
