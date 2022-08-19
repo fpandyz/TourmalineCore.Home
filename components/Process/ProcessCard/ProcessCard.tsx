@@ -2,19 +2,19 @@ import Image from 'next/image';
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 interface ProcessCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  altImageMain: string;
+  altHeader: string;
   reactionImg: string;
   time: string;
-  alt: string;
+  altReaction: string;
   name: string;
   children: ReactNode;
 }
 
 function ProcessCard({
-  altImageMain,
+  altHeader,
   reactionImg,
   time,
-  alt,
+  altReaction,
   name,
   children,
   ...props
@@ -25,13 +25,13 @@ function ProcessCard({
       {...props}
     >
       <div className="process-card__image process-card__image--desktop">
-        <Image src="/images/skype-yuilya.png" alt={altImageMain} layout="fill" />
+        <Image src="/images/skype-yuilya.png" alt={altHeader} layout="fill" />
       </div>
 
       <div className="process-card__inner">
         <div className="process-card__header">
           <div className="process-card__image process-card__image--mobile">
-            <Image src="/images/skype-yuilya.png" alt={altImageMain} layout="fill" />
+            <Image src="/images/skype-yuilya.png" alt={altHeader} layout="fill" />
           </div>
 
           <div>
@@ -48,7 +48,7 @@ function ProcessCard({
           data-aos="fade-in"
           data-aos-delay={350}
         >
-          <Image src={reactionImg} alt={alt} layout="fill" />
+          <Image src={reactionImg} alt={altReaction} layout="fill" />
         </div>
       </div>
 

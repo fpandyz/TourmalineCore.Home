@@ -41,7 +41,7 @@ function MobileMenu({
             type="button"
             className="mobile-menu__close"
             onClick={onCloseClick}
-            aria-label="close-header"
+            aria-label="Close header"
           >
             <IconClose />
           </button>

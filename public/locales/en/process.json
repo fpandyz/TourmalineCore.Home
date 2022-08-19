@@ -2,10 +2,10 @@
   "title": "Процесс (en)",
   "subtitle": "Двигаемся к конечной цели еженедельными спринтами, проводим планирования и демо клиенту (en)",
   "Yuliya": "Юля (en)",
-  "altImage": "Юля фото(en)",
+  "altHeader": "Юля фото(en)",
   "firstCard": {
     "title": "Sprint (en)",
-    "alt": "emoji Yes",
+    "altReaction": "emoji Yes",
     "listTitle": "Цели (en)",
     "list": [
       "Добавить в ядро бэка все валидаторы и преобразователи (en)",

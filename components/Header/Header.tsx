@@ -45,7 +45,7 @@ function Header() {
               type="button"
               className="header__menu-toggle"
               onClick={() => setIsMobileMenuOpen(true)}
-              aria-label="open-header"
+              aria-label="Open header"
             >
               <IconBurger />
             </button>
