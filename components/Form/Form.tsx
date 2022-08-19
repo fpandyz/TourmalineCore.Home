@@ -1,49 +1,38 @@
 import { useTranslation } from 'next-i18next';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import {
-  FormEvent,
-  //  useCallback, useEffect, useMemo, useRef, useState,
+  FormEvent, useMemo, useRef,
 } from 'react';
-// import ReCAPTCHA from 'react-google-recaptcha';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import Textarea from '../Textarea/Textarea';
 
-// enum ReCAPTCHALanguage {
-//   'en' = 'en',
-//   'ru' = 'ru',
-//   'zh' = 'zh-CN',
-// }
+enum ReCAPTCHALanguage {
+  'en' = 'en',
+  'ru' = 'ru',
+  'zh' = 'zh-CN',
+}
 
 function Form({
   onSubmit = () => {},
 }: {
-  onSubmit: (formEvent: FormData) => unknown;
+  onSubmit: (formData: FormData) => unknown;
 }) {
   const { t } = useTranslation('form');
-  // const router = useRouter();
+  const router = useRouter();
 
-  // const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  // const routerLocale = useMemo(() => {
-  //   if (!router.locale) {
-  //     return 'en';
-  //   }
+  const routerLocale = useMemo(() => {
+    if (!router.locale) {
+      return 'en';
+    }
 
-  //   return router.locale;
-  // }, [router.locale]);
-
-  // useEffect(() => {
-  //   // console.log(recaptchaRef);
-  //   console.log(recaptchaRef.current);
-
-  //   // window.recaptchaOptions = {
-  //   //   lang: ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage],
-  //   // };
-  //   // console.log(window.recaptchaOptions);
-  // }, [routerLocale]);
+    return router.locale;
+  }, [router.locale]);
 
   return (
     <>
@@ -89,52 +78,35 @@ function Form({
         </div>
       </form>
 
-      {/* <ReCAPTCHA
+      <ReCAPTCHA
         ref={recaptchaRef}
         size="invisible"
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
         badge="bottomright"
         hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
-      /> */}
+      />
     </>
   );
 
-  async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
 
-    // if (!recaptchaRef.current) {
-    //   return;
-    // }
-    // console.log('Here1', !recaptchaRef.current);
+    if (!recaptchaRef.current) {
+      return;
+    }
 
-    // const token = await recaptchaRef.current.executeAsync();
+    const token = await recaptchaRef.current.executeAsync();
 
-    // console.log('Here2');
+    if (!token) {
+      return;
+    }
 
-    // console.log(token);
+    const formData = new FormData(event.target as HTMLFormElement);
+    formData.append('g-recaptcha-response', token);
 
-    // const response = await fetch(
-    //   `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-    //   {
-    //     headers: {
-    //       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-    //     },
-    //     method: 'POST',
-    //   },
-    // );
+    onSubmit(formData);
 
-    // console.log('response =', response);
-
-    // if (!token) {
-    //   return;
-    // }
-
-    const formEvent = new FormData(event.target as HTMLFormElement);
-    // formEvent.append('recaptchatoken', token || '');
-
-    onSubmit(formEvent);
-
-    // recaptchaRef.current.reset();
+    recaptchaRef.current.reset();
   }
 }
 

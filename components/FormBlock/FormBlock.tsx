@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import { sendEmail } from '../../common/utils/fetchSend';
 
-import { sendEmail, SendEmail } from '../../common/utils/fetchSend';
 import Form from '../Form/Form';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
@@ -37,25 +37,17 @@ function FormBlock() {
     </section>
   );
 
-  async function onFormSubmit(formEvent: FormData) {
-    const messageSend: SendEmail = {
-      name: '',
-      email: '',
-      message: '',
-    };
+  async function onFormSubmit(formData: FormData) {
+    const messageSend: {
+      [key: string]: string
+    } = Array
+      .from(formData)
+      .reduce((message, [key, value]) => ({
+        ...message,
+        [key]: value,
+      }), {});
 
-    Object.keys(messageSend).forEach((key) => {
-      const value = formEvent.get(key);
-      if (value) {
-        messageSend[key as keyof SendEmail] = value.toString();
-      }
-    });
-
-    if (!messageSend.message.length) {
-      messageSend.message = 'empty';
-    }
-
-    sendEmail(messageSend);
+    await sendEmail(messageSend);
     setEmail(messageSend.email);
     setIsSubmit(true);
   }
