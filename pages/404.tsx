@@ -19,7 +19,7 @@ export default function PageNotFound() {
   return (
     <Layout>
       <HeroBlock
-        title={t('title')}
+        title="404"
         gradientTitle={t('gradientTitle')}
         description={t('description')}
         Button={(
