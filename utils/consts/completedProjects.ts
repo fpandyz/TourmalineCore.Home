@@ -1,10 +1,12 @@
-export type CompletedProject = {
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+
+export interface CompletedProject extends DetailedHTMLProps<HTMLAttributes<HTMLLIElement>, HTMLLIElement> {
   title: string;
   descriptionName: string;
   image: string;
   alt: string;
   link: string;
-};
+}
 
 export const completedProjects: CompletedProject[] = [
   {

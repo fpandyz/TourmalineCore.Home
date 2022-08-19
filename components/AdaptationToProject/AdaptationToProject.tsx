@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
+import { SectionProps } from '../../types/globals';
 
 enum ImageSrc {
   'en' = '/images/adaptation-to-project-ru.png',
@@ -10,10 +11,8 @@ enum ImageSrc {
 }
 
 function AdaptationToProject({
-  id,
-}: {
-  id: string;
-}) {
+  ...props
+}: SectionProps) {
   const { t } = useTranslation('adaptationToProject');
   const router = useRouter();
 
@@ -26,11 +25,15 @@ function AdaptationToProject({
   }, [router.locale]);
 
   return (
-    <section id={id} className="section adaptation-to-project">
+    <section className="section adaptation-to-project" {...props}>
       <h2 className="title-type-3">{t('title')}</h2>
       <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
 
-      <div className="scroll adaptation-to-project__scroll">
+      <div
+        className="scroll adaptation-to-project__scroll"
+        data-aos="fade-up"
+        data-aos-delay={100}
+      >
         <div className="ratio ratio--16x9 adaptation-to-project__image">
           <Image
             src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
@@ -40,7 +43,15 @@ function AdaptationToProject({
         </div>
       </div>
 
-      <div className="caption adaptation-to-project__caption">{t('caption')}</div>
+      <div
+        className="caption adaptation-to-project__caption"
+        data-aos="fade-up"
+        data-aos-delay={0}
+        data-aos-anchor-placement="bottom-bottom"
+      >
+        {t('caption')}
+
+      </div>
     </section>
   );
 }
