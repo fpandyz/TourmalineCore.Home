@@ -95,6 +95,7 @@ function Process({
           <SecondCard />
         </Carousel>
       </div>
+
       <div
         className="caption process__caption"
         data-aos="fade-up"
