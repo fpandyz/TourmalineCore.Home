@@ -1,4 +1,14 @@
 .form-block {
+  &__inner {
+    @include tablet-xl {
+      max-width: 800px;
+    }
+
+    @include desktop-xl {
+      max-width: 960px;
+    }
+  }
+
   &__title {
     margin-bottom: 56px;
   }
@@ -11,13 +21,5 @@
     display: block;
     margin-bottom: 56px;
     color: $color-white-alpha-100;
-  }
-
-  @include tablet-xl {
-    max-width: 800px;
-  }
-
-  @include desktop-xl {
-    max-width: 960px;
   }
 }

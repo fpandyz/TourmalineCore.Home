@@ -12,28 +12,30 @@ function FormBlock() {
   const { t } = useTranslation('formBlock');
 
   return (
-    <section className="section form-block">
-      <h2 className="title-type-3 form-block__title">
-        {t('title')}
-        {' '}
-        <span className="form-block__title-gradient">
-          {t('titleGradient')}
-        </span>
-      </h2>
-      {
-        !isSubmit
-          ? (<Form onSubmit={onFormSubmit} />)
-          : (
-            <div>
-              <span className="form-block__text">
-                {t('text')}
-                {' '}
-                {email}
-              </span>
-              <PrimaryButton onClick={() => setIsSubmit(false)}>{t('buttonText')}</PrimaryButton>
-            </div>
-          )
-      }
+    <section className="section container container--home-page form-block">
+      <div className="form-block__inner">
+        <h2 className="title-type-3 form-block__title">
+          {t('title')}
+          {' '}
+          <span className="form-block__title-gradient">
+            {t('titleGradient')}
+          </span>
+        </h2>
+        {
+          !isSubmit
+            ? (<Form onSubmit={onFormSubmit} />)
+            : (
+              <div>
+                <span className="form-block__text">
+                  {t('text')}
+                  {' '}
+                  {email}
+                </span>
+                <PrimaryButton onClick={() => setIsSubmit(false)}>{t('buttonText')}</PrimaryButton>
+              </div>
+            )
+        }
+      </div>
     </section>
   );
 
