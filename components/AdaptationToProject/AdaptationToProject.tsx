@@ -26,31 +26,33 @@ function AdaptationToProject({
 
   return (
     <section className="section adaptation-to-project" {...props}>
-      <h2 className="title-type-3">{t('title')}</h2>
-      <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
+      <div className="container container--home-page">
+        <h2 className="title-type-3">{t('title')}</h2>
+        <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
 
-      <div
-        className="scroll adaptation-to-project__scroll"
-        data-aos="fade-up"
-        data-aos-delay={100}
-      >
-        <div className="ratio ratio--16x9 adaptation-to-project__image">
-          <Image
-            src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
-            alt={t('imageAlt')}
-            layout="fill"
-          />
+        <div
+          className="scroll adaptation-to-project__scroll"
+          data-aos="fade-up"
+          data-aos-delay={100}
+        >
+          <div className="ratio ratio--16x9 adaptation-to-project__image">
+            <Image
+              src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
+              alt={t('imageAlt')}
+              layout="fill"
+            />
+          </div>
         </div>
-      </div>
 
-      <div
-        className="caption adaptation-to-project__caption"
-        data-aos="fade-up"
-        data-aos-delay={0}
-        data-aos-anchor-placement="bottom-bottom"
-      >
-        {t('caption')}
+        <div
+          className="caption adaptation-to-project__caption"
+          data-aos="fade-up"
+          data-aos-delay={0}
+          data-aos-anchor-placement="bottom-bottom"
+        >
+          {t('caption')}
 
+        </div>
       </div>
     </section>
   );

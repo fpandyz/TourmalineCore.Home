@@ -16,25 +16,27 @@ function Skills({
       className="section skills"
       {...props}
     >
-      <h2 className="title-type-2 skills__title">
-        {t('titleSection')}
-        {' '}
-        <span className="skills__gradient-title">{t('gradientTitleSection')}</span>
-      </h2>
+      <div className="container container--home-page">
+        <h2 className="title-type-2 skills__title">
+          {t('titleSection')}
+          {' '}
+          <span className="skills__gradient-title">{t('gradientTitleSection')}</span>
+        </h2>
 
-      {teamSkills.map((item, index) => (
-        <Accordion
-          key={item.title}
-          title={item.title}
-          scope={item.scope}
-          titleServices={t('titleServices')}
-          services={item.services}
-          titleTechnologies={t('titleTechnologies')}
-          technologies={item.technologies}
-          data-aos="fade-up"
-          data-aos-delay={50 * (index + 1)}
-        />
-      ))}
+        {teamSkills.map((item, index) => (
+          <Accordion
+            key={item.title}
+            title={item.title}
+            scope={item.scope}
+            titleServices={t('titleServices')}
+            services={item.services}
+            titleTechnologies={t('titleTechnologies')}
+            technologies={item.technologies}
+            data-aos="fade-up"
+            data-aos-delay={50 * (index + 1)}
+          />
+        ))}
+      </div>
     </section>
   );
 }
