@@ -105,6 +105,13 @@ p + p {
       padding-bottom: percentage(calc(9 / 16));
     }
   }
+
+  &--18x9 {
+    &::before {
+      /* stylelint-disable-next-line scss/no-global-function-names */
+      padding-bottom: percentage(calc(9 / 18));
+    }
+  }
 }
 
 .scroll {

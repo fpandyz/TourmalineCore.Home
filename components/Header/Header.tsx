@@ -50,7 +50,7 @@ function Header() {
               <IconBurger />
             </button>
 
-            <div className="header__desktop body-type-2">
+            <div className="header__desktop">
               {headerLinks.map((headerLink) => (
                 <Link key={headerLink.id} href={headerLink.link}>
                   <a className="header__link">
