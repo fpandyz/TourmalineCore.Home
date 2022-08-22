@@ -1,10 +1,10 @@
 .button {
+  @include type-body-2;
+
   position: relative;
   z-index: 0;
   display: block;
   border: 1px solid rgba($color-black, 0);
-  font-weight: 500;
-  line-height: 1.1;
   letter-spacing: 0.02em;
   color: $color-white;
   background-image:
@@ -76,17 +76,12 @@
   cursor: pointer;
 
   &__text {
+    @include type-body-2;
+
     margin-right: 24px;
     font-family: $ff-montserrat;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.1;
     letter-spacing: 0.02em;
     color: $color-white;
-
-    @include desktop-xl {
-      font-size: 17px;
-    }
   }
 
   &__icon {

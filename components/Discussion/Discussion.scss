@@ -1,21 +1,29 @@
 .discussion {
+  margin-top: 16px;
+  margin-bottom: 40px;
   background-image: $main-gradient-300;
 
   &__inner {
     padding: 56px 0;
 
-    @include desktop-xl {
+    @include desktop {
       padding: 72px 0;
+    }
+
+    @include desktop-xl {
+      padding: 96px 0;
     }
   }
 
   &__title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin-bottom: 40px;
-    text-align: center;
 
     @include desktop {
+      align-items: flex-start;
       margin-bottom: 48px;
-      text-align: left;
     }
 
     @include desktop-xl {
@@ -23,24 +31,33 @@
     }
   }
 
-  &__gradient-title {
+  &__gradients {
     @include gradient-text;
 
-    display: block;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 300px;
+    text-align: center;
+    background-image: $main-gradient;
+
+    @include desktop {
+      align-items: flex-start;
+    }
+
+    @media (min-width: 450px) {
+      max-width: max-content;
+    }
   }
 
   &__button {
     margin: 0 auto;
+    background-image:
+      linear-gradient(180deg, rgba($color-purple-black, 0.9), rgba($color-purple-black, 0.9)),
+      linear-gradient(90deg, $color-pink, $color-green, $color-green, $color-pink);
 
     @include desktop {
       margin: 0;
-    }
-
-    @include desktop-xl {
-      margin: 0;
-      padding: 16px 52px;
-      font-size: 17px;
-      line-height: 1.5;
     }
   }
 

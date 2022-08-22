@@ -7,7 +7,7 @@ import PageHead from '../components/PageHead/PageHead';
 import Services from '../components/Services/Services';
 import Skills from '../components/Skills/Skills';
 import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
-// import Discussion from '../components/Discussion/Discussion';
+import Discussion from '../components/Discussion/Discussion';
 import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
 import Process from '../components/Process/Process';
 import Tools from '../components/Tools/Tools';
@@ -46,6 +46,9 @@ export default function HomePage() {
         />
         <CompletedProjects
           id={navigationLinks[2]}
+          data-aos="fade-up"
+        />
+        <Discussion
           data-aos="fade-up"
         />
         <AdaptationToProject

@@ -24,31 +24,19 @@
       border-bottom: 1px solid $color-pink;
 
       ~ #{$this}__label {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.1;
+        @include type-body-2;
+
         letter-spacing: 0.02em;
         color: $color-pink;
-
-        @include desktop-xl {
-          font-size: 17px;
-          line-height: 1.5;
-        }
       }
     }
 
     &:focus ~ #{$this}__label,
     &:not(:placeholder-shown) ~ #{$this}__label {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 1.1;
+      @include type-body-2;
+
       letter-spacing: 0.02em;
       transform: translateY(30px);
-
-      @include desktop-xl {
-        font-size: 17px;
-        line-height: 1.5;
-      }
     }
   }
 
