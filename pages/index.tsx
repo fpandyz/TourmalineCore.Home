@@ -67,7 +67,7 @@ export default function HomePage() {
           id={navigationLinks[7]}
           data-aos="fade-up"
         />
-        <FormBlock 
+        <FormBlock
           data-aos="fade-up"
         />
       </LayoutHomePage>
