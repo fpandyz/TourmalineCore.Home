@@ -178,7 +178,11 @@
     flex-wrap: wrap;
 
     @include tablet {
-      max-width: 368px;
+      width: 343px;
+    }
+
+    @include desktop {
+      width: 368px;
     }
   }
 
@@ -188,6 +192,20 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &:nth-child(even) {
+      margin-left: 16px;
+      width: calc(50% - 16px);
+
+      @include desktop {
+        margin-left: 32px;
+        width: calc(50% - 32px);
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 12px;
     }
   }
 
