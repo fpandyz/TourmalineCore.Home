@@ -65,9 +65,25 @@ p + p {
     padding-left: 32px;
   }
 
+  @include tablet-xl {
+    &--home-page {
+      padding-left: 208px;
+    }
+  }
+
   @include desktop {
     padding-right: 75px;
     padding-left: 75px;
+
+    &--home-page {
+      padding-left: 283px;
+    }
+  }
+
+  @include desktop-xl {
+    &--home-page {
+      padding-left: 300px;
+    }
   }
 }
 
@@ -103,6 +119,13 @@ p + p {
     &::before {
       /* stylelint-disable-next-line scss/no-global-function-names */
       padding-bottom: percentage(calc(9 / 16));
+    }
+  }
+
+  &--18x9 {
+    &::before {
+      /* stylelint-disable-next-line scss/no-global-function-names */
+      padding-bottom: percentage(calc(9 / 18));
     }
   }
 }

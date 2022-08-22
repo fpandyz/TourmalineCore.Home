@@ -29,6 +29,11 @@
         line-height: 1.1;
         letter-spacing: 0.02em;
         color: $color-pink;
+
+        @include desktop-xl {
+          font-size: 17px;
+          line-height: 1.5;
+        }
       }
     }
 
@@ -39,6 +44,11 @@
       line-height: 1.1;
       letter-spacing: 0.02em;
       transform: translateY(30px);
+
+      @include desktop-xl {
+        font-size: 17px;
+        line-height: 1.5;
+      }
     }
   }
 
@@ -67,5 +77,15 @@
     #{$this}__control:focus ~ #{$this}__label {
       color: $color-error;
     }
+  }
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  @include desktop-xl {
+    font-size: 22px;
+    line-height: 1.5;
   }
 }

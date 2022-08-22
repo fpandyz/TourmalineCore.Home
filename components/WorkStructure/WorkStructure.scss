@@ -8,6 +8,14 @@
     margin-top: 12px;
     margin-bottom: 32px;
     color: $color-white-alpha-100;
+
+    @include desktop {
+      margin-bottom: 48px;
+    }
+
+    @include desktop-xl {
+      margin-top: 16px;
+    }
   }
 
   &__images {
@@ -53,6 +61,7 @@
   }
 
   @include desktop-xl {
+    --margin: 64px;
     --top: 80px;
   }
 }

@@ -10,7 +10,7 @@ function HeroBlock({
   Button: JSX.Element;
 }) {
   return (
-    <section className="section hero-block">
+    <section className="hero-block">
       <div className="container hero-block__wrapper">
         <div className="hero-block__inner">
           <h1 className="title-type-1">

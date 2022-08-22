@@ -49,6 +49,11 @@
     }
   }
 
+  &__description {
+    margin-bottom: auto;
+    color: $color-white-alpha-100;
+  }
+
   &__image {
     position: relative;
     margin-top: 48px;
@@ -67,7 +72,14 @@
   &__link {
     display: flex;
     align-items: center;
-    margin-top: auto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.1;
+
+    @include desktop-xl {
+      font-size: 17px;
+      line-height: 1.5;
+    }
   }
 
   &__arrow {

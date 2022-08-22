@@ -35,7 +35,7 @@ function ProcessCard({
           </div>
 
           <div>
-            {name}
+            <span className="process-card__name">{name}</span>
             {', '}
             <span className="process-card__time">{time}</span>
           </div>
