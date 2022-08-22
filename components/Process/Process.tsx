@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { Fragment, useCallback } from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { SectionProps } from '../../types/globals';
 
 import ProcessCard from './ProcessCard/ProcessCard';
 
@@ -10,10 +11,8 @@ type SecondCardType = {
 };
 
 function Process({
-  id,
-}: {
-  id: string;
-}) {
+  ...props
+}: SectionProps) {
   const { t } = useTranslation('process');
 
   const firstList: string[] = t('firstCard.list', { returnObjects: true });
@@ -22,9 +21,13 @@ function Process({
 
   const FirstCard = useCallback(() => (
     <ProcessCard
+      altHeader={t('altHeader')}
       reactionImg="/images/yes.png"
       time="17:58"
+      altReaction={t('firstCard.altReaction')}
       name={t('Yuliya')}
+      data-aos="fade-right"
+      data-aos-delay={100}
     >
       <div className="process-card__content">
 
@@ -42,9 +45,13 @@ function Process({
 
   const SecondCard = useCallback(() => (
     <ProcessCard
+      altHeader={t('altHeader')}
       reactionImg="/images/fire.png"
+      altReaction={t('secondCardAltReaction')}
       time="17:58"
       name={t('Yuliya')}
+      data-aos="fade-left"
+      data-aos-delay={250}
     >
       <div className="process-card__content">
         {secondCard.map((item) => (
@@ -66,29 +73,39 @@ function Process({
   ), [secondCard, secondCardFooter]);
 
   return (
-    <section id={id} className="section process">
-      <h2 className="title-type-3">{t('title')}</h2>
-      <div className="process__subtitle">{t('subtitle')}</div>
+    <section className="section process" {...props}>
+      <div className="container container--home-page">
+        <h2 className="title-type-3">{t('title')}</h2>
+        <div className="process__subtitle">{t('subtitle')}</div>
 
-      <div className="process__content">
-        <FirstCard />
-        <SecondCard />
-      </div>
-
-      <div
-        className="responsive-carousel"
-      >
-        <Carousel
-          showArrows={false}
-          showStatus={false}
-          showThumbs={false}
-          preventMovementUntilSwipeScrollTolerance
-        >
+        <div className="process__content">
           <FirstCard />
           <SecondCard />
-        </Carousel>
+        </div>
+
+        <div
+          className="responsive-carousel"
+        >
+          <Carousel
+            showArrows={false}
+            showStatus={false}
+            showThumbs={false}
+            preventMovementUntilSwipeScrollTolerance
+          >
+            <FirstCard />
+            <SecondCard />
+          </Carousel>
+        </div>
+
+        <div
+          className="caption process__caption"
+          data-aos="fade-up"
+          data-aos-delay={0}
+          data-aos-anchor-placement="center-bottom"
+        >
+          {t('caption')}
+        </div>
       </div>
-      <div className="caption process__caption">{t('caption')}</div>
     </section>
   );
 }

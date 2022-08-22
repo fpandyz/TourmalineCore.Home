@@ -8,27 +8,6 @@
   }
 
   &__wrapper {
-    @include tablet-xl {
-      display: flex;
-    }
-  }
-
-  &__nav {
     position: relative;
-    display: none;
-    margin-right: 40px;
-
-    @include tablet-xl {
-      display: block;
-      width: 15%;
-    }
-  }
-
-  &__content {
-    flex-grow: 1;
-
-    @include tablet-xl {
-      width: 85%;
-    }
   }
 }

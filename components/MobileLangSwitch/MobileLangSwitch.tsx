@@ -2,7 +2,6 @@ import {
   useMemo,
 } from 'react';
 import clsx from 'clsx';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { languages } from '../../utils/consts/languages';
@@ -28,23 +27,16 @@ function MobileLangSwitch() {
             key={locale}
             className="mobile-lang-switch__option"
           >
-            <Link
-              href={{
-                pathname: router.pathname,
-                query: router.query,
-              }}
-              locale={locale}
+            <a
+              className={clsx(
+                'mobile-lang-switch__link',
+                { 'mobile-lang-switch__link--active': routerLocale === locale },
+              )}
+              href={router.pathname + locale}
             >
-              <a
-                className={clsx(
-                  'mobile-lang-switch__link',
-                  { 'mobile-lang-switch__link--active': routerLocale === locale },
-                )}
-              >
-                {languages[locale].icon()}
-                {languages[locale].shortName}
-              </a>
-            </Link>
+              {languages[locale].icon()}
+              {languages[locale].shortName}
+            </a>
           </li>
         ))}
       </ul>

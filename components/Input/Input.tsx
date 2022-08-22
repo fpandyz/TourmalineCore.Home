@@ -12,7 +12,7 @@ function Input({
   id, label, description, isError = false, className, ...props
 }: InputProps): JSX.Element {
   return (
-    <div className={clsx('title-type-4', 'input', className, {
+    <div className={clsx('input', className, {
       'input--is-error': isError,
     })}
     >

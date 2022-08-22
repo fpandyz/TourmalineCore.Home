@@ -3,7 +3,15 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.1;
     gap: 24px;
+
+    @include desktop-xl {
+      font-size: 17px;
+      line-height: 1.5;
+    }
   }
 
   &__link {

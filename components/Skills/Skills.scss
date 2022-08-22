@@ -5,6 +5,10 @@
     @include desktop {
       margin-bottom: 48px;
     }
+
+    @include desktop-xl {
+      margin-bottom: 64px;
+    }
   }
 
   &__gradient-title {
