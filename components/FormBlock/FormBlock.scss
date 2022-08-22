@@ -1,0 +1,23 @@
+.form-block {
+  &__title {
+    margin-bottom: 56px;
+  }
+
+  &__title-gradient {
+    @include gradient-text;
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: 56px;
+    color: $color-white-alpha-100;
+  }
+
+  @include tablet-xl {
+    max-width: 800px;
+  }
+
+  @include desktop-xl {
+    max-width: 960px;
+  }
+}

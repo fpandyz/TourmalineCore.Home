@@ -12,6 +12,7 @@ import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
 import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
 import Tools from '../components/Tools/Tools';
+import FormBlock from '../components/FormBlock/FormBlock';
 
 import { navigationLinks } from '../utils/consts/navigation';
 
@@ -66,6 +67,9 @@ export default function HomePage() {
           id={navigationLinks[7]}
           data-aos="fade-up"
         />
+        <FormBlock
+          data-aos="fade-up"
+        />
       </LayoutHomePage>
     </>
   );
@@ -87,6 +91,8 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'adaptationToProject',
       'process',
       'tools',
+      'form',
+      'formBlock',
     ])),
   },
 });

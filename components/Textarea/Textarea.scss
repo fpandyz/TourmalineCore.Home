@@ -6,6 +6,7 @@
   &__box {
     display: flex;
     flex-direction: column-reverse;
+    resize: inherit;
   }
 
   &__control {
@@ -18,6 +19,7 @@
     font-size: inherit;
     color: $color-white;
     background-color: inherit;
+    resize: inherit;
     transition: all 0.3s;
 
     &:focus {

@@ -1,18 +1,18 @@
-const URL = '/api/send';
+import emailjs from '@emailjs/browser';
 
-export type SendEmail = {
-  name: string,
-  email: string,
-  message: string,
-  subject: string,
-};
+const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || '';
+const templateId = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || '';
+const publicKey = process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY || '';
 
-export async function sendEmail(message: SendEmail) {
-  await fetch(URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(message),
-  });
+emailjs.init(publicKey);
+
+export async function sendEmail(message: {
+  [key: string]: string;
+}) {
+  try {
+    const response = await emailjs.send(serviceId, templateId, message);
+    return response;
+  } catch (error) {
+    throw error || 'Error';
+  }
 }
