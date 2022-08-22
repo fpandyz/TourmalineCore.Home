@@ -1,6 +1,10 @@
 .hero-block {
+  background-color: $color-black;
+
   &__gradient-title {
     @include gradient-text;
+
+    display: block;
   }
 
   &__inner {
@@ -10,21 +14,24 @@
   &__description {
     margin-top: 24px;
     margin-bottom: 32px;
+    font-size: 16px;
     color: $color-white-alpha-100;
 
     @include desktop {
       max-width: 400px;
+      font-size: 18px;
     }
 
     @include desktop-xl {
       max-width: 490px;
+      font-size: 22px;
     }
   }
 
   &__video {
     display: none;
     flex: none;
-    background-image: url("/images/tourmaline-core-poster.png");
+    background-image: url("/images/tourmaline-core-poster.webp");
     background-size: contain;
     background-repeat: no-repeat;
 
@@ -52,10 +59,29 @@
   }
 
   &__wrapper {
+    padding-top: 144px;
+    padding-bottom: 144px;
+
     @include tablet {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+
+    @include tablet-xl {
+      padding-top: 82px;
+      padding-bottom: 82px;
+    }
+
+    @include desktop {
+      padding-top: 104px;
+      padding-bottom: 0;
+    }
+
+    @include desktop-xl {
+      padding-top: 98px;
     }
   }
 

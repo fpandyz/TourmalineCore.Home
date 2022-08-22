@@ -1,5 +1,5 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 
 import PageHead from '../components/PageHead/PageHead';
@@ -34,14 +34,38 @@ export default function HomePage() {
       />
 
       <LayoutHomePage navigationLinks={navigationLinks}>
-        <Services id={navigationLinks[0]} />
-        <Skills id={navigationLinks[1]} />
-        <CompletedProjects id={navigationLinks[2]} />
-        <AdaptationToProject id={navigationLinks[4]} />
-        <Process id={navigationLinks[5]} />
-        <Tools id={navigationLinks[6]} />
-        <WorkStructure id={navigationLinks[7]} />
-        <Mistakes id={navigationLinks[8]} />
+        <Services
+          id={navigationLinks[0]}
+          data-aos="fade-up"
+        />
+        <Skills
+          id={navigationLinks[1]}
+          data-aos="fade-up"
+        />
+        <CompletedProjects
+          id={navigationLinks[2]}
+          data-aos="fade-up"
+        />
+        <AdaptationToProject
+          id={navigationLinks[3]}
+          data-aos="fade-up"
+        />
+        <Process
+          id={navigationLinks[4]}
+          data-aos="fade-up"
+        />
+        <Tools
+          id={navigationLinks[5]}
+          data-aos="fade-up"
+        />
+        <WorkStructure
+          id={navigationLinks[6]}
+          data-aos="fade-up"
+        />
+        <Mistakes
+          id={navigationLinks[7]}
+          data-aos="fade-up"
+        />
       </LayoutHomePage>
     </>
   );
@@ -53,7 +77,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'common',
       'articles',
       'footer',
-      'heroBlock',
+      'heroBlockHomePage',
       'skills',
       'services',
       'completedProjects',

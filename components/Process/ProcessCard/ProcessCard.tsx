@@ -1,31 +1,41 @@
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-function ProcessCard({
-  reactionImg,
-  time,
-  name,
-  children,
-}: {
+interface ProcessCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  altHeader: string;
   reactionImg: string;
   time: string;
+  altReaction: string;
   name: string;
   children: ReactNode;
-}) {
+}
+
+function ProcessCard({
+  altHeader,
+  reactionImg,
+  time,
+  altReaction,
+  name,
+  children,
+  ...props
+}: ProcessCardProps) {
   return (
-    <div className="process-card">
+    <div
+      className="process-card"
+      {...props}
+    >
       <div className="process-card__image process-card__image--desktop">
-        <Image src="/images/skype-yuilya.png" layout="fill" />
+        <Image src="/images/skype-yuilya.png" alt={altHeader} layout="fill" />
       </div>
 
       <div className="process-card__inner">
         <div className="process-card__header">
           <div className="process-card__image process-card__image--mobile">
-            <Image src="/images/skype-yuilya.png" layout="fill" />
+            <Image src="/images/skype-yuilya.png" alt={altHeader} layout="fill" />
           </div>
 
           <div>
-            {name}
+            <span className="process-card__name">{name}</span>
             {', '}
             <span className="process-card__time">{time}</span>
           </div>
@@ -33,8 +43,12 @@ function ProcessCard({
 
         {children}
 
-        <div className="process-card__reaction">
-          <Image src={reactionImg} layout="fill" />
+        <div
+          className="process-card__reaction"
+          data-aos="fade-in"
+          data-aos-delay={350}
+        >
+          <Image src={reactionImg} alt={altReaction} layout="fill" />
         </div>
       </div>
 

@@ -1,38 +1,31 @@
 .mistakes {
   &__subtitle {
     margin-top: 12px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
     color: $color-white-alpha-100;
 
-    @include tablet {
-      margin-bottom: 36px;
-    }
-
     @include desktop {
-      margin-bottom: 52px;
+      margin-bottom: 48px;
     }
 
     @include desktop-xl {
       margin-top: 16px;
-      margin-bottom: 68px;
+      margin-bottom: 64px;
     }
   }
 
   &__list {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     margin: 0 -15px;
     padding-bottom: 32px;
     font-family: $ff-inter;
     text-align: center;
     color: $color-white-alpha-100;
 
-    @include tablet {
-      padding-bottom: 100px;
-    }
-
     @include desktop {
-      padding-bottom: 20px;
+      padding-bottom: 0;
     }
   }
 
@@ -41,11 +34,11 @@
     text-align: right;
 
     @include desktop {
-      margin-top: 28px;
+      margin-top: 48px;
     }
 
     @include desktop-xl {
-      margin-top: 44px;
+      margin-top: 64px;
     }
   }
 }

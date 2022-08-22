@@ -2,18 +2,20 @@ import { useTranslation } from 'next-i18next';
 
 import { getSkills } from './getSkills';
 import Accordion from '../Accordion/Accordion';
+import { SectionProps } from '../../types/globals';
 
 function Skills({
-  id,
-}: {
-  id: string;
-}) {
+  ...props
+}: SectionProps) {
   const { t } = useTranslation('skills');
 
   const teamSkills = getSkills(t);
 
   return (
-    <section id={id} className="section skills">
+    <section
+      className="section skills"
+      {...props}
+    >
       <div className="container container--home-page">
         <h2 className="title-type-2 skills__title">
           {t('titleSection')}
@@ -21,7 +23,7 @@ function Skills({
           <span className="skills__gradient-title">{t('gradientTitleSection')}</span>
         </h2>
 
-        {teamSkills.map((item) => (
+        {teamSkills.map((item, index) => (
           <Accordion
             key={item.title}
             title={item.title}
@@ -30,6 +32,8 @@ function Skills({
             services={item.services}
             titleTechnologies={t('titleTechnologies')}
             technologies={item.technologies}
+            data-aos="fade-up"
+            data-aos-delay={50 * (index + 1)}
           />
         ))}
       </div>

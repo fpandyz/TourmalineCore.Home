@@ -1,18 +1,17 @@
 import { useTranslation } from 'next-i18next';
 import { Carousel } from 'react-responsive-carousel';
+import { SectionProps } from '../../types/globals';
 
 import { completedProjects } from '../../utils/consts/completedProjects';
 import CompletedProjectsCard from './components/CompletedProjectsCard/CompletedProjectsCard';
 
 function CompletedProjects({
-  id,
-}: {
-  id: string;
-}) {
+  ...props
+}: SectionProps) {
   const { t } = useTranslation('completedProjects');
 
   return (
-    <section id={id} className="section completed-projects">
+    <section className="section completed-projects" {...props}>
       <div className="container container--home-page">
         <h2 className="title-type-2 completed-projects__title">
           {t('title')}
@@ -24,10 +23,12 @@ function CompletedProjects({
 
         <ul className="completed-projects__cards-container">
           {
-            completedProjects.map((completedProject) => (
+            completedProjects.map((completedProject, index) => (
               <li
                 key={completedProject.title}
                 className="completed-projects__card"
+                data-aos="fade-up"
+                data-aos-delay={100 * (index + 1)}
               >
                 <CompletedProjectsCard completedProject={completedProject} />
               </li>
@@ -43,6 +44,7 @@ function CompletedProjects({
             showStatus={false}
             showThumbs={false}
             preventMovementUntilSwipeScrollTolerance
+
           >
             {
               completedProjects.map((completedProject) => (

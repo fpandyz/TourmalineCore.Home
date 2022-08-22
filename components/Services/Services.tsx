@@ -1,14 +1,13 @@
 import { useTranslation } from 'next-i18next';
+import { SectionProps } from '../../types/globals';
 
 function Services({
-  id,
-}: {
-  id: string
-}) {
+  ...props
+}: SectionProps) {
   const { t } = useTranslation('services');
 
   return (
-    <section id={id} className="section services">
+    <section className="section services" {...props}>
       <div className="container container--home-page">
         <h2 className="title-type-2 services__title">
           {t('titleSection')}
@@ -17,7 +16,11 @@ function Services({
         </h2>
 
         <div className="services__inner">
-          <div className="services__block-first">
+          <div
+            className="services__block-first"
+            data-aos="fade-up"
+            data-aos-delay={80}
+          >
             <h3 className="title-type-3 services__subtitle">
               {t('firstSubtitle')}
               {' '}
@@ -26,7 +29,11 @@ function Services({
 
             <p className="services__description">{t('firstDescription')}</p>
           </div>
-          <div className="services__block-second">
+          <div
+            className="services__block-second"
+            data-aos="fade-up"
+            data-aos-delay={100}
+          >
             <h3 className="title-type-3 services__subtitle">
               {t('secondSubtitle')}
               {' '}

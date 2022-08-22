@@ -39,7 +39,10 @@
     box-shadow: none;
     font-family: inherit;
     font-weight: inherit;
+    font-weight: 500;
     font-size: inherit;
+    font-size: 14px;
+    line-height: 1.1;
     text-transform: inherit;
     text-transform: uppercase;
     color: inherit;
@@ -50,6 +53,11 @@
     &:hover,
     &:focus {
       opacity: 0.8;
+    }
+
+    @include desktop-xl {
+      font-size: 17px;
+      line-height: 1.5;
     }
   }
 

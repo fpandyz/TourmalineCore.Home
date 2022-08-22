@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import HeroBlock from '../HeroBlock/HeroBlock';
+import HeroBlockHomePage from '../HeroBlockHomePage/HeroBlockHomePage';
 import Navigation from '../Navigation/Navigation';
 import { NavigationLinks } from '../../utils/consts/navigation';
 
@@ -17,7 +17,7 @@ function LayoutHomePage({
     <div className="layout-home-page">
       <div className="layout-home-page__header">
         <Header />
-        <HeroBlock firstBlockSelector={navigationLinks[0]} />
+        <HeroBlockHomePage firstBlockSelector={navigationLinks[0]} />
       </div>
       <main className="layout-home-page__wrapper">
         <Navigation navigationLinks={navigationLinks} />

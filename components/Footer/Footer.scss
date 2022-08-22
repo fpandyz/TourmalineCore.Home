@@ -18,7 +18,9 @@
   }
 
   &__short-information {
-    width: 50%;
+    @include tablet {
+      width: 50%;
+    }
   }
 
   &__logo {
