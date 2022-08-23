@@ -54,6 +54,8 @@
   }
 
   &__list {
+    @include type-body-2;
+
     position: absolute;
     right: -4px;
     top: calc(100% + 8px);
