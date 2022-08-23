@@ -25,7 +25,7 @@ function AdaptationToProject({
   }, [router.locale]);
 
   return (
-    <section className="section adaptation-to-project" {...props}>
+    <section className="adaptation-to-project" {...props}>
       <div className="container container--home-page">
         <h2 className="title-type-3">{t('title')}</h2>
         <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>

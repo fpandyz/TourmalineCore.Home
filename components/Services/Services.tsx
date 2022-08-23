@@ -7,7 +7,10 @@ function Services({
   const { t } = useTranslation('services');
 
   return (
-    <section className="section services" {...props}>
+    <section
+      className="services"
+      {...props}
+    >
       <div className="container container--home-page">
         <h2 className="title-type-2 services__title">
           {t('titleSection')}

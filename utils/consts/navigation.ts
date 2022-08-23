@@ -9,4 +9,5 @@ export const navigationLinks: NavigationLinks[] = [
   'tools',
   'workStructure',
   'mistakes',
+  'form',
 ];

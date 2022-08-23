@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { Link as ScrollLink } from 'react-scroll';
 
-import useOffset from '../../common/hooks/useOffset';
+// import useOffset from '../../common/hooks/useOffset';
 import { NavigationLinks } from '../../utils/consts/navigation';
 
 function Navigation({
@@ -11,7 +11,7 @@ function Navigation({
 }) {
   const { t } = useTranslation('navigation');
 
-  const offset = useOffset();
+  // const offset = useOffset();
 
   return (
     <div className="navigation container section">
@@ -25,7 +25,7 @@ function Navigation({
             smooth
             spy
             to={link}
-            offset={offset}
+            // offset={offset}
           >
             {t(link)}
           </ScrollLink>

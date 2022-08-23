@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 
+import { useEffect, useRef } from 'react';
 import { getSkills } from './getSkills';
 import Accordion from '../Accordion/Accordion';
 import { SectionProps } from '../../types/globals';
@@ -13,7 +14,7 @@ function Skills({
 
   return (
     <section
-      className="section skills"
+      className="skills"
       {...props}
     >
       <div className="container container--home-page">

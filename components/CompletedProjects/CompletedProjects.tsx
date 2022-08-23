@@ -11,7 +11,7 @@ function CompletedProjects({
   const { t } = useTranslation('completedProjects');
 
   return (
-    <section className="section completed-projects" {...props}>
+    <section className="completed-projects" {...props}>
       <div className="container container--home-page">
         <h2 className="title-type-2 completed-projects__title">
           {t('title')}

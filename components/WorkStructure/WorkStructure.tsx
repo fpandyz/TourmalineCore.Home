@@ -8,7 +8,7 @@ function WorkStructure({
   const { t } = useTranslation('workStructure');
 
   return (
-    <section className="section work-structure" {...props}>
+    <section className="work-structure" {...props}>
       <div className="container container--home-page">
         <h2 className="title-type-3">{t('title')}</h2>
         <div className="work-structure__subtitle">{t('subtitle')}</div>

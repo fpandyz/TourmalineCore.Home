@@ -12,7 +12,7 @@ function Mistakes({
 
   return (
 
-    <section className="section mistakes" {...props}>
+    <section className="mistakes" {...props}>
       <div className="container container--home-page">
         <h2 className="title-type-3">{t('title')}</h2>
 

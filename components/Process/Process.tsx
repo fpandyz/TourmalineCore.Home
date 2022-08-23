@@ -73,7 +73,7 @@ function Process({
   ), [secondCard, secondCardFooter]);
 
   return (
-    <section className="section process" {...props}>
+    <section className="process" {...props}>
       <div className="container container--home-page">
         <h2 className="title-type-3">{t('title')}</h2>
         <div className="process__subtitle">{t('subtitle')}</div>

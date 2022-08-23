@@ -12,7 +12,7 @@ function Tools({
   const tools = Object.values(dataTools);
 
   return (
-    <section className="section tools" {...props}>
+    <section className="tools" {...props}>
       <div className="container container--home-page">
         <h2 className="title-type-3">{t('title')}</h2>
 
