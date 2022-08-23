@@ -7,18 +7,18 @@ function Modal({
   subtitle,
   maxWidth = '',
   content,
-  onClick = () => {},
+  onClose = () => {},
 }: {
   title?: string;
   subtitle?: string;
   maxWidth?: string;
   content: ReactNode;
-  onClick?:() => unknown;
+  onClose?:() => unknown;
 }) {
   useEffect(() => {
     function escFunction(event: KeyboardEvent) {
       if (event.key === 'Escape') {
-        onClick();
+        onClose();
       }
     }
 
@@ -37,7 +37,6 @@ function Modal({
           maxWidth,
         }}
       >
-
         <div className="modal__inner">
           <div className="modal__header">
             {title && (<div className="title-type-3 modal__title">{title}</div>)}
@@ -47,16 +46,14 @@ function Modal({
             <button
               type="button"
               className="modal__cross"
-              onClick={onClick}
+              onClick={onClose}
             >
               <IconCross />
             </button>
-
           </div>
 
           <div className="modal__content">{content}</div>
         </div>
-
       </div>
     </div>
   );

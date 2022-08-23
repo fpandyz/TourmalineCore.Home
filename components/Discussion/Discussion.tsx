@@ -1,12 +1,12 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { sendEmail } from '../../common/utils/fetchSend';
-import { SectionProps } from '../../types/globals';
 
+import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
+import { SectionProps } from '../../types/globals';
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import Modal from '../Modal/Modal';
 import Form from '../Form/Form';
 import List from '../List/List';
-import Modal from '../Modal/Modal';
-import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
 function Discussion({
   ...props
@@ -25,7 +25,7 @@ function Discussion({
         <div className="discussion__inner">
           <h3 className="title-type-2 discussion__title">
             {t('title')}
-            <div className="discussion__gradients">
+            <div className="discussion__gradient-titles">
               <span>{t('gradientTitleFirst')}</span>
               <span>{t('gradientTitleSecond')}</span>
             </div>
@@ -47,7 +47,7 @@ function Discussion({
           subtitle={!isSubmit
             ? t('modalSubtitle')
             : `${t('modalSubtitleSuccessfulFirst')} ${email} ${t('modalSubtitleSuccessfulSecond')}`}
-          onClick={() => setIsOpen(false)}
+          onClose={onClose}
           content={(
             <>
               {!isSubmit && (
@@ -68,17 +68,15 @@ function Discussion({
     </section>
   );
 
-  async function onFormSubmit(formData: FormData) {
-    const messageSend: {
-      [key: string]: string
-    } = Array
-      .from(formData)
-      .reduce((message, [key, value]) => ({
-        ...message,
-        [key]: value,
-      }), {});
+  function onClose() {
+    setIsOpen(false);
+    setIsSubmit(false);
+  }
 
+  async function onFormSubmit(formData: FormData) {
+    const messageSend = getMessageFromForm(formData);
     await sendEmail(messageSend);
+
     setEmail(messageSend.email);
     setIsSubmit(true);
   }
