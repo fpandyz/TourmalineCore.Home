@@ -2,16 +2,17 @@ import { useTranslation } from 'next-i18next';
 import { SectionProps } from '../../types/globals';
 
 function Services({
+  animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('services');
 
   return (
-    <section
-      className="services"
-      {...props}
-    >
-      <div className="container container--home-page">
+    <section className="services" {...props}>
+      <div
+        className="container container--home-page"
+        data-aos={animationName}
+      >
         <h2 className="title-type-2 services__title">
           {t('titleSection')}
           {' '}

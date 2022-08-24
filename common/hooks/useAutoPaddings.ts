@@ -16,9 +16,9 @@ function useAutoPaddings() {
       if (elementHeight) {
         const paddingCalculat = (screenHeight - elementHeight) / 2;
 
-        const paddingValue = paddingCalculat > 0 ? paddingCalculat : 10;
+        const paddingValue = paddingCalculat >= 0 ? paddingCalculat : 10;
 
-        paddingValues.push(Math.floor(paddingValue));
+        paddingValues.push(Math.round(paddingValue));
       }
     });
 

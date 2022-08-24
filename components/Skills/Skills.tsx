@@ -1,11 +1,11 @@
 import { useTranslation } from 'next-i18next';
 
-import { useEffect, useRef } from 'react';
 import { getSkills } from './getSkills';
 import Accordion from '../Accordion/Accordion';
 import { SectionProps } from '../../types/globals';
 
 function Skills({
+  animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('skills');
@@ -13,11 +13,11 @@ function Skills({
   const teamSkills = getSkills(t);
 
   return (
-    <section
-      className="skills"
-      {...props}
-    >
-      <div className="container container--home-page">
+    <section className="skills" {...props}>
+      <div
+        className="container container--home-page"
+        data-aos={animationName}
+      >
         <h2 className="title-type-2 skills__title">
           {t('titleSection')}
           {' '}

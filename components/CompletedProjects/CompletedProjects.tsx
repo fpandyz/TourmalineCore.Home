@@ -6,13 +6,17 @@ import { completedProjects } from '../../utils/consts/completedProjects';
 import CompletedProjectsCard from './components/CompletedProjectsCard/CompletedProjectsCard';
 
 function CompletedProjects({
+  animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('completedProjects');
 
   return (
     <section className="completed-projects" {...props}>
-      <div className="container container--home-page">
+      <div
+        className="container container--home-page"
+        data-aos={animationName}
+      >
         <h2 className="title-type-2 completed-projects__title">
           {t('title')}
           {' '}

@@ -3,13 +3,17 @@ import Image from 'next/image';
 import { SectionProps } from '../../types/globals';
 
 function WorkStructure({
+  animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('workStructure');
 
   return (
     <section className="work-structure" {...props}>
-      <div className="container container--home-page">
+      <div
+        className="container container--home-page"
+        data-aos={animationName}
+      >
         <h2 className="title-type-3">{t('title')}</h2>
         <div className="work-structure__subtitle">{t('subtitle')}</div>
 
