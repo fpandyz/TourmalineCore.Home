@@ -1,31 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 function useAutoPaddings() {
-  const [paddings, setPaddings] = useState<number[]>([]);
-
   useEffect(() => {
     const screenHeight = document.documentElement.clientHeight;
 
-    const allSection = document.querySelectorAll('section[data-auto-padding]');
+    const allSection: NodeListOf<HTMLElement> = document.querySelectorAll('section[data-auto-padding]');
 
-    const paddingValues: number[] = [];
-
-    allSection.forEach((section) => {
+    allSection.forEach((section, index) => {
       const elementHeight = section?.clientHeight;
 
-      if (elementHeight) {
-        const paddingCalculat = (screenHeight - elementHeight) / 2;
+      const paddingCalculat = (screenHeight - elementHeight) / 2;
 
-        const paddingValue = paddingCalculat >= 0 ? paddingCalculat : 10;
+      const paddingValue = paddingCalculat >= 0 ? Math.round(paddingCalculat) : 10;
 
-        paddingValues.push(Math.round(paddingValue));
+      if (index > 0) {
+        section.style.paddingTop = `${paddingValue}px`;
       }
+
+      section.style.paddingBottom = `${paddingValue}px`;
     });
-
-    setPaddings(paddingValues);
   }, []);
-
-  return paddings;
 }
 
 export default useAutoPaddings;

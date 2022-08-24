@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react';
-
 function HeroBlock({
   title,
   gradientTitle,
@@ -11,20 +9,6 @@ function HeroBlock({
   description: string,
   Button: JSX.Element;
 }) {
-  // const ref = useRef<HTMLElement | null>(null);
-
-  // useEffect(() => {
-  //   const dfasf = ref.current?.getBoundingClientRect().height;
-
-  //   const sdfs = window.innerHeight;
-
-  //   console.log('height-screen', sdfs);
-
-  //   console.log('heigh', dfasf);
-  //   console.log('heigh / 2', dfasf && dfasf / 2);
-  //   console.log('heigh / 2', dfasf && dfasf / 2);
-  // }, [ref]);
-
   return (
     <section className="hero-block">
       <div className="container hero-block__wrapper">
