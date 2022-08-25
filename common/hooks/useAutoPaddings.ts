@@ -8,16 +8,19 @@ function useAutoPaddings() {
 
     allSection.forEach((section, index) => {
       const elementHeight = section?.clientHeight;
+      const isNotMobileWidth = section?.clientWidth >= 756;
 
       const paddingCalculat = (screenHeight - elementHeight) / 2;
 
       const paddingValue = paddingCalculat >= 0 ? Math.round(paddingCalculat) : 10;
 
-      if (index > 0) {
-        section.style.paddingTop = `${paddingValue}px`;
+      if (index === allSection.length - 1) {
+        section.style.paddingTop = isNotMobileWidth ? `${paddingValue}px` : '80px';
+        return;
       }
 
-      section.style.paddingBottom = `${paddingValue}px`;
+      section.style.paddingTop = isNotMobileWidth ? `${paddingValue}px` : '80px';
+      section.style.paddingBottom = isNotMobileWidth ? `${paddingValue}px` : '80px';
     });
   }, []);
 }
