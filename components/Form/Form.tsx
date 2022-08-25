@@ -82,7 +82,6 @@ function Form({
         ref={recaptchaRef}
         size="invisible"
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
-        badge="bottomright"
         hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
       />
     </>
