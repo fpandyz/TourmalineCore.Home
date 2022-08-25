@@ -29,7 +29,7 @@ function Navigation({
   }, []);
 
   return (
-    <div className="navigation container section">
+    <div className="container section navigation">
       <div className="navigation__line" />
       <div
         className={clsx('navigation__links', {
