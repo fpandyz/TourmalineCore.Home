@@ -8,6 +8,8 @@
   margin: 0;
   height: 100%;
   max-width: 93px;
+  opacity: 0;
+  transition: opacity 0.8s;
 
   &__line {
     margin-right: 16px;
@@ -26,12 +28,6 @@
   &__links {
     position: sticky;
     width: max-content;
-    opacity: 0;
-    transition: opacity 0.5s;
-
-    &--is-see {
-      opacity: 1;
-    }
   }
 
   &__link {
@@ -93,6 +89,10 @@
         color: $color-white;
       }
     }
+  }
+
+  &--is-see {
+    opacity: 1;
   }
 
   @include tablet-xl {

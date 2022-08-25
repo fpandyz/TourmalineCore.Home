@@ -29,12 +29,13 @@ function Navigation({
   }, []);
 
   return (
-    <div className="container section navigation">
+    <div className={clsx('container section navigation', {
+      'navigation--is-see': isSeeNavigation,
+    })}
+    >
       <div className="navigation__line" />
       <div
-        className={clsx('navigation__links', {
-          'navigation__links--is-see': isSeeNavigation,
-        })}
+        className="navigation__links"
         ref={linksRef}
         style={{
           top,
