@@ -25,10 +25,8 @@ function Discussion({
         <div className="discussion__inner">
           <h3 className="title-type-2 discussion__title">
             {t('title')}
-            <div className="discussion__gradient-titles">
-              <span>{t('gradientTitleFirst')}</span>
-              <span>{t('gradientTitleSecond')}</span>
-            </div>
+            <span className="discussion__gradient-title">{t('gradientTitleFirst')}</span>
+            <span className="discussion__gradient-title">{t('gradientTitleSecond')}</span>
           </h3>
 
           <PrimaryButton

@@ -31,22 +31,16 @@
     }
   }
 
-  &__gradient-titles {
+  &__gradient-title {
     @include gradient-text;
 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    max-width: 300px;
+    display: block;
+    max-width: max-content;
     text-align: center;
     background-image: $main-gradient;
 
     @include desktop {
-      align-items: flex-start;
-    }
-
-    @media (min-width: 450px) {
-      max-width: max-content;
+      text-align: start;
     }
   }
 
