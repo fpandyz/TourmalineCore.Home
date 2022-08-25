@@ -13,8 +13,8 @@ function FormBlock({ ...props }: SectionProps) {
   const { t } = useTranslation('formBlock');
 
   return (
-    <section className="section container container--home-page form-block" {...props}>
-      <div className="form-block__inner">
+    <section className="section form-block" {...props}>
+      <div className="container container--home-page form-block__inner">
         <h2 className="title-type-3 form-block__title">
           {t('title')}
           {' '}
