@@ -1,7 +1,9 @@
+export const DEFAULT_LOCALE = 'ru';
+
 module.exports = {
   i18n: {
     localeDetection: false,
-    defaultLocale: 'en',
-    locales: ['en', 'ru', 'zh'],
+    defaultLocale: DEFAULT_LOCALE,
+    locales: ['ru'],
   },
 };

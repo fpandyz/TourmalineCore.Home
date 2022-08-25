@@ -8,6 +8,7 @@ import { useAutoClose } from '../../common/hooks/useAutoClose';
 import { languages } from '../../utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
+import { DEFAULT_LOCALE } from '../../next-i18next.config';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ function LangSwitch() {
 
   const routerLocale = useMemo(() => {
     if (!router.locale) {
-      return 'en';
+      return DEFAULT_LOCALE;
     }
 
     return router.locale;

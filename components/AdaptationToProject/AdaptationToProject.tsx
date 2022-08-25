@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
+import { DEFAULT_LOCALE } from '../../next-i18next.config';
 import { SectionProps } from '../../types/globals';
 
 enum ImageSrc {
@@ -18,7 +19,7 @@ function AdaptationToProject({
 
   const routerLocale = useMemo(() => {
     if (!router.locale) {
-      return 'en';
+      return DEFAULT_LOCALE;
     }
 
     return router.locale;
