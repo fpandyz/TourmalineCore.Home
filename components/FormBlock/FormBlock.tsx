@@ -1,19 +1,20 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { sendEmail } from '../../common/utils/fetchSend';
 
+import { sendEmail } from '../../common/utils/fetchSend';
 import Form from '../Form/Form';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import { SectionProps } from '../../types/globals';
 
-function FormBlock() {
+function FormBlock({ ...props }: SectionProps) {
   const [email, setEmail] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
 
   const { t } = useTranslation('formBlock');
 
   return (
-    <section className="section container container--home-page form-block">
-      <div className="form-block__inner">
+    <section className="section form-block" {...props}>
+      <div className="container container--home-page form-block__inner">
         <h2 className="title-type-3 form-block__title">
           {t('title')}
           {' '}

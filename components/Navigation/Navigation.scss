@@ -8,6 +8,8 @@
   margin: 0;
   height: 100%;
   max-width: 93px;
+  opacity: 0;
+  transition: opacity 0.8s;
 
   &__line {
     margin-right: 16px;
@@ -25,19 +27,17 @@
 
   &__links {
     position: sticky;
-    top: 50%;
     width: max-content;
   }
 
   &__link {
+    @include type-body-2;
+
     position: relative;
     display: block;
     margin-left: 16px;
     width: 100%;
     max-width: 93px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.1;
     color: $color-white-alpha-200;
     cursor: pointer;
     transition: color 0.3s;
@@ -82,7 +82,6 @@
 
     @include desktop-xl {
       max-width: 150px;
-      font-size: 18px;
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -90,6 +89,10 @@
         color: $color-white;
       }
     }
+  }
+
+  &--is-see {
+    opacity: 1;
   }
 
   @include tablet-xl {
