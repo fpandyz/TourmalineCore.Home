@@ -26,6 +26,12 @@
   &__links {
     position: sticky;
     width: max-content;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &--is-see {
+      opacity: 1;
+    }
   }
 
   &__link {
