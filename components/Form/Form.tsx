@@ -4,7 +4,7 @@ import {
   FormEvent, useMemo, useRef,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { DEFAULT_LOCALE } from '../../next-i18next.config';
+import { DEFAULT_LOCALE } from '../../utils/consts/const';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';

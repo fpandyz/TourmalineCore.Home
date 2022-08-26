@@ -8,7 +8,7 @@ import { useAutoClose } from '../../common/hooks/useAutoClose';
 import { languages } from '../../utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
-import { DEFAULT_LOCALE } from '../../next-i18next.config';
+import { DEFAULT_LOCALE } from '../../utils/consts/const';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);
