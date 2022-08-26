@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
 
-import { sendEmail } from '../../common/utils/fetchSend';
 import Form from '../Form/Form';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { SectionProps } from '../../types/globals';
@@ -13,8 +13,8 @@ function FormBlock({ ...props }: SectionProps) {
   const { t } = useTranslation('formBlock');
 
   return (
-    <section className="section form-block" {...props}>
-      <div className="container container--home-page form-block__inner">
+    <section className="section container container--home-page form-block" {...props}>
+      <div className="form-block__inner">
         <h2 className="title-type-3 form-block__title">
           {t('title')}
           {' '}
@@ -41,14 +41,7 @@ function FormBlock({ ...props }: SectionProps) {
   );
 
   async function onFormSubmit(formData: FormData) {
-    const messageSend: {
-      [key: string]: string
-    } = Array
-      .from(formData)
-      .reduce((message, [key, value]) => ({
-        ...message,
-        [key]: value,
-      }), {});
+    const messageSend = getMessageFromForm(formData);
 
     await sendEmail(messageSend);
     setEmail(messageSend.email);

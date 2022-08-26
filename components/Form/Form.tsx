@@ -71,19 +71,33 @@ function Form({
             {t('buttonText')}
           </PrimaryButton>
           <div className="form__approval">
-            {t('approvedText')}
+            {/* {t('approvedText')}
             {' '}
-            <ExternalLink className="form__link" href="/">{t('approvedLink')}</ExternalLink>
+            <ExternalLink href="/">{t('approvedLink')}</ExternalLink> */}
+            <p>
+              This site is protected by reCAPTCHA and the Google
+              {' '}
+              <ExternalLink target="_blank" href="https://policies.google.com/privacy">Privacy Policy</ExternalLink>
+              {' '}
+              and
+              {' '}
+              <ExternalLink target="_blank" href="https://policies.google.com/terms">Terms of Service</ExternalLink>
+              {' '}
+              apply.
+            </p>
           </div>
         </div>
       </form>
 
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        size="invisible"
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
-        hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
-      />
+      <div className="recaptcha">
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          size="invisible"
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
+          badge="bottomright"
+          hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
+        />
+      </div>
     </>
   );
 

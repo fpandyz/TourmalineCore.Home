@@ -2,16 +2,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 
-import PageHead from '../components/PageHead/PageHead';
-import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
-import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
+import PageHead from '../components/PageHead/PageHead';
 import Services from '../components/Services/Services';
+import Skills from '../components/Skills/Skills';
+import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
+import Discussion from '../components/Discussion/Discussion';
+import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
 import Process from '../components/Process/Process';
+import Tools from '../components/Tools/Tools';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
-import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
-import Tools from '../components/Tools/Tools';
 import FormBlock from '../components/FormBlock/FormBlock';
 
 import { NavigationLinks, navigationLinks } from '../utils/consts/navigation';
@@ -43,10 +44,15 @@ export default function HomePage() {
           id={NavigationLinks.skills}
           data-aos="fade-up"
         />
-        <CompletedProjects
-          id={NavigationLinks.experience}
-          data-aos="fade-up"
-        />
+        <div id={NavigationLinks.experience}>
+          <CompletedProjects
+            data-aos="fade-up"
+          />
+
+          <Discussion
+            data-aos="fade-up"
+          />
+        </div>
 
         <div
           id={NavigationLinks.approach}
@@ -95,6 +101,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'tools',
       'form',
       'formBlock',
+      'discussion',
     ])),
   },
 });

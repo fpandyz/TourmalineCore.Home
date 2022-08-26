@@ -4,11 +4,6 @@
   box-sizing: inherit;
 }
 
-html {
-  overflow-y: scroll;
-  box-sizing: border-box;
-}
-
 .body--scroll-hiden {
   overflow: hidden;
 }
@@ -31,6 +26,10 @@ body {
     font-size: 19px;
     line-height: 1.6;
   }
+}
+
+body {
+  overflow-x: hidden;
 }
 
 code {
