@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import useDeviceSize from './useDeviceSize';
 
-function test() {
+function calcOffset() {
   const [offset, setOffset] = useState(80);
   const deviceSize = useDeviceSize();
 
@@ -29,7 +29,7 @@ function test() {
 function useAutoPaddings() {
   const deviceSize = useDeviceSize();
 
-  const minPadding = test();
+  const minPadding = calcOffset();
 
   useEffect(() => {
     const allSection: NodeListOf<HTMLElement> = document.querySelectorAll('section[data-auto-padding]');

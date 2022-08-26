@@ -30,6 +30,8 @@
   }
 
   &__active {
+    @include type-body-2;
+
     position: relative;
     display: flex;
     align-items: center;
@@ -38,11 +40,6 @@
     padding: 0;
     box-shadow: none;
     font-family: inherit;
-    font-weight: inherit;
-    font-weight: 500;
-    font-size: inherit;
-    font-size: 14px;
-    line-height: 1.1;
     text-transform: inherit;
     text-transform: uppercase;
     color: inherit;
@@ -54,14 +51,11 @@
     &:focus {
       opacity: 0.8;
     }
-
-    @include desktop-xl {
-      font-size: 17px;
-      line-height: 1.5;
-    }
   }
 
   &__list {
+    @include type-body-2;
+
     position: absolute;
     right: -4px;
     top: calc(100% + 8px);

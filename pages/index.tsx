@@ -2,20 +2,21 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 
-import PageHead from '../components/PageHead/PageHead';
-import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
-import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
+import PageHead from '../components/PageHead/PageHead';
 import Services from '../components/Services/Services';
+import Skills from '../components/Skills/Skills';
+import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
+import Discussion from '../components/Discussion/Discussion';
+import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
+import Process from '../components/Process/Process';
+import Tools from '../components/Tools/Tools';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
 import FormBlock from '../components/FormBlock/FormBlock';
 
 import { NavigationLinks, navigationLinks } from '../utils/consts/navigation';
 import useAutoPaddings from '../common/hooks/useAutoPaddings';
-import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
-import Process from '../components/Process/Process';
-import Tools from '../components/Tools/Tools';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -48,11 +49,18 @@ export default function HomePage() {
           data-auto-padding={NavigationLinks.skills}
           animationName="fade-up"
         />
-        <CompletedProjects
+        <section
           id={NavigationLinks.experience}
           data-auto-padding={NavigationLinks.experience}
-          animationName="fade-up"
-        />
+        >
+          <CompletedProjects
+            animationName="fade-up"
+          />
+
+          <Discussion
+            animationName="fade-up"
+          />
+        </section>
 
         <div
           id={NavigationLinks.approach}
@@ -107,6 +115,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'tools',
       'form',
       'formBlock',
+      'discussion',
     ])),
   },
 });

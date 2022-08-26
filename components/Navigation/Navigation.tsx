@@ -5,8 +5,8 @@ import {
 import { Link as ScrollLink } from 'react-scroll';
 import { clsx } from 'clsx';
 
-// import useOffset from '../../common/hooks/useOffset';
 import { NavigationLinks } from '../../utils/consts/navigation';
+import useDeviceSize from '../../common/hooks/useDeviceSize';
 
 function Navigation({
   navigationLinks,
@@ -18,15 +18,15 @@ function Navigation({
 
   const [isSeeNavigation, setIsSeeNavigation] = useState(false);
 
-  // const offset = useOffset();
-
   const linksRef = useRef<HTMLInputElement>(null);
+
+  const deviceSize = useDeviceSize();
 
   useEffect(() => {
     if (linksRef.current) {
-      setTop(`${window.innerHeight / 2 - linksRef.current.clientHeight / 2}px`);
+      setTop(`${deviceSize.height / 2 - linksRef.current.clientHeight / 2}px`);
     }
-  }, []);
+  }, [deviceSize]);
 
   return (
     <div className={clsx('container section navigation', {
@@ -49,7 +49,6 @@ function Navigation({
             smooth
             spy
             to={link}
-            // offset={offset}
             onSetActive={() => setIsSeeNavigation(true)}
             onSetInactive={() => (index === 0 ? setIsSeeNavigation(false) : null)}
           >
