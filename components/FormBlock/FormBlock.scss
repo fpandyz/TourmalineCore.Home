@@ -1,4 +1,6 @@
 .form-block {
+  padding-bottom: 56px;
+
   &__inner {
     @include tablet-xl {
       max-width: 800px;
@@ -21,5 +23,17 @@
     display: block;
     margin-bottom: 56px;
     color: $color-white-alpha-100;
+  }
+
+  @include tablet {
+    padding-bottom: 80px;
+  }
+
+  @include desktop {
+    padding-bottom: 104px;
+  }
+
+  @include desktop-xl {
+    padding-bottom: 176px;
   }
 }

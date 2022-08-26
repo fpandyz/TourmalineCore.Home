@@ -11,6 +11,7 @@ type SecondCardType = {
 };
 
 function Process({
+  animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('process');
@@ -73,8 +74,11 @@ function Process({
   ), [secondCard, secondCardFooter]);
 
   return (
-    <section className="section process" {...props}>
-      <div className="container container--home-page">
+    <section className="process" {...props}>
+      <div
+        className="container container--home-page"
+        data-aos={animationName}
+      >
         <h2 className="title-type-3">{t('title')}</h2>
         <div className="process__subtitle">{t('subtitle')}</div>
 

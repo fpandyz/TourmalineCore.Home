@@ -1,6 +1,5 @@
 .discussion {
-  margin-top: 16px;
-  margin-bottom: 40px;
+  margin-top: 56px;
   background-image: $main-gradient-300;
 
   &__inner {
@@ -58,5 +57,17 @@
   &__list-title {
     margin-top: 104px;
     margin-bottom: 32px;
+  }
+
+  @include tablet {
+    margin-top: 80px;
+  }
+
+  @include desktop {
+    margin-top: 104px;
+  }
+
+  @include desktop-xl {
+    margin-top: 176px;
   }
 }
