@@ -1,11 +1,7 @@
 {
   "services": "Услуги",
-  "skills": "Наши возможности",
-  "completedProjects": "Выполненные проекты",
-  "discussion": "Обсудить проект",
-  "adaptationToProject": "Адаптация под проект",
-  "process": "Процесс",
-  "workStructure": "Структура работы",
-  "mistakes": "Работа над ошибками",
-  "tools": "Инструменты"
+  "skills": "Знания",
+  "experience": "Опыт",
+  "approach": "Подход",
+  "contact": "Связаться"
 }

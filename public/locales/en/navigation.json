@@ -1,11 +1,7 @@
 {
   "services": "Services",
   "skills": "Skills",
-  "completedProjects": "Completed projects",
-  "discussion": "Discuss the project",
-  "adaptationToProject": "Adaptation to project",
-  "process": "Process",
-  "workStructure": "Work structure",
-  "mistakes": "Working on mistakes",
-  "tools": "Tools"
+  "experience": "Experience",
+  "approach": "Approach",
+  "contact": "Contact"
 }

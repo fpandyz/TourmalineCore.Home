@@ -1,13 +1,9 @@
-export type NavigationLinks = string;
+export enum NavigationLinks {
+  services = 'services',
+  skills = 'skills',
+  experience = 'experience',
+  approach = 'approach',
+  contact = 'contact',
+}
 
-export const navigationLinks: NavigationLinks[] = [
-  'services',
-  'skills',
-  'completedProjects',
-  'discussion',
-  'adaptationToProject',
-  'process',
-  'tools',
-  'workStructure',
-  'mistakes',
-];
+export const navigationLinks = Object.values(NavigationLinks);

@@ -4,15 +4,16 @@ import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
 
 import Form from '../Form/Form';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import { SectionProps } from '../../types/globals';
 
-function FormBlock() {
+function FormBlock({ ...props }: SectionProps) {
   const [email, setEmail] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
 
   const { t } = useTranslation('formBlock');
 
   return (
-    <section className="section container container--home-page form-block">
+    <section className="section container container--home-page form-block" {...props}>
       <div className="form-block__inner">
         <h2 className="title-type-3 form-block__title">
           {t('title')}

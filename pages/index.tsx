@@ -15,7 +15,7 @@ import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
 import FormBlock from '../components/FormBlock/FormBlock';
 
-import { navigationLinks } from '../utils/consts/navigation';
+import { NavigationLinks, navigationLinks } from '../utils/consts/navigation';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -37,41 +37,45 @@ export default function HomePage() {
 
       <LayoutHomePage navigationLinks={navigationLinks}>
         <Services
-          id={navigationLinks[0]}
+          id={NavigationLinks.services}
           data-aos="fade-up"
         />
         <Skills
-          id={navigationLinks[1]}
+          id={NavigationLinks.skills}
           data-aos="fade-up"
         />
-        <CompletedProjects
-          id={navigationLinks[2]}
-          data-aos="fade-up"
-        />
-        <Discussion
-          data-aos="fade-up"
-        />
-        <AdaptationToProject
-          id={navigationLinks[3]}
-          data-aos="fade-up"
-        />
-        <Process
-          id={navigationLinks[4]}
-          data-aos="fade-up"
-        />
-        <Tools
-          id={navigationLinks[5]}
-          data-aos="fade-up"
-        />
-        <WorkStructure
-          id={navigationLinks[6]}
-          data-aos="fade-up"
-        />
-        <Mistakes
-          id={navigationLinks[7]}
-          data-aos="fade-up"
-        />
+        <div id={NavigationLinks.experience}>
+          <CompletedProjects
+            data-aos="fade-up"
+          />
+
+          <Discussion
+            data-aos="fade-up"
+          />
+        </div>
+
+        <div
+          id={NavigationLinks.approach}
+        >
+          <AdaptationToProject
+            data-aos="fade-up"
+          />
+          <Process
+            data-aos="fade-up"
+          />
+          <Tools
+            data-aos="fade-up"
+          />
+          <WorkStructure
+            data-aos="fade-up"
+          />
+          <Mistakes
+            data-aos="fade-up"
+          />
+        </div>
+
         <FormBlock
+          id={NavigationLinks.contact}
           data-aos="fade-up"
         />
       </LayoutHomePage>
