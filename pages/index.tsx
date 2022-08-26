@@ -11,7 +11,7 @@ import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
 import FormBlock from '../components/FormBlock/FormBlock';
 
-import { navigationLinks } from '../utils/consts/navigation';
+import { NavigationLinks, navigationLinks } from '../utils/consts/navigation';
 import useAutoPaddings from '../common/hooks/useAutoPaddings';
 import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
 import Process from '../components/Process/Process';
@@ -22,7 +22,6 @@ export default function HomePage() {
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
   useAutoPaddings();
-
   return (
     <>
       <PageHead
@@ -40,49 +39,50 @@ export default function HomePage() {
 
       <LayoutHomePage navigationLinks={navigationLinks}>
         <Services
-          id={navigationLinks[0]}
-          data-auto-padding={navigationLinks[0]}
+          id={NavigationLinks.services}
+          data-auto-padding={NavigationLinks.services}
           animationName="fade-up"
         />
         <Skills
-          id={navigationLinks[1]}
-          data-auto-padding={navigationLinks[1]}
+          id={NavigationLinks.skills}
+          data-auto-padding={NavigationLinks.skills}
           animationName="fade-up"
         />
         <CompletedProjects
-          id={navigationLinks[2]}
-          data-auto-padding={navigationLinks[2]}
+          id={NavigationLinks.experience}
+          data-auto-padding={NavigationLinks.experience}
           animationName="fade-up"
         />
-        <AdaptationToProject
-          id={navigationLinks[3]}
-          data-auto-padding={navigationLinks[3]}
-          animationName="fade-up"
-        />
-        <Process
-          id={navigationLinks[4]}
-          data-auto-padding={navigationLinks[4]}
-          animationName="fade-up"
-        />
-        <Tools
-          id={navigationLinks[5]}
-          data-auto-padding={navigationLinks[5]}
-          animationName="fade-up"
-        />
-        <WorkStructure
-          id={navigationLinks[6]}
-          data-auto-padding={navigationLinks[6]}
-          animationName="fade-up"
-        />
-        <Mistakes
-          id={navigationLinks[7]}
-          animationName="fade-up"
-          data-auto-padding={navigationLinks[7]}
-        />
+
+        <div
+          id={NavigationLinks.approach}
+        >
+          <AdaptationToProject
+            animationName="fade-up"
+            data-auto-padding="adaptation-project"
+          />
+          <Process
+            animationName="fade-up"
+            data-auto-padding="process"
+          />
+          <Tools
+            animationName="fade-up"
+            data-auto-padding="tools"
+          />
+          <WorkStructure
+            animationName="fade-up"
+            data-auto-padding="work-structure"
+          />
+          <Mistakes
+            animationName="fade-up"
+            data-auto-padding="mistakes"
+          />
+        </div>
+
         <FormBlock
-          id={navigationLinks[8]}
-          data-auto-padding={navigationLinks[8]}
+          id={NavigationLinks.contact}
           animationName="fade-up"
+          data-auto-padding="form-block"
         />
       </LayoutHomePage>
     </>
