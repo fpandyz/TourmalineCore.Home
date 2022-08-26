@@ -9,5 +9,7 @@
 
   &__wrapper {
     position: relative;
+    z-index: -2;
+    background-attachment: fixed;
   }
 }
