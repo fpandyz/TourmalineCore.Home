@@ -39,11 +39,10 @@
       font-size: 14px;
     }
   }
+}
 
-  &__link {
-    font-style: normal;
-    text-decoration: underline;
-  }
+.recaptcha {
+  display: none;
 }
 
 .grecaptcha-badge {
