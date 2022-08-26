@@ -9,6 +9,7 @@ import Form from '../Form/Form';
 import List from '../List/List';
 
 function Discussion({
+  animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('discussion');
@@ -21,7 +22,10 @@ function Discussion({
 
   return (
     <section {...props} className="discussion">
-      <div className="container container--home-page">
+      <div
+        className="container container--home-page"
+        data-aos={animationName}
+      >
         <div className="discussion__inner">
           <h3 className="title-type-2 discussion__title">
             {t('title')}
