@@ -15,7 +15,12 @@ function HeroBlockHomePage({
       title={t('title')}
       gradientTitle={t('gradientTitle')}
       description={t('description')}
-      Button={<SecondaryButton onClick={scrollFirstBlock} text={t('buttonText')} />}
+      Button={(
+        <SecondaryButton
+          onClick={scrollFirstBlock}
+          text={t('buttonText')}
+        />
+      )}
     />
   );
 

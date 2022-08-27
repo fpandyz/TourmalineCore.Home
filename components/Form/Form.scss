@@ -1,5 +1,10 @@
 .form {
+  &__input {
+    margin-bottom: 40px;
+  }
+
   &__message {
+    margin-top: 64px;
     resize: vertical;
   }
 
@@ -17,7 +22,7 @@
   }
 
   &__button {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 
     @include tablet {
       flex: none;

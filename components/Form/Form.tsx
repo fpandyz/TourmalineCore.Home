@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
-  FormEvent, useMemo, useRef,
+  FormEvent, KeyboardEvent, useMemo, useRef,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { DEFAULT_LOCALE } from '../../utils/consts/const';
@@ -44,6 +44,7 @@ function Form({
         <Input
           id="name"
           name="name"
+          className="form__input"
           label={t('name.label')}
           description={t('name.description')}
           required
@@ -51,6 +52,7 @@ function Form({
         <Input
           id="email"
           name="email"
+          className="form__input"
           label={t('email.label')}
           description={t('email.description')}
           type="email"
@@ -62,6 +64,7 @@ function Form({
           label={t('message.label')}
           className="form__message"
           description={t('message.description')}
+          onKeyDown={handleKeyDown}
         />
 
         <div className="form__footer">
@@ -101,6 +104,18 @@ function Form({
       </div>
     </>
   );
+
+  function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
+    if (event.key === 'Enter' && event.shiftKey === false) {
+      event.preventDefault();
+
+      const buttonSubmit = document.querySelector<HTMLButtonElement>('.form__button');
+
+      if (buttonSubmit) {
+        buttonSubmit.click();
+      }
+    }
+  }
 
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();

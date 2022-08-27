@@ -12,7 +12,11 @@
   }
 
   &__title {
-    margin-bottom: 56px;
+    margin-bottom: 48px;
+
+    @include desktop {
+      margin-bottom: 64px;
+    }
   }
 
   &__title-gradient {

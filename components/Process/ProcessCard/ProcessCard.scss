@@ -13,6 +13,8 @@
   }
 
   &__name {
+    font-family: $ff-inter;
+
     @include desktop {
       font-weight: 500;
       font-size: 12px;
@@ -93,7 +95,7 @@
     font-family: $ff-inter;
     font-size: 14px;
     line-height: 1.7;
-    background: rgba(220, 213, 249, 0.1);
+    background: $color-gray;
 
     @include desktop-xl {
       padding: 32px 32px 48px;

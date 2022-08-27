@@ -30,7 +30,7 @@
     font-size: 12px;
     line-height: 1.7;
     letter-spacing: 0.01em;
-    background-color: rgba(220, 213, 249, 0.1);
+    background-color: $color-gray;
 
     & + & {
       margin-top: 12px;

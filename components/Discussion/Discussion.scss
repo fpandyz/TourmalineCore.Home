@@ -2,6 +2,12 @@
   margin-top: 56px;
   background-image: $main-gradient-300;
 
+  .modal .button {
+    background-image:
+      linear-gradient(180deg, $color-gray, $color-gray),
+      linear-gradient(90deg, $color-pink, $color-green, $color-green, $color-pink);
+  }
+
   &__inner {
     padding: 56px 0;
 
