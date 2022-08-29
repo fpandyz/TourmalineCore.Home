@@ -10,8 +10,8 @@ function FormBlock({
   animationName,
   ...props
 }: SectionProps) {
-  const [email, setEmail] = useState('');
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [email, setEmail] = useState('123');
+  const [isSubmit, setIsSubmit] = useState(true);
 
   const { t } = useTranslation('formBlock');
 
