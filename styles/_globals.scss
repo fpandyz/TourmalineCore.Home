@@ -135,6 +135,15 @@ p + p {
   }
 }
 
+@mixin ratio-calc($width, $height) {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc($height / $width));
+  }
+}
+
 .scroll {
   scroll-padding-left: 20px;
   scroll-padding-right: 20px;

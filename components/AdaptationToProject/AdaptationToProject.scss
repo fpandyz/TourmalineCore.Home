@@ -24,11 +24,15 @@
   }
 
   &__image {
-    @include ratio-16x9;
+    @include ratio-calc(213, 100);
 
     position: relative;
     min-width: 809px;
     min-height: 400px;
+
+    @include tablet {
+      @include ratio-calc(44, 25);
+    }
 
     @include desktop {
       @include ratio-18x9;
