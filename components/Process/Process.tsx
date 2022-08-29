@@ -22,7 +22,7 @@ function Process({
 
       return (
         <ProcessCard
-          altHeader={t('altHeader')}
+          altHeader={t('firstAltHeader')}
           reactionImg="/images/yes.png"
           time="17:58"
           altReaction={t('firstCard.altReaction')}
@@ -55,12 +55,12 @@ function Process({
 
       return (
         <ProcessCard
-          altHeader={t('altHeader')}
+          altHeader={t('secondAltHeader')}
           reactionImg="/images/fire.png"
-          altReaction={t('secondCardAltReaction')}
-          time="17:58"
-          name={t('Yuliya')}
-          srcImage="/images/skype-yuilya.png"
+          altReaction={t('secondCardAlt')}
+          time="14:36"
+          name={t('Margarita')}
+          srcImage="/images/skype-margarita.png"
           data-aos="fade-left"
           data-aos-delay={250}
         >
