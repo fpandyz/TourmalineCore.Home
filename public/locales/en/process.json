@@ -1,8 +1,9 @@
 {
   "title": "Процесс (en)",
   "subtitle": "Двигаемся к конечной цели еженедельными спринтами, проводим планирования и демо клиенту (en)",
-  "Yuliya": "Юля (en)",
-  "altHeader": "Юля фото(en)",
+  "Yuliya": "Yuliya",
+  "Margarita": "Margarita",
+  "firstAltHeader": "Юля фото (en)",
   "firstCard": {
     "title": "Sprint (en)",
     "altReaction": "emoji Yes",
@@ -15,6 +16,7 @@
       "Вывод содержимого в преобразователях и валидаторах (en)"
     ]
   },
+  "secondAltHeader": "Маргарита фото (en)",
   "secondCard": [
     {
       "listTitle": "По результатам демо: (en)",
