@@ -26,6 +26,15 @@ function WorkStructure({
             data-aos-delay={100}
           >
             <Image
+              className="work-structure__first-image--mobile"
+              src="/images/good-code-mobile.webp"
+              alt={t('altImageFirst')}
+              layout="fill"
+              loading="lazy"
+            />
+
+            <Image
+              className="work-structure__first-image--desktop"
               src="/images/good-code.webp"
               alt={t('altImageFirst')}
               layout="fill"
@@ -38,6 +47,14 @@ function WorkStructure({
             data-aos-delay={150}
           >
             <Image
+              className="work-structure__second-image--mobile"
+              src="/images/good-work-mobile.webp"
+              alt={t('altImageSecond')}
+              layout="fill"
+              loading="lazy"
+            />
+            <Image
+              className="work-structure__second-image--desktop"
               src="/images/good-work.webp"
               alt={t('altImageSecond')}
               layout="fill"
