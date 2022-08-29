@@ -78,9 +78,7 @@ function Form({
             {/* {t('approvedText')}
             {' '}
             <ExternalLink href="/">{t('approvedLink')}</ExternalLink> */}
-            <p>
-              {generateReCAPTCHAText()}
-            </p>
+            {generateReCAPTCHAText()}
           </div>
         </div>
       </form>
@@ -130,23 +128,28 @@ function Form({
 
   function generateReCAPTCHAText() {
     const ReCAPTCHAText = t('recaptchaText', { returnObjects: true });
-    return Object.values<string | {
-      link: string;
-      text: string;
-    }>(ReCAPTCHAText).map((value) => {
-      if (typeof value === 'object') {
-        return (
-          <ExternalLink
-            target="_blank"
-            href={value.link}
-          >
-            {value.text}
-          </ExternalLink>
-        );
-      }
+    return (
+      <p>
+        {Object.values<string | {
+          link: string;
+          text: string;
+        }>(ReCAPTCHAText).map((value) => {
+          if (typeof value === 'object') {
+            return (
+              <ExternalLink
+                key={value.link}
+                target="_blank"
+                href={value.link}
+              >
+                {value.text}
+              </ExternalLink>
+            );
+          }
 
-      return ` ${value} `;
-    });
+          return ` ${value} `;
+        })}
+      </p>
+    );
   }
 }
 
