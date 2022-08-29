@@ -30,12 +30,12 @@
     min-width: 809px;
     min-height: 400px;
 
-    @include tablet {
-      @include ratio-calc(44, 25);
-    }
-
     @include desktop {
       @include ratio-18x9;
+    }
+
+    @include desktop-xl {
+      @include ratio-calc(151, 76);
     }
   }
 
