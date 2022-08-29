@@ -55,6 +55,8 @@
   }
 
   &__image {
+    @include ratio-18x9;
+
     position: relative;
     margin-top: 48px;
     margin-bottom: 42px;

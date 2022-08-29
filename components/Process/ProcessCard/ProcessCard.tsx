@@ -27,13 +27,23 @@ function ProcessCard({
       {...props}
     >
       <div className="process-card__image process-card__image--desktop">
-        <Image src={srcImage} alt={altHeader} layout="fill" />
+        <Image
+          src={srcImage}
+          alt={altHeader}
+          layout="fill"
+          loading="lazy"
+        />
       </div>
 
       <div className="process-card__inner">
         <div className="process-card__header">
           <div className="process-card__image process-card__image--mobile">
-            <Image src={srcImage} alt={altHeader} layout="fill" />
+            <Image
+              src={srcImage}
+              alt={altHeader}
+              layout="fill"
+              loading="lazy"
+            />
           </div>
 
           <div>
@@ -50,7 +60,12 @@ function ProcessCard({
           data-aos="fade-in"
           data-aos-delay={350}
         >
-          <Image src={reactionImg} alt={altReaction} layout="fill" />
+          <Image
+            src={reactionImg}
+            alt={altReaction}
+            layout="fill"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>

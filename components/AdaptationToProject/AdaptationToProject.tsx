@@ -40,11 +40,12 @@ function AdaptationToProject({
           data-aos="fade-up"
           data-aos-delay={100}
         >
-          <div className="ratio ratio--16x9 adaptation-to-project__image">
+          <div className="adaptation-to-project__image">
             <Image
               src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
               alt={t('imageAlt')}
               layout="fill"
+              loading="lazy"
             />
           </div>
         </div>
