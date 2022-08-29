@@ -78,30 +78,18 @@ function Form({
             {/* {t('approvedText')}
             {' '}
             <ExternalLink href="/">{t('approvedLink')}</ExternalLink> */}
-            <p>
-              This site is protected by reCAPTCHA and the Google
-              {' '}
-              <ExternalLink target="_blank" href="https://policies.google.com/privacy">Privacy Policy</ExternalLink>
-              {' '}
-              and
-              {' '}
-              <ExternalLink target="_blank" href="https://policies.google.com/terms">Terms of Service</ExternalLink>
-              {' '}
-              apply.
-            </p>
+            {generateReCAPTCHAText()}
           </div>
         </div>
       </form>
 
-      <div className="recaptcha">
-        <ReCAPTCHA
-          ref={recaptchaRef}
-          size="invisible"
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
-          badge="bottomright"
-          hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
-        />
-      </div>
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        size="invisible"
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
+        badge="bottomleft"
+        hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
+      />
     </>
   );
 
@@ -136,6 +124,32 @@ function Form({
     onSubmit(formData);
 
     recaptchaRef.current.reset();
+  }
+
+  function generateReCAPTCHAText() {
+    const ReCAPTCHAText = t('recaptchaText', { returnObjects: true });
+    return (
+      <p>
+        {Object.values<string | {
+          link: string;
+          text: string;
+        }>(ReCAPTCHAText).map((value) => {
+          if (typeof value === 'object') {
+            return (
+              <ExternalLink
+                key={value.link}
+                target="_blank"
+                href={value.link}
+              >
+                {value.text}
+              </ExternalLink>
+            );
+          }
+
+          return ` ${value} `;
+        })}
+      </p>
+    );
   }
 }
 
