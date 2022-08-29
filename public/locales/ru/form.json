@@ -13,5 +13,18 @@
   },
   "buttonText": "Отправить",
   "approvedText": "Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с",
-  "approvedLink": "положением о конфиденциальности данных."
+  "approvedLink": "положением о конфиденциальности данных.",
+  "recaptchaText": {
+    "generalText": "Этот сайт использует reCAPTCHA от Google",
+    "privacyLink": {
+      "link": "https://policies.google.com/privacy",
+      "text": "положение о конфиденциальности"
+    },
+    "and": "и",
+    "termsLink": {
+      "link": "https://policies.google.com/terms",
+      "text": "условия обслуживания"
+    },
+    "endText": "подтверждаю."
+  }
 }
