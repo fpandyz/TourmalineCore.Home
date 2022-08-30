@@ -27,22 +27,6 @@
 
   &__first-image {
     position: relative;
-
-    &--mobile {
-      @include ratio-calc(63, 53);
-
-      @include tablet {
-        display: none;
-      }
-    }
-
-    &--desktop {
-      display: none;
-
-      @include tablet {
-        display: block;
-      }
-    }
   }
 
   &__second-image {
@@ -50,20 +34,6 @@
     right: 0;
     z-index: 1;
     margin-top: var(--top);
-
-    &--mobile {
-      @include tablet {
-        display: none;
-      }
-    }
-
-    &--desktop {
-      display: none;
-
-      @include tablet {
-        display: block;
-      }
-    }
   }
 
   &__caption {

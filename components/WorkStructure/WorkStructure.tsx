@@ -1,12 +1,16 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { SectionProps } from '../../types/globals';
+import useDeviceSize from '../../common/hooks/useDeviceSize';
 
 function WorkStructure({
   animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('workStructure');
+
+  const deviceSize = useDeviceSize();
+  const isMobile = deviceSize.width < 768;
 
   return (
     <section className="work-structure" {...props}>
@@ -26,16 +30,7 @@ function WorkStructure({
             data-aos-delay={100}
           >
             <Image
-              className="work-structure__first-image--mobile"
-              src="/images/good-code-mobile.webp"
-              alt={t('altImageFirst')}
-              layout="fill"
-              loading="lazy"
-            />
-
-            <Image
-              className="work-structure__first-image--desktop"
-              src="/images/good-code.webp"
+              src={isMobile ? '/images/good-code-mobile.webp' : '/images/good-code.webp'}
               alt={t('altImageFirst')}
               layout="fill"
               loading="lazy"
@@ -47,15 +42,7 @@ function WorkStructure({
             data-aos-delay={150}
           >
             <Image
-              className="work-structure__second-image--mobile"
-              src="/images/good-work-mobile.webp"
-              alt={t('altImageSecond')}
-              layout="fill"
-              loading="lazy"
-            />
-            <Image
-              className="work-structure__second-image--desktop"
-              src="/images/good-work.webp"
+              src={isMobile ? '/images/good-work-mobile.webp' : '/images/good-work.webp'}
               alt={t('altImageSecond')}
               layout="fill"
               loading="lazy"
