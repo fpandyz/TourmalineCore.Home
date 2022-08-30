@@ -25,7 +25,7 @@ function HeroBlockHomePage({
   );
 
   function scrollFirstBlock() {
-    const firstBlock = document.querySelector(`#${firstBlockSelector}`);
+    const firstBlock = document.querySelector(`#${firstBlockSelector} div`);
 
     firstBlock?.scrollIntoView({ behavior: 'smooth' });
   }

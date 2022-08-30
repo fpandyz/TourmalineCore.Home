@@ -45,26 +45,16 @@ function useAutoPaddings() {
       const screenHeight = deviceSize.height;
       const elementHeight = section.clientHeight - paddingTop - paddingBottom;
 
-      console.log(section.id);
-
       const heightDifference = screenHeight - elementHeight;
-      const paddingCalculat = heightDifference > 0 ? heightDifference / 2 : 0;
-
-      console.log({
-        screenHeight,
-        elementHeight,
-      });
+      const paddingCalculat = heightDifference > 0 ? Math.round(heightDifference / 2) : 0;
 
       const isMinPadding = minPadding > paddingCalculat;
 
-      console.log({
-        minPadding,
-        paddingCalculat,
-      });
+      const paddingValue = isMinPadding ? minPadding : paddingCalculat;
 
-      const paddingValue = isMinPadding ? minPadding : Math.round(paddingCalculat);
-
-      if (isMinPadding) {
+      if (paddingCalculat <= 0) {
+        setOffset(minPadding - paddingCalculat - 20);
+      } else if (isMinPadding) {
         setOffset(minPadding - paddingCalculat);
       } else {
         setOffset(0);

@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next';
 import {
   useState, useEffect, useRef,
 } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink, scroller } from 'react-scroll';
 import { clsx } from 'clsx';
 
 import { NavigationLinks } from '../../utils/consts/navigation';
@@ -43,21 +43,25 @@ function Navigation({
           top,
         }}
       >
-        {navigationLinks.map((link, index) => (
-          <ScrollLink
-            key={link}
-            className="navigation__link"
-            activeClass="navigation__link--active"
-            smooth
-            spy
-            to={link}
-            onSetActive={() => setIsSeeNavigation(true)}
-            onSetInactive={() => (index === 0 ? setIsSeeNavigation(false) : null)}
-            offset={offset}
-          >
-            {t(link)}
-          </ScrollLink>
-        ))}
+        {navigationLinks.map((link, index) => {
+          const scrollerTo = scroller;
+          scrollerTo(`${link} div`);
+          return (
+            <ScrollLink
+              key={link}
+              className="navigation__link"
+              activeClass="navigation__link--active"
+              smooth
+              spy
+              to={link}
+              onSetActive={() => setIsSeeNavigation(true)}
+              onSetInactive={() => (index === 0 ? setIsSeeNavigation(false) : null)}
+              offset={offset}
+            >
+              {t(link)}
+            </ScrollLink>
+          );
+        })}
       </div>
     </div>
   );
