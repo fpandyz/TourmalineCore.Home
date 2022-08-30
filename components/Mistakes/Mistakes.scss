@@ -24,7 +24,7 @@
     text-align: center;
     color: $color-white-alpha-100;
 
-    @include desktop {
+    @include desktop-xl {
       padding-bottom: 0;
     }
   }

@@ -26,6 +26,10 @@
     flex-direction: column;
     margin-bottom: 40px;
 
+    @include tablet {
+      align-items: flex-start;
+    }
+
     @include desktop {
       align-items: flex-start;
       margin-bottom: 48px;
@@ -44,7 +48,7 @@
     text-align: center;
     background-image: $main-gradient;
 
-    @include desktop {
+    @include tablet {
       text-align: start;
     }
   }
@@ -55,7 +59,7 @@
       linear-gradient(180deg, rgba($color-purple-black, 0.9), rgba($color-purple-black, 0.9)),
       linear-gradient(90deg, $color-pink, $color-green, $color-green, $color-pink);
 
-    @include desktop {
+    @include tablet {
       margin: 0;
     }
   }

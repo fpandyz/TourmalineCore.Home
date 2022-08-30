@@ -49,7 +49,7 @@ function MobileMenu({
 
         <div className="mobile-menu__tourmaline-core">
           <Image
-            src="/images/tourmaline-core.png"
+            src="/images/tourmaline-core.webp"
             alt="tourmaline-core"
             layout="fill"
             loading="lazy"

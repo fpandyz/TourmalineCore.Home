@@ -88,6 +88,7 @@
 
   &__cursor {
     position: absolute;
+    z-index: $mistake-item-cursor;
     border-radius: 3px;
     padding: 2px 16px;
     font-size: 14px;
