@@ -42,11 +42,23 @@
 
   &__first-image,
   &__second-image {
+    @include ratio-calc(63, 53);
+
     width: 60%;
     min-width: 253px;
     min-height: 212px;
 
+    @include desktop {
+      @include ratio-calc(37, 22);
+    }
+
+    @include desktop-xl {
+      @include ratio-calc(89, 53);
+    }
+
     @include tablet {
+      @include ratio-calc(27, 16);
+
       min-width: auto;
       min-height: auto;
     }

@@ -99,33 +99,48 @@ p + p {
   display: none;
 }
 
-.ratio {
+@mixin ratio {
   &::before {
     content: "";
     position: relative;
     z-index: -1;
     display: block;
   }
+}
 
-  &--3x4 {
-    &::before {
-      /* stylelint-disable-next-line scss/no-global-function-names */
-      padding-bottom: percentage(calc(4 / 3));
-    }
+@mixin ratio-3x4 {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc(4 / 3));
   }
+}
 
-  &--16x9 {
-    &::before {
-      /* stylelint-disable-next-line scss/no-global-function-names */
-      padding-bottom: percentage(calc(9 / 16));
-    }
+@mixin ratio-16x9 {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc(9 / 16));
   }
+}
 
-  &--18x9 {
-    &::before {
-      /* stylelint-disable-next-line scss/no-global-function-names */
-      padding-bottom: percentage(calc(9 / 18));
-    }
+@mixin ratio-18x9 {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc(9 / 18));
+  }
+}
+
+@mixin ratio-calc($width, $height) {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc($height / $width));
   }
 }
 

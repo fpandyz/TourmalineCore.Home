@@ -55,6 +55,8 @@
   }
 
   &__image {
+    @include ratio-18x9;
+
     position: relative;
     margin-top: 48px;
     margin-bottom: 42px;
@@ -83,7 +85,7 @@
     max-width: 96px;
     background-image: url("/images/large-arrow.svg");
     background-repeat: no-repeat;
-    transition: background-image 0.3s;
+    transition: background-image 0.8s;
   }
 
   &:hover {
