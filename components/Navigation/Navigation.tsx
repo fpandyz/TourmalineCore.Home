@@ -10,8 +10,10 @@ import useDeviceSize from '../../common/hooks/useDeviceSize';
 
 function Navigation({
   navigationLinks,
+  offset,
 }: {
   navigationLinks: NavigationLinks[];
+  offset: number;
 }) {
   const { t } = useTranslation('navigation');
   const [top, setTop] = useState('0');
@@ -51,6 +53,7 @@ function Navigation({
             to={link}
             onSetActive={() => setIsSeeNavigation(true)}
             onSetInactive={() => (index === 0 ? setIsSeeNavigation(false) : null)}
+            offset={offset}
           >
             {t(link)}
           </ScrollLink>

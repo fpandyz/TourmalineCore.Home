@@ -22,7 +22,8 @@ export default function HomePage() {
   const { t } = useTranslation('common');
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
-  useAutoPaddings();
+  const offset = useAutoPaddings();
+
   return (
     <>
       <PageHead
@@ -38,7 +39,10 @@ export default function HomePage() {
         }}
       />
 
-      <LayoutHomePage navigationLinks={navigationLinks}>
+      <LayoutHomePage
+        navigationLinks={navigationLinks}
+        offset={offset}
+      >
         <Services
           id={NavigationLinks.services}
           data-auto-padding={NavigationLinks.services}

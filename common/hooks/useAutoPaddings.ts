@@ -10,7 +10,7 @@ function useCalcOffset() {
       if (deviceSize.width >= 1920) {
         return 200;
       }
-      if (deviceSize.width >= 1366) {
+      if (deviceSize.width >= 1280) {
         return 176;
       }
       if (deviceSize.width >= 768) {
@@ -27,20 +27,48 @@ function useCalcOffset() {
 }
 
 function useAutoPaddings() {
-  const deviceSize = useDeviceSize();
+  const [offset, setOffset] = useState(0);
 
+  const deviceSize = useDeviceSize();
   const minPadding = useCalcOffset();
 
   useEffect(() => {
     const allSection: NodeListOf<HTMLElement> = document.querySelectorAll('section[data-auto-padding]');
 
     allSection.forEach((section, index) => {
-      const screenHeight = document.documentElement.clientHeight;
-      const elementHeight = section?.clientHeight;
+      const paddingTopPx = section.style.paddingTop;
+      const paddingBottomPx = section.style.paddingBottom;
 
-      const paddingCalculat = (screenHeight - elementHeight) / 2;
+      const paddingTop = Number(paddingTopPx.substring(0, paddingTopPx.length - 2));
+      const paddingBottom = Number(paddingBottomPx.substring(0, paddingBottomPx.length - 2));
 
-      const paddingValue = paddingCalculat > minPadding ? Math.round(paddingCalculat) : minPadding;
+      const screenHeight = deviceSize.height;
+      const elementHeight = section.clientHeight - paddingTop - paddingBottom;
+
+      console.log(section.id);
+
+      const heightDifference = screenHeight - elementHeight;
+      const paddingCalculat = heightDifference > 0 ? heightDifference / 2 : 0;
+
+      console.log({
+        screenHeight,
+        elementHeight,
+      });
+
+      const isMinPadding = minPadding > paddingCalculat;
+
+      console.log({
+        minPadding,
+        paddingCalculat,
+      });
+
+      const paddingValue = isMinPadding ? minPadding : Math.round(paddingCalculat);
+
+      if (isMinPadding) {
+        setOffset(minPadding - paddingCalculat);
+      } else {
+        setOffset(0);
+      }
 
       if (index === allSection.length - 1) {
         section.style.paddingTop = `${paddingValue}px`;
@@ -51,6 +79,10 @@ function useAutoPaddings() {
       section.style.paddingBottom = `${paddingValue}px`;
     });
   }, [deviceSize]);
+
+  console.log(offset);
+
+  return offset;
 }
 
 export default useAutoPaddings;
