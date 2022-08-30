@@ -18,7 +18,7 @@
     overflow-x: auto;
     padding-bottom: 32px;
 
-    @include desktop-xl {
+    @include desktop {
       padding-bottom: 0;
     }
   }
