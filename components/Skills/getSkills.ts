@@ -1,4 +1,6 @@
-export const getSkills = (t: any) => [
+import { TFunction } from 'next-i18next';
+
+export const getSkills = (t: TFunction) => [
   {
     title: t('Backend.title'),
     scope: [
@@ -69,7 +71,7 @@ export const getSkills = (t: any) => [
   },
   {
     title: t('QA.title'),
-    scope: ['Postman', 'Cypress', 'Jess'],
+    scope: ['Postman', 'Cypress', 'Jest'],
     services: t('QA.services', { returnObjects: true }),
     technologies: [
       'Cypress',

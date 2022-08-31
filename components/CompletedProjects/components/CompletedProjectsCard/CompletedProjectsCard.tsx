@@ -3,6 +3,9 @@ import Image from 'next/image';
 
 import { CompletedProject } from '../../../../utils/consts/completedProjects';
 
+import IconLargeArrow from '../../../../icons/large-arrow.svg';
+import IconLongArrow from '../../../../icons/long-arrow.svg';
+
 function CompletedProjectsCard({
   completedProject,
 }: {
@@ -30,7 +33,8 @@ function CompletedProjectsCard({
       </div>
       <span className="completed-project-card__link">
         {t('goToProject')}
-        <span className="completed-project-card__arrow" />
+        <IconLargeArrow className="completed-project-card__arrow-large" />
+        <IconLongArrow className="completed-project-card__arrow-long" />
       </span>
     </a>
   );

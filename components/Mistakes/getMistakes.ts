@@ -1,3 +1,5 @@
+import { TFunction } from 'next-i18next';
+
 const variables = ['good', 'bad', 'problems', 'ideas', 'study'];
 
 const mistakesData: {
@@ -93,7 +95,7 @@ const mistakesData: {
   ],
 };
 
-export const getMistakes = (t: any) => variables.map((variable) => ({
+export const getMistakes = (t: TFunction) => variables.map((variable) => ({
   title: t(`${variable}.title`),
   mistakes: mistakesData[variable].map((x, index) => {
     const localizationData: { text: string }[] = t(`${variable}.mistakes`, { returnObjects: true });
