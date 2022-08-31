@@ -50,6 +50,12 @@ function WorkStructure({
           </div>
         </div>
 
+        <div className="work-structure__video" data-aos="fade-up">
+          <video poster="/images/tourmaline-core-poster.webp" src="/images/work-structure.mp4" autoPlay playsInline muted>
+            <track kind="captions" />
+          </video>
+        </div>
+
         <div
           className="caption work-structure__caption"
           data-aos="fade-up"
