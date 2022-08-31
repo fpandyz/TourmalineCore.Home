@@ -42,7 +42,7 @@
     margin: 0 -15px;
     padding-bottom: 32px;
 
-    @include desktop {
+    @include desktop-xl {
       padding-bottom: 0;
     }
   }
