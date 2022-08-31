@@ -2,18 +2,16 @@ import { useTranslation } from 'next-i18next';
 import {
   useState, useEffect, useRef,
 } from 'react';
-import { Link as ScrollLink, scroller } from 'react-scroll';
 import { clsx } from 'clsx';
 
 import { NavigationLinks } from '../../utils/consts/navigation';
 import useDeviceSize from '../../common/hooks/useDeviceSize';
+import ScrollLink from './components/ScrollLink/ScrollLink';
 
 function Navigation({
   navigationLinks,
-  offset,
 }: {
   navigationLinks: NavigationLinks[];
-  offset: number;
 }) {
   const { t } = useTranslation('navigation');
   const [top, setTop] = useState('0');
@@ -43,28 +41,31 @@ function Navigation({
           top,
         }}
       >
-        {navigationLinks.map((link, index) => {
-          const scrollerTo = scroller;
-          scrollerTo(`${link} div`);
-          return (
-            <ScrollLink
-              key={link}
-              className="navigation__link"
-              activeClass="navigation__link--active"
-              smooth
-              spy
-              to={link}
-              onSetActive={() => setIsSeeNavigation(true)}
-              onSetInactive={() => (index === 0 ? setIsSeeNavigation(false) : null)}
-              offset={offset}
-            >
-              {t(link)}
-            </ScrollLink>
-          );
-        })}
+        {navigationLinks.map((link, index) => (
+          <ScrollLink
+            key={link}
+            index={index}
+            text={t(link)}
+            to={link}
+            setIsSeeNavigation={(value: boolean) => setIsSeeNavigation(value)}
+            scrollTo={() => scrollTo(link)}
+          />
+        ))}
       </div>
     </div>
   );
+
+  function scrollTo(to: string) {
+    const element = document.querySelector(`[name="scroll-to-${to}"]`);
+
+    if (!element) {
+      return;
+    }
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
 }
 
 export default Navigation;

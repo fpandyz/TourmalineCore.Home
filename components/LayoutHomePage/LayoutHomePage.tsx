@@ -9,11 +9,9 @@ import { NavigationLinks } from '../../utils/consts/navigation';
 function LayoutHomePage({
   children,
   navigationLinks,
-  offset,
 }: {
   children: ReactNode;
   navigationLinks: NavigationLinks[];
-  offset: number;
 }) {
   return (
     <div className="layout-home-page">
@@ -24,7 +22,6 @@ function LayoutHomePage({
       <main className="layout-home-page__wrapper">
         <Navigation
           navigationLinks={navigationLinks}
-          offset={offset}
         />
         <div className="layout-home-page__content">
           {children}

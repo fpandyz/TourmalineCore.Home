@@ -27,8 +27,6 @@ function useCalcOffset() {
 }
 
 function useAutoPaddings() {
-  const [offset, setOffset] = useState(0);
-
   const deviceSize = useDeviceSize();
   const minPadding = useCalcOffset();
 
@@ -36,6 +34,13 @@ function useAutoPaddings() {
     const allSection: NodeListOf<HTMLElement> = document.querySelectorAll('section[data-auto-padding]');
 
     allSection.forEach((section, index) => {
+      const element = section.querySelector<HTMLElement>('div[name]');
+
+      if (element) {
+        element.style.paddingTop = '0px';
+        element.style.paddingBottom = '0px';
+      }
+
       const paddingTopPx = section.style.paddingTop;
       const paddingBottomPx = section.style.paddingBottom;
 
@@ -49,30 +54,31 @@ function useAutoPaddings() {
       const paddingCalculat = heightDifference > 0 ? Math.round(heightDifference / 2) : 0;
 
       const isMinPadding = minPadding > paddingCalculat;
-
       const paddingValue = isMinPadding ? minPadding : paddingCalculat;
-
-      if (paddingCalculat <= 0) {
-        setOffset(minPadding - paddingCalculat - 20);
-      } else if (isMinPadding) {
-        setOffset(minPadding - paddingCalculat);
-      } else {
-        setOffset(0);
-      }
 
       if (index === allSection.length - 1) {
         section.style.paddingTop = `${paddingValue}px`;
         return;
       }
 
-      section.style.paddingTop = `${paddingValue}px`;
-      section.style.paddingBottom = `${paddingValue}px`;
+      if (!element) {
+        section.style.paddingTop = `${paddingValue}px`;
+        section.style.paddingBottom = `${paddingValue}px`;
+        return;
+      }
+
+      element.style.paddingTop = `${paddingCalculat}px`;
+      element.style.paddingBottom = `${paddingCalculat}px`;
+
+      if (isMinPadding) {
+        section.style.paddingTop = `${minPadding - paddingCalculat}px`;
+        section.style.paddingBottom = `${minPadding - paddingCalculat}px`;
+      } else {
+        section.style.paddingTop = '0px';
+        section.style.paddingBottom = '0px';
+      }
     });
   }, [deviceSize]);
-
-  console.log(offset);
-
-  return offset;
 }
 
 export default useAutoPaddings;
