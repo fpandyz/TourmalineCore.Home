@@ -69,7 +69,7 @@ export const getSkills = (t: any) => [
   },
   {
     title: t('QA.title'),
-    scope: ['Postman', 'Cypress', 'Jest'],
+    scope: ['Postman', 'Cypress', 'Jest '],
     services: t('QA.services', { returnObjects: true }),
     technologies: [
       'Cypress',
