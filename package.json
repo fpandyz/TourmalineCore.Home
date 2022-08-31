@@ -30,7 +30,8 @@
     "react-responsive-carousel": "^3.2.23",
     "react-scroll": "^1.8.7",
     "rehype-highlight": "^5.0.2",
-    "remark-gfm": "^3.0.1"
+    "remark-gfm": "^3.0.1",
+    "seamless-scroll-polyfill": "^2.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",

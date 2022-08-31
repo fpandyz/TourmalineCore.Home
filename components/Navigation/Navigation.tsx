@@ -4,6 +4,7 @@ import {
 } from 'react';
 import { clsx } from 'clsx';
 
+import { elementScrollIntoViewPolyfill } from 'seamless-scroll-polyfill';
 import { NavigationLinks } from '../../utils/consts/navigation';
 import useDeviceSize from '../../common/hooks/useDeviceSize';
 import ScrollLink from './components/ScrollLink/ScrollLink';
@@ -62,9 +63,8 @@ function Navigation({
       return;
     }
 
-    element.scrollIntoView({
-      behavior: 'smooth',
-    });
+    elementScrollIntoViewPolyfill();
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
