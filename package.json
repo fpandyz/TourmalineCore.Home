@@ -31,7 +31,7 @@
     "react-scroll": "^1.8.7",
     "rehype-highlight": "^5.0.2",
     "remark-gfm": "^3.0.1",
-    "seamless-scroll-polyfill": "^2.2.0"
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -42,6 +42,7 @@
     "@types/react-dom": "18.0.6",
     "@types/react-google-recaptcha": "^2.1.5",
     "@types/react-scroll": "^1.8.4",
+    "@types/smoothscroll-polyfill": "0.3.1",
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.7",
     "eslint": "8.20.0",

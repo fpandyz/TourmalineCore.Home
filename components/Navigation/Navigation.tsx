@@ -2,9 +2,9 @@ import { useTranslation } from 'next-i18next';
 import {
   useState, useEffect, useRef,
 } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 import { clsx } from 'clsx';
 
-import { elementScrollIntoViewPolyfill } from 'seamless-scroll-polyfill';
 import { NavigationLinks } from '../../utils/consts/navigation';
 import useDeviceSize from '../../common/hooks/useDeviceSize';
 import ScrollLink from './components/ScrollLink/ScrollLink';
@@ -62,8 +62,7 @@ function Navigation({
     if (!element) {
       return;
     }
-
-    elementScrollIntoViewPolyfill();
+    smoothscroll.polyfill();
     element.scrollIntoView({ behavior: 'smooth' });
   }
 }

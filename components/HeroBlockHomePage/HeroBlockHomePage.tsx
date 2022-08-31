@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import { elementScrollIntoViewPolyfill } from 'seamless-scroll-polyfill';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import HeroBlock from '../HeroBlock/HeroBlock';
 import SecondaryButton from '../SecondaryButton/SecondaryButton';
@@ -32,7 +32,7 @@ function HeroBlockHomePage({
       return;
     }
 
-    elementScrollIntoViewPolyfill();
+    smoothscroll.polyfill();
     firstBlock.scrollIntoView({ behavior: 'smooth' });
   }
 }
