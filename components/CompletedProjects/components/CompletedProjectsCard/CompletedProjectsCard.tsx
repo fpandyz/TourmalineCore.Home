@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { CompletedProject } from '../../../../utils/consts/completedProjects';
 
 import IconLargeArrow from '../../../../icons/large-arrow.svg';
-import IconLongArrow from '../../../../icons/long-arrow.svg';
+import IconLongArrow from '../../../../icons/long-arrow-new.svg';
 
 function CompletedProjectsCard({
   completedProject,
