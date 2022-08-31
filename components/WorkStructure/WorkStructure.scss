@@ -54,8 +54,8 @@
       min-height: 417px;
 
       @include desktop-xl {
-        min-height: 503px;
-        max-height: 503px;
+        min-height: 540px;
+        max-height: 540px;
       }
     }
 
@@ -64,7 +64,9 @@
     }
 
     @include desktop-xl {
+      margin-right: -16px;
       margin-bottom: 48px;
+      margin-left: -16px;
     }
   }
 
