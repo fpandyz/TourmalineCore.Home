@@ -1,6 +1,4 @@
-import { TFunction } from 'next-i18next';
-
-export const getSkills = (t: TFunction) => [
+export const getSkills = (t: any) => [
   {
     title: t('Backend.title'),
     scope: [

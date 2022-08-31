@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import { CompletedProject } from '../../../../utils/consts/completedProjects';
 
-// import IconLongArrow from '../../../../icons/long-arrow-new.svg';
 import IconLargeArrow from '../../../../icons/large-arrow.svg';
 import IconArrow from '../../../../icons/long-arrow.svg';
 
