@@ -34,9 +34,9 @@ function MistakeItem({
     <div className="mistake-item" {...props}>
       <div className="mistake-item__title">{title}</div>
 
-      {mistakes.map(({ text, developer, cursor }) => (
+      {mistakes.map(({ text, developer, cursor }, index) => (
         <div
-          key={text}
+          key={`${text}${index + 1}`}
           className="mistake-item__card"
         >
           <span className="mistake-item__text">{text}</span>

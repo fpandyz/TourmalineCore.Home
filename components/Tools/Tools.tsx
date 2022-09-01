@@ -31,6 +31,7 @@ function Tools({
             >
               <ToolHeader
                 key={tool.localizationTitle}
+                headerColor={tool.localizationTitle}
                 title={t(`${tool.localizationTitle}.title`)}
                 number={tool.tasks.length}
               />
