@@ -56,14 +56,21 @@ function useAutoPaddings() {
       const isMinPadding = minPadding > paddingCalculat;
       const paddingValue = isMinPadding ? minPadding : paddingCalculat;
 
-      if (index === allSection.length - 1) {
-        section.style.paddingTop = `${paddingValue}px`;
-        return;
-      }
-
       if (!element) {
         section.style.paddingTop = `${paddingValue}px`;
         section.style.paddingBottom = `${paddingValue}px`;
+        return;
+      }
+
+      if (index === allSection.length - 1) {
+        element.style.paddingTop = `${paddingCalculat}px`;
+
+        if (isMinPadding) {
+          section.style.paddingTop = `${minPadding - paddingCalculat}px`;
+        } else {
+          section.style.paddingTop = '0px';
+        }
+
         return;
       }
 

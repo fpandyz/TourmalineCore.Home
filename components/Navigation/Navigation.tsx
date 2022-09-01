@@ -48,7 +48,7 @@ function Navigation({
             index={index}
             text={t(link)}
             to={link}
-            setIsSeeNavigation={(value: boolean) => setIsSeeNavigation(value)}
+            setIsSeeNavigation={(value) => setIsSeeNavigation(value)}
             scrollTo={() => scrollTo(link)}
           />
         ))}
@@ -62,6 +62,7 @@ function Navigation({
     if (!element) {
       return;
     }
+
     smoothscroll.polyfill();
     element.scrollIntoView({ behavior: 'smooth' });
   }

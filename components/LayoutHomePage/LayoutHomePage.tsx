@@ -19,6 +19,7 @@ function LayoutHomePage({
         <Header />
         <HeroBlockHomePage firstBlockSelector={navigationLinks[0]} />
       </div>
+
       <main className="layout-home-page__wrapper">
         <Navigation
           navigationLinks={navigationLinks}
@@ -27,9 +28,9 @@ function LayoutHomePage({
           {children}
         </div>
       </main>
+
       <Footer />
     </div>
-
   );
 }
 
