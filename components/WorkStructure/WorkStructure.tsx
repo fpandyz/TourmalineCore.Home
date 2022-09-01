@@ -11,7 +11,7 @@ function WorkStructure({
   const { t } = useTranslation('workStructure');
 
   const deviceSize = useDeviceSize();
-  const isMobile = useMemo(() => deviceSize.width <= 768, [deviceSize.width]);
+  const isMobile = useMemo(() => deviceSize.width < 768, [deviceSize.width]);
 
   return (
     <section className="work-structure" {...props}>
@@ -57,7 +57,7 @@ function WorkStructure({
           data-aos="fade-up"
         >
           <video
-            poster="/images/tourmaline-core-poster.webp"
+            poster="/images/work-structure.webp"
             src="/images/work-structure.mp4"
             autoPlay
             playsInline
