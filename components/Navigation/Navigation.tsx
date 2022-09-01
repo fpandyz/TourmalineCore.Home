@@ -2,11 +2,12 @@ import { useTranslation } from 'next-i18next';
 import {
   useState, useEffect, useRef,
 } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import smoothscroll from 'smoothscroll-polyfill';
 import { clsx } from 'clsx';
 
 import { NavigationLinks } from '../../utils/consts/navigation';
 import useDeviceSize from '../../common/hooks/useDeviceSize';
+import ScrollLink from './components/ScrollLink/ScrollLink';
 
 function Navigation({
   navigationLinks,
@@ -44,20 +45,27 @@ function Navigation({
         {navigationLinks.map((link, index) => (
           <ScrollLink
             key={link}
-            className="navigation__link"
-            activeClass="navigation__link--active"
-            smooth
-            spy
+            index={index}
+            text={t(link)}
             to={link}
-            onSetActive={() => setIsSeeNavigation(true)}
-            onSetInactive={() => (index === 0 ? setIsSeeNavigation(false) : null)}
-          >
-            {t(link)}
-          </ScrollLink>
+            setIsSeeNavigation={(value) => setIsSeeNavigation(value)}
+            scrollTo={() => scrollTo(link)}
+          />
         ))}
       </div>
     </div>
   );
+
+  function scrollTo(to: string) {
+    const element = document.querySelector(`[name="scroll-to-${to}"]`);
+
+    if (!element) {
+      return;
+    }
+
+    smoothscroll.polyfill();
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 export default Navigation;

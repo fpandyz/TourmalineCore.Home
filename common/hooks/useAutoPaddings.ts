@@ -10,7 +10,7 @@ function useCalcOffset() {
       if (deviceSize.width >= 1920) {
         return 200;
       }
-      if (deviceSize.width >= 1366) {
+      if (deviceSize.width >= 1280) {
         return 176;
       }
       if (deviceSize.width >= 768) {
@@ -28,27 +28,62 @@ function useCalcOffset() {
 
 function useAutoPaddings() {
   const deviceSize = useDeviceSize();
-
   const minPadding = useCalcOffset();
 
   useEffect(() => {
     const allSection: NodeListOf<HTMLElement> = document.querySelectorAll('section[data-auto-padding]');
 
     allSection.forEach((section, index) => {
-      const screenHeight = document.documentElement.clientHeight;
-      const elementHeight = section?.clientHeight;
+      const element = section.querySelector<HTMLElement>('div[name]');
 
-      const paddingCalculat = (screenHeight - elementHeight) / 2;
+      if (element) {
+        element.style.paddingTop = '0px';
+        element.style.paddingBottom = '0px';
+      }
 
-      const paddingValue = paddingCalculat > minPadding ? Math.round(paddingCalculat) : minPadding;
+      const paddingTopPx = section.style.paddingTop;
+      const paddingBottomPx = section.style.paddingBottom;
 
-      if (index === allSection.length - 1) {
+      const paddingTop = Number(paddingTopPx.substring(0, paddingTopPx.length - 2));
+      const paddingBottom = Number(paddingBottomPx.substring(0, paddingBottomPx.length - 2));
+
+      const screenHeight = deviceSize.height;
+      const elementHeight = section.clientHeight - paddingTop - paddingBottom;
+
+      const heightDifference = screenHeight - elementHeight;
+      const paddingCalculat = heightDifference > 0 ? Math.round(heightDifference / 2) : 0;
+
+      const isMinPadding = minPadding > paddingCalculat;
+      const paddingValue = isMinPadding ? minPadding : paddingCalculat;
+
+      if (!element) {
         section.style.paddingTop = `${paddingValue}px`;
+        section.style.paddingBottom = `${paddingValue}px`;
         return;
       }
 
-      section.style.paddingTop = `${paddingValue}px`;
-      section.style.paddingBottom = `${paddingValue}px`;
+      if (index === allSection.length - 1) {
+        element.style.paddingTop = `${paddingCalculat}px`;
+
+        if (isMinPadding) {
+          section.style.paddingTop = `${minPadding - paddingCalculat}px`;
+        } else {
+          section.style.paddingTop = '0px';
+        }
+
+        return;
+      }
+
+      element.style.paddingTop = `${paddingCalculat}px`;
+      element.style.paddingBottom = `${paddingCalculat}px`;
+
+      if (isMinPadding) {
+        section.style.paddingTop = `${minPadding - paddingCalculat}px`;
+        section.style.paddingBottom = `${minPadding - paddingCalculat}px`;
+      } else {
+        section.style.paddingTop = '0px';
+        section.style.paddingBottom = '0px';
+      }
     });
   }, [deviceSize]);
 }

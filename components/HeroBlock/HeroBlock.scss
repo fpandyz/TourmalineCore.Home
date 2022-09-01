@@ -1,6 +1,6 @@
 .hero-block {
   height: calc(100vh - 80px);
-  min-height: 327px;
+  min-height: 641px;
   background-color: $color-black;
 
   &__gradient-title {
@@ -90,5 +90,17 @@
     @include desktop-xl {
       padding-top: 98px;
     }
+  }
+
+  @include tablet {
+    min-height: 463px;
+  }
+
+  @include desktop {
+    min-height: 624px;
+  }
+
+  @include desktop-xl {
+    min-height: 806px;
   }
 }

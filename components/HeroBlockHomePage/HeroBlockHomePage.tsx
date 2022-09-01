@@ -1,4 +1,5 @@
 import { useTranslation } from 'next-i18next';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import HeroBlock from '../HeroBlock/HeroBlock';
 import SecondaryButton from '../SecondaryButton/SecondaryButton';
@@ -25,9 +26,14 @@ function HeroBlockHomePage({
   );
 
   function scrollFirstBlock() {
-    const firstBlock = document.querySelector(`#${firstBlockSelector}`);
+    const firstBlock = document.querySelector(`#${firstBlockSelector} div`);
 
-    firstBlock?.scrollIntoView({ behavior: 'smooth' });
+    if (!firstBlock) {
+      return;
+    }
+
+    smoothscroll.polyfill();
+    firstBlock.scrollIntoView({ behavior: 'smooth' });
   }
 }
 

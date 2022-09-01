@@ -13,7 +13,10 @@ function Tools({
   const tools = Object.values(dataTools);
 
   return (
-    <section className="tools" {...props}>
+    <section
+      className="tools"
+      {...props}
+    >
       <div
         className="container container--home-page"
         data-aos={animationName}
@@ -59,7 +62,6 @@ function Tools({
           data-aos-anchor-placement="center-bottom"
         >
           {t('caption')}
-
         </div>
       </div>
     </section>

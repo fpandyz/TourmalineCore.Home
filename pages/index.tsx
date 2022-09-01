@@ -1,6 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
+import { Element } from 'react-scroll';
 
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
 import PageHead from '../components/PageHead/PageHead';
@@ -23,6 +24,7 @@ export default function HomePage() {
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
   useAutoPaddings();
+
   return (
     <>
       <PageHead
@@ -38,37 +40,45 @@ export default function HomePage() {
         }}
       />
 
-      <LayoutHomePage navigationLinks={navigationLinks}>
+      <LayoutHomePage
+        navigationLinks={navigationLinks}
+      >
         <Services
           id={NavigationLinks.services}
           data-auto-padding={NavigationLinks.services}
           animationName="fade-up"
         />
+
         <Skills
           id={NavigationLinks.skills}
           data-auto-padding={NavigationLinks.skills}
           animationName="fade-up"
         />
+
         <section
           id={NavigationLinks.experience}
           data-auto-padding={NavigationLinks.experience}
         >
-          <CompletedProjects
-            animationName="fade-up"
-          />
+          <Element name={`scroll-to-${NavigationLinks.experience}`}>
+            <CompletedProjects
+              animationName="fade-up"
+            />
 
-          <Discussion
-            animationName="fade-up"
-          />
+            <Discussion
+              animationName="fade-up"
+            />
+          </Element>
         </section>
 
         <div
           id={NavigationLinks.approach}
         >
           <AdaptationToProject
+            id={NavigationLinks.approach}
             animationName="fade-up"
             data-auto-padding="adaptation-project"
           />
+
           <Process
             animationName="fade-up"
             data-auto-padding="process"
