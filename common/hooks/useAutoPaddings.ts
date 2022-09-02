@@ -176,7 +176,7 @@ function useAutoPaddings() {
   function getNextPaddingTop(section: Section) {
     const paddingCalculated = paddingCalculate(section);
 
-    const element = section.querySelector<HTMLElement>(ELEMENT_SELECTOR);
+    const element = section.querySelector<Element>(ELEMENT_SELECTOR);
 
     if (!element) {
       const isMinPadding = minPadding > paddingCalculated;
@@ -194,7 +194,7 @@ function useAutoPaddings() {
   }
 
   function getBackPaddingBottom(section: Section) {
-    const element = section.querySelector<HTMLElement>(ELEMENT_SELECTOR);
+    const element = section.querySelector<Element>(ELEMENT_SELECTOR);
 
     const { paddingBottom: sectionPaddingBottom } = getPadding(section);
 
