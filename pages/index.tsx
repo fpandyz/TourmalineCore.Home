@@ -17,13 +17,13 @@ import Mistakes from '../components/Mistakes/Mistakes';
 import FormBlock from '../components/FormBlock/FormBlock';
 
 import { NavigationLinks, navigationLinks } from '../utils/consts/navigation';
-import useAutoPaddings from '../common/hooks/useAutoPaddings';
+import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
-  useAutoPaddings();
+  useSectionAutoPaddings();
 
   return (
     <>
