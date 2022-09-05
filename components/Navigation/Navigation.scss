@@ -9,6 +9,7 @@
   height: 100%;
   max-width: 93px;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.8s;
 
   &__line {
@@ -28,6 +29,7 @@
   &__links {
     position: sticky;
     width: max-content;
+    pointer-events: auto;
   }
 
   &__link {
@@ -35,10 +37,16 @@
 
     position: relative;
     display: block;
+    margin: 24px 0;
     margin-left: 16px;
-    width: 100%;
+    border: none;
+    padding: 0;
+    width: max-content;
     max-width: 93px;
+    font-family: $ff-montserrat;
+    text-align: left;
     color: $color-white-alpha-200;
+    background: transparent;
     cursor: pointer;
     transition: color 0.3s;
 

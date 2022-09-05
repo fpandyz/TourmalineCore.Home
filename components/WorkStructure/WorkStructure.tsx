@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { useMemo } from 'react';
 import { SectionProps } from '../../types/globals';
 import useDeviceSize from '../../common/hooks/useDeviceSize';
 
@@ -10,7 +11,7 @@ function WorkStructure({
   const { t } = useTranslation('workStructure');
 
   const deviceSize = useDeviceSize();
-  const isMobile = deviceSize.width < 768;
+  const isMobile = useMemo(() => deviceSize.width < 768, [deviceSize.width]);
 
   return (
     <section className="work-structure" {...props}>
@@ -36,6 +37,7 @@ function WorkStructure({
               loading="lazy"
             />
           </div>
+
           <div
             className="work-structure__second-image"
             data-aos="fade-left"
@@ -50,8 +52,17 @@ function WorkStructure({
           </div>
         </div>
 
-        <div className="work-structure__video" data-aos="fade-up">
-          <video poster="/images/tourmaline-core-poster.webp" src="/images/work-structure.mp4" autoPlay playsInline muted>
+        <div
+          className="work-structure__video"
+          data-aos="fade-up"
+        >
+          <video
+            poster="/images/work-structure.webp"
+            src="/images/work-structure.mp4"
+            autoPlay
+            playsInline
+            muted
+          >
             <track kind="captions" />
           </video>
         </div>
