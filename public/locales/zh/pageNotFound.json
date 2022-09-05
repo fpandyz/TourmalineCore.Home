@@ -1,5 +1,5 @@
 {
-  "gradientTitle":  "Страница не найдена (zh)",
-  "description": "Нам очень жаль, но мы больше не можем найти страницу, которую вы ищете (zh)",
-  "buttonText": "Вернуться на главную (zh)"
+  "gradientTitle":  "Page not found",
+  "description": "抱歉, 您要访问的页面丢失了",
+  "buttonText": "返回首页"
 }

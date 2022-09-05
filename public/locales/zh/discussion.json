@@ -3,16 +3,16 @@
   "gradientTitleFirst": "请联系我们，",
   "gradientTitleSecond": "深入当前问题和任务",
   "buttonText": "预约合作",
-  "modalTitle": "Заявка на сотрудничество  (zh)",
-  "modalTitleSuccessful": "Ваша заявка отправлена (zh)",
-  "modalSubtitle": "Заполните форму и с вами свяжется наш менеджер для уточнения деталей проекта (zh)",
-  "modalSubtitleSuccessfulFirst": "В ближайшее время  наш менеджер свяжется с вами по указанной почте",
-  "modalSubtitleSuccessfulSecond": "для уточнения деталей проекта и назначения первой встречи (zh)",
-  "modalListTitle": "Что будет дальше? (zh)",
+  "modalTitle": "合作申请",
+  "modalTitleSuccessful": "申请已发送",
+  "modalSubtitle": "填写表格，我经理联系您讨论合作",
+  "modalSubtitleSuccessfulFirst": "经理对",
+  "modalSubtitleSuccessfulSecond": "将回复, 确认项目任务和约定会见",
+  "modalListTitle": "下几步",
   "steps": [
-    "Знакомство и обсуждение задачи (zh)", 
-    "Оценка и планирование проекта (zh)", 
-    "Составление и подписание договора (zh)", 
-    "Начало работ с еженедельными демо (zh)"
+    "互相认识，讨论任务",
+    "项目讲评与计划",
+    "办理文件，合同签订",
+    "工作开始，每个星期放映工作结果"
   ]
 }

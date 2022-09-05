@@ -2,11 +2,11 @@
   "title": "工作过程",
   "subtitle": "把任务均分迭代, 进行规划，经常给客户放映工作结果",
   "Yuliya": "优利亚",
-  "Margarita": "Маргарита (zh)",
-  "firstAltHeader": "Юля фото (zh)",
+  "Margarita": "玛格丽特",
+  "firstAltHeader": "优利亚的照片",
   "firstCard": {
-    "title": "Sprint (zh)",
-    "altReaction": "эмодзи Да (zh)",
+    "title": "迭代",
+    "altReaction": "绘文字 (厉害)",
     "listTitle": "迭代目标",
     "list": [
       "在后端核心中运用全部验证与改造功能",
@@ -16,7 +16,7 @@
       "显示使用的验证与改造功能"
     ]
   },
-  "secondAltHeader": "Маргарита фото (zh)",
+  "secondAltHeader": "玛格丽特的照片",
   "secondCard": [
     {
       "listTitle": "放映一个星期迭代的结果",
@@ -34,7 +34,7 @@
       ]
     }
   ],
-  "secondCardAltReaction": "эмодзи Огонь",
+  "secondCardAltReaction": "绘文字 (火)",
   "secondCardFooter": [
     "放映的时候约定了发布以后把验证与改造功能做简单一点。"
   ],
