@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react';
-import useMinPadding from './useMinPadding';
+import useMinPaddingBetweenSections from './useMinPadding';
 import useDeviceSize from './useDeviceSize';
 
 type Section = HTMLElement;
@@ -8,11 +8,13 @@ type Element = HTMLElement;
 const SECTION_SELECTOR = 'section[data-auto-padding]';
 const ELEMENT_SELECTOR = 'div[name]';
 
-function useAutoPaddings() {
-  const deviceSize = useDeviceSize();
-  const minPadding = useMinPadding();
+const ZERO_HTML_PADDING = '0px';
 
-  const calculatePadding = useCallback((section: Section) => {
+function useSectionAutoPaddings() {
+  const deviceSize = useDeviceSize();
+  const minPadding = useMinPaddingBetweenSections();
+
+  const calculateRequiredCountPadding = useCallback((section: Section) => {
     const {
       paddingTop,
       paddingBottom,
@@ -32,17 +34,17 @@ function useAutoPaddings() {
       const element = section.querySelector<Element>(ELEMENT_SELECTOR);
 
       if (element) {
-        element.style.paddingTop = '0px';
-        element.style.paddingBottom = '0px';
+        element.style.paddingTop = ZERO_HTML_PADDING;
+        element.style.paddingBottom = ZERO_HTML_PADDING;
       }
 
-      const calculatedPadding = calculatePadding(section);
+      const calculatedPadding = calculateRequiredCountPadding(section);
 
-      const isMinPadding = minPadding > calculatedPadding;
-      const paddingValue = isMinPadding ? minPadding : calculatedPadding;
+      const isMinPaddingMoreCalculated = minPadding > calculatedPadding;
+      const paddingValue = isMinPaddingMoreCalculated ? minPadding : calculatedPadding;
 
       const isNotLastSection = index < allSections.length - 1;
-      const firstSection = index === 0;
+      const isFirstSection = index === 0;
 
       if (isNotLastSection) {
         setPaddingBottom({
@@ -52,22 +54,22 @@ function useAutoPaddings() {
           element,
           calculatedPadding,
           paddingValue,
-          isMinPadding,
+          isMinPaddingMoreCalculated,
         });
       }
 
-      if (firstSection) {
+      if (isFirstSection) {
         if (!element) {
-          section.style.paddingTop = `${paddingValue}px`;
+          section.style.paddingTop = convertToHtmlPadding(paddingValue);
           return;
         }
 
-        element.style.paddingTop = `${calculatedPadding}px`;
-        section.style.paddingTop = `${
-          isMinPadding
+        element.style.paddingTop = convertToHtmlPadding(calculatedPadding);
+        section.style.paddingTop = convertToHtmlPadding(
+          isMinPaddingMoreCalculated
             ? minPadding - calculatedPadding
-            : 0
-        }px`;
+            : 0,
+        );
 
         return;
       }
@@ -98,18 +100,16 @@ function useAutoPaddings() {
     const previousSectionPadding = getPreviousSectionPaddingBottom(allSections[index - 1]);
 
     if (!element) {
-      section.style.paddingTop = `${previousSectionPadding}px`;
+      section.style.paddingTop = convertToHtmlPadding(previousSectionPadding);
       return;
     }
 
-    const isPreviousMoreCurrentPadding = previousSectionPadding > calculatedPadding;
-
-    if (isPreviousMoreCurrentPadding) {
-      element.style.paddingTop = `${calculatedPadding}px`;
-      section.style.paddingTop = `${previousSectionPadding - calculatedPadding}px`;
+    if (previousSectionPadding > calculatedPadding) {
+      element.style.paddingTop = convertToHtmlPadding(calculatedPadding);
+      section.style.paddingTop = convertToHtmlPadding(previousSectionPadding - calculatedPadding);
     } else {
-      element.style.paddingTop = `${previousSectionPadding}px`;
-      section.style.paddingTop = '0px';
+      element.style.paddingTop = convertToHtmlPadding(previousSectionPadding);
+      section.style.paddingTop = ZERO_HTML_PADDING;
     }
   }
 
@@ -120,7 +120,7 @@ function useAutoPaddings() {
     element,
     calculatedPadding,
     paddingValue,
-    isMinPadding,
+    isMinPaddingMoreCalculated,
   }: {
     allSections: NodeListOf<Section>;
     section: Section;
@@ -128,31 +128,28 @@ function useAutoPaddings() {
     element: Element | null;
     calculatedPadding: number;
     paddingValue: number;
-    isMinPadding: boolean;
+    isMinPaddingMoreCalculated: boolean;
   }) {
     const nextSectionPadding = getNextSectionPaddingTop(allSections[index + 1]);
 
     if (!element) {
-      section.style.paddingBottom = `${Math.round((paddingValue + nextSectionPadding) / 2)}px`;
+      section.style.paddingBottom = convertToHtmlPadding(Math.round((paddingValue + nextSectionPadding) / 2));
       return;
     }
 
     const calculatedPaddingBottom = Math.round((calculatedPadding + nextSectionPadding) / 2);
-    element.style.paddingBottom = `${calculatedPaddingBottom}px`;
+    element.style.paddingBottom = convertToHtmlPadding(calculatedPaddingBottom);
 
-    section.style.paddingBottom = `${
-      isMinPadding
+    section.style.paddingBottom = convertToHtmlPadding(
+      isMinPaddingMoreCalculated
         ? minPadding - calculatedPaddingBottom
-        : 0
-    }px`;
+        : 0,
+    );
   }
 
   function getPadding(section: Section) {
-    const paddingTopPx = section.style.paddingTop;
-    const paddingBottomPx = section.style.paddingBottom;
-
-    const paddingTop = Number(paddingTopPx.substring(0, paddingTopPx.length - 2));
-    const paddingBottom = Number(paddingBottomPx.substring(0, paddingBottomPx.length - 2));
+    const paddingTop = convertToNumberPadding(section.style.paddingTop);
+    const paddingBottom = convertToNumberPadding(section.style.paddingBottom);
 
     return {
       paddingTop,
@@ -161,13 +158,13 @@ function useAutoPaddings() {
   }
 
   function getNextSectionPaddingTop(section: Section) {
-    const calculatedPadding = calculatePadding(section);
+    const calculatedPadding = calculateRequiredCountPadding(section);
 
     const element = section.querySelector<Element>(ELEMENT_SELECTOR);
 
     if (!element) {
-      const isMinPadding = minPadding > calculatedPadding;
-      return isMinPadding ? minPadding : calculatedPadding;
+      const isMinPaddingMoreCalculated = minPadding > calculatedPadding;
+      return isMinPaddingMoreCalculated ? minPadding : calculatedPadding;
     }
 
     const {
@@ -176,8 +173,8 @@ function useAutoPaddings() {
 
     const calculatedPaddingTop = calculatedPadding + paddingTop;
 
-    const isMinPadding = minPadding > calculatedPaddingTop;
-    return isMinPadding ? minPadding : calculatedPaddingTop;
+    const isMinPaddingMoreCalculated = minPadding > calculatedPaddingTop;
+    return isMinPaddingMoreCalculated ? minPadding : calculatedPaddingTop;
   }
 
   function getPreviousSectionPaddingBottom(section: Section) {
@@ -193,6 +190,14 @@ function useAutoPaddings() {
 
     return sectionPaddingBottom + elementPaddingBottom;
   }
+
+  function convertToHtmlPadding(padding: number) {
+    return `${padding}px`;
+  }
+
+  function convertToNumberPadding(padding: string) {
+    return Number(padding.replace('px', ''));
+  }
 }
 
-export default useAutoPaddings;
+export default useSectionAutoPaddings;
