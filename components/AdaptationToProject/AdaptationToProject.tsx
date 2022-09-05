@@ -57,6 +57,22 @@ function AdaptationToProject({
             </div>
           </div>
 
+          <h2 className="title-type-3">Новая картинка</h2>
+          <div
+            className="scroll adaptation-to-project__scroll"
+            data-aos="fade-up"
+            data-aos-delay={100}
+          >
+            <div className="adaptation-to-project__image">
+              <Image
+                src="/images/adaptation-to-project-ru(1).webp"
+                alt={t('imageAlt')}
+                layout="fill"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
           <div
             className="caption adaptation-to-project__caption"
             data-aos="fade-up"
