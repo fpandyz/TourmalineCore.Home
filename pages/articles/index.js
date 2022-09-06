@@ -10,7 +10,7 @@ import { fetchArticlesListWithMeta } from '../../partials/Articles/fetchHelpers/
 export default function ArticlesPage({
   articles,
 }) {
-  const { t } = useTranslation('articles', { useSuspense: false });
+  const { t } = useTranslation('articles');
 
   return (
     <>
@@ -39,7 +39,7 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale)),
+      ...(await serverSideTranslations(locale, ['common', 'articles', 'footer'])),
       articles: articlesWithMeta,
     },
   };

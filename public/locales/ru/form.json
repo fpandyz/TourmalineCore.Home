@@ -1,0 +1,30 @@
+{
+  "name": {
+    "label": "Имя",
+    "description": "Чтобы мы знали, как к вам обращаться"
+  },
+  "email": {
+    "label": "Почта",
+    "description": "Чтобы мы могли связаться с вами"
+  },
+  "message": {
+    "label": "Сообщение",
+    "description": "Здесь вы можете задать вопрос, рассказать о себе и о задачах, которые нужно решить"
+  },
+  "buttonText": "Отправить",
+  "approvedText": "Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с",
+  "approvedLink": "положением о конфиденциальности данных.",
+  "recaptchaText": {
+    "generalText": "Этот сайт использует сервис reCAPTCHA. Нажимая ''Отправить'', вы соглашаетесь с",
+    "privacyLink": {
+      "link": "https://policies.google.com/privacy",
+      "text": "Политикой конфиденциальности"
+    },
+    "and": "и",
+    "termsLink": {
+      "link": "https://policies.google.com/terms",
+      "text": "Условиями использования"
+    },
+    "endText": "Google."
+  }
+}

@@ -1,0 +1,97 @@
+.services {
+  padding-top: 40px;
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include desktop {
+      margin-bottom: 64px;
+      max-width: 904px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__gradient-title {
+    @include gradient-text;
+
+    background-image: linear-gradient(90.05deg, $color-pink 0.04%, $color-pink 0.05%, $color-blue 99.96%);
+
+    @include tablet {
+      display: inline;
+      color: $color-white;
+      background-image: none;
+    }
+  }
+
+  &__gradient-subtitle {
+    color: $color-white;
+
+    @include tablet {
+      @include gradient-text;
+
+      display: block;
+      background-image: linear-gradient(90.05deg, $color-pink 0.04%, $color-pink 0.05%, $color-blue 99.96%);
+    }
+  }
+
+  &__inner {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__block-first {
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-right: auto;
+      margin-bottom: 0;
+      max-width: 340px;
+    }
+
+    @include desktop {
+      max-width: 384px;
+    }
+
+    @include desktop-xl {
+      max-width: 413px;
+    }
+  }
+
+  &__block-second {
+    @include tablet {
+      margin-top: 100px;
+      margin-right: auto;
+      max-width: 340px;
+    }
+
+    @include desktop {
+      margin-top: 136px;
+      max-width: 384px;
+    }
+
+    @include desktop-xl {
+      margin-top: 152px;
+      max-width: 413px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+
+    @include desktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__description {
+    color: $color-white-alpha-100;
+  }
+}
