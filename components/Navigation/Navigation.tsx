@@ -27,7 +27,7 @@ function Navigation({
     if (linksRef.current) {
       setTop(`${deviceSize.height / 2 - linksRef.current.clientHeight / 2}px`);
     }
-  }, [deviceSize]);
+  }, [deviceSize.width]);
 
   return (
     <div className={clsx('container section navigation', {
