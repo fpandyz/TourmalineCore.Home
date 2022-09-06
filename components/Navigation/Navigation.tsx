@@ -5,7 +5,7 @@ import {
 import smoothscroll from 'smoothscroll-polyfill';
 import { clsx } from 'clsx';
 
-import { NavigationLinks } from '../../utils/consts/navigation';
+import { NavigationLinks } from '../../common/utils/consts/navigation';
 import useDeviceSize from '../../common/hooks/useDeviceSize';
 import ScrollLink from './components/ScrollLink/ScrollLink';
 

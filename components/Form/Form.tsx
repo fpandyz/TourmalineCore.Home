@@ -4,7 +4,8 @@ import {
   FormEvent, KeyboardEvent, useMemo, useRef,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { DEFAULT_LOCALE } from '../../utils/consts/const';
+
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
@@ -128,6 +129,7 @@ function Form({
 
   function generateReCAPTCHAText() {
     const ReCAPTCHAText = t('recaptchaText', { returnObjects: true });
+
     return (
       <p>
         {Object.values<string | {

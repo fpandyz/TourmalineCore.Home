@@ -5,10 +5,10 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 
 import { useAutoClose } from '../../common/hooks/useAutoClose';
-import { languages } from '../../utils/consts/languages';
+import { languages } from '../../common/utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
-import { DEFAULT_LOCALE } from '../../utils/consts/const';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -5,7 +5,7 @@ import { Element } from 'react-scroll';
 import { useMemo } from 'react';
 
 import { SectionProps } from '../../types/globals';
-import { DEFAULT_LOCALE } from '../../utils/consts/const';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 enum ImageSrc {
   'en' = '/images/adaptation-to-project-ru.webp',

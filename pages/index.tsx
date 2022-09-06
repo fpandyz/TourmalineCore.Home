@@ -16,7 +16,7 @@ import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
 import FormBlock from '../components/FormBlock/FormBlock';
 
-import { NavigationLinks, navigationLinks } from '../utils/consts/navigation';
+import { NavigationLinks, navigationLinks } from '../common/utils/consts/navigation';
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 
 export default function HomePage() {

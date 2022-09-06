@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
-import { CompletedProject } from '../../../../utils/consts/completedProjects';
+import { CompletedProject } from '../../../../common/utils/consts/completedProjects';
 
 import IconLargeArrow from '../../../../icons/large-arrow.svg';
 import IconArrow from '../../../../icons/long-arrow.svg';
