@@ -4,6 +4,7 @@ import {
   FormEvent, KeyboardEvent, useMemo, useRef,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { isMobile as isMobileOrTablet } from 'react-device-detect';
 
 import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
@@ -95,7 +96,7 @@ function Form({
   );
 
   function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
-    if (event.key === 'Enter' && event.shiftKey === false) {
+    if (event.key === 'Enter' && event.shiftKey === false && !isMobileOrTablet) {
       event.preventDefault();
 
       const buttonSubmit = document.querySelector<HTMLButtonElement>('.form__button');
