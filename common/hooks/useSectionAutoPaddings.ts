@@ -25,7 +25,7 @@ function useSectionAutoPaddings() {
 
     const differenceHeight = screenHeight - elementHeight;
     return differenceHeight > 0 ? Math.round(differenceHeight / 2) : 0;
-  }, [deviceSize]);
+  }, [deviceSize.width]);
 
   useEffect(() => {
     const allSections: NodeListOf<Section> = document.querySelectorAll(SECTION_SELECTOR);
@@ -82,7 +82,7 @@ function useSectionAutoPaddings() {
         calculatedPadding,
       });
     });
-  }, [deviceSize]);
+  }, [deviceSize.width]);
 
   function setPaddingTop({
     allSections,
