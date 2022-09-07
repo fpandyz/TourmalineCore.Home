@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import AOS from 'aos';
 import { useEffect } from 'react';
+import { isMobileOnly } from 'react-device-detect';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -15,6 +16,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       duration: 1000,
       easing: 'ease-in-out',
       once: true,
+      anchorPlacement: 'center-center',
+      disable: isMobileOnly,
     });
   });
 
