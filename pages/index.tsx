@@ -2,6 +2,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 import { Element } from 'react-scroll';
+import { useEffect } from 'react';
+import AOS from 'aos';
 
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
 import PageHead from '../components/PageHead/PageHead';
@@ -18,12 +20,19 @@ import FormBlock from '../components/FormBlock/FormBlock';
 
 import { NavigationLinks, navigationLinks } from '../common/utils/consts/navigation';
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
+import useDeviceSize from '../common/hooks/useDeviceSize';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
   useSectionAutoPaddings();
+
+  const deviceSize = useDeviceSize();
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [deviceSize.width]);
 
   return (
     <>
