@@ -1,7 +1,7 @@
 {
-  "title": "Tourmaline Core | Articles",
-  "description": "Articles about technologies we use",
-  "keywords": "public websites, enterprise information systems, software development",
-  "emptyPlaceholder": "There are no articles in the current language.",
+  "title": "Tourmaline Core | Статьи",
+  "description": "Разработка публичных сайтов, корпоративных информационных систем и приложений",
+  "keywords": "разработка, корпоративные информационные системы, публичные сайты, создание it продуктов, it компания, команда разработки",
+  "emptyPlaceholder": "Нет статей на русском языке",
   "backlinkLabel": "Назад к списку статей"
 }
