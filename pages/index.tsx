@@ -2,7 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 import { Element } from 'react-scroll';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
@@ -29,10 +29,11 @@ export default function HomePage() {
   useSectionAutoPaddings();
 
   const deviceSize = useDeviceSize();
+  const [clickedAccarion, setClickedAccarion] = useState(false);
 
   useEffect(() => {
     AOS.refresh();
-  }, [deviceSize.width]);
+  }, [deviceSize.width, clickedAccarion]);
 
   return (
     <>
@@ -62,6 +63,7 @@ export default function HomePage() {
           id={NavigationLinks.skills}
           data-auto-padding={NavigationLinks.skills}
           animationName="fade-up"
+          clickedAccarion={() => setClickedAccarion(!clickedAccarion)}
         />
 
         <section

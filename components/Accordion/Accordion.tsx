@@ -10,6 +10,7 @@ interface AccordionProp extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButto
   services: string[];
   titleTechnologies: string;
   technologies: string[];
+  clickedAccarion?: () => unknown;
 }
 function Accordion({
   title,
@@ -18,6 +19,7 @@ function Accordion({
   services,
   titleTechnologies,
   technologies,
+  clickedAccarion,
   ...props
 }: AccordionProp): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +28,13 @@ function Accordion({
     <div className="accordion">
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          if (clickedAccarion) {
+            clickedAccarion();
+          }
+
+          setIsOpen(!isOpen);
+        }}
         className="accordion__button"
         {...props}
       >
