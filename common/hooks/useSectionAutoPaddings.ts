@@ -10,7 +10,7 @@ const ELEMENT_SELECTOR = 'div[name]';
 
 const ZERO_HTML_PADDING = '0px';
 
-function useSectionAutoPaddings() {
+function useSectionAutoPaddings(isAddPaddingBottom = false) {
   const deviceSize = useDeviceSize();
   const minPadding = useMinPaddingBetweenSections();
 
@@ -61,6 +61,11 @@ function useSectionAutoPaddings() {
       if (isFirstSection) {
         if (!element) {
           section.style.paddingTop = convertToHtmlPadding(paddingValue);
+
+          if (isAddPaddingBottom) {
+            section.style.paddingBottom = convertToHtmlPadding(paddingValue);
+          }
+
           return;
         }
 

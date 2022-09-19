@@ -1,6 +1,5 @@
 .hero-block {
-  height: calc(100vh - 80px);
-  min-height: 641px;
+  margin-top: -80px;
   background-color: $color-black;
 
   &__gradient-title {
@@ -67,40 +66,10 @@
   }
 
   &__wrapper {
-    padding-top: 144px;
-
     @include tablet {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 96px;
-      padding-bottom: 96px;
     }
-
-    @include tablet-xl {
-      padding-top: 82px;
-      padding-bottom: 82px;
-    }
-
-    @include desktop {
-      padding-top: 104px;
-      padding-bottom: 0;
-    }
-
-    @include desktop-xl {
-      padding-top: 98px;
-    }
-  }
-
-  @include tablet {
-    min-height: 463px;
-  }
-
-  @include desktop {
-    min-height: 624px;
-  }
-
-  @include desktop-xl {
-    min-height: 806px;
   }
 }

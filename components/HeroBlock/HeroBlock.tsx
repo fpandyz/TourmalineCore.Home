@@ -4,13 +4,16 @@ function HeroBlock({
   description,
   Button,
 }: {
-  title: string,
-  gradientTitle: string,
-  description: string,
+  title: string;
+  gradientTitle: string;
+  description: string;
   Button: JSX.Element;
 }) {
   return (
-    <section className="hero-block">
+    <section
+      className="hero-block"
+      data-auto-padding="hero-block"
+    >
       <div className="container hero-block__wrapper">
         <div className="hero-block__inner">
           <h1 className="title-type-1">

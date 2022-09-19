@@ -7,6 +7,7 @@ import { useCallback } from 'react';
 import Layout from '../components/Layout/Layout';
 import HeroBlock from '../components/HeroBlock/HeroBlock';
 import PrimaryButton from '../components/PrimaryButton/PrimaryButton';
+import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 
 export default function PageNotFound() {
   const { t } = useTranslation('pageNotFound');
@@ -15,6 +16,8 @@ export default function PageNotFound() {
   const goToHomePage = useCallback(() => {
     router.replace('/');
   }, []);
+
+  useSectionAutoPaddings(true);
 
   return (
     <Layout>
