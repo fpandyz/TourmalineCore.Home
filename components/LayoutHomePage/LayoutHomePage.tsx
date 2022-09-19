@@ -19,7 +19,7 @@ function LayoutHomePage({
     <div className="layout-home-page">
       <div className="layout-home-page__header">
         <Header />
-        <HeroBlockHomePage firstBlockSelector={navigationLinks[0]} autoPadding="hero-block-home-page" />
+        <HeroBlockHomePage firstBlockSelector={navigationLinks[0]} />
       </div>
       <main
         ref={refMain}
