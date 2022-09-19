@@ -1,3 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export type SectionProps = DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+export interface SectionProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+  animationName: string;
+}

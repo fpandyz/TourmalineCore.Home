@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import HeroBlockHomePage from '../HeroBlockHomePage/HeroBlockHomePage';
 import Navigation from '../Navigation/Navigation';
-import { NavigationLinks } from '../../utils/consts/navigation';
+import { NavigationLinks } from '../../common/utils/consts/navigation';
 
 function LayoutHomePage({
   children,
@@ -19,7 +19,7 @@ function LayoutHomePage({
     <div className="layout-home-page">
       <div className="layout-home-page__header">
         <Header />
-        <HeroBlockHomePage firstBlockSelector={navigationLinks[0]} />
+        <HeroBlockHomePage firstBlockSelector={navigationLinks[0]} autoPadding="hero-block-home-page" />
       </div>
       <main
         ref={refMain}
@@ -46,9 +46,9 @@ function LayoutHomePage({
           {children}
         </div>
       </main>
+
       <Footer />
     </div>
-
   );
 }
 

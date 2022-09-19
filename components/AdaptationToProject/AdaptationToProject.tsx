@@ -1,8 +1,11 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { Element } from 'react-scroll';
 import { useMemo } from 'react';
+
 import { SectionProps } from '../../types/globals';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 enum ImageSrc {
   'en' = '/images/adaptation-to-project-ru.webp',
@@ -11,6 +14,8 @@ enum ImageSrc {
 }
 
 function AdaptationToProject({
+  animationName,
+  id,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('adaptationToProject');
@@ -18,42 +23,51 @@ function AdaptationToProject({
 
   const routerLocale = useMemo(() => {
     if (!router.locale) {
-      return 'en';
+      return DEFAULT_LOCALE;
     }
 
     return router.locale;
   }, [router.locale]);
 
   return (
-    <section className="section adaptation-to-project" {...props}>
-      <div className="container container--home-page">
-        <h2 className="title-type-3">{t('title')}</h2>
-        <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
-
+    <section
+      className="adaptation-to-project"
+      {...props}
+    >
+      <Element name={`scroll-to-${id}`}>
         <div
-          className="scroll adaptation-to-project__scroll"
-          data-aos="fade-up"
-          data-aos-delay={100}
+          className="container container--home-page"
+          data-aos={animationName}
         >
-          <div className="ratio ratio--16x9 adaptation-to-project__image">
-            <Image
-              src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
-              alt={t('imageAlt')}
-              layout="fill"
-            />
+          <h2 className="title-type-3">{t('title')}</h2>
+          <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
+
+          <div
+            className="scroll adaptation-to-project__scroll"
+            data-aos="fade-up"
+            data-aos-delay={100}
+          >
+            <div className="adaptation-to-project__image">
+              <Image
+                src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
+                alt={t('imageAlt')}
+                layout="fill"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div
+            className="caption adaptation-to-project__caption"
+            data-aos="fade-up"
+            data-aos-delay={0}
+            data-aos-anchor-placement="bottom-bottom"
+          >
+            {t('caption')}
+
           </div>
         </div>
-
-        <div
-          className="caption adaptation-to-project__caption"
-          data-aos="fade-up"
-          data-aos-delay={0}
-          data-aos-anchor-placement="bottom-bottom"
-        >
-          {t('caption')}
-
-        </div>
-      </div>
+      </Element>
     </section>
   );
 }

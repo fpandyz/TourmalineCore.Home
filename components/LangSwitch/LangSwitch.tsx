@@ -5,9 +5,10 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 
 import { useAutoClose } from '../../common/hooks/useAutoClose';
-import { languages } from '../../utils/consts/languages';
+import { languages } from '../../common/utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ function LangSwitch() {
 
   const routerLocale = useMemo(() => {
     if (!router.locale) {
-      return 'en';
+      return DEFAULT_LOCALE;
     }
 
     return router.locale;

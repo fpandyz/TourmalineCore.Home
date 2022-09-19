@@ -2,17 +2,21 @@ import { useTranslation } from 'next-i18next';
 import { Carousel } from 'react-responsive-carousel';
 import { SectionProps } from '../../types/globals';
 
-import { completedProjects } from '../../utils/consts/completedProjects';
+import { completedProjects } from '../../common/utils/consts/completedProjects';
 import CompletedProjectsCard from './components/CompletedProjectsCard/CompletedProjectsCard';
 
 function CompletedProjects({
+  animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('completedProjects');
 
   return (
-    <section className="section completed-projects" {...props}>
-      <div className="container container--home-page">
+    <section className="completed-projects" {...props}>
+      <div
+        className="container container--home-page"
+        data-aos={animationName}
+      >
         <h2 className="title-type-2 completed-projects__title">
           {t('title')}
           {' '}

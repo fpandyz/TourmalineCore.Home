@@ -2,7 +2,8 @@
   "title": "Процесс (zh)",
   "subtitle": "Двигаемся к конечной цели еженедельными спринтами, проводим планирования и демо клиенту (zh)",
   "Yuliya": "Юля (zh)",
-  "altHeader": "Юля фото (zh)",
+  "Margarita": "Маргарита (zh)",
+  "firstAltHeader": "Юля фото (zh)",
   "firstCard": {
     "title": "Sprint (zh)",
     "altReaction": "эмодзи Да (zh)",
@@ -15,6 +16,7 @@
       "Вывод содержимого в преобразователях и валидаторах (zh)"
     ]
   },
+  "secondAltHeader": "Маргарита фото (zh)",
   "secondCard": [
     {
       "listTitle": "По результатам демо: (zh)",

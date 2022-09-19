@@ -1,9 +1,12 @@
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
-  FormEvent, useMemo, useRef,
+  FormEvent, KeyboardEvent, useMemo, useRef,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { isMobile as isMobileOrTablet } from 'react-device-detect';
+
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
@@ -28,7 +31,7 @@ function Form({
 
   const routerLocale = useMemo(() => {
     if (!router.locale) {
-      return 'en';
+      return DEFAULT_LOCALE;
     }
 
     return router.locale;
@@ -43,6 +46,7 @@ function Form({
         <Input
           id="name"
           name="name"
+          className="form__input"
           label={t('name.label')}
           description={t('name.description')}
           required
@@ -50,6 +54,7 @@ function Form({
         <Input
           id="email"
           name="email"
+          className="form__input"
           label={t('email.label')}
           description={t('email.description')}
           type="email"
@@ -61,6 +66,7 @@ function Form({
           label={t('message.label')}
           className="form__message"
           description={t('message.description')}
+          onKeyDown={handleKeyDown}
         />
 
         <div className="form__footer">
@@ -71,9 +77,10 @@ function Form({
             {t('buttonText')}
           </PrimaryButton>
           <div className="form__approval">
-            {t('approvedText')}
+            {/* {t('approvedText')}
             {' '}
-            <ExternalLink className="form__link" href="/">{t('approvedLink')}</ExternalLink>
+            <ExternalLink href="/">{t('approvedLink')}</ExternalLink> */}
+            {generateReCAPTCHAText()}
           </div>
         </div>
       </form>
@@ -82,10 +89,23 @@ function Form({
         ref={recaptchaRef}
         size="invisible"
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
+        badge="bottomleft"
         hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
       />
     </>
   );
+
+  function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
+    if (event.key === 'Enter' && event.shiftKey === false && !isMobileOrTablet) {
+      event.preventDefault();
+
+      const buttonSubmit = document.querySelector<HTMLButtonElement>('.form__button');
+
+      if (buttonSubmit) {
+        buttonSubmit.click();
+      }
+    }
+  }
 
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
@@ -106,6 +126,33 @@ function Form({
     onSubmit(formData);
 
     recaptchaRef.current.reset();
+  }
+
+  function generateReCAPTCHAText() {
+    const ReCAPTCHAText = t('recaptchaText', { returnObjects: true });
+
+    return (
+      <p>
+        {Object.values<string | {
+          link: string;
+          text: string;
+        }>(ReCAPTCHAText).map((value) => {
+          if (typeof value === 'object') {
+            return (
+              <ExternalLink
+                key={value.link}
+                target="_blank"
+                href={value.link}
+              >
+                {value.text}
+              </ExternalLink>
+            );
+          }
+
+          return ` ${value} `;
+        })}
+      </p>
+    );
   }
 }
 

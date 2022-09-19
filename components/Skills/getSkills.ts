@@ -33,7 +33,7 @@ export const getSkills = (t: any) => [
       'S3',
       'Docker',
       'Kubernetes',
-      'helm',
+      'Helm',
       'Terraform',
       'Azure',
       'AWS',
@@ -69,7 +69,7 @@ export const getSkills = (t: any) => [
   },
   {
     title: t('QA.title'),
-    scope: ['Postman', 'Cypress', 'Jess'],
+    scope: ['Postman', 'Cypress', 'Jest'],
     services: t('QA.services', { returnObjects: true }),
     technologies: [
       'Cypress',
@@ -95,7 +95,7 @@ export const getSkills = (t: any) => [
     title: t('Machine.title'),
     scope: [
       'Python',
-      'Sklem',
+      'Sklearn',
       'Pandas',
       'Numpy',
       'OpenCV',

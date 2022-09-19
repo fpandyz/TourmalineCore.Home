@@ -4,14 +4,15 @@ import {
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 
-import { languages } from '../../utils/consts/languages';
+import { languages } from '../../common/utils/consts/languages';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 function MobileLangSwitch() {
   const router = useRouter();
 
   const routerLocale = useMemo(() => {
     if (!router.locale) {
-      return 'en';
+      return DEFAULT_LOCALE;
     }
 
     return router.locale;

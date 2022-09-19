@@ -101,19 +101,13 @@
   }
 
   &__label {
+    @include type-body-2;
+
     margin-right: 24px;
     margin-bottom: 12px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.1;
 
     &:last-child {
       margin-right: 0;
-    }
-
-    @include desktop-xl {
-      font-size: 17px;
-      line-height: 1.5;
     }
   }
 

@@ -4,6 +4,7 @@ import { getMistakes } from './getMistakes';
 import MistakeItem from './MistakeItem/MistakeItem';
 
 function Mistakes({
+  animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('mistakes');
@@ -12,8 +13,11 @@ function Mistakes({
 
   return (
 
-    <section className="section mistakes" {...props}>
-      <div className="container container--home-page">
+    <section className="mistakes" {...props}>
+      <div
+        className="container container--home-page"
+        data-aos={animationName}
+      >
         <h2 className="title-type-3">{t('title')}</h2>
 
         <div className="mistakes__subtitle">{t('subtitle')}</div>

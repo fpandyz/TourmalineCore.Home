@@ -4,15 +4,16 @@
   color: $color-white-alpha-200;
 
   &__box {
-    display: flex;
-    flex-direction: column-reverse;
+    position: relative;
   }
 
   &__control {
+    display: block;
     outline: none;
     border: none;
     border-bottom: 1px solid $color-white-alpha-200;
     padding: 24px 0 16px;
+    width: 100%;
     min-height: 64px;
     font-family: inherit;
     font-size: inherit;
@@ -20,44 +21,32 @@
     background-color: inherit;
     transition: all 0.3s;
 
-    &:focus {
-      border-bottom: 1px solid $color-pink;
+    &:not(:placeholder-shown) ~ #{$this}__label {
+      @include type-body-2;
 
-      ~ #{$this}__label {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.1;
-        letter-spacing: 0.02em;
-        color: $color-pink;
-
-        @include desktop-xl {
-          font-size: 17px;
-          line-height: 1.5;
-        }
-      }
+      top: 0;
+      letter-spacing: 0.02em;
     }
 
-    &:focus ~ #{$this}__label,
-    &:not(:placeholder-shown) ~ #{$this}__label {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 1.1;
-      letter-spacing: 0.02em;
-      transform: translateY(30px);
+    &:focus {
+      border-color: $color-pink;
 
-      @include desktop-xl {
-        font-size: 17px;
-        line-height: 1.5;
+      ~ #{$this}__label {
+        @include type-body-2;
+
+        top: 0;
+        letter-spacing: 0.02em;
+        color: $color-pink;
       }
     }
   }
 
   &__label {
+    position: absolute;
+    top: 22px;
     min-height: 30px;
     color: inherit;
     cursor: text;
-    transform: translateY(50px);
-    transform-origin: left top;
     transition: all 0.3s;
   }
 

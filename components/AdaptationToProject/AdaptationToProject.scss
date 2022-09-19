@@ -24,9 +24,19 @@
   }
 
   &__image {
+    @include ratio-calc(213, 100);
+
     position: relative;
     min-width: 809px;
     min-height: 400px;
+
+    @include desktop {
+      @include ratio-18x9;
+    }
+
+    @include desktop-xl {
+      @include ratio-calc(151, 76);
+    }
   }
 
   &__caption {

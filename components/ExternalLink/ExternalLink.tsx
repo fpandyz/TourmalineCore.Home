@@ -1,7 +1,7 @@
-import { DetailedHTMLProps, LinkHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 import clsx from 'clsx';
 
-type ExternalLinkProps = DetailedHTMLProps<LinkHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+type ExternalLinkProps = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
 
 function ExternalLink({
   children,

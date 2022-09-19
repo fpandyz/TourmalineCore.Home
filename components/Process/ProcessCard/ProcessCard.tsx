@@ -8,6 +8,7 @@ interface ProcessCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEleme
   altReaction: string;
   name: string;
   children: ReactNode;
+  srcImage: string;
 }
 
 function ProcessCard({
@@ -17,6 +18,7 @@ function ProcessCard({
   altReaction,
   name,
   children,
+  srcImage,
   ...props
 }: ProcessCardProps) {
   return (
@@ -25,18 +27,28 @@ function ProcessCard({
       {...props}
     >
       <div className="process-card__image process-card__image--desktop">
-        <Image src="/images/skype-yuilya.png" alt={altHeader} layout="fill" />
+        <Image
+          src={srcImage}
+          alt={altHeader}
+          layout="fill"
+          loading="lazy"
+        />
       </div>
 
       <div className="process-card__inner">
         <div className="process-card__header">
           <div className="process-card__image process-card__image--mobile">
-            <Image src="/images/skype-yuilya.png" alt={altHeader} layout="fill" />
+            <Image
+              src={srcImage}
+              alt={altHeader}
+              layout="fill"
+              loading="lazy"
+            />
           </div>
 
           <div>
             <span className="process-card__name">{name}</span>
-            {', '}
+            {' '}
             <span className="process-card__time">{time}</span>
           </div>
         </div>
@@ -48,10 +60,14 @@ function ProcessCard({
           data-aos="fade-in"
           data-aos-delay={350}
         >
-          <Image src={reactionImg} alt={altReaction} layout="fill" />
+          <Image
+            src={reactionImg}
+            alt={altReaction}
+            layout="fill"
+            loading="lazy"
+          />
         </div>
       </div>
-
     </div>
   );
 }

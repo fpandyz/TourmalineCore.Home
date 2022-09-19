@@ -1,23 +1,39 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
+import { Element } from 'react-scroll';
+import { useEffect, useState } from 'react';
+import AOS from 'aos';
 
-import PageHead from '../components/PageHead/PageHead';
-import Skills from '../components/Skills/Skills';
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
-import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
+import PageHead from '../components/PageHead/PageHead';
 import Services from '../components/Services/Services';
+import Skills from '../components/Skills/Skills';
+import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
+import Discussion from '../components/Discussion/Discussion';
+import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
 import Process from '../components/Process/Process';
+import Tools from '../components/Tools/Tools';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
-import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
-import Tools from '../components/Tools/Tools';
 import FormBlock from '../components/FormBlock/FormBlock';
 
-import { NavigationLinks, navigationLinks } from '../utils/consts/navigation';
+import { NavigationLinks, navigationLinks } from '../common/utils/consts/navigation';
+import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
+import useDeviceSize from '../common/hooks/useDeviceSize';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
+
+  // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
+  useSectionAutoPaddings();
+
+  const deviceSize = useDeviceSize();
+  const [clickedAccarion, setClickedAccarion] = useState(false);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [deviceSize.width, clickedAccarion]);
 
   return (
     <>
@@ -34,43 +50,68 @@ export default function HomePage() {
         }}
       />
 
-      <LayoutHomePage navigationLinks={navigationLinks}>
+      <LayoutHomePage
+        navigationLinks={navigationLinks}
+      >
         <Services
           id={NavigationLinks.services}
-          data-aos="fade-up"
+          data-auto-padding={NavigationLinks.services}
+          animationName="fade-up"
         />
+
         <Skills
           id={NavigationLinks.skills}
-          data-aos="fade-up"
+          data-auto-padding={NavigationLinks.skills}
+          animationName="fade-up"
+          clickedAccarion={() => setClickedAccarion(!clickedAccarion)}
         />
-        <CompletedProjects
+
+        <section
           id={NavigationLinks.experience}
-          data-aos="fade-up"
-        />
+          data-auto-padding={NavigationLinks.experience}
+        >
+          <Element name={`scroll-to-${NavigationLinks.experience}`}>
+            <CompletedProjects
+              animationName="fade-up"
+            />
+
+            <Discussion
+              animationName="fade-up"
+            />
+          </Element>
+        </section>
 
         <div
           id={NavigationLinks.approach}
         >
           <AdaptationToProject
-            data-aos="fade-up"
+            id={NavigationLinks.approach}
+            animationName="fade-up"
+            data-auto-padding="adaptation-project"
           />
+
           <Process
-            data-aos="fade-up"
+            animationName="fade-up"
+            data-auto-padding="process"
           />
           <Tools
-            data-aos="fade-up"
+            animationName="fade-up"
+            data-auto-padding="tools"
           />
           <WorkStructure
-            data-aos="fade-up"
+            animationName="fade-up"
+            data-auto-padding="work-structure"
           />
           <Mistakes
-            data-aos="fade-up"
+            animationName="fade-up"
+            data-auto-padding="mistakes"
           />
         </div>
 
         <FormBlock
           id={NavigationLinks.contact}
-          data-aos="fade-up"
+          animationName="fade-up"
+          data-auto-padding="form-block"
         />
       </LayoutHomePage>
     </>
@@ -95,6 +136,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'tools',
       'form',
       'formBlock',
+      'discussion',
     ])),
   },
 });

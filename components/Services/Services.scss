@@ -1,4 +1,6 @@
 .services {
+  padding-top: 40px;
+
   &__title {
     margin-bottom: 32px;
 
@@ -49,18 +51,16 @@
     margin-bottom: 32px;
 
     @include tablet {
-      margin-right: 24px;
+      margin-right: auto;
       margin-bottom: 0;
       max-width: 340px;
     }
 
     @include desktop {
-      margin-right: 136px;
       max-width: 384px;
     }
 
     @include desktop-xl {
-      margin-right: 156px;
       max-width: 413px;
     }
   }
@@ -68,6 +68,7 @@
   &__block-second {
     @include tablet {
       margin-top: 100px;
+      margin-right: auto;
       max-width: 340px;
     }
 

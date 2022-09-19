@@ -13,5 +13,18 @@
   },
   "buttonText": "Отправить (en)",
   "approvedText": "Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с (en)",
-  "approvedLink": "положением о конфиденциальности данных. (en)"
+  "approvedLink": "положением о конфиденциальности данных. (en)",
+  "recaptchaText": {
+    "generalText": "This site is protected by reCAPTCHA and the Google",
+    "privacyLink": {
+      "link": "https://policies.google.com/privacy",
+      "text": "Privacy Policy"
+    },
+    "and": "and",
+    "termsLink": {
+      "link": "https://policies.google.com/terms",
+      "text": "Terms of Service"
+    },
+    "endText": "apply."
+  }
 }

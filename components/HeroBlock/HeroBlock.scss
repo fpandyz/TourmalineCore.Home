@@ -1,4 +1,6 @@
 .hero-block {
+  height: calc(100vh - 80px);
+  min-height: 641px;
   background-color: $color-black;
 
   &__gradient-title {
@@ -13,16 +15,22 @@
 
   &__description {
     margin-top: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 144px;
     font-size: 16px;
     color: $color-white-alpha-100;
 
+    @include tablet {
+      margin-bottom: 32px;
+    }
+
     @include desktop {
+      margin-bottom: 40px;
       max-width: 400px;
       font-size: 18px;
     }
 
     @include desktop-xl {
+      margin-bottom: 48px;
       max-width: 490px;
       font-size: 22px;
     }
@@ -60,7 +68,6 @@
 
   &__wrapper {
     padding-top: 144px;
-    padding-bottom: 144px;
 
     @include tablet {
       display: flex;
@@ -85,7 +92,15 @@
     }
   }
 
+  @include tablet {
+    min-height: 463px;
+  }
+
   @include desktop {
-    height: 100vh;
+    min-height: 624px;
+  }
+
+  @include desktop-xl {
+    min-height: 806px;
   }
 }

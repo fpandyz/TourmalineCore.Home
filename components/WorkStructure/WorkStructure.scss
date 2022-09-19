@@ -23,6 +23,10 @@
     display: flex;
     margin-top: var(--margin);
     margin-bottom: calc(var(--margin) + var(--top));
+
+    @include desktop {
+      display: none;
+    }
   }
 
   &__first-image {
@@ -40,13 +44,53 @@
     text-align: right;
   }
 
+  &__video {
+    display: none;
+    margin-bottom: 32px;
+
+    video {
+      display: block;
+      width: 100%;
+      min-height: 417px;
+
+      @include desktop-xl {
+        min-height: 540px;
+        max-height: 540px;
+      }
+    }
+
+    @include desktop {
+      display: block;
+      margin-right: -12px;
+      margin-left: -8px;
+    }
+
+    @include desktop-xl {
+      margin-right: -16px;
+      margin-bottom: 48px;
+      margin-left: -16px;
+    }
+  }
+
   &__first-image,
   &__second-image {
+    @include ratio-calc(63, 53);
+
     width: 60%;
     min-width: 253px;
     min-height: 212px;
 
+    @include desktop {
+      @include ratio-calc(37, 22);
+    }
+
+    @include desktop-xl {
+      @include ratio-calc(89, 53);
+    }
+
     @include tablet {
+      @include ratio-calc(27, 16);
+
       min-width: auto;
       min-height: auto;
     }
