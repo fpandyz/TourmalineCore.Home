@@ -1,6 +1,8 @@
 import Document, {
   Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps,
 } from 'next/document';
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
+import useTest from '../common/hooks/useTest';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -11,6 +13,8 @@ class MyDocument extends Document {
 
   render() {
     const isProduction = process.env.NODE_ENV === 'production';
+
+    // useTest();
 
     return (
       <Html>
@@ -28,14 +32,30 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://mc.yandex.ru" />
 
           <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+          <link type="text/css" href="path/to/OverlayScrollbars.css" rel="stylesheet" />
+
+          <script type="text/javascript" src="path/to/OverlayScrollbars.js" />
+
         </Head>
 
-        <body>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171018032-1" />
-          <script
+        <OverlayScrollbarsComponent
+          className="os-theme-dark"
+          options={{
+            scrollbars: {
+              autoHide: 'scroll',
+            },
+            nativeScrollbarsOverlaid: {
+              showNativeScrollbars: true,
+            },
+          }}
+        >
+          <body>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171018032-1" />
+            <script
             // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
+              dangerouslySetInnerHTML={{
+                __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
 
             if (${isProduction}) {
               window.dataLayer = window.dataLayer || [];
@@ -43,17 +63,17 @@ class MyDocument extends Document {
               gtag('js', new Date());
               gtag('config', 'UA-171018032-1');
             }`,
-            }}
-          />
+              }}
+            />
 
-          <Main />
-          <NextScript />
+            <Main />
+            <NextScript />
 
-          <script
-            type="text/javascript"
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: `
+            <script
+              type="text/javascript"
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{
+                __html: `
             if (${isProduction}) {
               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
               var z = null;m[i].l=1*new Date();
@@ -69,10 +89,11 @@ class MyDocument extends Document {
               })
             }
             `,
-            }}
-          />
-          <noscript><div><img src="https://mc.yandex.ru/watch/89913543" style={{ position: 'absolute', left: '-9999px' }} alt="" /></div></noscript>
-        </body>
+              }}
+            />
+            <noscript><div><img src="https://mc.yandex.ru/watch/89913543" style={{ position: 'absolute', left: '-9999px' }} alt="" /></div></noscript>
+          </body>
+        </OverlayScrollbarsComponent>
       </Html>
     );
   }
