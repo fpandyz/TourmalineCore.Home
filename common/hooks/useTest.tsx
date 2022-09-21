@@ -1,18 +1,14 @@
 import OverlayScrollbars from 'overlayscrollbars';
 import { useEffect } from 'react';
 
-function useTest() {
-  useEffect(() => {
-    document.addEventListener('DOMContentLoaded', () => {
-      OverlayScrollbars(document.querySelectorAll('body'), { });
-    });
+const config = {};
 
-    return () => {
-      document.removeEventListener('DOMContentLoaded', () => {
-        OverlayScrollbars(document.querySelectorAll('body'), { });
-      });
-    };
+function useScroll() {
+  useEffect(() => {
+    OverlayScrollbars(document.querySelectorAll('body'), config);
+
+    console.log(document.querySelectorAll('body'));
   });
 }
 
-export default useTest;
+export default useScroll;

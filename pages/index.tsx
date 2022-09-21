@@ -21,12 +21,14 @@ import FormBlock from '../components/FormBlock/FormBlock';
 import { NavigationLinks, navigationLinks } from '../common/utils/consts/navigation';
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
+import useScroll from '../common/hooks/useTest';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
   useSectionAutoPaddings();
+  useScroll();
 
   const deviceSize = useDeviceSize();
   const [clickedAccarion, setClickedAccarion] = useState(false);

@@ -2,7 +2,8 @@ import Document, {
   Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps,
 } from 'next/document';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
-import useTest from '../common/hooks/useTest';
+import { useRef } from 'react';
+import useScroll from '../common/hooks/useTest';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -14,7 +15,7 @@ class MyDocument extends Document {
   render() {
     const isProduction = process.env.NODE_ENV === 'production';
 
-    // useTest();
+    // const refd = useRef<HTMLBodyElement>(null);
 
     return (
       <Html>
