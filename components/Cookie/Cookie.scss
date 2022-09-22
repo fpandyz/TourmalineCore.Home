@@ -3,22 +3,21 @@
   left: 0;
   bottom: 0;
   z-index: $cookie;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  border-radius: 6px;
+  padding: 24px 16px;
   width: 100%;
   background-image: $main-gradient-300;
-  background-color: $color-black;
+  background-color: $color-purple-black;
 
   &__inner {
-    @include tablet-xl {
+    @include tablet {
       display: flex;
       align-items: center;
-      margin-left: -56px;
-      border-radius: 6px;
-      padding: 24px 32px;
-      width: fit-content;
-      background-image: $main-gradient-300;
-      background-color: $color-black;
+      justify-content: space-between;
+    }
+
+    @include tablet-xl {
+      justify-content: flex-start;
     }
   }
 
@@ -26,7 +25,7 @@
     margin-bottom: 24px;
     color: $color-white-alpha-100;
 
-    @include tablet-xl {
+    @include tablet {
       margin-right: 48px;
       margin-bottom: 0;
       max-width: 497px;
@@ -38,17 +37,18 @@
   }
 
   &__button {
-    margin: 0 auto;
     padding: 20px 58px;
-    width: auto;
 
-    @include tablet-xl {
+    @include tablet {
       margin: 0;
       padding: 16px 36px;
     }
   }
 
-  @include tablet-xl {
-    background: none;
+  @include tablet {
+    bottom: 24px;
+    margin-left: 24px;
+    padding: 24px 32px;
+    width: auto;
   }
 }
