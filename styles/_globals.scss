@@ -24,23 +24,27 @@ body {
 
   scrollbar-color:
     #838389
-    rgba(255, 255, 255, 0.2);
+    rgba(131, 131, 137, 0.1);
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
-    // border-radius: 5px;
     width: 10px;
   }
 
   &::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    background: rgba(131, 131, 137, 0.1);
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: #838389;
     border-radius: 5px;
     height: 56px;
-    border: 2px solid rgba(#000, 0.6);
+    border: 2px solid rgba(131, 131, 137, 0.1);
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   @include desktop-xl {
