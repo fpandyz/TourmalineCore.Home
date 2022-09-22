@@ -22,6 +22,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  scrollbar-color:
+    #838389
+    rgba(255, 255, 255, 0.2);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    // border-radius: 5px;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #838389;
+    border-radius: 5px;
+    height: 56px;
+    border: 2px solid rgba(#000, 0.6);
+  }
+
   @include desktop-xl {
     font-size: 19px;
     line-height: 1.6;
@@ -169,7 +190,7 @@ p + p {
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 20px;
+    border-radius: 5px;
     height: 1px;
     background-image: linear-gradient(90.09deg, #e977f6 0.08%, #a2a6ee 99.85%);
   }
