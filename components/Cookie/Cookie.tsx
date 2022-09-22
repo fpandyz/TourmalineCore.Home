@@ -20,18 +20,22 @@ function Cookie() {
 
   return (
     <div className="cookie">
-      <div className="container cookie__inner">
-        <span className="cookie__text">
-          {t('text')}
-        </span>
+      <div className="container">
+        <div className="cookie__inner">
+          <div className="cookie__text">
+            {t('text')}
+          </div>
 
-        <PrimaryButton onClick={() => {
-          setIsCookie(true);
-          setLSItem(COOKIE_LS_KEY, true);
-        }}
-        >
-          {t('button')}
-        </PrimaryButton>
+          <PrimaryButton
+            className="cookie__button"
+            onClick={() => {
+              setIsCookie(true);
+              setLSItem(COOKIE_LS_KEY, true);
+            }}
+          >
+            {t('button')}
+          </PrimaryButton>
+        </div>
       </div>
     </div>
   );

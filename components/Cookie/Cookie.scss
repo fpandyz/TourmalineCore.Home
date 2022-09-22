@@ -10,12 +10,15 @@
   background-color: $color-black;
 
   &__inner {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    @include desktop {
-      flex-direction: row;
+    @include tablet-xl {
+      display: flex;
+      align-items: center;
+      margin-left: -56px;
+      border-radius: 6px;
+      padding: 24px 32px;
+      width: fit-content;
+      background-image: $main-gradient-300;
+      background-color: $color-black;
     }
   }
 
@@ -23,9 +26,29 @@
     margin-bottom: 24px;
     color: $color-white-alpha-100;
 
-    @include desktop {
-      margin-right: 32px;
+    @include tablet-xl {
+      margin-right: 48px;
       margin-bottom: 0;
+      max-width: 497px;
     }
+
+    @include desktop-xl {
+      max-width: 600px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    padding: 20px 58px;
+    width: auto;
+
+    @include tablet-xl {
+      margin: 0;
+      padding: 16px 36px;
+    }
+  }
+
+  @include tablet-xl {
+    background: none;
   }
 }
