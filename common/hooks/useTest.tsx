@@ -1,13 +1,21 @@
 import OverlayScrollbars from 'overlayscrollbars';
-import { useEffect } from 'react';
-
-const config = {};
+import { useEffect, useState } from 'react';
 
 function useScroll() {
+  const [test, isTest] = useState();
   useEffect(() => {
-    OverlayScrollbars(document.querySelectorAll('body'), config);
+    document.addEventListener('scroll', (evt: any) => {
+      console.log('animated in', evt);
 
-    console.log(document.querySelectorAll('body'));
+      isTest(evt);
+    });
+
+    // OverlayScrollbars(document.querySelectorAll('body'), {
+    //   className: 'os-theme-light',
+    //   scrollbars: {
+    //     autoHide: 'scroll',
+    //   },
+    // });
   });
 }
 

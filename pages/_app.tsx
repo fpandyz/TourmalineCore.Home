@@ -1,5 +1,8 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import 'gitalk/dist/gitalk.css';
+import 'overlayscrollbars/css/OverlayScrollbars.css';
+// import './overlayScrollbarStyle.css';
+
 import '../styles/main.scss';
 
 import { appWithTranslation } from 'next-i18next';
@@ -8,6 +11,7 @@ import { AppProps } from 'next/dist/shared/lib/router/router';
 import AOS from 'aos';
 import { useEffect } from 'react';
 import { isMobileOnly } from 'react-device-detect';
+import useScroll from '../common/hooks/useTest';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -17,14 +21,18 @@ function MyApp({ Component, pageProps }: AppProps) {
       easing: 'ease-in-out',
       once: true,
       disable: isMobileOnly,
+      startEvent: 'scroll',
     });
   });
+
+  useScroll();
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Tourmaline Core</title>
+
       </Head>
 
       <Component {...pageProps} />
