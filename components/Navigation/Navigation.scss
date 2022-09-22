@@ -1,6 +1,16 @@
 .navigation {
-  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  margin: 0;
   height: 100%;
+  max-width: 93px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s;
 
   &__line {
     margin-right: 16px;
@@ -18,17 +28,25 @@
 
   &__links {
     position: sticky;
-    top: 50%;
-    height: max-content;
+    width: max-content;
+    pointer-events: auto;
   }
 
   &__link {
+    @include type-body-2;
+
     position: relative;
     display: block;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.1;
+    margin: 24px 0;
+    margin-left: 16px;
+    border: none;
+    padding: 0;
+    width: max-content;
+    max-width: 93px;
+    font-family: $ff-montserrat;
+    text-align: left;
     color: $color-white-alpha-200;
+    background: transparent;
     cursor: pointer;
     transition: color 0.3s;
 
@@ -51,7 +69,6 @@
     }
 
     &--active,
-    &:focus,
     &:active {
       color: $color-white;
     }
@@ -66,8 +83,12 @@
       margin-top: 24px;
     }
 
+    @include desktop {
+      max-width: 120px;
+    }
+
     @include desktop-xl {
-      font-size: 18px;
+      max-width: 150px;
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -75,5 +96,23 @@
         color: $color-white;
       }
     }
+  }
+
+  &--is-see {
+    opacity: 1;
+  }
+
+  @include tablet-xl {
+    display: block;
+  }
+
+  @include desktop {
+    margin: 0;
+    max-width: 120px;
+  }
+
+  @include desktop-xl {
+    margin: auto;
+    max-width: 1606px;
   }
 }

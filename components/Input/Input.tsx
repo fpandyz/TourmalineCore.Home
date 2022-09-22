@@ -9,15 +9,25 @@ interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 }
 
 function Input({
-  id, label, description, isError = false, className, ...props
-}: InputProps): JSX.Element {
+  id,
+  label,
+  description,
+  isError = false,
+  className,
+  ...props
+}: InputProps) {
   return (
-    <div className={clsx('title-type-4', 'input', className, {
+    <div className={clsx('input', className, {
       'input--is-error': isError,
     })}
     >
       <div className="input__box">
-        <input id={id} placeholder=" " className="input__control" {...props} />
+        <input
+          id={id}
+          className="input__control"
+          placeholder=" "
+          {...props}
+        />
         <label htmlFor={id} className="input__label">{label}</label>
       </div>
       {description && <div className="input__description">{description}</div>}

@@ -1,0 +1,209 @@
+.tool-card {
+  border-radius: 5px;
+  padding: 12px 8px;
+  min-width: 164px;
+  font-family: $ff-inter;
+  font-size: 11px;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: $color-white;
+  background: $color-gray;
+  cursor: default;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__icon-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    border-radius: 14px;
+    width: 9px;
+    height: 9px;
+    background-color: $color-soft-purple;
+
+    svg {
+      position: absolute;
+      width: 5px;
+      height: 6px;
+    }
+
+    @include desktop-xl {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &__text {
+    display: inline;
+
+    @include desktop-xl {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+
+  &__developers {
+    display: flex;
+    margin-left: 4px;
+  }
+
+  &__developer {
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: $color-white;
+
+    &--online {
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        background-color: $color-light-green;
+
+        @include desktop-xl {
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+
+    &--green {
+      background-color: $color-dark-green;
+    }
+
+    &--blue {
+      background-color: $color-bright-purple;
+    }
+
+    &--red {
+      background-color: $color-bright-red;
+    }
+
+    &--light-blue {
+      background-color: $color-blue;
+    }
+
+    & + & {
+      z-index: 0;
+      margin-left: -12px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 0;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        background-color: $color-gray;
+
+        @include desktop-xl {
+          left: -9px;
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    @include desktop-xl {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 10px;
+    color: $color-white-alpha-200;
+
+    svg {
+      display: inline-block;
+      margin-right: 4px;
+      width: 7px;
+      height: 10px;
+    }
+
+    @include desktop-xl {
+      margin-top: 16px;
+      font-size: 11px;
+    }
+  }
+
+  &__tags {
+    margin-top: 12px;
+    font-size: 9px;
+
+    @include desktop-xl {
+      margin-top: 16px;
+      font-size: 11px;
+    }
+  }
+
+  &__tag {
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    border-radius: 0 10px 10px 0;
+    padding: 3px 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--front {
+      color: #006530;
+      background-color: $color-soft-green;
+    }
+
+    &--back {
+      color: $color-bright-pink;
+      background-color: $color-soft-pink;
+    }
+
+    &--feature {
+      color: $color-bright-red;
+      background-color: $color-soft-red;
+    }
+
+    &--camera {
+      color: $color-bright-lilac;
+      background-color: $color-soft-lilac;
+    }
+
+    @include desktop-xl {
+      padding: 4px 12px;
+    }
+  }
+
+  & + & {
+    margin-top: 12px;
+
+    @include desktop-xl {
+      margin-top: 16px;
+    }
+  }
+
+  @include tablet-xl {
+    overflow-x: auto;
+    min-width: 176px;
+  }
+
+  @include desktop-xl {
+    padding: 16px 12px;
+    min-width: 216px;
+    font-size: 14px;
+  }
+}

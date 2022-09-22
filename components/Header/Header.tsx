@@ -32,17 +32,25 @@ function Header() {
       <header className="header">
         <div className="container header__inner">
           <Link href="/">
-            <a className="header__logo">
+            <a
+              className="header__logo"
+              aria-label="Header logo"
+            >
               <IconLogo />
             </a>
           </Link>
 
           <div className="header__right-panel">
-            <button type="button" className="header__menu-toggle" onClick={() => setIsMobileMenuOpen(true)}>
+            <button
+              type="button"
+              className="header__menu-toggle"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open header"
+            >
               <IconBurger />
             </button>
 
-            <div className="header__desktop body-type-2">
+            <div className="header__desktop">
               {headerLinks.map((headerLink) => (
                 <Link key={headerLink.id} href={headerLink.link}>
                   <a className="header__link">

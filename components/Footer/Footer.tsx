@@ -14,7 +14,7 @@ function Footer() {
         <div className="footer__about-us">
           <div className="footer__short-information">
             <Link href="/">
-              <a className="footer__logo">
+              <a className="footer__logo" aria-label="Footer logo">
                 <IconLogo />
               </a>
             </Link>

@@ -60,11 +60,10 @@ ol {
 
 .title-type-4 {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
 
   @include desktop {
-    font-size: 18px;
     line-height: 1.6;
   }
 
@@ -104,4 +103,15 @@ ol {
   color: transparent;
   background: linear-gradient(90.09deg, #e977f6 0.08%, #51dce4 78.9%);
   background-clip: text;
+}
+
+@mixin type-body-2 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.1;
+
+  @include desktop-xl {
+    font-size: 17px;
+    line-height: 1.5;
+  }
 }

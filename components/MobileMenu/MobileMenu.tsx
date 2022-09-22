@@ -37,13 +37,23 @@ function MobileMenu({
             </a>
           </Link>
 
-          <button type="button" className="mobile-menu__close" onClick={onCloseClick}>
+          <button
+            type="button"
+            className="mobile-menu__close"
+            onClick={onCloseClick}
+            aria-label="Close header"
+          >
             <IconClose />
           </button>
         </div>
 
         <div className="mobile-menu__tourmaline-core">
-          <Image src="/images/tourmaline-core.png" alt="tourmaline-core" layout="fill" />
+          <Image
+            src="/images/tourmaline-core.webp"
+            alt="tourmaline-core"
+            layout="fill"
+            loading="lazy"
+          />
         </div>
 
         <div className="mobile-menu__content">

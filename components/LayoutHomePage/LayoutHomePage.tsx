@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import HeroBlock from '../HeroBlock/HeroBlock';
+import HeroBlockHomePage from '../HeroBlockHomePage/HeroBlockHomePage';
 import Navigation from '../Navigation/Navigation';
-import { NavigationLinks } from '../../utils/consts/navigation';
+import { NavigationLinks } from '../../common/utils/consts/navigation';
 
 function LayoutHomePage({
   children,
@@ -17,19 +17,20 @@ function LayoutHomePage({
     <div className="layout-home-page">
       <div className="layout-home-page__header">
         <Header />
-        <HeroBlock />
+        <HeroBlockHomePage firstBlockSelector={navigationLinks[0]} />
       </div>
-      <main className="container layout-home-page__wrapper">
-        <div className="section layout-home-page__nav">
-          <Navigation navigationLinks={navigationLinks} />
-        </div>
+
+      <main className="layout-home-page__wrapper">
+        <Navigation
+          navigationLinks={navigationLinks}
+        />
         <div className="layout-home-page__content">
           {children}
         </div>
       </main>
+
       <Footer />
     </div>
-
   );
 }
 

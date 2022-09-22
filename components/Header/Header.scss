@@ -1,6 +1,8 @@
 .header {
   z-index: $top-panel;
-  padding: 40px 0;
+  padding: 0;
+  padding-top: 40px;
+  background-color: $color-black;
 
   &__inner {
     display: flex;
@@ -29,6 +31,8 @@
   }
 
   &__link {
+    @include type-body-2;
+
     margin-right: 32px;
     text-decoration: none;
     color: inherit;

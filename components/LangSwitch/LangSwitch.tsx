@@ -2,13 +2,13 @@ import {
   useState, useRef, useMemo,
 } from 'react';
 import clsx from 'clsx';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { useAutoClose } from '../../common/hooks/useAutoClose';
-import { languages } from '../../utils/consts/languages';
+import { languages } from '../../common/utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,7 +20,7 @@ function LangSwitch() {
 
   const routerLocale = useMemo(() => {
     if (!router.locale) {
-      return 'en';
+      return DEFAULT_LOCALE;
     }
 
     return router.locale;
@@ -50,23 +50,16 @@ function LangSwitch() {
               key={locale}
               className="lang-switch__option"
             >
-              <Link
-                href={{
-                  pathname: router.pathname,
-                  query: router.query,
-                }}
-                locale={locale}
+              <a
+                className={clsx(
+                  'lang-switch__link',
+                  { 'lang-switch__link--active': routerLocale === locale },
+                )}
+                href={router.pathname + locale}
               >
-                <a
-                  className={clsx(
-                    'lang-switch__link',
-                    { 'lang-switch__link--active': routerLocale === locale },
-                  )}
-                >
-                  {languages[locale].icon()}
-                  {languages[locale].name}
-                </a>
-              </Link>
+                {languages[locale].icon()}
+                {languages[locale].name}
+              </a>
             </li>
           ))}
         </ul>

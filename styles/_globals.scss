@@ -4,11 +4,6 @@
   box-sizing: inherit;
 }
 
-html {
-  overflow-y: scroll;
-  box-sizing: border-box;
-}
-
 .body--scroll-hiden {
   overflow: hidden;
 }
@@ -23,8 +18,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $color-white;
-  background-color: $color-black;
-  -webkit-font-smoothing: antialiased;
+  background-color: $color-purple-black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -32,6 +26,10 @@ body {
     font-size: 19px;
     line-height: 1.6;
   }
+}
+
+body {
+  overflow-x: hidden;
 }
 
 code {
@@ -66,9 +64,25 @@ p + p {
     padding-left: 32px;
   }
 
+  @include tablet-xl {
+    &--home-page {
+      padding-left: 208px;
+    }
+  }
+
   @include desktop {
     padding-right: 75px;
     padding-left: 75px;
+
+    &--home-page {
+      padding-left: 283px;
+    }
+  }
+
+  @include desktop-xl {
+    &--home-page {
+      padding-left: 300px;
+    }
   }
 }
 
@@ -85,25 +99,159 @@ p + p {
   display: none;
 }
 
-.ratio {
+@mixin ratio {
   &::before {
     content: "";
     position: relative;
     z-index: -1;
     display: block;
   }
+}
 
-  &--3x4 {
-    &::before {
-      /* stylelint-disable-next-line scss/no-global-function-names */
-      padding-bottom: percentage(calc(4 / 3));
+@mixin ratio-3x4 {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc(4 / 3));
+  }
+}
+
+@mixin ratio-16x9 {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc(9 / 16));
+  }
+}
+
+@mixin ratio-18x9 {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc(9 / 18));
+  }
+}
+
+@mixin ratio-calc($width, $height) {
+  @include ratio;
+
+  &::before {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    padding-bottom: percentage(calc($height / $width));
+  }
+}
+
+.scroll {
+  scroll-padding-left: 20px;
+  scroll-padding-right: 20px;
+  scrollbar-color:
+    $color-blue
+    rgba(255, 255, 255, 0.2);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    border: 3px solid $color-purple-black;
+    border-radius: 20px;
+    height: 1px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 0 16px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+
+    @include desktop-xl {
+      margin: 0;
     }
   }
 
-  &--16x9 {
-    &::before {
-      /* stylelint-disable-next-line scss/no-global-function-names */
-      padding-bottom: percentage(calc(9 / 16));
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    height: 1px;
+    background-image: linear-gradient(90.09deg, #e977f6 0.08%, #a2a6ee 99.85%);
+  }
+}
+
+.responsive-carousel {
+  position: relative;
+
+  .carousel .slide {
+    text-align: left;
+  }
+
+  .carousel-slider {
+    position: static;
+    padding-bottom: 24px;
+  }
+
+  .control-dots {
+    margin: 0;
+    height: 8px;
+    text-align: center;
+
+    .dot {
+      position: relative;
+      top: 0;
+      margin: 0;
+      margin-right: 12px;
+      box-shadow: none;
+      background: $color-white-alpha-200;
+      opacity: 1;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: var(--gap);
+        top: var(--gap);
+        border-radius: inherit;
+        width: calc(100% - var(--gap) * 2);
+        height: calc(100% - var(--gap) * 2);
+        background: linear-gradient(180deg, $color-purple-black, $color-purple-black);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &::before {
+        --gap: 1px;
+      }
+
+      &::after {
+        --gap: 2px;
+      }
+
+      &:active,
+      &.selected {
+        background-image: $main-gradient;
+
+        &::before,
+        &::after {
+          opacity: 0.4;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-image: $main-gradient;
+
+          &::before,
+          &::after {
+            opacity: 0.4;
+          }
+        }
+      }
     }
+  }
+
+  @include tablet {
+    display: none;
   }
 }

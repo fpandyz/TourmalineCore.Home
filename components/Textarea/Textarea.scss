@@ -4,50 +4,53 @@
   color: $color-white-alpha-200;
 
   &__box {
-    display: flex;
-    flex-direction: column-reverse;
+    position: relative;
+    resize: inherit;
   }
 
   &__control {
+    display: block;
+    margin-top: 24px;
     outline: none;
     border: none;
     border-bottom: 1px solid $color-white-alpha-200;
-    padding: 24px 0 16px;
-    min-height: 116px;
+    padding: 0;
+    padding-bottom: 16px;
+    width: 100%;
+    min-height: 92px;
     font-family: inherit;
     font-size: inherit;
     color: $color-white;
     background-color: inherit;
+    resize: inherit;
     transition: all 0.3s;
 
+    &:not(:placeholder-shown) ~ #{$this}__label {
+      @include type-body-2;
+
+      top: -24px;
+      letter-spacing: 0.02em;
+    }
+
     &:focus {
-      border-bottom: 1px solid $color-pink;
+      border-color: $color-pink;
 
       ~ #{$this}__label {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.1;
+        @include type-body-2;
+
+        top: -24px;
         letter-spacing: 0.02em;
         color: $color-pink;
       }
     }
-
-    &:focus ~ #{$this}__label,
-    &:not(:placeholder-shown) ~ #{$this}__label {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 1.1;
-      letter-spacing: 0.02em;
-      transform: translateY(30px);
-    }
   }
 
   &__label {
+    position: absolute;
+    top: 0;
     min-height: 30px;
     color: inherit;
     cursor: text;
-    transform: translateY(50px);
-    transform-origin: left top;
     transition: all 0.3s;
   }
 

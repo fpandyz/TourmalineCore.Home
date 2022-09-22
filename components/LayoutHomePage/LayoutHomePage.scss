@@ -2,34 +2,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: $color-purple-black;
 
   &__header {
     background-image: linear-gradient(89.5deg, $color-purple-black 0.45%, $color-black 99.59%);
   }
 
   &__wrapper {
-    @include tablet-xl {
-      display: flex;
-    }
-  }
-
-  &__nav {
     position: relative;
-    display: none;
-    margin-right: 40px;
-
-    @include tablet-xl {
-      display: block;
-      width: 15%;
-    }
-  }
-
-  &__content {
-    flex-grow: 1;
-
-    @include tablet-xl {
-      width: 85%;
-    }
+    background-image: linear-gradient($color-black, $color-purple-black 1%);
   }
 }

@@ -30,6 +30,8 @@
   }
 
   &__active {
+    @include type-body-2;
+
     position: relative;
     display: flex;
     align-items: center;
@@ -38,8 +40,6 @@
     padding: 0;
     box-shadow: none;
     font-family: inherit;
-    font-weight: inherit;
-    font-size: inherit;
     text-transform: inherit;
     text-transform: uppercase;
     color: inherit;
@@ -54,6 +54,8 @@
   }
 
   &__list {
+    @include type-body-2;
+
     position: absolute;
     right: -4px;
     top: calc(100% + 8px);

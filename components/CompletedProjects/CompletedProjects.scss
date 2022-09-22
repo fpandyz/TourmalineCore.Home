@@ -1,84 +1,25 @@
 .completed-projects {
   &__title {
     margin-bottom: 32px;
+
+    @include desktop {
+      margin-bottom: 48px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 64px;
+    }
   }
 
   &__gradient {
     @include gradient-text;
 
+    background-image: $main-gradient;
+
     @include tablet {
       display: inline;
       color: $color-white;
       background-image: none;
-    }
-  }
-
-  &__carousel {
-    position: relative;
-    margin-bottom: 24px;
-
-    .carousel .slide {
-      text-align: left;
-    }
-
-    .carousel-slider {
-      position: static;
-    }
-
-    .control-dots {
-      bottom: -40px;
-      text-align: center;
-
-      .dot {
-        position: relative;
-        top: 0;
-        margin: 0;
-        margin-right: 12px;
-        box-shadow: none;
-        background: $color-white-alpha-200;
-        opacity: 1;
-        cursor: pointer;
-
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          left: var(--gap);
-          top: var(--gap);
-          border-radius: inherit;
-          width: calc(100% - var(--gap) * 2);
-          height: calc(100% - var(--gap) * 2);
-          background: linear-gradient(180deg, $color-purple-black, $color-purple-black);
-          opacity: 0;
-          transition: opacity 0.3s;
-        }
-
-        &::before {
-          --gap: 1px;
-        }
-
-        &::after {
-          --gap: 2px;
-        }
-
-        &:focus,
-        &.selected {
-          background-image: $main-gradient;
-
-          &::before,
-          &::after {
-            opacity: 0.4;
-          }
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-
-    @include tablet {
-      display: none;
     }
   }
 
