@@ -1,18 +1,18 @@
 {
-  "title": "У вас есть проект?",
-  "gradientTitleFirst": "Свяжитесь с нами,",
-  "gradientTitleSecond": "чтобы обсудить сотрудничество (en)",
-  "buttonText": "Обсудить проект (en)",
-  "modalTitle": "Заявка на сотрудничество  (en)",
-  "modalTitleSuccessful": "Ваша заявка отправлена (en)",
-  "modalSubtitle": "Заполните форму и с вами свяжется наш менеджер для уточнения деталей проекта (en)",
-  "modalSubtitleSuccessfulFirst": "В ближайшее время  наш менеджер свяжется с вами по указанной почте",
-  "modalSubtitleSuccessfulSecond": "для уточнения деталей проекта и назначения первой встречи (en)",
-  "modalListTitle": "Что будет дальше? (en)",
+  "title": "Do you have a project ?",
+  "gradientTitleFirst": "Contact us",
+  "gradientTitleSecond": "to discuss details",
+  "buttonText": "Discuss the project",
+  "modalTitle": "Write to us for cooperation",
+  "modalTitleSuccessful": "Your request has been sent",
+  "modalSubtitle": "Fill out the form and our manager will contact you to clarify the details of the project",
+  "modalSubtitleSuccessfulFirst": "Our manager will contact you shortly at the specified email",
+  "modalSubtitleSuccessfulSecond": "to clarify the details of the project and schedule the first meeting",
+  "modalListTitle": "What happens next ?",
   "steps": [
-    "Знакомство и обсуждение задачи (en)", 
-    "Оценка и планирование проекта (en)", 
-    "Составление и подписание договора (en)", 
-    "Начало работ с еженедельными демо (en)"
+      "Getting to know each other and discussing the project",
+      "Project evaluation and planning",
+      "Drawing up and signing the contract", 
+      "Getting down to development with weekly demos"
   ]
 }

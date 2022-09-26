@@ -1,7 +1,7 @@
 {
-  "title": "Гибкая структура работы (en)",
-  "subtitle": "Делаем быстрые релизы, получаем обратную связь и корректируем решения (en)",
-  "caption": "Отображение данных на псевдокоде (en)",
-  "altImageFirst": "Код функции (en)",
-  "altImageSecond": "Результат (en)"
+  "title": "Flexibility",
+  "subtitle": "We adjust solutions based on feedback to create a product that meets the user's needs.",
+  "caption": "Pseudocode",
+  "altImageFirst": "function code",
+  "altImageSecond": "result"
 }

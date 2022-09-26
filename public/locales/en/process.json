@@ -1,43 +1,45 @@
 {
-  "title": "Процесс (en)",
-  "subtitle": "Двигаемся к конечной цели еженедельными спринтами, проводим планирования и демо клиенту (en)",
+  "title": "Process",
+  "subtitle": "We move towards the final goal in weekly sprints with regular planning and demonstration of results to the customer. Weekly sprints allow for earlier feedback and adjustments.",
   "Yuliya": "Yuliya",
   "Margarita": "Margarita",
-  "firstAltHeader": "Юля фото (en)",
+  "firstAltHeader": "Yuliya foto",
   "firstCard": {
     "title": "Sprint (en)",
     "altReaction": "emoji Yes",
-    "listTitle": "Цели (en)",
+    "listTitle": "To do",
     "list": [
-      "Добавить в ядро бэка все валидаторы и преобразователи (en)",
-      "2 преобразователя и 2 валидатора интегрировать в бэк (en)",
-      "Добавить изменения на фронте в валидаторы и преобразователи (en)",
-      "Проверять наличие изменений в сорс-фидах для запуска преобразований (en)",
-      "Вывод содержимого в преобразователях и валидаторах (en)"
+      "Add all validators and converters to the backend core",
+      "Integrate 2 converters and 2 validators into the backend",
+      "Add frontend changes to validators and converters",
+      "Check for changes in source-feeds to trigger conversions",
+      "Output content in converters and validators"
+
     ]
   },
-  "secondAltHeader": "Маргарита фото (en)",
+  "secondAltHeader": "Margarita foto",
   "secondCard": [
     {
-      "listTitle": "По результатам демо: (en)",
+      "listTitle": "Demo results:",
       "list": [
-        "Использовали новый дизайн (en)",
-        "Начали использовать хранилище S3 (en)",
-        "Научились получать ответ от Циана с результатами валидации (en)"
+        "Implemented the new design",
+        "Started using S3 repository",
+        "Learned how to get a response from Cian with validation results"
+
       ]
     },
     {
-      "listTitle": "Цели на спринт: (en)",
+      "listTitle": "Sprint goals:",
       "list": [
-        "Наладить работу бэкенда с площадками (en)",
-        "UX работы с площадками (en)"
+        "Get the backend to work with sites",
+        "UX work with sites"
       ]
     }
   ],
   "secondCardAlt": "emoji Fire",
   "secondCardFooter": [
-    "О чём договорились: (en)",
-    "Упростить работу с валидаторами и преобразователями после MVP (en)"
+    "What we agreed upon:",
+    "Simplify work with validators and converters after MVP"
   ],
-  "caption": "Скриншоты результатов демо и планирования с заказчиком (en)"
+  "caption": "Sample summary of the demo and planning with the customer"
 }
