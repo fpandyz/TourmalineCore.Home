@@ -1,69 +1,69 @@
 {
-  "titleSection": "Наши",
-  "gradientTitleSection": "возможности (en)",
-  "titleServices": "Услуги (en)",
-  "titleTechnologies": "Технологии (en)",
+  "titleSection": "What we",
+  "gradientTitleSection": "can do",
+  "titleServices": "Services",
+  "titleTechnologies": "Technology",
   "Backend": {
-    "title": "Backend разработка (en)",
+    "title": "Backend",
     "services": [
-      "Проектирование архитектуры (en)",
-      "Разработка высоконагруженных сервисов (en)",
-      "Разработка библиотек (en)",
-      "Разработка приложений на основе blockchain (en)",
-      "Разработка решений для встраиваемых систем и интеграция с IoT (en)",
-      "Автоматизация сборки, тестирования, релизов и развертывания (CI/CD) (en)",
-      "Модификация имеющегося решения и интеграция со сторонними сервисами (en)"
+      "Architecture design",
+      "Development of high-load systems",
+      "Development of libraries",
+      "Development of blockchain-based applications",
+      "Development of solutions for embedded systems and integration with IoT",
+      "Build, Test, Release and Deployment (CI/CD) Automation",
+      "Modification of existing solutions and integration with third-party services"
     ]
   },
   "Frontend": {
-    "title": "Frontend разработка (en)",
+    "title": "Frontend",
     "services": [
-      "Адаптивная и кроссбраузерная верстка (en)",
-      "Разработка SPA-приложений (en)",
-      "Разработка публичных веб-сайтов (en)",
-      "Миграция legacy-проектов на актуальные технологии (en)"
+      "Adaptive and cross-browser layout",
+      "SPA development",
+      "Development of public websites",
+      "Migration of legacy projects to current technologies"
     ]
   },
   "QA": {
-    "title": "QA (en)",
+    "title": "QA",
     "services": [
-      "Составление тестовой документации (en)",
-      "Ручное и автоматизированное тестирование (en)",
-      "Использование техник тест-дизайна и методологии разработки (TDD, BDD) (en)",
-      "Локализация дефектов и составление баг-репортов (en)",
-      "Интеграционное и юнит тестирование (en)",
-      "E2E тестирование (en)",
-      "Тестирование UI на уровне компонентов и отображения (en)", 
-      "Тестирование API (en)",
-      "Настройка CI/CD для автоматического запуска тестов (en)",
-      "Работа с реляционными и нереляционными БД для реализации тестов (en)",
-      "Рефакторинг кода или выставление требований по рефакторингу для повышения тестируемости продукта (en)",
-      "Проведение ручного и автоматизированного функционального/регрессионного тестирования для REST и SOAP проектов на различных стеках технологий (JS, TS, Python, С#, C++) (en)"
+      "Writing testing documentation",
+      "Manual and automated testing",
+      "Using TDD and BDD techniques",
+      "Bug detection and reporting",
+      "Integration and unit testing",
+      "E2E testing",
+      "UI testing of components and layout",
+      "API testing",
+      "Setting up CI/CD to run tests automatically",
+      "Working with relational and non-relational databases to implement tests",
+      "Refactoring the code or specifying requirements to refactoring to improve product testability",
+      "Manual and automated functional/regression testing for REST and SOAP projects on various technology stacks (JS, TS, Python, C#, C++)"
     ]
   },
   "Machine": {
-    "title": "Машинное обучение (en)",
+    "title": "Machine Learning",
     "services": [
-      "Детекция объектов на изображении/видеопотоке (en)",
-      "Классификация изображений (en)",
-      "Анализ больших данных (en)",
-      "Обработка текстовой информации (en)",
-      "Обучение в агентной среде (en)"
+      "Object detection on an image/video stream",
+      "Image classification",
+      "Big data analysis",
+      "Text processing",
+      "Agent-based environment learning"
     ]
   },
   "UI/UX": {
-    "title": "UI/UX дизайн (en)",
+    "title": "UI/UX design",
     "services": [
-      "Создание адаптивного дизайна (en)",
-      "Разработка дизайн-системы (en)",
-      "Проектирование интерактивных прототипов (en)",
-      "Составление Customer Journey Map (en)",
-      "Описание портретов пользователей (en)",
-      "Создание User Flow (en)",
-      "Работа с компонентами и версионированием (en)",
-      "Конкурентный анализ (en)",
-      "Подготовка макетов к верстке (en)",
-      "Юзабилити-аудит (en)"
+      "Creating adaptive designs",
+      "Creating design systems",
+      "Designing interactive prototypes",
+      "Creating a Customer Journey Map",
+      "Describing user portraits",
+      "Creating a User Flow",
+      "Working with components and versioning",
+      "Competitive analysis",
+      "Preparing layouts for UI development",
+      "Usability audit"
     ]
   }
 }

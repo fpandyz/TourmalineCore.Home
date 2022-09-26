@@ -1,6 +1,6 @@
 {
-  "title": "Остались вопросы? (en)",
-  "titleGradient": "Заполните форму и мы свяжемся с вами для обсуждения деталей (en)",
-  "text": "Спасибо за ваше сообщение! В ближайшее время наш менеджер свяжется с вами по указанной почте (en)",
-  "buttonText": "Написать еще (en)"
+  "title": "Still got questions?",
+  "titleGradient": "Fill out the form and our manager will contact you to clarify the details of the project",
+  "text": "Thank you for the message! Our manager will contact you shortly at the specified email",
+  "buttonText": "Write more"
 }
