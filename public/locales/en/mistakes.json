@@ -1,83 +1,83 @@
 {
-  "title": "Работа над ошибками (en)",
-  "subtitle": "Всегда стараемся улучшить работу с помощью ретроспектив (en)",
-  "caption": "Ретро команды по проекту в конце спринта (en)",
+  "title": "Focus on Improvement",
+  "subtitle": "We analyse the milestones we've passed, discussing what went well and what there is to improve.",
+  "caption": "Team retrospective at the end of a sprint",
   "good": {
-    "title": "Что было хорошо? (en)",
+    "title": "What went well ?",
     "mistakes": [
       {
-        "text": "Близки к завершению MVP (en)"
+        "text": "Teamwork"
       },
       {
-        "text": "Сделали сложные преобразователи (en)"
+        "text": "Implemented complex converters"
       },
       {
-        "text": "Юля провела успешное демо (en)"
+        "text": "Started getting rid of technical debt"
       },
       {
-        "text": "12 хороших карточек (en)"
+        "text": "Started thinking in terms of XML"
       }
     ]
   },
   "bad": {
-    "title": "Что было плохо? (en)",
+    "title": "What didn’t go well ?",
     "mistakes": [
       {
-        "text": "Упавшая база (en)"
+        "text": "Database crashed"
       },
       {
-        "text": "Не успели протестить все перед демо (en)"
+        "text": "Didn't have time to test everything before the demo"
       },
       {
-        "text": "Долгое ревью (en)"
+        "text": "Review took too long"
       },
       {
-        "text": "Упавший интернет за час до демо (en)"
+        "text": "Autotests do not clean up after themselves"
       }
     ]
   },
   "problems": {
-    "title": "Главные проблемы (en)",
+    "title": "Main issues",
     "mistakes": [
       {
-        "text": "Копящийся рефакторинг (бэкенд) (en)"
+        "text": "Accumulating backend refactoring"
       },
       {
-        "text": "1/8 фронтендера (по времени) на проект (en)"
+        "text": "Lack of UI resource"
       },
       {
-        "text": "Тотальная нехватка времени (en)"
+        "text": "Tasks prioritization and value. Possibly reducing them in the To Do section"
       }
     ]
   },
   "ideas": {
-    "title": "Идеи (en)",
+    "title": "Ideas",
     "mistakes": [
       {
-        "text": "Закрыть MVP (en)"
+        "text": "A clearer decomposition"
       },
       {
-        "text": "Добавить в сутки 2 часа (en)"
+        "text": "Deploy on Thursday evening, get ready for demo on Friday morning"
       },
       {
-        "text": "Общее напоминание о таймшите в чатик (en)"
+        "text": "Add logic to check if the field you're creating is there"
       }
     ]
   },
   "study": {
-    "title": "Чему научился? (en)",
+    "title": "What we learned ?",
     "mistakes": [
       {
-        "text": "XML + XPath (en)"
+        "text": "Xml+Xpath"
       },
       {
-        "text": "pytest параметризация тестовых методов (en)"
+        "text": "pytest parameterization of test methods"
       },
       {
-        "text": "Оценивать трудозатраты на задачи (en)"
+        "text": "Estimation of effort for tasks"
       },
       {
-        "text": "Интеграция преобразователей (en)"
+        "text": "Integration of converters"
       }
     ]
   }
