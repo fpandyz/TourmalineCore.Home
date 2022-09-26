@@ -1,7 +1,6 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import 'gitalk/dist/gitalk.css';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
-// import './overlayScrollbarStyle.css';
 
 import '../styles/main.scss';
 
@@ -21,9 +20,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       easing: 'ease-in-out',
       once: true,
       disable: isMobileOnly,
-      startEvent: 'scroll',
     });
-  });
+  }, []);
 
   useScroll();
 

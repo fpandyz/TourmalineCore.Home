@@ -1,21 +1,21 @@
 import OverlayScrollbars from 'overlayscrollbars';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import AOS from 'aos';
 
 function useScroll() {
   useEffect(() => {
-    // document.addEventListener('scroll', (evt: any) => {
-    //   console.log('animated in', evt);
-
-    //   isTest(evt);
-    // });
-
     OverlayScrollbars(document.querySelectorAll('body'), {
       className: 'os-theme-light',
       scrollbars: {
         autoHide: 'scroll',
       },
+      callbacks: {
+        onScroll: () => {
+          AOS.refresh();
+        },
+      },
     });
-  });
+  }, []);
 }
 
 export default useScroll;
