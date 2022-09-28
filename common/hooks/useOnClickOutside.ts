@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect } from 'react';
 
-export function useOnClickOutside(ref: MutableRefObject<any>, handler: any) {
+export function useOnClickOutside(ref: MutableRefObject<HTMLElement | null>, handler: (evt: Event) => unknown) {
   useEffect(
     () => {
       const listener = (event: Event) => {
