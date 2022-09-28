@@ -28,6 +28,28 @@ body {
   }
 }
 
+.default-scroll {
+  scrollbar-color:
+    #838389
+    #0e0e0f;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #0e0e0f;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid #0e0e0f;
+    border-radius: 5px;
+    height: 56px;
+    background-color: #838389;
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -144,7 +166,7 @@ p + p {
   }
 }
 
-.scroll {
+.custom-scroll {
   scroll-padding-left: 20px;
   scroll-padding-right: 20px;
   scrollbar-color:
@@ -169,7 +191,7 @@ p + p {
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 20px;
+    border-radius: 5px;
     height: 1px;
     background-image: linear-gradient(90.09deg, #e977f6 0.08%, #a2a6ee 99.85%);
   }

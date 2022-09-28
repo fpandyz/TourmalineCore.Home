@@ -43,7 +43,7 @@ function AdaptationToProject({
           <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
 
           <div
-            className="scroll adaptation-to-project__scroll"
+            className="custom-scroll adaptation-to-project__scroll"
             data-aos="fade-up"
             data-aos-delay={100}
           >

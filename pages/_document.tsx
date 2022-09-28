@@ -30,7 +30,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         </Head>
 
-        <body>
+        <body className="default-scroll">
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171018032-1" />
           <script
             // eslint-disable-next-line react/no-danger

@@ -1,6 +1,9 @@
-import { ReactNode, useEffect } from 'react';
+import {
+  ReactNode, useEffect, useRef,
+} from 'react';
 
 import IconCross from '../../icons/cross.svg';
+import { useOnClickOutside } from '../../common/hooks/useOnClickOutside';
 
 function Modal({
   title,
@@ -29,15 +32,21 @@ function Modal({
     };
   }, []);
 
+  const refModal = useRef<HTMLDivElement>(null);
+  useOnClickOutside(refModal, onClose);
+
   return (
-    <div className="modal">
+    <div className="default-scroll modal">
       <div
         className="container modal__container"
         style={{
           maxWidth,
         }}
       >
-        <div className="modal__inner">
+        <div
+          className="modal__inner"
+          ref={refModal}
+        >
           <div className="modal__header">
             {title && (<div className="title-type-3 modal__title">{title}</div>)}
 
