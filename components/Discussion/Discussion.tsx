@@ -69,7 +69,6 @@ function Discussion({
           )}
         />
       )}
-
     </section>
   );
 
