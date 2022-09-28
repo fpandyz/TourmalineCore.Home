@@ -21,6 +21,14 @@ body {
   background-color: $color-purple-black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include desktop-xl {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+}
+
+.default-scroll {
   scrollbar-color:
     #838389
     #0e0e0f;
@@ -39,11 +47,6 @@ body {
     border-radius: 5px;
     height: 56px;
     background-color: #838389;
-  }
-
-  @include desktop-xl {
-    font-size: 19px;
-    line-height: 1.6;
   }
 }
 
@@ -163,7 +166,7 @@ p + p {
   }
 }
 
-.scroll {
+.custom-scroll {
   scroll-padding-left: 20px;
   scroll-padding-right: 20px;
   scrollbar-color:

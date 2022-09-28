@@ -30,7 +30,7 @@ function Modal({
   }, []);
 
   return (
-    <div className="modal">
+    <div className="default-scroll modal">
       <div
         className="container modal__container"
         style={{
