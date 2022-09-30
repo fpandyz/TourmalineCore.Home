@@ -123,23 +123,16 @@ function Form({
         return;
       }
 
-      // const token = await recaptchaRef.current.executeAsync();
+      const token = await recaptchaRef.current.executeAsync();
 
-      // if (!token) {
-      //   return;
-      // }
-      const promise = await new Promise((resolve) => {
-        setTimeout(() => {
-          resolve('Loading');
-        }, 1000);
-      });
-
-      console.log(promise);
+      if (!token) {
+        return;
+      }
 
       const formData = new FormData(event.target as HTMLFormElement);
-      // formData.append('g-recaptcha-response', token);
+      formData.append('g-recaptcha-response', token);
 
-      // onSubmit(formData);
+      onSubmit(formData);
 
       recaptchaRef.current.reset();
     } finally {
