@@ -21,7 +21,8 @@
     background-color: $color-gray;
 
     @include tablet {
-      padding: 60px 104px;
+      padding: 56px 104px;
+      min-height: 722px;
     }
   }
 
