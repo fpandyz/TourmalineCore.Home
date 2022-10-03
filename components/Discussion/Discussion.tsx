@@ -60,10 +60,10 @@ function Discussion({
               )}
 
               {isSubmit && (
-                <>
+                <div className="discussion__list">
                   <div className="title-type-4 discussion__list-title">{t('modalListTitle')}</div>
                   <List steps={dataList} />
-                </>
+                </div>
               )}
             </>
           )}
