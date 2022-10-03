@@ -26,13 +26,22 @@ function Cookie() {
         </div>
 
         <PrimaryButton
-          className="cookie__button"
+          className="cookie__accept"
           onClick={() => {
             setIsCookie(true);
             setLSItem(COOKIE_LS_KEY, true);
           }}
         >
-          {t('button')}
+          {t('accept')}
+        </PrimaryButton>
+        <PrimaryButton
+          className="cookie__reject"
+          onClick={() => {
+            setIsCookie(true);
+            setLSItem(COOKIE_LS_KEY, true);
+          }}
+        >
+          {t('reject')}
         </PrimaryButton>
       </div>
     </div>
