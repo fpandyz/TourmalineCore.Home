@@ -1,8 +1,6 @@
 .spiner {
   margin: auto;
-  border-style: solid;
-  border-width: $color-white;
-  border-color: $color-white;
+  border: $color-white solid 2px;
   border-left-color: transparent;
   border-radius: 50%;
   width: 16px;
