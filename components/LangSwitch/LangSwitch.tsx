@@ -3,6 +3,7 @@ import {
 } from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { useAutoClose } from '../../common/hooks/useAutoClose';
 import { languages } from '../../common/utils/consts/languages';
@@ -50,16 +51,24 @@ function LangSwitch() {
               key={locale}
               className="lang-switch__option"
             >
-              <a
-                className={clsx(
-                  'lang-switch__link',
-                  { 'lang-switch__link--active': routerLocale === locale },
-                )}
-                href={router.pathname + locale}
-              >
-                {languages[locale].icon()}
-                {languages[locale].name}
-              </a>
+              <Link href={router.pathname} locale={locale}>
+                <a
+                  role="presentation"
+                  className={clsx(
+                    'lang-switch__link',
+                    { 'lang-switch__link--active': routerLocale === locale },
+                  )}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (routerLocale !== locale) {
+                      window.open((e.target as HTMLAnchorElement).href, '_self');
+                    }
+                  }}
+                >
+                  {languages[locale].icon()}
+                  {languages[locale].name}
+                </a>
+              </Link>
             </li>
           ))}
         </ul>
