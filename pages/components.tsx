@@ -16,6 +16,6 @@ export default ComponentsPage;
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer'])),
+    ...(await serverSideTranslations(locale as string, ['common', 'articles', 'footer', 'cookie'])),
   },
 });

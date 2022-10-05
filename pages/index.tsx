@@ -16,7 +16,6 @@ import Process from '../components/Process/Process';
 import Tools from '../components/Tools/Tools';
 import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
-import Cookie from '../components/Cookie/Cookie';
 import FormBlock from '../components/FormBlock/FormBlock';
 
 import { NavigationLinks, navigationLinks } from '../common/utils/consts/navigation';
@@ -24,8 +23,6 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 
 export default function HomePage() {
-  console.log(3);
-
   const { t } = useTranslation('common');
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
@@ -117,7 +114,6 @@ export default function HomePage() {
           data-auto-padding="form-block"
         />
 
-        <Cookie />
       </LayoutHomePage>
     </>
   );

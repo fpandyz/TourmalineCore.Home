@@ -3,18 +3,26 @@ import { useState, useEffect } from 'react';
 import { getCookie, setCookie } from 'cookies-next';
 
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
-import { getLSItem, setLSItem } from '../../common/utils/localStorageHelpers';
 
-const COOKIE_LS_KEY = 'cookie';
 const cookieAccept = 'cookieAccept';
+
+declare global {
+  interface Window {
+    ym: (id: number, funcName: string, option: any) => unknown;
+    gtag: (config: string, id: string) => unknown;
+  }
+}
 
 function Cookie() {
   const { t } = useTranslation('cookie');
   const [isCookie, setIsCookie] = useState(true);
 
   useEffect(() => {
-    setIsCookie(getLSItem(COOKIE_LS_KEY));
-    console.log('cookie =', getCookie('cookieAccept'));
+    if (typeof getCookie(cookieAccept) === 'boolean') {
+      setIsCookie(false);
+    } else {
+      setIsCookie(false);
+    }
   }, []);
 
   if (isCookie) {
@@ -31,9 +39,16 @@ function Cookie() {
         <PrimaryButton
           className="cookie__accept"
           onClick={() => {
-            // setIsCookie(true);
-            // setLSItem(COOKIE_LS_KEY, true);
             setCookie(cookieAccept, true);
+
+            window.ym(89913543, 'init', {
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true,
+              webvisor: true,
+            });
+
+            window.gtag('config', 'UA-171018032-1');
           }}
         >
           {t('accept')}
@@ -41,8 +56,6 @@ function Cookie() {
         <PrimaryButton
           className="cookie__reject"
           onClick={() => {
-            // setIsCookie(true);
-            // setLSItem(COOKIE_LS_KEY, true);
             setCookie(cookieAccept, false);
           }}
         >
