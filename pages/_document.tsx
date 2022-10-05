@@ -18,6 +18,7 @@ class MyDocument extends Document {
 
     const isProduction = process.env.NODE_ENV === 'production';
     console.log('get =', getCookie('cookieAccept'));
+    const cookieAccept = getCookie('cookieAccept');
 
     // const isCookieAccept = getLSItem(COOKIE_LS_KEY);
 
@@ -46,7 +47,7 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
 
-            if (${isProduction}) {
+            if (${isProduction} && ${cookieAccept}) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -63,7 +64,7 @@ class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `
-            if (${isProduction}) {
+            if (${isProduction} && ${cookieAccept}) {
               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
               var z = null;m[i].l=1*new Date();
               for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
