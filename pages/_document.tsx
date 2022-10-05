@@ -17,8 +17,8 @@ class MyDocument extends Document {
     console.log(2);
 
     const isProduction = process.env.NODE_ENV === 'production';
-    console.log('get =', getCookie('cookieAccept'));
     const cookieAccept = getCookie('cookieAccept');
+    console.log('get =', cookieAccept, 'isProduction =', isProduction);
 
     // const isCookieAccept = getLSItem(COOKIE_LS_KEY);
 
