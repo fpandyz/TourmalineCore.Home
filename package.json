@@ -19,6 +19,7 @@
     "@emailjs/browser": "^3.6.2",
     "aos": "^2.3.4",
     "clsx": "^1.2.1",
+    "cookies-next": "^2.1.1",
     "gitalk": "^1.7.2",
     "next": "12.2.2",
     "next-i18next": "^8.6.0",

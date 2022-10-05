@@ -20,6 +20,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
   });
 
+  console.log(1);
+
   return (
     <>
       <Head>

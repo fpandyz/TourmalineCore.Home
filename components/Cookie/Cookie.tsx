@@ -1,10 +1,12 @@
 import { useTranslation } from 'next-i18next';
 import { useState, useEffect } from 'react';
-import { getLSItem, setLSItem } from '../../common/utils/localStorageHelpers';
+import { getCookie, setCookie } from 'cookies-next';
 
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import { getLSItem, setLSItem } from '../../common/utils/localStorageHelpers';
 
 const COOKIE_LS_KEY = 'cookie';
+const cookieAccept = 'cookieAccept';
 
 function Cookie() {
   const { t } = useTranslation('cookie');
@@ -12,6 +14,7 @@ function Cookie() {
 
   useEffect(() => {
     setIsCookie(getLSItem(COOKIE_LS_KEY));
+    console.log('cookie =', getCookie('cookieAccept'));
   }, []);
 
   if (isCookie) {
@@ -28,8 +31,9 @@ function Cookie() {
         <PrimaryButton
           className="cookie__accept"
           onClick={() => {
-            setIsCookie(true);
-            setLSItem(COOKIE_LS_KEY, true);
+            // setIsCookie(true);
+            // setLSItem(COOKIE_LS_KEY, true);
+            setCookie(cookieAccept, true);
           }}
         >
           {t('accept')}
@@ -37,8 +41,9 @@ function Cookie() {
         <PrimaryButton
           className="cookie__reject"
           onClick={() => {
-            setIsCookie(true);
-            setLSItem(COOKIE_LS_KEY, true);
+            // setIsCookie(true);
+            // setLSItem(COOKIE_LS_KEY, true);
+            setCookie(cookieAccept, false);
           }}
         >
           {t('reject')}

@@ -1,6 +1,10 @@
 import Document, {
   Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps,
 } from 'next/document';
+// import { getLSItem } from '../common/utils/localStorageHelpers';
+import { getCookie } from 'cookies-next';
+
+const COOKIE_LS_KEY = 'cookie'; // Duplication
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -10,7 +14,12 @@ class MyDocument extends Document {
   }
 
   render() {
+    console.log(2);
+
     const isProduction = process.env.NODE_ENV === 'production';
+    console.log('get =', getCookie('cookieAccept'));
+
+    // const isCookieAccept = getLSItem(COOKIE_LS_KEY);
 
     return (
       <Html>

@@ -24,6 +24,8 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 
 export default function HomePage() {
+  console.log(3);
+
   const { t } = useTranslation('common');
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
