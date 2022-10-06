@@ -41,7 +41,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         </Head>
 
-        <body>
+        <body className="default-scroll">
           <script defer src={`https://www.googletagmanager.com/gtag/js?id=${googleId}`} />
           <script
             // eslint-disable-next-line react/no-danger

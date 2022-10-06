@@ -1,7 +1,7 @@
 {
-  "title": "Инструменты (en)",
-  "subtitle": "Используем в работе доску и начинаем проект с базовых колонок (en)",
-  "caption": "Пример доски проекта в Clickup на начальном этапе работ (en)",
+  "title": "Tools",
+  "subtitle": "We use development process visualization tools to organize the process and show its progress. The customer is always aware of what's going on.",
+  "caption": "Example of a ClickUp project board",
   "back": "back",
   "front": "front",
   "feature": "feature",
@@ -10,17 +10,17 @@
     "title": "to do",
     "tasks": [
       {
-        "text": "Feature: Линейная диаграмма отражающая сумму  (en)"
+        "text": "Add video downloading"
       },
       {
-        "text": "Feature: Линейная диаграмма отражающая сумму прибыли  (en)",
+        "text": "Feature: Line chart showing amount of profit",
         "time": "10h"
       },
       {
-        "text": "Добавить бэкенд обработку статистик (en)"
+        "text": "Implement endpoint for incoming deposit from terminal"
       },
       {
-        "text": "Добавить логику обработки статистики (en)"
+        "text": "Add statistics processing logic"
       }
     ]
   },
@@ -28,14 +28,14 @@
     "title": "in progress",
     "tasks": [
       {
-        "text": "Feature: Распознавание движения уборщика в кадре посредством ИИ (en)",
+        "text": "Feature: AI recognition of cleaner's movements in the frame",
         "time": "28h"
       },
       {
-        "text": "Добавление параллельности вызова методов слежения (en)"
+        "text": "Add parallel calling of tracking methods"
       },
       {
-        "text": "Изменить фильтрацию таблиц по id мойки, а не названию (en)"
+        "text": "Filter table by carwash ID instead of name"
       }
     ]
   },
@@ -43,7 +43,7 @@
     "title": "review",
     "tasks": [
       {
-        "text": "Поправить кодеки для воспроизведения видео (en)"
+        "text": "Fix codecs for video playback"
       }
     ]
   },
@@ -51,16 +51,16 @@
     "title": "on dev",
     "tasks": [
       {
-        "text": "Разобраться с токенами для эндпоинтов (en)"
+        "text": "Sort out tokens for endpoints"
       },
       {
-        "text": "Исправить поведение после удаления моек (en)"
+        "text": "Fix behaviour after removing carwashes"
       },
       {
-        "text": "Feature: Нарезка видео с движением в подсобке (en)"
+        "text": "Feature: Slicing video with motion in the backroom"
       },
       {
-        "text": "В запросе на мойки возвращать еще и количество камер (en)"
+        "text": "Return the number of cameras in request for carwashes "
       }
     ]
   },
@@ -68,16 +68,16 @@
     "title": "complete",
     "tasks": [
       {
-        "text": "Убрать время из даты (en)"
+        "text": "Remove time from date"
       },
       {
-        "text": "Добавить запоминание периода в LS (en)"
+        "text": "Add a period record in LS"
       },
       {
-        "text": "Поправить таблицу Events, использовать этот подход во всех таблицах (en)"
+        "text": "Fix Events table, use this approach in all tables"
       },
       {
-        "text": "Создать ендпоинт для получения таблицы пополнений (en)"
+        "text": "Create endpoint to get the replenishment table"
       }
     ]
   }
