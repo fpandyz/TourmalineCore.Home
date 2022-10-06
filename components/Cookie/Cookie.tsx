@@ -3,15 +3,19 @@ import { useState, useEffect } from 'react';
 import { getCookie, setCookie } from 'cookies-next';
 
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import { OptionYM } from '../../types/globals';
 
 const cookieAccept = 'cookieAccept';
 
-declare global {
-  interface Window {
-    ym: (id: number, funcName: string, option: any) => unknown;
-    gtag: (config: string, id: string) => unknown;
-  }
-}
+const yandexId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
+const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';
+
+export const optionYandexMetrika: OptionYM = {
+  clickmap: true,
+  trackLinks: true,
+  accurateTrackBounce: true,
+  webvisor: true,
+};
 
 function Cookie() {
   const { t } = useTranslation('cookie');
@@ -19,7 +23,7 @@ function Cookie() {
 
   useEffect(() => {
     if (typeof getCookie(cookieAccept) === 'boolean') {
-      setIsCookie(false);
+      setIsCookie(true);
     } else {
       setIsCookie(false);
     }
@@ -41,14 +45,10 @@ function Cookie() {
           onClick={() => {
             setCookie(cookieAccept, true);
 
-            window.ym(89913543, 'init', {
-              clickmap: true,
-              trackLinks: true,
-              accurateTrackBounce: true,
-              webvisor: true,
-            });
+            window.gtag('js', new Date());
+            window.gtag('config', googleId);
 
-            window.gtag('config', 'UA-171018032-1');
+            window.ym(Number(yandexId), 'init', optionYandexMetrika);
           }}
         >
           {t('accept')}

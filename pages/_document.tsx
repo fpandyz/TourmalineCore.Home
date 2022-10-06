@@ -2,6 +2,8 @@ import Document, {
   Html, Head, Main, NextScript, DocumentContext,
 } from 'next/document';
 
+import { optionYandexMetrika } from '../components/Cookie/Cookie';
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -16,10 +18,10 @@ class MyDocument extends Document {
   }
 
   render() {
-    // const isProduction = process.env.NODE_ENV === 'production';
-    const isCookieAccept = this.props.cookieAccept;
-
-    const isProduction = true;
+    const isProduction = process.env.NODE_ENV === 'production';
+    const isCookieAccept = (this.props as any).cookieAccept;
+    const yandexId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
+    const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
     return (
       <Html>
@@ -40,7 +42,7 @@ class MyDocument extends Document {
         </Head>
 
         <body>
-          <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-171018032-1" />
+          <script defer src={`https://www.googletagmanager.com/gtag/js?id=${googleId}`} />
           <script
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
@@ -48,10 +50,10 @@ class MyDocument extends Document {
 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
-            if (${isProduction} && ${isCookieAccept} && false) {
-              gtag('config', 'UA-171018032-1');
+            if (${isProduction} && ${isCookieAccept}) {
+              gtag('js', new Date());
+              gtag('config', '${googleId}');
             }`,
             }}
           />
@@ -71,17 +73,12 @@ class MyDocument extends Document {
               (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
               if (${isProduction} && ${isCookieAccept}) {
-                ym(89913543, "init", {
-                  clickmap: true,
-                  trackLinks: true,
-                  accurateTrackBounce: true,
-                  webvisor: true
-                })
+                ym(${yandexId}, "init", ${JSON.stringify(optionYandexMetrika)})
               }
             `,
             }}
           />
-          <noscript><div><img src="https://mc.yandex.ru/watch/89913543" style={{ position: 'absolute', left: '-9999px' }} alt="" /></div></noscript>
+          <noscript><div><img src={`https://mc.yandex.ru/watch/${yandexId}`} style={{ position: 'absolute', left: '-9999px' }} alt="" /></div></noscript>
         </body>
       </Html>
     );
