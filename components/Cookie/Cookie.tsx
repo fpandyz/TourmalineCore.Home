@@ -42,28 +42,34 @@ function Cookie() {
 
         <PrimaryButton
           className="cookie__accept"
-          onClick={() => {
-            setCookie(cookieAccept, true);
-
-            window.gtag('js', new Date());
-            window.gtag('config', googleId);
-
-            window.ym(Number(yandexId), 'init', optionYandexMetrika);
-          }}
+          onClick={acceptCookie}
         >
           {t('accept')}
         </PrimaryButton>
         <PrimaryButton
           className="cookie__reject"
-          onClick={() => {
-            setCookie(cookieAccept, false);
-          }}
+          onClick={rejectCookie}
         >
           {t('reject')}
         </PrimaryButton>
       </div>
     </div>
   );
+
+  function acceptCookie() {
+    setCookie(cookieAccept, true);
+    setIsCookie(true);
+
+    window.gtag('js', new Date());
+    window.gtag('config', googleId);
+
+    window.ym(Number(yandexId), 'init', optionYandexMetrika);
+  }
+
+  function rejectCookie() {
+    setCookie(cookieAccept, false);
+    setIsCookie(true);
+  }
 }
 
 export default Cookie;
