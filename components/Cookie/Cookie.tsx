@@ -57,13 +57,17 @@ function Cookie() {
   );
 
   function acceptCookie() {
+    const isProduction = process.env.NODE_ENV === 'production';
+
     setCookie(cookieAccept, true);
     setIsCookie(true);
 
-    window.gtag('js', new Date());
-    window.gtag('config', googleId);
+    if (isProduction) {
+      window.gtag('js', new Date());
+      window.gtag('config', googleId);
 
-    window.ym(Number(yandexId), 'init', optionYandexMetrika);
+      window.ym(Number(yandexId), 'init', optionYandexMetrika);
+    }
   }
 
   function rejectCookie() {
