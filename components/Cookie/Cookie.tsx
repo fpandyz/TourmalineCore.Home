@@ -79,7 +79,7 @@ function Cookie() {
   }
 
   function generateLinkWithText() {
-    const textWithLink = Object.entries(t('text', { returnObjects: true }));
+    const textWithLink: [string, string][] = Object.entries(t('text', { returnObjects: true }));
     return (
       <>
         {textWithLink.map(([key, value]) => {
