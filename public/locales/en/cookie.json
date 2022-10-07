@@ -1,5 +1,9 @@
 {
-  "text": "We use cookies to gather analytics and marketing data to make it easier for you to use our website",
+  "text": {
+    "textBeforeLink": "We use",
+    "textLink": "cookies",
+    "textAfterLink": "to gather analytics and marketing data to make it easier for you to use our website"
+  },
   "accept": "Accept",
   "reject": "Reject"
 }
