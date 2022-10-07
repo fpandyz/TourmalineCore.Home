@@ -9,6 +9,10 @@
   background-image: $main-gradient-300;
   background-color: $color-purple-black;
 
+  &__link {
+    font-size: 16px;
+  }
+
   &__inner {
     @include tablet {
       display: flex;

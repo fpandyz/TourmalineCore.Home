@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { OptionYM } from '../../types/globals';
+import ExternalLink from '../ExternalLink/ExternalLink';
 
 const cookieAccept = 'cookieAccept';
 
@@ -87,9 +88,14 @@ function Cookie() {
             return (
               <>
                 {' '}
-                <a href={`documents/cookie-information-${router.locale}.pdf`} target="_blank" rel="noreferrer">
+                <ExternalLink
+                  className="cookie__link"
+                  href={`documents/cookie-information-${router.locale}.pdf`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {value}
-                </a>
+                </ExternalLink>
                 {' '}
               </>
             );
