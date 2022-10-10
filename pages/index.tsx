@@ -113,6 +113,7 @@ export default function HomePage() {
           animationName="fade-up"
           data-auto-padding="form-block"
         />
+
       </LayoutHomePage>
     </>
   );
@@ -131,6 +132,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'navigation',
       'workStructure',
       'mistakes',
+      'cookie',
       'adaptationToProject',
       'process',
       'tools',
