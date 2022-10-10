@@ -8,6 +8,7 @@ import { AppProps } from 'next/dist/shared/lib/router/router';
 import AOS from 'aos';
 import { useEffect } from 'react';
 import { isMobileOnly } from 'react-device-detect';
+import Cookie from '../components/Cookie/Cookie';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -26,6 +27,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Tourmaline Core</title>
       </Head>
+
+      <Cookie />
 
       <Component {...pageProps} />
     </>

@@ -39,6 +39,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'articles',
       'footer',
       'pageNotFound',
+      'cookie',
     ])),
   },
 });
