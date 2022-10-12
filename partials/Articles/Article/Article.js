@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -9,6 +10,7 @@ const DynamicCommentsComponent = dynamic(() => import('../Comments/Comments'), {
 
 export default function Article({
   markdown,
+  articleUrl,
 }) {
   const { t } = useTranslation('articles');
 
@@ -19,7 +21,27 @@ export default function Article({
       </Link>
 
       <article className="article-page__article">
-        <ReactMarkdown remarkPlugins={[gfm]} rehypePlugins={[rehypeHighlight]}>{markdown}</ReactMarkdown>
+        <ReactMarkdown
+          remarkPlugins={[gfm]}
+          rehypePlugins={[rehypeHighlight]}
+          components={{
+            img: ({ src, alt, title }) => (
+              <img
+                src={`${articleUrl}${src.replace(/\.\/images/, '/images')}`}
+                alt={alt}
+                title={title}
+                style={{
+                  maxWidth: '100%',
+                }}
+              />
+            ),
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
+            a: ({ href, title, children }) => <a href={href} target="_blank" rel="noreferrer" title={title}>{children}</a>,
+          }}
+        >
+          {markdown}
+
+        </ReactMarkdown>
       </article>
 
       <div className="article-page__comments">

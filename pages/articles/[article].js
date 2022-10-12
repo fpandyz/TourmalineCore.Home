@@ -7,10 +7,12 @@ import Article from '../../partials/Articles/Article/Article';
 import { fetchArticle } from '../../partials/Articles/fetchHelpers/fetchArticle';
 import { fetchMetadata } from '../../partials/Articles/fetchHelpers/fetchMetadata';
 import { fetchArticlesListWithMeta } from '../../partials/Articles/fetchHelpers/fetchArticlesListWithMeta';
+import { getArticleUrl } from '../../common/utils/articleUrl';
 
 export default function ArticlesPage({
   article,
   metadata,
+  articleUrl,
 }) {
   return (
     <>
@@ -28,7 +30,7 @@ export default function ArticlesPage({
       />
 
       <Layout>
-        <Article markdown={article} />
+        <Article markdown={article} articleUrl={articleUrl} />
       </Layout>
     </>
   );
@@ -68,12 +70,14 @@ export async function getStaticProps({
 
   const article = await fetchArticle(`${currentArticleFolder.name}.md`, locale);
   const metadata = await fetchMetadata(`${currentArticleFolder.name}.md`, locale);
+  const articleUrl = getArticleUrl(currentArticleFolder.name, locale);
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common', 'footer', 'articles', 'cookie'])),
       article,
       metadata,
+      articleUrl,
     },
   };
 }

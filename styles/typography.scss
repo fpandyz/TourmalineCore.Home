@@ -9,9 +9,15 @@ p {
 
 ul,
 ol {
-  list-style: none;
+  list-style: auto;
   margin: 0;
   padding: 0;
+}
+
+.article-page ol,
+.article-page ul {
+  list-style: revert;
+  padding: revert;
 }
 
 .title-type-1 {

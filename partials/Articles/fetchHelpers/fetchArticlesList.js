@@ -18,6 +18,8 @@ function getAdaptedArticles(tree = []) {
   );
 }
 
+const filterDraftFiles = (list) => list.filter((listItem) => !listItem.path.includes('[draft]'));
+
 function listToTree(list) {
   const result = [];
   const level = { result };
@@ -37,5 +39,3 @@ function listToTree(list) {
 
   return result;
 }
-
-const filterDraftFiles = (list) => list.filter((listItem) => !listItem.path.includes('[draft]'));
