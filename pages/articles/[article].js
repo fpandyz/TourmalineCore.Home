@@ -30,7 +30,11 @@ export default function ArticlesPage({
       />
 
       <Layout>
-        <Article markdown={article} articleUrl={articleUrl} />
+        <Article
+          markdown={article}
+          articleUrl={articleUrl}
+          datePublish={metadata.datePublish}
+        />
       </Layout>
     </>
   );

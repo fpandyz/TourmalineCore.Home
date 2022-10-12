@@ -47,6 +47,25 @@
   border-collapse: collapse;
 }
 
+.article-page__info {
+  margin-bottom: 32px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 56px;
+  }
+}
+
+.article-page__date-publish {
+  margin-top: 32px;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
+}
+
 .article-page td,
 .article-page th {
   border: 1px solid #5c6370;

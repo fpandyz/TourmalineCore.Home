@@ -108,15 +108,6 @@ p + p {
   }
 }
 
-.backlink {
-  display: inline-block;
-  margin-bottom: 32px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 56px;
-  }
-}
-
 .visually-hidden {
   display: none;
 }

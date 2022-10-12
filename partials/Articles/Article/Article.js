@@ -11,14 +11,26 @@ const DynamicCommentsComponent = dynamic(() => import('../Comments/Comments'), {
 export default function Article({
   markdown,
   articleUrl,
+  datePublish,
 }) {
   const { t } = useTranslation('articles');
 
   return (
     <div className="container article-page">
-      <Link href="/articles">
-        <a className="backlink">{t('backlinkLabel')}</a>
-      </Link>
+
+      <div className="article-page__info">
+        <Link href="/articles">
+          <a>{t('backlinkLabel')}</a>
+        </Link>
+
+        {datePublish && (
+          <div className="article-page__date-publish">
+            Дата публикации:
+            {' '}
+            {datePublish}
+          </div>
+        )}
+      </div>
 
       <article className="article-page__article">
         <ReactMarkdown
