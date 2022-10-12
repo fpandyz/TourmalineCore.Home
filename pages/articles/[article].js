@@ -33,7 +33,7 @@ export default function ArticlesPage({
         <Article
           markdown={article}
           articleUrl={articleUrl}
-          datePublish={metadata.datePublish}
+          datePublication={metadata.datePublication}
         />
       </Layout>
     </>
