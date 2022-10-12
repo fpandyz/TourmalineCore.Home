@@ -15,7 +15,6 @@ export default function Article({
 }) {
   const { t } = useTranslation('articles');
 
-  console.log(datePublication);
   return (
     <div className="container article-page">
 
