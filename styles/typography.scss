@@ -14,6 +14,12 @@ ol {
   padding: 0;
 }
 
+.article-page ol,
+.article-page ul {
+  list-style: revert;
+  padding: revert;
+}
+
 .title-type-1 {
   font-weight: 400;
   font-size: 34px;
