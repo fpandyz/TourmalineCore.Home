@@ -1,4 +1,6 @@
 .button {
+  $this: &;
+
   @include type-body-2;
 
   position: relative;
@@ -50,6 +52,10 @@
     background-position: 90%;
   }
 
+  &--zh {
+    @include type-body-2-zh;
+  }
+
   @media (hover: hover) {
     &:hover {
       background-position: 90%;
@@ -58,9 +64,15 @@
 }
 
 .primary-button {
+  $this: &;
+
   border-radius: 30px;
   padding: 20px 0;
   width: 100%;
+
+  &--zh {
+    @include type-body-2-zh;
+  }
 
   @include tablet {
     padding: 20px 56px;
@@ -69,6 +81,8 @@
 }
 
 .secondary-button {
+  $this: &;
+
   display: flex;
   align-items: center;
   border: none;
@@ -101,6 +115,12 @@
   &:active {
     .button {
       background-position: 90%;
+    }
+  }
+
+  &--zh {
+    #{$this}__text {
+      @include type-body-2-zh;
     }
   }
 

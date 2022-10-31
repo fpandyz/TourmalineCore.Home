@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import useIsChineseLanguage from '../../../common/hooks/useIsChineseLanguage';
 
 import IconCursor from '../../../icons/icon-cursor.svg';
 
@@ -31,7 +32,12 @@ function MistakeItem({
   ...props
 }: MistakeItemProps) {
   return (
-    <div className="mistake-item" {...props}>
+    <div
+      className={clsx('mistake-item', {
+        'mistake-item--zh': useIsChineseLanguage(),
+      })}
+      {...props}
+    >
       <div className="mistake-item__title">{title}</div>
 
       {mistakes.map(({ text, developer, cursor }, index) => (

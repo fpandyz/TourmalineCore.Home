@@ -82,17 +82,19 @@
   &__arrow-large {
     position: absolute;
     right: -24px;
-    top: 3px;
+    top: 50%;
     max-width: 96px;
     opacity: 1;
+    transform: translateY(-50%);
     transition: opacity 0.8s;
   }
 
   &__arrow-long {
     position: absolute;
     right: -114px;
-    top: 3px;
+    top: 50%;
     opacity: 0;
+    transform: translateY(-50%);
     transition: opacity 0.4s;
   }
 
@@ -109,6 +111,12 @@
     #{$this}__arrow-long {
       opacity: 1;
       transition: opacity 0.8s;
+    }
+  }
+
+  &--zh {
+    #{$this}__link {
+      @include type-body-2-zh;
     }
   }
 

@@ -1,9 +1,11 @@
+import clsx from 'clsx';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
   FormEvent, KeyboardEvent, useMemo, useRef,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
 import { DEFAULT_LOCALE } from '../../utils/consts/const';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
@@ -38,7 +40,9 @@ function Form({
   return (
     <>
       <form
-        className="form"
+        className={clsx('form', {
+          'form--zh': useIsChineseLanguage(),
+        })}
         onSubmit={handleFormSubmit}
       >
         <Input

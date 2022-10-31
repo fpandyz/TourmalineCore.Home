@@ -2,12 +2,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
+import clsx from 'clsx';
 import LangSwitch from '../LangSwitch/LangSwitch';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconLogo from '../../icons/logo.svg';
 import IconBurger from '../../icons/burger.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
+import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
 
 type HeaderLinks = {
   id: string;
@@ -29,7 +31,10 @@ function Header() {
 
   return (
     <>
-      <header className="header">
+      <header className={clsx('header', {
+        'header--zh': useIsChineseLanguage(),
+      })}
+      >
         <div className="container header__inner">
           <Link href="/">
             <a

@@ -1,6 +1,7 @@
 import { Link } from 'react-scroll';
 import { clsx } from 'clsx';
 import { useState } from 'react';
+import useIsChineseLanguage from '../../../../common/hooks/useIsChineseLanguage';
 
 function ScrollLink({
   index,
@@ -38,6 +39,7 @@ function ScrollLink({
         type="button"
         className={clsx('navigation__link', {
           'navigation__link--active': isActive,
+          'navigation__link--zh': useIsChineseLanguage(),
         })}
         onClick={scrollTo}
       >

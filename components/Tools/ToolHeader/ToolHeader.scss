@@ -63,6 +63,24 @@
     height: 10px;
   }
 
+  &--zh {
+    #{$this}__title {
+      font-size: 14px;
+
+      @include desktop-xl {
+        font-size: 22px;
+      }
+    }
+
+    #{$this}__count {
+      font-size: 12px;
+
+      @include desktop-xl {
+        font-size: 20px;
+      }
+    }
+  }
+
   &--to-do {
     border-color: $color-white-alpha-100;
 

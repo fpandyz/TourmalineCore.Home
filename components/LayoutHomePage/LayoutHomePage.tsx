@@ -1,10 +1,12 @@
 import { ReactNode } from 'react';
 
+import clsx from 'clsx';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import HeroBlockHomePage from '../HeroBlockHomePage/HeroBlockHomePage';
 import Navigation from '../Navigation/Navigation';
 import { NavigationLinks } from '../../utils/consts/navigation';
+import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
 
 function LayoutHomePage({
   children,
@@ -14,7 +16,10 @@ function LayoutHomePage({
   navigationLinks: NavigationLinks[];
 }) {
   return (
-    <div className="layout-home-page">
+    <div className={clsx('layout-home-page', {
+      'layout--zh': useIsChineseLanguage(),
+    })}
+    >
       <div className="layout-home-page__header">
         <Header />
         <HeroBlockHomePage firstBlockSelector={navigationLinks[0]} />

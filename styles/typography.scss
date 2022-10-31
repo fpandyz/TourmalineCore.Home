@@ -115,3 +115,72 @@ ol {
     line-height: 1.5;
   }
 }
+
+@mixin type-body-2-zh {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.1;
+
+  @include desktop-xl {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+}
+
+.layout--zh {
+  .title-type-1 {
+    font-size: 38px;
+
+    @include desktop {
+      font-size: 56px;
+    }
+
+    @include desktop-xl {
+      font-size: 64px;
+    }
+  }
+
+  .title-type-2 {
+    font-size: 28px;
+
+    @include desktop {
+      font-size: 36px;
+    }
+
+    @include desktop-xl {
+      font-size: 48px;
+    }
+  }
+
+  .title-type-3 {
+    font-size: 24px;
+
+    @include desktop {
+      font-size: 32px;
+    }
+
+    @include desktop-xl {
+      font-size: 40px;
+    }
+  }
+
+  .title-type-4 {
+    font-size: 20px;
+
+    @include desktop {
+      font-size: 22px;
+    }
+
+    @include desktop-xl {
+      font-size: 28px;
+    }
+  }
+
+  .caption {
+    font-size: 16px;
+
+    @include desktop-xl {
+      font-size: 20px;
+    }
+  }
+}

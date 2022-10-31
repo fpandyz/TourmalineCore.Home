@@ -60,6 +60,36 @@
     line-height: 1.3;
   }
 
+  &--zh {
+    #{$this}__label {
+      @include desktop-xl {
+        font-size: 28px;
+      }
+    }
+
+    #{$this}__description {
+      @include desktop {
+        font-size: 18px;
+      }
+
+      @include desktop-xl {
+        font-size: 24px;
+      }
+    }
+
+    #{this}__control {
+      &:not(:placeholder-shown) ~ #{$this}__label {
+        @include type-body-2-zh;
+      }
+
+      &:focus {
+        ~ #{$this}__label {
+          @include type-body-2-zh;
+        }
+      }
+    }
+  }
+
   &--is-error {
     color: $color-error;
 
