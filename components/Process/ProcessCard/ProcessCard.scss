@@ -152,10 +152,10 @@
     }
 
     #{$this}__content {
-      font-size: 20px;
+      font-size: 16px;
 
       @include desktop-xl {
-        font-size: 22px;
+        font-size: 20px;
       }
     }
   }

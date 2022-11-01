@@ -3,9 +3,11 @@ import { useState, useEffect, Fragment } from 'react';
 import { getCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
+import clsx from 'clsx';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { OptionYM } from '../../types/globals';
 import ExternalLink from '../ExternalLink/ExternalLink';
+import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
 
 const cookieAccept = 'cookieAccept';
 
@@ -38,7 +40,10 @@ function Cookie() {
   }
 
   return (
-    <div className="cookie">
+    <div className={clsx('cookie', {
+      'cookie--zh': useIsChineseLanguage(),
+    })}
+    >
       <div className="cookie__inner">
         <div className="cookie__text">
           {generateLinkWithText()}

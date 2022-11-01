@@ -50,12 +50,10 @@
 
   &--zh {
     #{$this}__approval {
-      @include desktop {
-        font-size: 16px;
+      font-size: 16px;
 
-        .external-link {
-          font-size: 16px;
-        }
+      .external-link {
+        font-size: 16px;
       }
 
       @include desktop-xl {

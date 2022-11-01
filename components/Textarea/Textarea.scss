@@ -62,15 +62,15 @@
 
   &--zh {
     #{$this}__label {
+      font-size: 22px;
+
       @include desktop-xl {
         font-size: 28px;
       }
     }
 
     #{$this}__description {
-      @include desktop {
-        font-size: 18px;
-      }
+      font-size: 18px;
 
       @include desktop-xl {
         font-size: 24px;

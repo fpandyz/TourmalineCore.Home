@@ -18,7 +18,7 @@ function Textarea({
   ...props
 }: TextareaProps) {
   return (
-    <div className={clsx('title-type-4', 'textarea', className, {
+    <div className={clsx('textarea', className, {
       'textarea--is-error': isError,
       'textarea--zh': useIsChineseLanguage(),
     })}

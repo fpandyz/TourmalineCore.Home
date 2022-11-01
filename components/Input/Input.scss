@@ -71,9 +71,7 @@
     }
 
     #{$this}__description {
-      @include desktop {
-        font-size: 18px;
-      }
+      font-size: 18px;
 
       @include desktop-xl {
         font-size: 24px;

@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { ButtonHTMLAttributes, DetailedHTMLProps, useState } from 'react';
+import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
 
 import IconlLargeArrow from '../../icons/icon-large-arrow.svg';
 
@@ -25,7 +26,10 @@ function Accordion({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="accordion">
+    <div className={clsx('accordion', {
+      'accordion--zh': useIsChineseLanguage(),
+    })}
+    >
       <button
         type="button"
         onClick={() => {
