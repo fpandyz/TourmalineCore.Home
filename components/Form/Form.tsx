@@ -5,17 +5,15 @@ import {
   FormEvent, KeyboardEvent, useMemo, useRef, useState,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
-import { DEFAULT_LOCALE } from '../../utils/consts/const';
 import { isMobile as isMobileOrTablet } from 'react-device-detect';
-
-import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
+import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import Textarea from '../Textarea/Textarea';
 import Spiner from '../Spiner/Spiner';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 enum ReCAPTCHALanguage {
   'en' = 'en',

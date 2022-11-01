@@ -9,8 +9,8 @@ import { useAutoClose } from '../../common/hooks/useAutoClose';
 import { languages } from '../../common/utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
-import { DEFAULT_LOCALE } from '../../utils/consts/const';
 import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);

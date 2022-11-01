@@ -10,7 +10,7 @@ import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 enum ImageSrc {
   'en' = '/images/adaptation-to-project-en.webp',
   'ru' = '/images/adaptation-to-project-ru.webp',
-  'zh' = '/images/adaptation-to-project-ru.webp',
+  'zh' = '/images/adaptation-to-project-zh.webp',
 }
 
 function AdaptationToProject({
