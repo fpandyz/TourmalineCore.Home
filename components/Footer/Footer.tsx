@@ -1,15 +1,23 @@
 import { useTranslation } from 'next-i18next';
 
 import Link from 'next/link';
+import clsx from 'clsx';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
 import IconLogo from '../../icons/logo.svg';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 function Footer() {
   const { t } = useTranslation('footer');
 
   return (
-    <footer className="footer" itemScope itemType="http://schema.org/Organization">
+    <footer
+      className={clsx('footer', {
+        'footer--zh': isChineseLanguage(),
+      })}
+      itemScope
+      itemType="http://schema.org/Organization"
+    >
       <div className="container footer__inner">
         <div className="footer__about-us">
           <div className="footer__short-information">

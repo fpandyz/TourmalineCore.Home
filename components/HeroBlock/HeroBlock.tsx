@@ -1,3 +1,6 @@
+import clsx from 'clsx';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
+
 function HeroBlock({
   title,
   gradientTitle,
@@ -10,7 +13,10 @@ function HeroBlock({
   Button: JSX.Element;
 }) {
   return (
-    <section className="hero-block">
+    <section className={clsx('hero-block', {
+      'hero-block--zh': isChineseLanguage(),
+    })}
+    >
       <div className="container hero-block__wrapper">
         <div className="hero-block__inner">
           <h1 className="title-type-1">
