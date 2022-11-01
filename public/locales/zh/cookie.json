@@ -1,9 +1,9 @@
 {
   "text": {
-    "textBeforeLink": "Мы используем файлы",
-    "textLink": "cookie",
-    "textAfterLink": "для аналитики и маркетинга, чтобы вам было удобно пользоваться нашим веб-сайтом"
+    "textBeforeLink": "为本网站成为更好, 我们把",
+    "textLink": "Cookie",
+    "textAfterLink": "收集数据。"
   },
-  "accept": "Хорошо",
-  "reject": "Отказаться"
+  "accept": "同意",
+  "reject": "拒绝"
 }

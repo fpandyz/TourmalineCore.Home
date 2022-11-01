@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { getCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
@@ -86,7 +86,7 @@ function Cookie() {
         {textWithLink.map(([key, value]) => {
           if (key === 'textLink') {
             return (
-              <>
+              <Fragment key={value}>
                 {' '}
                 <ExternalLink
                   className="cookie__link"
@@ -97,7 +97,7 @@ function Cookie() {
                   {value}
                 </ExternalLink>
                 {' '}
-              </>
+              </Fragment>
             );
           }
 
