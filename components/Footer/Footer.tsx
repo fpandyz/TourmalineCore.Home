@@ -1,9 +1,8 @@
 import { useTranslation } from 'next-i18next';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import SocialLinks from '../SocialLinks/SocialLinks';
-
-import IconLogo from '../../icons/logo.svg';
 
 function Footer() {
   const { t } = useTranslation('footer');
@@ -15,7 +14,10 @@ function Footer() {
           <div className="footer__short-information">
             <Link href="/">
               <a className="footer__logo" aria-label="Footer logo">
-                <IconLogo />
+                <Image
+                  src="/images/logo-new.png"
+                  layout="fill"
+                />
               </a>
             </Link>
 
