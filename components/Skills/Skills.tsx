@@ -5,11 +5,16 @@ import { getSkills } from './getSkills';
 import Accordion from '../Accordion/Accordion';
 import { SectionProps } from '../../types/globals';
 
+interface ISkills extends SectionProps {
+  clickedAccarion?: () => unknown;
+}
+
 function Skills({
+  clickedAccarion,
   animationName,
   id,
   ...props
-}: SectionProps) {
+}: ISkills) {
   const { t } = useTranslation('skills');
 
   const teamSkills = getSkills(t);
@@ -42,6 +47,7 @@ function Skills({
               technologies={item.technologies}
               data-aos="fade-up"
               data-aos-delay={50 * (index + 1)}
+              clickedAccarion={clickedAccarion}
             />
           ))}
         </div>

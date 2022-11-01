@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { Carousel } from 'react-responsive-carousel';
 import { SectionProps } from '../../types/globals';
 
-import { completedProjects } from '../../utils/consts/completedProjects';
+import { completedProjects } from '../../common/utils/consts/completedProjects';
 import CompletedProjectsCard from './components/CompletedProjectsCard/CompletedProjectsCard';
 
 function CompletedProjects({

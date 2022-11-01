@@ -1,16 +1,27 @@
 import Document, {
-  Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps,
+  Html, Head, Main, NextScript, DocumentContext,
 } from 'next/document';
 
+import { optionYandexMetrika } from '../components/Cookie/Cookie';
+
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
 
-    return { ...initialProps };
+    let cookieAccept = false;
+    if (ctx.req && ctx.req.headers.cookie) {
+      const { cookie } = ctx.req.headers;
+      cookieAccept = cookie.includes('cookieAccept=true');
+    }
+
+    return { ...initialProps, cookieAccept };
   }
 
   render() {
     const isProduction = process.env.NODE_ENV === 'production';
+    const isCookieAccept = (this.props as any).cookieAccept;
+    const yandexId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
+    const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
     return (
       <Html>
@@ -30,18 +41,19 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         </Head>
 
-        <body>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171018032-1" />
+        <body className="default-scroll">
+          <script defer src={`https://www.googletagmanager.com/gtag/js?id=${googleId}`} />
           <script
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
 
-            if (${isProduction}) {
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            if (${isProduction} && ${isCookieAccept}) {
               gtag('js', new Date());
-              gtag('config', 'UA-171018032-1');
+              gtag('config', '${googleId}');
             }`,
             }}
           />
@@ -54,21 +66,19 @@ class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `
-            if (${isProduction}) {
               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-              m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+              var z = null;m[i].l=1*new Date();
+              for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
               (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-              ym(89913543, "init", {
-                    clickmap: true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-              })
-            }
+              if (${isProduction} && ${isCookieAccept}) {
+                ym(${yandexId}, "init", ${JSON.stringify(optionYandexMetrika)})
+              }
             `,
             }}
           />
-          <noscript><div><img src="https://mc.yandex.ru/watch/89913543" style={{ position: 'absolute', left: '-9999px' }} alt="" /></div></noscript>
+          <noscript><div><img src={`https://mc.yandex.ru/watch/${yandexId}`} style={{ position: 'absolute', left: '-9999px' }} alt="" /></div></noscript>
         </body>
       </Html>
     );

@@ -63,8 +63,17 @@
     }
   }
 
+  &__list {
+    margin-top: 48px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-top: 104px;
+      margin-bottom: 0;
+    }
+  }
+
   &__list-title {
-    margin-top: 104px;
     margin-bottom: 32px;
   }
 

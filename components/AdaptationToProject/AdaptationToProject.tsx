@@ -5,10 +5,10 @@ import { Element } from 'react-scroll';
 import { useMemo } from 'react';
 
 import { SectionProps } from '../../types/globals';
-import { DEFAULT_LOCALE } from '../../utils/consts/const';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 enum ImageSrc {
-  'en' = '/images/adaptation-to-project-ru.webp',
+  'en' = '/images/adaptation-to-project-en.webp',
   'ru' = '/images/adaptation-to-project-ru.webp',
   'zh' = '/images/adaptation-to-project-ru.webp',
 }
@@ -43,7 +43,7 @@ function AdaptationToProject({
           <div className="adaptation-to-project__subtitle">{t('subtitle')}</div>
 
           <div
-            className="scroll adaptation-to-project__scroll"
+            className="custom-scroll adaptation-to-project__scroll"
             data-aos="fade-up"
             data-aos-delay={100}
           >

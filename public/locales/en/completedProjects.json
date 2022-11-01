@@ -1,7 +1,7 @@
 {
-  "title": "Некоторые (en)",
-  "titleGradient": "реализованные проекты (en)",
-  "descriptionTradeHack": "Разработали сервис аналитики товаров для маркетплейса Wildberries (en)",
-  "descriptionFairAction": "Разработали сайт австралийской благотворительной организации (en)",
-  "goToProject": "Перейти на сайт (en)"
+  "title": "Some of our",
+  "titleGradient": "projects",
+  "descriptionTradeHack": "Service for gathering analytics by products and product categories on the Wildberries marketplace",
+  "descriptionFairAction": "Website for an Australian charity integrated with CMS",
+  "goToProject": "Go to website"
 }

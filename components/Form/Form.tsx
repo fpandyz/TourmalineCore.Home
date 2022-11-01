@@ -2,16 +2,20 @@ import clsx from 'clsx';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
-  FormEvent, KeyboardEvent, useMemo, useRef,
+  FormEvent, KeyboardEvent, useMemo, useRef, useState,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
 import { DEFAULT_LOCALE } from '../../utils/consts/const';
+import { isMobile as isMobileOrTablet } from 'react-device-detect';
+
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import Textarea from '../Textarea/Textarea';
+import Spiner from '../Spiner/Spiner';
 
 enum ReCAPTCHALanguage {
   'en' = 'en',
@@ -26,6 +30,8 @@ function Form({
 }) {
   const { t } = useTranslation('form');
   const router = useRouter();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
@@ -76,7 +82,11 @@ function Form({
             type="submit"
             className="form__button"
           >
-            {t('buttonText')}
+            {
+              isLoading
+                ? <Spiner />
+                : t('buttonText')
+            }
           </PrimaryButton>
           <div className="form__approval">
             {/* {t('approvedText')}
@@ -98,7 +108,7 @@ function Form({
   );
 
   function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
-    if (event.key === 'Enter' && event.shiftKey === false) {
+    if (event.key === 'Enter' && event.shiftKey === false && !isMobileOrTablet) {
       event.preventDefault();
 
       const buttonSubmit = document.querySelector<HTMLButtonElement>('.form__button');
@@ -111,27 +121,33 @@ function Form({
 
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
+    setIsLoading(true);
 
-    if (!recaptchaRef.current) {
-      return;
+    try {
+      if (!recaptchaRef.current) {
+        return;
+      }
+
+      const token = await recaptchaRef.current.executeAsync();
+
+      if (!token) {
+        return;
+      }
+
+      const formData = new FormData(event.target as HTMLFormElement);
+      formData.append('g-recaptcha-response', token);
+
+      onSubmit(formData);
+
+      recaptchaRef.current.reset();
+    } finally {
+      setIsLoading(false);
     }
-
-    const token = await recaptchaRef.current.executeAsync();
-
-    if (!token) {
-      return;
-    }
-
-    const formData = new FormData(event.target as HTMLFormElement);
-    formData.append('g-recaptcha-response', token);
-
-    onSubmit(formData);
-
-    recaptchaRef.current.reset();
   }
 
   function generateReCAPTCHAText() {
     const ReCAPTCHAText = t('recaptchaText', { returnObjects: true });
+
     return (
       <p>
         {Object.values<string | {

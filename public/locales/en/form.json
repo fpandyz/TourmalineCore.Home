@@ -1,19 +1,19 @@
 {
   "name": {
-    "label": "Имя (en)",
-    "description": "Чтобы мы знали, как к вам обращаться (en)"
+    "label": "Name",
+    "description": "So we know how to address you"
   },
   "email": {
-    "label": "Почта (en)",
-    "description": "Чтобы мы могли связаться с вами (en)"
+    "label": "Email",
+    "description": "So we could contact you"
   },
   "message": {
-    "label": "Сообщение (en)",
-    "description": "Тут можно задать вопрос, рассказать немного о себе, своем бизнесе или задаче, с которой мы можем вам помочь (en)"
+    "label": "Message",
+    "description": "Ask a question or write about yourself and the tasks you need a hand with"
   },
-  "buttonText": "Отправить (en)",
-  "approvedText": "Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с (en)",
-  "approvedLink": "положением о конфиденциальности данных. (en)",
+  "buttonText": "Send",
+  "approvedText": "This site uses reCAPTCHA. By clicking ''Submit'', you agree to the Terms of Use and Google ",
+  "approvedLink": "Privacy Policy.",
   "recaptchaText": {
     "generalText": "This site is protected by reCAPTCHA and the Google",
     "privacyLink": {

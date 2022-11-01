@@ -24,7 +24,7 @@ function Tools({
         <h2 className="title-type-3">{t('title')}</h2>
 
         <div className="tools__subtitle">{t('subtitle')}</div>
-        <div className="scroll tools__list">
+        <div className="custom-scroll tools__list">
           {tools.map((tool, index) => (
             <div
               key={tool.localizationTitle}

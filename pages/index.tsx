@@ -2,6 +2,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 import { Element } from 'react-scroll';
+import { useEffect, useState } from 'react';
+import AOS from 'aos';
 
 import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
 import PageHead from '../components/PageHead/PageHead';
@@ -16,14 +18,22 @@ import WorkStructure from '../components/WorkStructure/WorkStructure';
 import Mistakes from '../components/Mistakes/Mistakes';
 import FormBlock from '../components/FormBlock/FormBlock';
 
-import { NavigationLinks, navigationLinks } from '../utils/consts/navigation';
+import { NavigationLinks, navigationLinks } from '../common/utils/consts/navigation';
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
+import useDeviceSize from '../common/hooks/useDeviceSize';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
   useSectionAutoPaddings();
+
+  const deviceSize = useDeviceSize();
+  const [clickedAccarion, setClickedAccarion] = useState(false);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [deviceSize.width, clickedAccarion]);
 
   return (
     <>
@@ -53,6 +63,7 @@ export default function HomePage() {
           id={NavigationLinks.skills}
           data-auto-padding={NavigationLinks.skills}
           animationName="fade-up"
+          clickedAccarion={() => setClickedAccarion(!clickedAccarion)}
         />
 
         <section
@@ -102,6 +113,7 @@ export default function HomePage() {
           animationName="fade-up"
           data-auto-padding="form-block"
         />
+
       </LayoutHomePage>
     </>
   );
@@ -120,6 +132,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'navigation',
       'workStructure',
       'mistakes',
+      'cookie',
       'adaptationToProject',
       'process',
       'tools',
