@@ -2,11 +2,11 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
 import clsx from 'clsx';
-import { CompletedProject } from '../../../../utils/consts/completedProjects';
+import useIsChineseLanguage from '../../../../common/hooks/useIsChineseLanguage';
+import { CompletedProject } from '../../../../common/utils/consts/completedProjects';
 
 import IconLargeArrow from '../../../../icons/large-arrow.svg';
 import IconArrow from '../../../../icons/long-arrow.svg';
-import useIsChineseLanguage from '../../../../common/hooks/useIsChineseLanguage';
 
 function CompletedProjectsCard({
   completedProject,

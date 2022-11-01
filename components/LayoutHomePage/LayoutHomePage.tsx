@@ -5,8 +5,8 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import HeroBlockHomePage from '../HeroBlockHomePage/HeroBlockHomePage';
 import Navigation from '../Navigation/Navigation';
-import { NavigationLinks } from '../../utils/consts/navigation';
 import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import { NavigationLinks } from '../../common/utils/consts/navigation';
 
 function LayoutHomePage({
   children,
