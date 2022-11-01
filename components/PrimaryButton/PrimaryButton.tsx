@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 import clsx from 'clsx';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 type PrimaryButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
@@ -13,7 +13,7 @@ function PrimaryButton({
     <button
       type="button"
       className={clsx('button primary-button', className, {
-        'primary-button--zh': useIsChineseLanguage(),
+        'primary-button--zh': isChineseLanguage(),
       })}
       {...props}
     >

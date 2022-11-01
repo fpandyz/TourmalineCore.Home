@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import IconMail from '../../icons/mail.svg';
 import IconTelegram from '../../icons/telegram.svg';
 
 function SocialLinks() {
   return (
     <div className={clsx('social-links', {
-      'social-links--zh': useIsChineseLanguage(),
+      'social-links--zh': isChineseLanguage(),
     })}
     >
       <a

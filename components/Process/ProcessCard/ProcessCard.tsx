@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-import useIsChineseLanguage from '../../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../../common/utils/isChineseLanguage';
 
 interface ProcessCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   altHeader: string;
@@ -26,7 +26,7 @@ function ProcessCard({
   return (
     <div
       className={clsx('process-card', {
-        'process-card--zh': useIsChineseLanguage(),
+        'process-card--zh': isChineseLanguage(),
       })}
       {...props}
     >

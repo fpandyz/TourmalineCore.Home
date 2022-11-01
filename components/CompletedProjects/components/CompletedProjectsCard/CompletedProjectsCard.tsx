@@ -2,11 +2,11 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
 import clsx from 'clsx';
-import useIsChineseLanguage from '../../../../common/hooks/useIsChineseLanguage';
 import { CompletedProject } from '../../../../common/utils/consts/completedProjects';
 
 import IconLargeArrow from '../../../../icons/large-arrow.svg';
 import IconArrow from '../../../../icons/long-arrow.svg';
+import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
 
 function CompletedProjectsCard({
   completedProject,
@@ -20,7 +20,7 @@ function CompletedProjectsCard({
       href={completedProject.link}
       target="_blank"
       className={clsx('completed-project-card', {
-        'completed-project-card--zh': useIsChineseLanguage(),
+        'completed-project-card--zh': isChineseLanguage(),
       })}
       rel="noreferrer"
     >

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   id: string;
@@ -20,7 +20,7 @@ function Input({
   return (
     <div className={clsx('input', className, {
       'input--is-error': isError,
-      'input--zh': useIsChineseLanguage(),
+      'input--zh': isChineseLanguage(),
     })}
     >
       <div className="input__box">

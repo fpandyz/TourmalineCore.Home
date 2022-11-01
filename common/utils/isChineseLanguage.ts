@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 
-const useIsChineseLanguage = () => {
+const isChineseLanguage = () => {
   const router = useRouter();
 
   return router.locale === 'zh';
 };
 
-export default useIsChineseLanguage;
+export default isChineseLanguage;

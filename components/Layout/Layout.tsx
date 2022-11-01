@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { ReactNode } from 'react';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
@@ -11,7 +11,7 @@ export default function Layout({
 }) {
   return (
     <div className={clsx('layout', {
-      'layout--zh': useIsChineseLanguage(),
+      'layout--zh': isChineseLanguage(),
     })}
     >
       <Header />

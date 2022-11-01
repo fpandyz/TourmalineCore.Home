@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import useIsChineseLanguage from '../../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../../common/utils/isChineseLanguage';
 
 import IconCursor from '../../../icons/icon-cursor.svg';
 
@@ -34,7 +34,7 @@ function MistakeItem({
   return (
     <div
       className={clsx('mistake-item', {
-        'mistake-item--zh': useIsChineseLanguage(),
+        'mistake-item--zh': isChineseLanguage(),
       })}
       {...props}
     >

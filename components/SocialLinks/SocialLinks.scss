@@ -58,7 +58,11 @@
   &--zh {
 
     #{$this}__link {
-      font-size: 22px;
+      font-size: 18px;
+
+      @include tablet {
+        font-size: 22px;
+      }
 
       @include desktop-xl {
         font-size: 28px;

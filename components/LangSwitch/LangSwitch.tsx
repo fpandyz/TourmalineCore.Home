@@ -9,8 +9,8 @@ import { useAutoClose } from '../../common/hooks/useAutoClose';
 import { languages } from '../../common/utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
 import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -32,7 +32,7 @@ function LangSwitch() {
     <div
       ref={containerRef}
       className={clsx('lang-switch', {
-        'lang-switch--zh': useIsChineseLanguage(),
+        'lang-switch--zh': isChineseLanguage(),
       })}
     >
       <button

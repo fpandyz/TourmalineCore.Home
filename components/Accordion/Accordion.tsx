@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { ButtonHTMLAttributes, DetailedHTMLProps, useState } from 'react';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 import IconlLargeArrow from '../../icons/icon-large-arrow.svg';
 
@@ -27,7 +27,7 @@ function Accordion({
 
   return (
     <div className={clsx('accordion', {
-      'accordion--zh': useIsChineseLanguage(),
+      'accordion--zh': isChineseLanguage(),
     })}
     >
       <button

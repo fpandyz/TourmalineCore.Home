@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { OptionYM } from '../../types/globals';
 import ExternalLink from '../ExternalLink/ExternalLink';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 const cookieAccept = 'cookieAccept';
 
@@ -41,7 +41,7 @@ function Cookie() {
 
   return (
     <div className={clsx('cookie', {
-      'cookie--zh': useIsChineseLanguage(),
+      'cookie--zh': isChineseLanguage(),
     })}
     >
       <div className="cookie__inner">

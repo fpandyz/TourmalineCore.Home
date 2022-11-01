@@ -9,7 +9,7 @@ import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import IconLogo from '../../icons/logo.svg';
 import IconBurger from '../../icons/burger.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
-import useIsChineseLanguage from '../../common/hooks/useIsChineseLanguage';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 type HeaderLinks = {
   id: string;
@@ -32,7 +32,7 @@ function Header() {
   return (
     <>
       <header className={clsx('header', {
-        'header--zh': useIsChineseLanguage(),
+        'header--zh': isChineseLanguage(),
       })}
       >
         <div className="container header__inner">
