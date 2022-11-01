@@ -32,7 +32,7 @@ function MobileMenu({
             <a className="mobile-menu__logo">
               <span onClick={onCloseClick} aria-hidden="true">
                 <Image
-                  src="/images/logo-new.png"
+                  src="/images/logo.png"
                   layout="fill"
                 />
               </span>

@@ -15,7 +15,7 @@ function Footer() {
             <Link href="/">
               <a className="footer__logo" aria-label="Footer logo">
                 <Image
-                  src="/images/logo-new.png"
+                  src="/images/logo.png"
                   layout="fill"
                 />
               </a>

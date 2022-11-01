@@ -37,7 +37,7 @@ function Header() {
               aria-label="Header logo"
             >
               <Image
-                src="/images/logo-new.png"
+                src="/images/logo.png"
                 layout="fill"
               />
             </a>
