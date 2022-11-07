@@ -25,7 +25,7 @@ export default function PageHead({ seoData }) {
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta property="og:img" content="https://www.tourmalinecore.com/images/browser-preview.webp" />
+      <meta property="og:image" content="https://www.tourmalinecore.com/images/browser-preview.webp" />
       <meta property="og:image:width" content="300" />
       <meta property="og:image:height" content="300" />
 
