@@ -101,4 +101,14 @@
       color: $color-error;
     }
   }
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  @include desktop-xl {
+    font-size: 22px;
+    line-height: 1.5;
+  }
 }
