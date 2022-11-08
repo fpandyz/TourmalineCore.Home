@@ -2,9 +2,9 @@ import { useTranslation } from 'next-i18next';
 
 import Link from 'next/link';
 import clsx from 'clsx';
+import Image from 'next/image';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
-import IconLogo from '../../icons/logo.svg';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 function Footer() {
@@ -23,7 +23,10 @@ function Footer() {
           <div className="footer__short-information">
             <Link href="/">
               <a className="footer__logo" aria-label="Footer logo">
-                <IconLogo />
+                <Image
+                  src="/images/logo.png"
+                  layout="fill"
+                />
               </a>
             </Link>
 

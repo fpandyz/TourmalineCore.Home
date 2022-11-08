@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
 import clsx from 'clsx';
+import Image from 'next/image';
 import LangSwitch from '../LangSwitch/LangSwitch';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
-import IconLogo from '../../icons/logo.svg';
 import IconBurger from '../../icons/burger.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
@@ -41,7 +41,10 @@ function Header() {
               className="header__logo"
               aria-label="Header logo"
             >
-              <IconLogo />
+              <Image
+                src="/images/logo.png"
+                layout="fill"
+              />
             </a>
           </Link>
 
