@@ -1,9 +1,14 @@
+import clsx from 'clsx';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import IconMail from '../../icons/mail.svg';
 import IconTelegram from '../../icons/telegram.svg';
 
 function SocialLinks() {
   return (
-    <>
+    <div className={clsx('social-links', {
+      'social-links--zh': isChineseLanguage(),
+    })}
+    >
       <a
         className="social-links__link"
         href="mailto:contact@tourmalinecore.com"
@@ -27,7 +32,7 @@ function SocialLinks() {
           @tourmalinecore
         </span>
       </a>
-    </>
+    </div>
   );
 }
 

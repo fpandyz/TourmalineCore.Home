@@ -6,7 +6,6 @@ import { MouseEventHandler } from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import MobileLangSwitch from '../MobileLangSwitch/MobileLangSwitch';
 
-import IconLogo from '../../icons/logo.svg';
 import IconClose from '../../icons/close.svg';
 
 type HeaderLinks = {
@@ -32,7 +31,10 @@ function MobileMenu({
           <Link href="/">
             <a className="mobile-menu__logo">
               <span onClick={onCloseClick} aria-hidden="true">
-                <IconLogo />
+                <Image
+                  src="/images/logo.png"
+                  layout="fill"
+                />
               </span>
             </a>
           </Link>

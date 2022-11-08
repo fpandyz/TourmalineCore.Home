@@ -73,6 +73,10 @@
       color: $color-white;
     }
 
+    &--zh {
+      @include type-body-2-zh;
+    }
+
     &--active {
       &::before {
         opacity: 1;

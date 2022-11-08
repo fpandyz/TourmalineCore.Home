@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { siteUrl } from '../../next-sitemap';
+import { siteUrl } from '../../next-sitemap.config';
 
 const defaultLocale = 'en';
 

@@ -1,4 +1,6 @@
 .footer {
+  $this: &;
+
   margin-top: auto;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -24,15 +26,10 @@
   }
 
   &__logo {
+    position: relative;
     display: block;
     width: 135px;
     height: 40px;
-
-    svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
   }
 
   &__description {
@@ -78,6 +75,14 @@
 
     @include tablet {
       margin-top: 0;
+    }
+  }
+
+  &--zh {
+    #{$this}__description {
+      @include desktop-xl {
+        max-width: 350px;
+      }
     }
   }
 }

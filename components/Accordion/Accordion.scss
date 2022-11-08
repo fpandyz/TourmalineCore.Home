@@ -203,6 +203,12 @@
     }
   }
 
+  &--zh {
+    #{$this}__label {
+      @include type-body-2-zh;
+    }
+  }
+
   & + & {
     #{$this}__button::before {
       display: none;

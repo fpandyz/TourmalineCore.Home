@@ -1,4 +1,6 @@
 .process-card {
+  $this: &;
+
   height: 100%;
   color: $color-white;
 
@@ -129,6 +131,32 @@
       margin-left: 32px;
       width: 40px;
       height: 40px;
+    }
+  }
+
+  &--zh {
+    #{$this}__name {
+      font-size: 14px;
+
+      @include desktop-xl {
+        font-size: 20px;
+      }
+    }
+
+    #{$this}__time {
+      font-size: 14px;
+
+      @include desktop-xl {
+        font-size: 20px;
+      }
+    }
+
+    #{$this}__content {
+      font-size: 16px;
+
+      @include desktop-xl {
+        font-size: 20px;
+      }
     }
   }
 

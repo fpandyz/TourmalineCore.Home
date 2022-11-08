@@ -2,25 +2,30 @@ import clsx from 'clsx';
 
 import IconlPlus from '../../../icons/icon-plus.svg';
 import IconlDots from '../../../icons/icon-dots.svg';
+import isChineseLanguage from '../../../common/utils/isChineseLanguage';
 
 enum BorderColors {
-  'TO DO' = 'tool-header--to-do',
-  'IN PROGRESS' = 'tool-header--progress',
+  'TODO' = 'tool-header--to-do',
+  'PROGRESS' = 'tool-header--progress',
   'REVIEW' = 'tool-header--review',
-  'ON DEV' = 'tool-header--dev',
+  'DEV' = 'tool-header--dev',
   'COMPLETE' = 'tool-header--complete',
 }
 
 function ToolHeader({
+  headerColor,
   title,
   number,
 }: {
+  headerColor: string,
   title: string;
   number: number;
 }) {
   return (
     <div
-      className={clsx('tool-header', BorderColors[title.toUpperCase() as keyof typeof BorderColors])}
+      className={clsx('tool-header', BorderColors[headerColor.toUpperCase() as keyof typeof BorderColors], {
+        'tool-header--zh': isChineseLanguage(),
+      })}
     >
       <div className="tool-header__inner">
         <div className="tool-header__title">{title}</div>

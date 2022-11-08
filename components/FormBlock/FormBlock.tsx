@@ -2,11 +2,13 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { Element } from 'react-scroll';
 
+import clsx from 'clsx';
 import Form from '../Form/Form';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
 import { SectionProps } from '../../types/globals';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 function FormBlock({
   animationName,
@@ -20,7 +22,9 @@ function FormBlock({
 
   return (
     <section
-      className="section container container--home-page form-block"
+      className={clsx('section container container--home-page form-block', {
+        'form-block--zh': isChineseLanguage(),
+      })}
       id={id}
       {...props}
     >

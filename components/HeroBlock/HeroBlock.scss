@@ -1,4 +1,6 @@
 .hero-block {
+  $this: &;
+
   height: calc(100vh - 80px);
   min-height: 641px;
   background-color: $color-black;
@@ -89,6 +91,14 @@
 
     @include desktop-xl {
       padding-top: 98px;
+    }
+  }
+
+  &--zh {
+    #{$this}__description {
+      @include desktop {
+        max-width: none;
+      }
     }
   }
 

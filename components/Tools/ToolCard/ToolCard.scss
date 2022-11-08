@@ -1,4 +1,6 @@
 .tool-card {
+  $this: &;
+
   border-radius: 5px;
   padding: 12px 8px;
   min-width: 164px;
@@ -185,6 +187,32 @@
 
     @include desktop-xl {
       padding: 4px 12px;
+    }
+  }
+
+  &--zh {
+    #{$this}__text {
+      font-size: 14px;
+
+      @include desktop-xl {
+        font-size: 20px;
+      }
+    }
+
+    #{$this}__tag {
+      font-size: 12px;
+
+      @include desktop-xl {
+        font-size: 20px;
+      }
+    }
+
+    #{$this}__time {
+      font-size: 12px;
+
+      @include desktop-xl {
+        font-size: 20px;
+      }
     }
   }
 

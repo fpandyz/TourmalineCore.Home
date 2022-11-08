@@ -2,6 +2,7 @@ import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 import clsx from 'clsx';
 
 import IconArrow from '../../icons/icon-arrow.svg';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 interface SecondaryButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   text?: string;
@@ -15,7 +16,9 @@ function SecondaryButton({
   return (
     <button
       type="button"
-      className={clsx('secondary-button', className)}
+      className={clsx('secondary-button', className, {
+        'secondary-button--zh': isChineseLanguage(),
+      })}
       {...props}
     >
       {

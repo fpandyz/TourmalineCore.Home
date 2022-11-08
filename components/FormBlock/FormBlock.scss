@@ -1,4 +1,6 @@
 .form-block {
+  $this: &;
+
   padding-bottom: 56px;
 
   &__inner {
@@ -27,6 +29,18 @@
     display: block;
     margin-bottom: 56px;
     color: $color-white-alpha-100;
+  }
+
+  &--zh {
+    #{$this}__inner {
+      @include tablet-xl {
+        max-width: 840px;
+      }
+
+      @include desktop-xl {
+        max-width: 980px;
+      }
+    }
   }
 
   @include tablet {
