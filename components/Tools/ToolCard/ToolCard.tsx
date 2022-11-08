@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { useTranslation } from 'next-i18next';
 import IconlLink from '../../../icons/icon-link.svg';
 import IconlHourglass from '../../../icons/icon-hourglass.svg';
+import isChineseLanguage from '../../../common/utils/isChineseLanguage';
 
 enum DeveloperColors {
   green = 'tool-card__developer--green',
@@ -35,9 +36,10 @@ function ToolCard({
   tags?: string[] | undefined;
 }) {
   const { t } = useTranslation('tools');
+
   return (
     <div className={clsx('tool-card', {
-      'tool-card--zh': useTranslation(),
+      'tool-card--zh': isChineseLanguage(),
     })}
     >
       <div className="tool-card__inner">
