@@ -60,6 +60,36 @@
     line-height: 1.3;
   }
 
+  &--zh {
+    #{$this}__label {
+      font-size: 18px;
+
+      @include desktop-xl {
+        font-size: 28px;
+      }
+    }
+
+    #{$this}__description {
+      font-size: 18px;
+
+      @include desktop-xl {
+        font-size: 24px;
+      }
+    }
+
+    #{this}__control {
+      &:not(:placeholder-shown) ~ #{$this}__label {
+        @include type-body-2-zh;
+      }
+
+      &:focus {
+        ~ #{$this}__label {
+          @include type-body-2-zh;
+        }
+      }
+    }
+  }
+
   &--is-error {
     color: $color-error;
 
@@ -70,5 +100,15 @@
     #{$this}__control:focus ~ #{$this}__label {
       color: $color-error;
     }
+  }
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  @include desktop-xl {
+    font-size: 22px;
+    line-height: 1.5;
   }
 }

@@ -1,11 +1,13 @@
 import { useTranslation } from 'next-i18next';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { getCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
+import clsx from 'clsx';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { OptionYM } from '../../types/globals';
 import ExternalLink from '../ExternalLink/ExternalLink';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 const cookieAccept = 'cookieAccept';
 
@@ -38,7 +40,10 @@ function Cookie() {
   }
 
   return (
-    <div className="cookie">
+    <div className={clsx('cookie', {
+      'cookie--zh': isChineseLanguage(),
+    })}
+    >
       <div className="cookie__inner">
         <div className="cookie__text">
           {generateLinkWithText()}
@@ -86,7 +91,7 @@ function Cookie() {
         {textWithLink.map(([key, value]) => {
           if (key === 'textLink') {
             return (
-              <>
+              <Fragment key={value}>
                 {' '}
                 <ExternalLink
                   className="cookie__link"
@@ -97,7 +102,7 @@ function Cookie() {
                   {value}
                 </ExternalLink>
                 {' '}
-              </>
+              </Fragment>
             );
           }
 

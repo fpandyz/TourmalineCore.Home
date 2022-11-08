@@ -36,7 +36,10 @@ function ToolCard({
 }) {
   const { t } = useTranslation('tools');
   return (
-    <div className="tool-card">
+    <div className={clsx('tool-card', {
+      'tool-card--zh': useTranslation(),
+    })}
+    >
       <div className="tool-card__inner">
         <div className="tool-card__box">
           {isIconLink && (

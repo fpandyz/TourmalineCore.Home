@@ -1,4 +1,6 @@
 .header {
+  $this: &;
+
   z-index: $top-panel;
   padding: 0;
   padding-top: 40px;
@@ -84,5 +86,11 @@
 
   &__right-panel {
     margin-left: auto;
+  }
+
+  &--zh {
+    #{$this}__link {
+      @include type-body-2-zh;
+    }
   }
 }

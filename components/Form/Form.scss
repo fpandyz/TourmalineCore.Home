@@ -1,4 +1,6 @@
 .form {
+  $this: &;
+
   &__input {
     margin-bottom: 40px;
   }
@@ -43,6 +45,24 @@
 
     @include desktop-xl {
       font-size: 14px;
+    }
+  }
+
+  &--zh {
+    #{$this}__approval {
+      font-size: 16px;
+
+      .external-link {
+        font-size: 16px;
+      }
+
+      @include desktop-xl {
+        font-size: 20px;
+
+        .external-link {
+          font-size: 20px;
+        }
+      }
     }
   }
 }

@@ -10,6 +10,7 @@ import { languages } from '../../common/utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
 import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,7 +29,12 @@ function LangSwitch() {
   }, [router.locale]);
 
   return (
-    <div ref={containerRef} className="lang-switch">
+    <div
+      ref={containerRef}
+      className={clsx('lang-switch', {
+        'lang-switch--zh': isChineseLanguage(),
+      })}
+    >
       <button
         type="button"
         className="lang-switch__active"

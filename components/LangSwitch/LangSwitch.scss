@@ -1,4 +1,6 @@
 .lang-switch {
+  $this: &;
+
   position: relative;
   font-weight: 500;
 
@@ -121,6 +123,16 @@
       &::before {
         content: none;
       }
+    }
+  }
+
+  &--zh {
+    #{$this}__list {
+      @include type-body-2-zh;
+    }
+
+    #{$this}__active {
+      @include type-body-2-zh;
     }
   }
 }

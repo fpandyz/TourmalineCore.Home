@@ -1,4 +1,6 @@
 .cookie {
+  $this: &;
+
   position: fixed;
   left: 0;
   bottom: 0;
@@ -74,6 +76,22 @@
 
     @include tablet {
       padding: 16px 36px;
+    }
+  }
+
+  &--zh {
+    font-size: 18px;
+
+    #{$this}__link {
+      font-size: 18px;
+
+      @include desktop-xl {
+        font-size: 24px;
+      }
+    }
+
+    @include desktop-xl {
+      font-size: 24px;
     }
   }
 

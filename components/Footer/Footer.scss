@@ -1,4 +1,6 @@
 .footer {
+  $this: &;
+
   margin-top: auto;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -73,6 +75,14 @@
 
     @include tablet {
       margin-top: 0;
+    }
+  }
+
+  &--zh {
+    #{$this}__description {
+      @include desktop-xl {
+        max-width: 350px;
+      }
     }
   }
 }

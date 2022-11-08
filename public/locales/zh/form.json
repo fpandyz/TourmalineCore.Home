@@ -1,17 +1,30 @@
 {
   "name": {
-    "label": "Имя (zh)",
-    "description": "Чтобы мы знали, как к вам обращаться (zh)"
+    "label": "姓名",
+    "description": "我们怎么称呼您"
   },
   "email": {
-    "label": "Почта (zh)",
-    "description": "Чтобы мы могли связаться с вами (zh)"
+    "label": "电子邮件，微信号",
+    "description": "为我们知道怎么联系您"
   },
   "message": {
-    "label": "Сообщение (zh)",
-    "description": "Тут можно задать вопрос, рассказать немного о себе, своем бизнесе или задаче, с которой мы можем вам помочь (zh)"
+    "label": "信息",
+    "description": "提出问题, 介绍您的生意或任务"
   },
-  "buttonText": "Отправить (zh)",
-  "approvedText": "Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с (zh)",
-  "approvedLink": "положением о конфиденциальности данных. (zh)"
+  "buttonText": "发送",
+  "approvedText": "发送地您表示个人信息处理同意",
+  "approvedLink": "",
+  "recaptchaText": {
+    "generalText": "网站使用reCAPTCHA服务。您点击”发送”同意Google",
+    "privacyLink": {
+      "link": "https://policies.google.com/privacy",
+      "text": "隐私权政策"
+    },
+    "and": "以及",
+    "termsLink": {
+      "link": "https://policies.google.com/terms",
+      "text": "使用条件"
+    },
+    "endText": "。"
+  }
 }

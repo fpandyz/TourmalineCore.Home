@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
@@ -6,13 +7,13 @@ import {
 import ReCAPTCHA from 'react-google-recaptcha';
 import { isMobile as isMobileOrTablet } from 'react-device-detect';
 
-import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
-
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import Textarea from '../Textarea/Textarea';
 import Spiner from '../Spiner/Spiner';
+import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
+import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 enum ReCAPTCHALanguage {
   'en' = 'en',
@@ -43,7 +44,9 @@ function Form({
   return (
     <>
       <form
-        className="form"
+        className={clsx('form', {
+          'form--zh': isChineseLanguage(),
+        })}
         onSubmit={handleFormSubmit}
       >
         <Input
