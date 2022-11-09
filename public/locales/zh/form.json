@@ -14,17 +14,5 @@
   "buttonText": "发送",
   "approvedText": "发送地您表示个人信息处理同意",
   "approvedLink": "",
-  "recaptchaText": {
-    "generalText": "网站使用reCAPTCHA服务。您点击”发送”同意Google",
-    "privacyLink": {
-      "link": "https://policies.google.com/privacy",
-      "text": "隐私权政策"
-    },
-    "and": "以及",
-    "termsLink": {
-      "link": "https://policies.google.com/terms",
-      "text": "使用条件"
-    },
-    "endText": "。"
-  }
+  "recaptchaText": "网站使用reCAPTCHA服务。您点击”发送”同意Google <privacyLink>隐私权政策</privacyLink> 以及 <termsLink>使用条件</termsLink>。"
 }
