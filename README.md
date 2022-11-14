@@ -5,9 +5,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+npm ci 
+
 npm run dev
 # or
 yarn dev
+
+# see the i18nexus section below  
+i18nexus pull -k <Project API Key>
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -18,6 +23,18 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+
+## I18nexus
+
+We use i18nexus to easily use localization for our website
+
+To learn more about i18nexus check the following resource:
+
+- [i18nexus](https://i18nexus.com/nextjs-tutorial/)
+- The rules usage i18nexus for us project can you see [here](https://docs.google.com/document/d/1EIMdcz-rZFM6vXks7xgAXl6FVM3OxIBEu7aJ6fdKq6A/edit?usp=sharing)
+
+To get the actual localization files run the command, how to get a token see [instructions](https://docs.google.com/document/d/1EIMdcz-rZFM6vXks7xgAXl6FVM3OxIBEu7aJ6fdKq6A/edit?usp=sharing)
+` i18nexus pull -k <Project API Key> `
 
 ## Husky
 
