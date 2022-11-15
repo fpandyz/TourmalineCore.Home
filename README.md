@@ -26,15 +26,12 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## I18nexus
 
-We use i18nexus to easily use localization for our website
+We use i18nexus for localization on our website.
+To get the actual localization files run the command: i18nexus pull -k <Project API Key>
+Follow instructions in our [tutorial](https://docs.google.com/document/d/1EIMdcz-rZFM6vXks7xgAXl6FVM3OxIBEu7aJ6fdKq6A/edit?usp=sharing) to get `Project API Key` . Also there is described how to use i18nexus in the project.
 
-To learn more about i18nexus check the following resource:
-
+If you want to learn more about i18nexus, check the following resource:
 - [i18nexus](https://i18nexus.com/nextjs-tutorial/)
-- The rules usage i18nexus for us project can you see [here](https://docs.google.com/document/d/1EIMdcz-rZFM6vXks7xgAXl6FVM3OxIBEu7aJ6fdKq6A/edit?usp=sharing)
-
-To get the actual localization files run the command, how to get a token see [instructions](https://docs.google.com/document/d/1EIMdcz-rZFM6vXks7xgAXl6FVM3OxIBEu7aJ6fdKq6A/edit?usp=sharing)
-` i18nexus pull -k <Project API Key> `
 
 ## Husky
 
