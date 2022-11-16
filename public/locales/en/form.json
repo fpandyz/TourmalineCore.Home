@@ -14,17 +14,5 @@
   "buttonText": "Send",
   "approvedText": "This site uses reCAPTCHA. By clicking ''Submit'', you agree to the Terms of Use and Google ",
   "approvedLink": "Privacy Policy.",
-  "recaptchaText": {
-    "generalText": "This site is protected by reCAPTCHA and the Google",
-    "privacyLink": {
-      "link": "https://policies.google.com/privacy",
-      "text": "Privacy Policy"
-    },
-    "and": "and",
-    "termsLink": {
-      "link": "https://policies.google.com/terms",
-      "text": "Terms of Service"
-    },
-    "endText": "apply."
-  }
+  "recaptchaText": "This site is protected by reCAPTCHA and the Google <privacyLink>Privacy Policy</privacyLink> and <termsLink>Terms of Service</termsLink> apply."
 }

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
   FormEvent, KeyboardEvent, useMemo, useRef, useState,
@@ -87,10 +87,19 @@ function Form({
             }
           </PrimaryButton>
           <div className="form__approval">
-            {/* {t('approvedText')}
-            {' '}
-            <ExternalLink href="/">{t('approvedLink')}</ExternalLink> */}
-            {generateReCAPTCHAText()}
+            <Trans
+              i18nKey="form:recaptchaText"
+              components={{
+                privacyLink: <ExternalLink
+                  target="_blank"
+                  href="https://policies.google.com/privacy"
+                />,
+                termsLink: <ExternalLink
+                  target="_blank"
+                  href="https://policies.google.com/terms"
+                />,
+              }}
+            />
           </div>
         </div>
       </form>
@@ -141,33 +150,6 @@ function Form({
     } finally {
       setIsLoading(false);
     }
-  }
-
-  function generateReCAPTCHAText() {
-    const ReCAPTCHAText = t('recaptchaText', { returnObjects: true });
-
-    return (
-      <p>
-        {Object.values<string | {
-          link: string;
-          text: string;
-        }>(ReCAPTCHAText).map((value) => {
-          if (typeof value === 'object') {
-            return (
-              <ExternalLink
-                key={value.link}
-                target="_blank"
-                href={value.link}
-              >
-                {value.text}
-              </ExternalLink>
-            );
-          }
-
-          return ` ${value} `;
-        })}
-      </p>
-    );
   }
 }
 

@@ -1,9 +1,5 @@
 {
-  "text": {
-    "textBeforeLink": "为本网站成为更好, 我们把",
-    "textLink": "Cookie",
-    "textAfterLink": "收集数据。"
-  },
+  "text":"为本网站成为更好, 我们把 <bolt>Cookie</bolt> 收集数据。",
   "accept": "同意",
   "reject": "拒绝"
 }

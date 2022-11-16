@@ -14,17 +14,5 @@
   "buttonText": "Отправить",
   "approvedText": "Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с",
   "approvedLink": "положением о конфиденциальности данных.",
-  "recaptchaText": {
-    "generalText": "Этот сайт использует сервис reCAPTCHA. Нажимая ''Отправить'', вы соглашаетесь с",
-    "privacyLink": {
-      "link": "https://policies.google.com/privacy",
-      "text": "Политикой конфиденциальности"
-    },
-    "and": "и",
-    "termsLink": {
-      "link": "https://policies.google.com/terms",
-      "text": "Условиями использования"
-    },
-    "endText": "Google."
-  }
+  "recaptchaText": "Этот сайт использует сервис reCAPTCHA. Нажимая ''Отправить'', вы соглашаетесь с <privacyLink>Политикой конфиденциальности</privacyLink> и <termsLink>Условиями использования</termsLink> Google."
 }
