@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import { isMobileOnly } from 'react-device-detect';
 import Cookie from '../components/Cookie/Cookie';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     AOS.init({
       delay: 50,
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Tourmaline Core</title>
       </Head>
 
-      <Cookie />
+      <Cookie routerApp={router} />
 
       <Component {...pageProps} />
     </>

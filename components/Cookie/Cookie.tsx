@@ -1,7 +1,7 @@
 import { Trans, useTranslation } from 'next-i18next';
 import { useState, useEffect } from 'react';
 import { getCookie, setCookie } from 'cookies-next';
-import { useRouter } from 'next/router';
+import { Router, useRouter } from 'next/router';
 
 import clsx from 'clsx';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
@@ -21,9 +21,22 @@ export const optionYandexMetrika: OptionYM = {
   webvisor: true,
 };
 
-function Cookie() {
+function Cookie({
+  routerApp,
+}: {
+  routerApp: Router,
+}) {
   const { t } = useTranslation('cookie');
   const [isCookie, setIsCookie] = useState(true);
+
+  const isProduction = process.env.NODE_ENV === 'production';
+
+  routerApp.events?.on('routeChangeComplete', (url: string) => {
+    if (document.cookie.includes('cookieAccept=true') && typeof window !== 'undefined' && isProduction) {
+      window.gtag('event', url, { send_to: googleId });
+      window.ym(Number(yandexId), 'hit', url);
+    }
+  });
 
   const router = useRouter();
 
@@ -76,8 +89,6 @@ function Cookie() {
   );
 
   function acceptCookie() {
-    const isProduction = process.env.NODE_ENV === 'production';
-
     setCookie(cookieAccept, true);
     setIsCookie(true);
 
