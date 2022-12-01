@@ -13,7 +13,7 @@ export type OptionYM = {
 
 declare global {
   interface Window {
-    ym: (id: number, operationName: string, option: OptionYM) => unknown;
-    gtag: (operationName: string, id: string | Date) => unknown;
+    ym: (id: number, operationName: string, option: OptionYM | string) => unknown;
+    gtag: (operationName: string, ...arg: any) => unknown;
   }
 }
