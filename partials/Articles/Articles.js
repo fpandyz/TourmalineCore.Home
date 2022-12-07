@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -10,37 +11,42 @@ export default function Articles({
 }) {
   const { t } = useTranslation('articles');
   const router = useRouter();
+  const all = t('sortAll');
 
-  const [sortingValue, setSortingValue] = useState('All');
+  const [sortingValue, setSortingValue] = useState(all);
 
-  const articlesFilteredByLocale = articles.filter((article) => article.locale === router.locale);
+  const articlesFilteredByLocale = articles.filter((article) => article.locale === router.locale)
+    .sort((adsfs, ssssb) => (adsfs.metadata.datePublication < ssssb.metadata.datePublication ? 1 : -1));
+
   const article = Array.from(new Set(articlesFilteredByLocale.flatMap((item) => item.metadata.categories)));
-  console.log('articles flat', article);
+  const sortElements = [all, ...article];
 
-  const dfs = ['All', ...article];
-  console.log('sortingValue', sortingValue);
+  const sortedArticles = getSort(articlesFilteredByLocale, sortingValue);
 
   return (
     <div className="container articles">
-      {articlesFilteredByLocale.length
+      {sortedArticles.length
         ? (
           <div>
-            {dfs.map((item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={(e) => console.log(e.currentTarget.textContent)}
-              >
-                {item}
-              </button>
-            ))}
-            <ul
-              className="articles__list"
-              style={{
-                display: 'flex',
-              }}
-            >
-              {articlesFilteredByLocale.map((folder) => (
+            {sortElements.length > 2 && (
+              <ul className="articles__sort-list">
+                {sortElements.map((item) => (
+                  <li key={item}>
+                    <button
+                      className={clsx('articles__sort-item', {
+                        'articles__sort-item--active': item === sortingValue,
+                      })}
+                      type="button"
+                      onClick={(event) => setSortingValue(event.currentTarget.textContent)}
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <ul className="articles__list">
+              {sortedArticles.map((folder) => (
                 <li key={folder.name} className="articles__item">
                   <ArticleLink
                     articles={articles}
@@ -58,6 +64,14 @@ export default function Articles({
         )}
     </div>
   );
+
+  function getSort(arr, key) {
+    if (key === all) {
+      return arr;
+    }
+
+    return arr.filter((a) => a.metadata.categories.includes(key) === true);
+  }
 }
 
 function ArticleLink({
@@ -75,7 +89,7 @@ function ArticleLink({
         <a className="articles-link" title={articleFolder.metadata.description}>
           <div className="articles-link__image">
             <Image
-              src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/tourmaline-core-poster.webp'}
+              src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/article-preview.webp'}
               alt="preview photo"
               layout="fill"
             />
