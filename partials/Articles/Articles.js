@@ -84,7 +84,7 @@ function ArticleLink({
       <a className="articles-link" title={articleFolder.metadata.description}>
         <div className="articles-link__image">
           <Image
-            src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/article-preview.webp'}
+            src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/preview-article.webp'}
             alt="preview photo"
             layout="fill"
           />
