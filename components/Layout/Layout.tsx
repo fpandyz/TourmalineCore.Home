@@ -15,7 +15,7 @@ export default function Layout({
     })}
     >
       <Header />
-      <main>
+      <main className="layout__main">
         {children}
       </main>
       <Footer />
