@@ -2,7 +2,6 @@ import { useTranslation } from 'next-i18next';
 import {
   useState, useEffect, useRef,
 } from 'react';
-import smoothscroll from 'smoothscroll-polyfill';
 import { clsx } from 'clsx';
 
 import { NavigationLinks } from '../../common/utils/consts/navigation';
@@ -49,23 +48,11 @@ function Navigation({
             text={t(link)}
             to={link}
             setIsSeeNavigation={(value) => setIsSeeNavigation(value)}
-            scrollTo={() => scrollTo(link)}
           />
         ))}
       </div>
     </div>
   );
-
-  function scrollTo(to: string) {
-    const element = document.querySelector(`[name="scroll-to-${to}"]`);
-
-    if (!element) {
-      return;
-    }
-
-    smoothscroll.polyfill();
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
 }
 
 export default Navigation;
