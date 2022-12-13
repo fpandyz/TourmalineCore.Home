@@ -1,5 +1,5 @@
-import { useTranslation } from 'next-i18next';
-import { useState, useEffect, Fragment } from 'react';
+import { Trans, useTranslation } from 'next-i18next';
+import { useState, useEffect } from 'react';
 import { getCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
@@ -25,6 +25,8 @@ function Cookie() {
   const { t } = useTranslation('cookie');
   const [isCookie, setIsCookie] = useState(true);
 
+  const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
+
   const router = useRouter();
 
   useEffect(() => {
@@ -46,7 +48,17 @@ function Cookie() {
     >
       <div className="cookie__inner">
         <div className="cookie__text">
-          {generateLinkWithText()}
+          <Trans
+            i18nKey="cookie:text"
+            components={{
+              bolt: <ExternalLink
+                className="cookie__link"
+                href={`documents/cookie-information-${router.locale}.pdf`}
+                target="_blank"
+                rel="noreferrer"
+              />,
+            }}
+          />
         </div>
 
         <PrimaryButton
@@ -66,12 +78,10 @@ function Cookie() {
   );
 
   function acceptCookie() {
-    const isProduction = process.env.NODE_ENV === 'production';
-
     setCookie(cookieAccept, true);
     setIsCookie(true);
 
-    if (isProduction) {
+    if (isMetricsEnabled) {
       window.gtag('js', new Date());
       window.gtag('config', googleId);
 
@@ -82,34 +92,6 @@ function Cookie() {
   function rejectCookie() {
     setCookie(cookieAccept, false);
     setIsCookie(true);
-  }
-
-  function generateLinkWithText() {
-    const textWithLink: [string, string][] = Object.entries(t('text', { returnObjects: true }));
-    return (
-      <>
-        {textWithLink.map(([key, value]) => {
-          if (key === 'textLink') {
-            return (
-              <Fragment key={value}>
-                {' '}
-                <ExternalLink
-                  className="cookie__link"
-                  href={`documents/cookie-information-${router.locale}.pdf`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {value}
-                </ExternalLink>
-                {' '}
-              </Fragment>
-            );
-          }
-
-          return value;
-        })}
-      </>
-    );
   }
 }
 

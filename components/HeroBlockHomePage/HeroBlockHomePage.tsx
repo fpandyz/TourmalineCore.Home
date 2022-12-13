@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import smoothscroll from 'smoothscroll-polyfill';
+import { scroller } from 'react-scroll';
 
 import HeroBlock from '../HeroBlock/HeroBlock';
 import SecondaryButton from '../SecondaryButton/SecondaryButton';
@@ -28,12 +28,11 @@ function HeroBlockHomePage({
   function scrollFirstBlock() {
     const firstBlock = document.querySelector(`#${firstBlockSelector} div`);
 
-    if (!firstBlock) {
-      return;
-    }
+    const firstBlockName = firstBlock?.getAttribute('name');
 
-    smoothscroll.polyfill();
-    firstBlock.scrollIntoView({ behavior: 'smooth' });
+    scroller.scrollTo(firstBlockName as string, {
+      smooth: 'smooth',
+    });
   }
 }
 

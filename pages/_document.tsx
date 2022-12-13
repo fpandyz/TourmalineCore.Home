@@ -8,18 +8,12 @@ class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
 
-    let cookieAccept = false;
-    if (ctx.req && ctx.req.headers.cookie) {
-      const { cookie } = ctx.req.headers;
-      cookieAccept = cookie.includes('cookieAccept=true');
-    }
-
-    return { ...initialProps, cookieAccept };
+    return { ...initialProps };
   }
 
   render() {
-    const isProduction = process.env.NODE_ENV === 'production';
-    const isCookieAccept = (this.props as any).cookieAccept;
+    const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
+
     const yandexId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
     const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
@@ -51,9 +45,13 @@ class MyDocument extends Document {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
 
-            if (${isProduction} && ${isCookieAccept}) {
+            var isCookieAccept = document.cookie.includes('cookieAccept=true');
+
+            if (${isMetricsEnabled} && isCookieAccept) {
               gtag('js', new Date());
-              gtag('config', '${googleId}');
+              gtag('config', '${googleId}', {
+                page_path: window.location.pathname,
+              });
             }`,
             }}
           />
@@ -72,7 +70,9 @@ class MyDocument extends Document {
               k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
               (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-              if (${isProduction} && ${isCookieAccept}) {
+              var isCookieAccept = document.cookie.includes('cookieAccept=true');
+
+              if (${isMetricsEnabled} && isCookieAccept) {
                 ym(${yandexId}, "init", ${JSON.stringify(optionYandexMetrika)})
               }
             `,

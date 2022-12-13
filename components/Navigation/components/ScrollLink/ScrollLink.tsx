@@ -8,44 +8,38 @@ function ScrollLink({
   text,
   to,
   setIsSeeNavigation,
-  scrollTo,
 }: {
   index: number;
   text: string;
   to: string;
   setIsSeeNavigation: (value: boolean) => unknown;
-  scrollTo: () => unknown;
 }) {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <>
-      <Link
-        spy
-        to={to}
-        onSetActive={() => {
-          setIsSeeNavigation(true);
-          setIsActive(true);
-        }}
-        onSetInactive={() => {
-          if (index === 0) {
-            setIsSeeNavigation(false);
-          }
+    <Link
+      spy
+      to={to}
+      className={clsx('navigation__link', {
+        'navigation__link--active': isActive,
+        'navigation__link--zh': isChineseLanguage(),
+      })}
+      hashSpy
+      smooth
+      onSetActive={() => {
+        setIsSeeNavigation(true);
+        setIsActive(true);
+      }}
+      onSetInactive={() => {
+        if (index === 0) {
+          setIsSeeNavigation(false);
+        }
 
-          setIsActive(false);
-        }}
-      />
-      <button
-        type="button"
-        className={clsx('navigation__link', {
-          'navigation__link--active': isActive,
-          'navigation__link--zh': isChineseLanguage(),
-        })}
-        onClick={scrollTo}
-      >
-        {text}
-      </button>
-    </>
+        setIsActive(false);
+      }}
+    >
+      {text}
+    </Link>
   );
 }
 

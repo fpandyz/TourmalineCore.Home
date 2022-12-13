@@ -1,12 +1,12 @@
 {
   "name": "tourmalinecore_website",
-  "version": "1.8.1",
+  "version": "1.9.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "i18nexus pull && next build",
     "postbuild": "npx next-sitemap",
-    "start": "next start",
+    "start": "i18nexus pull && next start",
     "lint": "run-s -c lint:ts lint:css",
     "lint:fix": "run-s -c lint:ts:fix lint:css:fix",
     "lint:ts:fix": "npm run lint:ts -- --fix",
@@ -21,6 +21,7 @@
     "clsx": "^1.2.1",
     "cookies-next": "^2.1.1",
     "gitalk": "^1.7.2",
+    "i18nexus-cli": "^3.1.0",
     "next": "12.2.2",
     "next-i18next": "^8.6.0",
     "next-sitemap": "^3.1.11",
@@ -32,8 +33,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-scroll": "^1.8.7",
     "rehype-highlight": "^5.0.2",
-    "remark-gfm": "^3.0.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
