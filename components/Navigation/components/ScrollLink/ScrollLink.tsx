@@ -23,6 +23,7 @@ function ScrollLink({
       <Link
         spy
         to={to}
+        hashSpy
         onSetActive={() => {
           setIsSeeNavigation(true);
           setIsActive(true);
