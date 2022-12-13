@@ -23,7 +23,6 @@ function ScrollLink({
       <Link
         spy
         to={to}
-        hashSpy
         onSetActive={() => {
           setIsSeeNavigation(true);
           setIsActive(true);
@@ -36,8 +35,8 @@ function ScrollLink({
           setIsActive(false);
         }}
       />
-      <button
-        type="button"
+      <a
+        href={`#${to}`}
         className={clsx('navigation__link', {
           'navigation__link--active': isActive,
           'navigation__link--zh': isChineseLanguage(),
@@ -45,7 +44,7 @@ function ScrollLink({
         onClick={scrollTo}
       >
         {text}
-      </button>
+      </a>
     </>
   );
 }
