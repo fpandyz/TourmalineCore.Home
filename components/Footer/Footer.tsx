@@ -12,6 +12,7 @@ function Footer() {
 
   return (
     <footer
+      id="footer"
       className={clsx('footer', {
         'footer--zh': isChineseLanguage(),
       })}
