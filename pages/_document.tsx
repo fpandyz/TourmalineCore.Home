@@ -12,7 +12,7 @@ class MyDocument extends Document {
   }
 
   render() {
-    const isProduction = process.env.NODE_ENV === 'production';
+    const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
 
     const yandexId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
     const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
@@ -47,7 +47,7 @@ class MyDocument extends Document {
 
             var isCookieAccept = document.cookie.includes('cookieAccept=true');
 
-            if (${isProduction} && isCookieAccept) {
+            if (${isMetricsEnabled} && isCookieAccept) {
               gtag('js', new Date());
               gtag('config', '${googleId}', {
                 page_path: window.location.pathname,
@@ -72,7 +72,7 @@ class MyDocument extends Document {
 
               var isCookieAccept = document.cookie.includes('cookieAccept=true');
 
-              if (${isProduction} && isCookieAccept) {
+              if (${isMetricsEnabled} && isCookieAccept) {
                 ym(${yandexId}, "init", ${JSON.stringify(optionYandexMetrika)})
               }
             `,

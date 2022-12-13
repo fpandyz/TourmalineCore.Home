@@ -8,14 +8,10 @@ module.exports = withReactSvg({
   include: path.resolve(__dirname, 'icons'),
   images: {
     domains: ['raw.githubusercontent.com'],
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'raw.githubusercontent.com',
-    //     port: '',
-    //     pathname: '/TourmalineCore/TourmalineCore.Articles/master/articles/**',
-    //   },
-    // ],
+  },
+  env: {
+    I18NEXUS_API_KEY: process.env.I18NEXUS_API_KEY,
+    METRICS_ENABLED: process.env.METRICS_ENABLED,
   },
   webpack(webpackConfig) {
     webpackConfig.resolve.fallback = { fs: false };

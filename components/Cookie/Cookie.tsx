@@ -25,7 +25,7 @@ function Cookie() {
   const { t } = useTranslation('cookie');
   const [isCookie, setIsCookie] = useState(true);
 
-  const isProduction = process.env.NODE_ENV === 'production';
+  const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
 
   const router = useRouter();
 
@@ -81,7 +81,7 @@ function Cookie() {
     setCookie(cookieAccept, true);
     setIsCookie(true);
 
-    if (isProduction) {
+    if (isMetricsEnabled) {
       window.gtag('js', new Date());
       window.gtag('config', googleId);
 
