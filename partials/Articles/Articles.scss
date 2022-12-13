@@ -1,5 +1,5 @@
 .articles {
-  padding-top: 58px;
+  padding-top: 48px;
   padding-bottom: 104px;
 
   &__sort-list {
@@ -153,15 +153,5 @@
         }
       }
     }
-  }
-
-  @include tablet {
-    padding-top: 48px;
-    padding-bottom: 104px;
-  }
-
-  @include desktop {
-    padding-top: 64px;
-    padding-bottom: 104px;
   }
 }

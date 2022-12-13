@@ -16,7 +16,7 @@ export default function Articles({
   const [sortingValue, setSortingValue] = useState(all);
 
   const articlesFilteredByLocale = articles.filter((article) => article.locale === router.locale)
-    .sort((adsfs, ssssb) => (adsfs.metadata.datePublication > ssssb.metadata.datePublication ? 1 : -1));
+    .sort((firstElement, secondElement) => (firstElement.metadata.datePublication > secondElement.metadata.datePublication ? 1 : -1));
 
   const article = Array.from(new Set(articlesFilteredByLocale.flatMap((item) => item.metadata.categories)));
   const sortElements = [all, ...article];
@@ -64,12 +64,12 @@ export default function Articles({
     </div>
   );
 
-  function getSort(arr, key) {
-    if (key === all) {
-      return arr;
+  function getSort(data, sortElement) {
+    if (sortElement === all) {
+      return data;
     }
 
-    return arr.filter((a) => a.metadata.categories.includes(key) === true);
+    return data.filter((item) => item.metadata.categories.includes(sortElement) === true);
   }
 }
 
@@ -84,7 +84,7 @@ function ArticleLink({
       <a className="articles-link" title={articleFolder.metadata.description}>
         <div className="articles-link__image">
           <Image
-            src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/preview-article.webp'}
+            src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/article-preview.webp'}
             alt="preview photo"
             layout="fill"
           />
