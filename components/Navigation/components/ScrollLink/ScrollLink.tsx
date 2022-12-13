@@ -1,5 +1,6 @@
 import { Link } from 'react-scroll';
 import { clsx } from 'clsx';
+import { useState } from 'react';
 import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
 
 function ScrollLink({
@@ -13,23 +14,28 @@ function ScrollLink({
   to: string;
   setIsSeeNavigation: (value: boolean) => unknown;
 }) {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <Link
       spy
       to={to}
       className={clsx('navigation__link', {
+        'navigation__link--active': isActive,
         'navigation__link--zh': isChineseLanguage(),
       })}
-      activeClass="navigation__link--active"
       hashSpy
       smooth
       onSetActive={() => {
         setIsSeeNavigation(true);
+        setIsActive(true);
       }}
       onSetInactive={() => {
         if (index === 0) {
           setIsSeeNavigation(false);
         }
+
+        setIsActive(false);
       }}
     >
       {text}
