@@ -17,13 +17,17 @@ function CompletedProjects({
         className="container container--home-page"
         data-aos={animationName}
       >
-        <h2 className="title-type-2 completed-projects__title">
+        <h2 className="title-type-2">
           {t('title')}
           {' '}
           <span className="completed-projects__gradient">
             {t('titleGradient')}
           </span>
         </h2>
+
+        <div className="completed-projects__description">
+          {t('description')}
+        </div>
 
         <ul className="completed-projects__cards-container">
           {
