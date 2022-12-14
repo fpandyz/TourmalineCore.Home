@@ -2,8 +2,5 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-
-  &__main {
-    background-color: $color-black;
-  }
+  background-color: $color-black;
 }
