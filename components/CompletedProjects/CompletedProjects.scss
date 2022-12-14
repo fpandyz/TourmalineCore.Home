@@ -1,12 +1,15 @@
 .completed-projects {
-  &__title {
+  &__description {
+    margin-top: 12px;
     margin-bottom: 32px;
+    color: rgba(255, 255, 255, 0.8);
 
     @include desktop {
       margin-bottom: 48px;
     }
 
     @include desktop-xl {
+      margin-bottom: 16px;
       margin-bottom: 64px;
     }
   }
