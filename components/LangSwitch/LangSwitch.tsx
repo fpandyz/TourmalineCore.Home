@@ -57,7 +57,7 @@ function LangSwitch() {
               key={locale}
               className="lang-switch__option"
             >
-              <Link href={router.pathname} locale={locale}>
+              <Link href={router.asPath} locale={locale}>
                 <a
                   role="presentation"
                   className={clsx(
