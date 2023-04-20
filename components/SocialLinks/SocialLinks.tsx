@@ -23,7 +23,7 @@ function SocialLinks() {
 
       <a
         className="social-links__link"
-        href="https://t.me/fpandyz"
+        href="https://t.me/tourmalinecore"
         target="_blank"
         rel="noreferrer"
       >
