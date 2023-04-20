@@ -24,12 +24,15 @@ export const optionYandexMetrika: OptionYM = {
 function Cookie() {
   const { t } = useTranslation('cookie');
   const [isCookie, setIsCookie] = useState(true);
+  const [date, setDate] = useState<Date>();
 
   const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
 
   const router = useRouter();
 
   useEffect(() => {
+    setDate(new Date());
+
     if (typeof getCookie(cookieAccept) === 'boolean') {
       setIsCookie(true);
     } else {
@@ -82,7 +85,7 @@ function Cookie() {
     setIsCookie(true);
 
     if (isMetricsEnabled) {
-      window.gtag('js', new Date());
+      window.gtag('js', date);
       window.gtag('config', googleId);
 
       window.ym(Number(yandexId), 'init', optionYandexMetrika);

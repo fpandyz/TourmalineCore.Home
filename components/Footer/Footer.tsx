@@ -3,12 +3,18 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
 function Footer() {
   const { t } = useTranslation('footer');
+  const [date, setDate] = useState<number>();
+
+  useEffect(() => {
+    setDate(new Date().getFullYear());
+  }, []);
 
   return (
     <footer
@@ -42,7 +48,7 @@ function Footer() {
 
         <div className="footer__copyright">
           <span>
-            {`© 2019-${new Date().getFullYear()} Tourmaline Core`}
+            {`© 2019-${date} Tourmaline Core`}
           </span>
           <span className="footer__location">
             {t('location')}
