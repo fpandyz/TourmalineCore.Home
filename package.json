@@ -1,6 +1,6 @@
 {
   "name": "tourmalinecore_website",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -33,6 +33,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-scroll": "^1.8.7",
     "rehype-highlight": "^5.0.2",
+    "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
