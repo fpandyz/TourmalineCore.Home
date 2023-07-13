@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import moment from 'moment';
 import { getArticleUrl } from '../../common/utils/articleUrl';
 
 export default function Articles({
@@ -16,7 +17,7 @@ export default function Articles({
   const [sortingValue, setSortingValue] = useState(all);
 
   const articlesFilteredByLocale = articles.filter((article) => article.locale === router.locale)
-    .sort((firstElement, secondElement) => (firstElement.metadata.datePublication > secondElement.metadata.datePublication ? 1 : -1));
+    .sort((firstElement, secondElement) => (moment(secondElement.metadata.datePublication, 'DD.MM.YYYY') - moment(firstElement.metadata.datePublication, 'DD.MM.YYYY')));
 
   const article = Array.from(new Set(articlesFilteredByLocale.flatMap((item) => item.metadata.categories)));
   const sortElements = [all, ...article];
