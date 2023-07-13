@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeRaw from 'rehype-raw';
 
 const DynamicCommentsComponent = dynamic(() => import('../Comments/Comments'), { ssr: false });
 
@@ -36,11 +37,11 @@ export default function Article({
       <article className="article-page__article">
         <ReactMarkdown
           remarkPlugins={[gfm]}
-          rehypePlugins={[rehypeHighlight]}
+          rehypePlugins={[rehypeHighlight, rehypeRaw]}
           components={{
             img: ({ src, alt, title }) => (
               <img
-                src={`${articleUrl}${src.replace(/\.\/images/, '/images')}`}
+                src={`${articleUrl}/${src.replace(/\.\/images/, '/images')}`}
                 alt={alt}
                 title={title}
                 style={{
@@ -53,7 +54,6 @@ export default function Article({
           }}
         >
           {markdown}
-
         </ReactMarkdown>
       </article>
 
