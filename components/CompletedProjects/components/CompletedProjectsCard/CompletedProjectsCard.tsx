@@ -2,11 +2,14 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
+import { useMemo } from 'react';
 import { CompletedProject } from '../../../../common/utils/consts/completedProjects';
 
 import IconLargeArrow from '../../../../icons/large-arrow.svg';
 import IconArrow from '../../../../icons/long-arrow.svg';
 import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
+import { DEFAULT_LOCALE } from '../../../../common/utils/consts/localization';
 
 function CompletedProjectsCard({
   completedProject,
@@ -14,6 +17,15 @@ function CompletedProjectsCard({
   completedProject: CompletedProject;
 }) {
   const { t } = useTranslation('completedProjects');
+  const router = useRouter();
+
+  const routerLocale = useMemo(() => {
+    if (!router.locale) {
+      return DEFAULT_LOCALE;
+    }
+
+    return router.locale;
+  }, [router.locale]);
 
   return (
     <a
@@ -29,7 +41,7 @@ function CompletedProjectsCard({
 
       <div className="completed-project-card__image">
         <Image
-          src={`/images/${completedProject.image}.png`}
+          src={completedProject.image[routerLocale]}
           alt={completedProject.alt}
           layout="fill"
           loading="lazy"
