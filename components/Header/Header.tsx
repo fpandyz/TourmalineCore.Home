@@ -4,10 +4,12 @@ import { useTranslation } from 'next-i18next';
 
 import clsx from 'clsx';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import LangSwitch from '../LangSwitch/LangSwitch';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
+import IconBurgerFrontend from '../../icons/burger-frontend.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
@@ -16,16 +18,26 @@ type HeaderLinks = {
   link: string;
 }[];
 
+enum HeaderId {
+  Frontend = 'frontend',
+  Articles = 'articles',
+}
+
 const headerLinks: HeaderLinks = [
   {
-    id: 'articles',
-    link: '/articles',
+    id: HeaderId.Frontend,
+    link: `/${HeaderId.Frontend}`,
+  },
+  {
+    id: HeaderId.Articles,
+    link: `/${HeaderId.Articles}`,
   },
 ];
 
 function Header() {
   const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { pathname } = useRouter();
 
   useBodyScrollHiden(isMobileMenuOpen);
 
@@ -55,7 +67,7 @@ function Header() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open header"
             >
-              <IconBurger />
+              { pathname === `/${HeaderId.Frontend}` ? <IconBurgerFrontend /> : <IconBurger />}
             </button>
 
             <div className="header__desktop">
