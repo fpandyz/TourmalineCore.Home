@@ -18,19 +18,19 @@ type HeaderLinks = {
   link: string;
 }[];
 
-enum HeaderId {
+enum HeaderLinkId {
   Frontend = 'frontend',
   Articles = 'articles',
 }
 
 const headerLinks: HeaderLinks = [
   {
-    id: HeaderId.Frontend,
-    link: `/${HeaderId.Frontend}`,
+    id: HeaderLinkId.Frontend,
+    link: `/${HeaderLinkId.Frontend}`,
   },
   {
-    id: HeaderId.Articles,
-    link: `/${HeaderId.Articles}`,
+    id: HeaderLinkId.Articles,
+    link: `/${HeaderLinkId.Articles}`,
   },
 ];
 
@@ -67,7 +67,7 @@ function Header() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open header"
             >
-              { pathname === `/${HeaderId.Frontend}` ? <IconBurgerFrontend /> : <IconBurger />}
+              { pathname === `/${HeaderLinkId.Frontend}` ? <IconBurgerFrontend /> : <IconBurger />}
             </button>
 
             <div className="header__desktop">
