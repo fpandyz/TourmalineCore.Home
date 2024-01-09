@@ -2,7 +2,6 @@ import { GetServerSideProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
-import Frontend from '../../partials/Articles/Frontend/Frontend';
 
 export default function FrontendPage() {
   return (
@@ -21,7 +20,7 @@ export default function FrontendPage() {
         }}
       />
       <Layout>
-        <Frontend />
+        <div>Frontend Page</div>
       </Layout>
     </>
   );
