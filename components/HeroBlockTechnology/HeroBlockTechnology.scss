@@ -1,0 +1,121 @@
+.hero-block-technology {
+  $this: &;
+
+  position: relative;
+  min-height: 641px;
+  background-color: $color-black;
+
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.33;
+    color: $color-white-alpha-100;
+  }
+
+  &__inner {
+    max-width: 960px;
+  }
+
+  &__description {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    font-size: 25px;
+    line-height: 1.36;
+    color: $color-white;
+
+    @include tablet {
+      max-width: 522px;
+    }
+
+    @include desktop {
+      margin-bottom: 48px;
+      max-width: 400px;
+      font-size: 29px;
+      line-height: 1.31;
+    }
+
+    @include desktop-xl {
+      max-width: 490px;
+      font-size: 39px;
+      line-height: 1.23;
+    }
+  }
+
+  &__button {
+    padding: 12px 40px;
+    width: auto;
+    font-size: 16px;
+    line-height: 1.37;
+    background-image: none;
+
+    &--frontend {
+      background-color: $color-frontend-page-primary;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    background-size: cover;
+
+    &--frontend {
+      right: -16px;
+      width: 249px;
+      height: 364px;
+      background-image: url("/images/hero-block-frontend-element-mobile.png");
+
+      @include tablet {
+        right: 0;
+        width: 304px;
+        height: 411px;
+        background-image: url("/images/hero-block-frontend-element-table.png");
+      }
+    }
+  }
+
+  &__wrapper {
+    padding-top: 144px;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+
+    @include tablet-xl {
+      padding-top: 82px;
+      padding-bottom: 82px;
+    }
+
+    @include desktop {
+      padding-top: 104px;
+      padding-bottom: 0;
+    }
+
+    @include desktop-xl {
+      padding-top: 98px;
+    }
+  }
+
+  &--zh {
+    #{$this}__description {
+      @include desktop {
+        max-width: none;
+      }
+    }
+  }
+
+  @include tablet {
+    min-height: 463px;
+  }
+
+  @include desktop {
+    min-height: 624px;
+  }
+
+  @include desktop-xl {
+    min-height: 806px;
+  }
+}
