@@ -31,6 +31,10 @@
     color: transparent;
     background-image: $green-gradient;
     background-clip: text;
+
+    &--technology {
+      color: $color-white-alpha-100;
+    }
   }
 
   &__cross {
