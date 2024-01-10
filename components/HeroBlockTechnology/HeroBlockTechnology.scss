@@ -117,7 +117,7 @@
       }
 
       @include desktop-xl {
-        bottom: -736px;
+        bottom: -480px;
         width: 392px;
         height: 1334px;
       }
@@ -140,5 +140,9 @@
       padding-top: 184px;
       padding-bottom: 264px;
     }
+  }
+
+  @include desktop {
+    min-height: calc(100vh - 80px);
   }
 }
