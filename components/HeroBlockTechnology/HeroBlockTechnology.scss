@@ -1,0 +1,160 @@
+// TODO added 40px for padding-top
+.hero-block-technology {
+  $this: &;
+
+  position: relative;
+  font-weight: 500;
+  background-color: $color-black;
+
+  &__title {
+    font-weight: inherit;
+    font-size: 18px;
+    line-height: 1.33;
+    color: $color-white-alpha-100;
+
+    @include tablet-xl {
+      font-size: 20px;
+    }
+
+    @include desktop {
+      font-size: 24px;
+    }
+
+    @include desktop-xl {
+      font-size: 28px;
+    }
+  }
+
+  &__inner {
+    max-width: 960px;
+  }
+
+  &__description {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    padding-right: 80px;
+    font-size: 25px;
+    line-height: 1.36;
+    color: $color-white;
+
+    @include tablet {
+      padding-right: 0;
+      max-width: 522px;
+    }
+
+    @include tablet-xl {
+      margin-top: 16px;
+      margin-bottom: 48px;
+      max-width: 592px;
+      font-size: 29px;
+      line-height: 1.31;
+    }
+
+    @include desktop {
+      max-width: 803px;
+      font-size: 39px;
+      line-height: 1.23;
+    }
+
+    @include desktop-xl {
+      max-width: 960px;
+      font-size: 47px;
+      line-height: 1.36;
+    }
+  }
+
+  &__button {
+    padding: 12px 40px;
+    width: auto;
+    font-size: 16px;
+    line-height: 22px;
+    background-image: none;
+    transition: all 0.5s;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+    &--frontend {
+      background-color: $color-frontend-page-primary;
+
+      &:hover {
+        border: 1px solid $color-frontend-page-primary;
+        border-radius: 100px;
+        background: rgba($color-frontend-page-primary, 0.3);
+      }
+    }
+
+    @include desktop {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    @include desktop-xl {
+      font-size: 20px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+
+    &--frontend {
+      width: 249px;
+      height: 364px;
+      background-image: url("/images/hero-block-frontend-element-mobile.png");
+
+      @include tablet {
+        width: 304px;
+        height: 411px;
+        background-image: url("/images/hero-block-frontend-element-table.png");
+      }
+
+      @include tablet-xl {
+        left: 0;
+        bottom: -507px;
+        width: 290px;
+        height: 985px;
+        background-image: url("/images/hero-block-frontend-element-desktop.png");
+      }
+
+      @include desktop {
+        bottom: -552px;
+        width: 327px;
+        height: 1112px;
+        background-image: url("/images/hero-block-frontend-element-desktop.png");
+      }
+
+      @include desktop-xl {
+        bottom: -480px;
+        width: 392px;
+        height: 1334px;
+      }
+    }
+  }
+
+  &__wrapper {
+    padding-top: 104px;
+    padding-bottom: 300px;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      padding-top: 104px;
+      padding-bottom: 198px;
+    }
+
+    @include tablet-xl {
+      justify-content: end;
+      padding-top: 184px;
+      padding-bottom: 264px;
+    }
+  }
+
+  @include desktop {
+    min-height: calc(100vh - 80px);
+  }
+}
