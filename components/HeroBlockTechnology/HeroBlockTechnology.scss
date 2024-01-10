@@ -3,10 +3,11 @@
   $this: &;
 
   position: relative;
+  font-weight: 500;
   background-color: $color-black;
 
   &__title {
-    font-weight: 500;
+    font-weight: inherit;
     font-size: 18px;
     line-height: 1.33;
     color: $color-white-alpha-100;
@@ -65,13 +66,24 @@
   &__button {
     padding: 12px 40px;
     width: auto;
-    font-weight: 500;
     font-size: 16px;
     line-height: 22px;
     background-image: none;
+    transition: all 0.5s;
+
+    &::after,
+    &::before {
+      display: none;
+    }
 
     &--frontend {
       background-color: $color-frontend-page-primary;
+
+      &:hover {
+        border: 1px solid $color-frontend-page-primary;
+        border-radius: 100px;
+        background: rgba($color-frontend-page-primary, 0.3);
+      }
     }
 
     @include desktop {
