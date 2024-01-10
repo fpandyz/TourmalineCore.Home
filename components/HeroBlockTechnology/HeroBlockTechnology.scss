@@ -1,3 +1,4 @@
+// TODO added 40px for padding-top
 .hero-block-technology {
   $this: &;
 
@@ -138,14 +139,6 @@
       justify-content: end;
       padding-top: 184px;
       padding-bottom: 264px;
-    }
-  }
-
-  &--zh {
-    #{$this}__description {
-      @include desktop {
-        max-width: none;
-      }
     }
   }
 }

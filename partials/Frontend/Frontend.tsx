@@ -1,5 +1,6 @@
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 
+// TODO add data from json
 export default function Frontend() {
   return (
     <HeroBlockTechnology
