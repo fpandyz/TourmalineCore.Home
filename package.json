@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "i18nexus pull && next build",
+    "build": "i18nexus pull -k $I18NEXUS_API_KEY_HOME && i18nexus pull -k $I18NEXUS_API_KEY_FRONTEND && i18nexus pull -k $I18NEXUS_API_KEY_DESIGN && next build",
     "postbuild": "npx next-sitemap",
     "start": "i18nexus pull && next start",
     "lint": "run-s -c lint:ts lint:css",
