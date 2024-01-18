@@ -7,15 +7,13 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import Modal from '../Modal/Modal';
 import Form from '../Form/Form';
-import List from '../List/List';
+import DiscussionList from '../DiscussionList/DiscussionList';
 
 function Discussion({
   animationName,
   ...props
 }: SectionProps) {
   const { t } = useTranslation('discussion');
-
-  const dataList: string[] = t('steps', { returnObjects: true });
 
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -59,12 +57,7 @@ function Discussion({
                 <Form onSubmit={onFormSubmit} />
               )}
 
-              {isSubmit && (
-                <div className="discussion__list">
-                  <div className="title-type-4 discussion__list-title">{t('modalListTitle')}</div>
-                  <List steps={dataList} />
-                </div>
-              )}
+              {isSubmit && <DiscussionList />}
             </>
           )}
         />
