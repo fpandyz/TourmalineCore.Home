@@ -63,6 +63,11 @@
     }
   }
 
+  &__modal-subtitle {
+    margin-top: 12px;
+    color: $color-white-alpha-100;
+  }
+
   &__button {
     padding: 12px 40px;
     width: auto;

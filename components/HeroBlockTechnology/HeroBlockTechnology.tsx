@@ -48,7 +48,7 @@ function HeroBlockTechnology({
               subtitle={!isSubmit
                 ? t('modalSubtitle')
                 : `${t('modalSubtitleSuccessfulFirst')} ${email} ${t('modalSubtitleSuccessfulSecond')}`}
-              subtitleClassName="modal__subtitle--technology"
+              subtitleClassName="hero-block-technology__modal-subtitle"
               content={(
                 <>
                   {!isSubmit && (
