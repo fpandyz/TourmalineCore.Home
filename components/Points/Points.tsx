@@ -9,7 +9,7 @@ export default function Points() {
     <section className="points">
       <div className="container points__wrapper">
         <div className="points__inner">
-          <h3 className="points__title">
+          <h3 className="title-techology points__title">
             Создаем адаптивные
             кроссбраузерные интерфейсы
             для любых направлений бизнеса

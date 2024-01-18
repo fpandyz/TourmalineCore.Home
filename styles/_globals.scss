@@ -276,3 +276,24 @@ p + p {
     display: none;
   }
 }
+
+.title-techology {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.36;
+
+  @include tablet-xl {
+    font-size: 29px;
+    line-height: 1.31;
+  }
+
+  @include desktop {
+    font-size: 39px;
+    line-height: 1.29;
+  }
+
+  @include desktop-xl {
+    font-size: 47px;
+    line-height: 1.36;
+  }
+}

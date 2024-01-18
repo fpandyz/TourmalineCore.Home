@@ -14,9 +14,6 @@
 
   &__title {
     margin-bottom: 48px;
-    font-weight: inherit;
-    font-size: 25px;
-    line-height: 1.36;
 
     @include tablet {
       margin-bottom: 64px;
@@ -24,18 +21,6 @@
 
     @include tablet-xl {
       margin-bottom: 80px;
-      font-size: 29px;
-      line-height: 1.31;
-    }
-
-    @include desktop {
-      font-size: 39px;
-      line-height: 1.29;
-    }
-
-    @include desktop-xl {
-      font-size: 47px;
-      line-height: 1.36;
     }
   }
 
