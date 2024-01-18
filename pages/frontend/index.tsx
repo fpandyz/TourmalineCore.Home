@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
+import Points from '../../components/Points/Points';
 
 export default function FrontendPage() {
   return (
@@ -23,6 +24,7 @@ export default function FrontendPage() {
       <Layout>
         {/* TODO add data from json */}
         <HeroBlockTechnology title="Frontend разработка" description="Разработка сайтов и веб-приложений на React, TypeScript и не только" />
+        <Points />
       </Layout>
     </>
   );
