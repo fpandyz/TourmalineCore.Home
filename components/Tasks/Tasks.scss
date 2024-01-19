@@ -1,0 +1,66 @@
+.tasks {
+  font-weight: 500;
+
+  &__inner {
+    @include tablet-xl {
+      max-width: 589px;
+    }
+
+    @include desktop {
+      max-width: 803px;
+    }
+
+    @include desktop-xl {
+      max-width: 1043px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include tablet-xl {
+      padding-top: 120px;
+      padding-bottom: 145px;
+    }
+
+    @include desktop {
+      padding-bottom: 218px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+
+    @include tablet-xl {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+    width: 395px;
+    height: 312px;
+    background-size: cover;
+
+    &--frontend {
+      background-image: url("/images/ellipse-frontend.gif");
+    }
+
+    @include desktop {
+      right: 75px;
+    }
+
+    @include tablet-xl {
+      display: block;
+    }
+  }
+}

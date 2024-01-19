@@ -1,0 +1,98 @@
+.tasks {
+  &__list {
+    display: flex;
+    flex-flow: column;
+    gap: 24px;
+
+    @include tablet {
+      flex-flow: row wrap;
+    }
+
+    @include tablet-xl {
+      row-gap: 48px;
+    }
+
+    @include desktop-xl {
+      column-gap: 32px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding-right: 24px;
+
+    &:nth-child(even) {
+      @include tablet {
+        margin-left: auto;
+      }
+
+      @include tablet-xl {
+        margin-left: none;
+      }
+    }
+
+    @include tablet {
+      max-width: 340px;
+    }
+
+    @include tablet-xl {
+      max-width: 282px;
+    }
+
+    @include desktop {
+      max-width: 389px;
+    }
+
+    @include desktop-xl {
+      max-width: 464px;
+    }
+  }
+
+  &__number {
+    position: relative;
+    z-index: 0;
+    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 24px;
+    border: 1px solid rgba($color-black, 0);
+    border-radius: 50%;
+    padding: 8px 17px;
+    width: 40px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: $color-white;
+    background-clip: padding-box, border-box;
+    transition: background-position 0.3s linear;
+
+    &--frontend {
+      background-color: $color-frontend-page-primary;
+    }
+  }
+
+  &__text {
+    display: initial;
+    font-size: 18px;
+    line-height: 1.33;
+    color: $color-white-alpha-100;
+
+    @include tablet-xl {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    @include desktop {
+      font-size: 24px;
+      line-height: 1.33;
+    }
+
+    @include desktop-xl {
+      font-size: 28px;
+      line-height: 1.35;
+    }
+  }
+}
