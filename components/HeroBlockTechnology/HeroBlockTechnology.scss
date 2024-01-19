@@ -121,21 +121,20 @@
       @include tablet-xl {
         left: 0;
         top: 144px;
-        width: 290px;
-        height: 985px;
+        width: auto;
+        height: calc(100% - 144px);
+        max-width: 750px;
         background-image: url("/images/hero-block-frontend-element-desktop.png");
-      }
-
-      @include desktop {
-        top: 92px;
-        width: 327px;
-        height: 1112px;
-        background-image: url("/images/hero-block-frontend-element-desktop.png");
+        background-size: contain;
+        background-repeat: no-repeat;
       }
 
       @include desktop-xl {
-        width: 392px;
-        height: 1334px;
+        height: calc(100% - 92px);
+      }
+
+      @include desktop-xl {
+        height: calc(100% - 144px);
       }
     }
   }
@@ -159,11 +158,11 @@
 
     @include desktop {
       margin-top: auto;
-      height: 100vh;
+      height: calc(100vh - 80px);
     }
   }
 
-  @include desktop {
-    min-height: calc(100vh - 80px);
+  @include tablet-xl {
+    position: static;
   }
 }
