@@ -45,20 +45,6 @@
     flex-flow: column;
     row-gap: 32px;
 
-    @include tablet {
-      column-gap: 24px;
-      flex-flow: row wrap;
-    }
-
-    @include tablet-xl {
-      row-gap: 48px;
-    }
-  }
-
-  &__item {
-    padding-right: 24px;
-    max-width: 550px;
-
     &:nth-child(2),
     &:nth-child(3) {
       padding-right: 90px;
@@ -73,6 +59,20 @@
         margin-left: none;
       }
     }
+
+    @include tablet {
+      column-gap: 24px;
+      flex-flow: row wrap;
+    }
+
+    @include tablet-xl {
+      row-gap: 48px;
+    }
+  }
+
+  &__item {
+    padding-right: 24px;
+    max-width: 550px;
 
     @include tablet {
       max-width: 340px;
