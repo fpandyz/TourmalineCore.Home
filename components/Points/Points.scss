@@ -1,0 +1,139 @@
+.points {
+  font-weight: 500;
+
+  &__wrapper {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include tablet-xl {
+      display: flex;
+      justify-content: end;
+      padding-top: 120px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+
+    @include tablet-xl {
+      margin-bottom: 80px;
+    }
+
+    @include desktop {
+      max-width: 725px;
+    }
+
+    @include desktop-xl {
+      max-width: 850px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+
+    @include tablet-xl {
+      max-width: 623px;
+    }
+
+    @include desktop {
+      max-width: 803px;
+    }
+
+    @include desktop-xl {
+      max-width: 960px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: column;
+    row-gap: 32px;
+
+    @include tablet {
+      column-gap: 24px;
+      flex-flow: row wrap;
+    }
+
+    @include tablet-xl {
+      row-gap: 48px;
+    }
+  }
+
+  &__item {
+    padding-right: 24px;
+    max-width: 550px;
+
+    &:nth-child(even) {
+      @include tablet {
+        margin-left: auto;
+      }
+
+      @include tablet-xl {
+        margin-left: none;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      padding-right: 90px;
+    }
+
+    @include tablet {
+      max-width: 340px;
+    }
+
+    @include tablet-xl {
+      max-width: 282px;
+    }
+
+    @include desktop {
+      max-width: 369px;
+    }
+
+    @include desktop-xl {
+      max-width: 464px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.33;
+    color: $color-white-alpha-100;
+
+    @include tablet-xl {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    @include desktop {
+      font-size: 24px;
+      line-height: 1.33;
+    }
+
+    @include desktop-xl {
+      font-size: 28px;
+      line-height: 1.35;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: -16px;
+    bottom: 18px;
+    width: 87px;
+    height: 135px;
+    background-size: cover;
+
+    &--frontend {
+      background-image: url("/images/points-element.png");
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
