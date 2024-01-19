@@ -28,7 +28,7 @@
     position: relative;
 
     @include tablet-xl {
-      max-width: 589px;
+      max-width: 623px;
     }
 
     @include desktop {
@@ -44,11 +44,6 @@
     display: flex;
     flex-flow: column;
     row-gap: 32px;
-
-    &:nth-child(2),
-    &:nth-child(3) {
-      padding-right: 90px;
-    }
 
     &:nth-child(even) {
       @include tablet {
@@ -74,6 +69,11 @@
     padding-right: 24px;
     max-width: 550px;
 
+    &:nth-child(2),
+    &:nth-child(3) {
+      padding-right: 90px;
+    }
+
     @include tablet {
       max-width: 340px;
     }
@@ -83,7 +83,7 @@
     }
 
     @include desktop {
-      max-width: 389px;
+      max-width: 369px;
     }
 
     @include desktop-xl {
