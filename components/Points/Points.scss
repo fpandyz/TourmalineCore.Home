@@ -45,16 +45,6 @@
     flex-flow: column;
     row-gap: 32px;
 
-    &:nth-child(even) {
-      @include tablet {
-        margin-left: auto;
-      }
-
-      @include tablet-xl {
-        margin-left: none;
-      }
-    }
-
     @include tablet {
       column-gap: 24px;
       flex-flow: row wrap;
@@ -68,6 +58,16 @@
   &__item {
     padding-right: 24px;
     max-width: 550px;
+
+    &:nth-child(even) {
+      @include tablet {
+        margin-left: auto;
+      }
+
+      @include tablet-xl {
+        margin-left: none;
+      }
+    }
 
     &:nth-child(2),
     &:nth-child(3) {
