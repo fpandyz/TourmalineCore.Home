@@ -120,21 +120,20 @@
 
       @include tablet-xl {
         left: 0;
-        bottom: -507px;
+        top: 144px;
         width: 290px;
         height: 985px;
         background-image: url("/images/hero-block-frontend-element-desktop.png");
       }
 
       @include desktop {
-        bottom: -552px;
+        top: 92px;
         width: 327px;
         height: 1112px;
         background-image: url("/images/hero-block-frontend-element-desktop.png");
       }
 
       @include desktop-xl {
-        bottom: -480px;
         width: 392px;
         height: 1334px;
       }
@@ -156,6 +155,11 @@
       justify-content: end;
       padding-top: 184px;
       padding-bottom: 264px;
+    }
+
+    @include desktop {
+      margin-top: auto;
+      height: 100vh;
     }
   }
 
