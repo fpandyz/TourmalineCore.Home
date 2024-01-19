@@ -27,10 +27,6 @@
   &__inner {
     position: relative;
 
-    @include tablet {
-      max-width: 704px;
-    }
-
     @include tablet-xl {
       max-width: 589px;
     }
@@ -68,9 +64,30 @@
       padding-right: 90px;
     }
 
+    &:nth-child(even) {
+      @include tablet {
+        margin-left: auto;
+      }
+
+      @include tablet-xl {
+        margin-left: none;
+      }
+    }
+
     @include tablet {
-      flex-basis: 42%;
-      max-width: none;
+      max-width: 340px;
+    }
+
+    @include tablet-xl {
+      max-width: 282px;
+    }
+
+    @include desktop {
+      max-width: 389px;
+    }
+
+    @include desktop-xl {
+      max-width: 464px;
     }
   }
 
