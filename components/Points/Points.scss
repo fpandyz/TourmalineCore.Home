@@ -22,6 +22,14 @@
     @include tablet-xl {
       margin-bottom: 80px;
     }
+
+    @include desktop {
+      max-width: 725px;
+    }
+
+    @include desktop-xl {
+      max-width: 850px;
+    }
   }
 
   &__inner {
