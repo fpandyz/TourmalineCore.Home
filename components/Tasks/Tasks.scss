@@ -47,12 +47,12 @@
     right: 0;
     bottom: 0;
     display: none;
-    width: 395px;
-    height: 312px;
+    width: 320px;
+    height: 285px;
     background-size: cover;
 
     &--frontend {
-      background-image: url("/images/ellipse-frontend.gif");
+      background-image: url("/images/react-frontend.gif");
     }
 
     @include desktop {
