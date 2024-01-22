@@ -96,7 +96,7 @@
     height: 40px;
     color: $color-black;
     background-color: $color-white;
-    transition: all 0.1s;
+    transition: all 0.2s ease-in-out;
 
     svg {
       display: block;
@@ -112,7 +112,6 @@
 
   &:hover &__arrow {
     transform: rotate(45deg);
-    transition: all 0.1s;
   }
 
   &--frontend {
