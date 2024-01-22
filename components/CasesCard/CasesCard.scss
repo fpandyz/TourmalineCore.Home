@@ -18,6 +18,10 @@
       margin-bottom: 24px;
       text-align: center;
     }
+
+    @include desktop-xl {
+      padding: 40px 32px;
+    }
   }
 
   &__icon {
@@ -133,13 +137,5 @@
     &:hover::after {
       opacity: 1;
     }
-  }
-
-  @include tablet {
-    flex: 1 48%;
-  }
-
-  @include desktop {
-    flex: 1 30%;
   }
 }

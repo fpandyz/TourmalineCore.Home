@@ -4,6 +4,8 @@ import IconPeople from '../../icons/icon-people.svg';
 import IconMonitor from '../../icons/icon-monitor.svg';
 import IconChart from '../../icons/icon-chart.svg';
 import IconHeart from '../../icons/icon-heart.svg';
+import IconAdvertisement from '../../icons/icon-advertisement.svg';
+import IconIceCream from '../../icons/icon-ice-cream.svg';
 
 const CASES_TITLE = 'Некоторые наши проекты';
 
@@ -33,6 +35,16 @@ const CASES_LIST = [
     title: 'Fair Action',
     description: 'Сайт для австралийской благотворительной организации',
     icon: <IconHeart />,
+  },
+  {
+    title: 'Inner Circle',
+    description: 'Сервис для работы с объявлениями и их выгрузки  на сайты недвижимости',
+    icon: <IconAdvertisement />,
+  },
+  {
+    title: 'Best By',
+    description: 'Сервис для отслеживания срока годности продукции',
+    icon: <IconIceCream />,
   },
 ];
 
