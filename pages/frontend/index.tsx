@@ -24,7 +24,10 @@ export default function FrontendPage() {
       <Layout>
         {/* TODO add data from json */}
         <div className="frontend__hero-block-container">
-          <HeroBlockTechnology title="Frontend разработка" description="Разработка сайтов и веб-приложений на React, TypeScript и не только" />
+          <HeroBlockTechnology
+            title="Frontend разработка"
+            description="Разработка сайтов и веб-приложений на React, TypeScript и не только"
+          />
           <Points />
         </div>
       </Layout>

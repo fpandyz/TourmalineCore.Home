@@ -69,6 +69,7 @@
   }
 
   &__button {
+    z-index: 1;
     padding: 12px 40px;
     width: auto;
     font-size: 16px;
@@ -121,20 +122,16 @@
       @include tablet-xl {
         left: 0;
         top: 144px;
-        width: auto;
+        z-index: 0;
+        width: 100%;
         height: calc(100% - 144px);
-        max-width: 750px;
         background-image: url("/images/hero-block-frontend-element-desktop.png");
         background-size: contain;
         background-repeat: no-repeat;
       }
 
-      @include desktop-xl {
+      @include desktop {
         height: calc(100% - 92px);
-      }
-
-      @include desktop-xl {
-        height: calc(100% - 144px);
       }
     }
   }
