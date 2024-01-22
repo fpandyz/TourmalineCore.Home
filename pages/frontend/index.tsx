@@ -4,6 +4,7 @@ import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
+import Cases from '../../components/Cases/Cases';
 
 export default function FrontendPage() {
   return (
@@ -25,6 +26,7 @@ export default function FrontendPage() {
         {/* TODO add data from json */}
         <HeroBlockTechnology title="Frontend разработка" description="Разработка сайтов и веб-приложений на React, TypeScript и не только" />
         <Points />
+        <Cases />
       </Layout>
     </>
   );

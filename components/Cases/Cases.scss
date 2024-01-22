@@ -1,0 +1,43 @@
+.cases {
+  &__wrapper {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include desktop {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-flow: column;
+    gap: 24px;
+
+    @include tablet {
+      flex-flow: row wrap;
+    }
+
+    @include desktop-xl {
+      gap: 32px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    padding-right: 120px;
+
+    @include tablet {
+      flex: 1 48%;
+    }
+
+    @include tablet-xl {
+      padding-right: 210px;
+    }
+
+    @include desktop {
+      flex: 1 30%;
+      padding-right: 85px;
+    }
+  }
+}
