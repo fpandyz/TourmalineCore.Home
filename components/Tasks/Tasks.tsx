@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
-import TasksList from '../TasksList/TasksList';
+import TasksList from './TasksList/TasksList';
+
 
 const TASKS_LIST = ['Адаптивная и кроссбраузерная верстка', 'Миграция legacy-проектов на актуальные технологии', 'Разработка SPA-приложений', 'Разработка публичных веб-сайтов'];
 const TASKS_TITLE = 'Задачи, которые мы решаем';
