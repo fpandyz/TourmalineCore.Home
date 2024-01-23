@@ -6,8 +6,10 @@ import Header from '../Header/Header';
 
 export default function Layout({
   children,
+  mainClassName
 }: {
   children: ReactNode;
+  mainClassName?: string;
 }) {
   return (
     <div className={clsx('layout', {
@@ -15,7 +17,7 @@ export default function Layout({
     })}
     >
       <Header />
-      <main>
+      <main className={mainClassName}>
         {children}
       </main>
       <Footer />

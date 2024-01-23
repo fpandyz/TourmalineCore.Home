@@ -23,7 +23,7 @@ export default function FrontendPage() {
           additionalCode: '',
         }}
       />
-      <Layout>
+      <Layout mainClassName='frontend__main'>
         {/* TODO add data from json */}
         <div className="frontend__hero-block-container">
           <HeroBlockTechnology
