@@ -52,7 +52,10 @@ function HeroBlockTechnology({
               content={(
                 <>
                   {!isSubmit && (
-                    <Form onSubmit={onFormSubmit} buttonClassName={`hero-block-technology__button hero-block-technology__button--${slicePathname}`} />
+                    <Form
+                      onSubmit={onFormSubmit}
+                      buttonClassName={`hero-block-technology__button hero-block-technology__button--modal hero-block-technology__button--${slicePathname}`}
+                    />
                   )}
                   {isSubmit && <DiscussionList />}
                 </>
