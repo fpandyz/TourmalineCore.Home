@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 
 export default function Layout({
   children,
-  mainClassName
+  mainClassName,
 }: {
   children: ReactNode;
   mainClassName?: string;
