@@ -13,6 +13,7 @@ module.exports = withReactSvg({
     I18NEXUS_API_KEY_HOME: process.env.I18NEXUS_API_KEY_HOME,
     I18NEXUS_API_KEY_FRONTEND: process.env.I18NEXUS_API_KEY_FRONTEND,
     I18NEXUS_API_KEY_DESIGN: process.env.I18NEXUS_API_KEY_DESIGN,
+    I18NEXUS_API_KEY_COMMON: process.env.I18NEXUS_API_KEY_COMMON,
     METRICS_ENABLED: process.env.METRICS_ENABLED,
   },
   webpack(webpackConfig) {
