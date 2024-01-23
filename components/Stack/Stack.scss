@@ -1,0 +1,89 @@
+.stack {
+  position: relative;
+
+  &__wrapper {
+    padding-top: 144px;
+    padding-bottom: 144px;
+
+    @include tablet {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    @include tablet-xl {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__inner {
+    @include tablet-xl {
+      min-width: 731px;
+    }
+
+    @include desktop {
+      min-width: 803px;
+    }
+
+    @include desktop-xl {
+      min-width: 960px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+
+    @include tablet-xl {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include tablet {
+      gap: 24px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-size: cover;
+
+    &--frontend {
+      width: 124px;
+      height: 175px;
+      background-image: url("/images/stack-frontend-element-mobile.png");
+
+      @include tablet {
+        width: 190px;
+        height: 217px;
+        background-image: url("/images/stack-frontend-element-tablet.png");
+      }
+
+      @include tablet-xl {
+        left: -81px;
+        width: 363px;
+        height: 411px;
+        background-image: url("/images/stack-frontend-element-desktop.png");
+      }
+
+      @include desktop {
+        left: 0;
+        bottom: 70px;
+      }
+    }
+  }
+}

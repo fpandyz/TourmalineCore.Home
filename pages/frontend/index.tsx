@@ -5,6 +5,7 @@ import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
 import Cases from '../../components/Cases/Cases';
+import Stack from '../../components/Stack/Stack';
 
 export default function FrontendPage() {
   return (
@@ -32,6 +33,7 @@ export default function FrontendPage() {
           <Points />
         </div>
         <Cases />
+        <Stack />
       </Layout>
     </>
   );

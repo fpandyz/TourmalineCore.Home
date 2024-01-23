@@ -60,7 +60,7 @@ export default function Cases() {
     <section className="cases">
       <div className="container cases__wrapper">
         <div className="cases__inner">
-          <h3 className="title-technology cases__title">{CASES_TITLE}</h3>
+          <h3 className="title-technology-type-1 cases__title">{CASES_TITLE}</h3>
           {CASES_LIST.map((item) => (
             <CasesCard
               title={item.title}
