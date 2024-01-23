@@ -7,6 +7,7 @@ $color-white: #fff;
 $color-white-alpha-100: rgb(255, 255, 255, 0.8);
 $color-white-alpha-200: rgb(255, 255, 255, 0.5);
 $color-white-alpha-300: rgb(255, 255, 255, 0.3);
+$color-white-alpha-400: rgb(255, 255, 255, 0.1);
 
 // Main gradient
 $main-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #4fdae2 99.96%);
@@ -58,6 +59,8 @@ $color-bright-lilac: #b900d8;
 $color-soft-lilac: #fef3ff;
 $color-yellow: #f8d830;
 $color-gray: #1b1926;
+$color-dark-card: linear-gradient(234deg, #17191c 0%, #101112 100%);
+$color-dark-purple-card: linear-gradient(234deg, #7926ff 0%, #090029 100%);
 
 // Error
 $color-error: #ff9994;
