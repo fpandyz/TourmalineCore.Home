@@ -69,6 +69,7 @@
   }
 
   &__button {
+    z-index: 1;
     padding: 12px 40px;
     width: auto;
     font-size: 16px;
@@ -105,6 +106,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: 0;
     background-size: cover;
 
     &--frontend {
@@ -120,23 +122,16 @@
 
       @include tablet-xl {
         left: 0;
-        bottom: -507px;
-        width: 290px;
-        height: 985px;
+        top: 144px;
+        width: 100%;
+        height: calc(100% - 144px);
         background-image: url("/images/hero-block-frontend-element-desktop.png");
+        background-size: contain;
+        background-repeat: no-repeat;
       }
 
       @include desktop {
-        bottom: -552px;
-        width: 327px;
-        height: 1112px;
-        background-image: url("/images/hero-block-frontend-element-desktop.png");
-      }
-
-      @include desktop-xl {
-        bottom: -480px;
-        width: 392px;
-        height: 1334px;
+        height: calc(100% - 92px);
       }
     }
   }
@@ -157,9 +152,14 @@
       padding-top: 184px;
       padding-bottom: 264px;
     }
+
+    @include desktop {
+      margin-top: auto;
+      height: calc(100vh - 80px);
+    }
   }
 
-  @include desktop {
-    min-height: calc(100vh - 80px);
+  @include tablet-xl {
+    position: static;
   }
 }
