@@ -1,0 +1,7 @@
+.frontend {
+  &__hero-block-container {
+    @include tablet-xl {
+      position: relative;
+    }
+  }
+}
