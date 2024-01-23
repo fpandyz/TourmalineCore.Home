@@ -1,5 +1,1 @@
-<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="icon">
-<path id="Vector 183" d="M3.33398 8.88892V24.8814M24.5535 14.6567L31.3647 8.88892H35.5562V32.2222H24.5535M24.5535 14.6567V32.2222M24.5535 14.6567H20.8859L13.9437 19.9002M24.5535 32.2222H13.9437M13.9437 32.2222H3.33398V24.8814M13.9437 32.2222V19.9002M13.9437 19.9002H9.62125L3.33398 24.8814" stroke="currentColor" stroke-opacity="0.3" stroke-width="2.5"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40"><path stroke="currentColor" stroke-opacity=".3" stroke-width="2.5" d="M3.334 8.889V24.88m21.22-10.224 6.81-5.768h4.192v23.333H24.554m0-17.565v17.565m0-17.565h-3.668L13.944 19.9m10.61 12.322h-10.61m0 0H3.334v-7.34m10.61 7.34V19.9m0 0H9.62l-6.287 4.981"/></svg>
