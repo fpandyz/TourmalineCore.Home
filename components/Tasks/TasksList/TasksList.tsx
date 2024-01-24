@@ -8,14 +8,14 @@ export default function TasksList({
   const { pathname } = useRouter();
 
   return (
-    <ul className="tasks__list">
+    <ul className="tasks-list">
       {tasks.map((text, index) => (
         <li
           key={text}
-          className="tasks__item"
+          className="tasks-list__item"
         >
-          <div className={`tasks__number tasks__number--${pathname.slice(1)}`}>{index + 1}</div>
-          <span className="tasks__text">{text}</span>
+          <div className={`tasks-list__number tasks-list__number--${pathname.slice(1)}`}>{index + 1}</div>
+          <span className="tasks-list__text">{text}</span>
         </li>
       ))}
     </ul>

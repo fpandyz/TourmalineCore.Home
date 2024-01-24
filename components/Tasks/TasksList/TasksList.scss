@@ -1,21 +1,7 @@
-.tasks {
-  &__list {
-    display: flex;
-    flex-flow: column;
-    gap: 24px;
-
-    @include tablet {
-      flex-flow: row wrap;
-    }
-
-    @include tablet-xl {
-      row-gap: 48px;
-    }
-
-    @include desktop-xl {
-      column-gap: 32px;
-    }
-  }
+.tasks-list {
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
 
   &__item {
     display: flex;
@@ -94,5 +80,17 @@
       font-size: 28px;
       line-height: 1.35;
     }
+  }
+
+  @include tablet {
+    flex-flow: row wrap;
+  }
+
+  @include tablet-xl {
+    row-gap: 48px;
+  }
+
+  @include desktop-xl {
+    column-gap: 32px;
   }
 }
