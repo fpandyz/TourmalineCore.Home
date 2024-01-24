@@ -29,7 +29,7 @@ export default function Cta() {
           <PrimaryButton onClick={() => setIsOpen(true)} className={`cta__button cta__button--${pathname.slice(1)}`}>
             {CTA_BUTTON_TEXT}
           </PrimaryButton>
-          <div className={`cta__image cta__image--${slicePathname}`} />
+          <div className="cta__image" />
         </div>
       </div>
       {isOpen && (

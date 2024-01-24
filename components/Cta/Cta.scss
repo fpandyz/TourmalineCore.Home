@@ -121,11 +121,8 @@
     display: none;
     width: 654px;
     height: 305px;
+    background-image: url("/images/cta-frontend.gif");
     background-size: cover;
-
-    &--frontend {
-      background-image: url("/images/cta-frontend.gif");
-    }
 
     @include tablet {
       display: block;
