@@ -20,7 +20,7 @@ export default function CasesCard(
     <a href={link} className={`cases-card cases-card--${pathname.slice(1)}`}>
       <div className="cases-card__inner">
         <div className="cases-card__icon">{icon}</div>
-        <h3 className="cases-card__title">{title}</h3>
+        <h3 className="title-technology-type-2 cases-card__title">{title}</h3>
         <span className="cases-card__description">{description}</span>
       </div>
       <span className="cases-card__arrow">

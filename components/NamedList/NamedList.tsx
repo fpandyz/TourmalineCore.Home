@@ -9,7 +9,7 @@ export default function NamedList(
 ) {
   return (
     <ul className="named-list">
-      <h4 className="title-technology-type-2 named-list__title">{title}</h4>
+      <h4 className="title-technology-type-3 named-list__title">{title}</h4>
       {data.map((text) => (
         <li
           key={text}
