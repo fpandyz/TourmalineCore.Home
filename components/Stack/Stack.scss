@@ -21,7 +21,7 @@
 
   &__inner {
     @include tablet-xl {
-      min-width: 731px;
+      min-width: 623px;
     }
 
     @include desktop {
@@ -82,6 +82,9 @@
 
       @include desktop {
         left: 0;
+      }
+
+      @include desktop-xl {
         bottom: 70px;
       }
     }
