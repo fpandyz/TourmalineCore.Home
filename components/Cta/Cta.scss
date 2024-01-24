@@ -115,16 +115,29 @@
   }
 
   // TODO add image
-  // &__image {
-  //   position: absolute;
-  //   right: 0;
-  //   top: -80px;
-  //   width: 654px;
-  //   height: 305px;
-  //   background-size: cover;
+  &__image {
+    position: absolute;
+    left: 392px;
+    top: -80px;
+    display: none;
+    width: 654px;
+    height: 305px;
+    background-size: cover;
 
-  //   &--frontend {
-  //     background-image: url("/images/cta-frontend.gif");
-  //   }
-  // }
+    &--frontend {
+      background-image: url("/images/cta-frontend.gif");
+    }
+
+    @include tablet {
+      display: block;
+    }
+
+    @include tablet-xl {
+      left: 448px;
+    }
+
+    @include desktop {
+      left: 620px;
+    }
+  }
 }
