@@ -33,7 +33,7 @@ export default function PaymentList() {
   return (
     <ul className="payment-list">
       {PAYMENT_LIST.map(({ paymentListTitle, paymentListData }) => (
-        <li className="payment-list__item">
+        <li key={paymentListTitle} className="payment-list__item">
           <h4 className="title-technology-type-2 payment-list__title">{paymentListTitle}</h4>
           <div className="payment-list__inner">
             {paymentListData.map(({ namedListTitle, namedListData }) => (
