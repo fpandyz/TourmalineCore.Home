@@ -13,6 +13,7 @@ const STACK_LIBRARY = {
 
 export default function Stack() {
   const { pathname } = useRouter();
+
   return (
     <section className="stack">
       <div className="container stack__wrapper">

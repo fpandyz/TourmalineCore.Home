@@ -1,14 +1,6 @@
 .named-list {
   font-weight: 500;
 
-  > *:not(:last-child, :first-child) {
-    margin-bottom: 8px;
-
-    @include tablet-xl {
-      margin-bottom: 16px;
-    }
-  }
-
   &__title {
     margin-bottom: 16px;
     max-width: 185px;
@@ -24,6 +16,14 @@
     font-size: 18px;
     line-height: 1.33;
 
+    & + & {
+      margin-top: 8px;
+
+      @include tablet-xl {
+        margin-top: 16px;
+      }
+    }
+
     @include tablet-xl {
       font-size: 20px;
       line-height: 1.4;
@@ -37,6 +37,22 @@
     @include desktop-xl {
       font-size: 28px;
       line-height: 1.35;
+    }
+  }
+
+  // > *:not(:last-child, :first-child) {
+  //   margin-bottom: 8px;
+
+  //   @include tablet-xl {
+  //     margin-bottom: 16px;
+  //   }
+  // }
+
+  & + & {
+    margin-bottom: 8px;
+
+    @include tablet-xl {
+      margin-bottom: 16px;
     }
   }
 
