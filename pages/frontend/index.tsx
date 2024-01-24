@@ -4,13 +4,14 @@ import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
+import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Stack from '../../components/Stack/Stack';
 
 export default function FrontendPage() {
   return (
     <>
-      {/* TODO Добавить перевод */}
+      {/* TODO add translate */}
       <PageHead
         seoData={{
           seo: {
@@ -23,7 +24,7 @@ export default function FrontendPage() {
           additionalCode: '',
         }}
       />
-      <Layout>
+      <Layout mainClassName="frontend__main">
         {/* TODO add data from json */}
         <div className="frontend__hero-block-container">
           <HeroBlockTechnology
@@ -32,6 +33,7 @@ export default function FrontendPage() {
           />
           <Points />
         </div>
+        <Tasks />
         <Cases />
         <Stack />
       </Layout>
