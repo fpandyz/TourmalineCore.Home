@@ -6,6 +6,7 @@ import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockT
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
+import Payment from '../../components/Payment/Payment';
 
 export default function FrontendPage() {
   return (
@@ -34,6 +35,7 @@ export default function FrontendPage() {
         </div>
         <Tasks />
         <Cases />
+        <Payment />
       </Layout>
     </>
   );
