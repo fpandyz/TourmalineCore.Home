@@ -14,7 +14,7 @@ export default function FormTechnologyModal({
   const { t } = useTranslation('discussion');
   const { pathname } = useRouter();
 
-  const [isSubmit, setIsSubmit] = useState(true);
+  const [isSubmit, setIsSubmit] = useState(false);
   const [email, setEmail] = useState('');
 
   return (
