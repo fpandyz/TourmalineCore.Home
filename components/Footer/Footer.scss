@@ -79,6 +79,11 @@
     }
   }
 
+  &--technology {
+    background-image: none;
+    background-color: $color-black;
+  }
+
   &--zh {
     #{$this}__description {
       @include desktop-xl {

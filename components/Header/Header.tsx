@@ -12,25 +12,21 @@ import IconBurger from '../../icons/burger.svg';
 import IconBurgerFrontend from '../../icons/burger-frontend.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { AppRoute } from '../../common/utils/consts/app-route';
 
 type HeaderLinks = {
   id: string;
   link: string;
 }[];
 
-enum HeaderLinkId {
-  Frontend = 'frontend',
-  Articles = 'articles',
-}
-
 const headerLinks: HeaderLinks = [
   {
-    id: HeaderLinkId.Frontend,
-    link: `/${HeaderLinkId.Frontend}`,
+    id: AppRoute.Frontend.slice(1),
+    link: AppRoute.Frontend,
   },
   {
-    id: HeaderLinkId.Articles,
-    link: `/${HeaderLinkId.Articles}`,
+    id: AppRoute.Articles.slice(1),
+    link: AppRoute.Articles,
   },
 ];
 
@@ -67,7 +63,7 @@ function Header() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open header"
             >
-              { pathname === `/${HeaderLinkId.Frontend}` ? <IconBurgerFrontend /> : <IconBurger />}
+              { pathname === AppRoute.Frontend ? <IconBurgerFrontend /> : <IconBurger />}
             </button>
 
             <div className="header__desktop">
