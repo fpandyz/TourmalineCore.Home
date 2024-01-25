@@ -8,6 +8,7 @@ import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Stack from '../../components/Stack/Stack';
 import Cta from '../../components/Cta/Cta';
+import FormBlock from '../../components/FormBlock/FormBlock';
 
 export default function FrontendPage() {
   return (
@@ -38,6 +39,7 @@ export default function FrontendPage() {
         <Cases />
         <Cta />
         <Stack />
+        <FormBlock buttonClassName="frontend__form-button" />
       </Layout>
     </>
   );
