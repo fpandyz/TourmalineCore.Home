@@ -7,6 +7,7 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Stack from '../../components/Stack/Stack';
+import Cta from '../../components/Cta/Cta';
 
 export default function FrontendPage() {
   return (
@@ -35,6 +36,7 @@ export default function FrontendPage() {
         </div>
         <Tasks />
         <Cases />
+        <Cta />
         <Stack />
       </Layout>
     </>
