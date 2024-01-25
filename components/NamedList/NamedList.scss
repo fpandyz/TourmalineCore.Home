@@ -40,14 +40,6 @@
     }
   }
 
-  // > *:not(:last-child, :first-child) {
-  //   margin-bottom: 8px;
-
-  //   @include tablet-xl {
-  //     margin-bottom: 16px;
-  //   }
-  // }
-
   & + & {
     margin-bottom: 8px;
 
