@@ -1,0 +1,45 @@
+.form-technology-modal {
+  &__subtitle {
+    margin-top: 12px;
+    color: $color-white-alpha-100;
+  }
+
+  &__button {
+    z-index: 1;
+    border-radius: 100px;
+    padding: 12px 40px;
+    width: auto;
+    width: 100%;
+    font-size: 16px;
+    line-height: 22px;
+    background-image: none;
+    transition: all 0.5s;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+    &--frontend {
+      background-color: $color-frontend-page-primary;
+
+      &:hover {
+        border: 1px solid $color-frontend-page-primary;
+        background: rgba($color-frontend-page-primary, 0.3);
+      }
+    }
+
+    @include tablet {
+      width: auto;
+    }
+
+    @include desktop {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    @include desktop-xl {
+      font-size: 20px;
+    }
+  }
+}

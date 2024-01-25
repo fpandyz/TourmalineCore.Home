@@ -57,6 +57,11 @@
 
       opacity: 0.4;
     }
+
+    &--frontend {
+      background-image: none;
+      background-color: $color-frontend-page-primary;
+    }
   }
 
   &__text {
