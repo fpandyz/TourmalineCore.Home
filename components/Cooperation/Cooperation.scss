@@ -61,24 +61,25 @@
       height: 194px;
       background-image: url("/images/cooperation-frontend-element-mobile.png");
 
-      // @include tablet {
-      //   width: 320px;
-      //   height: 312px;
-      //   background-image: url("/images/ellipse-frontend.gif");
-      // }
+      @include tablet {
+        bottom: 0;
+        width: 320px;
+        height: 312px;
+        background-image: url("/images/ellipse-frontend.gif");
+      }
 
-      // @include tablet-xl {
-      //   left: 0;
-      //   top: 144px;
-      //   width: 100%;
-      //   height: calc(100% - 144px);
-      //   background-size: contain;
-      //   background-repeat: no-repeat;
-      // }
+      @include tablet-xl {
+        left: 0;
+        bottom: 82px;
+      }
 
-      // @include desktop {
-      //   height: calc(100% - 92px);
-      // }
+      @include desktop {
+        bottom: 132px;
+      }
+
+      @include desktop-xl {
+        bottom: 164px;
+      }
     }
   }
 }
