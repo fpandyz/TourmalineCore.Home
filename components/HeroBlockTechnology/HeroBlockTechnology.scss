@@ -70,6 +70,7 @@
 
   &__button {
     z-index: 1;
+    border-radius: 100px;
     padding: 12px 40px;
     width: auto;
     font-size: 16px;
@@ -82,12 +83,19 @@
       display: none;
     }
 
+    &--modal {
+      width: 100%;
+
+      @include tablet {
+        width: auto;
+      }
+    }
+
     &--frontend {
       background-color: $color-frontend-page-primary;
 
       &:hover {
         border: 1px solid $color-frontend-page-primary;
-        border-radius: 100px;
         background: rgba($color-frontend-page-primary, 0.3);
       }
     }
