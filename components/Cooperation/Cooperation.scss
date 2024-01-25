@@ -1,0 +1,84 @@
+.cooperation {
+  &__wrapper {
+    position: relative;
+    padding-top: 104px;
+    padding-bottom: 104px;
+
+    @include tablet {
+      display: flex;
+      justify-content: start;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    @include tablet-xl {
+      justify-content: end;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__inner {
+    max-width: 600px;
+
+    @include tablet {
+      max-width: 439px;
+    }
+
+    @include tablet-xl {
+      min-width: 623px;
+    }
+
+    @include desktop {
+      min-width: 803px;
+    }
+
+    @include desktop-xl {
+      min-width: 960px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+
+    @include tablet-xl {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: -26px;
+    bottom: 145px;
+    background-size: cover;
+
+    &--frontend {
+      width: 69px;
+      height: 194px;
+      background-image: url("/images/cooperation-frontend-element-mobile.png");
+
+      // @include tablet {
+      //   width: 320px;
+      //   height: 312px;
+      //   background-image: url("/images/ellipse-frontend.gif");
+      // }
+
+      // @include tablet-xl {
+      //   left: 0;
+      //   top: 144px;
+      //   width: 100%;
+      //   height: calc(100% - 144px);
+      //   background-size: contain;
+      //   background-repeat: no-repeat;
+      // }
+
+      // @include desktop {
+      //   height: calc(100% - 92px);
+      // }
+    }
+  }
+}
