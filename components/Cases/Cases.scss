@@ -29,6 +29,21 @@
 
   &__title {
     margin-bottom: 24px;
-    padding-right: 120px;
+
+    @include tablet {
+      max-width: 220px;
+    }
+
+    @include tablet-xl {
+      max-width: 260px;
+    }
+
+    @include desktop {
+      max-width: 310px;
+    }
+
+    @include desktop-xl {
+      max-width: 370px;
+    }
   }
 }

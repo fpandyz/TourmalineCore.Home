@@ -52,24 +52,9 @@
 
   &__title {
     margin-bottom: 8px;
-    font-weight: inherit;
-    font-size: 22px;
-    line-height: 1.36;
-
-    @include tablet-xl {
-      font-size: 24px;
-      line-height: 1.33;
-    }
 
     @include desktop {
       margin-bottom: 16px;
-      font-size: 32px;
-      line-height: 1.25;
-    }
-
-    @include desktop-xl {
-      font-size: 36px;
-      line-height: 1.27;
     }
   }
 
