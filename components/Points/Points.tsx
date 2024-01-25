@@ -11,7 +11,7 @@ export default function Points() {
     <section className="points">
       <div className="container points__wrapper">
         <div className="points__inner">
-          <h3 className="title-technology points__title">{POINTS_TITLE}</h3>
+          <h3 className="title-technology-type-1 points__title">{POINTS_TITLE}</h3>
           <ul className="points__list">
             {POINTS_LIST.map((text) => (
               <li
