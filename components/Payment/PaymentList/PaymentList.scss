@@ -3,12 +3,13 @@
   flex-flow: column;
   row-gap: 48px;
 
-  > *:not(:last-child) {
-    border-bottom: 1px solid rgba($color-white-alpha-300, 0.3);
-  }
-
   &__item {
+    border-bottom: 1px solid rgba($color-white-alpha-300, 0.3);
     padding-bottom: 48px;
+
+    &:last-child {
+      border-bottom: none;
+    }
 
     @include tablet-xl {
       display: flex;
@@ -25,6 +26,7 @@
     max-width: 230px;
 
     @include tablet-xl {
+      margin-bottom: 0;
       padding-right: 24px;
       min-width: 306px;
     }
