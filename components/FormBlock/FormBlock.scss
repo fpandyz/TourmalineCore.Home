@@ -6,6 +6,14 @@
   &__inner {
     @include tablet-xl {
       max-width: 800px;
+
+      &--technology {
+        max-width: none;
+      }
+    }
+
+    @include desktop {
+      max-width: 803px;
     }
 
     @include desktop-xl {
@@ -23,6 +31,20 @@
 
   &__title-gradient {
     @include gradient-text;
+  }
+
+  &__title-technology {
+    display: block;
+    max-width: 520px;
+    color: $color-white-alpha-200;
+
+    @include desktop {
+      max-width: 700px;
+    }
+
+    @include desktop-xl {
+      max-width: 800px;
+    }
   }
 
   &__text {

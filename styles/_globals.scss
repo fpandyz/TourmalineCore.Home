@@ -107,6 +107,11 @@ p + p {
     &--home-page {
       padding-left: 283px;
     }
+
+    &--technology-page {
+      display: flex;
+      justify-content: end;
+    }
   }
 
   @include desktop-xl {
