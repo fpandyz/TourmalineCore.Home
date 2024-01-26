@@ -66,6 +66,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'formBlock',
       'discussion',
       'heroFrontend',
+      'pointsFrontend',
     ])),
   },
 });
