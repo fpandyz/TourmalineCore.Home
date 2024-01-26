@@ -86,19 +86,6 @@
       background: rgba($color-white-alpha-400, 0.1);
     }
 
-    &--modal {
-      border: 1px solid $color-frontend-page-primary;
-      width: 100%;
-
-      &:hover {
-        background: rgba($color-frontend-page-primary, 0.3);
-      }
-
-      @include tablet {
-        width: auto;
-      }
-    }
-
     &--frontend {
       background-color: $color-frontend-page-primary;
     }
