@@ -35,6 +35,8 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { pathname } = useRouter();
 
+  const burgerIcon = getBurgerIcon(pathname);
+
   useBodyScrollHiden(isMobileMenuOpen);
 
   return (
@@ -63,7 +65,7 @@ function Header() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open header"
             >
-              { pathname === AppRoute.Frontend ? <IconBurgerFrontend /> : <IconBurger />}
+              {burgerIcon}
             </button>
 
             <div className="header__desktop">
@@ -86,6 +88,16 @@ function Header() {
       )}
     </>
   );
+
+  function getBurgerIcon(page: string) {
+    switch (page) {
+      case AppRoute.Frontend:
+        return <IconBurgerFrontend />;
+
+      default:
+        return <IconBurger />;
+    }
+  }
 }
 
 export default Header;
