@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
-import { TPaymentList } from '../../common/utils/types/payment';
 import PaymentList from './PaymentList/PaymentList';
+import { TPaymentList } from './types';
 
 export default function Payment() {
   const { t } = useTranslation('payment');

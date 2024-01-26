@@ -1,5 +1,5 @@
-import { TPaymentList } from '../../../common/utils/types/payment';
 import NamedList from '../../NamedList/NamedList';
+import { TPaymentList } from '../types';
 
 export default function PaymentList({
   list,
