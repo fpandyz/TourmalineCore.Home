@@ -5,12 +5,12 @@ export default function ServicesTechnologyCard(
   {
     title,
     description,
-    link,
+    // link,
   }:
   {
     title: string;
     description: string;
-    link: string
+    // link: string
   },
 ) {
   const { pathname } = useRouter();
