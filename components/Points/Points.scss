@@ -40,11 +40,11 @@
     }
 
     @include desktop {
-      max-width: 803px;
+      min-width: 803px;
     }
 
     @include desktop-xl {
-      max-width: 960px;
+      min-width: 960px;
     }
   }
 
