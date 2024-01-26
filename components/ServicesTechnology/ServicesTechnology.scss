@@ -1,0 +1,46 @@
+.services-technology {
+  &__wrapper {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include tablet {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+    max-width: 550px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+
+    @include tablet-xl {
+      max-width: 650px;
+    }
+
+    @include desktop {
+      max-width: 850px;
+    }
+
+    @include desktop-xl {
+      max-width: 1050px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(1, 1fr);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet-xl {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
