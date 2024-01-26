@@ -63,11 +63,6 @@
     }
   }
 
-  &__modal-subtitle {
-    margin-top: 12px;
-    color: $color-white-alpha-100;
-  }
-
   &__button {
     z-index: 1;
     border-radius: 100px;
@@ -81,14 +76,6 @@
     &::after,
     &::before {
       display: none;
-    }
-
-    &--modal {
-      width: 100%;
-
-      @include tablet {
-        width: auto;
-      }
     }
 
     &--frontend {
