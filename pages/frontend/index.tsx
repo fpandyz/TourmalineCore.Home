@@ -9,6 +9,7 @@ import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
 import Stack from '../../components/Stack/Stack';
 import Cooperation from '../../components/Cooperation/Cooperation';
+import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
 import FormBlock from '../../components/FormBlock/FormBlock';
 
 export default function FrontendPage() {
@@ -41,6 +42,7 @@ export default function FrontendPage() {
         <Cta />
         <Stack />
         <Cooperation />
+        <ServicesTechnology />
         <FormBlock buttonClassName="frontend__form-button" />
       </Layout>
     </>
