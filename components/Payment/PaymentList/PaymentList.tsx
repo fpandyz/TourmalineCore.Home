@@ -37,7 +37,7 @@ export default function PaymentList() {
 
   const paymentList: string[] = t('list', { returnObjects: true });
 
-  return paymentList && (
+  return (
     <ul className="payment-list">
       {paymentList.map(({ mainTitle, mainData }) => (
         <li key={mainTitle} className="payment-list__item">
