@@ -33,13 +33,13 @@ import NamedList from '../../NamedList/NamedList';
 // ];
 
 export default function PaymentList() {
-  const { t } = useTranslation('payment-frontend');
+  const { t } = useTranslation('paymentFrontend');
 
-  const list: any[] = t('list', { returnObjects: true });
+  const paymentList: string[] = t('list', { returnObjects: true });
 
   return (
     <ul className="payment-list">
-      {list.map(({ mainTitle, mainData }) => (
+      {paymentList.map(({ mainTitle, mainData }) => (
         <li key={mainTitle} className="payment-list__item">
           <h4 className="title-technology-type-2 payment-list__title">{mainTitle}</h4>
           <div className="payment-list__inner">
