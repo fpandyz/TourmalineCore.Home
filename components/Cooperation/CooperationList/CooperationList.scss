@@ -1,0 +1,26 @@
+.cooperation-list {
+  display: flex;
+  flex-flow: column;
+  font-weight: 500;
+  gap: 32px;
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    padding-right: 40px;
+
+    @include desktop {
+      max-width: 712px;
+    }
+
+    @include desktop-xl {
+      max-width: 712px;
+    }
+  }
+
+  @include tablet-xl {
+    gap: 48px;
+  }
+}
