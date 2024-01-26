@@ -6,10 +6,11 @@ import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
+import { AppRoute } from '../../common/utils/app-route';
 
 function HeroBlockTechnology() {
-  const { t } = useTranslation('heroFrontend');
   const { pathname } = useRouter();
+  const { t } = useTranslation(getTranslationNamespace(pathname));
   const [isOpen, setIsOpen] = useState(false);
 
   const slicePathname = pathname.slice(1);
@@ -25,7 +26,10 @@ function HeroBlockTechnology() {
         <div className="hero-block-technology__inner">
           <h3 className="hero-block-technology__title">{t('title')}</h3>
           <div className="hero-block-technology__description">{t('description')}</div>
-          <PrimaryButton onClick={() => setIsOpen(true)} className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}>
+          <PrimaryButton
+            onClick={() => setIsOpen(true)}
+            className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}
+          >
             {t('buttonText')}
           </PrimaryButton>
         </div>
@@ -34,6 +38,16 @@ function HeroBlockTechnology() {
       {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}
     </section>
   );
+
+  function getTranslationNamespace(page: string) {
+    switch (page) {
+      case AppRoute.Frontend:
+        return 'heroFrontend';
+
+      default:
+        return '';
+    }
+  }
 }
 
 export default HeroBlockTechnology;
