@@ -1,0 +1,68 @@
+.payment-list {
+  display: flex;
+  flex-flow: column;
+  row-gap: 48px;
+
+  &__item {
+    border-bottom: 1px solid rgba($color-white-alpha-300, 0.3);
+    padding-bottom: 48px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include tablet-xl {
+      display: flex;
+      gap: 24px;
+    }
+
+    @include desktop-xl {
+      gap: 32px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    max-width: 230px;
+
+    @include tablet-xl {
+      margin-bottom: 0;
+      padding-right: 24px;
+      min-width: 306px;
+    }
+
+    @include desktop {
+      min-width: 365px;
+    }
+
+    @include desktop-xl {
+      min-width: 440px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    gap: 16px;
+
+    @include tablet-xl {
+      gap: 24px;
+    }
+
+    @include desktop-xl {
+      gap: 32px;
+    }
+  }
+
+  &__named-list {
+    width: calc(50% - 16px);
+
+    @include tablet-xl {
+      padding-right: 24px;
+      width: calc(50% - 24px);
+    }
+
+    @include desktop-xl {
+      width: calc(50% - 32px);
+    }
+  }
+}

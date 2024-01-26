@@ -8,6 +8,7 @@ import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
 import Stack from '../../components/Stack/Stack';
+import Payment from '../../components/Payment/Payment';
 import Cooperation from '../../components/Cooperation/Cooperation';
 import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
 import FormBlock from '../../components/FormBlock/FormBlock';
@@ -37,6 +38,7 @@ export default function FrontendPage() {
         <Cases />
         <Cta />
         <Stack />
+        <Payment />
         <Cooperation />
         <ServicesTechnology />
         <FormBlock buttonClassName="frontend__form-button" />
@@ -68,6 +70,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'heroFrontend',
       'pointsFrontend',
       'tasksFrontend',
+      'payment',
     ])),
   },
 });
