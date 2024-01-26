@@ -44,25 +44,25 @@
     display: flex;
     gap: 16px;
 
-    > ul {
-      width: calc(50% - 16px);
-    }
-
     @include tablet-xl {
       gap: 24px;
-
-      > ul {
-        padding-right: 24px;
-        width: calc(50% - 24px);
-      }
     }
 
     @include desktop-xl {
       gap: 32px;
+    }
+  }
 
-      > ul {
-        width: calc(50% - 32px);
-      }
+  &__named-list {
+    width: calc(50% - 16px);
+
+    @include tablet-xl {
+      padding-right: 24px;
+      width: calc(50% - 24px);
+    }
+
+    @include desktop-xl {
+      width: calc(50% - 32px);
     }
   }
 }

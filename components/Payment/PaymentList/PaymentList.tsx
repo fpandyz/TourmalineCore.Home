@@ -44,7 +44,7 @@ export default function PaymentList() {
           <h4 className="title-technology-type-2 payment-list__title">{mainTitle}</h4>
           <div className="payment-list__inner">
             {mainData.map(({ title, data }) => (
-              <NamedList title={title} data={data} />
+              <NamedList title={title} data={data} listClassName="payment-list__named-list" />
             ))}
           </div>
         </li>
