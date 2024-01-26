@@ -6,8 +6,9 @@ import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockT
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
-import Stack from '../../components/Stack/Stack';
 import Cta from '../../components/Cta/Cta';
+import Stack from '../../components/Stack/Stack';
+import Cooperation from '../../components/Cooperation/Cooperation';
 
 export default function FrontendPage() {
   return (
@@ -38,6 +39,7 @@ export default function FrontendPage() {
         <Cases />
         <Cta />
         <Stack />
+        <Cooperation />
       </Layout>
     </>
   );

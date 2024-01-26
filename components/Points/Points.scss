@@ -49,13 +49,13 @@
   }
 
   &__list {
-    display: flex;
-    flex-flow: column;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     row-gap: 32px;
 
     @include tablet {
       column-gap: 24px;
-      flex-flow: row wrap;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @include tablet-xl {
@@ -66,16 +66,6 @@
   &__item {
     padding-right: 24px;
     max-width: 550px;
-
-    &:nth-child(even) {
-      @include tablet {
-        margin-left: auto;
-      }
-
-      @include tablet-xl {
-        margin-left: none;
-      }
-    }
 
     &:nth-child(2),
     &:nth-child(3) {

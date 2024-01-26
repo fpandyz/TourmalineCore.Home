@@ -1,21 +1,11 @@
 .tasks-list {
-  display: flex;
-  flex-flow: column;
+  display: grid;
   gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
 
   &__item {
     display: flex;
     padding-right: 24px;
-
-    &:nth-child(even) {
-      @include tablet {
-        margin-left: auto;
-      }
-
-      @include tablet-xl {
-        margin-left: none;
-      }
-    }
 
     @include tablet {
       max-width: 340px;
@@ -83,7 +73,7 @@
   }
 
   @include tablet {
-    flex-flow: row wrap;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include tablet-xl {
