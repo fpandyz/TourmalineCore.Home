@@ -3,8 +3,10 @@ import {
 } from 'react';
 
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
 import { useOnClickOutside } from '../../common/hooks/useOnClickOutside';
+import { AppRoute } from '../../common/utils/app-route';
 
 function Modal({
   title,
@@ -36,6 +38,8 @@ function Modal({
   }, []);
 
   const refModal = useRef<HTMLDivElement>(null);
+  const { pathname } = useRouter();
+
   useOnClickOutside(refModal, onClose);
 
   return (
@@ -47,7 +51,7 @@ function Modal({
         }}
       >
         <div
-          className="modal__inner"
+          className={clsx('modal__inner', pathname !== AppRoute.Main && 'modal__inner--technology')}
           ref={refModal}
         >
           <div className="modal__header">
