@@ -1,18 +1,14 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
 
-function HeroBlockTechnology({
-  title,
-  description,
-}: {
-  title: string,
-  description: string,
-}) {
+function HeroBlockTechnology() {
+  const { t } = useTranslation('heroFrontend');
   const { pathname } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,10 +23,10 @@ function HeroBlockTechnology({
     >
       <div className="container hero-block-technology__wrapper">
         <div className="hero-block-technology__inner">
-          <h3 className="hero-block-technology__title">{title}</h3>
-          <div className="hero-block-technology__description">{description}</div>
+          <h3 className="hero-block-technology__title">{t('title')}</h3>
+          <div className="hero-block-technology__description">{t('description')}</div>
           <PrimaryButton onClick={() => setIsOpen(true)} className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}>
-            Оставить заявку
+            {t('buttonText')}
           </PrimaryButton>
         </div>
         <div className={`hero-block-technology__image hero-block-technology__image--${slicePathname}`} />

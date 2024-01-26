@@ -27,12 +27,8 @@ export default function FrontendPage() {
         }}
       />
       <Layout mainClassName="frontend__main">
-        {/* TODO add data from json */}
         <div className="frontend__hero-block-container">
-          <HeroBlockTechnology
-            title="Frontend разработка"
-            description="Разработка сайтов и веб-приложений на React, TypeScript и не только"
-          />
+          <HeroBlockTechnology />
           <Points />
         </div>
         <Tasks />
@@ -65,6 +61,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'form',
       'formBlock',
       'discussion',
+      'heroFrontend',
     ])),
   },
 });
