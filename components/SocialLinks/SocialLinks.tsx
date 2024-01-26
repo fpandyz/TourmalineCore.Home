@@ -10,6 +10,9 @@ import { AppRoute } from '../../common/utils/consts/app-route';
 function SocialLinks() {
   const { pathname } = useRouter();
 
+  const icons = getIcons(pathname);
+  const notMainPage = pathname !== AppRoute.Main;
+
   return (
     <div className={clsx('social-links', {
       'social-links--zh': isChineseLanguage(),
@@ -21,9 +24,9 @@ function SocialLinks() {
         target="_blank"
         rel="noreferrer"
       >
-        {pathname === AppRoute.Frontend ? <IconMailFrontend /> : <IconMail />}
+        {icons.mail}
         <span className={clsx('social-links__mail', {
-          'social-links__mail--technology': pathname !== AppRoute.Main,
+          'social-links__mail--technology': notMainPage,
         })}
         >
           contact@tourmalinecore.com
@@ -36,9 +39,9 @@ function SocialLinks() {
         target="_blank"
         rel="noreferrer"
       >
-        {pathname === AppRoute.Frontend ? <IconTelegramFrontend /> : <IconTelegram />}
+        {icons.telegram}
         <span className={clsx('social-links__telegram', {
-          'social-links__telegram--technology': pathname !== AppRoute.Main,
+          'social-links__telegram--technology': notMainPage,
         })}
         >
           @tourmalinecore
@@ -46,6 +49,22 @@ function SocialLinks() {
       </a>
     </div>
   );
+
+  function getIcons(page: string) {
+    switch (page) {
+      case AppRoute.Frontend:
+        return {
+          mail: <IconMailFrontend />,
+          telegram: <IconTelegramFrontend />,
+        };
+
+      default:
+        return {
+          mail: <IconMail />,
+          telegram: <IconTelegram />,
+        };
+    }
+  }
 }
 
 export default SocialLinks;
