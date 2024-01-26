@@ -4,12 +4,15 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { AppRoute } from '../../common/utils/consts/app-route';
 
 function Footer() {
   const { t } = useTranslation('footer');
+  const { pathname } = useRouter();
   const [date, setDate] = useState<number>();
 
   useEffect(() => {
@@ -20,6 +23,7 @@ function Footer() {
     <footer
       id="footer"
       className={clsx('footer', {
+        'footer--technology': pathname !== AppRoute.Main,
         'footer--zh': isChineseLanguage(),
       })}
       itemScope

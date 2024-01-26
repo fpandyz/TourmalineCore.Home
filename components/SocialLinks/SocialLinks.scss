@@ -46,6 +46,11 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+
+    &--technology {
+      -webkit-text-fill-color: $color-white;
+      -moz-text-fill-color: $color-white;
+    }
   }
 
   &__telegram {
@@ -53,6 +58,11 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+
+    &--technology {
+      -webkit-text-fill-color: $color-white;
+      -moz-text-fill-color: $color-white;
+    }
   }
 
   &--zh {
