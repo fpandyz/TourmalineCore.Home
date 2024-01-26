@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
 import CooperationList from './CooperationList/CooperationList';
+import usePath from '../../common/hooks/usePath';
 
 const COOPERATION_TITLE = 'Виды сотрудничества';
 
 export default function Cooperation() {
-  const { pathname } = useRouter();
+  const { slicePathname } = usePath();
 
   return (
     <section className="cooperation">
@@ -13,7 +13,7 @@ export default function Cooperation() {
           <h3 className="title-technology-type-1 cooperation__title">{COOPERATION_TITLE}</h3>
           <CooperationList />
         </div>
-        <div className={`cooperation__image cooperation__image--${pathname.slice(1)}`} />
+        <div className={`cooperation__image cooperation__image--${slicePathname}`} />
       </div>
     </section>
   );

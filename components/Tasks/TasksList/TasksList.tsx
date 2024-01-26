@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
+import usePath from '../../../common/hooks/usePath';
 
 export default function TasksList({
   tasks,
 }: {
   tasks: string[];
 }) {
-  const { pathname } = useRouter();
+  const { slicePathname } = usePath();
 
   return (
     <ul className="tasks-list">
@@ -14,7 +14,7 @@ export default function TasksList({
           key={text}
           className="tasks-list__item"
         >
-          <div className={`tasks-list__number tasks-list__number--${pathname.slice(1)}`}>{index + 1}</div>
+          <div className={`tasks-list__number tasks-list__number--${slicePathname}`}>{index + 1}</div>
           <span className="tasks-list__text">{text}</span>
         </li>
       ))}

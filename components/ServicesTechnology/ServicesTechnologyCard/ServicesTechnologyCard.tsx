@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import usePath from '../../../common/hooks/usePath';
 
 export default function ServicesTechnologyCard(
   {
@@ -13,11 +13,11 @@ export default function ServicesTechnologyCard(
     link: string
   },
 ) {
-  const { pathname } = useRouter();
+  const { slicePathname } = usePath();
 
   return (
     <Link href={link}>
-      <a className={`services-technology-card services-technology-card--${pathname.slice(1)}`}>
+      <a className={`services-technology-card services-technology-card--${slicePathname}`}>
         <div className="services-technology-card__inner">
           <h3 className="title-technology-type-2 services-technology-card__title">{title}</h3>
           <span className="services-technology-card__description">{description}</span>
