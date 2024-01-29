@@ -56,13 +56,39 @@
   &__named-list {
     width: calc(50% - 16px);
 
+    &--zh {
+      &:nth-child(even) {
+        margin-left: auto;
+      }
+    }
+
+    @include tablet {
+      &--zh {
+        width: 344px;
+      }
+    }
+
     @include tablet-xl {
       padding-right: 24px;
       width: calc(50% - 24px);
+
+      &--zh {
+        width: 330px;
+      }
+    }
+
+    @include desktop {
+      &--zh {
+        width: 389px;
+      }
     }
 
     @include desktop-xl {
       width: calc(50% - 32px);
+
+      &--zh {
+        width: 440px;
+      }
     }
   }
 }

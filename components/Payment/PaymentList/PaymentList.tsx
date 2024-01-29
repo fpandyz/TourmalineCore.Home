@@ -1,5 +1,7 @@
+import clsx from 'clsx';
 import NamedList from '../../NamedList/NamedList';
 import { TPaymentList } from '../types';
+import isChineseLanguage from '../../../common/utils/isChineseLanguage';
 
 export default function PaymentList({
   list,
@@ -13,7 +15,14 @@ export default function PaymentList({
           <h4 className="title-technology-type-2 payment-list__title">{mainTitle}</h4>
           <div className="payment-list__inner">
             {mainData.map(({ title, data }) => (
-              <NamedList title={title} data={data} listClassName="payment-list__named-list" />
+              <NamedList
+                key={title}
+                title={title}
+                data={data}
+                listClassName={clsx('payment-list__named-list', {
+                  'payment-list__named-list--zh': isChineseLanguage(),
+                })}
+              />
             ))}
           </div>
         </li>

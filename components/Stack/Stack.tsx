@@ -21,7 +21,7 @@ export default function Stack() {
           <div className="title-technology-type-1 stack__title">{t('title')}</div>
           <div className="stack__list">
             {stackList.map(({ title, data }) => (
-              <NamedList title={title} data={data} />
+              <NamedList key={title} title={title} data={data} />
             ))}
           </div>
         </div>
