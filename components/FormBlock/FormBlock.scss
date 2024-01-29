@@ -10,6 +10,14 @@
       &--technology {
         max-width: none;
       }
+
+      @include desktop {
+        min-width: 803px;
+      }
+
+      @include desktop-xl {
+        min-width: 960px;
+      }
     }
 
     @include desktop {
