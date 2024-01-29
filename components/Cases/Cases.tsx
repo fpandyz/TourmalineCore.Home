@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import CasesCard from '../CasesCard/CasesCard';
 import IconCamera from '../../icons/icon-camera.svg';
 import IconPeople from '../../icons/icon-people.svg';
@@ -7,65 +8,38 @@ import IconHeart from '../../icons/icon-heart.svg';
 import IconAdvertisement from '../../icons/icon-advertisement.svg';
 import IconIceCream from '../../icons/icon-ice-cream.svg';
 
-const CASES_TITLE = 'Некоторые наши проекты';
+const ICONS = {
+  camera: <IconCamera />,
+  people: <IconPeople />,
+  monitor: <IconMonitor />,
+  chart: <IconChart />,
+  heart: <IconHeart />,
+  advertisement: <IconAdvertisement />,
+  iceCream: <IconIceCream />,
+};
 
-// TODO add links to projects
-const CASES_LIST = [
-  {
-    title: 'Tourmanique',
-    description: 'Cервис определения уникальности фотографий',
-    icon: <IconCamera />,
-    link: '',
-  },
-  {
-    title: 'Sine and Clever',
-    description: 'Cистема управления персоналом и расчета бонусов сотрудников',
-    icon: <IconPeople />,
-    link: '',
-  },
-  {
-    title: 'Real Estate',
-    description: 'Сервис для работы с объявлениями и их выгрузки на сайты недвижимости',
-    icon: <IconMonitor />,
-    link: '',
-  },
-  {
-    title: 'Trade Hack',
-    description: 'Сервис сбора аналитики  по товарам на площадке маркетплейса Wildberries',
-    icon: <IconChart />,
-    link: '',
-  },
-  {
-    title: 'Fair Action',
-    description: 'Сайт для австралийской благотворительной организации',
-    icon: <IconHeart />,
-    link: '',
-  },
-  {
-    title: 'Inner Circle',
-    description: 'Сервис для работы с объявлениями и их выгрузки  на сайты недвижимости',
-    icon: <IconAdvertisement />,
-    link: '',
-  },
-  {
-    title: 'Best By',
-    description: 'Сервис для отслеживания срока годности продукции',
-    icon: <IconIceCream />,
-    link: '',
-  },
-];
+type CasesList = {
+  title: string;
+  description: string;
+  icon: keyof typeof ICONS;
+  link: string;
+}[];
 
 export default function Cases() {
+  const { t } = useTranslation('cases');
+
+  const casesList: CasesList = t('list', { returnObjects: true });
+
   return (
     <section className="cases">
       <div className="container cases__wrapper">
         <div className="cases__inner">
-          <h3 className="title-technology-type-1 cases__title">{CASES_TITLE}</h3>
-          {CASES_LIST.map((item) => (
+          <h3 className="title-technology-type-1 cases__title">{t('title')}</h3>
+          {casesList.map((item) => (
             <CasesCard
               title={item.title}
               description={item.description}
-              icon={item.icon}
+              icon={ICONS[item.icon]}
               link={item.link}
             />
           ))}

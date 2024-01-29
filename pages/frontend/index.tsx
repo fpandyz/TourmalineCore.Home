@@ -53,19 +53,9 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
       'common',
-      'articles',
       'footer',
       'heroBlockHomePage',
-      'skills',
-      'services',
-      'completedProjects',
-      'navigation',
-      'workStructure',
-      'mistakes',
       'cookie',
-      'adaptationToProject',
-      'process',
-      'tools',
       'form',
       'formBlock',
       'discussion',
@@ -77,6 +67,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'stackFrontend',
       'cooperation',
       'servicesTechnologyFrontend',
+      'cases',
     ])),
   },
 });
