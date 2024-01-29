@@ -8,7 +8,7 @@ import IconHeart from '../../icons/icon-heart.svg';
 import IconAdvertisement from '../../icons/icon-advertisement.svg';
 import IconIceCream from '../../icons/icon-ice-cream.svg';
 
-const icons = {
+const ICONS = {
   camera: <IconCamera />,
   people: <IconPeople />,
   monitor: <IconMonitor />,
@@ -21,7 +21,7 @@ const icons = {
 type CasesList = {
   title: string;
   description: string;
-  icon: keyof typeof icons;
+  icon: keyof typeof ICONS;
   link: string;
 }[];
 
@@ -39,7 +39,7 @@ export default function Cases() {
             <CasesCard
               title={item.title}
               description={item.description}
-              icon={icons[item.icon]}
+              icon={ICONS[item.icon]}
               link={item.link}
             />
           ))}
