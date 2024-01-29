@@ -1,19 +1,17 @@
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { useTranslation } from 'next-i18next';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
-import { AppRoute } from '../../common/utils/app-route';
+import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
+import usePath from '../../common/hooks/usePath';
 
 function HeroBlockTechnology() {
-  const { pathname } = useRouter();
-  const { t } = useTranslation(getTranslationNamespace(pathname));
+  const { slicePathname } = usePath();
   const [isOpen, setIsOpen] = useState(false);
 
-  const slicePathname = pathname.slice(1);
+  const { t } = useTranslationNamespace('hero');
 
   useBodyScrollHiden(isOpen);
 
@@ -38,16 +36,6 @@ function HeroBlockTechnology() {
       {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}
     </section>
   );
-
-  function getTranslationNamespace(page: string) {
-    switch (page) {
-      case AppRoute.Frontend:
-        return 'heroFrontend';
-
-      default:
-        return '';
-    }
-  }
 }
 
 export default HeroBlockTechnology;

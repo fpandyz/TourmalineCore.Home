@@ -1,10 +1,10 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import Modal from '../Modal/Modal';
 import DiscussionList from '../DiscussionList/DiscussionList';
 import Form from '../Form/Form';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
+import usePath from '../../common/hooks/usePath';
 
 export default function FormTechnologyModal({
   setIsOpen,
@@ -12,7 +12,7 @@ export default function FormTechnologyModal({
   setIsOpen: (isOpen: boolean) => void
 }) {
   const { t } = useTranslation('discussion');
-  const { pathname } = useRouter();
+  const { slicePathname } = usePath();
 
   const [isSubmit, setIsSubmit] = useState(false);
   const [email, setEmail] = useState('');
@@ -30,7 +30,7 @@ export default function FormTechnologyModal({
           {!isSubmit && (
             <Form
               onSubmit={onFormSubmit}
-              buttonClassName={`form-technology-modal__button form-technology-modal__button--${pathname.slice(1)}`}
+              buttonClassName={`form-technology-modal__button form-technology-modal__button--${slicePathname}`}
             />
           )}
           {isSubmit && <DiscussionList />}

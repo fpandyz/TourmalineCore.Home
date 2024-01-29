@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
+import usePath from '../../common/hooks/usePath';
 
 function List({
   steps,
 }: {
   steps: string[];
 }) {
-  const { pathname } = useRouter();
+  const { slicePathname } = usePath();
 
   return (
     <ul className="list">
@@ -14,7 +14,7 @@ function List({
           key={text}
           className="list__item"
         >
-          <div className={`list__number list__number--${pathname.slice(1)}`}>{index + 1}</div>
+          <div className={`list__number list__number--${slicePathname}`}>{index + 1}</div>
           <span className="list__text">{text}</span>
         </li>
       ))}

@@ -1,10 +1,9 @@
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
-import { AppRoute } from '../../common/utils/app-route';
+import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
+import usePath from '../../common/hooks/usePath';
 
 export default function Points() {
-  const { pathname } = useRouter();
-  const { t } = useTranslation(getTranslationNamespace(pathname));
+  const { slicePathname } = usePath();
+  const { t } = useTranslationNamespace('points');
 
   const pointsList: string[] = t('list', { returnObjects: true });
 
@@ -23,19 +22,9 @@ export default function Points() {
               </li>
             ))}
           </ul>
-          <div className={`points__image points__image--${pathname.slice(1)}`} />
+          <div className={`points__image points__image--${slicePathname}`} />
         </div>
       </div>
     </section>
   );
-
-  function getTranslationNamespace(page: string) {
-    switch (page) {
-      case AppRoute.Frontend:
-        return 'pointsFrontend';
-
-      default:
-        return '';
-    }
-  }
 }

@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
 import NamedList from '../NamedList/NamedList';
+import usePath from '../../common/hooks/usePath';
 
 const STACK_TITLE = 'Стек технологий';
 const STACK_LIST = [
@@ -14,7 +14,7 @@ const STACK_LIST = [
 ];
 
 export default function Stack() {
-  const { pathname } = useRouter();
+  const { slicePathname } = usePath();
 
   return (
     <section className="stack">
@@ -28,7 +28,7 @@ export default function Stack() {
           </div>
         </div>
       </div>
-      <div className={`stack__image stack__image--${pathname.slice(1)}`} />
+      <div className={`stack__image stack__image--${slicePathname}`} />
     </section>
   );
 }
