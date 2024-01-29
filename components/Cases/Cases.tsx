@@ -37,6 +37,7 @@ export default function Cases() {
           <h3 className="title-technology-type-1 cases__title">{t('title')}</h3>
           {casesList.map((item) => (
             <CasesCard
+              key={item.title}
               title={item.title}
               description={item.description}
               icon={ICONS[item.icon]}
