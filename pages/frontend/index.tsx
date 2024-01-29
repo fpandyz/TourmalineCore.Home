@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
@@ -14,16 +15,17 @@ import ServicesTechnology from '../../components/ServicesTechnology/ServicesTech
 import FormBlock from '../../components/FormBlock/FormBlock';
 
 export default function FrontendPage() {
+  const { t } = useTranslation('common');
+
   return (
     <>
-      {/* TODO add translate */}
       <PageHead
         seoData={{
           seo: {
-            title: 'Tourmaline Core | Frontend',
-            description: 'Description',
+            title: t('title'),
+            description: t('description'),
           },
-          keywords: 'разработка, корпоративные информационные системы, публичные сайты',
+          keywords: t('keywords'),
           metaTags: [],
           structuredData: '',
           additionalCode: '',
