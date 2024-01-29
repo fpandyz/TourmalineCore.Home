@@ -54,6 +54,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'footer',
       'heroBlockHomePage',
       'cookie',
+      'discussion',
       'form',
       'formBlock',
       'heroFrontend',
