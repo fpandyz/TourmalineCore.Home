@@ -1,7 +1,1 @@
-{
-  "services": "О нас",
-  "skills": "Услуги",
-  "experience": "Опыт",
-  "approach": "Подход",
-  "contact": "Связаться"
-}
+{"skills":"Услуги","contact":"Связаться","approach":"Подход","services":"О нас","experience":"Опыт"}
