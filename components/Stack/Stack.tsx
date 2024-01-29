@@ -1,28 +1,26 @@
 import NamedList from '../NamedList/NamedList';
 import usePath from '../../common/hooks/usePath';
+import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 
-const STACK_TITLE = 'Стек технологий';
-const STACK_LIST = [
-  {
-    title: 'Языки и фреймворки',
-    data: ['JavaScript', 'React', 'SCSS', 'HTML', 'TypeScript', 'Electron', 'NextJS'],
-  },
-  {
-    title: 'Библиотеки и инструменты',
-    data: ['MobX', 'Create React App', 'BEM', 'Redux Toolkit', 'Storyblok', 'Storybook'],
-  },
-];
+type StackList = {
+  title: string;
+  data: string[]
+}[];
 
 export default function Stack() {
   const { slicePathname } = usePath();
+
+  const { t } = useTranslationNamespace('stack');
+
+  const stackList: StackList = t('list', { returnObjects: true });
 
   return (
     <section className="stack">
       <div className="container stack__wrapper">
         <div className="stack__inner">
-          <div className="title-technology-type-1 stack__title">{STACK_TITLE}</div>
+          <div className="title-technology-type-1 stack__title">{t('title')}</div>
           <div className="stack__list">
-            {STACK_LIST.map(({ title, data }) => (
+            {stackList.map(({ title, data }) => (
               <NamedList title={title} data={data} />
             ))}
           </div>
