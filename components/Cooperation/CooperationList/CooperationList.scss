@@ -20,6 +20,10 @@
     }
   }
 
+  &__description {
+    color: $color-white-alpha-100;
+  }
+
   @include tablet-xl {
     gap: 48px;
   }
