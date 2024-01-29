@@ -1,10 +1,1 @@
-{
-  "titleSection": "We provide talents",
-  "gradientTitleSection": "for product owners and development teams",
-  "firstSubtitle": "We'll take care",
-  "gradientFirstSubtitle": "of technical solutions",
-  "firstDescription": "We develop enterprise websites and complex systems, involving all areas of development -  design, frontend, backend, QA, and machine learning. Together we will turn an idea into a real project and create the product you want to build.",
-  "secondSubtitle": "We will strengthen your team with",
-  "gradientSecondSubtitle": "the necessary expertise",
-  "secondDescription": "We’ll pick up your current tasks and help develop the functionality faster. We’ll tweak the workflow applying best practices we tried and tested first-hand."
-}
+{"titleSection":"We provide talents","firstSubtitle":"We'll take care","secondSubtitle":"We will strengthen your team with","firstDescription":"We develop enterprise websites and complex systems, involving all areas of development -  design, frontend, backend, QA, and machine learning. Together we will turn an idea into a real project and create the product you want to build.","secondDescription":"We’ll pick up your current tasks and help develop the functionality faster. We’ll tweak the workflow applying best practices we tried and tested first-hand.","gradientTitleSection":"for product owners and development teams","gradientFirstSubtitle":"of technical solutions","gradientSecondSubtitle":"the necessary expertise"}

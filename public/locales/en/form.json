@@ -1,18 +1,1 @@
-{
-  "name": {
-    "label": "Name",
-    "description": "So we know how to address you"
-  },
-  "email": {
-    "label": "Email",
-    "description": "So we could contact you"
-  },
-  "message": {
-    "label": "Message",
-    "description": "Ask a question or write about yourself and the tasks you need a hand with"
-  },
-  "buttonText": "Send",
-  "approvedText": "This site uses reCAPTCHA. By clicking ''Submit'', you agree to the Terms of Use and Google ",
-  "approvedLink": "Privacy Policy.",
-  "recaptchaText": "This site is protected by reCAPTCHA and the Google <privacyLink>Privacy Policy</privacyLink> and <termsLink>Terms of Service</termsLink> apply."
-}
+{"name":{"label":"Name","description":"So we know how to address you"},"email":{"label":"Email","description":"So we could contact you"},"message":{"label":"Message","description":"Ask a question or write about yourself and the tasks you need a hand with"},"buttonText":"Send","approvedLink":"Privacy Policy.","approvedText":"This site uses reCAPTCHA. By clicking ''Submit'', you agree to the Terms of Use and Google ","recaptchaText":"This site is protected by reCAPTCHA and the Google <privacyLink>Privacy Policy</privacyLink> and <termsLink>Terms of Service</termsLink> apply."}

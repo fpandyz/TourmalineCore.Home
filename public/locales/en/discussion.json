@@ -1,18 +1,1 @@
-{
-  "title": "Do you have a project ?",
-  "gradientTitleFirst": "Contact us",
-  "gradientTitleSecond": "to discuss details",
-  "buttonText": "Discuss the project",
-  "modalTitle": "Write to us for cooperation",
-  "modalTitleSuccessful": "Your request has been sent",
-  "modalSubtitle": "Fill out the form and our manager will contact you to clarify the details of the project",
-  "modalSubtitleSuccessfulFirst": "Our manager will contact you shortly at the specified email",
-  "modalSubtitleSuccessfulSecond": "to clarify the details of the project and schedule the first meeting",
-  "modalListTitle": "What happens next ?",
-  "steps": [
-      "Getting to know each other and discussing the project",
-      "Project evaluation and planning",
-      "Drawing up and signing the contract", 
-      "Getting down to development with weekly demos"
-  ]
-}
+{"steps":["Getting to know each other and discussing the project","Project evaluation and planning","Drawing up and signing the contract","Getting down to development with weekly demos"],"title":"Do you have a project ?","buttonText":"Discuss the project","modalTitle":"Write to us for cooperation","modalSubtitle":"Fill out the form and our manager will contact you to clarify the details of the project","modalListTitle":"What happens next ?","gradientTitleFirst":"Contact us","gradientTitleSecond":"to discuss details","modalTitleSuccessful":"Your request has been sent","modalSubtitleSuccessfulFirst":"Our manager will contact you shortly at the specified email","modalSubtitleSuccessfulSecond":"to clarify the details of the project and schedule the first meeting"}

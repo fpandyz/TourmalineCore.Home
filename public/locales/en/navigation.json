@@ -1,7 +1,1 @@
-{
-  "services": "About us",
-  "skills": "Services",
-  "experience": "Experience",
-  "approach": "Approach",
-  "contact": "Contacts"
-}
+{"skills":"Services","contact":"Contacts","approach":"Approach","services":"About us","experience":"Experience"}
