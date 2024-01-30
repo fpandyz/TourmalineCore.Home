@@ -65,13 +65,19 @@
   }
 
   &__button {
-    z-index: 1;
+    position: relative;
+    display: block;
+    border: 1px solid rgba($color-black, 0);
     border-radius: 100px;
     padding: 12px 40px;
     width: auto;
+    font-family: $ff-montserrat;
     font-size: 16px;
     line-height: 22px;
-    background-image: none;
+    letter-spacing: 0.02em;
+    color: $color-white;
+    background-color: initial;
+    cursor: pointer;
     transition: all 0.3s ease-in;
 
     &::after,
@@ -91,10 +97,38 @@
     &--design {
       background: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
 
-      // TODO add hover effect
-      // &:hover {
+      &::before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        right: -2px;
+        top: -2px;
+        bottom: -2px;
+        z-index: -1;
+        display: block;
+        border-radius: inherit;
+        background:
+          linear-gradient(
+            234deg,
+            $color-design-page-primary 0%,
+            $color-design-page-secondary 78.13%
+          );
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
 
-      // }
+      &:hover {
+        background:
+          linear-gradient(
+            234deg,
+            $color-design-page-secondary-100 0%,
+            rgba($color-design-page-secondary, 0.3) 79.17%
+          );
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
     }
 
     @include desktop {
