@@ -22,6 +22,15 @@
       background-color: $color-frontend-page-primary;
     }
 
+    &--design {
+      background-image:
+        linear-gradient(
+          233deg,
+          $color-design-page-primary -19.07%,
+          $color-design-page-secondary 73.95%
+        );
+    }
+
     @include tablet {
       display: flex;
       align-items: start;
