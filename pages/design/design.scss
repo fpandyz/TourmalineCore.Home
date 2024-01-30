@@ -1,0 +1,11 @@
+.design {
+  &__main {
+    background-color: $color-black;
+  }
+
+  &__hero-block-container {
+    @include tablet-xl {
+      position: relative;
+    }
+  }
+}

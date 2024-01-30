@@ -10,6 +10,7 @@ import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
 import IconBurgerFrontend from '../../icons/burger-frontend.svg';
+import IconBurgerDesign from '../../icons/burger-design.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import { AppRoute } from '../../common/utils/consts/app-route';
@@ -25,17 +26,28 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Frontend,
   },
   {
+    id: AppRoute.Design.slice(1),
+    link: AppRoute.Design,
+  },
+  {
     id: AppRoute.Articles.slice(1),
     link: AppRoute.Articles,
   },
 ];
 
+const BURGER_ICONS = new Map(
+  [
+    [AppRoute.Frontend, <IconBurgerFrontend />],
+    [AppRoute.Design, <IconBurgerDesign />],
+    [AppRoute.Main, <IconBurger />],
+    [AppRoute.Articles, <IconBurger />],
+  ],
+);
+
 function Header() {
   const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { pathname } = useRouter();
-
-  const burgerIcon = getBurgerIcon(pathname);
 
   useBodyScrollHiden(isMobileMenuOpen);
 
@@ -65,7 +77,7 @@ function Header() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open header"
             >
-              {burgerIcon}
+              {BURGER_ICONS.get(pathname as AppRoute)}
             </button>
 
             <div className="header__desktop">
@@ -88,16 +100,6 @@ function Header() {
       )}
     </>
   );
-
-  function getBurgerIcon(page: string) {
-    switch (page) {
-      case AppRoute.Frontend:
-        return <IconBurgerFrontend />;
-
-      default:
-        return <IconBurger />;
-    }
-  }
 }
 
 export default Header;
