@@ -25,6 +25,10 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Frontend,
   },
   {
+    id: AppRoute.Design.slice(1),
+    link: AppRoute.Design,
+  },
+  {
     id: AppRoute.Articles.slice(1),
     link: AppRoute.Articles,
   },
