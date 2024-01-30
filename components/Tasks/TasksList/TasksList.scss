@@ -48,6 +48,10 @@
     &--frontend {
       background-color: $color-frontend-page-primary;
     }
+
+    &--design {
+      background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
+    }
   }
 
   &__text {
