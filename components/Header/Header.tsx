@@ -10,6 +10,7 @@ import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
 import IconBurgerFrontend from '../../icons/burger-frontend.svg';
+import IconBurgerDesign from '../../icons/burger-design.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import { AppRoute } from '../../common/utils/consts/app-route';
@@ -97,6 +98,9 @@ function Header() {
     switch (page) {
       case AppRoute.Frontend:
         return <IconBurgerFrontend />;
+
+      case AppRoute.Design:
+        return <IconBurgerDesign />;
 
       default:
         return <IconBurger />;
