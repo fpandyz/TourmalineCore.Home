@@ -69,11 +69,12 @@
       }
 
       @include tablet-xl {
-        left: 0;
+        left: 23px;
         bottom: 82px;
       }
 
       @include desktop {
+        left: 66px;
         bottom: 132px;
       }
 
