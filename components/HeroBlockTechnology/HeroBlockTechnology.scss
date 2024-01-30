@@ -72,7 +72,7 @@
     font-size: 16px;
     line-height: 22px;
     background-image: none;
-    transition: all 0.5s;
+    transition: all 0.3s ease-in;
 
     &::after,
     &::before {
@@ -86,6 +86,15 @@
         border: 1px solid $color-frontend-page-primary;
         background: rgba($color-frontend-page-primary, 0.3);
       }
+    }
+
+    &--design {
+      background: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
+
+      // TODO add hover effect
+      // &:hover {
+
+      // }
     }
 
     @include desktop {
@@ -103,32 +112,50 @@
     right: 0;
     bottom: 0;
     z-index: 0;
+    width: 249px;
+    height: 364px;
     background-size: cover;
 
     &--frontend {
-      width: 249px;
-      height: 364px;
       background-image: url("/images/hero-block-frontend-element-mobile.png");
 
       @include tablet {
-        width: 304px;
-        height: 411px;
-        background-image: url("/images/hero-block-frontend-element-table.png");
+        background-image: url("/images/hero-block-frontend-element-tablet.png");
       }
 
       @include tablet-xl {
-        left: 0;
-        top: 144px;
-        width: 100%;
-        height: calc(100% - 144px);
         background-image: url("/images/hero-block-frontend-element-desktop.png");
-        background-size: contain;
-        background-repeat: no-repeat;
+      }
+    }
+
+    &--design {
+      background-image: url("/images/hero-block-design-element-mobile.png");
+
+      @include tablet {
+        background-image: url("/images/hero-block-design-element-tablet.png");
       }
 
-      @include desktop {
-        height: calc(100% - 92px);
+      @include tablet-xl {
+        background-image: url("/images/hero-block-design-element-desktop.png");
       }
+    }
+
+    @include tablet {
+      width: 304px;
+      height: 411px;
+    }
+
+    @include tablet-xl {
+      left: 0;
+      top: 144px;
+      width: 100%;
+      height: calc(100% - 144px);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    @include desktop {
+      height: calc(100% - 92px);
     }
   }
 

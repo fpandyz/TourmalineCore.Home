@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
+import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 
 export default function DesignPage() {
   const { t } = useTranslation('common');
@@ -22,7 +23,9 @@ export default function DesignPage() {
         }}
       />
       <Layout mainClassName="design__main">
-        <div className="design__hero-block-container" />
+        <div className="design__hero-block-container">
+          <HeroBlockTechnology />
+        </div>
       </Layout>
     </>
   );
@@ -42,6 +45,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'cta',
       'cooperation',
       'cases',
+      'heroDesign',
     ])),
   },
 });
