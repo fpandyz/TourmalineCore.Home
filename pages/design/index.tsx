@@ -8,6 +8,7 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
+import Stages from '../../components/Stages/Stages';
 import Stack from '../../components/Stack/Stack';
 import Payment from '../../components/Payment/Payment';
 import Cooperation from '../../components/Cooperation/Cooperation';
@@ -39,6 +40,7 @@ export default function DesignPage() {
         <Tasks />
         <Cases />
         <Cta />
+        <Stages />
         <Stack />
         <Payment />
         <Cooperation />
@@ -66,6 +68,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'heroDesign',
       'pointsDesign',
       'tasksDesign',
+      'stagesDesign',
       'stackDesign',
       'servicesTechnologyDesign',
     ])),
