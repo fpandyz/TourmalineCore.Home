@@ -56,9 +56,13 @@
     bottom: 145px;
     background-size: cover;
 
-    &--frontend {
+    &--frontend,
+    &--design {
       width: 62px;
       height: 194px;
+    }
+
+    &--frontend {
       background-image: url("/images/cooperation-frontend-element-mobile.png");
 
       @include tablet {
@@ -80,6 +84,31 @@
 
       @include desktop-xl {
         bottom: 164px;
+      }
+    }
+
+    &--design {
+      background-image: url("/images/cooperation-design-element-mobile.png");
+
+      @include tablet {
+        bottom: 43px;
+        width: 320px;
+        height: 355px;
+        background-image: url("/images/ellipse-design.gif");
+      }
+
+      @include tablet-xl {
+        left: 31px;
+        bottom: 125px;
+      }
+
+      @include desktop {
+        left: 74px;
+        bottom: 105px;
+      }
+
+      @include desktop-xl {
+        bottom: 207px;
       }
     }
   }
