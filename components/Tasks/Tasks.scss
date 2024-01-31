@@ -55,6 +55,10 @@
       background-image: url("/images/react-frontend.gif");
     }
 
+    &--design {
+      background-image: url("/images/react-design.gif");
+    }
+
     @include desktop {
       right: 75px;
     }
