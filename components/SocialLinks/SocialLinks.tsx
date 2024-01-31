@@ -3,8 +3,10 @@ import { useRouter } from 'next/router';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import IconMail from '../../icons/mail.svg';
 import IconMailFrontend from '../../icons/mail-frontend.svg';
+import IconMailDesign from '../../icons/mail-design.svg';
 import IconTelegram from '../../icons/telegram.svg';
 import IconTelegramFrontend from '../../icons/telegram-frontend.svg';
+import IconTelegramDesign from '../../icons/telegram-design.svg';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
 function SocialLinks() {
@@ -56,6 +58,12 @@ function SocialLinks() {
         return {
           mail: <IconMailFrontend />,
           telegram: <IconTelegramFrontend />,
+        };
+
+      case AppRoute.Design:
+        return {
+          mail: <IconMailDesign />,
+          telegram: <IconTelegramDesign />,
         };
 
       default:
