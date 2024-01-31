@@ -61,22 +61,20 @@
     z-index: 0;
     background-size: cover;
 
-    &--frontend {
+    &--frontend,
+    &--design {
       width: 124px;
       height: 175px;
-      background-image: url("/images/stack-frontend-element-mobile.png");
 
       @include tablet {
         width: 190px;
         height: 217px;
-        background-image: url("/images/stack-frontend-element-tablet.png");
       }
 
       @include tablet-xl {
         left: -81px;
         width: 363px;
         height: 411px;
-        background-image: url("/images/stack-frontend-element-desktop.png");
       }
 
       @include desktop {
@@ -85,6 +83,30 @@
 
       @include desktop-xl {
         bottom: 70px;
+      }
+    }
+
+    &--frontend {
+      background-image: url("/images/stack-frontend-element-mobile.png");
+
+      @include tablet {
+        background-image: url("/images/stack-frontend-element-tablet.png");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-frontend-element-desktop.png");
+      }
+    }
+
+    &--design {
+      background-image: url("/images/stack-design-element-mobile.png");
+
+      @include tablet {
+        background-image: url("/images/stack-design-element-tablet.png");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-design-element-desktop.png");
       }
     }
   }

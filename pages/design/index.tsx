@@ -8,6 +8,10 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
+import Stack from '../../components/Stack/Stack';
+import Payment from '../../components/Payment/Payment';
+import Cooperation from '../../components/Cooperation/Cooperation';
+import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
 import FormBlock from '../../components/FormBlock/FormBlock';
 
 export default function DesignPage() {
@@ -35,6 +39,10 @@ export default function DesignPage() {
         <Tasks />
         <Cases />
         <Cta />
+        <Stack />
+        <Payment />
+        <Cooperation />
+        <ServicesTechnology />
         <FormBlock buttonClassName="design__form-button" />
       </Layout>
     </>
@@ -58,6 +66,8 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'heroDesign',
       'pointsDesign',
       'tasksDesign',
+      'stackDesign',
+      'servicesTechnologyDesign',
     ])),
   },
 });
