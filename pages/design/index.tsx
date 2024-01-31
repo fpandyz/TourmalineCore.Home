@@ -8,6 +8,7 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
+import FormBlock from '../../components/FormBlock/FormBlock';
 
 export default function DesignPage() {
   const { t } = useTranslation('common');
@@ -34,7 +35,7 @@ export default function DesignPage() {
         <Tasks />
         <Cases />
         <Cta />
-
+        <FormBlock buttonClassName="design__form-button" />
       </Layout>
     </>
   );
