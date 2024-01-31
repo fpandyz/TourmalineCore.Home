@@ -28,7 +28,7 @@ function HeroBlockTechnology() {
             onClick={() => setIsOpen(true)}
             className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}
           >
-            {t('buttonText')}
+            <span className="hero-block-technology__button-text">{t('buttonText')}</span>
           </button>
         </div>
         <div className={`hero-block-technology__image hero-block-technology__image--${slicePathname}`} />

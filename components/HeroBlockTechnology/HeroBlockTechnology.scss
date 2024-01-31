@@ -72,6 +72,7 @@
     padding: 12px 40px;
     width: auto;
     font-family: $ff-montserrat;
+    font-weight: 500;
     font-size: 16px;
     line-height: 22px;
     letter-spacing: 0.02em;
@@ -80,9 +81,10 @@
     cursor: pointer;
     transition: all 0.3s ease-in;
 
-    &::after,
-    &::before {
-      display: none;
+    &-text {
+      position: relative;
+      z-index: 1;
+      display: block;
     }
 
     &--frontend {
@@ -95,37 +97,51 @@
     }
 
     &--design {
-      background: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
+      background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
+      background-clip: padding-box;
 
+      &::after,
       &::before {
         content: "";
         position: absolute;
-        left: -2px;
-        right: -2px;
-        top: -2px;
-        bottom: -2px;
-        z-index: -1;
         display: block;
         border-radius: inherit;
-        background:
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        left: -1px;
+        right: -1px;
+        top: -1px;
+        bottom: -1px;
+        background-image:
           linear-gradient(
             234deg,
             $color-design-page-primary 0%,
             $color-design-page-secondary 78.13%
           );
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
       }
 
-      &:hover {
-        background:
+      &::after {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image:
           linear-gradient(
             234deg,
             $color-design-page-secondary-100 0%,
             rgba($color-design-page-secondary, 0.3) 79.17%
           );
+        background-color: $color-black;
       }
 
+      &:hover {
+        background-image: transparent;
+      }
+
+      &:hover::after,
       &:hover::before {
         opacity: 1;
       }
