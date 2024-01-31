@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
-import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
@@ -24,12 +23,13 @@ function HeroBlockTechnology() {
         <div className="hero-block-technology__inner">
           <h3 className="hero-block-technology__title">{t('title')}</h3>
           <div className="hero-block-technology__description">{t('description')}</div>
-          <PrimaryButton
+          <button
+            type="button"
             onClick={() => setIsOpen(true)}
             className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}
           >
-            {t('buttonText')}
-          </PrimaryButton>
+            <span className="hero-block-technology__button-text">{t('buttonText')}</span>
+          </button>
         </div>
         <div className={`hero-block-technology__image hero-block-technology__image--${slicePathname}`} />
       </div>
