@@ -8,7 +8,10 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
+
 import Payment from '../../components/Payment/Payment';
+
+import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
 
 export default function DesignPage() {
   const { t } = useTranslation('common');
@@ -36,6 +39,7 @@ export default function DesignPage() {
         <Cases />
         <Cta />
         <Payment />
+        <ServicesTechnology />
       </Layout>
     </>
   );
@@ -58,6 +62,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'heroDesign',
       'pointsDesign',
       'tasksDesign',
+      'servicesTechnologyDesign',
     ])),
   },
 });
