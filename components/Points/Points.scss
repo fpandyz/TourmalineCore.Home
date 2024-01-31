@@ -119,7 +119,11 @@
     background-size: cover;
 
     &--frontend {
-      background-image: url("/images/points-element.png");
+      background-image: url("/images/points-frontend-element.png");
+    }
+
+    &--design {
+      background-image: url("/images/points-design-element.png");
     }
 
     @include tablet {
