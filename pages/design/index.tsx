@@ -8,6 +8,7 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
+import Cooperation from '../../components/Cooperation/Cooperation';
 import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
 
 export default function DesignPage() {
@@ -35,6 +36,7 @@ export default function DesignPage() {
         <Tasks />
         <Cases />
         <Cta />
+        <Cooperation />
         <ServicesTechnology />
       </Layout>
     </>
