@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import Points from '../../components/Points/Points';
+import Cases from '../../components/Cases/Cases';
 
 export default function DesignPage() {
   const { t } = useTranslation('common');
@@ -25,6 +26,7 @@ export default function DesignPage() {
       <Layout mainClassName="design__main">
         <div className="design__hero-block-container" />
         <Points />
+        <Cases />
       </Layout>
     </>
   );
