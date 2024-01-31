@@ -3,6 +3,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
+import Points from '../../components/Points/Points';
+import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
 
 export default function DesignPage() {
@@ -23,7 +25,10 @@ export default function DesignPage() {
         }}
       />
       <Layout mainClassName="design__main">
-        <div className="design__hero-block-container" />
+        <div className="design__hero-block-container">
+          <Points />
+        </div>
+        <Cases />
         <Cta />
       </Layout>
     </>
@@ -44,6 +49,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'cta',
       'cooperation',
       'cases',
+      'pointsDesign',
     ])),
   },
 });
