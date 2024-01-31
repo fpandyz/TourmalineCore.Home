@@ -8,6 +8,7 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
+import Stack from '../../components/Stack/Stack';
 
 export default function DesignPage() {
   const { t } = useTranslation('common');
@@ -34,7 +35,7 @@ export default function DesignPage() {
         <Tasks />
         <Cases />
         <Cta />
-
+        <Stack />
       </Layout>
     </>
   );
@@ -57,6 +58,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'heroDesign',
       'pointsDesign',
       'tasksDesign',
+      'stackDesign',
     ])),
   },
 });
