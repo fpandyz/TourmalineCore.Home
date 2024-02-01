@@ -84,14 +84,14 @@ p + p {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: $pd-mobile;
+  padding-left: $pd-mobile;
   width: 100%;
   max-width: 1606px;
 
   @include tablet {
-    padding-right: 32px;
-    padding-left: 32px;
+    padding-right: $pd-tablet;
+    padding-left: $pd-tablet;
   }
 
   @include tablet-xl {
@@ -101,8 +101,8 @@ p + p {
   }
 
   @include desktop {
-    padding-right: 75px;
-    padding-left: 75px;
+    padding-right: $pd-desktop;
+    padding-left: $pd-desktop;
 
     &--home-page {
       padding-left: 283px;
@@ -168,6 +168,10 @@ p + p {
     /* stylelint-disable-next-line scss/no-global-function-names */
     padding-bottom: percentage(calc($height / $width));
   }
+}
+
+@mixin dynamic-width($containerSize, $widthViewport, $padding) {
+  width: calc($containerSize / ($widthViewport - (2 * $padding)) * 100%);
 }
 
 .custom-scroll {

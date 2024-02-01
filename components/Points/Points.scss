@@ -22,29 +22,21 @@
     @include tablet-xl {
       margin-bottom: 80px;
     }
-
-    @include desktop {
-      max-width: 725px;
-    }
-
-    @include desktop-xl {
-      max-width: 850px;
-    }
   }
 
   &__inner {
     position: relative;
 
     @include tablet-xl {
-      max-width: 623px;
+      @include dynamic-width(592px, $tablet-xl-width, $pd-tablet);
     }
 
     @include desktop {
-      min-width: 803px;
+      @include dynamic-width(803px, $desktop-width, $pd-desktop);
     }
 
     @include desktop-xl {
-      min-width: 960px;
+      @include dynamic-width(960px, $desktop-xl-width, $pd-desktop-xl);
     }
   }
 
@@ -70,22 +62,6 @@
     &:nth-child(2),
     &:nth-child(3) {
       padding-right: 90px;
-    }
-
-    @include tablet {
-      max-width: 340px;
-    }
-
-    @include tablet-xl {
-      max-width: 282px;
-    }
-
-    @include desktop {
-      max-width: 369px;
-    }
-
-    @include desktop-xl {
-      max-width: 464px;
     }
   }
 

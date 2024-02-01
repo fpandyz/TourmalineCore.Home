@@ -10,14 +10,6 @@
 
   &__item {
     padding-right: 40px;
-
-    @include desktop {
-      max-width: 712px;
-    }
-
-    @include desktop-xl {
-      max-width: 712px;
-    }
   }
 
   &__description {

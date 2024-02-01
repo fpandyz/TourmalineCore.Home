@@ -3,15 +3,15 @@
 
   &__inner {
     @include tablet-xl {
-      max-width: 589px;
+      @include dynamic-width(592px, $tablet-xl-width, $pd-tablet);
     }
 
     @include desktop {
-      max-width: 803px;
+      @include dynamic-width(803px, $desktop-width, $pd-desktop);
     }
 
     @include desktop-xl {
-      max-width: 1043px;
+      @include dynamic-width(960px, $desktop-xl-width, $pd-desktop-xl);
     }
   }
 

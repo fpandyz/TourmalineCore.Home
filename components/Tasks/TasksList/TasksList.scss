@@ -6,22 +6,6 @@
   &__item {
     display: flex;
     padding-right: 24px;
-
-    @include tablet {
-      max-width: 340px;
-    }
-
-    @include tablet-xl {
-      max-width: 282px;
-    }
-
-    @include desktop {
-      max-width: 389px;
-    }
-
-    @include desktop-xl {
-      max-width: 464px;
-    }
   }
 
   &__number {

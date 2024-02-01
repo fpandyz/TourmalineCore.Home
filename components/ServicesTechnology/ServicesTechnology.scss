@@ -42,5 +42,9 @@
     @include tablet-xl {
       grid-template-columns: repeat(4, 1fr);
     }
+
+    @include desktop-xl {
+      gap: 32px;
+    }
   }
 }
