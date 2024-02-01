@@ -10,22 +10,24 @@
       &--technology {
         max-width: none;
       }
-
-      @include desktop {
-        min-width: 803px;
-      }
-
-      @include desktop-xl {
-        min-width: 960px;
-      }
     }
 
     @include desktop {
       max-width: 803px;
+
+      &--technology {
+        padding-left: 413px;
+        max-width: none;
+      }
     }
 
     @include desktop-xl {
       max-width: 960px;
+
+      &--technology {
+        padding-left: 496px;
+        max-width: none;
+      }
     }
   }
 

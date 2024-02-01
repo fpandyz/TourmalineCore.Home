@@ -27,13 +27,23 @@
 
   &__inner {
     z-index: 1;
-    max-width: 960px;
+
+    @include tablet-xl {
+      @include dynamic-width(592px, $tablet-xl-width, $pd-tablet);
+    }
+
+    @include desktop {
+      @include dynamic-width(803px, $desktop-width, $pd-desktop);
+    }
+
+    @include desktop-xl {
+      @include dynamic-width(960px, $desktop-xl-width, $pd-desktop-xl);
+    }
   }
 
   &__description {
     margin-top: 8px;
     margin-bottom: 32px;
-    padding-right: 80px;
     font-size: 25px;
     line-height: 1.36;
     color: $color-white;
@@ -46,19 +56,17 @@
     @include tablet-xl {
       margin-top: 16px;
       margin-bottom: 48px;
-      max-width: 623px;
+      max-width: none;
       font-size: 29px;
       line-height: 1.31;
     }
 
     @include desktop {
-      max-width: 803px;
       font-size: 39px;
       line-height: 1.23;
     }
 
     @include desktop-xl {
-      max-width: 960px;
       font-size: 47px;
       line-height: 1.36;
     }
@@ -204,6 +212,7 @@
     }
 
     @include desktop {
+      left: -75px;
       height: calc(100% - 92px);
     }
   }

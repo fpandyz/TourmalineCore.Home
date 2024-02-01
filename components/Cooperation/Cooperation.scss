@@ -26,15 +26,17 @@
     }
 
     @include tablet-xl {
-      min-width: 623px;
+      @include dynamic-width(592px, $tablet-xl-width, $pd-tablet);
+
+      max-width: none;
     }
 
     @include desktop {
-      min-width: 803px;
+      @include dynamic-width(803px, $desktop-width, $pd-desktop);
     }
 
     @include desktop-xl {
-      min-width: 960px;
+      @include dynamic-width(960px, $desktop-xl-width, $pd-desktop-xl);
     }
   }
 
@@ -66,6 +68,7 @@
       background-image: url("/images/cooperation-frontend-element-mobile.png");
 
       @include tablet {
+        right: 16px;
         bottom: 0;
         width: 320px;
         height: 312px;
@@ -91,6 +94,7 @@
       background-image: url("/images/cooperation-design-element-mobile.png");
 
       @include tablet {
+        right: $pd-tablet;
         bottom: 43px;
         width: 320px;
         height: 355px;

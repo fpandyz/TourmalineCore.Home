@@ -20,15 +20,15 @@
 
   &__inner {
     @include tablet-xl {
-      min-width: 623px;
+      @include dynamic-width(592px, $tablet-xl-width, $pd-tablet);
     }
 
     @include desktop {
-      min-width: 803px;
+      @include dynamic-width(803px, $desktop-width, $pd-desktop);
     }
 
     @include desktop-xl {
-      min-width: 960px;
+      @include dynamic-width(960px, $desktop-xl-width, $pd-desktop-xl);
     }
   }
 
@@ -46,11 +46,13 @@
 
   &__list {
     display: grid;
-    gap: 16px;
+    column-gap: 16px;
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 32px;
 
     @include tablet {
-      gap: 24px;
+      column-gap: 24px;
+      row-gap: 48px;
     }
   }
 

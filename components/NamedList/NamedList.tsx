@@ -20,7 +20,7 @@ export default function NamedList(
             key={text}
             className="named-list__item"
           >
-            <span className="named-list__text">{text}</span>
+            <span className="title-technology-type-3 named-list__text">{text}</span>
           </li>
         ))}
       </ul>

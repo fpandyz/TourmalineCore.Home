@@ -13,38 +13,12 @@
   }
 
   &__item {
-    font-size: 18px;
-    line-height: 1.33;
-
     & + & {
       margin-top: 8px;
 
       @include tablet-xl {
         margin-top: 16px;
       }
-    }
-
-    @include tablet-xl {
-      font-size: 20px;
-      line-height: 1.4;
-    }
-
-    @include desktop {
-      font-size: 24px;
-      line-height: 1.33;
-    }
-
-    @include desktop-xl {
-      font-size: 28px;
-      line-height: 1.35;
-    }
-  }
-
-  & + & {
-    margin-bottom: 8px;
-
-    @include tablet-xl {
-      margin-bottom: 16px;
     }
   }
 
