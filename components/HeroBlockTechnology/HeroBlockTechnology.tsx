@@ -51,7 +51,7 @@ function HeroBlockTechnology() {
             <span className="hero-block-technology__button-text">{t('buttonText')}</span>
           </button>
         </div>
-        <picture className={`hero-block-technology__image hero-block-technology__image--${slicePathname}`}>
+        <picture className="hero-block-technology__image">
           <source
             srcSet={heroImage?.desktop}
             media="(min-width: 1024px)"
