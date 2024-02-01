@@ -31,7 +31,20 @@ function HeroBlockTechnology() {
             <span className="hero-block-technology__button-text">{t('buttonText')}</span>
           </button>
         </div>
-        <div className={`hero-block-technology__image hero-block-technology__image--${slicePathname}`} />
+        <picture className={`hero-block-technology__image hero-block-technology__image--${slicePathname}`}>
+          <source
+            srcSet="/images/hero-block-frontend-element-desktop.png"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcSet="/images/hero-block-frontend-element-tablet.png"
+            media="(min-width: 768px)"
+          />
+          <source
+            srcSet="/images/hero-block-frontend-element-mobile.png"
+          />
+          <img alt="heroImage" />
+        </picture>
       </div>
       {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}
     </section>
