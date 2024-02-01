@@ -5,12 +5,32 @@ import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import usePath from '../../common/hooks/usePath';
+import { AppRoute } from '../../common/utils/consts/app-route';
+
+const heroImages = new Map([
+  [
+    AppRoute.Frontend, {
+      mobile: '/images/hero-block-frontend-element-mobile.png',
+      tablet: '/images/hero-block-frontend-element-tablet.png',
+      desktop: '/images/hero-block-frontend-element-desktop.png',
+    },
+  ],
+  [
+    AppRoute.Design, {
+      mobile: '/images/hero-block-design-element-mobile.png',
+      tablet: '/images/hero-block-design-element-tablet.png',
+      desktop: '/images/hero-block-design-element-desktop.png',
+    },
+  ],
+]);
 
 function HeroBlockTechnology() {
-  const { slicePathname } = usePath();
+  const { slicePathname, pathname } = usePath();
   const [isOpen, setIsOpen] = useState(false);
 
   const { t } = useTranslationNamespace('hero');
+
+  const heroImage = heroImages.get(pathname as AppRoute);
 
   useBodyScrollHiden(isOpen);
 
@@ -33,17 +53,14 @@ function HeroBlockTechnology() {
         </div>
         <picture className={`hero-block-technology__image hero-block-technology__image--${slicePathname}`}>
           <source
-            srcSet="/images/hero-block-frontend-element-desktop.png"
+            srcSet={heroImage?.desktop}
             media="(min-width: 1024px)"
           />
           <source
-            srcSet="/images/hero-block-frontend-element-tablet.png"
+            srcSet={heroImage?.tablet}
             media="(min-width: 768px)"
           />
-          <source
-            srcSet="/images/hero-block-frontend-element-mobile.png"
-          />
-          <img alt="heroImage" />
+          <img srcSet={heroImage?.mobile} alt="heroImage" />
         </picture>
       </div>
       {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}

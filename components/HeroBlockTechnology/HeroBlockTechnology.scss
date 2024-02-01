@@ -170,35 +170,9 @@
     bottom: 0;
     z-index: 0;
     width: 249px;
-    height: 364px;
 
     img {
       height: 100%;
-      object-fit: contain;
-    }
-
-    &--frontend {
-      // background-image: url("/images/hero-block-frontend-element-mobile.png");
-
-      // @include tablet {
-      //   background-image: url("/images/hero-block-frontend-element-tablet.png");
-      // }
-
-      // @include tablet-xl {
-      //   background-image: url("/images/hero-block-frontend-element-desktop.png");
-      // }
-    }
-
-    &--design {
-      background-image: url("/images/hero-block-design-element-mobile.png");
-
-      @include tablet {
-        background-image: url("/images/hero-block-design-element-tablet.png");
-      }
-
-      @include tablet-xl {
-        background-image: url("/images/hero-block-design-element-desktop.png");
-      }
     }
 
     @include tablet {
