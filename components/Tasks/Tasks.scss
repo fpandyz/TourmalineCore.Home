@@ -3,7 +3,7 @@
 
   &__inner {
     @include tablet-xl {
-      @include dynamic-width(592px, $tablet-xl-width, $pd-tablet);
+      @include dynamic-width(706px, $tablet-xl-width, $pd-tablet);
     }
 
     @include desktop {
