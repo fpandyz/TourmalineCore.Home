@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
 import { useOnClickOutside } from '../../common/hooks/useOnClickOutside';
-import { AppRoute } from '../../common/utils/app-route';
+import { AppRoute } from '../../common/utils/consts/app-route';
 
 function Modal({
   title,
