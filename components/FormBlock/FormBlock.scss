@@ -67,10 +67,18 @@
     #{$this}__inner {
       @include tablet-xl {
         max-width: 840px;
+
+        &--technology {
+          max-width: none;
+        }
       }
 
       @include desktop-xl {
         max-width: 980px;
+
+        &--technology {
+          max-width: none;
+        }
       }
     }
   }
