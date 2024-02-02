@@ -22,6 +22,7 @@ export default function PaymentList({
                 listClassName={clsx('payment-list__named-list', {
                   'payment-list__named-list--zh': isChineseLanguage(),
                 })}
+                titleClassName="payment-list__named-list-title"
               />
             ))}
           </div>
