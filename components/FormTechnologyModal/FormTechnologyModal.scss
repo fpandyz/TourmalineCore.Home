@@ -28,7 +28,7 @@
     }
 
     &--frontend {
-      background-color: $color-frontend-page-primary;
+      background: $color-frontend-page-primary;
 
       &:hover {
         border: 1px solid $color-frontend-page-primary;
