@@ -5,32 +5,12 @@ import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import usePath from '../../common/hooks/usePath';
-import { AppRoute } from '../../common/utils/consts/app-route';
-
-const heroImages = new Map([
-  [
-    AppRoute.Frontend, {
-      mobile: '/images/hero-block-frontend-element-mobile.png',
-      tablet: '/images/hero-block-frontend-element-tablet.png',
-      desktop: '/images/hero-block-frontend-element-desktop.png',
-    },
-  ],
-  [
-    AppRoute.Design, {
-      mobile: '/images/hero-block-design-element-mobile.png',
-      tablet: '/images/hero-block-design-element-tablet.png',
-      desktop: '/images/hero-block-design-element-desktop.png',
-    },
-  ],
-]);
 
 function HeroBlockTechnology() {
-  const { slicePathname, pathname } = usePath();
+  const { slicePathname } = usePath();
   const [isOpen, setIsOpen] = useState(false);
 
   const { t } = useTranslationNamespace('hero');
-
-  const heroImage = heroImages.get(pathname as AppRoute);
 
   useBodyScrollHiden(isOpen);
 
@@ -53,14 +33,14 @@ function HeroBlockTechnology() {
         </div>
         <picture className="hero-block-technology__image">
           <source
-            srcSet={heroImage?.desktop}
+            srcSet={`images/hero-block-${slicePathname}-element-desktop.png`}
             media="(min-width: 1024px)"
           />
           <source
-            srcSet={heroImage?.tablet}
+            srcSet={`images/hero-block-${slicePathname}-element-tablet.png`}
             media="(min-width: 768px)"
           />
-          <img srcSet={heroImage?.mobile} alt="heroImage" />
+          <img srcSet={`images/hero-block-${slicePathname}-element-mobile.png`} alt="heroImage" />
         </picture>
       </div>
       {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}
