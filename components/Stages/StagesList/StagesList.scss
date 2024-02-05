@@ -80,6 +80,8 @@
   }
 
   &__inner {
+    flex: 1;
+
     @include tablet {
       display: grid;
       gap: 24px;
