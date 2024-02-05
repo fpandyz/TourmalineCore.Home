@@ -3,12 +3,10 @@
 
   &__title {
     margin-bottom: 16px;
-    max-width: 185px;
     color: $color-white-alpha-200;
 
     @include tablet-xl {
       margin-bottom: 48px;
-      max-width: 210px;
     }
   }
 
