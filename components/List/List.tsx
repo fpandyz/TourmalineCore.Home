@@ -1,8 +1,12 @@
+import usePath from '../../common/hooks/usePath';
+
 function List({
   steps,
 }: {
   steps: string[];
 }) {
+  const { slicePathname } = usePath();
+
   return (
     <ul className="list">
       {steps.map((text, index) => (
@@ -10,7 +14,7 @@ function List({
           key={text}
           className="list__item"
         >
-          <div className="list__number">{index + 1}</div>
+          <div className={`list__number list__number--${slicePathname}`}>{index + 1}</div>
           <span className="list__text">{text}</span>
         </li>
       ))}

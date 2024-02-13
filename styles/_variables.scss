@@ -7,6 +7,7 @@ $color-white: #fff;
 $color-white-alpha-100: rgb(255, 255, 255, 0.8);
 $color-white-alpha-200: rgb(255, 255, 255, 0.5);
 $color-white-alpha-300: rgb(255, 255, 255, 0.3);
+$color-white-alpha-400: rgb(255, 255, 255, 0.1);
 
 // Main gradient
 $main-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #4fdae2 99.96%);
@@ -41,6 +42,14 @@ $color-blue-alpha-100: rgba(129, 185, 232, 0.2);
 $color-green: #4fdae2;
 $color-green-alpha-100: rgba(79, 218, 226, 0.2);
 
+// Frontend page
+$color-frontend-page-primary: #7926ff;
+
+// Design page
+$color-design-page-primary: #ff7921;
+$color-design-page-secondary: #fd3866;
+$color-design-page-secondary-100: rgba(253, 105, 7, 0.3);
+
 // Secondary
 $color-light-green: #009e4c;
 $color-dark-green: #1e5d23;
@@ -55,6 +64,8 @@ $color-bright-lilac: #b900d8;
 $color-soft-lilac: #fef3ff;
 $color-yellow: #f8d830;
 $color-gray: #1b1926;
+$color-dark-card: linear-gradient(234deg, #17191c 0%, #101112 100%);
+$color-dark-purple-card: linear-gradient(234deg, #7926ff 0%, #090029 100%);
 
 // Error
 $color-error: #ff9994;
@@ -65,3 +76,9 @@ $mobile-menu: 20;
 $cookie: 40;
 $mistake-item-cursor: 30;
 $modal: 50;
+
+// padding
+$pd-mobile: 16px;
+$pd-tablet: 32px;
+$pd-desktop: 75px;
+$pd-desktop-xl: 232px;

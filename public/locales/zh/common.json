@@ -1,7 +1,1 @@
-{
-  "title": "Tourmaline Core",
-  "description": "网站开发, 公司的信息系统开发, 程序开发",
-  "keywords": "开发, 公司的信息系统, 网站, IT产品，IT公司，开发团队",
-  "ourCompany": "公司介绍",
-  "articles": "文章"
-}
+{"title":"Tourmaline Core","design":"UX/UI设计","articles":"文章","frontend":"前端","keywords":"开发, 公司的信息系统, 网站, IT产品，IT公司，开发团队","ourCompany":"家","description":"公共网站、定制企业信息系统及应用程序开发"}

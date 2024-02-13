@@ -7,8 +7,6 @@
 
   &__number {
     position: relative;
-    z-index: 0;
-    display: block;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -56,6 +54,11 @@
       --gap: 3px;
 
       opacity: 0.4;
+    }
+
+    &--frontend {
+      background-image: none;
+      background-color: $color-frontend-page-primary;
     }
   }
 

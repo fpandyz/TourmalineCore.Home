@@ -2,18 +2,23 @@ import {
   ReactNode, useEffect, useRef,
 } from 'react';
 
+import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
 import { useOnClickOutside } from '../../common/hooks/useOnClickOutside';
+import { AppRoute } from '../../common/utils/consts/app-route';
 
 function Modal({
   title,
   subtitle,
+  subtitleClassName,
   maxWidth = '',
   content,
   onClose = () => {},
 }: {
   title?: string;
   subtitle?: string;
+  subtitleClassName?: string,
   maxWidth?: string;
   content: ReactNode;
   onClose?:() => unknown;
@@ -33,6 +38,8 @@ function Modal({
   }, []);
 
   const refModal = useRef<HTMLDivElement>(null);
+  const { pathname } = useRouter();
+
   useOnClickOutside(refModal, onClose);
 
   return (
@@ -44,13 +51,17 @@ function Modal({
         }}
       >
         <div
-          className="modal__inner"
+          className={clsx('modal__inner', pathname !== AppRoute.Main && 'modal__inner--technology')}
           ref={refModal}
         >
           <div className="modal__header">
             {title && (<div className="title-type-3 modal__title">{title}</div>)}
 
-            {subtitle && (<div className="modal__subtitle">{subtitle}</div>)}
+            {subtitle && (
+              <div className={clsx('modal__subtitle', subtitleClassName)}>
+                {subtitle}
+              </div>
+            )}
 
             <button
               type="button"

@@ -35,6 +35,7 @@ If you want to learn more about i18nexus, check the following resource:
 
 ## Husky
 
+
 We use husky so that all developers follow the standards of conventional commits during the development
 
 To learn more about conventional commits check the following resource:

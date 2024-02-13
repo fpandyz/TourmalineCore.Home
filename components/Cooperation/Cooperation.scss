@@ -1,0 +1,119 @@
+.cooperation {
+  &__wrapper {
+    position: relative;
+    padding-top: 104px;
+    padding-bottom: 104px;
+
+    @include tablet {
+      display: flex;
+      justify-content: start;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    @include tablet-xl {
+      justify-content: end;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__inner {
+    max-width: 600px;
+
+    @include tablet {
+      max-width: 439px;
+    }
+
+    @include tablet-xl {
+      @include dynamic-width(592px, $tablet-xl-width, $pd-tablet);
+
+      max-width: none;
+    }
+
+    @include desktop {
+      @include dynamic-width(803px, $desktop-width, $pd-desktop);
+    }
+
+    @include desktop-xl {
+      @include dynamic-width(960px, $desktop-xl-width, $pd-desktop-xl);
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+
+    @include tablet-xl {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 145px;
+    background-size: cover;
+
+    &--frontend,
+    &--design {
+      width: 62px;
+      height: 194px;
+    }
+
+    &--frontend {
+      background-image: url("/images/cooperation-frontend-element-mobile.png");
+
+      @include tablet {
+        right: 16px;
+        bottom: 0;
+        width: 320px;
+        height: 312px;
+        background-image: url("/images/ellipse-frontend.gif");
+      }
+
+      @include tablet-xl {
+        left: 23px;
+        bottom: 82px;
+      }
+
+      @include desktop {
+        left: 66px;
+        bottom: 132px;
+      }
+
+      @include desktop-xl {
+        bottom: 164px;
+      }
+    }
+
+    &--design {
+      background-image: url("/images/cooperation-design-element-mobile.png");
+
+      @include tablet {
+        right: $pd-tablet;
+        bottom: 43px;
+        width: 320px;
+        height: 355px;
+        background-image: url("/images/ellipse-design.gif");
+      }
+
+      @include tablet-xl {
+        left: 31px;
+        bottom: 125px;
+      }
+
+      @include desktop {
+        left: 74px;
+        bottom: 105px;
+      }
+
+      @include desktop-xl {
+        bottom: 207px;
+      }
+    }
+  }
+}

@@ -23,8 +23,10 @@ enum ReCAPTCHALanguage {
 
 function Form({
   onSubmit = () => {},
+  buttonClassName,
 }: {
   onSubmit: (formData: FormData) => unknown;
+  buttonClassName?: string;
 }) {
   const { t } = useTranslation('form');
   const router = useRouter();
@@ -78,7 +80,7 @@ function Form({
         <div className="form__footer">
           <PrimaryButton
             type="submit"
-            className="form__button"
+            className={clsx('form__button', buttonClassName)}
           >
             {
               isLoading

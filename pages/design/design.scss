@@ -1,0 +1,91 @@
+.design {
+  &__main {
+    background-color: $color-black;
+  }
+
+  &__hero-block-container {
+    @include tablet-xl {
+      position: relative;
+    }
+  }
+
+  &__form-button {
+    position: relative;
+    display: block;
+    border: 1px solid rgba($color-black, 0);
+    border-radius: 100px;
+    padding: 12px 40px;
+    font-family: $ff-montserrat;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.37;
+    letter-spacing: 0.02em;
+    color: $color-white;
+    background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
+    background-clip: padding-box;
+    background-color: initial;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &::before {
+      left: -1px;
+      right: -1px;
+      top: -1px;
+      bottom: -1px;
+      background-image:
+        linear-gradient(
+          234deg,
+          $color-design-page-primary 0%,
+          $color-design-page-secondary 78.13%
+        );
+    }
+
+    &::after {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(
+          234deg,
+          $color-design-page-secondary-100 0%,
+          rgba($color-design-page-secondary, 0.3) 79.17%
+        );
+      background-color: $color-black;
+    }
+
+    &:hover {
+      background-image: transparent;
+    }
+
+    &:hover::after,
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+
+  @include tablet {
+    width: auto;
+  }
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  @include desktop-xl {
+    font-size: 20px;
+  }
+}

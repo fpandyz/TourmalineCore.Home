@@ -4,12 +4,16 @@ import { useTranslation } from 'next-i18next';
 
 import clsx from 'clsx';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import LangSwitch from '../LangSwitch/LangSwitch';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
+import IconBurgerFrontend from '../../icons/burger-frontend.svg';
+import IconBurgerDesign from '../../icons/burger-design.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { AppRoute } from '../../common/utils/consts/app-route';
 
 type HeaderLinks = {
   id: string;
@@ -18,14 +22,32 @@ type HeaderLinks = {
 
 const headerLinks: HeaderLinks = [
   {
-    id: 'articles',
-    link: '/articles',
+    id: AppRoute.Frontend.slice(1),
+    link: AppRoute.Frontend,
+  },
+  {
+    id: AppRoute.Design.slice(1),
+    link: AppRoute.Design,
+  },
+  {
+    id: AppRoute.Articles.slice(1),
+    link: AppRoute.Articles,
   },
 ];
+
+const BURGER_ICONS = new Map(
+  [
+    [AppRoute.Frontend, <IconBurgerFrontend />],
+    [AppRoute.Design, <IconBurgerDesign />],
+    [AppRoute.Main, <IconBurger />],
+    [AppRoute.Articles, <IconBurger />],
+  ],
+);
 
 function Header() {
   const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { pathname } = useRouter();
 
   useBodyScrollHiden(isMobileMenuOpen);
 
@@ -55,7 +77,7 @@ function Header() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open header"
             >
-              <IconBurger />
+              {BURGER_ICONS.get(pathname as AppRoute)}
             </button>
 
             <div className="header__desktop">

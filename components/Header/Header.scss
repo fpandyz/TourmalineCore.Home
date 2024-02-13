@@ -17,6 +17,11 @@
     width: 135px;
     height: 40px;
 
+    @include desktop-xl {
+      width: 162px;
+      height: 48px;
+    }
+
     // svg {
     //   display: block;
     //   width: 100%;

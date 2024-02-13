@@ -1,0 +1,115 @@
+.stack {
+  position: relative;
+
+  &__wrapper {
+    padding-top: 144px;
+    padding-bottom: 144px;
+
+    @include tablet {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    @include tablet-xl {
+      display: flex;
+      justify-content: end;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__inner {
+    @include tablet-xl {
+      @include dynamic-width(592px, $tablet-xl-width, $pd-tablet);
+    }
+
+    @include desktop {
+      @include dynamic-width(803px, $desktop-width, $pd-desktop);
+    }
+
+    @include desktop-xl {
+      @include dynamic-width(960px, $desktop-xl-width, $pd-desktop-xl);
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+
+    @include tablet-xl {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    column-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 32px;
+
+    @include tablet {
+      column-gap: 24px;
+      row-gap: 48px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-size: cover;
+
+    &--frontend,
+    &--design {
+      width: 124px;
+      height: 175px;
+
+      @include tablet {
+        width: 190px;
+        height: 217px;
+      }
+
+      @include tablet-xl {
+        left: -81px;
+        width: 363px;
+        height: 411px;
+      }
+
+      @include desktop {
+        left: 0;
+      }
+
+      @include desktop-xl {
+        bottom: 70px;
+      }
+    }
+
+    &--frontend {
+      background-image: url("/images/stack-frontend-element-mobile.png");
+
+      @include tablet {
+        background-image: url("/images/stack-frontend-element-tablet.png");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-frontend-element-desktop.png");
+      }
+    }
+
+    &--design {
+      background-image: url("/images/stack-design-element-mobile.png");
+
+      @include tablet {
+        background-image: url("/images/stack-design-element-tablet.png");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-design-element-desktop.png");
+      }
+    }
+  }
+}

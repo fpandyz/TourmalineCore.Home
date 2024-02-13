@@ -6,10 +6,28 @@
   &__inner {
     @include tablet-xl {
       max-width: 800px;
+
+      &--technology {
+        max-width: none;
+      }
+    }
+
+    @include desktop {
+      max-width: 803px;
+
+      &--technology {
+        padding-left: 413px;
+        max-width: none;
+      }
     }
 
     @include desktop-xl {
       max-width: 960px;
+
+      &--technology {
+        padding-left: 496px;
+        max-width: none;
+      }
     }
   }
 
@@ -25,6 +43,20 @@
     @include gradient-text;
   }
 
+  &__title-technology {
+    display: block;
+    max-width: 520px;
+    color: $color-white-alpha-200;
+
+    @include desktop {
+      max-width: 700px;
+    }
+
+    @include desktop-xl {
+      max-width: 800px;
+    }
+  }
+
   &__text {
     display: block;
     margin-bottom: 56px;
@@ -35,10 +67,18 @@
     #{$this}__inner {
       @include tablet-xl {
         max-width: 840px;
+
+        &--technology {
+          max-width: none;
+        }
       }
 
       @include desktop-xl {
         max-width: 980px;
+
+        &--technology {
+          max-width: none;
+        }
       }
     }
   }

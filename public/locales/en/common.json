@@ -1,7 +1,1 @@
-{
-  "title": "Tourmaline Core",
-  "description": "Development of public websites, customized enterprise information systems, and applications",
-  "keywords": "public websites, enterprise information systems, software development",
-  "ourCompany": "Home",
-  "articles": "Articles"
-}
+{"title":"Tourmaline Core","design":"UX/UI design","articles":"Articles","frontend":"Frontend","keywords":"public websites, enterprise information systems, software development","ourCompany":"Home","description":"Development of public websites, customized enterprise information systems, and applications"}
