@@ -9,7 +9,7 @@
   color: inherit;
   background-image: $color-dark-card;
   background-color: $color-black;
-  cursor: pointer;
+  cursor: auto;
 
   &__inner {
     position: relative;
@@ -109,6 +109,10 @@
     transform: rotate(45deg);
   }
 
+  &--hover {
+    cursor: pointer;
+  }
+
   &--frontend::after,
   &--design::after {
     content: "";
@@ -124,7 +128,7 @@
     transition: all 0.3s ease-in-out;
   }
 
-  &--frontend {
+  &--frontend ~ &--hover {
     &::after {
       background-image: $color-dark-purple-card;
     }
@@ -134,7 +138,8 @@
     }
   }
 
-  &--design {
+  &--design ~ &--hover {
+    /* stylelint-disable-next-line no-descending-specificity */
     &::after {
       background-image:
         linear-gradient(
