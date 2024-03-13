@@ -21,10 +21,10 @@ export default function CasesCard(
     <a
       href={link}
       className={clsx(`cases-card cases-card--${slicePathname}`, {
-        'cases-card--hover': !link,
+        'cases-card--hover': link,
       })}
       onClick={(e) => (
-        !link
+        link
           ? e.stopPropagation()
           : e.preventDefault())}
     >
@@ -33,7 +33,7 @@ export default function CasesCard(
         <h3 className="title-technology-type-2 cases-card__title">{title}</h3>
         <span className="cases-card__description">{description}</span>
       </div>
-      {!link && (
+      {link && (
         <span className="cases-card__arrow">
           <IconCasesArrow />
         </span>
