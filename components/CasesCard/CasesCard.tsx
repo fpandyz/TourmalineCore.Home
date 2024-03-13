@@ -17,16 +17,14 @@ export default function CasesCard(
 ) {
   const { slicePathname } = usePath();
 
-  const linkIsEmpty = link === '';
-
   return (
     <a
       href={link}
       className={clsx(`cases-card cases-card--${slicePathname}`, {
-        'cases-card--hover': !linkIsEmpty,
+        'cases-card--hover': !link,
       })}
       onClick={(e) => (
-        !linkIsEmpty
+        !link
           ? e.stopPropagation()
           : e.preventDefault())}
     >
@@ -35,7 +33,7 @@ export default function CasesCard(
         <h3 className="title-technology-type-2 cases-card__title">{title}</h3>
         <span className="cases-card__description">{description}</span>
       </div>
-      {!linkIsEmpty && (
+      {!link && (
         <span className="cases-card__arrow">
           <IconCasesArrow />
         </span>
