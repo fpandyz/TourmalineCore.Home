@@ -9,7 +9,6 @@ import usePath from '../../common/hooks/usePath';
 function HeroBlockTechnology() {
   const { slicePathname } = usePath();
   const [isOpen, setIsOpen] = useState(false);
-
   const { t } = useTranslationNamespace('hero');
 
   useBodyScrollHiden(isOpen);

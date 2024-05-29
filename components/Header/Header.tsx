@@ -9,7 +9,7 @@ import LangSwitch from '../LangSwitch/LangSwitch';
 import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
-import IconBurgerFrontend from '../../icons/burger-frontend.svg';
+import IconBurgerPurple from '../../icons/burger-purple.svg';
 import IconBurgerDesign from '../../icons/burger-design.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
@@ -30,6 +30,10 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Design,
   },
   {
+    id: AppRoute.Ml.slice(1),
+    link: AppRoute.Ml,
+  },
+  {
     id: AppRoute.Articles.slice(1),
     link: AppRoute.Articles,
   },
@@ -37,7 +41,8 @@ const headerLinks: HeaderLinks = [
 
 const BURGER_ICONS = new Map(
   [
-    [AppRoute.Frontend, <IconBurgerFrontend />],
+    [AppRoute.Frontend, <IconBurgerPurple />],
+    [AppRoute.Ml, <IconBurgerPurple />],
     [AppRoute.Design, <IconBurgerDesign />],
     [AppRoute.Main, <IconBurger />],
     [AppRoute.Articles, <IconBurger />],
