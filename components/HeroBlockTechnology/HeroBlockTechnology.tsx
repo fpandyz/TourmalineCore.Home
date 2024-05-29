@@ -33,14 +33,14 @@ function HeroBlockTechnology() {
         </div>
         <picture className="hero-block-technology__image">
           <source
-            srcSet={`images/hero-block-${slicePathname}-element-desktop.png`}
+            srcSet={`/images/hero-${slicePathname}-element-desktop.webp`}
             media="(min-width: 1024px)"
           />
           <source
-            srcSet={`images/hero-block-${slicePathname}-element-tablet.png`}
+            srcSet={`/images/hero-${slicePathname}-element-tablet.webp`}
             media="(min-width: 768px)"
           />
-          <img srcSet={`images/hero-block-${slicePathname}-element-mobile.png`} alt="heroImage" />
+          <img srcSet={`/images/hero-${slicePathname}-element-mobile.webp`} alt="heroImage" />
         </picture>
       </div>
       {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}
