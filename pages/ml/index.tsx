@@ -10,6 +10,7 @@ import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
 import Stack from '../../components/Stack/Stack';
 import Payment from '../../components/Payment/Payment';
+import Cooperation from '../../components/Cooperation/Cooperation';
 
 export default function MlPage() {
   const { t } = useTranslation('common');
@@ -38,6 +39,7 @@ export default function MlPage() {
         <Cta />
         <Stack />
         <Payment />
+        <Cooperation />
       </Layout>
     </>
   );
