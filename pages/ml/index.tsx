@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
+import Stack from '../../components/Stack/Stack';
 
 export default function MlPage() {
   const { t } = useTranslation('common');
@@ -26,6 +27,7 @@ export default function MlPage() {
         <div className="ml__hero-block-container">
           <HeroBlockTechnology />
         </div>
+        <Stack />
       </Layout>
     </>
   );
