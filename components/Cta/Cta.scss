@@ -18,6 +18,10 @@
     padding: 40px 16px;
     text-align: center;
 
+    &--ml {
+      background-color: $color-ml-page-primary;
+    }
+
     &--frontend {
       background-color: $color-frontend-page-primary;
     }
@@ -93,10 +97,6 @@
 
     &:hover {
       background: rgba($color-white-alpha-400, 0.1);
-    }
-
-    &--frontend {
-      background-color: $color-frontend-page-primary;
     }
 
     @include desktop {

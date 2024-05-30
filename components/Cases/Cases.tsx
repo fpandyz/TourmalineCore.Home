@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next';
 import CasesCard from '../CasesCard/CasesCard';
 import IconCamera from '../../icons/icon-camera.svg';
 import IconPeople from '../../icons/icon-people.svg';
@@ -7,6 +6,7 @@ import IconChart from '../../icons/icon-chart.svg';
 import IconHeart from '../../icons/icon-heart.svg';
 import IconAdvertisement from '../../icons/icon-advertisement.svg';
 import IconIceCream from '../../icons/icon-ice-cream.svg';
+import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 
 const ICONS = {
   camera: <IconCamera />,
@@ -26,7 +26,7 @@ type CasesList = {
 }[];
 
 export default function Cases() {
-  const { t } = useTranslation('cases');
+  const { t } = useTranslationNamespace('cases');
 
   const casesList: CasesList = t('list', { returnObjects: true });
 
