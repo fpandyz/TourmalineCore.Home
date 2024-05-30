@@ -51,8 +51,9 @@
     height: 300px;
     background-size: cover;
 
+    &--ml,
     &--frontend {
-      background-image: url("/images/react-frontend.gif");
+      background-image: url("/images/react-purple.gif");
     }
 
     &--design {

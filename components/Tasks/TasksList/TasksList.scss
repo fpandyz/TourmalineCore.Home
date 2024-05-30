@@ -27,6 +27,7 @@
     background-clip: padding-box, border-box;
     transition: background-position 0.3s linear;
 
+    &--ml,
     &--frontend {
       background-color: $color-frontend-page-primary;
     }
