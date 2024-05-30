@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-import isChineseLanguage from '../../../common/utils/isChineseLanguage';
+import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
 
 interface ProcessCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   altHeader: string;

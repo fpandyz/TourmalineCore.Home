@@ -1,4 +1,4 @@
-import { TCooperationList } from '../types';
+import { TCooperationList } from '../../types';
 
 export default function CooperationList({
   list,

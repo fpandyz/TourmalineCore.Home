@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { SectionProps } from '../../types/globals';
 import { getMistakes } from './getMistakes';
-import MistakeItem from './MistakeItem/MistakeItem';
+import MistakeItem from './components/MistakeItem/MistakeItem';
 
 function Mistakes({
   animationName,

@@ -1,4 +1,4 @@
-import CasesCard from '../CasesCard/CasesCard';
+import CasesCard from './components/CasesCard/CasesCard';
 import IconCamera from '../../icons/icon-camera.svg';
 import IconPeople from '../../icons/icon-people.svg';
 import IconMonitor from '../../icons/icon-monitor.svg';

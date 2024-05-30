@@ -1,4 +1,4 @@
-import { TStagesList } from '../types';
+import { TStagesList } from '../../types';
 
 export default function StagesList({
   list,

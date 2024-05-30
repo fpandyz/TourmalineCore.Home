@@ -1,4 +1,4 @@
-import usePath from '../../../common/hooks/usePath';
+import usePath from '../../../../common/hooks/usePath';
 
 // TODO uncomment when all pages are ready
 export default function ServicesTechnologyCard(
