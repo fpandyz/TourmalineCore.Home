@@ -7,6 +7,7 @@ import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockT
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
+import Cta from '../../components/Cta/Cta';
 
 export default function MlPage() {
   const { t } = useTranslation('common');
@@ -32,6 +33,7 @@ export default function MlPage() {
         </div>
         <Tasks />
         <Cases />
+        <Cta />
       </Layout>
     </>
   );
