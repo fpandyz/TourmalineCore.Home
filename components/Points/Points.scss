@@ -95,11 +95,15 @@
     background-size: cover;
 
     &--frontend {
-      background-image: url("/images/points-frontend-element.png");
+      background-image: url("/images/points-frontend-element.webp");
+    }
+
+    &--ml {
+      background-image: url("/images/points-ml-element.webp");
     }
 
     &--design {
-      background-image: url("/images/points-design-element.png");
+      background-image: url("/images/points-design-element.webp");
     }
 
     @include tablet {

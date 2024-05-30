@@ -64,7 +64,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'payment',
       'cta',
       'cooperation',
-      'cases',
+      'casesDesign',
       'heroDesign',
       'pointsDesign',
       'tasksDesign',
