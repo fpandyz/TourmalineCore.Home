@@ -8,6 +8,7 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
+import Stack from '../../components/Stack/Stack';
 
 export default function MlPage() {
   const { t } = useTranslation('common');
@@ -34,6 +35,7 @@ export default function MlPage() {
         <Tasks />
         <Cases />
         <Cta />
+        <Stack />
       </Layout>
     </>
   );
