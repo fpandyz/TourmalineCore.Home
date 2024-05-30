@@ -3,7 +3,7 @@ import { Fragment, useCallback } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { SectionProps } from '../../types/globals';
 
-import ProcessCard from './ProcessCard/ProcessCard';
+import ProcessCard from './components/ProcessCard/ProcessCard';
 
 type SecondCardType = {
   listTitle: string;

@@ -1,4 +1,4 @@
-import TasksList from './TasksList/TasksList';
+import TasksList from './components/TasksList/TasksList';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import usePath from '../../common/hooks/usePath';
 

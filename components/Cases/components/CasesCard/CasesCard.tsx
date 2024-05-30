@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import IconCasesArrow from '../../icons/cases-arrow.svg';
-import usePath from '../../common/hooks/usePath';
+import IconCasesArrow from '../../../../icons/cases-arrow.svg';
+import usePath from '../../../../common/hooks/usePath';
 
 export default function CasesCard(
   {

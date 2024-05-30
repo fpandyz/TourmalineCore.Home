@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import isChineseLanguage from '../../../common/utils/isChineseLanguage';
+import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
 
-import IconCursor from '../../../icons/icon-cursor.svg';
+import IconCursor from '../../../../icons/icon-cursor.svg';
 
 interface MistakeItemProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement > {
   title: string;
