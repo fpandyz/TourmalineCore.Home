@@ -6,6 +6,7 @@ import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
+import Cases from '../../components/Cases/Cases';
 
 export default function MlPage() {
   const { t } = useTranslation('common');
@@ -30,6 +31,7 @@ export default function MlPage() {
           <Points />
         </div>
         <Tasks />
+        <Cases />
       </Layout>
     </>
   );
@@ -53,7 +55,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'stackMl',
       'cooperation',
       'servicesTechnologyMl',
-      'cases',
+      'casesMl',
     ])),
   },
 });
