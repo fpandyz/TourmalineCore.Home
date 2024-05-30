@@ -38,6 +38,7 @@
     }
   }
 
+  &--ml::after,
   &--frontend::after,
   &--design::after {
     content: "";
@@ -56,6 +57,7 @@
     transition: all 0.3s ease-in-out;
   }
 
+  &--ml,
   &--frontend {
     &::after {
       background-image: $color-dark-purple-card;

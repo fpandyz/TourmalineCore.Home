@@ -11,6 +11,7 @@ import Cta from '../../components/Cta/Cta';
 import Stack from '../../components/Stack/Stack';
 import Payment from '../../components/Payment/Payment';
 import Cooperation from '../../components/Cooperation/Cooperation';
+import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
 
 export default function MlPage() {
   const { t } = useTranslation('common');
@@ -40,6 +41,7 @@ export default function MlPage() {
         <Stack />
         <Payment />
         <Cooperation />
+        <ServicesTechnology />
       </Layout>
     </>
   );
