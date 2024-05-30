@@ -53,19 +53,20 @@
 
     // TODO uncomment and delete opacity:1 when all pages are ready
     // opacity: 0;
-    opacity: 1;
+
     transition: all 0.3s ease-in-out;
   }
 
-  &--ml,
+  &--ml {
+    &::after {
+      background-color: $color-ml-page-primary;
+    }
+  }
+
   &--frontend {
     &::after {
       background-image: $color-dark-purple-card;
     }
-
-    // &:hover::after {
-    //   opacity: 0;
-    // }
   }
 
   &--design {
@@ -77,10 +78,12 @@
           $color-design-page-secondary 73.95%
         );
     }
+  }
 
-    // &:hover::after {
-    //   opacity: 0;
-    // }
+  &--ml:hover::after,
+  &--frontend:hover::after,
+  &--design:hover::after {
+    opacity: 1;
   }
 
   @include desktop {
