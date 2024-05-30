@@ -67,7 +67,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'stackFrontend',
       'cooperation',
       'servicesTechnologyFrontend',
-      'cases',
+      'casesFrontend',
     ])),
   },
 });
