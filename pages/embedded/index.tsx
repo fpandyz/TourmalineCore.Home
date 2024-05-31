@@ -9,7 +9,6 @@ import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
 
-
 export default function EmbeddedPage() {
   const { t } = useTranslation('common');
 
