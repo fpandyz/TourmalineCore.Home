@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
+import Points from '../../components/Points/Points';
 
 export default function EmbeddedPage() {
   const { t } = useTranslation('common');
@@ -25,6 +26,7 @@ export default function EmbeddedPage() {
       <Layout mainClassName="embedded__main">
         <div className="embedded__hero-block-container">
           <HeroBlockTechnology />
+          <Points />
         </div>
       </Layout>
     </>
