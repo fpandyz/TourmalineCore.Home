@@ -5,6 +5,7 @@ import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
+import Tasks from '../../components/Tasks/Tasks';
 
 export default function EmbeddedPage() {
   const { t } = useTranslation('common');
@@ -27,6 +28,7 @@ export default function EmbeddedPage() {
         <div className="embedded__hero-block-container">
           <HeroBlockTechnology />
           <Points />
+          <Tasks />
         </div>
       </Layout>
     </>
