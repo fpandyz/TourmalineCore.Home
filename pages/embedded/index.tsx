@@ -6,6 +6,7 @@ import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
+import Cta from '../../components/Cta/Cta';
 
 export default function EmbeddedPage() {
   const { t } = useTranslation('common');
@@ -29,6 +30,7 @@ export default function EmbeddedPage() {
           <HeroBlockTechnology />
           <Points />
           <Tasks />
+          <Cta />
         </div>
       </Layout>
     </>
