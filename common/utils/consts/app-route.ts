@@ -3,5 +3,6 @@ export enum AppRoute {
   Articles = '/articles',
   Design = '/design',
   Ml = '/ml',
+  Embedded = '/embedded',
   Main = '/',
 }

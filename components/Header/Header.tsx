@@ -34,6 +34,10 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Ml,
   },
   {
+    id: AppRoute.Embedded.slice(1),
+    link: AppRoute.Embedded,
+  },
+  {
     id: AppRoute.Articles.slice(1),
     link: AppRoute.Articles,
   },
