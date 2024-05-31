@@ -7,6 +7,7 @@ import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockT
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
+import Cta from '../../components/Cta/Cta';
 
 export default function EmbeddedPage() {
   const { t } = useTranslation('common');
@@ -31,6 +32,7 @@ export default function EmbeddedPage() {
           <Points />
           <Tasks />
           <Cases />
+          <Cta />
         </div>
       </Layout>
     </>
