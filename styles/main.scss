@@ -33,9 +33,9 @@
 @import "../components/HeroBlock/HeroBlock";
 @import "../components/Services/Services";
 @import "../components/Skills/Skills";
-@import "../components/Process/ProcessCard/ProcessCard";
+@import "../components/Process/components/ProcessCard/ProcessCard";
 @import "../components/Process/Process";
-@import "../components/Mistakes/MistakeItem/MistakeItem";
+@import "../components/Mistakes/components/MistakeItem/MistakeItem";
 @import "../components/Mistakes/Mistakes";
 @import "../components/Cookie/Cookie";
 @import "../components/Tools/Tools";
@@ -45,24 +45,27 @@
 @import "../components/HeroBlockTechnology/HeroBlockTechnology";
 @import "../components/Points/Points";
 @import "../components/Tasks/Tasks";
-@import "../components/Tasks/TasksList/TasksList";
+@import "../components/Tasks/components/TasksList/TasksList";
 @import "../components/Cases/Cases";
-@import "../components/CasesCard/CasesCard";
+@import "../components/Cases/components/CasesCard/CasesCard";
 @import "../components/Cta/Cta";
 @import "../components/Stack/Stack";
 @import "../components/NamedList/NamedList";
 @import "../components/Cooperation/Cooperation";
-@import "../components/Cooperation/CooperationList/CooperationList";
+@import "../components/Cooperation/components/CooperationList/CooperationList";
 @import "../components/FormTechnologyModal/FormTechnologyModal";
 @import "../components/ServicesTechnology/ServicesTechnology";
-@import "../components/ServicesTechnology/ServicesTechnologyCard/ServicesTechnologyCard";
+@import "../components/ServicesTechnology/components/ServicesTechnologyCard/ServicesTechnologyCard";
 @import "../components/Payment/Payment";
-@import "../components/Payment/PaymentList/PaymentList";
+@import "../components/Payment/components/PaymentList/PaymentList";
 @import "../components/Stages/Stages";
-@import "../components/Stages/StagesList/StagesList";
+@import "../components/Stages/components/StagesList/StagesList";
 
 // partials
 @import "../partials/Articles/Articles";
 @import "../partials/Articles/Article/Article";
+
+// pages
 @import "../pages/frontend/frontend";
 @import "../pages/design/design";
+@import "../pages/ml/ml";

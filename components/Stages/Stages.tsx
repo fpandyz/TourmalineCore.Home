@@ -1,5 +1,5 @@
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import StagesList from './StagesList/StagesList';
+import StagesList from './components/StagesList/StagesList';
 import { TStagesList } from './types';
 
 export default function Stages() {

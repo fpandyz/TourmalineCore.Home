@@ -1,5 +1,5 @@
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import ServicesTechnologyCard from './ServicesTechnologyCard/ServicesTechnologyCard';
+import ServicesTechnologyCard from './components/ServicesTechnologyCard/ServicesTechnologyCard';
 import { TServicesTechnologyList } from './types';
 
 export default function ServicesTechnology() {

@@ -63,6 +63,7 @@
     z-index: 0;
     background-size: cover;
 
+    &--ml,
     &--frontend,
     &--design {
       width: 124px;
@@ -85,6 +86,18 @@
 
       @include desktop-xl {
         bottom: 70px;
+      }
+    }
+
+    &--ml {
+      background-image: url("/images/stack-ml-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/stack-ml-element-tablet.webp");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-ml-element-desktop.webp");
       }
     }
 

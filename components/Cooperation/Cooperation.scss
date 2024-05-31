@@ -58,21 +58,29 @@
     bottom: 145px;
     background-size: cover;
 
+    &--ml,
     &--frontend,
     &--design {
       width: 62px;
       height: 194px;
     }
 
+    &--ml {
+      background-image: url("/images/cooperation-ml-element-mobile.webp");
+    }
+
     &--frontend {
       background-image: url("/images/cooperation-frontend-element-mobile.png");
+    }
 
+    &--ml,
+    &--frontend {
       @include tablet {
         right: 16px;
         bottom: 0;
         width: 320px;
         height: 312px;
-        background-image: url("/images/ellipse-frontend.gif");
+        background-image: url("/images/ellipse-purple.gif");
       }
 
       @include tablet-xl {
