@@ -1,29 +1,41 @@
+import Link from 'next/link';
+import clsx from 'clsx';
 import usePath from '../../../../common/hooks/usePath';
+import IconArrow from '../../../../icons/cases-arrow.svg';
 
-// TODO uncomment when all pages are ready
 export default function ServicesTechnologyCard(
   {
     title,
     description,
-    // link,
+    link,
   }:
   {
     title: string;
     description: string;
-    // link: string
+    link: string
   },
 ) {
   const { slicePathname } = usePath();
 
   return (
-
-    // <Link href={link}>
-    <div className={`services-technology-card services-technology-card--${slicePathname}`}>
-      <div className="services-technology-card__inner">
-        <h3 className="title-technology-type-2 services-technology-card__title">{title}</h3>
-        <span className="services-technology-card__description">{description}</span>
-      </div>
-    </div>
-    // </Link>
+    <Link
+      href={link}
+      scroll={!!link}
+    >
+      <a className={clsx(`services-technology-card services-technology-card--${slicePathname}`, {
+        'services-technology-card--hover': link,
+      })}
+      >
+        <div className="services-technology-card__inner">
+          <h3 className="title-technology-type-2 services-technology-card__title">{title}</h3>
+          <span className="services-technology-card__description">{description}</span>
+        </div>
+        {link && (
+          <span className="services-technology-card__arrow">
+            <IconArrow />
+          </span>
+        )}
+      </a>
+    </Link>
   );
 }
