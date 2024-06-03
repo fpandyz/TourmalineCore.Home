@@ -40,7 +40,8 @@
 
   &--ml::after,
   &--frontend::after,
-  &--design::after {
+  &--design::after,
+  &--embedded::after {
     content: "";
     position: absolute;
     left: 0;
@@ -55,6 +56,17 @@
     // opacity: 0;
 
     transition: all 0.3s ease-in-out;
+  }
+
+  &--embedded {
+    &::after {
+      background-image:
+        linear-gradient(
+          189deg,
+          $color-embedded-page-primary 0%,
+          $color-embedded-page-secondary 100%
+        );
+    }
   }
 
   &--ml {
@@ -82,7 +94,8 @@
 
   &--ml:hover::after,
   &--frontend:hover::after,
-  &--design:hover::after {
+  &--design:hover::after,
+  &--embedded:hover::after {
     opacity: 1;
   }
 
