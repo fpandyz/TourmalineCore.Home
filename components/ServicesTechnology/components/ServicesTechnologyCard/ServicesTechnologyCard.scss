@@ -9,6 +9,7 @@
   color: inherit;
   background-image: $color-dark-card;
   background-color: $color-black;
+  cursor: default;
 
   &__inner {
     position: relative;
@@ -59,6 +60,10 @@
 
     @include tablet-xl {
       top: unset;
+      bottom: 12px;
+    }
+
+    @include desktop {
       bottom: 24px;
     }
   }
@@ -116,11 +121,19 @@
     opacity: 1;
   }
 
+  &--hover {
+    cursor: pointer;
+  }
+
   @include desktop {
     min-height: 340px;
   }
 
   @include tablet-xl {
-    padding: 40px 24px 48px;
+    padding: 40px 24px 58px;
+  }
+
+  @include desktop {
+    padding-bottom: 48px;
   }
 }
