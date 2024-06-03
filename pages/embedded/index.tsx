@@ -31,11 +31,11 @@ export default function EmbeddedPage() {
         <div className="embedded__hero-block-container">
           <HeroBlockTechnology />
           <Points />
-          <Tasks />
-          <Cases />
-          <Cta />
-          <Stack />
         </div>
+        <Tasks />
+        <Cases />
+        <Cta />
+        <Stack />
       </Layout>
     </>
   );

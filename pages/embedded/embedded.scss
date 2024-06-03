@@ -1,0 +1,7 @@
+.embedded {
+  &__hero-block-container {
+    @include tablet-xl {
+      position: relative;
+    }
+  }
+}
