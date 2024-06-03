@@ -9,6 +9,7 @@ import Tasks from '../../components/Tasks/Tasks';
 import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
 import Stack from '../../components/Stack/Stack';
+import Payment from '../../components/Payment/Payment';
 
 export default function EmbeddedPage() {
   const { t } = useTranslation('common');
@@ -36,6 +37,7 @@ export default function EmbeddedPage() {
         <Cases />
         <Cta />
         <Stack />
+        <Payment />
       </Layout>
     </>
   );
