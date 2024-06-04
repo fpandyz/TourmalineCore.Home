@@ -68,29 +68,35 @@
     }
   }
 
-  &:hover &__arrow {
-    transform: rotate(45deg);
+  &:hover {
+    .services-technology-card__arrow {
+      transform: rotate(45deg);
+    }
   }
 
-  &--ml::after,
-  &--frontend::after,
-  &--design::after,
-  &--embedded::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
-    display: block;
-    border-radius: 24px;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
+  &--ml,
+  &--frontend,
+  &--design,
+  &--embedded {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      display: block;
+      border-radius: 24px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
   }
 
-  &--ml::after {
-    background-color: $color-ml-page-primary;
+  &--ml {
+    &::after {
+      background-color: $color-ml-page-primary;
+    }
   }
 
   &--embedded {
@@ -104,25 +110,31 @@
     }
   }
 
-  &--frontend::after {
-    background-image: $color-dark-purple-card;
+  &--frontend {
+    &::after {
+      background-image: $color-dark-purple-card;
+    }
   }
 
-  &--design::after {
-    background-image:
-      linear-gradient(
-        233deg,
-        $color-design-page-primary -19.07%,
-        $color-design-page-secondary 73.95%
-      );
-  }
-
-  &--hover:hover::after {
-    opacity: 1;
+  &--design {
+    &::after {
+      background-image:
+        linear-gradient(
+          233deg,
+          $color-design-page-primary -19.07%,
+          $color-design-page-secondary 73.95%
+        );
+    }
   }
 
   &--hover {
     cursor: pointer;
+  }
+
+  &--hover:hover {
+    &::after {
+      opacity: 1;
+    }
   }
 
   @include desktop {
