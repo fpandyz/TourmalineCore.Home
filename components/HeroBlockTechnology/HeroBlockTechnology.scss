@@ -105,7 +105,7 @@
     }
 
     &--embedded {
-      background-image: linear-gradient(189deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
+      background-image: linear-gradient(225deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
       background-clip: padding-box;
 
       &::after,
@@ -123,7 +123,7 @@
         right: -1px;
         top: -1px;
         bottom: -1px;
-        background-image: linear-gradient(189deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
+        background-image: linear-gradient(225deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
       }
 
       &::after {
@@ -133,7 +133,7 @@
         bottom: 0;
         background-image:
           linear-gradient(
-            189deg,
+            225deg,
             rgba($color-embedded-page-primary, 0.3) 0%,
             rgba($color-embedded-page-secondary, 0.3) 100%
           );
