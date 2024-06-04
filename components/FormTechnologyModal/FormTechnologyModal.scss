@@ -70,11 +70,11 @@
 
       &:hover {
         background-image: transparent;
-      }
 
-      &:hover::after,
-      &:hover::before {
-        opacity: 1;
+        &::after,
+        &::before {
+          opacity: 1;
+        }
       }
     }
 
@@ -131,11 +131,11 @@
 
       &:hover {
         background-image: transparent;
-      }
 
-      &:hover::after,
-      &:hover::before {
-        opacity: 1;
+        &::after,
+        &::before {
+          opacity: 1;
+        }
       }
     }
 
