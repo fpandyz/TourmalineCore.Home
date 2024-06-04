@@ -31,7 +31,7 @@ export default function EmbeddedPage() {
           additionalCode: '',
         }}
       />
-      <Layout mainClassName="embedded__main">
+      <Layout mainClassName="embedded">
         <div className="embedded__hero-block-container">
           <HeroBlockTechnology />
           <Points />
