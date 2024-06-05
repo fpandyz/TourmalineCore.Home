@@ -94,6 +94,10 @@
     height: 135px;
     background-size: cover;
 
+    &--embedded {
+      background-image: url("/images/points-embedded-element.webp");
+    }
+
     &--frontend {
       background-image: url("/images/points-frontend-element.webp");
     }
