@@ -6,13 +6,13 @@
 
     @include tablet {
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       padding-top: 80px;
       padding-bottom: 80px;
     }
 
     @include tablet-xl {
-      justify-content: end;
+      justify-content: flex-end;
       padding-top: 120px;
       padding-bottom: 120px;
     }
