@@ -34,8 +34,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       }
     };
 
-    console.log(process.env.NODE_ENV);
-
     router.events.on('routeChangeComplete', handleRouteChange);
 
     return () => {
