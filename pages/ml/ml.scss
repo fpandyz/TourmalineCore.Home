@@ -1,7 +1,5 @@
 .ml {
-  &__main {
-    background-color: $color-black;
-  }
+  background-color: $color-black;
 
   &__hero-block-container {
     @include tablet-xl {
