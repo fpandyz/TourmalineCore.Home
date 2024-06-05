@@ -255,7 +255,7 @@
     }
 
     @include tablet-xl {
-      justify-content: end;
+      justify-content: flex-end;
       padding-top: 184px;
       padding-bottom: 264px;
     }
