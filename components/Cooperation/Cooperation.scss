@@ -104,24 +104,24 @@
 
       @include tablet {
         right: $pd-tablet;
-        bottom: 43px;
-        width: 320px;
+        bottom: 15px;
+        width: 290px;
         height: 355px;
-        background-image: url("/images/ellipse-purple.gif");
+        background-image: url("/images/ellipse-embedded.gif");
       }
 
       @include tablet-xl {
         left: 31px;
-        bottom: 125px;
+        bottom: 100px;
       }
 
       @include desktop {
         left: 74px;
-        bottom: 105px;
+        bottom: 150px;
       }
 
       @include desktop-xl {
-        bottom: 207px;
+        bottom: 200px;
       }
     }
 
