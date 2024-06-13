@@ -32,7 +32,7 @@ export default function DesignPage() {
           additionalCode: '',
         }}
       />
-      <Layout mainClassName="design__main">
+      <Layout mainClassName="design">
         <div className="design__hero-block-container">
           <HeroBlockTechnology />
           <Points />

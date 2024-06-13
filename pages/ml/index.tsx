@@ -31,7 +31,7 @@ export default function MlPage() {
           additionalCode: '',
         }}
       />
-      <Layout mainClassName="ml__main">
+      <Layout mainClassName="ml">
         <div className="ml__hero-block-container">
           <HeroBlockTechnology />
           <Points />

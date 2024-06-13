@@ -12,7 +12,7 @@
 
     @include tablet-xl {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       padding-top: 120px;
       padding-bottom: 120px;
     }
@@ -65,7 +65,8 @@
 
     &--ml,
     &--frontend,
-    &--design {
+    &--design,
+    &--embedded {
       width: 124px;
       height: 175px;
 
@@ -86,6 +87,18 @@
 
       @include desktop-xl {
         bottom: 70px;
+      }
+    }
+
+    &--embedded {
+      background-image: url("/images/stack-embedded-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/stack-embedded-element-tablet.webp");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-embedded-element-desktop.webp");
       }
     }
 

@@ -35,6 +35,10 @@
     &--design {
       background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
     }
+
+    &--embedded {
+      background-image: linear-gradient(225deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
+    }
   }
 
   &__text {

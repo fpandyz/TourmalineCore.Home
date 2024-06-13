@@ -6,13 +6,13 @@
 
     @include tablet {
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       padding-top: 80px;
       padding-bottom: 80px;
     }
 
     @include tablet-xl {
-      justify-content: end;
+      justify-content: flex-end;
       padding-top: 120px;
       padding-bottom: 120px;
     }
@@ -60,7 +60,8 @@
 
     &--ml,
     &--frontend,
-    &--design {
+    &--design,
+    &--embedded {
       width: 62px;
       height: 194px;
     }
@@ -95,6 +96,32 @@
 
       @include desktop-xl {
         bottom: 164px;
+      }
+    }
+
+    &--embedded {
+      background-image: url("/images/cooperation-embedded-element-mobile.webp");
+
+      @include tablet {
+        right: $pd-tablet;
+        bottom: 15px;
+        width: 290px;
+        height: 355px;
+        background-image: url("/images/ellipse-embedded.gif");
+      }
+
+      @include tablet-xl {
+        left: 31px;
+        bottom: 100px;
+      }
+
+      @include desktop {
+        left: 74px;
+        bottom: 150px;
+      }
+
+      @include desktop-xl {
+        bottom: 200px;
       }
     }
 

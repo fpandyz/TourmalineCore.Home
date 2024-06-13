@@ -7,7 +7,7 @@
 
     @include tablet-xl {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       padding-top: 120px;
     }
   }
@@ -93,6 +93,10 @@
     width: 87px;
     height: 135px;
     background-size: cover;
+
+    &--embedded {
+      background-image: url("/images/points-embedded-element.webp");
+    }
 
     &--frontend {
       background-image: url("/images/points-frontend-element.webp");

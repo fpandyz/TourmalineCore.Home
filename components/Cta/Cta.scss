@@ -22,6 +22,10 @@
       background-color: $color-ml-page-primary;
     }
 
+    &--embedded {
+      background-image: linear-gradient(225deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
+    }
+
     &--frontend {
       background-color: $color-frontend-page-primary;
     }
