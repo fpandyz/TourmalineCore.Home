@@ -54,9 +54,9 @@ function Footer() {
           <span>
             {`© 2019-${date} Tourmaline Core`}
           </span>
-          <span className="footer__location">
+          {/* <span className="footer__location">
             {t('location')}
-          </span>
+          </span> */}
         </div>
       </div>
     </footer>
