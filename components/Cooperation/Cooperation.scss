@@ -64,50 +64,13 @@
     &--embedded {
       width: 62px;
       height: 194px;
-    }
-
-    &--ml {
-      background-image: url("/images/cooperation-ml-element-mobile.webp");
-    }
-
-    &--frontend {
-      background-image: url("/images/cooperation-frontend-element-mobile.png");
-    }
-
-    &--ml,
-    &--frontend {
-      @include tablet {
-        right: 16px;
-        bottom: 0;
-        width: 320px;
-        height: 312px;
-        background-image: url("/images/ellipse-purple.gif");
-      }
-
-      @include tablet-xl {
-        left: 23px;
-        bottom: 82px;
-      }
-
-      @include desktop {
-        left: 66px;
-        bottom: 132px;
-      }
-
-      @include desktop-xl {
-        bottom: 164px;
-      }
-    }
-
-    &--embedded {
-      background-image: url("/images/cooperation-embedded-element-mobile.webp");
 
       @include tablet {
         right: $pd-tablet;
         bottom: 15px;
         width: 290px;
         height: 355px;
-        background-image: url("/images/ellipse-embedded.gif");
+        
       }
 
       @include tablet-xl {
@@ -125,29 +88,34 @@
       }
     }
 
+    &--ml {
+      background-image: url("/images/cooperation-ml-element-mobile.webp");
+    }
+
+    &--frontend {
+      background-image: url("/images/cooperation-frontend-element-mobile.png");
+    }
+
+    &--ml,
+    &--frontend {
+      @include tablet {
+        background-image: url("/images/ellipse-purple.svg");
+      }
+    }
+
+    &--embedded {
+      background-image: url("/images/cooperation-embedded-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/ellipse-embedded.svg");
+      }
+    }
+
     &--design {
       background-image: url("/images/cooperation-design-element-mobile.png");
 
       @include tablet {
-        right: $pd-tablet;
-        bottom: 43px;
-        width: 320px;
-        height: 355px;
-        background-image: url("/images/ellipse-design.gif");
-      }
-
-      @include tablet-xl {
-        left: 31px;
-        bottom: 125px;
-      }
-
-      @include desktop {
-        left: 74px;
-        bottom: 105px;
-      }
-
-      @include desktop-xl {
-        bottom: 207px;
+        background-image: url("/images/ellipse-design.svg");
       }
     }
   }

@@ -23,7 +23,7 @@ const ICONS = {
   watch: <IconWatch />,
   gear: <IconGear />,
   videoCamera: <IconVideoCamera />,
-  notepad: <IconNotepad/>,
+  notepad: <IconNotepad />,
 };
 
 type CasesList = {
@@ -45,6 +45,7 @@ export default function Cases() {
           <h3 className="title-technology-type-1 cases__title">{t('title')}</h3>
           {casesList.map((item, index) => (
             <CasesCard
+              // eslint-disable-next-line react/no-array-index-key
               key={index}
               title={item.title}
               description={item.description}
