@@ -6,6 +6,10 @@ import IconChart from '../../icons/icon-chart.svg';
 import IconHeart from '../../icons/icon-heart.svg';
 import IconAdvertisement from '../../icons/icon-advertisement.svg';
 import IconIceCream from '../../icons/icon-ice-cream.svg';
+import IconWatch from '../../icons/icon-watch.svg';
+import IconGear from '../../icons/icon-gear.svg';
+import IconVideoCamera from '../../icons/icon-video-camera.svg';
+import IconNotepad from '../../icons/icon-notepad.svg';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 
 const ICONS = {
@@ -16,6 +20,10 @@ const ICONS = {
   heart: <IconHeart />,
   advertisement: <IconAdvertisement />,
   iceCream: <IconIceCream />,
+  watch: <IconWatch />,
+  gear: <IconGear />,
+  videoCamera: <IconVideoCamera />,
+  notepad: <IconNotepad/>,
 };
 
 type CasesList = {
