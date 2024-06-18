@@ -43,9 +43,9 @@ export default function Cases() {
       <div className="container cases__wrapper">
         <div className="cases__inner">
           <h3 className="title-technology-type-1 cases__title">{t('title')}</h3>
-          {casesList.map((item) => (
+          {casesList.map((item, index) => (
             <CasesCard
-              key={item.title}
+              key={index}
               title={item.title}
               description={item.description}
               icon={ICONS[item.icon]}
