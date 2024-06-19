@@ -63,7 +63,7 @@
   &__react-animation {
     display: grid;
     margin: 0 auto;
-    border: 3px solid transparent;
+    border: 3px solid;
     border-radius: 50%;
     width: 250px;
     height: 100px;
@@ -87,36 +87,15 @@
 
     &--ml,
     &--frontend {
-      border: 3px solid;
       color: $color-frontend-page-primary;
     }
 
-    &--embedded,
-    &--design {
-      box-shadow: inset 0 0 0 100vw $color-black;
-
-      &::after,
-      &::before {
-        mask:
-          linear-gradient(
-            #fff 0 0
-          ) padding-box,
-          linear-gradient(#fff 0 0);
-        mask-composite: destination-out;
-      }
-    }
-
-    &--design {
-      background:
-        linear-gradient(
-          234deg,
-          $color-design-page-primary 0%,
-          $color-design-page-secondary 78.13%
-        );
-    }
-
     &--embedded {
-      background: rgb(251, 138, 238);
+      color: $color-embedded-page-primary;
+    }
+
+    &--design {
+      color: $color-design-page-react-animation;
     }
 
     @keyframes l2 {
