@@ -116,12 +116,7 @@
     }
 
     &--embedded {
-      background:
-        linear-gradient(
-          225deg,
-          rgb(251, 138, 238) 50%,
-          rgb(108, 121, 240) 100%
-        );
+      background: rgb(251, 138, 238);
     }
 
     @keyframes l2 {
