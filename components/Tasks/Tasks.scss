@@ -51,27 +51,83 @@
     height: 300px;
     background-size: cover;
 
-    &--embedded {
-      width: 300px;
-      height: 300px;
-      background-image: url("/images/react-embedded.gif");
-    }
-
-    &--ml,
-    &--frontend {
-      background-image: url("/images/react-purple.gif");
-    }
-
-    &--design {
-      background-image: url("/images/react-design.gif");
-    }
-
     @include desktop {
       right: 75px;
     }
 
     @include tablet-xl {
       display: block;
+    }
+  }
+
+  &__react-animation {
+    display: grid;
+    margin: 0 auto;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    width: 250px;
+    height: 100px;
+    box-sizing: border-box;
+    animation: l2 10s infinite linear;
+
+    &::before,
+    &::after {
+      content: "";
+      border: inherit;
+      border-radius: 50%;
+      background: inherit;
+      animation: inherit;
+      animation-duration: 12s;
+      grid-area: 1/1;
+    }
+
+    &::after {
+      --s: -1;
+    }
+
+    &--ml,
+    &--frontend {
+      border: 3px solid;
+      color: $color-frontend-page-primary;
+    }
+
+    &--embedded,
+    &--design {
+      box-shadow: inset 0 0 0 100vw $color-black;
+
+      &::after,
+      &::before {
+        mask:
+          linear-gradient(
+            #fff 0 0
+          ) padding-box,
+          linear-gradient(#fff 0 0);
+        mask-composite: destination-out;
+      }
+    }
+
+    &--design {
+      background:
+        linear-gradient(
+          234deg,
+          $color-design-page-primary 0%,
+          $color-design-page-secondary 78.13%
+        );
+    }
+
+    &--embedded {
+      background:
+        linear-gradient(
+          225deg,
+          rgb(251, 138, 238) 50%,
+          rgb(108, 121, 240) 100%
+        );
+    }
+
+    @keyframes l2 {
+      100% {
+        transform: rotate(calc(var(--s, 1) * 1turn));
+      }
     }
   }
 }
