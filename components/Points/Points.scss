@@ -7,7 +7,7 @@
 
     @include tablet-xl {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       padding-top: 120px;
     }
   }
@@ -94,12 +94,20 @@
     height: 135px;
     background-size: cover;
 
+    &--embedded {
+      background-image: url("/images/points-embedded-element.webp");
+    }
+
     &--frontend {
-      background-image: url("/images/points-frontend-element.png");
+      background-image: url("/images/points-frontend-element.webp");
+    }
+
+    &--ml {
+      background-image: url("/images/points-ml-element.webp");
     }
 
     &--design {
-      background-image: url("/images/points-design-element.png");
+      background-image: url("/images/points-design-element.webp");
     }
 
     @include tablet {

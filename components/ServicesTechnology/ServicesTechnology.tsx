@@ -1,8 +1,10 @@
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import ServicesTechnologyCard from './ServicesTechnologyCard/ServicesTechnologyCard';
+import ServicesTechnologyCard from './components/ServicesTechnologyCard/ServicesTechnologyCard';
 import { TServicesTechnologyList } from './types';
+import usePath from '../../common/hooks/usePath';
 
 export default function ServicesTechnology() {
+  const { slicePathname } = usePath();
   const { t } = useTranslationNamespace('servicesTechnology');
 
   const servicesTechnologyList: TServicesTechnologyList = t('list', { returnObjects: true });
@@ -11,11 +13,15 @@ export default function ServicesTechnology() {
     <section className="services-technology">
       <div className="container services-technology__wrapper">
         <div className="services-technology__inner">
-          <h3 className="title-technology-type-1 services-technology__title">{t('title')}</h3>
+          <h3 className={`title-technology-type-1 services-technology__title services-technology__title--${slicePathname}`}>{t('title')}</h3>
           <ul className="services-technology__list">
-            {servicesTechnologyList.map(({ title, description }) => (
+            {servicesTechnologyList.map(({ title, description, link }) => (
               <li key={title} className="services-technology__item">
-                <ServicesTechnologyCard title={title} description={description} />
+                <ServicesTechnologyCard
+                  title={title}
+                  description={description}
+                  link={link}
+                />
               </li>
             ))}
           </ul>

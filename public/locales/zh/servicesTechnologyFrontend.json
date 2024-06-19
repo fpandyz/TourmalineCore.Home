@@ -1,1 +1,1 @@
-{"list":[{"title":"UI/UX 设计","description":"开发系统的外观"},{"title":"后端","description":"创建基础架构和后端"},{"title":"ML","description":"添加人工智能"},{"title":"QA","description":"测试系统"}],"title":"不仅订购前端，还订购任何其他开发服务"}
+{"list":[{"title":"UI/UX 设计","description":"开发系统外观","link":"/design"},{"title":"后端","description":"创建基础架构和后端","link":""},{"title":"ML","description":"添加人工智能","link":"/ml"},{"title":"QA","description":"测试系统","link":""},{"title":"嵌入式","description":"开发嵌入式系统","link":"/embedded"}],"title":"不仅订购前端，还订购任何其他开发服务"}

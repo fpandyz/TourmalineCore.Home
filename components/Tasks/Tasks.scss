@@ -51,20 +51,57 @@
     height: 300px;
     background-size: cover;
 
-    &--frontend {
-      background-image: url("/images/react-frontend.gif");
-    }
-
-    &--design {
-      background-image: url("/images/react-design.gif");
-    }
-
     @include desktop {
       right: 75px;
     }
 
     @include tablet-xl {
       display: block;
+    }
+  }
+
+  &__react-animation {
+    display: grid;
+    margin: 0 auto;
+    border: 3px solid;
+    border-radius: 50%;
+    width: 250px;
+    height: 100px;
+    box-sizing: border-box;
+    animation: l2 10s infinite linear;
+
+    &::before,
+    &::after {
+      content: "";
+      border: inherit;
+      border-radius: 50%;
+      background: inherit;
+      animation: inherit;
+      animation-duration: 12s;
+      grid-area: 1/1;
+    }
+
+    &::after {
+      --s: -1;
+    }
+
+    &--ml,
+    &--frontend {
+      color: $color-frontend-page-primary;
+    }
+
+    &--embedded {
+      color: $color-embedded-page-primary;
+    }
+
+    &--design {
+      color: $color-design-page-react-animation;
+    }
+
+    @keyframes l2 {
+      100% {
+        transform: rotate(calc(var(--s, 1) * 1turn));
+      }
     }
   }
 }

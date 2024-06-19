@@ -31,7 +31,7 @@ export default function FrontendPage() {
           additionalCode: '',
         }}
       />
-      <Layout mainClassName="frontend__main">
+      <Layout mainClassName="frontend">
         <div className="frontend__hero-block-container">
           <HeroBlockTechnology />
           <Points />
@@ -67,7 +67,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'stackFrontend',
       'cooperation',
       'servicesTechnologyFrontend',
-      'cases',
+      'casesFrontend',
     ])),
   },
 });

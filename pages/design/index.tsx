@@ -32,7 +32,7 @@ export default function DesignPage() {
           additionalCode: '',
         }}
       />
-      <Layout mainClassName="design__main">
+      <Layout mainClassName="design">
         <div className="design__hero-block-container">
           <HeroBlockTechnology />
           <Points />
@@ -64,7 +64,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'payment',
       'cta',
       'cooperation',
-      'cases',
+      'casesDesign',
       'heroDesign',
       'pointsDesign',
       'tasksDesign',
