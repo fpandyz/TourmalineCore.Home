@@ -2,6 +2,7 @@ import { useTranslationNamespace } from '../../common/hooks/useTranslationNamesp
 import ServicesTechnologyCard from './components/ServicesTechnologyCard/ServicesTechnologyCard';
 import { TServicesTechnologyList } from './types';
 import usePath from '../../common/hooks/usePath';
+import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
 export default function ServicesTechnology() {
   const { slicePathname } = usePath();
@@ -10,7 +11,10 @@ export default function ServicesTechnology() {
   const servicesTechnologyList: TServicesTechnologyList = t('list', { returnObjects: true });
 
   return (
-    <section className="services-technology">
+    <section
+      id={TechnologyPageAnchorLink.services}
+      className="services-technology"
+    >
       <div className="container services-technology__wrapper">
         <div className="services-technology__inner">
           <h3 className={`title-technology-type-1 services-technology__title services-technology__title--${slicePathname}`}>{t('title')}</h3>

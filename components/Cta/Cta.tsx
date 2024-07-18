@@ -4,6 +4,7 @@ import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
 import usePath from '../../common/hooks/usePath';
+import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
 export default function Cta() {
   const { slicePathname } = usePath();
@@ -14,7 +15,10 @@ export default function Cta() {
   useBodyScrollHiden(isOpen);
 
   return (
-    <section className="cta">
+    <section
+      id={TechnologyPageAnchorLink.cta}
+      className="cta"
+    >
       <div className="container cta__wrapper">
         <div className={`cta__inner cta__inner--${slicePathname}`}>
           <h3 className="title-technology-type-1 cta__title">{t('title')}</h3>
