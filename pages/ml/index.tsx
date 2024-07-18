@@ -13,6 +13,7 @@ import Payment from '../../components/Payment/Payment';
 import Cooperation from '../../components/Cooperation/Cooperation';
 import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
 import FormBlock from '../../components/FormBlock/FormBlock';
+import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
 export default function MlPage() {
   const { t } = useTranslation('common');
@@ -43,7 +44,10 @@ export default function MlPage() {
         <Payment />
         <Cooperation />
         <ServicesTechnology />
-        <FormBlock buttonClassName="ml__form-button" />
+        <FormBlock
+          id={TechnologyPageAnchorLink.Contact}
+          buttonClassName="ml__form-button"
+        />
       </Layout>
     </>
   );

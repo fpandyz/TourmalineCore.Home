@@ -1,5 +1,6 @@
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import usePath from '../../common/hooks/usePath';
+import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
 export default function Points() {
   const { slicePathname } = usePath();
@@ -8,7 +9,10 @@ export default function Points() {
   const pointsList: string[] = t('list', { returnObjects: true });
 
   return (
-    <section className="points">
+    <section
+      id={TechnologyPageAnchorLink.Points}
+      className="points"
+    >
       <div className="container points__wrapper">
         <div className="points__inner">
           <h3 className="title-technology-type-1 points__title">{t('title')}</h3>

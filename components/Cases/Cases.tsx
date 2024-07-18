@@ -11,6 +11,7 @@ import IconGear from '../../icons/icon-gear.svg';
 import IconVideoCamera from '../../icons/icon-video-camera.svg';
 import IconNotepad from '../../icons/icon-notepad.svg';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
+import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
 const ICONS = {
   camera: <IconCamera />,
@@ -39,7 +40,10 @@ export default function Cases() {
   const casesList: CasesList = t('list', { returnObjects: true });
 
   return (
-    <section className="cases">
+    <section
+      id={TechnologyPageAnchorLink.Cases}
+      className="cases"
+    >
       <div className="container cases__wrapper">
         <div className="cases__inner">
           <h3 className="title-technology-type-1 cases__title">{t('title')}</h3>
