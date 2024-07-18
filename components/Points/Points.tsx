@@ -10,7 +10,7 @@ export default function Points() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.points}
+      id={TechnologyPageAnchorLink.Points}
       className="points"
     >
       <div className="container points__wrapper">

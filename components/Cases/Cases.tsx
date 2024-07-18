@@ -41,7 +41,7 @@ export default function Cases() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.cases}
+      id={TechnologyPageAnchorLink.Cases}
       className="cases"
     >
       <div className="container cases__wrapper">

@@ -47,7 +47,7 @@ export default function DesignPage() {
         <Cooperation />
         <ServicesTechnology />
         <FormBlock
-          id={TechnologyPageAnchorLink.contact}
+          id={TechnologyPageAnchorLink.Contact}
           buttonClassName="design__form-button"
         />
       </Layout>

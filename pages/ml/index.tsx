@@ -45,7 +45,7 @@ export default function MlPage() {
         <Cooperation />
         <ServicesTechnology />
         <FormBlock
-          id={TechnologyPageAnchorLink.contact}
+          id={TechnologyPageAnchorLink.Contact}
           buttonClassName="ml__form-button"
         />
       </Layout>

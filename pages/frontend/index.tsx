@@ -45,7 +45,7 @@ export default function FrontendPage() {
         <Cooperation />
         <ServicesTechnology />
         <FormBlock
-          id={TechnologyPageAnchorLink.contact}
+          id={TechnologyPageAnchorLink.Contact}
           buttonClassName="frontend__form-button"
         />
       </Layout>

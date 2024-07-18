@@ -10,7 +10,7 @@ export default function Stages() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.stages}
+      id={TechnologyPageAnchorLink.Stages}
       className="stages"
     >
       <div className="container stages__wrapper">

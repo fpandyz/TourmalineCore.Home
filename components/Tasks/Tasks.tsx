@@ -11,7 +11,7 @@ export default function Tasks() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.tasks}
+      id={TechnologyPageAnchorLink.Tasks}
       className="tasks"
     >
       <div className="container tasks__wrapper">

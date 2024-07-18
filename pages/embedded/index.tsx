@@ -45,7 +45,7 @@ export default function EmbeddedPage() {
         <Cooperation />
         <ServicesTechnology />
         <FormBlock
-          id={TechnologyPageAnchorLink.contact}
+          id={TechnologyPageAnchorLink.Contact}
           buttonClassName="embedded__form-button"
         />
       </Layout>

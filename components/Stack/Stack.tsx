@@ -17,7 +17,7 @@ export default function Stack() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.stack}
+      id={TechnologyPageAnchorLink.Stack}
       className="stack"
     >
       <div className="container stack__wrapper">

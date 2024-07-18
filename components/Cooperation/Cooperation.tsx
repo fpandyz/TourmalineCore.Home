@@ -12,7 +12,7 @@ export default function Cooperation() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.cooperation}
+      id={TechnologyPageAnchorLink.Cooperation}
       className="cooperation"
     >
       <div className="container cooperation__wrapper">

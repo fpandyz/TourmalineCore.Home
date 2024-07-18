@@ -12,7 +12,7 @@ export default function ServicesTechnology() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.services}
+      id={TechnologyPageAnchorLink.Services}
       className="services-technology"
     >
       <div className="container services-technology__wrapper">

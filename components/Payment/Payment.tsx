@@ -10,7 +10,7 @@ export default function Payment() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.payment}
+      id={TechnologyPageAnchorLink.Payment}
       className="payment"
     >
       <div className="container payment__wrapper">

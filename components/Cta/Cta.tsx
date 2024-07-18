@@ -16,7 +16,7 @@ export default function Cta() {
 
   return (
     <section
-      id={TechnologyPageAnchorLink.cta}
+      id={TechnologyPageAnchorLink.Cta}
       className="cta"
     >
       <div className="container cta__wrapper">
