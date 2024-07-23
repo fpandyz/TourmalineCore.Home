@@ -8,6 +8,7 @@ import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cta from '../../components/Cta/Cta';
 import Stack from '../../components/Stack/Stack';
+import Payment from '../../components/Payment/Payment';
 
 export default function QAPage() {
   const { t } = useTranslation('common');
@@ -34,6 +35,7 @@ export default function QAPage() {
         <Tasks />
         <Cta />
         <Stack />
+        <Payment />
       </Layout>
     </>
   );
