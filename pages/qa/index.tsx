@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
+import Points from '../../components/Points/Points';
 
 export default function QAPage() {
   const { t } = useTranslation('common');
@@ -25,6 +26,7 @@ export default function QAPage() {
       <Layout mainClassName="qa">
         <div className="qa__hero-block-container">
           <HeroBlockTechnology />
+          <Points />
         </div>
       </Layout>
     </>
@@ -49,7 +51,6 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'stackQa',
       'cooperation',
       'servicesTechnologyQa',
-      'casesQa',
     ])),
   },
 });
