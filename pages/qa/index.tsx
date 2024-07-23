@@ -5,6 +5,7 @@ import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
+import Tasks from '../../components/Tasks/Tasks';
 
 export default function QAPage() {
   const { t } = useTranslation('common');
@@ -28,6 +29,7 @@ export default function QAPage() {
           <HeroBlockTechnology />
           <Points />
         </div>
+        <Tasks />
       </Layout>
     </>
   );
