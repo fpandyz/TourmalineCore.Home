@@ -39,6 +39,10 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Embedded,
   },
   {
+    id: AppRoute.QA.slice(1),
+    link: AppRoute.QA,
+  },
+  {
     id: AppRoute.Articles.slice(1),
     link: AppRoute.Articles,
   },
@@ -49,6 +53,7 @@ const BURGER_ICONS = new Map(
     [AppRoute.Frontend, <IconBurgerPurple />],
     [AppRoute.Ml, <IconBurgerPurple />],
     [AppRoute.Embedded, <IconBurgerMagenta />],
+    [AppRoute.QA, <IconBurgerMagenta />],
     [AppRoute.Design, <IconBurgerDesign />],
     [AppRoute.Main, <IconBurger />],
     [AppRoute.Articles, <IconBurger />],
