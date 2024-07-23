@@ -5,10 +5,12 @@ import IconMail from '../../icons/mail.svg';
 import IconMailPurple from '../../icons/mail-frontend.svg';
 import IconMailDesign from '../../icons/mail-design.svg';
 import IconMailEmbedded from '../../icons/mail-embedded.svg';
+import IconMailQA from '../../icons/mail-qa.svg';
 import IconTelegram from '../../icons/telegram.svg';
 import IconTelegramPurple from '../../icons/telegram-frontend.svg';
 import IconTelegramDesign from '../../icons/telegram-design.svg';
 import IconTelegramEmbedded from '../../icons/telegram-embedded.svg';
+import IconTelegramQA from '../../icons/telegram-qa.svg';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
 function SocialLinks() {
@@ -73,6 +75,11 @@ function SocialLinks() {
         return {
           mail: <IconMailEmbedded />,
           telegram: <IconTelegramEmbedded />,
+        };
+      case AppRoute.QA:
+        return {
+          mail: <IconMailQA />,
+          telegram: <IconTelegramQA />,
         };
 
       default:
