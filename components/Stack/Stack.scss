@@ -66,7 +66,8 @@
     &--ml,
     &--frontend,
     &--design,
-    &--embedded {
+    &--embedded,
+    &--qa {
       width: 124px;
       height: 175px;
 
@@ -87,6 +88,18 @@
 
       @include desktop-xl {
         bottom: 70px;
+      }
+    }
+
+    &--qa {
+      background-image: url("/images/stack-qa-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/stack-qa-element-tablet.webp");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-qa-element-desktop.webp");
       }
     }
 
