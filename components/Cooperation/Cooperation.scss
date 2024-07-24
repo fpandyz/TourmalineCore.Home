@@ -61,7 +61,8 @@
     &--ml,
     &--frontend,
     &--design,
-    &--embedded {
+    &--embedded,
+    &--qa {
       width: 62px;
       height: 194px;
 
@@ -84,6 +85,14 @@
 
       @include desktop-xl {
         bottom: 200px;
+      }
+    }
+
+    &--qa {
+      background-image: url("/images/cooperation-qa-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/ellipse-qa.svg");
       }
     }
 

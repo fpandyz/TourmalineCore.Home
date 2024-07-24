@@ -85,6 +85,10 @@
       --s: -1;
     }
 
+    &--qa {
+      color: $color-qa-page-primary;
+    }
+
     &--ml,
     &--frontend {
       color: $color-frontend-page-primary;

@@ -4,5 +4,6 @@ export enum AppRoute {
   Design = '/design',
   Ml = '/ml',
   Embedded = '/embedded',
+  QA = '/qa',
   Main = '/',
 }

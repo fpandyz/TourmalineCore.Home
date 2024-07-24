@@ -12,6 +12,7 @@ import IconBurger from '../../icons/burger.svg';
 import IconBurgerPurple from '../../icons/burger-purple.svg';
 import IconBurgerMagenta from '../../icons/burder-magenta.svg';
 import IconBurgerDesign from '../../icons/burger-design.svg';
+import IconBurgerQA from '../../icons/burger-qa.svg';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import { AppRoute } from '../../common/utils/consts/app-route';
@@ -39,6 +40,10 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Embedded,
   },
   {
+    id: AppRoute.QA.slice(1),
+    link: AppRoute.QA,
+  },
+  {
     id: AppRoute.Articles.slice(1),
     link: AppRoute.Articles,
   },
@@ -49,6 +54,7 @@ const BURGER_ICONS = new Map(
     [AppRoute.Frontend, <IconBurgerPurple />],
     [AppRoute.Ml, <IconBurgerPurple />],
     [AppRoute.Embedded, <IconBurgerMagenta />],
+    [AppRoute.QA, <IconBurgerQA />],
     [AppRoute.Design, <IconBurgerDesign />],
     [AppRoute.Main, <IconBurger />],
     [AppRoute.Articles, <IconBurger />],
