@@ -62,7 +62,8 @@
     &--frontend,
     &--design,
     &--embedded,
-    &--qa {
+    &--qa,
+    &--backend {
       width: 62px;
       height: 194px;
 
@@ -85,6 +86,14 @@
 
       @include desktop-xl {
         bottom: 200px;
+      }
+    }
+
+    &--backend {
+      background-image: url("/images/cooperation-backend-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/ellipse-backend.svg");
       }
     }
 
