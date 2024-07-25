@@ -7,6 +7,7 @@ import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockT
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
 import Cta from '../../components/Cta/Cta';
+import Stack from '../../components/Stack/Stack';
 
 export default function BackendPage() {
   const { t } = useTranslation('common');
@@ -32,6 +33,7 @@ export default function BackendPage() {
         </div>
         <Tasks />
         <Cta />
+        <Stack />
       </Layout>
     </>
   );
