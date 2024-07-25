@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Layout from '../../components/Layout/Layout';
 import PageHead from '../../components/PageHead/PageHead';
+import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 
 export default function BackendPage() {
   const { t } = useTranslation('common');
@@ -22,7 +23,9 @@ export default function BackendPage() {
         }}
       />
       <Layout mainClassName="backend">
-        <div className="backend__hero-block-container" />
+        <div className="backend__hero-block-container">
+          <HeroBlockTechnology />
+        </div>
       </Layout>
     </>
   );
