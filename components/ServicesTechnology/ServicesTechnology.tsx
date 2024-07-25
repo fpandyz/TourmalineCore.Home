@@ -9,8 +9,6 @@ export default function ServicesTechnology() {
   const { t } = useTranslationNamespace('servicesTechnology');
 
   const servicesTechnologyList: TServicesTechnologyList = t('list', { returnObjects: true });
-  console.log(servicesTechnologyList);
-  console.log(typeof servicesTechnologyList);
 
   return (
     <section
