@@ -6,6 +6,7 @@ import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
+import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
 import Stack from '../../components/Stack/Stack';
 import Payment from '../../components/Payment/Payment';
@@ -37,8 +38,9 @@ export default function BackendPage() {
           <Points />
         </div>
         <Tasks />
+        {/* <Cases /> */}
         <Cta />
-        <Stack />
+        {/* <Stack /> */}
         <Payment />
         <Cooperation />
         <ServicesTechnology />
@@ -69,6 +71,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'stackBackend',
       'cooperation',
       'servicesTechnologyBackend',
+      'casesBackend',
     ])),
   },
 });
