@@ -21,7 +21,7 @@ export default function Cta() {
     >
       <div className="container cta__wrapper">
         <div className={`cta__inner cta__inner--${slicePathname}`}>
-          <h3 className="title-technology-type-1 cta__title">{t('title')}</h3>
+          <h2 className="title-technology-type-1 cta__title">{t('title')}</h2>
           <PrimaryButton onClick={() => setIsOpen(true)} className={`cta__button cta__button--${slicePathname}`}>
             {t('buttonText')}
           </PrimaryButton>

@@ -46,7 +46,7 @@ export default function Cases() {
     >
       <div className="container cases__wrapper">
         <div className="cases__inner">
-          <h3 className="title-technology-type-1 cases__title">{t('title')}</h3>
+          <h2 className="title-technology-type-1 cases__title">{t('title')}</h2>
           {casesList.map((item, index) => (
             <CasesCard
               // eslint-disable-next-line react/no-array-index-key
