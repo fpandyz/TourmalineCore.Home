@@ -18,6 +18,16 @@
     padding: 40px 16px;
     text-align: center;
 
+    &--backend {
+      background-image:
+        linear-gradient(
+          51deg,
+          $color-backend-page-primary 0%,
+          $color-backend-page-secondary 52%,
+          $color-backend-page-tertiary 100%
+        );
+    }
+
     &--qa {
       background-image: linear-gradient(309deg, $color-qa-page-primary 0%, $color-qa-page-secondary 100%);
     }
