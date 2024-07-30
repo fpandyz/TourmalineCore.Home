@@ -16,6 +16,8 @@ module.exports = withReactSvg({
     I18NEXUS_API_KEY_COMMON: process.env.I18NEXUS_API_KEY_COMMON,
     I18NEXUS_API_KEY_ML: process.env.I18NEXUS_API_KEY_ML,
     I18NEXUS_API_KEY_EMBEDDED: process.env.I18NEXUS_API_KEY_EMBEDDED,
+    I18NEXUS_API_KEY_QA: process.env.I18NEXUS_API_KEY_QA,
+    I18NEXUS_API_KEY_BACKEND: process.env.I18NEXUS_API_KEY_BACKEND,
     METRICS_ENABLED: process.env.METRICS_ENABLED,
   },
   webpack(webpackConfig) {
