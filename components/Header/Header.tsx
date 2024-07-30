@@ -10,7 +10,7 @@ import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
 import IconBurgerPurple from '../../icons/burger-purple.svg';
-import IconBurgerMagenta from '../../icons/burder-magenta.svg';
+import IconBurgerMagenta from '../../icons/burger-magenta.svg';
 import IconBurgerDesign from '../../icons/burger-design.svg';
 import IconBurgerQA from '../../icons/burger-qa.svg';
 import IconBurgerBackend from '../../icons/burger-backend.svg';

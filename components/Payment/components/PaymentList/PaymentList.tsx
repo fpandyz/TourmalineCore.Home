@@ -12,7 +12,7 @@ export default function PaymentList({
     <ul className="payment-list">
       {list.map(({ mainTitle, mainData }) => (
         <li key={mainTitle} className="payment-list__item">
-          <h4 className="title-technology-type-2 payment-list__title">{mainTitle}</h4>
+          <h3 className="title-technology-type-2 payment-list__title">{mainTitle}</h3>
           <div className="payment-list__inner">
             {mainData.map(({ title, data }) => (
               <NamedList

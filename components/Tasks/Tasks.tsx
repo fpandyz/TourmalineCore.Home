@@ -16,7 +16,7 @@ export default function Tasks() {
     >
       <div className="container tasks__wrapper">
         <div className="tasks__inner">
-          <h3 className="title-technology-type-1 tasks__title">{t('title')}</h3>
+          <h2 className="title-technology-type-1 tasks__title">{t('title')}</h2>
           <TasksList tasks={tasksList} />
           <div className={`tasks__image tasks__image--${slicePathname}`}>
             <div className={`tasks__react-animation tasks__react-animation--${slicePathname}`} />

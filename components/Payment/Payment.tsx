@@ -14,7 +14,7 @@ export default function Payment() {
       className="payment"
     >
       <div className="container payment__wrapper">
-        <div className="title-technology-type-1 payment__title">{t('title')}</div>
+        <h2 className="title-technology-type-1 payment__title">{t('title')}</h2>
         <PaymentList list={paymentList} />
       </div>
     </section>

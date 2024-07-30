@@ -17,7 +17,7 @@ export default function Cooperation() {
     >
       <div className="container cooperation__wrapper">
         <div className="cooperation__inner">
-          <h3 className="title-technology-type-1 cooperation__title">{t('title')}</h3>
+          <h2 className="title-technology-type-1 cooperation__title">{t('title')}</h2>
           <CooperationList list={cooperationList} />
         </div>
         <div className={`cooperation__image cooperation__image--${slicePathname}`} />
