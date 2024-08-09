@@ -77,7 +77,9 @@
   &--ml,
   &--frontend,
   &--design,
-  &--embedded {
+  &--embedded,
+  &--qa,
+  &--backend {
     &::after {
       content: "";
       position: absolute;
@@ -90,6 +92,29 @@
       height: 100%;
       opacity: 0;
       transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &--backend {
+    &::after {
+      background-image:
+        linear-gradient(
+          51deg,
+          $color-backend-page-primary 0%,
+          $color-backend-page-secondary 52%,
+          $color-backend-page-tertiary 100%
+        );
+    }
+  }
+
+  &--qa {
+    &::after {
+      background-image:
+        linear-gradient(
+          309deg,
+          $color-qa-page-primary 0%,
+          $color-qa-page-secondary 100%
+        );
     }
   }
 

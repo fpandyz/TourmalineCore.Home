@@ -27,6 +27,20 @@
     background-clip: padding-box, border-box;
     transition: background-position 0.3s linear;
 
+    &--backend {
+      background-image:
+        linear-gradient(
+          51deg,
+          $color-backend-page-primary 0%,
+          $color-backend-page-secondary 52%,
+          $color-backend-page-tertiary 100%
+        );
+    }
+
+    &--qa {
+      background-image: linear-gradient(309deg, $color-qa-page-primary 0%, $color-qa-page-secondary 100%);
+    }
+
     &--ml,
     &--frontend {
       background-color: $color-frontend-page-primary;

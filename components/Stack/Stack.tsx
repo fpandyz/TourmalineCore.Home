@@ -22,7 +22,7 @@ export default function Stack() {
     >
       <div className="container stack__wrapper">
         <div className="stack__inner">
-          <div className="title-technology-type-1 stack__title">{t('title')}</div>
+          <h2 className="title-technology-type-1 stack__title">{t('title')}</h2>
           <div className="stack__list">
             {stackList.map(({ title, data }) => (
               <NamedList key={title} title={title} data={data} />

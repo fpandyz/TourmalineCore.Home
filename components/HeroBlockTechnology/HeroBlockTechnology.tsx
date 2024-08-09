@@ -20,8 +20,8 @@ function HeroBlockTechnology() {
     >
       <div className="container hero-block-technology__wrapper">
         <div className="hero-block-technology__inner">
-          <h3 className="hero-block-technology__title">{t('title')}</h3>
-          <div className="hero-block-technology__description">{t('description')}</div>
+          <h1 className="hero-block-technology__title">{t('title')}</h1>
+          <h2 className="hero-block-technology__description">{t('description')}</h2>
           <button
             type="button"
             onClick={() => setIsOpen(true)}

@@ -85,6 +85,14 @@
       --s: -1;
     }
 
+    &--backend {
+      color: $color-backend-page-tertiary;
+    }
+
+    &--qa {
+      color: $color-qa-page-primary;
+    }
+
     &--ml,
     &--frontend {
       color: $color-frontend-page-primary;

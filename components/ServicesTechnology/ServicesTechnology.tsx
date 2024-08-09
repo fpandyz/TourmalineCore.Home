@@ -17,7 +17,7 @@ export default function ServicesTechnology() {
     >
       <div className="container services-technology__wrapper">
         <div className="services-technology__inner">
-          <h3 className={`title-technology-type-1 services-technology__title services-technology__title--${slicePathname}`}>{t('title')}</h3>
+          <h2 className={`title-technology-type-1 services-technology__title services-technology__title--${slicePathname}`}>{t('title')}</h2>
           <ul className="services-technology__list">
             {servicesTechnologyList.map(({ title, description, link }) => (
               <li key={title} className="services-technology__item">

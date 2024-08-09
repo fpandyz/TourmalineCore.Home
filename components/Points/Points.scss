@@ -94,6 +94,14 @@
     height: 135px;
     background-size: cover;
 
+    &--backend {
+      background-image: url("/images/points-backend-element.webp");
+    }
+
+    &--qa {
+      background-image: url("/images/points-qa-element.webp");
+    }
+
     &--embedded {
       background-image: url("/images/points-embedded-element.webp");
     }

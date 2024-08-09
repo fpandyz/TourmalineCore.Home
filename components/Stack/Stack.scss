@@ -66,7 +66,9 @@
     &--ml,
     &--frontend,
     &--design,
-    &--embedded {
+    &--embedded,
+    &--qa,
+    &--backend {
       width: 124px;
       height: 175px;
 
@@ -87,6 +89,30 @@
 
       @include desktop-xl {
         bottom: 70px;
+      }
+    }
+
+    &--backend {
+      background-image: url("/images/stack-backend-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/stack-backend-element-tablet.webp");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-backend-element-desktop.webp");
+      }
+    }
+
+    &--qa {
+      background-image: url("/images/stack-qa-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/stack-qa-element-tablet.webp");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-qa-element-desktop.webp");
       }
     }
 
