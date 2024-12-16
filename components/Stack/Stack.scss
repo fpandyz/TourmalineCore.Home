@@ -68,7 +68,8 @@
     &--design,
     &--embedded,
     &--qa,
-    &--backend {
+    &--backend,
+    &--teams {
       width: 124px;
       height: 175px;
 
@@ -161,6 +162,18 @@
 
       @include tablet-xl {
         background-image: url("/images/stack-design-element-desktop.png");
+      }
+    }
+
+    &--teams {
+      background-image: url("/images/stack-teams-element-mobile.png");
+
+      @include tablet {
+        background-image: url("/images/stack-teams-element-tablet.png");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-teams-element-desktop.png");
       }
     }
   }
