@@ -1,10 +1,10 @@
-import { useTranslation } from 'next-i18next';
 import PaymentList from './components/PaymentList/PaymentList';
 import { TPaymentList } from './types';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 
 export default function Payment() {
-  const { t } = useTranslation('payment');
+  const { t } = useTranslationNamespace('payment');
 
   const paymentList: TPaymentList = t('list', { returnObjects: true });
 
