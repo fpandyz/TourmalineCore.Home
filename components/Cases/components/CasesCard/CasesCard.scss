@@ -114,7 +114,8 @@
   }
 
   &--frontend::after,
-  &--design::after {
+  &--design::after,
+  &--teams::after {
     content: "";
     position: absolute;
     left: 0;
@@ -128,7 +129,8 @@
     transition: all 0.3s ease-in-out;
   }
 
-  &--frontend ~ &--hover {
+  &--frontend ~ &--hover,
+  &--teams ~ &--hover {
     &::after {
       background-image: $color-dark-purple-card;
     }
