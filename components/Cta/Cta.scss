@@ -40,7 +40,8 @@
       background-image: linear-gradient(225deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
     }
 
-    &--frontend {
+    &--frontend,
+    &--teams {
       background-color: $color-frontend-page-primary;
     }
 
