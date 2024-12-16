@@ -1,12 +1,12 @@
-import { useTranslation } from 'next-i18next';
 import CooperationList from './components/CooperationList/CooperationList';
 import usePath from '../../common/hooks/usePath';
 import { TCooperationList } from './types';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 
 export default function Cooperation() {
   const { slicePathname } = usePath();
-  const { t } = useTranslation('cooperation');
+  const { t } = useTranslationNamespace('cooperation');
 
   const cooperationList: TCooperationList = t('list', { returnObjects: true });
 
