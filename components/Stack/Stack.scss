@@ -141,15 +141,16 @@
       }
     }
 
-    &--frontend {
-      background-image: url("/images/stack-frontend-element-mobile.png");
+    &--frontend,
+    &--teams {
+      background-image: url("/images/stack-purple-element-mobile.png");
 
       @include tablet {
-        background-image: url("/images/stack-frontend-element-tablet.png");
+        background-image: url("/images/stack-purple-element-tablet.png");
       }
 
       @include tablet-xl {
-        background-image: url("/images/stack-frontend-element-desktop.png");
+        background-image: url("/images/stack-purple-element-desktop.png");
       }
     }
 
@@ -162,18 +163,6 @@
 
       @include tablet-xl {
         background-image: url("/images/stack-design-element-desktop.png");
-      }
-    }
-
-    &--teams {
-      background-image: url("/images/stack-teams-element-mobile.png");
-
-      @include tablet {
-        background-image: url("/images/stack-teams-element-tablet.png");
-      }
-
-      @include tablet-xl {
-        background-image: url("/images/stack-teams-element-desktop.png");
       }
     }
   }
