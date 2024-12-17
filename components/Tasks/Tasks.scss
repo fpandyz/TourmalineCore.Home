@@ -94,8 +94,9 @@
     }
 
     &--ml,
-    &--frontend {
-      color: $color-frontend-page-primary;
+    &--frontend,
+    &--teams {
+      color: $color-purple-page-primary;
     }
 
     &--embedded {

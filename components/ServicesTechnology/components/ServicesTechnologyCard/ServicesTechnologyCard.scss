@@ -79,7 +79,8 @@
   &--design,
   &--embedded,
   &--qa,
-  &--backend {
+  &--backend,
+  &--teams {
     &::after {
       content: "";
       position: absolute;
@@ -90,8 +91,24 @@
       border-radius: 24px;
       width: 100%;
       height: 100%;
-      opacity: 0;
       transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &--ml,
+  &--frontend,
+  &--design,
+  &--embedded,
+  &--qa,
+  &--backend {
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &--teams {
+    &::after {
+      opacity: 1;
     }
   }
 
@@ -135,7 +152,8 @@
     }
   }
 
-  &--frontend {
+  &--frontend,
+  &--teams {
     &::after {
       background-image: $color-dark-purple-card;
     }
@@ -164,6 +182,10 @@
 
   @include desktop {
     min-height: 340px;
+
+    &--teams {
+      min-height: fit-content;
+    }
   }
 
   @include tablet-xl {

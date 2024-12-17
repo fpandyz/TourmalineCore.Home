@@ -200,12 +200,13 @@
     }
 
     &--ml,
-    &--frontend {
-      background-color: $color-frontend-page-primary;
+    &--frontend,
+    &--teams {
+      background-color: $color-purple-page-primary;
 
       &:hover {
-        border: 1px solid $color-frontend-page-primary;
-        background: rgba($color-frontend-page-primary, 0.3);
+        border: 1px solid $color-purple-page-primary;
+        background: rgba($color-purple-page-primary, 0.3);
       }
     }
 

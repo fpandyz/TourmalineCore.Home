@@ -49,6 +49,10 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Backend,
   },
   {
+    id: AppRoute.Teams.slice(1),
+    link: AppRoute.Teams,
+  },
+  {
     id: AppRoute.Articles.slice(1),
     link: AppRoute.Articles,
   },
@@ -62,6 +66,7 @@ const BURGER_ICONS = new Map(
     [AppRoute.QA, <IconBurgerQA />],
     [AppRoute.Backend, <IconBurgerBackend />],
     [AppRoute.Design, <IconBurgerDesign />],
+    [AppRoute.Teams, <IconBurgerPurple />],
     [AppRoute.Main, <IconBurger />],
     [AppRoute.Articles, <IconBurger />],
   ],

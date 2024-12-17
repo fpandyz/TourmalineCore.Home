@@ -106,8 +106,9 @@
       background-image: url("/images/points-embedded-element.webp");
     }
 
-    &--frontend {
-      background-image: url("/images/points-frontend-element.webp");
+    &--frontend,
+    &--teams {
+      background-image: url("/images/points-purple-element.webp");
     }
 
     &--ml {

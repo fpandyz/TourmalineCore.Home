@@ -57,6 +57,10 @@
 
     @include tablet-xl {
       grid-template-columns: repeat(5, 1fr);
+
+      &--teams {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
     @include desktop-xl {

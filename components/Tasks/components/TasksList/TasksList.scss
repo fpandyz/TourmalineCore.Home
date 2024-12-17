@@ -42,8 +42,9 @@
     }
 
     &--ml,
-    &--frontend {
-      background-color: $color-frontend-page-primary;
+    &--frontend,
+    &--teams {
+      background-color: $color-purple-page-primary;
     }
 
     &--design {
