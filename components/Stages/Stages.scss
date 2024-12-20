@@ -13,5 +13,29 @@
 
   &__title {
     margin-bottom: 80px;
+
+    @include tablet {
+      &--teams {
+        max-width: 550px;
+      }
+    }
+
+    @include tablet-xl {
+      &--teams {
+        max-width: 650px;
+      }
+    }
+
+    @include desktop {
+      &--teams {
+        max-width: 850px;
+      }
+    }
+
+    @include desktop-xl {
+      &--teams {
+        max-width: 1050px;
+      }
+    }
   }
 }
