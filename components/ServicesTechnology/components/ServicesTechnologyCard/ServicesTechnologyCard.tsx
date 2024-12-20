@@ -27,7 +27,7 @@ export default function ServicesTechnologyCard(
       })}
       >
         <div className="services-technology-card__inner">
-          <h3 className="title-technology-type-2 services-technology-card__title">{title}</h3>
+          <h3 className={`title-technology-type-2 services-technology-card__title services-technology-card__title--${slicePathname}`}>{title}</h3>
           <span className="services-technology-card__description">{description}</span>
         </div>
         {link && (
