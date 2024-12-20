@@ -194,9 +194,17 @@
 
   @include tablet-xl {
     padding: 40px 24px 58px;
+
+    &--teams {
+      padding: 40px 24px;
+    }
   }
 
   @include desktop {
     padding-bottom: 48px;
+
+    &--teams {
+      padding-bottom: 40px;
+    }
   }
 }
