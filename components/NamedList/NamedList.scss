@@ -7,6 +7,16 @@
 
     @include tablet-xl {
       margin-bottom: 48px;
+
+      &--teams {
+        margin-bottom: 16px;
+      }
+    }
+
+    @include desktop-xl {
+      &--teams {
+        margin-bottom: 24px;
+      }
     }
   }
 
