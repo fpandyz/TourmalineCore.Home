@@ -21,6 +21,7 @@
 
     &--teams {
       margin-bottom: 0;
+      user-select: text;
     }
   }
 
@@ -28,6 +29,11 @@
     font-size: 18px;
     line-height: 1.33;
     color: $color-white-alpha-100;
+
+    &--teams {
+      cursor: text;
+      user-select: text;
+    }
 
     @include tablet-xl {
       line-height: 1.5;

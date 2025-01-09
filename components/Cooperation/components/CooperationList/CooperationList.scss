@@ -14,6 +14,28 @@
 
   &__description {
     color: $color-white-alpha-100;
+
+    &--teams {
+      display: block;
+    }
+
+    @include tablet {
+      &--teams {
+        max-width: 520px;
+      }
+    }
+
+    @include desktop {
+      &--teams {
+        max-width: 625px;
+      }
+    }
+
+    @include desktop-xl {
+      &--teams {
+        max-width: 730px;
+      }
+    }
   }
 
   @include tablet-xl {
