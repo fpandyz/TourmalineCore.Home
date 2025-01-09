@@ -1,16 +1,19 @@
 import { TCooperationList } from '../../types';
+import usePath from '../../../../common/hooks/usePath';
 
 export default function CooperationList({
   list,
 }: {
   list: TCooperationList
 }) {
+  const { slicePathname } = usePath();
+
   return (
     <ul className="cooperation-list">
       {list.map(({ title, description }) => (
         <li key={title} className="cooperation-list__item">
           <h3 className="title-technology-type-2 cooperation-list__title">{title}</h3>
-          <span className="title-technology-type-3 cooperation-list__description">{description}</span>
+          <span className={`title-technology-type-3 cooperation-list__description cooperation-list__description--${slicePathname}`}>{description}</span>
         </li>
       ))}
     </ul>

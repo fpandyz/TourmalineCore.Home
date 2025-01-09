@@ -43,12 +43,32 @@
   &__title {
     margin-bottom: 48px;
 
+    &--teams {
+      max-width: 390px;
+    }
+
     @include tablet {
       margin-bottom: 64px;
     }
 
     @include tablet-xl {
       margin-bottom: 80px;
+
+      &--teams {
+        max-width: 455px;
+      }
+    }
+
+    @include desktop {
+      &--teams {
+        max-width: 615px;
+      }
+    }
+
+    @include desktop-xl {
+      &--teams {
+        max-width: 740px;
+      }
     }
   }
 
