@@ -33,6 +33,37 @@ Follow instructions in our [tutorial](https://docs.google.com/document/d/1EIMdcz
 If you want to learn more about i18nexus, check the following resource:
 - [i18nexus](https://i18nexus.com/nextjs-tutorial/)
 
+### Loading translations
+
+To download translations from I18nexus there is a translations script in package.json.  
+Before running the script, you need to define the values ​​of the variables-keys to the translations.  
+To do this, run the command in the terminal:  
+
+**MacOS:**  
+```
+export <variable_name>=<variable_key>
+```  
+
+**Windows: (In Command prompt)** 
+``` 
+set <variable_name>=<variable_key>
+```  
+
+Once all the variables are defined, run the translations script.  
+
+**MacOS:**  
+```
+npm run translations
+```   
+
+**Windows: (In Command prompt)**  
+```
+npm run translations:win
+```   
+
+> NOTE: It must be executed in the terminal where the variables were defined.
+
+
 ## Husky
 
 

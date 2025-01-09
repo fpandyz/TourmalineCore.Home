@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "translations": "cross-var i18nexus pull -k $I18NEXUS_API_KEY_HOME && cross-var i18nexus pull -k $I18NEXUS_API_KEY_FRONTEND && cross-var i18nexus pull -k $I18NEXUS_API_KEY_DESIGN && cross-var i18nexus pull -k $I18NEXUS_API_KEY_COMMON && cross-var i18nexus pull -k $I18NEXUS_API_KEY_ML && cross-var i18nexus pull -k $I18NEXUS_API_KEY_EMBEDDED && cross-var i18nexus pull -k $I18NEXUS_API_KEY_QA && cross-var i18nexus pull -k $I18NEXUS_API_KEY_BACKEND && cross-var i18nexus pull -k $I18NEXUS_API_KEY_TEAMS",
+    "translations": "i18nexus pull -k $I18NEXUS_API_KEY_HOME && i18nexus pull -k $I18NEXUS_API_KEY_FRONTEND && i18nexus pull -k $I18NEXUS_API_KEY_DESIGN && i18nexus pull -k $I18NEXUS_API_KEY_COMMON && i18nexus pull -k $I18NEXUS_API_KEY_ML && i18nexus pull -k $I18NEXUS_API_KEY_EMBEDDED && i18nexus pull -k $I18NEXUS_API_KEY_QA && i18nexus pull -k $I18NEXUS_API_KEY_BACKEND && i18nexus pull -k $I18NEXUS_API_KEY_TEAMS",
+    "translations:win": "i18nexus pull -k %I18NEXUS_API_KEY_HOME% && i18nexus pull -k %I18NEXUS_API_KEY_FRONTEND% && i18nexus pull -k %I18NEXUS_API_KEY_DESIGN% && i18nexus pull -k %I18NEXUS_API_KEY_COMMON% && i18nexus pull -k %I18NEXUS_API_KEY_ML% && i18nexus pull -k %I18NEXUS_API_KEY_EMBEDDED% && i18nexus pull -k %I18NEXUS_API_KEY_QA% && i18nexus pull -k %I18NEXUS_API_KEY_BACKEND% && i18nexus pull -k %I18NEXUS_API_KEY_TEAMS%",
     "build": "npm run translations && next build",
     "postbuild": "npx next-sitemap",
     "start": "i18nexus pull && next start",
@@ -50,7 +51,6 @@
     "@types/smoothscroll-polyfill": "0.3.1",
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.7",
-    "cross-var": "^1.1.0",
     "eslint": "8.20.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "17.0.0",
