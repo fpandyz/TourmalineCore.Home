@@ -48,10 +48,24 @@
     @include tablet {
       column-gap: 24px;
       grid-template-columns: repeat(2, 1fr);
+
+      &--teams {
+        row-gap: 16px;
+      }
     }
 
     @include tablet-xl {
       row-gap: 48px;
+
+      &--teams {
+        row-gap: 24px;
+      }
+    }
+
+    @include desktop {
+      &--teams {
+        row-gap: 48px;
+      }
     }
   }
 
@@ -106,8 +120,9 @@
       background-image: url("/images/points-embedded-element.webp");
     }
 
-    &--frontend {
-      background-image: url("/images/points-frontend-element.webp");
+    &--frontend,
+    &--teams {
+      background-image: url("/images/points-purple-element.webp");
     }
 
     &--ml {

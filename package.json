@@ -1,10 +1,11 @@
 {
   "name": "tourmalinecore_website",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "translations": "i18nexus pull -k $I18NEXUS_API_KEY_HOME && i18nexus pull -k $I18NEXUS_API_KEY_FRONTEND && i18nexus pull -k $I18NEXUS_API_KEY_DESIGN && i18nexus pull -k $I18NEXUS_API_KEY_COMMON && i18nexus pull -k $I18NEXUS_API_KEY_ML && i18nexus pull -k $I18NEXUS_API_KEY_EMBEDDED && i18nexus pull -k $I18NEXUS_API_KEY_QA && i18nexus pull -k $I18NEXUS_API_KEY_BACKEND",
+    "translations": "i18nexus pull -k $I18NEXUS_API_KEY_HOME && i18nexus pull -k $I18NEXUS_API_KEY_FRONTEND && i18nexus pull -k $I18NEXUS_API_KEY_DESIGN && i18nexus pull -k $I18NEXUS_API_KEY_COMMON && i18nexus pull -k $I18NEXUS_API_KEY_ML && i18nexus pull -k $I18NEXUS_API_KEY_EMBEDDED && i18nexus pull -k $I18NEXUS_API_KEY_QA && i18nexus pull -k $I18NEXUS_API_KEY_BACKEND && i18nexus pull -k $I18NEXUS_API_KEY_TEAMS",
+    "translations:win": "i18nexus pull -k %I18NEXUS_API_KEY_HOME% && i18nexus pull -k %I18NEXUS_API_KEY_FRONTEND% && i18nexus pull -k %I18NEXUS_API_KEY_DESIGN% && i18nexus pull -k %I18NEXUS_API_KEY_COMMON% && i18nexus pull -k %I18NEXUS_API_KEY_ML% && i18nexus pull -k %I18NEXUS_API_KEY_EMBEDDED% && i18nexus pull -k %I18NEXUS_API_KEY_QA% && i18nexus pull -k %I18NEXUS_API_KEY_BACKEND% && i18nexus pull -k %I18NEXUS_API_KEY_TEAMS%",
     "build": "npm run translations && next build",
     "postbuild": "npx next-sitemap",
     "start": "i18nexus pull && next start",

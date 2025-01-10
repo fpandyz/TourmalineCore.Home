@@ -62,6 +62,7 @@ function SocialLinks() {
     switch (page) {
       case AppRoute.Ml:
       case AppRoute.Frontend:
+      case AppRoute.Teams:
         return {
           mail: <IconMailPurple />,
           telegram: <IconTelegramPurple />,

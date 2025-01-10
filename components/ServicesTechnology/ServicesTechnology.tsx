@@ -18,9 +18,9 @@ export default function ServicesTechnology() {
       <div className="container services-technology__wrapper">
         <div className="services-technology__inner">
           <h2 className={`title-technology-type-1 services-technology__title services-technology__title--${slicePathname}`}>{t('title')}</h2>
-          <ul className="services-technology__list">
+          <ul className={`services-technology__list services-technology__list--${slicePathname}`}>
             {servicesTechnologyList.map(({ title, description, link }) => (
-              <li key={title} className="services-technology__item">
+              <li key={description} className="services-technology__item">
                 <ServicesTechnologyCard
                   title={title}
                   description={description}

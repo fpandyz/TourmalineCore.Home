@@ -43,12 +43,32 @@
   &__title {
     margin-bottom: 48px;
 
+    &--teams {
+      max-width: 390px;
+    }
+
     @include tablet {
       margin-bottom: 64px;
     }
 
     @include tablet-xl {
       margin-bottom: 80px;
+
+      &--teams {
+        max-width: 455px;
+      }
+    }
+
+    @include desktop {
+      &--teams {
+        max-width: 615px;
+      }
+    }
+
+    @include desktop-xl {
+      &--teams {
+        max-width: 740px;
+      }
     }
   }
 
@@ -63,7 +83,8 @@
     &--design,
     &--embedded,
     &--qa,
-    &--backend {
+    &--backend,
+    &--teams {
       width: 62px;
       height: 194px;
 
@@ -109,12 +130,14 @@
       background-image: url("/images/cooperation-ml-element-mobile.webp");
     }
 
-    &--frontend {
-      background-image: url("/images/cooperation-frontend-element-mobile.png");
+    &--frontend,
+    &--teams {
+      background-image: url("/images/cooperation-purple-element-mobile.png");
     }
 
     &--ml,
-    &--frontend {
+    &--frontend,
+    &--teams {
       @include tablet {
         background-image: url("/images/ellipse-purple.svg");
       }

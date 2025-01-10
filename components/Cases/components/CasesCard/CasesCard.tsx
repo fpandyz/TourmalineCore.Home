@@ -27,6 +27,8 @@ export default function CasesCard(
         link
           ? e.stopPropagation()
           : e.preventDefault())}
+      target="_blank"
+      rel="noreferrer"
     >
       <div className="cases-card__inner">
         <div className="cases-card__icon">{icon}</div>

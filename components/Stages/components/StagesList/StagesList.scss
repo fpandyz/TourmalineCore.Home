@@ -18,9 +18,16 @@
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: $color-white;
-    background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
     background-clip: padding-box, border-box;
     transition: background-position 0.3s linear;
+
+    &--design {
+      background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
+    }
+
+    &--teams {
+      background-color: $color-purple-page-primary;
+    }
 
     @include tablet {
       margin-right: 51px;
@@ -59,22 +66,46 @@
 
     @include tablet {
       display: block;
-      font-size: 18px;
       line-height: 1.33;
-      color: $color-white-alpha-100;
+      white-space: pre-wrap;
+
+      &--design {
+        font-size: 18px;
+        color: $color-white-alpha-100;
+      }
+
+      &--teams {
+        font-size: 20px;
+        line-height: 1.8;
+        color: $color-white;
+      }
 
       @include tablet-xl {
         line-height: 1.5;
+
+        &--teams {
+          line-height: 1.8;
+        }
       }
 
       @include desktop {
         padding: 0 12px;
         line-height: 1.55;
+
+        &--teams {
+          font-size: 24px;
+          line-height: 1.8;
+        }
       }
 
       @include desktop-xl {
         font-size: 20px;
         line-height: 1.4;
+
+        &--teams {
+          font-size: 28px;
+          line-height: 1.8;
+        }
       }
     }
   }
