@@ -9,10 +9,6 @@ import Tasks from '../../components/Tasks/Tasks';
 import Stack from '../../components/Stack/Stack';
 import Cases from '../../components/Cases/Cases';
 import Stages from '../../components/Stages/Stages';
-import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
-import Cta from '../../components/Cta/Cta';
-import Cooperation from '../../components/Cooperation/Cooperation';
-import Payment from '../../components/Payment/Payment';
 import FormBlock from '../../components/FormBlock/FormBlock';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
@@ -42,10 +38,6 @@ export default function TeamsPage() {
         <Stack />
         <Cases />
         <Stages />
-        <ServicesTechnology />
-        <Cta />
-        <Cooperation />
-        <Payment />
         <FormBlock
           id={TechnologyPageAnchorLink.Contact}
           buttonClassName="teams__form-button"
