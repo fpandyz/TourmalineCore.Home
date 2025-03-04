@@ -115,7 +115,8 @@
 
   &--frontend::after,
   &--design::after,
-  &--teams::after {
+  &--teams::after, 
+  &--frontend-pelican-team::after {
     content: "";
     position: absolute;
     left: 0;

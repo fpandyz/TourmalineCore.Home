@@ -63,6 +63,7 @@ function SocialLinks() {
       case AppRoute.Ml:
       case AppRoute.Frontend:
       case AppRoute.Teams:
+      case AppRoute.Frontend_pelican_team:
         return {
           mail: <IconMailPurple />,
           telegram: <IconTelegramPurple />,

@@ -7,5 +7,6 @@ export enum AppRoute {
   QA = '/qa',
   Backend = '/backend',
   Teams = '/teams',
+  Frontend_pelican_team = '/frontend-pelican-team',
   Main = '/',
 }

@@ -90,7 +90,8 @@
   &--embedded,
   &--qa,
   &--backend,
-  &--teams {
+  &--teams, 
+  &--frontend-pelican-team {
     &::after {
       content: "";
       position: absolute;
@@ -116,7 +117,8 @@
     }
   }
 
-  &--teams {
+  &--teams 
+  &--frontend-pelican-team {
     &::after {
       opacity: 1;
     }
@@ -163,7 +165,8 @@
   }
 
   &--frontend,
-  &--teams {
+  &--teams 
+  &--frontend-pelican-team {
     &::after {
       background-image: $color-dark-purple-card;
     }
@@ -193,7 +196,8 @@
   @include desktop {
     min-height: 340px;
 
-    &--teams {
+    &--teams 
+    &--frontend-pelican-team {
       min-height: fit-content;
     }
   }
