@@ -34,19 +34,19 @@ export default function FrontendPage() {
       />
       <Layout mainClassName="frontend-pelican-team">
       <div className="frontend-pelican-team__hero-block-container">
-          <HeroBlockTechnology />
-          <Points />
-        </div>
-        <ServicesTechnology />
-        <Tasks />
-        <Stack />
-        <Cases />
-        <Stages />
-        <Cooperation />
-        <FormBlock 
-          id={TechnologyPageAnchorLink.Contact}
-          buttonClassName="frontend-pelican-team__form-button"
-          />
+        <HeroBlockTechnology />
+        {/* <Points /> */}
+      </div>
+      {/* <ServicesTechnology />
+      <Tasks />
+      <Stack />
+      <Cases />
+      <Stages />
+      <Cooperation />
+      <FormBlock 
+        id={TechnologyPageAnchorLink.Contact}
+        buttonClassName="frontend-pelican-team__form-button"
+        /> */}
       </Layout>
     </>
   );
