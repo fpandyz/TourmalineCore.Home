@@ -12,7 +12,7 @@ function HeroBlockTechnology() {
   const { t } = useTranslationNamespace('hero');
 
   useBodyScrollHiden(isOpen);
-  console.log("привет", t('title'));
+
   return (
     <section className={clsx('hero-block-technology', {
       'hero-block-technology--zh': isChineseLanguage(),
