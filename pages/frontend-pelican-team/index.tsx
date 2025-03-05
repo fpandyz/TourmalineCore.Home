@@ -14,8 +14,7 @@ import FormBlock from '../../components/FormBlock/FormBlock';
 import Cooperation from '../../components/Cooperation/Cooperation';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
-
-export default function FrontendPage() {
+export default function FrontendPelicanTeamPage() {
   const { t } = useTranslation('common');
 
   return (
@@ -33,19 +32,19 @@ export default function FrontendPage() {
         }}
       />
       <Layout mainClassName="frontend-pelican-team">
-      <div className="frontend-pelican-team__hero-block-container">
-        <HeroBlockTechnology />
-        {/* <Points /> */}
-      </div>
-      {/* <ServicesTechnology />
-      <Tasks />
-      <Stack />
-      <Cases />
-      <Stages />
-      <Cooperation />
-      <FormBlock 
-        id={TechnologyPageAnchorLink.Contact}
-        buttonClassName="frontend-pelican-team__form-button"
+        <div className="frontend-pelican-team__hero-block-container">
+          <HeroBlockTechnology />
+          <Points />
+        </div>
+        <ServicesTechnology />
+        <Tasks />
+        {/* <Stack />
+        <Cases />
+        <Stages />
+        <Cooperation />
+        <FormBlock
+          id={TechnologyPageAnchorLink.Contact}
+          buttonClassName="frontend-pelican-team__form-button"
         /> */}
       </Layout>
     </>
@@ -63,14 +62,14 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'formBlock',
       'discussion',
       'cta',
-      'cooperationFrontendPelicanTeam',
-      'heroFrontendPelicanTeam',
-      'pointsFrontendPelicanTeam',
-      'tasksFrontendPelicanTeam',
-      'stackFrontendPelicanTeam',
-      'casesFrontendPelicanTeam',
-      'stagesFrontendPelicanTeam',
-      'servicesTechnologyTeams',
+      'cooperationFrontend-pelican-team',
+      'heroFrontend-pelican-team',
+      'pointsFrontend-pelican-team',
+      'servicesTechnologyFrontend-pelican-team',
+      'tasksFrontend-pelican-team',
+      'stackFrontend-pelican-team',
+      'casesFrontend-pelican-team',
+      'stagesFrontend-pelican-team',
     ])),
   },
 });
