@@ -14,11 +14,13 @@ export default function Stages() {
 
   const stagesList: TStagesList = t('list', { returnObjects: true });
 
-  const [clickedAccarion, setClickedAccarion] = useState(false);
+  const [clickedAccordion, setClickedAccordion] = useState(false);
+
   const deviceSize = useDeviceSize();
+
   useEffect(() => {
     AOS.refresh();
-  }, [deviceSize.width, clickedAccarion]);
+  }, [deviceSize.width, clickedAccordion]);
 
   return (
     <section
@@ -29,7 +31,7 @@ export default function Stages() {
         <h3 className={`title-technology-type-1 stages__title stages__title--${slicePathname}`}>{t('title')}</h3>
         <StagesList
           list={stagesList}
-          clickedAccarion={() => setClickedAccarion(!clickedAccarion)}
+          clickedAccordion={() => setClickedAccordion(!clickedAccordion)}
         />
       </div>
     </section>

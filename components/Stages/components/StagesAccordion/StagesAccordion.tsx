@@ -8,12 +8,12 @@ export default function StagesAccordion({
   title,
   description,
   index,
-  clickedAccarion,
+  clickedAccordion,
 }:{
-  title: string
-  description: string
-  index: number
-  clickedAccarion?: () => unknown;
+  title: string;
+  description: string;
+  index: number;
+  clickedAccordion?: () => unknown;
 }) {
   const { slicePathname } = usePath();
 
@@ -33,10 +33,10 @@ export default function StagesAccordion({
           isMobile ? (
             <button
               type="button"
-              className="title-technology-type-3 stages-list__title"
+              className="title-technology-type-3 stages-list__title stages-list__title--trigger"
               onClick={() => {
-                if (clickedAccarion) {
-                  clickedAccarion();
+                if (clickedAccordion) {
+                  clickedAccordion();
                 }
                 setIsOpen(!isOpen);
               }}
