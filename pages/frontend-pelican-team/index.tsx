@@ -38,14 +38,14 @@ export default function FrontendPelicanTeamPage() {
         </div>
         <ServicesTechnology />
         <Tasks />
-        {/* <Stack />
+        <Stack />
         <Cases />
         <Stages />
-        <Cooperation />
+        {/* <Cooperation /> */}
         <FormBlock
           id={TechnologyPageAnchorLink.Contact}
           buttonClassName="frontend-pelican-team__form-button"
-        /> */}
+        />
       </Layout>
     </>
   );
