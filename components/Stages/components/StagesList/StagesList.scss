@@ -54,15 +54,20 @@
   }
 
   &__title {
-    padding-right: 16px;
-
-    @include tablet-xl {
-      padding-right: 24px;
-    }
+    outline: 0;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    color: inherit;
+    background: transparent;
   }
 
   &__description {
     display: none;
+
+    &--is-open {
+      display: block;
+    }
 
     @include tablet {
       display: block;
