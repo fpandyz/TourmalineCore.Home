@@ -6,11 +6,11 @@ import Accordion from '../Accordion/Accordion';
 import { SectionProps } from '../../types/globals';
 
 interface ISkills extends SectionProps {
-  clickedAccarion?: () => unknown;
+  clickedAccordion?: () => unknown;
 }
 
 function Skills({
-  clickedAccarion,
+  clickedAccordion,
   animationName,
   id,
   ...props
@@ -47,7 +47,7 @@ function Skills({
               technologies={item.technologies}
               data-aos="fade-up"
               data-aos-delay={50 * (index + 1)}
-              clickedAccarion={clickedAccarion}
+              clickedAccordion={clickedAccordion}
             />
           ))}
         </div>

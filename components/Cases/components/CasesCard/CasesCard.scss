@@ -1,4 +1,6 @@
 .cases-card {
+  $this: &;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -129,8 +131,8 @@
     transition: all 0.3s ease-in-out;
   }
 
-  &--frontend ~ &--hover,
-  &--teams ~ &--hover {
+  &--frontend#{$this}--hover,
+  &--teams#{$this}--hover {
     &::after {
       background-image: $color-dark-purple-card;
     }
@@ -140,7 +142,7 @@
     }
   }
 
-  &--design ~ &--hover {
+  &--design#{$this}--hover {
     /* stylelint-disable-next-line no-descending-specificity */
     &::after {
       background-image:
