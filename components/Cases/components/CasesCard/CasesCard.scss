@@ -115,7 +115,7 @@
 
   &--frontend::after,
   &--design::after,
-  &--teams::after, 
+  &--teams::after,
   &--frontend-pelican-team::after {
     content: "";
     position: absolute;
@@ -131,7 +131,8 @@
   }
 
   &--frontend ~ &--hover,
-  &--teams ~ &--hover {
+  &--teams ~ &--hover,
+  &--frontend-pelican-team ~ &--hover {
     &::after {
       background-image: $color-dark-purple-card;
     }
