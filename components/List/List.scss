@@ -76,10 +76,14 @@
 
     &--ml,
     &--frontend,
-    &--teams 
-    &--frontend-pelican-team {
+    &--teams {
       background-image: none;
       background-color: $color-purple-page-primary;
+    }
+
+    &--frontend-pelican-team {
+      background-image: none;
+      background-color: $color-cyan-page-primary;
     }
 
     &--design {
