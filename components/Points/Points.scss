@@ -43,9 +43,7 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    row-gap: 32px; 
-
-    &--frontend-pelican-team {}
+    row-gap: 32px;
 
     @include tablet {
       column-gap: 24px;
@@ -53,6 +51,13 @@
 
       &--teams {
         row-gap: 16px;
+      }
+
+      &--frontend-pelican-team {
+        column-gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        row-gap: 30px;
       }
     }
 
@@ -62,11 +67,25 @@
       &--teams {
         row-gap: 24px;
       }
+
+      &--frontend-pelican-team {
+        row-gap: 32px;
+      }
     }
 
     @include desktop {
       &--teams {
         row-gap: 48px;
+      }
+
+      &--frontend-pelican-team {
+        row-gap: 42px;
+      }
+    }
+
+    @include desktop-xl {
+      &--frontend-pelican-team {
+        row-gap: 50px;
       }
     }
   }
@@ -78,6 +97,10 @@
     &:nth-child(2),
     &:nth-child(3) {
       padding-right: 90px;
+    }
+
+    &--frontend-pelican-team {
+      max-width: none;
     }
   }
 
@@ -123,9 +146,12 @@
     }
 
     &--frontend,
-    &--teams, 
-    &--frontend-pelican-team {
+    &--teams {
       background-image: url("/images/points-purple-element.webp");
+    }
+
+    &--frontend-pelican-team {
+      background-image: url("/images/points-frontend-pelican-team-element.webp");
     }
 
     &--ml {
