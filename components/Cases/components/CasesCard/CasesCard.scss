@@ -133,10 +133,19 @@
   }
 
   &--frontend#{$this}--hover,
-  &--teams#{$this}--hover,
-  &--frontend-pelican-team#{$this}--hover {
+  &--teams#{$this}--hover {
     &::after {
       background-image: $color-dark-purple-card;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  &--frontend-pelican-team#{$this}--hover {
+    &::after {
+      background-image: $color-dark-cyan-card;
     }
 
     &:hover::after {
