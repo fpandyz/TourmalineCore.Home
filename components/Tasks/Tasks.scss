@@ -95,9 +95,12 @@
 
     &--ml,
     &--frontend,
-    &--teams,
-    &--frontend-pelican-team {
+    &--teams {
       color: $color-purple-page-primary;
+    }
+
+    &--frontend-pelican-team {
+      color: $color-cyan-page-primary;
     }
 
     &--embedded {
