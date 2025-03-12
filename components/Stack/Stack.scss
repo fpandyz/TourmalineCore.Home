@@ -69,8 +69,7 @@
     &--embedded,
     &--qa,
     &--backend,
-    &--teams,
-    &--frontend-pelican-team {
+    &--teams {
       width: 124px;
       height: 175px;
 
@@ -143,8 +142,7 @@
     }
 
     &--frontend,
-    &--teams,
-    &--frontend-pelican-team {
+    &--teams {
       background-image: url("/images/stack-purple-element-mobile.png");
 
       @include tablet {
@@ -153,6 +151,33 @@
 
       @include tablet-xl {
         background-image: url("/images/stack-purple-element-desktop.png");
+      }
+    }
+
+    &--frontend-pelican-team {
+      width: 124px;
+      height: 220px;
+      background-image: url("/images/stack-cyan-element-mobile.webp");
+
+      @include tablet {
+        width: 190px;
+        height: 217px;
+        background-image: url("/images/stack-cyan-element-tablet.webp");
+      }
+
+      @include tablet-xl {
+        left: -81px;
+        width: 363px;
+        height: 411px;
+        background-image: url("/images/stack-cyan-element-desktop.webp");
+      }
+
+      @include desktop {
+        left: 0;
+      }
+
+      @include desktop-xl {
+        bottom: 70px;
       }
     }
 
