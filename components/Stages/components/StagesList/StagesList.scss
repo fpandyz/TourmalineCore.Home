@@ -25,9 +25,12 @@
       background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
     }
 
-    &--teams,
-    &--frontend-pelican-team {
+    &--teams {
       background-color: $color-purple-page-primary;
+    }
+
+    &--frontend-pelican-team {
+      background-color: $color-cyan-page-primary;
     }
 
     @include tablet {
