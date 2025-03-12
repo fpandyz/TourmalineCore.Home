@@ -201,13 +201,21 @@
 
     &--ml,
     &--frontend,
-    &--teams,
-    &--frontend-pelican-team {
+    &--teams {
       background-color: $color-purple-page-primary;
 
       &:hover {
         border: 1px solid $color-purple-page-primary;
         background: rgba($color-purple-page-primary, 0.3);
+      }
+    }
+
+    &--frontend-pelican-team {
+      background-color: $color-cyan-page-primary;
+
+      &:hover {
+        border: 1px solid $color-cyan-page-primary;
+        background: rgba($color-cyan-page-primary, 0.3);
       }
     }
 

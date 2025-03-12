@@ -43,7 +43,9 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    row-gap: 32px;
+    row-gap: 32px; 
+
+    &--frontend-pelican-team {}
 
     @include tablet {
       column-gap: 24px;

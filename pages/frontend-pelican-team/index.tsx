@@ -41,7 +41,6 @@ export default function FrontendPelicanTeamPage() {
         <Stack />
         <Cases />
         <Stages />
-        {/* <Cooperation /> */}
         <FormBlock
           id={TechnologyPageAnchorLink.Contact}
           buttonClassName="frontend-pelican-team__form-button"

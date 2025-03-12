@@ -20,7 +20,8 @@
         max-width: 665px;
       }
 
-      &--teams {
+      &--teams,
+      &--frontend-pelican-team {
         max-width: 910px;
       }
     }
@@ -40,7 +41,8 @@
         max-width: 1110px;
       }
 
-      &--teams {
+      &--teams,
+      &--frontend-pelican-team {
         max-width: 1220px;
       }
     }
@@ -66,7 +68,7 @@
     @include tablet-xl {
       grid-template-columns: repeat(5, 1fr);
 
-      &--teams
+      &--teams,
       &--frontend-pelican-team {
         grid-template-columns: repeat(4, 1fr);
       }
