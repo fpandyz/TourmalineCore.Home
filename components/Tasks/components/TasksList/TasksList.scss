@@ -43,9 +43,12 @@
 
     &--ml,
     &--frontend,
-    &--teams,
-    &--frontend-pelican-team {
+    &--teams {
       background-color: $color-purple-page-primary;
+    }
+
+    &--frontend-pelican-team {
+      background-color: $color-cyan-page-primary;
     }
 
     &--design {
