@@ -29,11 +29,11 @@ export default function HomePage() {
   useSectionAutoPaddings();
 
   const deviceSize = useDeviceSize();
-  const [clickedAccarion, setClickedAccarion] = useState(false);
+  const [clickedAccordion, setClickedAccordion] = useState(false);
 
   useEffect(() => {
     AOS.refresh();
-  }, [deviceSize.width, clickedAccarion]);
+  }, [deviceSize.width, clickedAccordion]);
 
   return (
     <>
@@ -63,7 +63,7 @@ export default function HomePage() {
           id={NavigationLinks.skills}
           data-auto-padding={NavigationLinks.skills}
           animationName="fade-up"
-          clickedAccarion={() => setClickedAccarion(!clickedAccarion)}
+          clickedAccordion={() => setClickedAccordion(!clickedAccordion)}
         />
 
         <section
