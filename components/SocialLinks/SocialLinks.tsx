@@ -3,12 +3,14 @@ import { useRouter } from 'next/router';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 import IconMail from '../../icons/mail.svg';
 import IconMailPurple from '../../icons/mail-frontend.svg';
+import IconMailFrontendPelicanTeam from '../../icons/mail-frontend-pelican-team.svg';
 import IconMailDesign from '../../icons/mail-design.svg';
 import IconMailEmbedded from '../../icons/mail-embedded.svg';
 import IconMailQA from '../../icons/mail-qa.svg';
 import IconMailBackend from '../../icons/mail-backend.svg';
 import IconTelegram from '../../icons/telegram.svg';
 import IconTelegramPurple from '../../icons/telegram-frontend.svg';
+import IconTelegramFrontendPelicanTeam from '../../icons/telegram-frontend-pelican-team.svg';
 import IconTelegramDesign from '../../icons/telegram-design.svg';
 import IconTelegramEmbedded from '../../icons/telegram-embedded.svg';
 import IconTelegramQA from '../../icons/telegram-qa.svg';
@@ -63,10 +65,15 @@ function SocialLinks() {
       case AppRoute.Ml:
       case AppRoute.Frontend:
       case AppRoute.Teams:
-      case AppRoute.Frontend_pelican_team:
         return {
           mail: <IconMailPurple />,
           telegram: <IconTelegramPurple />,
+        };
+
+      case AppRoute.Frontend_pelican_team:
+        return {
+          mail: <IconMailFrontendPelicanTeam />,
+          telegram: <IconTelegramFrontendPelicanTeam />,
         };
 
       case AppRoute.Design:
