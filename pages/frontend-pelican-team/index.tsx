@@ -11,7 +11,6 @@ import Stack from '../../components/Stack/Stack';
 import Cases from '../../components/Cases/Cases';
 import Stages from '../../components/Stages/Stages';
 import FormBlock from '../../components/FormBlock/FormBlock';
-import Cooperation from '../../components/Cooperation/Cooperation';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
 export default function FrontendPelicanTeamPage() {
@@ -36,8 +35,8 @@ export default function FrontendPelicanTeamPage() {
           <HeroBlockTechnology />
           <Points />
         </div>
-        <ServicesTechnology />
         <Tasks />
+        <ServicesTechnology />
         <Cases />
         <Stages />
         <Stack />
