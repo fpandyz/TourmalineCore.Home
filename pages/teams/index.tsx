@@ -40,7 +40,7 @@ export default function TeamsPage() {
         <Stages />
         <FormBlock
           id={TechnologyPageAnchorLink.Contact}
-          buttonClassName="teams__form-button"
+          b2uttonClassName="teams__form-button"
         />
       </Layout>
     </>
