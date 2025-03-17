@@ -34,7 +34,7 @@
     line-height: 1.33;
     color: $color-white-alpha-100;
 
-    &--teams, 
+    &--teams,
     &--frontend-pelican-team {
       cursor: text;
       user-select: text;
@@ -95,7 +95,7 @@
   &--embedded,
   &--qa,
   &--backend,
-  &--teams, 
+  &--teams,
   &--frontend-pelican-team {
     &::after {
       content: "";
@@ -122,7 +122,7 @@
     }
   }
 
-  &--teams, 
+  &--teams,
   &--frontend-pelican-team {
     &::after {
       opacity: 1;
@@ -206,7 +206,7 @@
   @include desktop {
     min-height: 340px;
 
-    &--teams 
+    &--teams,
     &--frontend-pelican-team {
       min-height: fit-content;
     }
