@@ -54,8 +54,8 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Teams,
   },
   {
-    id: AppRoute.Frontend_pelican_team.slice(1),
-    link: AppRoute.Frontend_pelican_team,
+    id: AppRoute.Frontend_team.slice(1),
+    link: AppRoute.Frontend_team,
   },
   {
     id: AppRoute.Articles.slice(1),
@@ -72,7 +72,7 @@ const BURGER_ICONS = new Map(
     [AppRoute.Backend, <IconBurgerBackend />],
     [AppRoute.Design, <IconBurgerDesign />],
     [AppRoute.Teams, <IconBurgerPurple />],
-    [AppRoute.Frontend_pelican_team, <IconBurgerCyan />],
+    [AppRoute.Frontend_team, <IconBurgerCyan />],
     [AppRoute.Main, <IconBurger />],
     [AppRoute.Articles, <IconBurger />],
   ],

@@ -118,7 +118,7 @@
   &--frontend::after,
   &--design::after,
   &--teams::after,
-  &--frontend-pelican-team::after {
+  &--frontend-team::after {
     content: "";
     position: absolute;
     left: 0;
@@ -143,7 +143,7 @@
     }
   }
 
-  &--frontend-pelican-team#{$this}--hover {
+  &--frontend-team#{$this}--hover {
     &::after {
       background-image: $color-dark-cyan-card;
     }

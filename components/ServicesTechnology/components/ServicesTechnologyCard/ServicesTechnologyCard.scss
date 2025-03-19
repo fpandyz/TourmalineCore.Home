@@ -19,7 +19,7 @@
   &__title {
     margin-bottom: 16px;
 
-    &--frontend-pelican-team {
+    &--frontend-team {
       user-select: text;
     }
 
@@ -35,7 +35,7 @@
     color: $color-white-alpha-100;
 
     &--teams,
-    &--frontend-pelican-team {
+    &--frontend-team {
       cursor: text;
       user-select: text;
     }
@@ -96,7 +96,7 @@
   &--qa,
   &--backend,
   &--teams,
-  &--frontend-pelican-team {
+  &--frontend-team {
     &::after {
       content: "";
       position: absolute;
@@ -123,7 +123,7 @@
   }
 
   &--teams,
-  &--frontend-pelican-team {
+  &--frontend-team {
     &::after {
       opacity: 1;
     }
@@ -176,7 +176,7 @@
     }
   }
 
-  &--frontend-pelican-team {
+  &--frontend-team {
     &::after {
       background-image: $color-dark-cyan-card;
     }
@@ -207,7 +207,7 @@
     min-height: 340px;
 
     &--teams,
-    &--frontend-pelican-team {
+    &--frontend-team {
       min-height: fit-content;
     }
   }

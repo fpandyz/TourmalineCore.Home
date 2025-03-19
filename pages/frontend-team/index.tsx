@@ -13,7 +13,7 @@ import Stages from '../../components/Stages/Stages';
 import FormBlock from '../../components/FormBlock/FormBlock';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
-export default function FrontendPelicanTeamPage() {
+export default function FrontendTeamPage() {
   const { t } = useTranslation('common');
 
   return (
@@ -30,8 +30,8 @@ export default function FrontendPelicanTeamPage() {
           additionalCode: '',
         }}
       />
-      <Layout mainClassName="frontend-pelican-team">
-        <div className="frontend-pelican-team__hero-block-container">
+      <Layout mainClassName="frontend-team">
+        <div className="frontend-team__hero-block-container">
           <HeroBlockTechnology />
           <Points />
         </div>
@@ -42,7 +42,7 @@ export default function FrontendPelicanTeamPage() {
         <Stack />
         <FormBlock
           id={TechnologyPageAnchorLink.Contact}
-          buttonClassName="frontend-pelican-team__form-button"
+          buttonClassName="frontend-team__form-button"
         />
       </Layout>
     </>
@@ -60,14 +60,14 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'formBlock',
       'discussion',
       'cta',
-      'cooperationFrontend-pelican-team',
-      'heroFrontend-pelican-team',
-      'pointsFrontend-pelican-team',
-      'servicesTechnologyFrontend-pelican-team',
-      'tasksFrontend-pelican-team',
-      'stackFrontend-pelican-team',
-      'casesFrontend-pelican-team',
-      'stagesFrontend-pelican-team',
+      'cooperationFrontend-team',
+      'heroFrontend-team',
+      'pointsFrontend-team',
+      'servicesTechnologyFrontend-team',
+      'tasksFrontend-team',
+      'stackFrontend-team',
+      'casesFrontend-team',
+      'stagesFrontend-team',
     ])),
   },
 });
