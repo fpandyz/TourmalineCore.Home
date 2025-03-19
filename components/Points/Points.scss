@@ -53,7 +53,7 @@
         row-gap: 16px;
       }
 
-      &--frontend-pelican-team {
+      &--frontend-team {
         column-gap: 0;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, auto);
@@ -68,7 +68,7 @@
         row-gap: 24px;
       }
 
-      &--frontend-pelican-team {
+      &--frontend-team {
         row-gap: 32px;
       }
     }
@@ -78,13 +78,13 @@
         row-gap: 48px;
       }
 
-      &--frontend-pelican-team {
+      &--frontend-team {
         row-gap: 42px;
       }
     }
 
     @include desktop-xl {
-      &--frontend-pelican-team {
+      &--frontend-team {
         row-gap: 50px;
       }
     }
@@ -99,7 +99,7 @@
       padding-right: 90px;
     }
 
-    &--frontend-pelican-team {
+    &--frontend-team {
       max-width: none;
     }
   }
@@ -150,7 +150,7 @@
       background-image: url("/images/points-purple-element.webp");
     }
 
-    &--frontend-pelican-team {
+    &--frontend-team {
       background-image: url("/images/points-frontend-pelican-team-element.webp");
     }
 

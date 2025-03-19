@@ -29,7 +29,7 @@
       background-color: $color-purple-page-primary;
     }
 
-    &--frontend-pelican-team {
+    &--frontend-team {
       background-color: $color-cyan-page-primary;
     }
 
@@ -92,7 +92,7 @@
       }
 
       &--teams,
-      &--frontend-pelican-team {
+      &--frontend-team {
         font-size: 20px;
         line-height: 1.8;
         color: $color-white;
@@ -102,7 +102,7 @@
         line-height: 1.5;
 
         &--teams,
-        &--frontend-pelican-team {
+        &--frontend-team {
           line-height: 1.8;
         }
       }
@@ -112,7 +112,7 @@
         line-height: 1.55;
 
         &--teams,
-        &--frontend-pelican-team {
+        &--frontend-team {
           font-size: 24px;
           line-height: 1.8;
         }
@@ -123,7 +123,7 @@
         line-height: 1.4;
 
         &--teams,
-        &--frontend-pelican-team {
+        &--frontend-team {
           font-size: 28px;
           line-height: 1.8;
         }

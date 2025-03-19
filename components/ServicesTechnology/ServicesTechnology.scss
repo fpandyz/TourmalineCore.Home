@@ -21,7 +21,7 @@
       }
 
       &--teams,
-      &--frontend-pelican-team {
+      &--frontend-team {
         max-width: 910px;
       }
     }
@@ -42,7 +42,7 @@
       }
 
       &--teams,
-      &--frontend-pelican-team {
+      &--frontend-team {
         max-width: 1220px;
       }
     }
@@ -69,7 +69,7 @@
       grid-template-columns: repeat(5, 1fr);
 
       &--teams,
-      &--frontend-pelican-team {
+      &--frontend-team {
         grid-template-columns: repeat(4, 1fr);
       }
     }
