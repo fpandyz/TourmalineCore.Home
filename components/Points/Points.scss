@@ -52,6 +52,13 @@
       &--teams {
         row-gap: 16px;
       }
+
+      &--frontend-team {
+        column-gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        row-gap: 30px;
+      }
     }
 
     @include tablet-xl {
@@ -60,11 +67,25 @@
       &--teams {
         row-gap: 24px;
       }
+
+      &--frontend-team {
+        row-gap: 32px;
+      }
     }
 
     @include desktop {
       &--teams {
         row-gap: 48px;
+      }
+
+      &--frontend-team {
+        row-gap: 42px;
+      }
+    }
+
+    @include desktop-xl {
+      &--frontend-team {
+        row-gap: 50px;
       }
     }
   }
@@ -77,9 +98,15 @@
     &:nth-child(3) {
       padding-right: 90px;
     }
+
+    &--frontend-team {
+      max-width: none;
+    }
   }
 
   &__text {
+    position: relative;
+    z-index: 1;
     font-size: 18px;
     line-height: 1.33;
     color: $color-white-alpha-100;
@@ -123,6 +150,10 @@
     &--frontend,
     &--teams {
       background-image: url("/images/points-purple-element.webp");
+    }
+
+    &--frontend-team {
+      background-image: url("/images/points-frontend-team-element.webp");
     }
 
     &--ml {

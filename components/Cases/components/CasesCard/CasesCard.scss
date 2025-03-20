@@ -117,7 +117,8 @@
 
   &--frontend::after,
   &--design::after,
-  &--teams::after {
+  &--teams::after,
+  &--frontend-team::after {
     content: "";
     position: absolute;
     left: 0;
@@ -135,6 +136,16 @@
   &--teams#{$this}--hover {
     &::after {
       background-image: $color-dark-purple-card;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  &--frontend-team#{$this}--hover {
+    &::after {
+      background-image: $color-dark-cyan-card;
     }
 
     &:hover::after {

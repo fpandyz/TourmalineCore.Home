@@ -54,7 +54,7 @@ $color-design-page-secondary-100: rgba(253, 105, 7, 0.3);
 // Ml page
 $color-ml-page-primary: #7926ff;
 
-// Embedded
+// Embedded page
 $color-embedded-page-primary: rgb(251, 138, 238);
 $color-embedded-page-secondary: rgb(108, 121, 240);
 
@@ -66,6 +66,9 @@ $color-qa-page-secondary: rgb(112, 62, 163);
 $color-backend-page-primary: rgb(176, 58, 249);
 $color-backend-page-secondary: rgb(246, 125, 85);
 $color-backend-page-tertiary: rgb(255, 242, 84);
+
+// Fronted pelican team page
+$color-cyan-page-primary: #4d79ff;
 
 // Secondary
 $color-light-green: #009e4c;
@@ -83,6 +86,7 @@ $color-yellow: #f8d830;
 $color-gray: #1b1926;
 $color-dark-card: linear-gradient(234deg, #17191c 0%, #101112 100%);
 $color-dark-purple-card: linear-gradient(234deg, #7926ff 0%, #090029 100%);
+$color-dark-cyan-card: linear-gradient(234deg, #4d79ff 0%, #090029 100%);
 
 // Error
 $color-error: #ff9994;

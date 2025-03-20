@@ -20,7 +20,7 @@ export default function Points() {
             {pointsList.map((text) => (
               <li
                 key={text}
-                className="points__item"
+                className={`points__item points__item--${slicePathname}`}
               >
                 <span className="points__text">{text}</span>
               </li>
