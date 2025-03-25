@@ -36,10 +36,11 @@ export default function FrontendTeamPage() {
           <Points />
         </div>
         <Tasks />
-        <ServicesTechnology />
+        <ServicesTechnology localeKeyName="benefits" isFilled />
         <Cases />
         <Stages />
         <Stack />
+        <ServicesTechnology />
         <FormBlock
           id={TechnologyPageAnchorLink.Contact}
           buttonClassName="frontend-team__form-button"
@@ -64,6 +65,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'heroFrontend-team',
       'pointsFrontend-team',
       'servicesTechnologyFrontend-team',
+      'benefitsFrontend-team',
       'tasksFrontend-team',
       'stackFrontend-team',
       'casesFrontend-team',
