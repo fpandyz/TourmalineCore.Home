@@ -31,7 +31,7 @@ export default function FrontendPage() {
           structuredData: '',
           additionalCode: '',
         }}
-      />
+      />  
       <Layout mainClassName="frontend">
         <div className="frontend__hero-block-container">
           <HeroBlockTechnology />
