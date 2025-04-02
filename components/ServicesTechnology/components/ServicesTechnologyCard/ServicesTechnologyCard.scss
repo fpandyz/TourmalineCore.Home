@@ -19,6 +19,10 @@
   &__title {
     margin-bottom: 16px;
 
+    &--filled {
+      user-select: text;
+    }
+
     &--teams {
       margin-bottom: 0;
       user-select: text;
@@ -30,7 +34,8 @@
     line-height: 1.33;
     color: $color-white-alpha-100;
 
-    &--teams {
+    &--teams,
+    &--filled {
       cursor: text;
       user-select: text;
     }
@@ -90,7 +95,9 @@
   &--embedded,
   &--qa,
   &--backend,
-  &--teams {
+  &--teams,
+  &--frontend-team,
+  &--filled {
     &::after {
       content: "";
       position: absolute;
@@ -110,13 +117,15 @@
   &--design,
   &--embedded,
   &--qa,
-  &--backend {
+  &--backend,
+  &--frontend-team {
     &::after {
       opacity: 0;
     }
   }
 
-  &--teams {
+  &--teams,
+  &--filled {
     &::after {
       opacity: 1;
     }
@@ -169,6 +178,13 @@
     }
   }
 
+  &--frontend-team,
+  &--filled {
+    &::after {
+      background-image: $color-dark-cyan-card;
+    }
+  }
+
   &--design {
     &::after {
       background-image:
@@ -193,7 +209,8 @@
   @include desktop {
     min-height: 340px;
 
-    &--teams {
+    &--teams,
+    &--filled {
       min-height: fit-content;
     }
   }

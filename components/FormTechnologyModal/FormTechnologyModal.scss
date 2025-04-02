@@ -199,6 +199,15 @@
       }
     }
 
+    &--frontend-team {
+      background: $color-cyan-page-primary;
+
+      &:hover {
+        border: 1px solid $color-cyan-page-primary;
+        background: rgba($color-cyan-page-primary, 0.3);
+      }
+    }
+
     &--design {
       background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
       background-clip: padding-box;
