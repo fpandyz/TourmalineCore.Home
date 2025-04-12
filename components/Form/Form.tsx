@@ -57,6 +57,11 @@ function Form({
           className="form__input"
           label={t('name.label')}
           description={t('name.description')}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+            }
+          }}
           required
         />
         <Input
@@ -66,6 +71,11 @@ function Form({
           label={t('email.label')}
           description={t('email.description')}
           type="email"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+            }
+          }}
           required
         />
         <Textarea
@@ -74,7 +84,6 @@ function Form({
           label={t('message.label')}
           className="form__message"
           description={t('message.description')}
-          onKeyDown={handleKeyDown}
         />
 
         <div className="form__footer">
@@ -115,18 +124,6 @@ function Form({
       />
     </>
   );
-
-  function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
-    if (event.key === 'Enter' && event.shiftKey === false && !isMobileOrTablet) {
-      event.preventDefault();
-
-      const buttonSubmit = document.querySelector<HTMLButtonElement>('.form__button');
-
-      if (buttonSubmit) {
-        buttonSubmit.click();
-      }
-    }
-  }
 
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
