@@ -10,14 +10,6 @@ module.exports = withReactSvg({
     domains: ['raw.githubusercontent.com'],
   },
   env: {
-    I18NEXUS_API_KEY_HOME: process.env.I18NEXUS_API_KEY_HOME,
-    I18NEXUS_API_KEY_FRONTEND: process.env.I18NEXUS_API_KEY_FRONTEND,
-    I18NEXUS_API_KEY_DESIGN: process.env.I18NEXUS_API_KEY_DESIGN,
-    I18NEXUS_API_KEY_COMMON: process.env.I18NEXUS_API_KEY_COMMON,
-    I18NEXUS_API_KEY_ML: process.env.I18NEXUS_API_KEY_ML,
-    I18NEXUS_API_KEY_EMBEDDED: process.env.I18NEXUS_API_KEY_EMBEDDED,
-    I18NEXUS_API_KEY_QA: process.env.I18NEXUS_API_KEY_QA,
-    I18NEXUS_API_KEY_BACKEND: process.env.I18NEXUS_API_KEY_BACKEND,
     METRICS_ENABLED: process.env.METRICS_ENABLED,
   },
   webpack(webpackConfig) {
