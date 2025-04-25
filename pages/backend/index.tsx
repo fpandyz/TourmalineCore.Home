@@ -6,9 +6,7 @@ import PageHead from '../../components/PageHead/PageHead';
 import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
 import Points from '../../components/Points/Points';
 import Tasks from '../../components/Tasks/Tasks';
-import Cases from '../../components/Cases/Cases';
 import Cta from '../../components/Cta/Cta';
-import Stack from '../../components/Stack/Stack';
 import Payment from '../../components/Payment/Payment';
 import Cooperation from '../../components/Cooperation/Cooperation';
 import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
@@ -38,9 +36,7 @@ export default function BackendPage() {
           <Points />
         </div>
         <Tasks />
-        {/* <Cases /> */}
         <Cta />
-        {/* <Stack /> */}
         <Payment />
         <Cooperation />
         <ServicesTechnology />
@@ -58,7 +54,6 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
     ...(await serverSideTranslations(locale as string, [
       'common',
       'footer',
-      'heroBlockHomePage',
       'cookie',
       'form',
       'formBlock',
@@ -68,10 +63,8 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'tasksBackend',
       'paymentBackend',
       'cta',
-      'stackBackend',
       'cooperationBackend',
       'servicesTechnologyBackend',
-      'casesBackend',
     ])),
   },
 });
