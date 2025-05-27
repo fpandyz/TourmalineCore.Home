@@ -43,7 +43,7 @@ function CompletedProjectsCard({
         <Image
           src={completedProject.image[routerLocale]}
           alt={completedProject.alt}
-          layout="fill"
+          fill
           loading="lazy"
         />
       </div>

@@ -51,7 +51,7 @@ function AdaptationToProject({
               <Image
                 src={ImageSrc[routerLocale as keyof typeof ImageSrc]}
                 alt={t('imageAlt')}
-                layout="fill"
+                fill
                 loading="lazy"
               />
             </div>

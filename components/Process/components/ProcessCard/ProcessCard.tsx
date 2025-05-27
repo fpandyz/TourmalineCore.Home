@@ -34,7 +34,7 @@ function ProcessCard({
         <Image
           src={srcImage}
           alt={altHeader}
-          layout="fill"
+          fill
           loading="lazy"
         />
       </div>
@@ -45,7 +45,7 @@ function ProcessCard({
             <Image
               src={srcImage}
               alt={altHeader}
-              layout="fill"
+              fill
               loading="lazy"
             />
           </div>
@@ -67,7 +67,7 @@ function ProcessCard({
           <Image
             src={reactionImg}
             alt={altReaction}
-            layout="fill"
+            fill
             loading="lazy"
           />
         </div>

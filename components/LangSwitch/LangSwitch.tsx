@@ -57,23 +57,23 @@ function LangSwitch() {
               key={locale}
               className="lang-switch__option"
             >
-              <Link href={router.asPath} locale={locale}>
-                <a
-                  role="presentation"
-                  className={clsx(
-                    'lang-switch__link',
-                    { 'lang-switch__link--active': routerLocale === locale },
-                  )}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (routerLocale !== locale) {
-                      window.open((e.target as HTMLAnchorElement).href, '_self');
-                    }
-                  }}
-                >
-                  {languages[locale].icon()}
-                  {languages[locale].name}
-                </a>
+              <Link
+                role="presentation"
+                href={router.asPath}
+                locale={locale}
+                className={clsx(
+                  'lang-switch__link',
+                  { 'lang-switch__link--active': routerLocale === locale },
+                )}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (routerLocale !== locale) {
+                    window.open((e.target as HTMLAnchorElement).href, '_self');
+                  }
+                }}
+              >
+                {languages[locale].icon()}
+                {languages[locale].name}
               </Link>
             </li>
           ))}

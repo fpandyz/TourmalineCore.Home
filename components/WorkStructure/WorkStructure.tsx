@@ -33,7 +33,7 @@ function WorkStructure({
             <Image
               src={isMobile ? '/images/good-code-mobile.webp' : '/images/good-code.webp'}
               alt={t('altImageFirst')}
-              layout="fill"
+              fill
               loading="lazy"
             />
           </div>
@@ -46,7 +46,7 @@ function WorkStructure({
             <Image
               src={isMobile ? '/images/good-work-mobile.webp' : '/images/good-work.webp'}
               alt={t('altImageSecond')}
-              layout="fill"
+              fill
               loading="lazy"
             />
           </div>
