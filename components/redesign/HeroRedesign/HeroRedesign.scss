@@ -19,7 +19,7 @@
     @include desktop {
       margin-bottom: 56px;
       font-size: 18px;
-      line-height: 1.35;
+      line-height: 1.4;
       color: $color-white-60;
     }
   }
@@ -38,7 +38,7 @@
     text-align: center;
 
     @include desktop {
-      max-width: 526px;
+      max-width: 646px;
     }
   }
 
