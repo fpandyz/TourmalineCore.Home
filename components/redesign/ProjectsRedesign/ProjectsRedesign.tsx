@@ -13,7 +13,7 @@ export function ProjectRedesign() {
 
   return (
     <section className="projects-redesign">
-      <div className="projects-redesign__wrapper">
+      <div className="container-redesign projects-redesign__wrapper">
         {sectionTitle && <h2 className="projects-redesign__title">{sectionTitle}</h2>}
         <ul className="projects-redesign__cards">
           {projectCardsWithImage.map(({
@@ -38,7 +38,7 @@ export function ProjectRedesign() {
               <h3 className="projects-redesign__clients-title">
                 {t('clientsTitle')}
               </h3>
-              <ul className="projects-redesign__clients-list">
+              <div className="projects-redesign__clients-links">
                 {clients.map((
                   {
                     name,
@@ -46,23 +46,29 @@ export function ProjectRedesign() {
                   },
                   index,
                 ) => (
-                  <li className="projects-redesign__client-item">
+                // eslint-disable-next-line react/jsx-no-useless-fragment
+                  <>
                     {link ? (
-                      <a
-                        className="projects-redesign__client-link"
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {name}
-                      </a>
+                      <>
+                        <a
+                          className="projects-redesign__client-link"
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {name}
+                        </a>
+                        {index < clients.length - 1 && <span className="projects-redesign__client-comma">, </span>}
+                      </>
                     ) : (
-                      <span className="projects-redesign__client-text">{name}</span>
+                      <span className="projects-redesign__client-name">
+                        {name}
+                        {index < clients.length - 1 && ', '}
+                      </span>
                     )}
-                    {index < clients.length - 1 && ','}
-                  </li>
+                  </>
                 ))}
-              </ul>
+              </div>
               <span className="projects-redesign__client-nda">{t('nda')}</span>
             </div>
           </li>

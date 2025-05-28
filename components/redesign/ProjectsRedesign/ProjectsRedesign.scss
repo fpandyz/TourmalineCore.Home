@@ -1,19 +1,13 @@
 .projects-redesign {
   background-color: $color-white;
 
-  &__wrapper {
-    @include desktop {
-      padding: 0 16px;
-    }
-  }
-
   &__title {
     color: $color-black;
 
     @include desktop {
       margin-bottom: 48px;
       font-size: 34px;
-      line-height: 1.4;
+      line-height: 1.2;
     }
   }
 
@@ -22,7 +16,7 @@
 
     @include desktop {
       gap: 12px;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
@@ -37,13 +31,9 @@
       }
     }
 
-    &-list {
-      display: flex;
-      flex-wrap: wrap;
-
+    &-links {
       @include desktop {
-        margin-bottom: 12px;
-        gap: 8px;
+        margin-bottom: 8px;
       }
     }
 
@@ -52,22 +42,30 @@
     }
   }
 
+  &__info-card {
+    @include desktop {
+      font-size: 28px;
+      line-height: 1.4;
+    }
+  }
+
   &__client {
     &-nda {
       color: $color-deep-blue;
-
-      @include desktop {
-        font-size: 32px;
-        line-height: 1.25;
-      }
     }
 
-    &-item {
+    &-comma,
+    &-name,
+    &-link {
       color: $color-black;
+    }
 
-      @include desktop {
-        font-size: 28px;
-        line-height: 1.4;
+    &-link {
+      transition: color 0.6s ease-out;
+
+      &:hover,
+      &:focus {
+        color: $color-pink-redesign;
       }
     }
   }
