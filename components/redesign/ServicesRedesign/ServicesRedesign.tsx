@@ -2,10 +2,12 @@ import { useTranslation } from 'next-i18next';
 import ServicesCardRedesign from '../ServicesCardRedesign/ServicesCardRedesign';
 
 type NewServicesList = {
-  title: string;
-  skillsList: string[];
-  link: string;
-  theme?: boolean
+  title?: string;
+  skillsList?: string[];
+  link?: string;
+  linkText?: string;
+  theme: 'white' | 'grey' | 'black' | 'blue';
+  image?: string
 }[];
 
 function ServicesRedesign() {
@@ -18,17 +20,25 @@ function ServicesRedesign() {
       className="services-redesign"
     >
       <ul className="grid">
-        <li className="services-card-redesign col-tablet-3">Услуги</li>
-        {newServicesList.map(({ title, skillsList, link }) => (
+        <li className="services-redesign__card col-tablet-3">
+          <h2 className="services-redesign__title">
+            {t('title')}
+          </h2>
+        </li>
+        {newServicesList.map(({
+          title, skillsList, link, linkText, theme, image,
+        }) => (
           <li
             key={title}
-            className="col-tablet-3"
+            className="services-redesign__card col-tablet-3"
           >
             <ServicesCardRedesign
               title={title}
               skillsList={skillsList}
               link={link}
-              // theme={theme}
+              linkText={linkText}
+              theme={theme}
+              image={image}
             />
           </li>
         ))}

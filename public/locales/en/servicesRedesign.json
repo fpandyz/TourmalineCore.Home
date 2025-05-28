@@ -1,28 +1,52 @@
-{"list":
+{
+  "title": "What we do",
+  "list":
   [
     {
       "title": "Web Development",
-      "skillsList": ["SPA-приложения", "Сайты и лендинги", "Корпоративные сервисы", "CRM, ERP, личные кабинеты"],
+      "skillsList": ["Single-page applications", "Websites and landing pages", "Enterprise systems", "CRM, ERP, personal accounts"],
       "link": "/",
-      "theme": true
+      "linkText": "Learn more",
+      "theme": "black"
     },
     {
       "title": "Embedded development",
-      "skillsList": ["Драйверы", "Программные модули со сложной логикой", "Протоколы и библиотеки", "Настройка кросс-компиляции и техническая документация"],
+      "skillsList": ["Drivers", "Software modules with complex logic", "Protocols and libraries", "Cross-compilation setup and technical documentation"],
       "link": "/",
-      "theme": true
+      "linkText": "Learn more",
+      "theme": "white"
+    },
+    {
+      "image": "/images/services-card.png",
+      "theme": "blue"
     },
     {
       "title": "Machine Learning and data analysis",
-      "skillsList": ["Бизнес-анализ данных", "Модели компьютерного зрения", "Модели обработки текста и звука", "Модели обработки сигнала с датчиков"],
+      "skillsList": ["Business data analytics", "Computer vision models", "Text and audio processing models", "Sensor signal processing models"],
       "link": "/",
-      "theme": true
+      "linkText": "Learn more",
+      "theme": "grey"
     },
     {
-      "title": "Machine Learning and data analysis",
-      "skillsList": ["Бизнес-анализ данных", "Модели компьютерного зрения", "Модели обработки текста и звука", "Модели обработки сигнала с датчиков"],
+      "title": "Testing",
+      "skillsList": ["E2E testing", "UI & API testing", "Integration and unit testing", "Manual and automated testing"],
       "link": "/",
-      "theme": true
+      "linkText": "Learn more",
+      "theme": "white"
+    },
+    {
+      "title": "Design",
+      "skillsList": ["UI/UX design", "Websites and landing pages design", "No/Low-code websites"],
+      "link": "/",
+      "linkText": "Learn more",
+      "theme": "grey"
+    },
+    {
+      "title": "Other",
+      "skillsList": ["Launching MVP projects", "Architecture design", "Development of high-load services", "Setting up project’s environment and CI/CD", "Software architecture and development consulting"],
+      "link": "/",
+      "linkText": "Learn more",
+      "theme": "grey"
     }
   ]
 }

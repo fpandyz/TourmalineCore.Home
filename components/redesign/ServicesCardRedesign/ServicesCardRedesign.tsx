@@ -1,50 +1,76 @@
-import Link from 'next/link';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 export default function ServicesCardRedesign(
   {
     title,
     skillsList,
     link,
-    // theme,
+    linkText,
+    theme,
+    image,
   }:
   {
-    title: string;
-    skillsList: string[];
-    link: string,
-    // theme: boolean,
+    title?: string;
+    skillsList?: string[];
+    link?: string,
+    linkText?: string,
+    theme: 'white' | 'grey' | 'black' | 'blue',
+    image?: string
   },
 ) {
   return (
-    <Link
-      href={link}
+    <div
+      className={clsx(
+        `services-card-redesign services-card-redesign--${theme}`,
+      )}
       draggable="false"
     >
-      <a
-        className={clsx('services-card-redesign', {
-          'services-card-redesign--hover': link,
-        })}
-        draggable="false"
-      >
-        <div className="services-card-redesign__inner">
+      {
+        title && (
           <h3
-            className={clsx('title-technology-type-2 services-card-redesign__title}', {
+            className={clsx('title-technology-type-2 services-card-redesign__title', {
             })}
           >
             {title}
           </h3>
-          <ul>
+        )
+      }
+      {
+        skillsList && (
+          <ul className="services-card-redesign__list">
             {skillsList.map((item) => (
-              <li key="">{item}</li>
+              <li
+                className="services-card-redesign__item"
+                key=""
+              >
+                {item}
+              </li>
             ))}
           </ul>
-        </div>
-        {link && (
-          <span className="services-card-redesign__arrow">
-            ddd
-          </span>
-        )}
-      </a>
-    </Link>
+        )
+      }
+      {link && (
+        <a
+          href={link}
+          className="services-card-redesign__link"
+        >
+          {linkText}
+        </a>
+      )}
+      {
+        image && (
+          <div className="services-card-redesign__image-container">
+            <Image
+              src={image}
+              layout="fill"
+              priority
+              alt=""
+            />
+          </div>
+
+        )
+      }
+    </div>
   );
 }

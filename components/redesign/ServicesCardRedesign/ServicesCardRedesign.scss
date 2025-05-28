@@ -1,45 +1,66 @@
 .services-card-redesign {
-  position: relative;
-  display: block;
-  border-radius: 24px;
-  padding: 32px 24px;
-  height: 100%;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: default;
+  $this: &;
 
-  &__inner {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  height: 100%;
+  min-height: 405px;
+  font-weight: 500;
+  color: $color-black;
+
+  &__list {
+    margin-left: 16px;
+    color: $color-grey-redesign;
   }
 
   &__title {
     margin-bottom: 16px;
   }
 
-  &__description {
-    font-size: 18px;
-    line-height: 1.33;
-    color: $color-white-alpha-100;
-  }
-
-  &__arrow {
-    position: absolute;
-    right: 18px;
-    top: 24px;
-    z-index: 1;
-    border-radius: 100px;
-    padding: 14px 0;
-    width: 40px;
-    height: 40px;
+  &__link {
+    margin-top: auto;
+    text-decoration: none;
     color: $color-black;
-    background-color: $color-white;
     transition: all 0.2s ease-in-out;
 
     svg {
       display: block;
       width: 100%;
       height: 100%;
+    }
+  }
+
+  &__item {
+    list-style-type: disc;
+  }
+
+  &__image-container {
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 10px solid $color-black;
+    width: 188px;
+    height: 250px;
+    transform: translate(-50%, -50%);
+  }
+
+  &--blue {
+    background-color: $color-blue-redesign;
+  }
+
+  &--grey {
+    background-color: $color-light-grey-redesign;
+  }
+
+  &--black {
+    background-color: $color-black;
+
+    #{$this}__link,
+    #{$this}__title {
+      color: $color-white;
     }
   }
 }
