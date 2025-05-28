@@ -17,12 +17,12 @@ function ServicesRedesign() {
     <section
       className="services-redesign"
     >
-      <ul>
-        <li className="services-card-redesign">Услуги</li>
+      <ul className="grid">
+        <li className="services-card-redesign col-tablet-3">Услуги</li>
         {newServicesList.map(({ title, skillsList, link }) => (
           <li
             key={title}
-            className="list__item"
+            className="col-tablet-3"
           >
             <ServicesCardRedesign
               title={title}
