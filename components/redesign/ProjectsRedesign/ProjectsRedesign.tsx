@@ -2,8 +2,12 @@ import { useTranslation } from 'next-i18next';
 import { ProjectRedesignCardWithImage } from './components/ProjectsRedesignCardWithImage/ProjectsRedesignCardWithImage';
 import { Client, ProjectCardWithImage } from './types';
 
-export function ProjectRedesign() {
-  const { t } = useTranslation('projectsRedesign');
+export function ProjectRedesign({
+  translationKey,
+}:{
+  translationKey: string
+}) {
+  const { t } = useTranslation(translationKey);
 
   const projectCardsWithImage: ProjectCardWithImage[] = t('projectsCardsWithImage', { returnObjects: true });
 
