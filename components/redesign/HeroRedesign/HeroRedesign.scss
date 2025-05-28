@@ -1,0 +1,50 @@
+.hero-redesign {
+  height: 100vh;
+  background-color: $color-black;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include desktop {
+      padding-top: 40px;
+      padding-bottom: 130px;
+    }
+  }
+
+  &__title {
+    @include desktop {
+      margin-bottom: 24px;
+      font-size: 56px;
+      line-height: 1;
+    }
+  }
+
+  &__description {
+    @include desktop {
+      margin-bottom: 56px;
+      font-size: 18px;
+      line-height: 1.35;
+      color: $color-white-60;
+    }
+  }
+
+  &__images {
+    position: relative;
+
+    @include desktop {
+      width: 352px;
+      height: 332px;
+    }
+  }
+
+  &__title,
+  &__description {
+    text-align: center;
+
+    @include desktop {
+      max-width: 526px;
+    }
+  }
+}

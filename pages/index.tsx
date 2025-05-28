@@ -1,26 +1,15 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
-import { Element } from 'react-scroll';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 
-import LayoutHomePage from '../components/LayoutHomePage/LayoutHomePage';
 import PageHead from '../components/PageHead/PageHead';
-import Services from '../components/Services/Services';
-import Skills from '../components/Skills/Skills';
-import CompletedProjects from '../components/CompletedProjects/CompletedProjects';
-import Discussion from '../components/Discussion/Discussion';
-import AdaptationToProject from '../components/AdaptationToProject/AdaptationToProject';
-import Process from '../components/Process/Process';
-import Tools from '../components/Tools/Tools';
-import WorkStructure from '../components/WorkStructure/WorkStructure';
-import Mistakes from '../components/Mistakes/Mistakes';
-import FormBlock from '../components/FormBlock/FormBlock';
 
-import { NavigationLinks, navigationLinks } from '../common/utils/consts/navigation';
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
+import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
+import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -50,10 +39,14 @@ export default function HomePage() {
         }}
       />
 
-      <LayoutHomePage
+      <LayoutRedesign>
+        <HeroRedesign />
+      </LayoutRedesign>
+
+      {/* <LayoutHomePage
         navigationLinks={navigationLinks}
-      >
-        <Services
+      > */}
+      {/* <Services
           id={NavigationLinks.services}
           data-auto-padding={NavigationLinks.services}
           animationName="fade-up"
@@ -64,57 +57,57 @@ export default function HomePage() {
           data-auto-padding={NavigationLinks.skills}
           animationName="fade-up"
           clickedAccordion={() => setClickedAccordion(!clickedAccordion)}
-        />
+        /> */}
 
-        <section
-          id={NavigationLinks.experience}
-          data-auto-padding={NavigationLinks.experience}
-        >
-          <Element name={`scroll-to-${NavigationLinks.experience}`}>
-            <CompletedProjects
-              animationName="fade-up"
-            />
+      {/* <section
+        id={NavigationLinks.experience}
+        data-auto-padding={NavigationLinks.experience}
+      >
+        <Element name={`scroll-to-${NavigationLinks.experience}`}>
+          <CompletedProjects
+            animationName="fade-up"
+          />
 
-            <Discussion
-              animationName="fade-up"
-            />
-          </Element>
-        </section>
+          <Discussion
+            animationName="fade-up"
+          />
+        </Element>
+      </section> */}
 
-        <div
+      {/* <div
+        id={NavigationLinks.approach}
+      >
+        <AdaptationToProject
           id={NavigationLinks.approach}
-        >
-          <AdaptationToProject
-            id={NavigationLinks.approach}
-            animationName="fade-up"
-            data-auto-padding="adaptation-project"
-          />
-
-          <Process
-            animationName="fade-up"
-            data-auto-padding="process"
-          />
-          <Tools
-            animationName="fade-up"
-            data-auto-padding="tools"
-          />
-          <WorkStructure
-            animationName="fade-up"
-            data-auto-padding="work-structure"
-          />
-          <Mistakes
-            animationName="fade-up"
-            data-auto-padding="mistakes"
-          />
-        </div>
-
-        <FormBlock
-          id={NavigationLinks.contact}
           animationName="fade-up"
-          data-auto-padding="form-block"
+          data-auto-padding="adaptation-project"
         />
 
-      </LayoutHomePage>
+        <Process
+          animationName="fade-up"
+          data-auto-padding="process"
+        />
+        <Tools
+          animationName="fade-up"
+          data-auto-padding="tools"
+        />
+        <WorkStructure
+          animationName="fade-up"
+          data-auto-padding="work-structure"
+        />
+        <Mistakes
+          animationName="fade-up"
+          data-auto-padding="mistakes"
+        />
+      </div> */}
+
+      {/* <FormBlock
+        id={NavigationLinks.contact}
+        animationName="fade-up"
+        data-auto-padding="form-block"
+      /> */}
+
+      {/* </LayoutHomePage> */}
     </>
   );
 }
@@ -123,22 +116,24 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
       'common',
-      'articles',
-      'footer',
-      'heroBlockHomePage',
-      'skills',
-      'services',
-      'completedProjects',
-      'navigation',
-      'workStructure',
-      'mistakes',
       'cookie',
-      'adaptationToProject',
-      'process',
-      'tools',
-      'form',
-      'formBlock',
-      'discussion',
+      'footer',
+      'heroRedesign',
+
+      // 'articles',
+      // 'heroBlockHomePage',
+      // 'skills',
+      // 'services',
+      // 'completedProjects',
+      // 'navigation',
+      // 'workStructure',
+      // 'mistakes',
+      // 'adaptationToProject',
+      // 'process',
+      // 'tools',
+      // 'form',
+      // 'formBlock',
+      // 'discussion',
     ])),
   },
 });

@@ -56,7 +56,7 @@
 
     @include tablet {
       display: flex;
-      align-items: start;
+      align-items: flex-start;
       flex-flow: column;
       border-radius: 32px;
       padding: 120px 32px 40px;
