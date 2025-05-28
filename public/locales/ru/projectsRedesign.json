@@ -1,0 +1,42 @@
+{
+  "title": "Проекты",
+  "projectsCardsWithImage": [
+    {
+      "imageUrl": "/images/zoo-project.png",
+      "title": "Челябинский зоопарк",
+      "description": "Open-source сайт для Челябинского зоопарка, который мы сделали на благотворительной основе",
+      "link": "http://chelzoo.ru/",
+      "size": "M"
+    },
+    {
+      "imageUrl": "/images/tourmanique-project.png",
+      "title": "Tourmanique",
+      "description": "Сервис для определения уникальности фотографий",
+      "size": "L"
+    }
+  ],
+  "clientsTitle": "Делаем проекты для B2B, B2C, муниципальных и благотворительных организаций, техкомпаний и инновационных стартапов",
+  "clients": [
+    {
+      "name": "Челябинский зоопарк",
+      "link": ""
+    },
+    {
+      "name": "Fairaction",
+      "link": ""
+    },
+     {
+      "name": "Senmotion",
+      "link": ""
+    },  
+    {
+      "name": "Industry Transformation Solutions",
+      "link": ""
+    },
+    {
+      "name": "Daoism Systems",
+      "link": ""
+    }
+  ],
+  "nda": "+ NDA клиенты"
+}

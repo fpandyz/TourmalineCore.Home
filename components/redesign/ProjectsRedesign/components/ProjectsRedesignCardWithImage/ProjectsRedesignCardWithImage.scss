@@ -1,0 +1,70 @@
+.project-redesign-card-with-image {
+  $this: &;
+
+  height: max-content;
+
+  &__images {
+    position: relative;
+
+    img {
+      transition: border-radius 1s linear;
+    }
+
+    &--S {
+      @include desktop {
+        height: 290px;
+      }
+    }
+
+    &--M {
+      @include desktop {
+        height: 364px;
+      }
+    }
+
+    &--L {
+      @include desktop {
+        height: 545px;
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    color: $color-black;
+
+    @include desktop {
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+
+  &__description {
+    color: $color-black-60;
+
+    @include desktop {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &:hover #{$this}__images--S img,
+    &:focus #{$this}__images--S img {
+      border-radius: 40px;
+    }
+
+    &:hover #{$this}__images--M img,
+    &:focus #{$this}__images--M img,
+    &:hover #{$this}__images--L img,
+    &:focus #{$this}__images--L img {
+      border-radius: 50%;
+    }
+  }
+}

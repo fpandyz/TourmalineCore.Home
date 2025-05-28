@@ -10,6 +10,7 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
+import { ProjectRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -41,6 +42,7 @@ export default function HomePage() {
 
       <LayoutRedesign>
         <HeroRedesign />
+        <ProjectRedesign />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
@@ -119,6 +121,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'cookie',
       'footer',
       'heroRedesign',
+      'projectsRedesign',
 
       // 'articles',
       // 'heroBlockHomePage',

@@ -1,0 +1,31 @@
+{
+  "title": "Projects",
+  "projectsCardsWithImage": [
+    {
+      "imageUrl": "/images/tourmanique-project.png",
+      "title": "Tourmanique",
+      "description": "Service for determining the uniqueness of photos",
+      "size": "L"
+    }
+  ],
+  "clientsTitle": "We make projects for B2B, B2C, municipal and charitable organizations, tech companies and innovative startups",
+  "clients": [
+    {
+      "name": "Fairaction",
+      "link": ""
+    },
+     {
+      "name": "Senmotion",
+      "link": ""
+    },  
+    {
+      "name": "Industry Transformation Solutions",
+      "link": ""
+    },
+    {
+      "name": "Daoism Systems",
+      "link": ""
+    }
+  ],
+  "nda": "+ NDA clients"
+}

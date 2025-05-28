@@ -1,5 +1,6 @@
 // Black
 $color-black: #000;
+$color-black-60: rgba(0, 0, 0, 0.6);
 $color-purple-black: #06040f;
 
 // White
@@ -88,6 +89,7 @@ $color-gray: #1b1926;
 $color-dark-card: linear-gradient(234deg, #17191c 0%, #101112 100%);
 $color-dark-purple-card: linear-gradient(234deg, #7926ff 0%, #090029 100%);
 $color-dark-cyan-card: linear-gradient(234deg, #4d79ff 0%, #090029 100%);
+$color-deep-blue: rgba(13, 0, 255, 1);
 
 // Error
 $color-error: #ff9994;
