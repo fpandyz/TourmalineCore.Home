@@ -55,13 +55,17 @@ export function ProjectRedesign() {
                           href={link}
                           target="_blank"
                           rel="noopener noreferrer"
+                          key={name}
                         >
                           {name}
                         </a>
                         {index < clients.length - 1 && <span className="projects-redesign__client-comma">, </span>}
                       </>
                     ) : (
-                      <span className="projects-redesign__client-name">
+                      <span
+                        className="projects-redesign__client-name"
+                        key={name}
+                      >
                         {name}
                         {index < clients.length - 1 && ', '}
                       </span>
