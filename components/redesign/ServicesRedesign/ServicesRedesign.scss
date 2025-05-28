@@ -1,0 +1,16 @@
+.services-redesign {
+  padding-top: 40px;
+  color: black;
+  background-color: white;
+
+  &__title {
+    @include desktop {
+      margin-bottom: 64px;
+      max-width: 904px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 80px;
+    }
+  }
+}
