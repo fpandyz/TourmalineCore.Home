@@ -17,7 +17,7 @@
       "theme": "white"
     },
     {
-      "image": "/images/services-card.png",
+      "imageUrl": "/images/services-card.png",
       "theme": "blue"
     },
     {
@@ -48,5 +48,51 @@
       "linkText": "Подробнее",
       "theme": "grey"
     }
-  ]
+  ],
+  "teamsCard": {
+    "image": "/images/services-card-2.png",
+    "theme": "blue"
+  },
+  "teams": {
+    "title": "Команды",
+    "description": "Можем предоставить команду для вашего проекта или подключить нескольких специалистов",
+    "link": "/teams",
+    "linkText": "Узнать больше о командах",
+    "teamsList": [
+      {
+        "teamName": "Backend",
+        "teamIcon": "/images/icon-backend.svg",
+        "teamLink": "/backend"
+      },
+      {
+        "teamName": "Frontend",
+        "teamIcon": "/images/icon-frontend.svg",
+        "teamLink": "/frontend"
+      },
+      {
+        "teamName": "ML-инженеры",
+        "teamIcon": "/images/icon-ml.svg",
+        "teamLink": "/ml"
+      },
+      {
+        "teamName": "Embedded",
+        "teamIcon": "/images/icon-embedded.svg",
+        "teamLink": "/embedded"
+      },
+      {
+        "teamName": "QA-инженеры",
+        "teamIcon": "/images/icon-qa.svg",
+        "teamLink": "/qa"
+      },
+      {
+        "teamName": "Дизайнеры",
+        "teamIcon": "/images/icon-design.svg",
+        "teamLink": "/design"
+      },
+      {
+        "teamName": "DevOps",
+        "teamIcon": "/images/icon-devops.svg"
+      }
+    ]
+  }
 }

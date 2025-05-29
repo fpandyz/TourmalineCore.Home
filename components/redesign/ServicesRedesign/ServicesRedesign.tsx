@@ -10,10 +10,29 @@ type NewServicesList = {
   image?: string
 }[];
 
+type TeamsCard = {
+  theme: 'white' | 'grey' | 'black' | 'blue';
+  image: string
+};
+
+type Teams = {
+  title: string;
+  description: string;
+  link: string;
+  linkText: string;
+  teamsList: {
+    teamName: string;
+    teamIcon: string
+    teamLink: string
+  }[]
+};
+
 function ServicesRedesign() {
   const { t } = useTranslation('servicesRedesign');
 
   const newServicesList: NewServicesList = t('list', { returnObjects: true });
+  const teamsCard: TeamsCard = t('teamsCard', { returnObjects: true });
+  const teams: Teams = t('teams', { returnObjects: true });
 
   return (
     <section
@@ -42,9 +61,52 @@ function ServicesRedesign() {
             />
           </li>
         ))}
-
+        <li className="services-redesign__card col-tablet-3" />
+        <li className="services-redesign__card col-tablet-3">
+          <ServicesCardRedesign
+            theme={teamsCard.theme}
+            image={teamsCard.image}
+          />
+        </li>
+        <li className="services-redesign__teams col-tablet-6">
+          <div className="services-redesign__wrapper">
+            <h3 className="services-redesign__subtitle">{teams.title}</h3>
+            <p className="services-redesign__description">
+              {teams.description}
+            </p>
+            <ul className="services-redesign__teams-list">
+              {
+                teams.teamsList.map(({ teamIcon, teamLink, teamName }) => (
+                  <li className="services-redesign__team">
+                    <span className="services-redesign__icon-wrapper">
+                      <img alt="" src={teamIcon} />
+                    </span>
+                    {
+                      teamLink
+                        ? (
+                          <a>
+                            {teamName}
+                          </a>
+                        )
+                        : (
+                          <span>
+                            {teamName}
+                          </span>
+                        )
+                    }
+                  </li>
+                ))
+              }
+            </ul>
+            <a
+              href={teams.link}
+              className="services-redesign__featured-link"
+            >
+              {teams.linkText}
+            </a>
+          </div>
+        </li>
       </ul>
-
     </section>
   );
 }

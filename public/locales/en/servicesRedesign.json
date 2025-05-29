@@ -48,5 +48,51 @@
       "linkText": "Learn more",
       "theme": "grey"
     }
-  ]
+  ],
+  "teamsCard": {
+    "image": "/images/services-card-2.png",
+    "theme": "blue"
+  },
+  "teams": {
+    "title": "Teams",
+    "description": "We can provide a dedicated team or outsource several specialists for your project",
+    "link": "/teams",
+    "linkText": "Learn more about our teams",
+    "teamsList": [
+      {
+        "teamName": "Backend",
+        "teamIcon": "/images/icon-backend.svg",
+        "teamLink": "/backend"
+      },
+      {
+        "teamName": "Frontend",
+        "teamIcon": "/images/icon-frontend.svg",
+        "teamLink": "/frontend"
+      },
+      {
+        "teamName": "ML engineers",
+        "teamIcon": "/images/icon-ml.svg",
+        "teamLink": "/ml"
+      },
+      {
+        "teamName": "Embedded",
+        "teamIcon": "/images/icon-embedded.svg",
+        "teamLink": "/embedded"
+      },
+      {
+        "teamName": "QA engineers",
+        "teamIcon": "/images/icon-qa.svg",
+        "teamLink": "/qa"
+      },
+      {
+        "teamName": "Designers",
+        "teamIcon": "/images/icon-design.svg",
+        "teamLink": "/design"
+      },
+      {
+        "teamName": "DevOps",
+        "teamIcon": "/images/icon-devops.svg"
+      }
+    ]
+  }
 }

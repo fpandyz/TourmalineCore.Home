@@ -17,4 +17,41 @@
       margin-bottom: 80px;
     }
   }
+
+  &__teams-list {
+    columns: 2;
+  }
+
+  &__team {
+    display: flex;
+    align-items: center;
+
+    & + & {
+      margin-top: 8px;
+    }
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    display: block;
+    margin-right: 16px;
+    width: 44px;
+    height: 44px;
+    background-color: $color-black;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__button-featured {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
