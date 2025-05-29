@@ -37,12 +37,12 @@ export function ProjectRedesign({
               link={link}
             />
           ))}
-          <li className="projects-redesign__info-card">
+          <li className="projects-redesign__clients-card">
             <div className="projects-redesign__clients">
               <h3 className="projects-redesign__clients-title">
                 {t('clientsTitle')}
               </h3>
-              <div className="projects-redesign__clients-links">
+              <div className="projects-redesign__clients-names">
                 {clients.map((
                   {
                     name,

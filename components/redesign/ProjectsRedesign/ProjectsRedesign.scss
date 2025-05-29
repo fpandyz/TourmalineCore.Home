@@ -2,12 +2,12 @@
   background-color: $color-white;
 
   &__title {
+    @include h3;
+
     color: $color-black;
 
     @include desktop {
       margin-bottom: 48px;
-      font-size: 34px;
-      line-height: 1.2;
     }
   }
 
@@ -22,16 +22,16 @@
 
   &__clients {
     &-title {
+      @include body-m;
+
       color: $color-black-60;
 
       @include desktop {
         margin-bottom: 24px;
-        font-size: 16px;
-        line-height: 1.4;
       }
     }
 
-    &-links {
+    &-names {
       @include desktop {
         margin-bottom: 8px;
       }
@@ -42,14 +42,14 @@
     }
   }
 
-  &__info-card {
-    @include desktop {
-      font-size: 28px;
-      line-height: 1.4;
-    }
-  }
-
   &__client {
+    &-nda,
+    &-comma,
+    &-link,
+    &-name {
+      @include accent-text;
+    }
+
     &-nda {
       color: $color-deep-blue;
     }
