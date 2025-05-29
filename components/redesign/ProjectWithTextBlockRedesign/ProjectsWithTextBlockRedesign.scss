@@ -23,35 +23,26 @@
       }
     }
 
-    &-content {
-      @include desktop {
-        margin-bottom: 8px;
-      }
-    }
-
-    &-nda,
-    &-comma,
-    &-link,
-    &-name {
+    &-markdown {
       @include accent-text;
-    }
 
-    &-nda {
-      color: $color-deep-blue;
-    }
-
-    &-comma,
-    &-name,
-    &-link {
       color: $color-black;
-    }
 
-    &-link {
-      transition: color 0.6s ease-out;
+      // Todo: remove after integration with CMS
+      .nda {
+        display: block;
+        margin-top: 8px;
+        color: $color-deep-blue;
+      }
 
-      &:hover,
-      &:focus {
-        color: $color-pink-redesign;
+      a {
+        color: $color-black;
+        transition: color 0.6s ease-out;
+
+        &:hover,
+        &:focus {
+          color: $color-pink-redesign;
+        }
       }
     }
 

@@ -4,7 +4,7 @@
     {
       "imageUrl": "/images/zoo-project.jpg",
       "title": "Челябинский зоопарк",
-      "description": "Open-source сайт для Челябинского зоопарка, который мы сделали на благотворительной основе",
+      "description": "Open-source сайт для\u00A0Челябинского зоопарка, который мы\u00A0сделали на\u00A0благотворительной основе",
       "link": "http://chelzoo.ru/",
       "size": "M"
     },
@@ -15,28 +15,6 @@
       "size": "L"
     }
   ],
-  "clientsTitle": "Делаем проекты для B2B, B2C, муниципальных и благотворительных организаций, техкомпаний и инновационных стартапов",
-  "clients": [
-    {
-      "text": "Челябинский зоопарк",
-      "link": "http://chelzoo.ru/"
-    },
-    {
-      "text": "Fairaction",
-      "link": ""
-    },
-     {
-      "text": "Senmotion",
-      "link": ""
-    },  
-    {
-      "text": "Industry Transformation Solutions",
-      "link": ""
-    },
-    {
-      "text": "Daoism Systems",
-      "link": ""
-    }
-  ],
-  "nda": "+ NDA клиенты"
+  "textBlockTitle": "Делаем проекты для B2B, B2C, муниципальных и\u00A0благотворительных организаций, техкомпаний и\u00A0инновационных стартапов",
+  "textBlockMarkdown": "<a href='http://chelzoo.ru/'>Челябинский зоопарк</a>, <span>Fairaction, Senmotion, Industry Transformation Solutions, Daoism Systems</span>\n<span className='nda'>+ NDA клиенты</span>"
 }

@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next';
-import { TextWithLink, ProjectCardWithImage } from './types';
+import { ProjectCardWithImage } from './types';
 import { ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
+import { MarkdownText } from '../MarkdownText/MarkdownText';
 
 export function ProjectWithTextBlockRedesign({
   translationKey,
@@ -11,9 +12,9 @@ export function ProjectWithTextBlockRedesign({
 
   const projectCardsWithImage: ProjectCardWithImage[] = t('projectsCardsWithImage', { returnObjects: true });
 
-  const clients: TextWithLink[] = t('clients', { returnObjects: true });
-
   const sectionTitle = t('title');
+
+  const textBlockTitle = t('textBlockTitle');
 
   const colCount = projectCardsWithImage.length + 2;
 
@@ -39,48 +40,19 @@ export function ProjectWithTextBlockRedesign({
               link={link}
             />
           ))}
-          <li className={`projects-with-text-block-redesign__text-block col-desktop-${colCount}`}>
-            <h3 className="projects-with-text-block-redesign__text-block-title">
-              {t('clientsTitle')}
-            </h3>
 
-            {/* Todo: In the future, change it to markdown? */}
-            <div className="projects-with-text-block-redesign__text-block-content">
-              {clients.map((
-                {
-                  text,
-                  link,
-                },
-                index,
-              ) => (
-                // eslint-disable-next-line react/jsx-no-useless-fragment
-                <>
-                  {link ? (
-                    <>
-                      <a
-                        className="projects-with-text-block-redesign__text-block-link"
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        key={text}
-                      >
-                        {text}
-                      </a>
-                      {index < clients.length - 1 && <span className="projects-with-text-block-redesign__text-block-comma">, </span>}
-                    </>
-                  ) : (
-                    <span
-                      className="projects-with-text-block-redesign__text-block-name"
-                      key={text}
-                    >
-                      {text}
-                      {index < clients.length - 1 && ', '}
-                    </span>
-                  )}
-                </>
-              ))}
-            </div>
-            <span className="projects-with-text-block-redesign__text-block-nda">{t('nda')}</span>
+          <li className={`projects-with-text-block-redesign__text-block col-desktop-${colCount}`}>
+            {textBlockTitle && (
+              <h3 className="projects-with-text-block-redesign__text-block-title">
+                {t('textBlockTitle')}
+              </h3>
+            )}
+            <MarkdownText
+              isTargetBlank
+              className="projects-with-text-block-redesign__text-block-markdown"
+            >
+              {t('textBlockMarkdown')}
+            </MarkdownText>
           </li>
 
         </ul>

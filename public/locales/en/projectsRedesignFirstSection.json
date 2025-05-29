@@ -4,28 +4,10 @@
     {
       "imageUrl": "/images/tourmanique-project.png",
       "title": "Tourmanique",
-      "description": "Service for determining the uniqueness of photos",
+      "description": "Service for\u00A0determining the\u00A0uniqueness of\u00A0photos",
       "size": "L"
     }
   ],
-  "clientsTitle": "We make projects for B2B, B2C, municipal and charitable organizations, tech companies and innovative startups",
-  "clients": [
-    {
-      "text": "Fairaction",
-      "link": ""
-    },
-     {
-      "text": "Senmotion",
-      "link": ""
-    },  
-    {
-      "text": "Industry Transformation Solutions",
-      "link": ""
-    },
-    {
-      "text": "Daoism Systems",
-      "link": ""
-    }
-  ],
-  "nda": "+ NDA clients"
+  "textBlockTitle": "We make projects for\u00A0B2B, B2C, municipal and\u00A0charitable organizations, tech companies and\u00A0innovative startups",
+  "textBlockMarkdown": "<span>Fairaction, Senmotion, Industry Transformation Solutions, Daoism Systems</span>\n<span className='nda'>+ NDA clients</span>"
 }
