@@ -85,6 +85,10 @@ p + p {
   margin-top: 10px;
 }
 
+a {
+  text-decoration-skip-ink: none;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -122,6 +126,13 @@ p + p {
     &--home-page {
       padding-left: 300px;
     }
+  }
+}
+
+.container-redesign {
+  @include desktop {
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
 

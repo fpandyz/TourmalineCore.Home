@@ -1,4 +1,6 @@
 .services-redesign {
+  $this: &;
+
   padding-top: 40px;
   color: $color-black;
   background-color: $color-white;
@@ -21,16 +23,23 @@
   }
 
   &__teams-list {
-    columns: 2;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 8px 16px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
 
   &__team {
+    @include h7;
+
     display: flex;
     align-items: center;
+  }
 
-    & + & {
-      margin-top: 8px;
-    }
+  &__team-link {
+    color: inherit;
+    text-underline-offset: 4px;
   }
 
   &__icon-wrapper {
@@ -45,8 +54,8 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: 20px;
-      height: 20px;
+      width: 28px;
+      height: 28px;
       transform: translate(-50%, -50%);
     }
   }
@@ -54,12 +63,12 @@
   &__featured-link {
     @include link-text;
 
-    position: relative;
+    position: absolute;
+    right: -5px;
+    top: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
     padding: 10px 32px;
     height: 59px;
     max-width: 214px;
@@ -68,6 +77,7 @@
     text-decoration: none;
     color: $color-white;
     background-color: $color-blue-redesign;
+    rotate: 5deg;
 
     &::before,
     &::after {
@@ -93,7 +103,33 @@
     }
   }
 
+  &__teams {
+    position: relative;
+    padding: 42px 32px;
+  }
+
+  &__subtitle {
+    @include h4;
+
+    @include desktop {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__description {
+    @include body-m;
+
+    margin-bottom: 30px;
+    max-width: 440px;
+    color: $color-grey-redesign;
+  }
+
+  &--black{
+
+  }
+
   @include desktop {
-    margin-top: 88px;
+    padding-top: 88px;
+    padding-bottom: 128px;
   }
 }

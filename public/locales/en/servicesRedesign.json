@@ -5,8 +5,6 @@
     {
       "title": "Web Development",
       "skillsList": ["Single-page applications", "Websites and landing pages", "Enterprise systems", "CRM, ERP, personal accounts"],
-      "link": "/",
-      "linkText": "Learn more",
       "theme": "black"
     },
     {
@@ -44,8 +42,6 @@
     {
       "title": "Other",
       "skillsList": ["Launching MVP projects", "Architecture design", "Development of high-load services", "Setting up project’s environment and CI/CD", "Software architecture and development consulting"],
-      "link": "/",
-      "linkText": "Learn more",
       "theme": "grey"
     }
   ],

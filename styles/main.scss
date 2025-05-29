@@ -5,6 +5,7 @@
 @import "typography";
 @import "grid";
 @import "fonts-mixin";
+@import "grid";
 
 // components
 @import "../components/Layout/Layout";
@@ -82,3 +83,6 @@
 @import "../components/redesign/HeroRedesign/HeroRedesign";
 @import "../components/redesign/ServicesRedesign/ServicesRedesign";
 @import "../components/redesign/ServicesCardRedesign/ServicesCardRedesign";
+@import "../components/redesign/ProjectWithTextBlockRedesign/ProjectsWithTextBlockRedesign";
+@import "../components/redesign/ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign";
+@import "../components/redesign/ProjectsRedesign/ProjectsRedesign";

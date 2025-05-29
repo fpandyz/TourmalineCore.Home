@@ -11,7 +11,7 @@
   color: $color-black;
 
   &__list {
-    margin-left: 16px;
+    margin-left: 26px;
     color: $color-grey-redesign;
   }
 
@@ -57,8 +57,8 @@
     left: 50%;
     top: 50%;
     border: 10px solid $color-black;
-    width: 188px;
-    height: 250px;
+    width: 212px;
+    height: 276px;
     transform: translate(-50%, -50%);
   }
 
@@ -76,6 +76,11 @@
     #{$this}__link,
     #{$this}__title {
       color: $color-white;
+    }
+    #{$this}__link {
+      path {
+        fill: $color-white;
+      }
     }
   }
 }

@@ -36,7 +36,7 @@ function ServicesRedesign() {
 
   return (
     <section
-      className="services-redesign"
+      className="services-redesign container-redesign"
     >
       <ul className="grid">
         <li className="services-redesign__card col-tablet-3">
@@ -84,12 +84,15 @@ function ServicesRedesign() {
                     {
                       teamLink
                         ? (
-                          <a>
+                          <a
+                            className="services-redesign__team-link"
+                            href={teamLink}
+                          >
                             {teamName}
                           </a>
                         )
                         : (
-                          <span>
+                          <span className="services-redesign__team-name">
                             {teamName}
                           </span>
                         )
