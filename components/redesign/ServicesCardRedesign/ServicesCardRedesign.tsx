@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import IconArrow from '../../../icons/icon-arrow-redesign.svg';
 
 export default function ServicesCardRedesign(
   {
@@ -8,7 +9,7 @@ export default function ServicesCardRedesign(
     link,
     linkText,
     theme,
-    image,
+    imageUrl,
   }:
   {
     title?: string;
@@ -16,7 +17,7 @@ export default function ServicesCardRedesign(
     link?: string,
     linkText?: string,
     theme: 'white' | 'grey' | 'black' | 'blue',
-    image?: string
+    imageUrl?: string
   },
 ) {
   return (
@@ -56,19 +57,19 @@ export default function ServicesCardRedesign(
           className="services-card-redesign__link"
         >
           {linkText}
+          <IconArrow />
         </a>
       )}
       {
-        image && (
+        imageUrl && (
           <div className="services-card-redesign__image-container">
             <Image
-              src={image}
+              src={imageUrl}
               layout="fill"
               priority
               alt=""
             />
           </div>
-
         )
       }
     </div>

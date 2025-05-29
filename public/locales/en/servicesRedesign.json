@@ -17,7 +17,7 @@
       "theme": "white"
     },
     {
-      "image": "/images/services-card.png",
+      "imageUrl": "/images/services-card.png",
       "theme": "blue"
     },
     {
@@ -50,7 +50,7 @@
     }
   ],
   "teamsCard": {
-    "image": "/images/services-card-2.png",
+    "imageUrl": "/images/services-card-2.png",
     "theme": "blue"
   },
   "teams": {

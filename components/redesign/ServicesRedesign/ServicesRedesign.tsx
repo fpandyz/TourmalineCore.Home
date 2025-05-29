@@ -7,12 +7,12 @@ type NewServicesList = {
   link?: string;
   linkText?: string;
   theme: 'white' | 'grey' | 'black' | 'blue';
-  image?: string
+  imageUrl?: string
 }[];
 
 type TeamsCard = {
   theme: 'white' | 'grey' | 'black' | 'blue';
-  image: string
+  imageUrl: string
 };
 
 type Teams = {
@@ -45,7 +45,7 @@ function ServicesRedesign() {
           </h2>
         </li>
         {newServicesList.map(({
-          title, skillsList, link, linkText, theme, image,
+          title, skillsList, link, linkText, theme, imageUrl,
         }) => (
           <li
             key={title}
@@ -57,7 +57,7 @@ function ServicesRedesign() {
               link={link}
               linkText={linkText}
               theme={theme}
-              image={image}
+              imageUrl={imageUrl}
             />
           </li>
         ))}
@@ -65,7 +65,7 @@ function ServicesRedesign() {
         <li className="services-redesign__card col-tablet-3">
           <ServicesCardRedesign
             theme={teamsCard.theme}
-            image={teamsCard.image}
+            imageUrl={teamsCard.imageUrl}
           />
         </li>
         <li className="services-redesign__teams col-tablet-6">

@@ -4,6 +4,8 @@
   background-color: $color-white;
 
   &__title {
+    @include h2;
+
     @include desktop {
       margin-bottom: 64px;
       max-width: 904px;
@@ -49,9 +51,49 @@
     }
   }
 
-  &__button-featured {
+  &__featured-link {
+    @include link-text;
+
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 32px;
+    height: 59px;
+    max-width: 214px;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-blue-redesign;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 18px;
+      height: 59px;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      left: 0;
+
+      // bottom: 0;
+      background-image: url("../../../public/images/left-edge-white.svg");
+      pointer-events: none;
+    }
+
+    &::after {
+      right: 0;
+      background-image: url("../../../public/images/right-edge-white.svg");
+    }
+  }
+
+  @include desktop {
+    margin-top: 88px;
   }
 }
