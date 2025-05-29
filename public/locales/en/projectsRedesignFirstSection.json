@@ -11,19 +11,19 @@
   "clientsTitle": "We make projects for B2B, B2C, municipal and charitable organizations, tech companies and innovative startups",
   "clients": [
     {
-      "name": "Fairaction",
+      "text": "Fairaction",
       "link": ""
     },
      {
-      "name": "Senmotion",
+      "text": "Senmotion",
       "link": ""
     },  
     {
-      "name": "Industry Transformation Solutions",
+      "text": "Industry Transformation Solutions",
       "link": ""
     },
     {
-      "name": "Daoism Systems",
+      "text": "Daoism Systems",
       "link": ""
     }
   ],

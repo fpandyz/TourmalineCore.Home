@@ -1,4 +1,4 @@
-.projects-redesign {
+.projects-with-text-block-redesign {
   background-color: $color-white;
 
   &__title {
@@ -7,20 +7,12 @@
     color: $color-black;
 
     @include desktop {
+      margin-top: 32px;
       margin-bottom: 48px;
     }
   }
 
-  &__cards {
-    display: grid;
-
-    @include desktop {
-      gap: 12px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  &__clients {
+  &__text-block {
     &-title {
       @include body-m;
 
@@ -31,18 +23,12 @@
       }
     }
 
-    &-names {
+    &-content {
       @include desktop {
         margin-bottom: 8px;
       }
     }
 
-    @include desktop {
-      padding: 0 20px;
-    }
-  }
-
-  &__client {
     &-nda,
     &-comma,
     &-link,
@@ -68,10 +54,14 @@
         color: $color-pink-redesign;
       }
     }
+
+    @include desktop {
+      padding: 0 20px;
+    }
   }
 
   @include desktop {
-    padding-top: 80px;
+    padding-top: 48px;
     padding-bottom: 48px;
   }
 }

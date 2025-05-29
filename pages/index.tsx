@@ -10,7 +10,7 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
-import { ProjectRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
+import { ProjectWithTextBlockRedesign } from '../components/redesign/ProjectWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -42,7 +42,7 @@ export default function HomePage() {
 
       <LayoutRedesign>
         <HeroRedesign />
-        <ProjectRedesign translationKey="projectsRedesignFirstSection" />
+        <ProjectWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
       </LayoutRedesign>
 
       {/* <LayoutHomePage

@@ -6,7 +6,7 @@ export type ProjectCardWithImage = {
   size: 'L' | 'M' | 'S'
 };
 
-export type Client = {
-  name: string;
+export type TextWithLink = {
+  text: string;
   link?: string;
 };

@@ -18,23 +18,23 @@
   "clientsTitle": "Делаем проекты для B2B, B2C, муниципальных и благотворительных организаций, техкомпаний и инновационных стартапов",
   "clients": [
     {
-      "name": "Челябинский зоопарк",
+      "text": "Челябинский зоопарк",
       "link": "http://chelzoo.ru/"
     },
     {
-      "name": "Fairaction",
+      "text": "Fairaction",
       "link": ""
     },
      {
-      "name": "Senmotion",
+      "text": "Senmotion",
       "link": ""
     },  
     {
-      "name": "Industry Transformation Solutions",
+      "text": "Industry Transformation Solutions",
       "link": ""
     },
     {
-      "name": "Daoism Systems",
+      "text": "Daoism Systems",
       "link": ""
     }
   ],

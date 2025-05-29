@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import clsx from 'clsx';
-import { ProjectCardWithImage } from '../../types';
+import { ProjectCardWithImage } from '../ProjectWithTextBlockRedesign/types';
 
-export function ProjectRedesignCardWithImage({
+export function ProjectsCardWithImageRedesign({
   title,
   description,
   imageUrl,
@@ -13,10 +13,10 @@ export function ProjectRedesignCardWithImage({
   className?: string;
 }) {
   return (
-    <li className={clsx('project-redesign-card-with-image', className)}>
+    <li className={clsx('project-card-with-image-redesign', className)}>
       {link ? (
         <a
-          className="project-redesign-card-with-image__link"
+          className="project-card-with-image-redesign__link"
           href={link}
           target="_blank"
           rel="noopener noreferrer"
@@ -31,15 +31,15 @@ export function ProjectRedesignCardWithImage({
   function renderCardContent() {
     return (
       <>
-        <div className={`project-redesign-card-with-image__images project-redesign-card-with-image__images--${size.toUpperCase()}`}>
+        <div className={`project-card-with-image-redesign__images project-card-with-image-redesign__images--${size.toUpperCase()}`}>
           <Image
             src={imageUrl}
             layout="fill"
             alt=""
           />
         </div>
-        <h3 className="project-redesign-card-with-image__title">{title}</h3>
-        <p className="project-redesign-card-with-image__description">{description}</p>
+        <h3 className="project-card-with-image-redesign__title">{title}</h3>
+        <p className="project-card-with-image-redesign__description">{description}</p>
       </>
     );
   }
