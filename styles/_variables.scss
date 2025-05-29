@@ -8,7 +8,6 @@ $color-white-alpha-100: rgb(255, 255, 255, 0.8);
 $color-white-alpha-200: rgb(255, 255, 255, 0.5);
 $color-white-alpha-300: rgb(255, 255, 255, 0.3);
 $color-white-alpha-400: rgb(255, 255, 255, 0.1);
-$color-white-60: rgb(255, 255, 255, 0.6);
 
 // Main gradient
 $main-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #4fdae2 99.96%);
@@ -104,3 +103,9 @@ $pd-mobile: 16px;
 $pd-tablet: 32px;
 $pd-desktop: 75px;
 $pd-desktop-xl: 232px;
+
+// redesign
+$color-black-60: rgba(0, 0, 0, 0.6);
+$color-white-60: rgb(255, 255, 255, 0.6);
+$color-deep-blue: rgba(13, 0, 255, 1);
+$color-pink-redesign: #fe00b0;
