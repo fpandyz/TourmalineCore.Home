@@ -1,6 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import { ProjectCardWithImage } from './types';
-import { ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
+import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
 
 export function ProjectWithTextBlockRedesign({

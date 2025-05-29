@@ -1,6 +1,13 @@
 import Image from 'next/image';
 import clsx from 'clsx';
-import { ProjectCardWithImage } from '../ProjectWithTextBlockRedesign/types';
+
+export type ProjectCardWithImage = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  link?: string;
+  size: 'L' | 'M' | 'S'
+};
 
 export function ProjectsCardWithImageRedesign({
   title,
