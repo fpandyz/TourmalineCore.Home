@@ -11,7 +11,7 @@ export function HeroRedesign() {
         <h2 className="hero-redesign__description">{t('description')}</h2>
         <div className="hero-redesign__images">
           <Image
-            src={t('images')}
+            src={t('imageUrl')}
             layout="fill"
             priority
             alt=""
