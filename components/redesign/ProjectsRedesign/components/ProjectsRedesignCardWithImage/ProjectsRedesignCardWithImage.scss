@@ -1,14 +1,8 @@
 .project-redesign-card-with-image {
-  $this: &;
-
   height: max-content;
 
   &__images {
     position: relative;
-
-    img {
-      transition: border-radius 1s linear;
-    }
 
     &--S {
       @include desktop {
@@ -54,17 +48,5 @@
 
   &__link {
     text-decoration: none;
-
-    &:hover #{$this}__images--S img,
-    &:focus #{$this}__images--S img {
-      border-radius: 40px;
-    }
-
-    &:hover #{$this}__images--M img,
-    &:focus #{$this}__images--M img,
-    &:hover #{$this}__images--L img,
-    &:focus #{$this}__images--L img {
-      border-radius: 50%;
-    }
   }
 }
