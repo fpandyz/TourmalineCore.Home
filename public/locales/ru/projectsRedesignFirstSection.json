@@ -2,7 +2,7 @@
   "title": "Проекты",
   "projectsCardsWithImage": [
     {
-      "imageUrl": "/images/zoo-project.png",
+      "imageUrl": "/images/zoo-project.jpg",
       "title": "Челябинский зоопарк",
       "description": "Open-source сайт для Челябинского зоопарка, который мы сделали на благотворительной основе",
       "link": "http://chelzoo.ru/",
