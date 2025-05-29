@@ -5,7 +5,7 @@ import { MarkdownText } from '../MarkdownText/MarkdownText';
 export function ProjectWithTextBlockRedesign({
   translationKey,
 }:{
-  translationKey: string
+  translationKey: string;
 }) {
   const { t } = useTranslation(translationKey);
 
@@ -42,13 +42,13 @@ export function ProjectWithTextBlockRedesign({
 
           <li className={`projects-with-text-block-redesign__text-block col-desktop-${colCount}`}>
             {textBlockTitle && (
-              <h3 className="projects-with-text-block-redesign__text-block-title">
-                {t('textBlockTitle')}
+              <h3 className="projects-with-text-block-redesign__subtitle">
+                {textBlockTitle}
               </h3>
             )}
             <MarkdownText
               isTargetBlank
-              className="projects-with-text-block-redesign__text-block-markdown"
+              className="projects-with-text-block-redesign__markdown"
             >
               {t('textBlockMarkdown')}
             </MarkdownText>

@@ -12,42 +12,42 @@
     }
   }
 
-  &__text-block {
-    &-title {
-      @include body-m;
+  &__subtitle {
+    @include body-m;
 
-      color: $color-black-60;
-
-      @include desktop {
-        margin-bottom: 24px;
-      }
-    }
-
-    &-markdown {
-      @include accent-text;
-
-      color: $color-black;
-
-      // Todo: remove after integration with CMS
-      .nda {
-        display: block;
-        margin-top: 8px;
-        color: $color-deep-blue;
-      }
-
-      a {
-        color: $color-black;
-        transition: color 0.6s ease-out;
-
-        &:hover,
-        &:focus {
-          color: $color-pink-redesign;
-        }
-      }
-    }
+    color: $color-black-60;
 
     @include desktop {
-      padding: 0 20px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__markdown {
+    @include accent-text;
+
+    color: $color-black;
+
+    // Todo: remove after integration with CMS
+    .nda {
+      display: block;
+      margin-top: 8px;
+      color: $color-deep-blue;
+    }
+
+    a {
+      color: $color-black;
+      transition: color 0.6s ease-out;
+
+      &:hover,
+      &:focus {
+        color: $color-pink-redesign;
+      }
+    }
+
+    &__text-block {
+      @include desktop {
+        padding: 0 20px;
+      }
     }
   }
 
