@@ -8,18 +8,18 @@
   }
 
   &__title {
+    @include h1;
+
     @include desktop {
       margin-bottom: 24px;
-      font-size: 56px;
-      line-height: 1;
     }
   }
 
   &__description {
+    @include body-l;
+
     @include desktop {
       margin-bottom: 56px;
-      font-size: 18px;
-      line-height: 1.4;
       color: $color-white-60;
     }
   }
