@@ -1,0 +1,157 @@
+@mixin medium-font {
+  font-weight: 500;
+}
+
+@mixin regular-font {
+  font-weight: 400;
+}
+
+@mixin light-font {
+  font-weight: 300;
+}
+
+@mixin unbounded-font {
+  font-family: $ff-unbounded;
+}
+
+@mixin inter-font {
+  font-family: $ff-inter;
+}
+
+@mixin comic-sans-font {
+  font-family: $ff-comic-sans;
+}
+
+@mixin consolas-font {
+  font-family: $ff-consolas;
+}
+
+@mixin h1 {
+  @include light-font;
+  @include unbounded-font;
+
+  @include desktop {
+    font-size: 56px;
+    line-height: 1;
+  }
+}
+
+@mixin h2 {
+  @include regular-font ;
+  @include unbounded-font;
+
+  @include desktop {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+}
+
+@mixin h3 {
+  @include regular-font ;
+  @include unbounded-font;
+
+  @include desktop {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+}
+
+@mixin h4 {
+  @include regular-font ;
+  @include unbounded-font;
+
+  @include desktop {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+}
+
+@mixin h5 {
+  @include regular-font ;
+  @include unbounded-font;
+
+  @include desktop {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@mixin h6 {
+  @include regular-font ;
+  @include unbounded-font;
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+@mixin h7 {
+  @include regular-font ;
+  @include unbounded-font;
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
+@mixin accent-text {
+  @include medium-font;
+  @include inter-font;
+
+  @include desktop {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+}
+
+@mixin body-l {
+  @include medium-font;
+  @include inter-font;
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+@mixin body-m {
+  @include medium-font;
+  @include inter-font;
+
+  @include desktop {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+@mixin handwritten-text {
+  @include regular-font;
+  @include comic-sans-font;
+
+  @include desktop {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+}
+
+@mixin caption {
+  @include regular-font;
+  @include consolas-font;
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+@mixin link-text {
+  @include regular-font;
+  @include consolas-font;
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1;
+  }
+}
