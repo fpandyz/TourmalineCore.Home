@@ -15,8 +15,6 @@ export function ProjectWithTextBlockRedesign({
 
   const textBlockTitle = t('textBlockTitle');
 
-  const colCount = projectCardsWithImage.length + 2;
-
   return (
     <section className="projects-with-text-block-redesign">
       <div className="container-redesign projects-with-text-block-redesign__wrapper">
@@ -31,7 +29,7 @@ export function ProjectWithTextBlockRedesign({
           }) => (
             <ProjectsCardWithImageRedesign
               key={title}
-              className={`projects-with-text-block-redesign__card col-desktop-${colCount}`}
+              className="projects-with-text-block-redesign__card col-desktop-4"
               title={title}
               description={description}
               imageUrl={imageUrl}
@@ -40,7 +38,7 @@ export function ProjectWithTextBlockRedesign({
             />
           ))}
 
-          <li className={`projects-with-text-block-redesign__text-block col-desktop-${colCount}`}>
+          <li className="projects-with-text-block-redesign__text-block col-desktop-4">
             {textBlockTitle && (
               <h3 className="projects-with-text-block-redesign__subtitle">
                 {textBlockTitle}
