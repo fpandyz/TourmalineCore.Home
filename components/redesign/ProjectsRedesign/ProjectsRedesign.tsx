@@ -10,8 +10,6 @@ export function ProjectsRedesign({
 
   const projectCardsWithImage: ProjectCardWithImage[] = t('projectsCardsWithImage', { returnObjects: true });
 
-  const colCount = projectCardsWithImage.length + 1;
-
   return (
     <section className="projects-redesign">
       <div className="container-redesign projects-redesign__wrapper">
@@ -22,15 +20,17 @@ export function ProjectsRedesign({
             imageUrl,
             size,
             link,
+            isNda,
           }) => (
             <ProjectsCardWithImageRedesign
               key={title}
-              className={`projects-redesign__card col-desktop-${colCount}`}
+              className="projects-redesign__card col-desktop-3"
               title={title}
               description={description}
               imageUrl={imageUrl}
               size={size}
               link={link}
+              isNda={isNda}
             />
           ))}
         </ul>

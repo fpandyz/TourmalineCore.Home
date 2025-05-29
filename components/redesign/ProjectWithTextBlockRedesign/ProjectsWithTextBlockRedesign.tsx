@@ -26,6 +26,7 @@ export function ProjectWithTextBlockRedesign({
             imageUrl,
             size,
             link,
+            isNda,
           }) => (
             <ProjectsCardWithImageRedesign
               key={title}
@@ -35,6 +36,7 @@ export function ProjectWithTextBlockRedesign({
               imageUrl={imageUrl}
               size={size}
               link={link}
+              isNda={isNda}
             />
           ))}
 

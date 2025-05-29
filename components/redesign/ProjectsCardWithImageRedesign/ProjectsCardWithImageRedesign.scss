@@ -12,15 +12,21 @@
       object-fit: cover;
     }
 
-    &--S {
+    &--XS {
       @include desktop {
         height: 290px;
       }
     }
 
-    &--M {
+    &--S {
       @include desktop {
         height: 364px;
+      }
+    }
+
+    &--M {
+      @include desktop {
+        height: 432px;
       }
     }
 
@@ -53,5 +59,15 @@
 
   &__link {
     text-decoration: none;
+  }
+
+  &__nda {
+    @include h7;
+
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    z-index: 1;
+    color: $color-white;
   }
 }

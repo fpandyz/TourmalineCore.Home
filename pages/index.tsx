@@ -11,6 +11,7 @@ import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 import { ProjectWithTextBlockRedesign } from '../components/redesign/ProjectWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
+import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -43,6 +44,7 @@ export default function HomePage() {
       <LayoutRedesign>
         <HeroRedesign />
         <ProjectWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
+        <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
@@ -122,6 +124,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'footer',
       'heroRedesign',
       'projectsRedesignFirstSection',
+      'projectsRedesignSecondarySection',
 
       // 'articles',
       // 'heroBlockHomePage',

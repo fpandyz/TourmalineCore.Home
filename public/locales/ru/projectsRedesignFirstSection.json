@@ -6,13 +6,15 @@
       "title": "Челябинский зоопарк",
       "description": "Open-source сайт для\u00A0Челябинского зоопарка, который мы\u00A0сделали на\u00A0благотворительной основе",
       "link": "http://chelzoo.ru/",
-      "size": "M"
+      "size": "M",
+      "isNda": false
     },
     {
       "imageUrl": "/images/tourmanique-project.png",
       "title": "Tourmanique",
       "description": "Сервис для определения уникальности фотографий",
-      "size": "L"
+      "size": "L",
+      "isNda": false
     }
   ],
   "textBlockTitle": "Делаем проекты для B2B, B2C, муниципальных и\u00A0благотворительных организаций, техкомпаний и\u00A0инновационных стартапов",
