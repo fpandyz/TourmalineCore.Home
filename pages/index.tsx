@@ -10,7 +10,7 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
-import { ProjectWithTextBlockRedesign } from '../components/redesign/ProjectWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
+import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 
 export default function HomePage() {
@@ -43,11 +43,11 @@ export default function HomePage() {
 
       <LayoutRedesign>
         <HeroRedesign />
-        <ProjectWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
+        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
-        <ProjectWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
+        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
