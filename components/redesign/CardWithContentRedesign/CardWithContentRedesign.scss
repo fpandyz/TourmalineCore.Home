@@ -1,0 +1,17 @@
+.card-with-content-redesign {
+  &__title {
+    @include h5;
+
+    white-space: pre-line;
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__markdown {
+    @include body-m;
+
+    margin-top: 20px;
+  }
+}
