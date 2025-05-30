@@ -1,0 +1,34 @@
+{
+  "projectsCardsWithImage": [
+    {
+      "imageUrl": "/images/best-by-project.png",
+      "title": "Best By",
+      "description": "Сервис для\u00A0отслеживания срока годности продукции",
+      "link": "",
+      "size": "M",
+      "isNda": false
+    },
+    {
+      "imageUrl": "/images/senmotion-project.png",
+      "title": "Senmotion",
+      "description": "Подключение 'умных' стелек к\u00A0облачной инфраструктуре для\u00A0хранения, обработки и\u00A0анализа данных врачами и\u00A0пациентами",
+      "size": "M",
+      "isNda": false
+    },
+    {
+      "imageUrl": "/images/smart-cleaning-project.png",
+      "title": "Умная система видеомониторинга",
+      "description": "Система видеомониторинга на\u00A0автомойках самообслуживания, отслеживающая движение и\u00A0классифицирующая события",
+      "size": "M",
+      "isNda": false
+    },
+    {
+      "imageUrl": "/images/tradehack-project.jpg",
+      "title": "Tradehack",
+      "description": "Cервис сбора аналитики по\u00A0товарам и\u00A0категориям товаров на\u00A0площадке маркетплейса Wildberries",
+      "size": "M",
+      "isNda": false
+    }
+  ]
+}
+

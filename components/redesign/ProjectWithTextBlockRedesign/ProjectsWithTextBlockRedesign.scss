@@ -28,10 +28,14 @@
     color: $color-black;
 
     // Todo: remove after integration with CMS
+    .blue-deep-color {
+      color: $color-deep-blue;
+    }
+
+    // Todo: remove after integration with CMS
     .nda {
       display: block;
       margin-top: 8px;
-      color: $color-deep-blue;
     }
 
     a {

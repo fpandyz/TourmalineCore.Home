@@ -45,6 +45,9 @@ export default function HomePage() {
         <HeroRedesign />
         <ProjectWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
+        <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
+        <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
+        <ProjectWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
@@ -125,6 +128,9 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'heroRedesign',
       'projectsRedesignFirstSection',
       'projectsRedesignSecondarySection',
+      'projectsRedesignThirdSection',
+      'projectsRedesignFourthSection',
+      'projectsRedesignFifthSection',
 
       // 'articles',
       // 'heroBlockHomePage',
