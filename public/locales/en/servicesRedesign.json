@@ -10,7 +10,7 @@
     {
       "title": "Embedded development",
       "skillsList": ["Drivers", "Software modules with complex logic", "Protocols and libraries", "Cross-compilation setup and technical documentation"],
-      "link": "/",
+      "link": "/embedded",
       "linkText": "Learn more",
       "theme": "white"
     },
@@ -21,21 +21,21 @@
     {
       "title": "Machine Learning and data analysis",
       "skillsList": ["Business data analytics", "Computer vision models", "Text and audio processing models", "Sensor signal processing models"],
-      "link": "/",
+      "link": "/ml",
       "linkText": "Learn more",
       "theme": "grey"
     },
     {
       "title": "Testing",
       "skillsList": ["E2E testing", "UI & API testing", "Integration and unit testing", "Manual and automated testing"],
-      "link": "/",
+      "link": "/qa",
       "linkText": "Learn more",
       "theme": "white"
     },
     {
       "title": "Design",
       "skillsList": ["UI/UX design", "Websites and landing pages design", "No/Low-code websites"],
-      "link": "/",
+      "link": "/design",
       "linkText": "Learn more",
       "theme": "grey"
     },

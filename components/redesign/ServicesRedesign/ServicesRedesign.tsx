@@ -77,7 +77,10 @@ function ServicesRedesign() {
             <ul className="services-redesign__teams-list">
               {
                 teams.teamsList.map(({ teamIcon, teamLink, teamName }) => (
-                  <li className="services-redesign__team">
+                  <li
+                    className="services-redesign__team"
+                    key={teamName}
+                  >
                     <span className="services-redesign__icon-wrapper">
                       <img alt="" src={teamIcon} />
                     </span>
