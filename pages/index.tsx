@@ -44,7 +44,7 @@ export default function HomePage() {
 
       <LayoutRedesign>
         <HeroRedesign />
-      <ServicesRedesign />
+        <ServicesRedesign />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
