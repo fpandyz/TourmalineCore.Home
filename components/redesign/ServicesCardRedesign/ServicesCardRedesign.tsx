@@ -22,7 +22,7 @@ export function ServicesCardRedesign(
   return (
     <div
       className={clsx(
-        `services-card-redesign services-card-redesign--${theme}`,
+        `check services-card-redesign services-card-redesign--${theme}`,
       )}
       draggable="false"
     >
