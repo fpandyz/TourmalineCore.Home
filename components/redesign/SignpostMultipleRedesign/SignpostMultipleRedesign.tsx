@@ -33,7 +33,7 @@ export function SignpostMultipleRedesign({
         }) => (
           <li
             key={title}
-            className="signpost-multiple-redesign__card col-tablet-3"
+            className="col-tablet-3"
           >
             <SignpostRedesign
               title={title}
