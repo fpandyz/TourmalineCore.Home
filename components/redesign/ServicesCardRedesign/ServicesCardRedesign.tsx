@@ -2,23 +2,21 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import IconArrow from '../../../icons/icon-arrow-redesign.svg';
 
-export function ServicesCardRedesign(
-  {
-    title,
-    skillsList,
-    link,
-    linkText,
-    theme,
-    imageUrl,
-  }: {
-    title?: string;
-    skillsList?: string[];
-    link?: string,
-    linkText?: string,
-    theme: 'white' | 'grey' | 'black' | 'blue',
-    imageUrl?: string
-  },
-) {
+export function ServicesCardRedesign({
+  title,
+  skillsList,
+  link,
+  linkText,
+  theme,
+  imageUrl,
+}: {
+  title?: string;
+  skillsList?: string[];
+  link?: string,
+  linkText?: string,
+  theme: 'white' | 'grey' | 'black' | 'blue',
+  imageUrl?: string
+}) {
   return (
     <div className={clsx(
       `services-card-redesign services-card-redesign--${theme.toLowerCase()}`,
