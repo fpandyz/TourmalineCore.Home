@@ -14,7 +14,7 @@
       "link": "/articles/dotnet-unit-testing"
     },
     {
-      "imageUrl": "/images/article-3.png",
+      "imageUrl": "/images/article-3-en.png",
       "title": "Cool features in Docker Compose – profiles and templates",
       "subtitle": "July 25, 2024",
       "link": "/articles/docker-compose-profiles-templates"
@@ -23,7 +23,7 @@
       "imageUrl": "/images/article-4.png",
       "title": "How to Estimate Tasks and Make Peace with Deadlines",
       "subtitle": "June 22, 2023",
-      "link": "/articles/https://www.tourmalinecore.com/articles/design-and-management-task-evaluation"
+      "link": "/articles/design-and-management-task-evaluation"
     }
   ]
 }

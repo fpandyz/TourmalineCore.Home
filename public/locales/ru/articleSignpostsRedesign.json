@@ -5,19 +5,19 @@
       "imageUrl": "/images/article-1.png",
       "title": "To Docker or not to Docker? Вот в чём JupyterLab",
       "subtitle": "21 мая 2025",
-      "link": "/articles/environment-jupyterlab-jupyter-poetry-docker-mlops-ml-infrastructure"
+      "link": "/ru/articles/environment-jupyterlab-jupyter-poetry-docker-mlops-ml-infrastructure"
     },
     {
       "imageUrl": "/images/article-2.png",
       "title": "Как сделать Unit-тестирование в .NET\u00A0проще и интереснее?",
       "subtitle": "20 ноября 2024",
-      "link": "/articles/dotnet-unit-testing"
+      "link": "/ru/articles/dotnet-unit-testing"
     },
     {
       "imageUrl": "/images/article-3.png",
       "title": "Клёвые фичи в Docker Compose — профили и шаблоны",
       "subtitle": "25 июля 2024",
-      "link": "/articles/docker-compose-profiles-templates"
+      "link": "/ru/articles/docker-compose-profiles-templates"
     },
     {
       "imageUrl": "/images/article-4.png",
