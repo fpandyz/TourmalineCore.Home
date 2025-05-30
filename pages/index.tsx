@@ -14,6 +14,7 @@ import { ServicesRedesign } from '../components/redesign/ServicesRedesign/Servic
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
+import { ImageRedesign } from '../components/redesign/ImageRedesign/ImageRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -52,6 +53,7 @@ export default function HomePage() {
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
+        <ImageRedesign />
         <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
       </LayoutRedesign>
 
@@ -139,6 +141,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'projectsRedesignFifthSection',
       'conferenceSignpostsRedesign',
       'articleSignpostsRedesign',
+      'imageRedesign',
 
       // 'articles',
       // 'heroBlockHomePage',
