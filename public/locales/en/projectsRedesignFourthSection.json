@@ -1,0 +1,34 @@
+{
+  "projectsCardsWithImage": [
+    {
+      "imageUrl": "/images/best-by-project.png",
+      "title": "Best By",
+      "description": "Service for\u00A0tracking product expiration dates",
+      "link": "",
+      "size": "M",
+      "isNda": false
+    },
+    {
+      "imageUrl": "/images/senmotion-project.png",
+      "title": "Senmotion",
+      "description": "Connecting 'smart' insoles to\u00A0cloud infrastructure to\u00A0store, process and\u00A0analyze patients’ data",
+      "size": "M",
+      "isNda": false
+    },
+    {
+      "imageUrl": "/images/smart-cleaning-project.png",
+      "title": "Smart video monitoring system",
+      "description": "Video monitoring system for\u00A0self-service car washes that\u00A0tracks movement and\u00A0classifies events",
+      "size": "M",
+      "isNda": false
+    },
+    {
+      "imageUrl": "/images/tradehack-project.jpg",
+      "title": "Tradehack",
+      "description": "Service for\u00A0collecting analytics on\u00A0products and\u00A0product categories on\u00A0Wildberries marketplace",
+      "size": "M",
+      "isNda": false
+    }
+  ]
+}
+

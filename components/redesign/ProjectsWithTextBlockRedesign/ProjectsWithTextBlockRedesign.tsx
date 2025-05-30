@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
 
-export function ProjectWithTextBlockRedesign({
+export function ProjectsWithTextBlockRedesign({
   translationKey,
 }:{
   translationKey: string;
@@ -26,6 +26,7 @@ export function ProjectWithTextBlockRedesign({
             imageUrl,
             size,
             link,
+            isNda,
           }) => (
             <ProjectsCardWithImageRedesign
               key={title}
@@ -35,6 +36,7 @@ export function ProjectWithTextBlockRedesign({
               imageUrl={imageUrl}
               size={size}
               link={link}
+              isNda={isNda}
             />
           ))}
 

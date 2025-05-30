@@ -1,6 +1,8 @@
 import { useTranslation } from 'next-i18next';
 import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 
+const GRID_COLUMNS = 12;
+
 export function ProjectsRedesign({
   translationKey,
 }:{
@@ -10,7 +12,7 @@ export function ProjectsRedesign({
 
   const projectCardsWithImage: ProjectCardWithImage[] = t('projectsCardsWithImage', { returnObjects: true });
 
-  const colCount = projectCardsWithImage.length + 1;
+  const columnsCount = GRID_COLUMNS / projectCardsWithImage.length;
 
   return (
     <section className="projects-redesign">
@@ -22,15 +24,17 @@ export function ProjectsRedesign({
             imageUrl,
             size,
             link,
+            isNda,
           }) => (
             <ProjectsCardWithImageRedesign
               key={title}
-              className={`projects-redesign__card col-desktop-${colCount}`}
+              className={`projects-redesign__card col-desktop-${columnsCount}`}
               title={title}
               description={description}
               imageUrl={imageUrl}
               size={size}
               link={link}
+              isNda={isNda}
             />
           ))}
         </ul>
