@@ -1,13 +1,5 @@
 .signpost-redesign {
-  $this: &;
-
-  &__title {
-    @include body-m;
-  }
-
   &__subtitle {
-    @include body-m;
-
     color: $color-grey-redesign;
   }
 
@@ -20,5 +12,10 @@
     position: relative;
     margin-bottom: 16px;
     height: 242px;
+  }
+
+  &__title,
+  &__subtitle {
+    @include body-m;
   }
 }

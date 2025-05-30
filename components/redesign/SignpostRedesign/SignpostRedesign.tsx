@@ -32,7 +32,6 @@ export function SignpostRedesign({
           <Image
             src={imageUrl}
             layout="fill"
-            priority
             alt=""
           />
         </div>
