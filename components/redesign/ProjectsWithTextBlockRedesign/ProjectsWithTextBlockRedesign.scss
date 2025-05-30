@@ -40,11 +40,10 @@
 
     a {
       color: $color-black;
-      transition: color 0.6s ease-out;
 
       &:hover,
       &:focus-visible {
-        color: $color-pink-redesign;
+        text-decoration: none;
       }
     }
   }
