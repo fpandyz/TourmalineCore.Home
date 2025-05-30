@@ -6,7 +6,8 @@ export type ProjectCardWithImage = {
   description: string;
   imageUrl: string;
   link?: string;
-  size: 'L' | 'M' | 'S'
+  isNda?: boolean;
+  size: 'L' | 'M' | 'S' | 'XS'
 };
 
 export function ProjectsCardWithImageRedesign({
@@ -15,6 +16,7 @@ export function ProjectsCardWithImageRedesign({
   imageUrl,
   size,
   link,
+  isNda,
   className,
 }: ProjectCardWithImage & {
   className?: string;
@@ -39,6 +41,7 @@ export function ProjectsCardWithImageRedesign({
     return (
       <>
         <div className={`project-card-with-image-redesign__images project-card-with-image-redesign__images--${size.toUpperCase()}`}>
+          {isNda && <span className="project-card-with-image-redesign__nda">NDA</span>}
           <Image
             src={imageUrl}
             layout="fill"

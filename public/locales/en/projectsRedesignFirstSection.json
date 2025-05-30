@@ -5,9 +5,10 @@
       "imageUrl": "/images/tourmanique-project.png",
       "title": "Tourmanique",
       "description": "Service for\u00A0determining the\u00A0uniqueness of\u00A0photos",
-      "size": "L"
+      "size": "L",
+      "isNda": false
     }
   ],
   "textBlockTitle": "We make projects for\u00A0B2B, B2C, municipal and\u00A0charitable organizations, tech companies and\u00A0innovative startups",
-  "textBlockMarkdown": "<span>Fairaction, Senmotion, Industry Transformation Solutions, Daoism Systems</span>\n<span className='nda'>+ NDA clients</span>"
+  "textBlockMarkdown": "<span>Fairaction, Senmotion, Industry Transformation Solutions, Daoism Systems</span>\n<span className='blue-deep-color nda'>+ NDA clients</span>"
 }
