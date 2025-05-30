@@ -22,14 +22,12 @@ export default function ServicesTechnologyCard(
     <Link
       href={link}
       scroll={!!link}
-      draggable="false"
     >
       <a
         className={clsx(`services-technology-card services-technology-card--${slicePathname}`, {
           'services-technology-card--hover': link,
           'services-technology-card--filled': isFilled,
         })}
-        draggable="false"
       >
         <div className="services-technology-card__inner">
           <h3
