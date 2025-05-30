@@ -94,7 +94,7 @@
   }
 
   &:hover {
-    #{$this}__link::after {
+    #{$this}__link-text::after {
       transform: scaleX(1);
       transform-origin: bottom left;
     }
