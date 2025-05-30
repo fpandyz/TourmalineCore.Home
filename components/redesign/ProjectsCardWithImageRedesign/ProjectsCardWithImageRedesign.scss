@@ -68,7 +68,7 @@
     }
 
     &:hover img,
-    &:focus img {
+    &:focus-visible img {
       transform: scale(1.05);
     }
   }
