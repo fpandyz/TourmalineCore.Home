@@ -10,6 +10,7 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
+import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 
@@ -43,6 +44,7 @@ export default function HomePage() {
 
       <LayoutRedesign>
         <HeroRedesign />
+        <ServicesRedesign />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
@@ -52,8 +54,8 @@ export default function HomePage() {
 
       {/* <LayoutHomePage
         navigationLinks={navigationLinks}
-      > */}
-      {/* <Services
+      >
+        <Services
           id={NavigationLinks.services}
           data-auto-padding={NavigationLinks.services}
           animationName="fade-up"
@@ -126,6 +128,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'cookie',
       'footer',
       'heroRedesign',
+      'servicesRedesign',
       'projectsRedesignFirstSection',
       'projectsRedesignSecondarySection',
       'projectsRedesignThirdSection',
