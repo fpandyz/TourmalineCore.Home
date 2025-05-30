@@ -13,6 +13,7 @@ import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
+import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -50,6 +51,8 @@ export default function HomePage() {
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
+        <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
+        <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
@@ -134,6 +137,8 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'projectsRedesignThirdSection',
       'projectsRedesignFourthSection',
       'projectsRedesignFifthSection',
+      'conferenceSignpostsRedesign',
+      'articleSignpostsRedesign',
 
       // 'articles',
       // 'heroBlockHomePage',

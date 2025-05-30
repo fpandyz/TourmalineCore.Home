@@ -1,0 +1,24 @@
+.signpost-redesign {
+  $this: &;
+
+  &__title {
+    @include body-m;
+  }
+
+  &__subtitle {
+    @include body-m;
+
+    color: $color-grey-redesign;
+  }
+
+  &__link-wrapper {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__image-container {
+    position: relative;
+    margin-bottom: 16px;
+    height: 242px;
+  }
+}
