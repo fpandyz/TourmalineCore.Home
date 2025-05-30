@@ -20,9 +20,8 @@ export function ServicesCardRedesign(
   },
 ) {
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     <div className={clsx(
-      `services-card-redesign services-card-redesign--${theme}`,
+      `services-card-redesign services-card-redesign--${theme.toLowerCase()}`,
     )}
     >
       {link ? (

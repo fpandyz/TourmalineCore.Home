@@ -6,15 +6,11 @@
   background-color: $color-white;
 
   &__title {
-    @include h2;
+    @include h3;
 
     @include desktop {
       margin-bottom: 64px;
       max-width: 904px;
-      font-weight: 400;
-      font-weight: 400;
-      font-size: 34px;
-      line-height: 120%;
     }
 
     @include desktop-xl {

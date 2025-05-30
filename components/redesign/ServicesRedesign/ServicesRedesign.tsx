@@ -91,7 +91,7 @@ export function ServicesRedesign() {
                     key={teamName}
                   >
                     <span className="services-redesign__icon-wrapper">
-                      <img alt="" src={teamIcon} />
+                      <img src={teamIcon} alt="" />
                     </span>
                     {
                       teamLink
