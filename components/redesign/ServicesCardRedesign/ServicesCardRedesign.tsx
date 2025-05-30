@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import IconArrow from '../../../icons/icon-arrow-redesign.svg';
 
-export default function ServicesCardRedesign(
+export function ServicesCardRedesign(
   {
     title,
     skillsList,
@@ -10,8 +10,7 @@ export default function ServicesCardRedesign(
     linkText,
     theme,
     imageUrl,
-  }:
-  {
+  }: {
     title?: string;
     skillsList?: string[];
     link?: string,
@@ -43,7 +42,7 @@ export default function ServicesCardRedesign(
             {skillsList.map((item) => (
               <li
                 className="services-card-redesign__item"
-                key=""
+                key={item}
               >
                 {item}
               </li>

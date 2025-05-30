@@ -9,8 +9,7 @@ export default function ServicesTechnologyCard(
     description,
     link,
     isFilled,
-  }:
-  {
+  }: {
     title: string;
     description: string;
     link: string,

@@ -11,7 +11,7 @@ import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 import { ProjectWithTextBlockRedesign } from '../components/redesign/ProjectWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
-import ServicesRedesign from '../components/redesign/ServicesRedesign/ServicesRedesign';
+import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');

@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import ServicesCardRedesign from '../ServicesCardRedesign/ServicesCardRedesign';
+import { ServicesCardRedesign } from '../ServicesCardRedesign/ServicesCardRedesign';
 
 type NewServicesList = {
   title?: string;
@@ -27,7 +27,7 @@ type Teams = {
   }[]
 };
 
-function ServicesRedesign() {
+export function ServicesRedesign() {
   const { t } = useTranslation('servicesRedesign');
 
   const newServicesList: NewServicesList = t('list', { returnObjects: true });
@@ -45,7 +45,12 @@ function ServicesRedesign() {
           </h2>
         </li>
         {newServicesList.map(({
-          title, skillsList, link, linkText, theme, imageUrl,
+          title,
+          skillsList,
+          link,
+          linkText,
+          theme,
+          imageUrl,
         }) => (
           <li
             key={title}
@@ -76,7 +81,11 @@ function ServicesRedesign() {
             </p>
             <ul className="services-redesign__teams-list">
               {
-                teams.teamsList.map(({ teamIcon, teamLink, teamName }) => (
+                teams.teamsList.map(({
+                  teamIcon,
+                  teamLink,
+                  teamName,
+                }) => (
                   <li
                     className="services-redesign__team"
                     key={teamName}
@@ -116,5 +125,3 @@ function ServicesRedesign() {
     </section>
   );
 }
-
-export default ServicesRedesign;
