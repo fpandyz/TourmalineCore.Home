@@ -7,6 +7,7 @@ export type CardWithRepositories = {
     name: string;
     description?: string;
     language: string;
+    link: string;
   }[]
   markdownText?: string;
 };
@@ -30,11 +31,32 @@ export function CardWithRepositoriesRedesign({
           name,
           description,
           language,
+          link,
         }) => (
-          <li className="card-with-repositories-redesign__item" key={name}>
-            <h3 className="card-with-repositories-redesign__name">{name}</h3>
-            {description && <p className="card-with-repositories-redesign__description">{description}</p>}
-            <span className="card-with-repositories-redesign__language">{language}</span>
+          <li
+            className="card-with-repositories-redesign__item"
+            key={name}
+          >
+            <a
+              className="card-with-repositories-redesign__link"
+              href={link}
+            >
+              <div className="card-with-repositories-redesign__item-inner">
+                <h3 className={clsx('card-with-repositories-redesign__name', {
+                  'card-with-repositories-redesign__name--no-description': !description,
+                })}
+                >
+                  {name}
+                </h3>
+                {description && <p className="card-with-repositories-redesign__description">{description}</p>}
+                <span
+                  className={`card-with-repositories-redesign__language card-with-repositories-redesign__language--${language.toLowerCase()}`}
+                >
+                  {language}
+                </span>
+              </div>
+            </a>
+
           </li>
         ))}
       </ul>

@@ -53,7 +53,6 @@ export default function HomePage() {
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
-
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />

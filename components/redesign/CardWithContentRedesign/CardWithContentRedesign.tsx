@@ -17,7 +17,14 @@ export function CardWithContentRedesign({
     <div className={clsx('card-with-content-redesign', className)}>
       {title && <h3 className="card-with-content-redesign__title">{title}</h3>}
       {children}
-      {markdownText && <MarkdownText className="card-with-content-redesign__markdown">{markdownText}</MarkdownText>}
+      {markdownText && (
+        <MarkdownText
+          className="card-with-content-redesign__markdown"
+          isTargetBlank
+        >
+          {markdownText}
+        </MarkdownText>
+      )}
     </div>
   );
 }

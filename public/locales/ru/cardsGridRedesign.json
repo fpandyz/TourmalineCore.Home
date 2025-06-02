@@ -3,5 +3,29 @@
     "title": "Преподаём\n в университете",
     "imageUrl": "/images/teach-at-the-university.png",
     "markdownText": "Рассказываем на\u00A0парах об\u00A0основах проектирования веб-сервисов и\u00A0экстремальных подходах к\u00A0разработке"
+  },
+  "cardWithRepositories": {
+     "title": "По возможности\n опенсорсим",
+     "repositories": [
+      {
+        "name": "TourmalineCore.AccountsApi.Template",
+        "description": "Libraries that will help you easily connect the JWT-based authentication to your project.",
+        "language": "C#",
+        "link": ""
+      },
+      {
+        "name": "TourmalineCore.AccountsApi.Template",
+        "description": "",
+        "language": "C#",
+        "link": ""
+      },
+      {
+        "name": "TourmalineCore.AccountsApi.Template",
+        "description": "",
+        "language": "TypeScript",
+        "link": ""
+      }
+    ],
+    "markdownText": "Нам важно обмениваться опытом, улучшать качество кода и развивать проекты, поэтому делимся кодом <a href='https://github.com/TourmalineCore'>на Github</a>"
   }
 }

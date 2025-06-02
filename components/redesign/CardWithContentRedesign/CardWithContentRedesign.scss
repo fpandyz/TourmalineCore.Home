@@ -13,5 +13,14 @@
     @include body-m;
 
     margin-top: 20px;
+
+    a {
+      text-decoration: none;
+      color: $color-pink-redesign;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
