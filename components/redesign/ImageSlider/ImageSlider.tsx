@@ -1,10 +1,11 @@
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import { useEffect, useState } from 'react';
 
 export function ImageSlider({
   imageUrls,
   interval,
-}: {
+  ...imageProps
+}: Omit<ImageProps, 'src'> & {
   imageUrls: string[]
   interval: number;
 }) {
@@ -23,9 +24,7 @@ export function ImageSlider({
   return (
     <Image
       src={imageUrls[currentIndex]}
-      layout="fill"
-      priority
-      alt=""
+      {...imageProps}
     />
   );
 }
