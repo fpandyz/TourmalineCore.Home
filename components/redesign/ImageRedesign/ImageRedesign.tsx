@@ -7,7 +7,7 @@ export function ImageRedesign() {
   return (
     <div className="image-redesign container-redesign">
       <div className="image-redesign__container">
-       <Image
+        <Image
           src={t('imageUrl')}
           layout="fill"
           priority
@@ -15,6 +15,5 @@ export function ImageRedesign() {
         />
       </div>
     </div>
-
   );
 }
