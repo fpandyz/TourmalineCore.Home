@@ -1,12 +1,23 @@
 .image-redesign {
-  position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  aspect-ratio: 667/291;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: $color-black;
+
+  &__container {
+    position: relative;
+    aspect-ratio: 351/506;
+
+    @include tablet {
+      aspect-ratio: 667/291;
+    }
+  }
 
   img {
-    position: absolute;
-    width: 100%;
     object-fit: cover;
+  }
+
+  @include desktop {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
