@@ -10,10 +10,10 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
-import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
-import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
+import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
+import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
+import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
 
