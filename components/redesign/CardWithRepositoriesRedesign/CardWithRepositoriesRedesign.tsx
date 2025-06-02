@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { CardWithContent, CardWithContentRedesign } from '../CardWithContentRedesign/CardWithContentRedesign';
+import useDeviceSize from '../../../common/hooks/useDeviceSize';
 
 export type CardWithRepositories = CardWithContent & {
   repositories: {
@@ -18,6 +19,11 @@ export function CardWithRepositoriesRedesign({
 }: CardWithRepositories & {
   className: string;
 }) {
+  const { width } = useDeviceSize();
+  const isDesktop = width >= 1366;
+
+  const repositoriesList = isDesktop ? repositories : repositories.slice(0, 1);
+
   return (
     <CardWithContentRedesign
       title={title}
@@ -25,7 +31,7 @@ export function CardWithRepositoriesRedesign({
       className={clsx('card-with-repositories-redesign', className)}
     >
       <ul className="card-with-repositories-redesign__list">
-        {repositories.map(({
+        {repositoriesList.map(({
           name,
           description,
           language,

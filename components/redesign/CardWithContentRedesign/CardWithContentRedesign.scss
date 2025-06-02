@@ -2,6 +2,7 @@
   &__title {
     @include h5;
 
+    margin-bottom: 32px;
     white-space: pre-line;
 
     @include desktop {
@@ -12,7 +13,7 @@
   &__markdown {
     @include body-m;
 
-    margin-top: 20px;
+    margin-top: 16px;
 
     a {
       text-decoration: none;
@@ -21,6 +22,10 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    @include desktop {
+      margin-top: 20px;
     }
   }
 }

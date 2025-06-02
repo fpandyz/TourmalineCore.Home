@@ -1,6 +1,10 @@
 .card-with-image-redesign {
   &__image {
     position: relative;
-    height: 290px;
+    height: 242px;
+
+    @include desktop {
+      height: 290px;
+    }
   }
 }

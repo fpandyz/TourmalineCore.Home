@@ -14,7 +14,7 @@ export function CardsGridRedesign() {
     <section className="cards-grid-redesign">
       <div className="container-redesign cards-grid-redesign__wrapper">
         <ul className="cards-grid-redesign__cards grid">
-          <li className="cards-grid-redesign__card-item col-desktop-4">
+          <li className="cards-grid-redesign__card-item col-desktop-4 col-mobile-12">
             <CardWithImageRedesign
               className="cards-grid-redesign__card-with-image"
               title={cardWithImage.title}
@@ -22,7 +22,7 @@ export function CardsGridRedesign() {
               imageUrl={cardWithImage.imageUrl}
             />
           </li>
-          <li className="cards-grid-redesign__card-item col-desktop-4">
+          <li className="cards-grid-redesign__card-item col-desktop-4 col-mobile-12">
             <CardWithRepositoriesRedesign
               className="cards-grid-redesign__card-with-repositories"
               title={cardWithRepositories.title}
@@ -30,7 +30,7 @@ export function CardsGridRedesign() {
               repositories={cardWithRepositories.repositories}
             />
           </li>
-          <li className="cards-grid-redesign__card-item col-desktop-4">
+          <li className="cards-grid-redesign__card-item col-desktop-4 col-mobile-12">
             <CardWithTextAndDateRedesign
               className="cards-grid-redesign__card-with-text-and-date"
               title={cardWithTextAndDate.title}

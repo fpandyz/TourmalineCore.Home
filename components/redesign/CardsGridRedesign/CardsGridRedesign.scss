@@ -1,14 +1,16 @@
 .cards-grid-redesign {
-  $grid-gap: 32px;
+  $grid-mobile-gap: 80px;
+  $grid-desktop-gap: 32px;
 
+  padding-top: 80px;
+  padding-bottom: 80px;
   background-color: $color-black;
 
   &__cards {
-    gap: $grid-gap;
-  }
+    gap: $grid-mobile-gap;
 
-  @include desktop {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    @include desktop {
+      gap: 32px;
+    }
   }
 }

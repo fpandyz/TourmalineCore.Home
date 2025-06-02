@@ -9,12 +9,12 @@ import PageHead from '../components/PageHead/PageHead';
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
-import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
-import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
-import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 import { CardsGridRedesign } from '../components/redesign/CardsGridRedesign/CardsGridRedesign';
 import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
+import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
+import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
+import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
+import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 
 export default function HomePage() {
