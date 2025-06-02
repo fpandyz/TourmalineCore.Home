@@ -9,7 +9,7 @@
      "repositories": [
       {
         "name": "TourmalineCore.AccountsApi.Template",
-        "description": "Libraries that will help you easily connect the JWT-based authentication to your project.",
+        "description": "Libraries that will help you easily connect the\u00A0JWT-based authentication to\u00A0your project.",
         "language": "C#",
         "link": ""
       },
@@ -26,6 +26,11 @@
         "link": ""
       }
     ],
-    "markdownText": "Нам важно обмениваться опытом, улучшать качество кода и развивать проекты, поэтому делимся кодом <a href='https://github.com/TourmalineCore'>на Github</a>"
+    "markdownText": "Нам важно обмениваться опытом, улучшать качество кода и\u00A0развивать проекты, поэтому делимся кодом <a href='https://github.com/TourmalineCore'>на Github</a>"
+  },
+  "cardWithTextAndDate": {
+    "title": "Публикуем научные\n исследования",
+    "text": "«Метод определения уровня схожести изображений\u00A0по цветовой составляющей\u00A0на основе корреляционного анализа и\u00A0квантования цветового пространства»",
+    "date": "2023-06-03"
   }
 }

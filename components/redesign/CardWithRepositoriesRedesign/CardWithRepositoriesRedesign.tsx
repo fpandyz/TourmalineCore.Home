@@ -1,15 +1,13 @@
 import clsx from 'clsx';
-import { CardWithContentRedesign } from '../CardWithContentRedesign/CardWithContentRedesign';
+import { CardWithContent, CardWithContentRedesign } from '../CardWithContentRedesign/CardWithContentRedesign';
 
-export type CardWithRepositories = {
-  title?: string;
+export type CardWithRepositories = CardWithContent & {
   repositories: {
     name: string;
     description?: string;
     language: string;
     link: string;
   }[]
-  markdownText?: string;
 };
 
 export function CardWithRepositoriesRedesign({
