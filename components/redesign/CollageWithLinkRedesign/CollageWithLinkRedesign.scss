@@ -1,4 +1,4 @@
-$max-wrapper-width: 1278px;
+$max-wrapper-width: 1366px;
 
 @function get-percent-by-container-width($width, $container-width: $max-wrapper-width) {
   @return calc(($width / $container-width) * 100%);
@@ -15,11 +15,13 @@ $max-wrapper-width: 1278px;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    padding: 437px 0;
+    padding: 80px 0;
+    height: 100%;
     max-width: $max-wrapper-width;
   }
 
   &__accent-link {
+    position: absolute;
     max-width: 252px;
     text-decoration: none;
 
@@ -33,17 +35,28 @@ $max-wrapper-width: 1278px;
         text-decoration-color: $color-white;
       }
     }
+
+    @include desktop {
+      left: 27px;
+      top: 80px;
+    }
   }
 
   &__link-box {
     @include h1;
 
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width: 252px;
-    height: 192px;
+    margin-bottom: 4px;
+    border-right: 8px solid $color-black;
+    border-bottom: 8px solid  $color-black;
+    border-radius: 2px;
+    width: 260px;
+    height: 200px;
     color: $color-black;
     background-color: $color-pink-redesign;
     transition: background-color 0.3s ease-in-out;
@@ -69,96 +82,81 @@ $max-wrapper-width: 1278px;
       object-fit: cover;
     }
 
-    &--9 {
-      left: get-percent-by-container-width(808px);
-
-      @include desktop {
-        bottom: 84px;
-      }
-    }
-
-    &--4 {
-      left: get-percent-by-container-width(1004px);
-
-      @include desktop {
-        bottom: 616px;
-        width: 188px;
-        height: 167px;
-      }
-    }
-
-    &--5 {
-      left: get-percent-by-container-width(1035px);
-
-      @include desktop {
-        bottom: 302px;
-      }
-    }
-
-    &--7 {
-      left: get-percent-by-container-width(584px);
-
-      @include desktop {
-        bottom: 160px;
-      }
-    }
-
-    &--8 {
-      left: get-percent-by-container-width(298px);
-
-      @include desktop {
-        bottom: 103px;
-      }
-    }
-
-    &--6 {
-      left: get-percent-by-container-width(1035px);
-
-      @include desktop {
-        bottom: 100px;
-        width: 134px;
-        height: 135px;
-      }
-    }
-
     &--1 {
-      left: get-percent-by-container-width(-4px);
-
       @include desktop {
-        bottom: 447px;
-        width: 187px;
-        height: 188px;
+        left: 0;
+        bottom: 234px;
+        width: 202px;
+        height: 202px;
       }
     }
 
     &--2 {
-      left: get-percent-by-container-width(341px);
-
       @include desktop {
-        bottom: 629px;
-        width: 162px;
-        height: 162px;
+        left: 254px;
+        top: 152px;
+        width: 251px;
+        height: 249px;
       }
     }
 
     &--3 {
-      left: get-percent-by-container-width(653px);
-
       @include desktop {
-        bottom: 572px;
-        width: 180px;
-        height: 181px;
+        left: 438px;
+        top: 262px;
+        width: 424px;
+        height: 421px;
       }
     }
 
-    &--7,
-    &--5,
-    &--8,
-    &--9 {
+    &--4 {
       @include desktop {
-        width: 178px;
-        height: 179px;
+        right: 256px;
+        top: 87px;
+        width: 295px;
+        height: 296px;
       }
     }
+
+    &--5 {
+      @include desktop {
+        right: 80px;
+        top: 290px;
+        width: 209px;
+        height: 209px;
+      }
+    }
+
+    &--6 {
+      @include desktop {
+        right: 0;
+        bottom: 100px;
+        bottom: 140px;
+        width: 193px;
+        height: 186px;
+      }
+    }
+
+    &--7 {
+      @include desktop {
+        right: 334px;
+        bottom: 100px;
+        width: 202px;
+        height: 202px;
+      }
+    }
+
+    &--8 {
+      @include desktop {
+        left: 260px;
+        bottom: 80px;
+        width: 246px;
+        height: 220px;
+      }
+    }
+  }
+
+  @include desktop {
+    height: 874px;
   }
 }
