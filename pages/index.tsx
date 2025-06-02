@@ -9,13 +9,10 @@ import PageHead from '../components/PageHead/PageHead';
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
-import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
-import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
-import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
 import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
+import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -46,14 +43,15 @@ export default function HomePage() {
       />
 
       <LayoutRedesign>
-        <HeroRedesign />
-        <ServicesRedesign />
-        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
+        {/* <HeroRedesign /> */}
+        {/* <ServicesRedesign /> */}
+        {/* <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
-        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
+        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> */}
         <CollageWithTitleRedesign />
+        <CollageWithLinkRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />
         <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
@@ -142,6 +140,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'projectsRedesignFourthSection',
       'projectsRedesignFifthSection',
       'collageWithTitleRedesign',
+      'collageWithLinkRedesign',
       'conferenceSignpostsRedesign',
       'articleSignpostsRedesign',
       'singleImageRedesign',

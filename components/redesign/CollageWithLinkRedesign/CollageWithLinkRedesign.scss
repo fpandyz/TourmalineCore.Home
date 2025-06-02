@@ -1,0 +1,164 @@
+$max-wrapper-width: 1278px;
+
+@function get-percent-by-container-width($width, $container-width: $max-wrapper-width) {
+  @return calc(($width / $container-width) * 100%);
+}
+
+.collage-with-link-redesign {
+  $this: &;
+
+  background-color: $color-black;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 437px 0;
+    max-width: $max-wrapper-width;
+  }
+
+  &__accent-link {
+    max-width: 252px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      #{$this}__link-box {
+        background-color: $color-blue-redesign;
+      }
+
+      #{$this}__cta {
+        text-decoration-color: $color-white;
+      }
+    }
+  }
+
+  &__link-box {
+    @include h1;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 252px;
+    height: 192px;
+    color: $color-black;
+    background-color: $color-pink-redesign;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &__cta {
+    @include h7;
+
+    text-decoration: underline;
+    text-decoration-color: $color-black;
+    color: $color-white;
+    transition: text-decoration-color 0.3s ease-in-out;
+  }
+
+  &__image {
+    position: absolute;
+
+    img {
+      display: block;
+      border-radius: 2px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--9 {
+      left: get-percent-by-container-width(808px);
+
+      @include desktop {
+        bottom: 84px;
+      }
+    }
+
+    &--4 {
+      left: get-percent-by-container-width(1004px);
+
+      @include desktop {
+        bottom: 616px;
+        width: 188px;
+        height: 167px;
+      }
+    }
+
+    &--5 {
+      left: get-percent-by-container-width(1035px);
+
+      @include desktop {
+        bottom: 302px;
+      }
+    }
+
+    &--7 {
+      left: get-percent-by-container-width(584px);
+
+      @include desktop {
+        bottom: 160px;
+      }
+    }
+
+    &--8 {
+      left: get-percent-by-container-width(298px);
+
+      @include desktop {
+        bottom: 103px;
+      }
+    }
+
+    &--6 {
+      left: get-percent-by-container-width(1035px);
+
+      @include desktop {
+        bottom: 100px;
+        width: 134px;
+        height: 135px;
+      }
+    }
+
+    &--1 {
+      left: get-percent-by-container-width(-4px);
+
+      @include desktop {
+        bottom: 447px;
+        width: 187px;
+        height: 188px;
+      }
+    }
+
+    &--2 {
+      left: get-percent-by-container-width(341px);
+
+      @include desktop {
+        bottom: 629px;
+        width: 162px;
+        height: 162px;
+      }
+    }
+
+    &--3 {
+      left: get-percent-by-container-width(653px);
+
+      @include desktop {
+        bottom: 572px;
+        width: 180px;
+        height: 181px;
+      }
+    }
+
+    &--7,
+    &--5,
+    &--8,
+    &--9 {
+      @include desktop {
+        width: 178px;
+        height: 179px;
+      }
+    }
+  }
+}
