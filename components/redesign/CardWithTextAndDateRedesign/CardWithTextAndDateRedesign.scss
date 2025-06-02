@@ -1,0 +1,13 @@
+.card-with-text-and-date-redesign {
+  &__text {
+    @include caption;
+
+    margin-bottom: 4px;
+  }
+
+  &__date {
+    @include body-m;
+
+    color: $color-grey-redesign;
+  }
+}

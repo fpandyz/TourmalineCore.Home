@@ -11,6 +11,7 @@ import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
+import { CardsGridRedesign } from '../components/redesign/CardsGridRedesign/CardsGridRedesign';
 import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
@@ -57,6 +58,7 @@ export default function HomePage() {
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />
         <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
+        <CardsGridRedesign />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
@@ -141,6 +143,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'projectsRedesignThirdSection',
       'projectsRedesignFourthSection',
       'projectsRedesignFifthSection',
+      'cardsGridRedesign',
       'collageWithTitleRedesign',
       'conferenceSignpostsRedesign',
       'articleSignpostsRedesign',
