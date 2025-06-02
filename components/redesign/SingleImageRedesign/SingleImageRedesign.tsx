@@ -1,16 +1,15 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
-export function ImageRedesign() {
-  const { t } = useTranslation('imageRedesign');
+export function SingleImageRedesign() {
+  const { t } = useTranslation('singleImageRedesign');
 
   return (
-    <div className="image-redesign container-redesign">
-      <div className="image-redesign__container">
+    <div className="single-image-redesign container-redesign">
+      <div className="single-image-redesign__container">
         <Image
           src={t('imageUrl')}
           layout="fill"
-          priority
           alt=""
         />
       </div>
