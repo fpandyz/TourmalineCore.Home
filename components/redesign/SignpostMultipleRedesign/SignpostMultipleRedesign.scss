@@ -1,0 +1,14 @@
+.signpost-multiple-redesign {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: $color-white;
+  background-color: $color-black;
+
+  &__title {
+    @include h5;
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+}

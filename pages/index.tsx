@@ -10,9 +10,11 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
+import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 import { TextSurroundedByImagesRedesign } from '../components/redesign/TextSurroundedByImagesRedesign/TextSurroundedByImagesRedesign';
+import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -44,18 +46,21 @@ export default function HomePage() {
 
       <LayoutRedesign>
         <HeroRedesign />
+        <ServicesRedesign />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
         <TextSurroundedByImagesRedesign />
+        <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
+        <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
         navigationLinks={navigationLinks}
-      > */}
-      {/* <Services
+      >
+        <Services
           id={NavigationLinks.services}
           data-auto-padding={NavigationLinks.services}
           animationName="fade-up"
@@ -128,12 +133,15 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'cookie',
       'footer',
       'heroRedesign',
+      'servicesRedesign',
       'projectsRedesignFirstSection',
       'projectsRedesignSecondarySection',
       'projectsRedesignThirdSection',
       'projectsRedesignFourthSection',
       'projectsRedesignFifthSection',
       'textSurroundedByImagesRedesign',
+      'conferenceSignpostsRedesign',
+      'articleSignpostsRedesign',
 
       // 'articles',
       // 'heroBlockHomePage',

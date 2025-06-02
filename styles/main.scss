@@ -3,8 +3,8 @@
 @import "variables";
 @import "globals";
 @import "typography";
-@import "fonts-mixin";
 @import "grid";
+@import "fonts-mixin";
 
 // components
 @import "../components/Layout/Layout";
@@ -80,7 +80,11 @@
 // redesign
 @import "../components/redesign/LayoutRedesign/LayoutRedesign";
 @import "../components/redesign/HeroRedesign/HeroRedesign";
+@import "../components/redesign/ServicesRedesign/ServicesRedesign";
+@import "../components/redesign/ServicesCardRedesign/ServicesCardRedesign";
 @import "../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign";
 @import "../components/redesign/ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign";
 @import "../components/redesign/ProjectsRedesign/ProjectsRedesign";
 @import "../components/redesign/TextSurroundedByImagesRedesign/TextSurroundedByImagesRedesign";
+@import "../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign";
+@import "../components/redesign/SignpostRedesign/SignpostRedesign";

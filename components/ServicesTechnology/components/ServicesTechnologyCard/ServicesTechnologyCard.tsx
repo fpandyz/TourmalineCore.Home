@@ -3,34 +3,29 @@ import clsx from 'clsx';
 import usePath from '../../../../common/hooks/usePath';
 import IconArrow from '../../../../icons/cases-arrow.svg';
 
-export default function ServicesTechnologyCard(
-  {
-    title,
-    description,
-    link,
-    isFilled,
-  }:
-  {
-    title: string;
-    description: string;
-    link: string,
-    isFilled?: boolean,
-  },
-) {
+export default function ServicesTechnologyCard({
+  title,
+  description,
+  link,
+  isFilled,
+}: {
+  title: string;
+  description: string;
+  link: string,
+  isFilled?: boolean,
+}) {
   const { slicePathname } = usePath();
 
   return (
     <Link
       href={link}
       scroll={!!link}
-      draggable="false"
     >
       <a
         className={clsx(`services-technology-card services-technology-card--${slicePathname}`, {
           'services-technology-card--hover': link,
           'services-technology-card--filled': isFilled,
         })}
-        draggable="false"
       >
         <div className="services-technology-card__inner">
           <h3
