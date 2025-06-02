@@ -4,7 +4,7 @@ $max-wrapper-width: 1278px;
   @return calc(($width / $container-width) * 100%);
 }
 
-.text-surrounded-by-images-redesign {
+.collage-with-title-redesign {
   background-color: $color-black;
 
   &__wrapper {
