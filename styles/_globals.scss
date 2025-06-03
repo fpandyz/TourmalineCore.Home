@@ -21,6 +21,7 @@ body {
   background-color: $color-purple-black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 
   .layout--zh {
     font-size: 18px;

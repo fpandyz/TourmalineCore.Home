@@ -44,10 +44,7 @@ export function ServicesCardRedesign({
       >
         {
           title && (
-            <h3
-              className={clsx('title-technology-type-2 services-card-redesign__title', {
-              })}
-            >
+            <h3 className="services-card-redesign__title">
               {title}
             </h3>
           )
