@@ -1,7 +1,6 @@
 import { useTranslation } from 'next-i18next';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { FooterNavigationList, FooterNavigationListRedesign } from './components/FooterNavigationListRedesign/FooterNavigationListRedesign';
 
 function FooterRedesign() {
@@ -26,10 +25,13 @@ function FooterRedesign() {
       <div className="container-redesign footerRedesign__inner">
         <div className="footerRedesign__info">
           <span className="footerRedesign__caption">{t('infoCaption')}</span>
-          <Link href={`mailto:${t('email')}`}>
-            {/* TODO: Change when next will be upgrade to 12+ version */}
-            <a className="footerRedesign__email">{t('email')}</a>
-          </Link>
+          {/* TODO: Change when next will be upgrade to 12+ version */}
+          <a
+            className="footerRedesign__email"
+            href={`mailto:${t('email')}`}
+          >
+            {t('email')}
+          </a>
         </div>
         <div className="footerRedesign__copyright">
           <span>
