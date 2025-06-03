@@ -22,12 +22,16 @@ type Teams = {
   linkText: string;
   teamsList: {
     teamName: string;
-    teamIcon: string
-    teamLink: string
+    teamIcon: string;
+    teamLink: string;
   }[]
 };
 
-export function ServicesRedesign() {
+export function ServicesRedesign({
+  targetId,
+}: {
+  targetId?: string,
+}) {
   const { t } = useTranslation('servicesRedesign');
 
   const newServicesList: NewServicesList = t('list', { returnObjects: true });
@@ -37,6 +41,7 @@ export function ServicesRedesign() {
   return (
     <section
       className="services-redesign container-redesign"
+      {...(targetId && { id: targetId })}
     >
       <ul className="services-redesign__cards grid">
         <li className="services-redesign__card col-tablet-12 col-tablet-xl-3">
