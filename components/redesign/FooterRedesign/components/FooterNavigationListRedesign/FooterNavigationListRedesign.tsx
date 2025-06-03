@@ -14,10 +14,10 @@ export function FooterNavigationListRedesign({
   links,
 }: FooterNavigationList) {
   return (
-    <div className="footerNavigationListRedesign">
+    <li className="footerNavigationListRedesign">
       <span className="footerNavigationListRedesign__caption">{caption}</span>
       <ul className="footerNavigationListRedesign__list">
-        {links?.map((el) => (
+        {links.map((el) => (
           <li key={el.label}>
             {/* TODO: Change when next will be upgrade to 12+ version */}
             <a
@@ -34,6 +34,6 @@ export function FooterNavigationListRedesign({
           </li>
         ))}
       </ul>
-    </div>
+    </li>
   );
 }

@@ -1,24 +1,16 @@
 import { useTranslation } from 'next-i18next';
 
-import { useEffect, useState } from 'react';
 import { FooterNavigationList, FooterNavigationListRedesign } from './components/FooterNavigationListRedesign/FooterNavigationListRedesign';
 
-function FooterRedesign() {
+export function FooterRedesign() {
   const { t } = useTranslation('footerRedesign');
-  const [date, setDate] = useState<number>();
 
-  const FooterNavigationLists: FooterNavigationList[] = t('navigationLists', { returnObjects: true });
-
-  useEffect(() => {
-    setDate(new Date().getFullYear());
-  }, []);
+  const footerNavigationLists: FooterNavigationList[] = t('navigationLists', { returnObjects: true });
 
   return (
     <footer
-      id="footerRedesign"
+      id="footer-redesign"
       className="footerRedesign"
-      itemScope
-      itemType="https://schema.org/Organization"
     >
       <div className="container-redesign footerRedesign__inner">
         <div className="footerRedesign__info">
@@ -33,21 +25,29 @@ function FooterRedesign() {
         </div>
         <div className="footerRedesign__copyright">
           <span>
-            {`© 2019-${date} Tourmaline Core`}
+            {`© 2019-${new Date().getFullYear()} Tourmaline Core`}
           </span>
         </div>
         <ul className="footerRedesign__navigation">
-          {FooterNavigationLists?.map((el) => (
+          {footerNavigationLists.map((el) => (
             <FooterNavigationListRedesign
               key={el.caption}
               caption={el.caption}
               links={el.links}
             />
           ))}
+          <FooterNavigationListRedesign
+            key="Заголовок"
+            caption="Заголовок"
+            links={[{ label: 'vk', path: '#', openInNewTab: true }]}
+          />
+          <FooterNavigationListRedesign
+            key="Заголовок"
+            caption="Заголовок"
+            links={[{ label: 'vk', path: '#', openInNewTab: true }]}
+          />
         </ul>
       </div>
     </footer>
   );
 }
-
-export default FooterRedesign;

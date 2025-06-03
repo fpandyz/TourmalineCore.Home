@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import Header from '../../Header/Header';
-import FooterRedesign from '../FooterRedesign/FooterRedesign';
+import { FooterRedesign } from '../FooterRedesign/FooterRedesign';
 
 export function LayoutRedesign({
   children,

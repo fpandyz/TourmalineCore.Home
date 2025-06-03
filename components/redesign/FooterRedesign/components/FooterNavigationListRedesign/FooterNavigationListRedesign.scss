@@ -43,6 +43,11 @@
     }
   }
 
+  @include tablet {
+    min-width: 120px;
+    max-width: 180px;
+  }
+
   @include tablet-xl {
     min-width: 180px;
     max-width: 200px;

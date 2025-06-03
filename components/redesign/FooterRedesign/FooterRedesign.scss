@@ -14,7 +14,7 @@
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
 
-    @include tablet-xl {
+    @include tablet {
       column-gap: 12px;
       grid-template-columns: repeat(2, auto);
       grid-template-rows: repeat(2, auto);
@@ -38,11 +38,11 @@
 
     display: grid;
     align-self: end;
-    color: $color-midle-grey-redesign;
+    color: $color-middle-grey-redesign;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
 
-    @include tablet-xl {
+    @include tablet {
       grid-row: 2 / 3;
     }
   }
@@ -59,8 +59,7 @@
       grid-template-columns: repeat(3, auto);
     }
 
-    @include tablet-xl {
-      margin-right: 72px;
+    @include tablet {
       grid-column: 2 / 3;
       grid-row: 1 / 3;
       justify-self: end;
