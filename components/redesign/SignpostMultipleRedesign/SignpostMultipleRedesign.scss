@@ -2,8 +2,8 @@
   $grid-mobile-gap: 8px;
   $grid-desktop-gap: 12px;
 
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   color: $color-white;
   background-color: $color-black;
 
@@ -29,5 +29,10 @@
     @include desktop {
       margin-bottom: 40px;
     }
+  }
+
+  @include desktop {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
