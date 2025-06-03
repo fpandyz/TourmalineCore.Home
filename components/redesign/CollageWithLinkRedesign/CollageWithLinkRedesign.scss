@@ -42,6 +42,11 @@
         }
       }
     }
+
+    @include desktop {
+      left: 27px;
+      top: 80px;
+    }
   }
 
   &__link-box {
