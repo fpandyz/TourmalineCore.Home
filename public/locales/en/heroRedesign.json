@@ -1,5 +1,14 @@
 {
   "title": "Tourmaline Core Software Development Company",
   "description": "Launching MVP, working on R&D projects, complex enterprise services, and websites. Writing code for embedded systems, implementing machine learning.",
-  "imageUrl": "/images/hero-redesign.jpg"
+  "imageUrls": [
+    "/images/hero-slider-image-1.png",
+    "/images/hero-slider-image-2.png",
+    "/images/hero-slider-image-3.png",
+    "/images/hero-slider-image-4.png",
+    "/images/hero-slider-image-5.png",
+    "/images/hero-slider-image-6.png",
+    "/images/hero-slider-image-7.png",
+    "/images/hero-slider-image-8.png"
+  ]
 }
