@@ -27,7 +27,11 @@ type Teams = {
   }[]
 };
 
-export function ServicesRedesign() {
+export function ServicesRedesign({
+  targetId,
+}: {
+  targetId?: string,
+}) {
   const { t } = useTranslation('servicesRedesign');
 
   const newServicesList: NewServicesList = t('list', { returnObjects: true });
@@ -37,6 +41,7 @@ export function ServicesRedesign() {
   return (
     <section
       className="services-redesign container-redesign"
+      {...(targetId && { id: targetId })}
     >
       <ul className="grid">
         <li className="services-redesign__card col-tablet-3">

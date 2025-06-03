@@ -4,8 +4,10 @@ import { MarkdownText } from '../MarkdownText/MarkdownText';
 
 export function ProjectsWithTextBlockRedesign({
   translationKey,
+  targetId,
 }:{
   translationKey: string;
+  targetId?: string;
 }) {
   const { t } = useTranslation(translationKey);
 
@@ -16,7 +18,10 @@ export function ProjectsWithTextBlockRedesign({
   const textBlockTitle = t('textBlockTitle');
 
   return (
-    <section className="projects-with-text-block-redesign">
+    <section
+      className="projects-with-text-block-redesign"
+      {...(targetId && { id: targetId })}
+    >
       <div className="container-redesign projects-with-text-block-redesign__wrapper">
         {sectionTitle && <h2 className="projects-with-text-block-redesign__title">{sectionTitle}</h2>}
         <ul className="projects-with-text-block-redesign__cards grid">
