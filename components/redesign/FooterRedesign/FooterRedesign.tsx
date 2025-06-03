@@ -36,16 +36,6 @@ export function FooterRedesign() {
               links={el.links}
             />
           ))}
-          <FooterNavigationListRedesign
-            key="Заголовок"
-            caption="Заголовок"
-            links={[{ label: 'vk', path: '#', openInNewTab: true }]}
-          />
-          <FooterNavigationListRedesign
-            key="Заголовок"
-            caption="Заголовок"
-            links={[{ label: 'vk', path: '#', openInNewTab: true }]}
-          />
         </ul>
       </div>
     </footer>
