@@ -17,6 +17,7 @@ import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWi
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
+import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -59,6 +60,7 @@ export default function HomePage() {
         <SingleImageRedesign />
         <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
         <CardsGridRedesign />
+        <CollageWithLinkRedesign />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
@@ -145,6 +147,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'projectsRedesignFifthSection',
       'cardsGridRedesign',
       'collageWithTitleRedesign',
+      'collageWithLinkRedesign',
       'conferenceSignpostsRedesign',
       'articleSignpostsRedesign',
       'singleImageRedesign',

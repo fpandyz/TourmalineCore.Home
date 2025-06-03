@@ -17,14 +17,12 @@ export function SignpostMultipleRedesign({
 
   const signposts: Signpost[] = t('signposts', { returnObjects: true });
 
-  const sectionTitle = t('title');
-
   return (
     <section
       className="signpost-multiple-redesign container-redesign"
     >
-      <h2 className="signpost-multiple-redesign__title">{sectionTitle}</h2>
-      <ul className="grid">
+      <h2 className="signpost-multiple-redesign__title">{t('title')}</h2>
+      <ul className="signpost-multiple-redesign__list grid">
         {signposts.map(({
           title,
           subtitle,
@@ -33,7 +31,7 @@ export function SignpostMultipleRedesign({
         }) => (
           <li
             key={title}
-            className="col-tablet-3"
+            className="col-desktop-3"
           >
             <SignpostRedesign
               title={title}
