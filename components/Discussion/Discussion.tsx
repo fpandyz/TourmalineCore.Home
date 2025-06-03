@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
 import { SectionProps } from '../../types/globals';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
-import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
+import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 import Modal from '../Modal/Modal';
 import Form from '../Form/Form';
 import DiscussionList from '../DiscussionList/DiscussionList';
@@ -19,7 +19,7 @@ function Discussion({
   const [isSubmit, setIsSubmit] = useState(false);
   const [email, setEmail] = useState('');
 
-  useBodyScrollHiden(isOpen);
+  useBodyScrollHidden(isOpen);
 
   return (
     <section {...props} className="discussion">
