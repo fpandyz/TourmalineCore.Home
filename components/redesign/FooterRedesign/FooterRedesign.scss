@@ -84,6 +84,7 @@
   &__email {
     @include h7;
 
+    width: fit-content;
     text-decoration: none;
     color: $color-white;
   }
