@@ -30,9 +30,11 @@
   @include light-font;
   @include unbounded-font;
 
+  font-size: 36px;
+  line-height: 1;
+
   @include desktop {
     font-size: 56px;
-    line-height: 1;
   }
 }
 
@@ -40,9 +42,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 36px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 48px;
-    line-height: 1.2;
   }
 }
 
@@ -50,9 +54,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 28px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 34px;
-    line-height: 1.2;
   }
 }
 
@@ -60,9 +66,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 24px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 28px;
-    line-height: 1.2;
   }
 }
 
@@ -70,9 +78,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 22px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 24px;
-    line-height: 1.2;
   }
 }
 
@@ -80,9 +90,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 18px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 20px;
-    line-height: 1.2;
   }
 }
 
@@ -90,25 +102,28 @@
   @include regular-font ;
   @include unbounded-font;
 
-  @include desktop {
-    font-size: 18px;
-    line-height: 1.2;
-  }
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 @mixin accent-text {
   @include medium-font;
   @include inter-font;
 
+  font-size: 26px;
+  line-height: 1.4;
+
   @include desktop {
     font-size: 28px;
-    line-height: 1.4;
   }
 }
 
 @mixin body-l {
   @include medium-font;
   @include inter-font;
+
+  font-size: 16px;
+  line-height: 1.2;
 
   @include desktop {
     font-size: 18px;
@@ -120,8 +135,10 @@
   @include medium-font;
   @include inter-font;
 
+  font-size: 16px;
+  line-height: 1.2;
+
   @include desktop {
-    font-size: 16px;
     line-height: 1.4;
   }
 }
@@ -130,15 +147,16 @@
   @include regular-font;
   @include comic-sans-font;
 
-  @include desktop {
-    font-size: 24px;
-    line-height: 1.4;
-  }
+  font-size: 24px;
+  line-height: 1.4;
 }
 
 @mixin caption {
   @include regular-font;
   @include consolas-font;
+
+  font-size: 18px;
+  line-height: 1.2;
 
   @include desktop {
     font-size: 20px;
@@ -150,8 +168,6 @@
   @include regular-font;
   @include consolas-font;
 
-  @include desktop {
-    font-size: 18px;
-    line-height: 1;
-  }
+  font-size: 18px;
+  line-height: 1;
 }

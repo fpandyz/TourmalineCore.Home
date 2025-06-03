@@ -10,10 +10,13 @@ import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
-import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
+import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
+import { CardsGridRedesign } from '../components/redesign/CardsGridRedesign/CardsGridRedesign';
 import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
+import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
+import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
+import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -51,8 +54,11 @@ export default function HomePage() {
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
+        <CollageWithTitleRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
+        <SingleImageRedesign />
         <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
+        <CardsGridRedesign />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
@@ -137,8 +143,11 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'projectsRedesignThirdSection',
       'projectsRedesignFourthSection',
       'projectsRedesignFifthSection',
+      'cardsGridRedesign',
+      'collageWithTitleRedesign',
       'conferenceSignpostsRedesign',
       'articleSignpostsRedesign',
+      'singleImageRedesign',
 
       // 'articles',
       // 'heroBlockHomePage',
