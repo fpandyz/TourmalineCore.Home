@@ -1,18 +1,20 @@
 import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
+import { ImageSlider } from '../ImageSlider/ImageSlider';
 
 export function HeroRedesign() {
   const { t } = useTranslation('heroRedesign');
+  const imageUrls: string[] = t('imageUrls', { returnObjects: true });
 
   return (
     <section className="hero-redesign">
-      <div className="hero-redesign__wrapper">
-        <span className="hero-redesign__title">{t('title')}</span>
-        <h2 className="hero-redesign__description">{t('description')}</h2>
+      <div className="container-redesign hero-redesign__wrapper">
+        <h1 className="hero-redesign__title">{t('title')}</h1>
+        <p className="hero-redesign__description">{t('description')}</p>
         <div className="hero-redesign__images">
-          <Image
-            src={t('imageUrl')}
+          <ImageSlider
+            imageUrls={imageUrls}
             layout="fill"
+            interval={1600}
             priority
             alt=""
           />

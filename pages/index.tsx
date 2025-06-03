@@ -9,14 +9,15 @@ import PageHead from '../components/PageHead/PageHead';
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
-import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
-import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
-import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
-import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
+import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
+import { CardsGridRedesign } from '../components/redesign/CardsGridRedesign/CardsGridRedesign';
 import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
+import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
+import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
+import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -58,6 +59,7 @@ export default function HomePage() {
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />
         <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
+        <CardsGridRedesign />
         <CollageWithLinkRedesign />
       </LayoutRedesign>
 
@@ -143,6 +145,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'projectsRedesignThirdSection',
       'projectsRedesignFourthSection',
       'projectsRedesignFifthSection',
+      'cardsGridRedesign',
       'collageWithTitleRedesign',
       'collageWithLinkRedesign',
       'conferenceSignpostsRedesign',
