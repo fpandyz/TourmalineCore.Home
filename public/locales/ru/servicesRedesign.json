@@ -10,7 +10,7 @@
     {
       "title": "Embedded разработка",
       "skillsList": ["Драйверы", "Программные модули со\u00A0сложной логикой", "Протоколы и библиотеки", "Настройка кросс-компиляции и техническая документация"],
-      "link": "/embedded",
+      "link": "/ru/embedded",
       "linkText": "Подробнее",
       "theme": "white"
     },
@@ -21,21 +21,21 @@
     {
       "title": "Машинное обучение и\u00A0анализ данных",
       "skillsList": ["Бизнес-анализ данных", "Модели компьютерного зрения", "Модели обработки текста и звука", "Модели обработки сигнала с\u00A0датчиков"],
-      "link": "/ml",
+      "link": "/ru/ml",
       "linkText": "Подробнее",
       "theme": "grey"
     },
     {
       "title": "Тестирование",
       "skillsList": ["E2E тестирование", "Тестирование UI и API", "Интеграционное и юнит тестирование", "Ручное и автоматизированное тестирование"],
-      "link": "/qa",
+      "link": "/ru/qa",
       "linkText": "Подробнее",
       "theme": "white"
     },
     {
       "title": "Дизайн",
       "skillsList": ["UI/UX дизайн", "Дизайн сайтов и лендингов", "No/Low-code сайты"],
-      "link": "/design",
+      "link": "/ru/design",
       "linkText": "Подробнее",
       "theme": "grey"
     },
@@ -52,38 +52,38 @@
   "teams": {
     "title": "Команды",
     "description": "Можем предоставить команду для вашего проекта или подключить нескольких специалистов",
-    "link": "/teams",
+    "link": "/ru/teams",
     "linkText": "Узнать больше о\u00A0командах",
     "teamsList": [
       {
         "teamName": "Backend",
         "teamIcon": "/images/icon-backend.svg",
-        "teamLink": "/backend"
+        "teamLink": "/ru/backend"
       },
       {
         "teamName": "Frontend",
         "teamIcon": "/images/icon-frontend.svg",
-        "teamLink": "/frontend"
+        "teamLink": "/ru/frontend"
       },
       {
         "teamName": "ML-инженеры",
         "teamIcon": "/images/icon-ml.svg",
-        "teamLink": "/ml"
+        "teamLink": "/ru/ml"
       },
       {
         "teamName": "Embedded",
         "teamIcon": "/images/icon-embedded.svg",
-        "teamLink": "/embedded"
+        "teamLink": "/ru/embedded"
       },
       {
         "teamName": "QA-инженеры",
         "teamIcon": "/images/icon-qa.svg",
-        "teamLink": "/qa"
+        "teamLink": "/ru/qa"
       },
       {
         "teamName": "Дизайнеры",
         "teamIcon": "/images/icon-design.svg",
-        "teamLink": "/design"
+        "teamLink": "/ru/design"
       },
       {
         "teamName": "DevOps",
