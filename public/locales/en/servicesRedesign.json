@@ -1,0 +1,94 @@
+{
+  "title": "What we do",
+  "list":
+  [
+    {
+      "title": "Web Development",
+      "skillsList": ["Single-page applications", "Websites and landing pages", "Enterprise systems", "CRM, ERP, personal accounts"],
+      "theme": "black"
+    },
+    {
+      "title": "Embedded development",
+      "skillsList": ["Drivers", "Software modules with complex logic", "Protocols and libraries", "Cross-compilation setup and technical documentation"],
+      "link": "/embedded",
+      "linkText": "Learn more",
+      "theme": "white"
+    },
+    {
+      "imageUrl": "/images/services-card.png",
+      "theme": "blue"
+    },
+    {
+      "title": "Machine learning and data analysis",
+      "skillsList": ["Business data analytics", "Computer vision models", "Text and audio processing models", "Sensor signal processing models"],
+      "link": "/ml",
+      "linkText": "Learn more",
+      "theme": "grey"
+    },
+    {
+      "title": "Testing",
+      "skillsList": ["E2E testing", "UI & API testing", "Integration and unit testing", "Manual and automated testing"],
+      "link": "/qa",
+      "linkText": "Learn more",
+      "theme": "white"
+    },
+    {
+      "title": "Design",
+      "skillsList": ["UI/UX design", "Websites and landing pages design", "No/Low-code websites"],
+      "link": "/design",
+      "linkText": "Learn more",
+      "theme": "grey"
+    },
+    {
+      "title": "Other",
+      "skillsList": ["Launching MVP projects", "Architecture design", "Development of high-load services", "Setting up project’s environment and CI/CD", "Software architecture and development consulting"],
+      "theme": "grey"
+    }
+  ],
+  "teamsCard": {
+    "imageUrl": "/images/services-card-2.png",
+    "theme": "blue"
+  },
+  "teams": {
+    "title": "Teams",
+    "description": "We can provide a dedicated team or outsource several specialists for your project",
+    "link": "/teams",
+    "linkText": "Learn more about our teams",
+    "teamsList": [
+      {
+        "teamName": "Backend",
+        "teamIcon": "/images/icon-backend.svg",
+        "teamLink": "/backend"
+      },
+      {
+        "teamName": "Frontend",
+        "teamIcon": "/images/icon-frontend.svg",
+        "teamLink": "/frontend"
+      },
+      {
+        "teamName": "ML engineers",
+        "teamIcon": "/images/icon-ml.svg",
+        "teamLink": "/ml"
+      },
+      {
+        "teamName": "Embedded",
+        "teamIcon": "/images/icon-embedded.svg",
+        "teamLink": "/embedded"
+      },
+      {
+        "teamName": "QA engineers",
+        "teamIcon": "/images/icon-qa.svg",
+        "teamLink": "/qa"
+      },
+      {
+        "teamName": "Designers",
+        "teamIcon": "/images/icon-design.svg",
+        "teamLink": "/design"
+      },
+      {
+        "teamName": "DevOps",
+        "teamIcon": "/images/icon-devops.svg"
+      }
+    ]
+  }
+}
