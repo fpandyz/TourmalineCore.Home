@@ -40,10 +40,10 @@ export function ServicesRedesign({
 
   return (
     <section
-      className="services-redesign container-redesign"
+      className="services-redesign"
       {...(targetId && { id: targetId })}
     >
-      <ul className="services-redesign__cards grid">
+      <ul className="services-redesign__cards grid container-redesign">
         <li className="services-redesign__card col-tablet-12 col-tablet-xl-3">
           <h2 className="services-redesign__title">
             {t('title')}
