@@ -2,7 +2,7 @@
   "title": "We write articles",
   "signposts": [
     {
-      "imageUrl": "/images/article-1.png",
+      "imageUrl": "/images/article-1-en.png",
       "title": "To Docker or not to Docker? That is JupyterLab",
       "subtitle": "May 21, 2025",
       "link": "/articles/environment-jupyterlab-jupyter-poetry-docker-mlops-ml-infrastructure"
