@@ -31,16 +31,6 @@
       "caption":"Socials",
       "links":[
         {
-          "label":"VK",
-          "path":"https://vk.com/tourmalinecore",
-          "openInNewTab":true
-        },
-        {
-          "label":"Habr",
-          "path":"https://habr.com/ru/users/TourmalineCore/",
-          "openInNewTab":true
-        },
-        {
           "label":"Github",
           "path":"https://github.com/TourmalineCore",
           "openInNewTab":true
