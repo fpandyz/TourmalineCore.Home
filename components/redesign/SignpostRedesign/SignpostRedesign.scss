@@ -17,6 +17,9 @@
     img {
       border-radius: 2px;
       object-fit: cover;
+
+      // Todo: think about what can be done with positioning
+      object-position: top;
     }
 
     @include desktop {
