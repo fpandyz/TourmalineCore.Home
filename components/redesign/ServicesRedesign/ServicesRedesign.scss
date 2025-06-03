@@ -52,7 +52,7 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       &::after {
         transform: scaleX(0);
         transform-origin: bottom left;
