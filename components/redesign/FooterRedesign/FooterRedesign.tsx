@@ -15,12 +15,10 @@ function FooterRedesign() {
 
   return (
     <footer
-      // CHECK: Что по идшке?
       id="footerRedesign"
       className="footerRedesign"
-      // CHECK: Что это?
       itemScope
-      itemType="http://schema.org/Organization"
+      itemType="https://schema.org/Organization"
     >
       <div className="container-redesign footerRedesign__inner">
         <div className="footerRedesign__info">
