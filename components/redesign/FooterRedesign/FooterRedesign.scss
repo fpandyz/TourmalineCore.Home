@@ -1,0 +1,63 @@
+%footer-redesign-caption {
+  @include link-text;
+
+  color: $color-pink-redesign;
+}
+
+.footerRedesign {
+  // CHECK: Нужен ли маргин?
+  margin-top: auto;
+  padding-top: 40px;
+  padding-bottom: 24px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      margin-right: 12px;
+    }
+  }
+
+  &__right {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, auto);
+
+    @include desktop {
+      margin-right: 108px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__caption {
+    @include desktop {
+      margin-bottom: 8px;
+    }
+
+    @extend %footer-redesign-caption;
+  }
+
+  &__email {
+    @include h7;
+
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &__copyright {
+    @include body-m;
+
+    margin-top: auto;
+    color: $color-midle-grey-redesign;
+  }
+}
