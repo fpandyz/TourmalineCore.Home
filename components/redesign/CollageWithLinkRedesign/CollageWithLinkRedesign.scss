@@ -1,12 +1,7 @@
-$max-wrapper-width: 1366px;
-
-@function get-percent-by-container-width($width, $container-width: $max-wrapper-width) {
-  @return calc(($width / $container-width) * 100%);
-}
-
 .collage-with-link-redesign {
   $this: &;
 
+  height: 708px;
   background-color: $color-black;
 
   &__wrapper {
@@ -15,60 +10,71 @@ $max-wrapper-width: 1366px;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    padding: 80px 0;
+    padding: 40px 0;
     height: 100%;
-    max-width: $max-wrapper-width;
+    max-width: 375px;
+
+    @include desktop {
+      padding: 80px 0;
+      max-width: 1366px;
+    }
   }
 
   &__accent-link {
-    position: absolute;
-    max-width: 252px;
-    text-decoration: none;
-
-    &:hover,
-    &:focus-visible {
-      #{$this}__link-box {
-        background-color: $color-blue-redesign;
-      }
-
-      #{$this}__cta {
-        text-decoration-color: $color-white;
-      }
-    }
+    display: none;
 
     @include desktop {
+      position: absolute;
       left: 27px;
       top: 80px;
+      display: block;
+      max-width: 252px;
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        #{$this}__link-box {
+          background-color: $color-blue-redesign;
+        }
+
+        #{$this}__cta {
+          text-decoration-color: $color-white;
+        }
+      }
     }
   }
 
   &__link-box {
     @include h1;
 
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 4px;
-    border-right: 8px solid $color-black;
-    border-bottom: 8px solid  $color-black;
-    border-radius: 2px;
-    width: 260px;
-    height: 200px;
-    color: $color-black;
-    background-color: $color-pink-redesign;
-    transition: background-color 0.3s ease-in-out;
+    @include desktop {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 4px;
+      border-right: 8px solid $color-black;
+      border-bottom: 8px solid  $color-black;
+      border-radius: 2px;
+      width: 260px;
+      height: 200px;
+      color: $color-black;
+      background-color: $color-pink-redesign;
+      transition: background-color 0.3s ease-in-out;
+    }
   }
 
   &__cta {
     @include h7;
 
-    text-decoration: underline;
-    text-decoration-color: $color-black;
-    color: $color-white;
-    transition: text-decoration-color 0.3s ease-in-out;
+    @include desktop {
+      text-decoration: underline;
+      text-decoration-color: $color-black;
+      color: $color-white;
+      transition: text-decoration-color 0.3s ease-in-out;
+    }
   }
 
   &__image {
@@ -83,6 +89,12 @@ $max-wrapper-width: 1366px;
     }
 
     &--1 {
+      left: 0;
+      bottom: 194px;
+      z-index: 2;
+      width: 98px;
+      height: 98px;
+
       @include desktop {
         left: 0;
         bottom: 234px;
@@ -92,15 +104,27 @@ $max-wrapper-width: 1366px;
     }
 
     &--2 {
+      right: 0;
+      bottom: 180px;
+      width: 118px;
+      height: 118px;
+
       @include desktop {
         left: 254px;
+        right: auto;
         top: 152px;
+        bottom: auto;
         width: 251px;
         height: 249px;
       }
     }
 
     &--3 {
+      left: 76px;
+      top: 218px;
+      width: 228px;
+      height: 228px;
+
       @include desktop {
         left: 438px;
         top: 262px;
@@ -111,6 +135,11 @@ $max-wrapper-width: 1366px;
     }
 
     &--4 {
+      right: 112px;
+      top: 40px;
+      width: 98px;
+      height: 98px;
+
       @include desktop {
         right: 256px;
         top: 87px;
@@ -121,18 +150,29 @@ $max-wrapper-width: 1366px;
     }
 
     &--5 {
+      right: 72px;
+      bottom: 38px;
+      width: 106px;
+      height: 106px;
+
       @include desktop {
         right: 80px;
         top: 290px;
+        bottom: auto;
         width: 209px;
         height: 209px;
       }
     }
 
     &--6 {
+      right: 4px;
+      top: 160px;
+      width: 112px;
+      height: 112px;
+
       @include desktop {
         right: 0;
-        bottom: 100px;
+        top: auto;
         bottom: 140px;
         width: 193px;
         height: 186px;
@@ -140,8 +180,15 @@ $max-wrapper-width: 1366px;
     }
 
     &--7 {
+      left: 15px;
+      top: 132px;
+      width: 106px;
+      height: 106px;
+
       @include desktop {
+        left: auto;
         right: 334px;
+        top: auto;
         bottom: 100px;
         width: 202px;
         height: 202px;
@@ -149,6 +196,11 @@ $max-wrapper-width: 1366px;
     }
 
     &--8 {
+      left: 40px;
+      bottom: 64px;
+      width: 98px;
+      height: 98px;
+
       @include desktop {
         left: 260px;
         bottom: 80px;

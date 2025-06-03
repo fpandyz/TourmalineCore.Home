@@ -51,10 +51,10 @@ export default function HomePage() {
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
         <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> */}
         <CollageWithTitleRedesign />
-        <CollageWithLinkRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />
         <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
+        <CollageWithLinkRedesign />
       </LayoutRedesign>
 
       {/* <LayoutHomePage
