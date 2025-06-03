@@ -21,6 +21,11 @@
     color: $color-white;
   }
 
+  @include tablet-xl {
+    min-width: 180px;
+    max-width: 200px;
+  }
+
   @include desktop {
     min-width: 213.5px;
     max-width: 283.5px;
