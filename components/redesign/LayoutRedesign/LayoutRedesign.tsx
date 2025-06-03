@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Header from '../../Header/Header';
+import { FooterRedesign } from '../FooterRedesign/FooterRedesign';
 
 export function LayoutRedesign({
   children,
@@ -14,6 +15,7 @@ export function LayoutRedesign({
       <main className={mainClassName}>
         {children}
       </main>
+      <FooterRedesign />
     </div>
   );
 }

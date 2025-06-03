@@ -3,6 +3,8 @@
 
   &__images {
     position: relative;
+    margin-bottom: 12px;
+    height: 280px;
 
     // Todo: move to global and fix other image
     img {
@@ -47,6 +49,7 @@
   &__title {
     @include h6;
 
+    margin-bottom: 8px;
     color: $color-black;
 
     @include desktop {
@@ -57,7 +60,7 @@
   &__description {
     @include body-m;
 
-    color: $color-black-60;
+    color: $color-grey-redesign;
   }
 
   &__link {
