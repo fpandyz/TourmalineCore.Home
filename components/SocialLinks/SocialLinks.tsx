@@ -70,7 +70,7 @@ function SocialLinks() {
           telegram: <IconTelegramPurple />,
         };
 
-      case AppRoute.Frontend_team:
+      case AppRoute.FrontendTeam:
         return {
           mail: <IconMailFrontendPelicanTeam />,
           telegram: <IconTelegramFrontendPelicanTeam />,

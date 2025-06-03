@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
-import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
+import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import usePath from '../../common/hooks/usePath';
@@ -11,7 +11,7 @@ function HeroBlockTechnology() {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslationNamespace('hero');
 
-  useBodyScrollHiden(isOpen);
+  useBodyScrollHidden(isOpen);
 
   return (
     <section className={clsx('hero-block-technology', {

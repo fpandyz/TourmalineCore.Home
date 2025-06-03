@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import LangSwitch from '../LangSwitch/LangSwitch';
-import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
+import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
 import IconBurgerPurple from '../../icons/burger-purple.svg';
@@ -54,8 +54,8 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Teams,
   },
   {
-    id: AppRoute.Frontend_team.slice(1),
-    link: AppRoute.Frontend_team,
+    id: AppRoute.FrontendTeam.slice(1),
+    link: AppRoute.FrontendTeam,
   },
   {
     id: AppRoute.Articles.slice(1),
@@ -72,18 +72,22 @@ const BURGER_ICONS = new Map(
     [AppRoute.Backend, <IconBurgerBackend />],
     [AppRoute.Design, <IconBurgerDesign />],
     [AppRoute.Teams, <IconBurgerPurple />],
-    [AppRoute.Frontend_team, <IconBurgerCyan />],
+    [AppRoute.FrontendTeam, <IconBurgerCyan />],
     [AppRoute.Main, <IconBurger />],
     [AppRoute.Articles, <IconBurger />],
   ],
 );
 
-function Header() {
+function Header({
+  containerClass,
+}: {
+  containerClass?: string;
+}) {
   const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { pathname } = useRouter();
 
-  useBodyScrollHiden(isMobileMenuOpen);
+  useBodyScrollHidden(isMobileMenuOpen);
 
   return (
     <>
@@ -91,7 +95,7 @@ function Header() {
         'header--zh': isChineseLanguage(),
       })}
       >
-        <div className="container header__inner">
+        <div className={clsx(`container header__inner ${containerClass}`)}>
           <Link href="/">
             <a
               className="header__logo"
@@ -130,7 +134,10 @@ function Header() {
       </header>
 
       {isMobileMenuOpen && (
-        <MobileMenu onCloseClick={() => setIsMobileMenuOpen(false)} headerLinks={headerLinks} />
+        <MobileMenu
+          onCloseClick={() => setIsMobileMenuOpen(false)}
+          headerLinks={headerLinks}
+        />
       )}
     </>
   );

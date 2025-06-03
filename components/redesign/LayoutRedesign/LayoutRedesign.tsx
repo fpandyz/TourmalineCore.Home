@@ -11,7 +11,7 @@ export function LayoutRedesign({
 }) {
   return (
     <div className="layout-redesign">
-      <Header />
+      <Header containerClass="container-redesign" />
       <main className={mainClassName}>
         {children}
       </main>
