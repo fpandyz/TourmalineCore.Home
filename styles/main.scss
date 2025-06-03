@@ -3,6 +3,8 @@
 @import "variables";
 @import "globals";
 @import "typography";
+@import "grid";
+@import "fonts-mixin";
 
 // components
 @import "../components/Layout/Layout";
@@ -74,3 +76,24 @@
 @import "../pages/backend/backend";
 @import "../pages/teams/teams";
 @import "../pages/frontend-team/frontend-team";
+
+// redesign
+@import "../components/redesign/LayoutRedesign/LayoutRedesign";
+@import "../components/redesign/HeroRedesign/HeroRedesign";
+@import "../components/redesign/ServicesRedesign/ServicesRedesign";
+@import "../components/redesign/ServicesCardRedesign/ServicesCardRedesign";
+@import "../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign";
+@import "../components/redesign/ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign";
+@import "../components/redesign/ProjectsRedesign/ProjectsRedesign";
+@import "../components/redesign/CardWithContentRedesign/CardWithContentRedesign";
+@import "../components/redesign/CardWithImageRedesign/CardWithImageRedesign";
+@import "../components/redesign/CardWithRepositoriesRedesign/CardWithRepositoriesRedesign";
+@import "../components/redesign/CardsGridRedesign/CardsGridRedesign";
+@import "../components/redesign/CardWithTextAndDateRedesign/CardWithTextAndDateRedesign";
+@import "../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
+@import "../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
+@import "../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign";
+@import "../components/redesign/SignpostRedesign/SignpostRedesign";
+@import "../components/redesign/SingleImageRedesign/SingleImageRedesign";
+@import "../components/redesign/FooterRedesign/FooterRedesign";
+@import "../components/redesign/FooterRedesign/components/FooterNavigationListRedesign/FooterNavigationListRedesign";

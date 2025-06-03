@@ -1,0 +1,179 @@
+$max-desktop-wrapper-width: 1278px;
+
+// Todo: seems redundant, remove it after adaptation to tablet
+@function get-percent-by-container-width($width, $container-width: $max-desktop-wrapper-width) {
+  @return calc(($width / $container-width) * 100%);
+}
+
+.collage-with-title-redesign {
+  background-color: $color-black;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 302px;
+    padding-bottom: 330px;
+    max-width: 375px;
+
+    @include desktop {
+      padding: 408px 0;
+      max-width: $max-desktop-wrapper-width;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: url("../../../public/gif/text-surrounded-by-images-background.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__title {
+    @include h2;
+
+    max-width: 560px;
+    text-align: center;
+  }
+
+  &__image {
+    position: absolute;
+
+    img {
+      display: block;
+      border-radius: 2px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--1 {
+      display: none;
+
+      @include desktop {
+        left: get-percent-by-container-width(584px);
+        bottom: 160px;
+        display: block;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--2 {
+      left: 40px;
+      bottom: 64px;
+      width: 98px;
+      height: 98px;
+
+      @include desktop {
+        left: get-percent-by-container-width(298px);
+        bottom: 103px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--3 {
+      left: 0;
+      bottom: 195px;
+      width: 98px;
+      height: 98px;
+
+      @include desktop {
+        left: get-percent-by-container-width(140px);
+        bottom: 263px;
+        width: 134px;
+        height: 134px;
+      }
+    }
+
+    &--4 {
+      left: 15px;
+      bottom: 471px;
+      width: 106px;
+      height: 106px;
+
+      @include desktop {
+        left: get-percent-by-container-width(-4px);
+        bottom: 447px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--5 {
+      left: 164px;
+      bottom: 570px;
+      width: 98px;
+      height: 98px;
+
+      @include desktop {
+        left: get-percent-by-container-width(341px);
+        bottom: 629px;
+        width: 162px;
+        height: 162px;
+      }
+    }
+
+    &--6 {
+      display: none;
+
+      @include desktop {
+        left: get-percent-by-container-width(653px);
+        bottom: 572px;
+        display: block;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--7 {
+      left: 259px;
+      bottom: 438px;
+      width: 112px;
+      height: 112px;
+
+      @include desktop {
+        left: get-percent-by-container-width(1004px);
+        bottom: 616px;
+        width: 168px;
+        height: 168px;
+      }
+    }
+
+    &--8 {
+      left: 257px;
+      bottom: 180px;
+      width: 118px;
+      height: 118px;
+
+      @include desktop {
+        left: get-percent-by-container-width(1035px);
+        bottom: 302px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--9 {
+      left: 197px;
+      bottom: 40px;
+      width: 106px;
+      height: 106px;
+
+      @include desktop {
+        left: get-percent-by-container-width(808px);
+        bottom: 84px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+  }
+}

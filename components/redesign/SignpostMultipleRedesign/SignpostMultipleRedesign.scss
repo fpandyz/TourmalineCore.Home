@@ -1,0 +1,38 @@
+.signpost-multiple-redesign {
+  $grid-mobile-gap: 8px;
+  $grid-desktop-gap: 12px;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: $color-white;
+  background-color: $color-black;
+
+  &__list {
+    overflow-x: scroll;
+    gap: $grid-mobile-gap;
+    grid-template-columns: repeat(4, 1fr);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    @include desktop {
+      overflow-x: auto;
+      gap: $grid-desktop-gap;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+    @include h5;
+
+    margin-bottom: 32px;
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include desktop {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}

@@ -7,6 +7,6 @@ export enum AppRoute {
   QA = '/qa',
   Backend = '/backend',
   Teams = '/teams',
-  Frontend_team = '/frontend-team',
+  FrontendTeam = '/frontend-team',
   Main = '/',
 }
