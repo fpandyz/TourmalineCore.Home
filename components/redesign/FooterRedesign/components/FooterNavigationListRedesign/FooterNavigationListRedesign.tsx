@@ -14,14 +14,14 @@ export function FooterNavigationListRedesign({
   links,
 }: FooterNavigationList) {
   return (
-    <li className="footerNavigationListRedesign">
-      <span className="footerNavigationListRedesign__caption">{caption}</span>
-      <ul className="footerNavigationListRedesign__list">
+    <li className="footer-navigation-list-redesign">
+      <span className="footer-navigation-list-redesign__caption">{caption}</span>
+      <ul className="footer-navigation-list-redesign__list">
         {links.map((el) => (
           <li key={el.label}>
             {/* TODO: Change when next will be upgrade to 12+ version */}
             <a
-              className="footerNavigationListRedesign__link"
+              className="footer-navigation-list-redesign__link"
               href={el.path}
               onClick={(e) => router.pathname === el.path && e.preventDefault()}
               {...(el.openInNewTab && {

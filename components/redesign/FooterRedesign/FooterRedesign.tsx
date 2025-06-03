@@ -10,25 +10,25 @@ export function FooterRedesign() {
   return (
     <footer
       id="footer-redesign"
-      className="footerRedesign"
+      className="footer-redesign"
     >
-      <div className="container-redesign footerRedesign__inner">
-        <div className="footerRedesign__info">
-          <span className="footerRedesign__caption">{t('infoCaption')}</span>
+      <div className="container-redesign footer-redesign__inner">
+        <div className="footer-redesign__info">
+          <span className="footer-redesign__caption">{t('infoCaption')}</span>
           {/* TODO: Change when next will be upgrade to 12+ version */}
           <a
-            className="footerRedesign__email"
+            className="footer-redesign__email"
             href={`mailto:${t('email')}`}
           >
             {t('email')}
           </a>
         </div>
-        <div className="footerRedesign__copyright">
+        <div className="footer-redesign__copyright">
           <span>
             {`© 2019-${new Date().getFullYear()} Tourmaline Core`}
           </span>
         </div>
-        <ul className="footerRedesign__navigation">
+        <ul className="footer-redesign__navigation">
           {footerNavigationLists.map((el) => (
             <FooterNavigationListRedesign
               key={el.caption}
