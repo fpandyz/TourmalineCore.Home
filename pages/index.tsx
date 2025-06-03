@@ -13,6 +13,10 @@ import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitl
 import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
 import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
+import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
+import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
+import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
+import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -43,13 +47,13 @@ export default function HomePage() {
       />
 
       <LayoutRedesign>
-        {/* <HeroRedesign /> */}
-        {/* <ServicesRedesign /> */}
-        {/* <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
+        <HeroRedesign />
+        <ServicesRedesign />
+        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
-        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> */}
+        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />
