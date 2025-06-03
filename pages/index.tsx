@@ -12,12 +12,12 @@ import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRede
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
 import { CardsGridRedesign } from '../components/redesign/CardsGridRedesign/CardsGridRedesign';
-import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
-import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
-import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
+import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
+import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
+import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -25,12 +25,14 @@ export default function HomePage() {
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
   useSectionAutoPaddings();
 
-  const deviceSize = useDeviceSize();
+  const { width } = useDeviceSize();
   const [clickedAccordion, setClickedAccordion] = useState(false);
+
+  const isDesktop = width >= 1366;
 
   useEffect(() => {
     AOS.refresh();
-  }, [deviceSize.width, clickedAccordion]);
+  }, [width, clickedAccordion]);
 
   return (
     <>
@@ -53,8 +55,8 @@ export default function HomePage() {
         <ProjectsWithTextBlockRedesign targetId="projects" translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
-        <ProjectsRedesign translationKey="projectsRedesignFourthSection" />
-        <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />
+        {isDesktop && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
+        {isDesktop && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> }
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />
