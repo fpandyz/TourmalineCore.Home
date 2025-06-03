@@ -38,8 +38,8 @@ export function ServicesRedesign() {
     <section
       className="services-redesign container-redesign"
     >
-      <ul className="grid">
-        <li className="services-redesign__card col-tablet-3">
+      <ul className="services-redesign__cards grid">
+        <li className="services-redesign__card col-tablet-12 col-tablet-xl-3">
           <h2 className="services-redesign__title">
             {t('title')}
           </h2>
@@ -54,7 +54,7 @@ export function ServicesRedesign() {
         }) => (
           <li
             key={title}
-            className="services-redesign__card col-tablet-3"
+            className="services-redesign__card col-tablet-12 col-tablet-xl-3"
           >
             <ServicesCardRedesign
               title={title}
@@ -66,14 +66,14 @@ export function ServicesRedesign() {
             />
           </li>
         ))}
-        <li className="services-redesign__card col-tablet-3" />
-        <li className="services-redesign__card col-tablet-3">
+        <li className="services-redesign__card col-tablet-12 col-tablet-xl-3" />
+        <li className="services-redesign__card col-tablet-12 col-tablet-xl-3">
           <ServicesCardRedesign
             theme={teamsCard.theme}
             imageUrl={teamsCard.imageUrl}
           />
         </li>
-        <li className="services-redesign__teams col-tablet-6">
+        <li className="services-redesign__teams col-tablet-12 col-tablet-xl-6">
           <div className="services-redesign__wrapper">
             <h3 className="services-redesign__subtitle">{teams.title}</h3>
             <p className="services-redesign__description">
