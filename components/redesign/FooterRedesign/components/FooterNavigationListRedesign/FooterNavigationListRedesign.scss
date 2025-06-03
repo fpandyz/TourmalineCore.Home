@@ -1,0 +1,28 @@
+.footerNavigationListRedesign {
+  overflow-wrap: break-word;
+
+  &__caption {
+    display: inline-block;
+    margin-bottom: 4px;
+
+    @extend %footer-redesign-caption;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__link {
+    @include body-m;
+
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  @include desktop {
+    min-width: 213.5px;
+    max-width: 283.5px;
+  }
+}
