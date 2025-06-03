@@ -22,8 +22,8 @@ type Teams = {
   linkText: string;
   teamsList: {
     teamName: string;
-    teamIcon: string
-    teamLink: string
+    teamIcon: string;
+    teamLink: string;
   }[]
 };
 
