@@ -1,5 +1,12 @@
-import Link from "next/link";
-import { FooterNavigationList } from "../../FooterRedesign";
+import Link from 'next/link';
+
+export type FooterNavigationList = {
+  caption: string,
+  links: {
+    label: string,
+    path: string,
+  }[],
+};
 
 export function FooterNavigationListRedesign({
   caption,
@@ -9,8 +16,8 @@ export function FooterNavigationListRedesign({
     <div className="footerNavigationListRedesign">
       <span className="footerNavigationListRedesign__caption">{caption}</span>
       <ul className="footerNavigationListRedesign__list">
-        {links?.map((el, index) => (
-          <li key={index}>
+        {links?.map((el) => (
+          <li key={el.label}>
             <Link href={el.path}>
               <a className="footerNavigationListRedesign__link">{el.label}</a>
             </Link>
