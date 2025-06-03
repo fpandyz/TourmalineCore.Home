@@ -14,7 +14,7 @@
     padding: 16px 0;
 
     @include desktop {
-      padding: 0;
+      padding: 0 20px;
     }
   }
 
@@ -66,12 +66,6 @@
       &:focus-visible {
         text-decoration: none;
       }
-    }
-  }
-
-  &__text-block {
-    @include desktop {
-      padding: 0 20px;
     }
   }
 
