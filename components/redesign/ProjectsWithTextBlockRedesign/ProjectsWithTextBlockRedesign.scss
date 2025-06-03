@@ -41,6 +41,7 @@
   &__subtitle {
     @include body-m;
 
+    margin-bottom: 16px;
     color: $color-grey-redesign;
 
     @include desktop {
