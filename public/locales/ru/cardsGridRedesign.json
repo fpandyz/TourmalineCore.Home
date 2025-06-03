@@ -8,22 +8,22 @@
      "title": "По возможности\n опенсорсим",
      "repositories": [
       {
-        "name": "TourmalineCore.AccountsApi.Template",
-        "description": "Libraries that will help you easily connect the\u00A0JWT-based authentication to\u00A0your project.",
-        "language": "C#",
-        "link": ""
+        "name": "to-dos-documentation",
+        "language": "TypeScript",
+        "description": "",
+        "link": "https://github.com/TourmalineCore/to-dos-documentation"
       },
       {
-        "name": "TourmalineCore.AccountsApi.Template",
-        "description": "",
+        "name": "TourmalineCore.AspNetCore.JwtAuthentication",
+        "description": "Библиотеки, которые помогут вам легко подключить аутентификацию на основе JWT к вашему проекту.",
         "language": "C#",
-        "link": ""
+        "link": "https://github.com/TourmalineCore/TourmalineCore.AspNetCore.JwtAuthentication"
       },
       {
         "name": "TourmalineCore.AccountsApi.Template",
         "description": "",
         "language": "TypeScript",
-        "link": ""
+        "link": "https://github.com/TourmalineCore/TourmalineCore.AccountsApi.Template"
       }
     ],
     "markdownText": "Нам важно обмениваться опытом, улучшать качество кода и\u00A0развивать проекты, поэтому делимся кодом <a href='https://github.com/TourmalineCore'>на\u00A0Github</a>"
