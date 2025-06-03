@@ -1,7 +1,7 @@
 {
   "projectsCardsWithImage": [
     {
-      "imageUrl": "/images/capybara-project.png",
+      "imageUrl": "/images/capybara-en.png",
       "title": "Capybara",
       "description": "An application for\u00A0centralized storage and\u00A0management of\u00A0large sets of\u00A0images",
       "link": "",
@@ -9,7 +9,7 @@
       "isNda": true
     },
     {
-      "imageUrl": "/images/smart-watch-project.png",
+      "imageUrl": "/images/swatch-en.png",
       "title": "AI modules in smart watches",
       "description": "Machine learning model that\u00A0identifies the\u00A0type of\u00A0worker activity on\u00A0construction site based on\u00A0smartwatch sensor signals",
       "size": "L",

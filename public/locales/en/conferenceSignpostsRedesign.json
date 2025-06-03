@@ -3,12 +3,12 @@
   "signposts": [
     {
       "imageUrl": "/images/conference-1.png",
-      "title": "Testing and automating an open-source site for the Chelyabinsk Zoo using TDD",
+      "title": "Testing and automating an open-source site for Chelyabinsk Zoo using TDD",
       "subtitle": "Heisenbug 2025"
     },
     {
       "imageUrl": "/images/conference-2.png",
-      "title": "Software Licenses: the theory that saves you from financial disasters",
+      "title": "Software Licenses: theory that saves you from financial disasters",
       "subtitle": "C++ Russia 2025"
     },
     {

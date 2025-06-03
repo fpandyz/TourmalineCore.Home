@@ -11,7 +11,7 @@
     {
       "imageUrl": "/images/senmotion-project.png",
       "title": "Senmotion",
-      "description": "Connecting 'smart' insoles to\u00A0cloud infrastructure to\u00A0store, process and\u00A0analyze patients’ data",
+      "description": "Connecting 'smart' insoles to\u00A0cloud infrastructure to\u00A0store, process, and\u00A0analyze patients’ data",
       "size": "M",
       "isNda": false
     },
@@ -27,6 +27,7 @@
       "title": "Tradehack",
       "description": "Service for\u00A0collecting analytics on\u00A0products and\u00A0product categories on\u00A0Wildberries marketplace",
       "size": "M",
+      "link": "https://www.behance.net/gallery/160948093/Analytics-dashboard",
       "isNda": false
     }
   ]

@@ -19,7 +19,7 @@
       "theme": "blue"
     },
     {
-      "title": "Machine Learning and data analysis",
+      "title": "Machine learning and data analysis",
       "skillsList": ["Business data analytics", "Computer vision models", "Text and audio processing models", "Sensor signal processing models"],
       "link": "/ml",
       "linkText": "Learn more",
