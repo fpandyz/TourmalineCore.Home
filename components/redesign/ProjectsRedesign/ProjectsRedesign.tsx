@@ -28,7 +28,7 @@ export function ProjectsRedesign({
           }) => (
             <ProjectsCardWithImageRedesign
               key={title}
-              className={`projects-redesign__card col-desktop-${columnsCount}`}
+              className={`projects-redesign__card col-tablet-${columnsCount}`}
               title={title}
               description={description}
               imageUrl={imageUrl}
