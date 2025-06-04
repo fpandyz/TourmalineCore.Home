@@ -22,7 +22,7 @@
         },
         {
           "label":"Статьи",
-          "path":"/articles",
+          "path":"/ru/articles",
           "openInNewTab":false
         }
       ]
