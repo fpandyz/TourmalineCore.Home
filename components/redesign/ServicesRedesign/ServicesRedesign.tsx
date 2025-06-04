@@ -56,10 +56,11 @@ export function ServicesRedesign({
           linkText,
           theme,
           imageUrl,
-        }) => (
+        }, index) => (
           <li
-            key={title}
             className="services-redesign__card col-tablet-12 col-tablet-xl-3"
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
           >
             <ServicesCardRedesign
               title={title}
