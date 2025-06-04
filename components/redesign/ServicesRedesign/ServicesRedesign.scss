@@ -40,7 +40,7 @@
   &__teams-list {
     padding: 0 22px;
 
-    @include tablet-xl {
+    @include tablet {
       display: grid;
       padding: 0;
       grid-auto-flow: column;
@@ -153,7 +153,7 @@
       background-image: url("../../../public/images/edge-left-mobile.svg");
       pointer-events: none;
 
-      @include tablet-xl {
+      @include tablet {
         width: 20px;
         background-image: url("../../../public/images/edge-left-desktop.svg");
       }
@@ -164,7 +164,7 @@
       width: 32px;
       background-image: url("../../../public/images/edge-right-mobile.svg");
 
-      @include tablet-xl {
+      @include tablet {
         width: 20px;
         background-image: url("../../../public/images/edge-right-desktop.svg");
       }
@@ -175,7 +175,7 @@
       background-color: $color-pink-redesign;
     }
 
-    @include tablet-xl {
+    @include tablet {
       position: absolute;
       right: -4px;
       top: 5px;
@@ -205,9 +205,12 @@
     margin-bottom: 10px;
     padding: 0 22px;
 
+    @include tablet {
+      padding: 0;
+    }
+
     @include desktop {
       margin-bottom: 12px;
-      padding: 0;
     }
   }
 
@@ -219,13 +222,16 @@
     max-width: 440px;
     color: $color-grey-redesign;
 
+    @include tablet {
+      padding: 0;
+    }
+
     @include tablet-xl {
       max-width: 320px;
     }
 
     @include desktop {
       margin-bottom: 30px;
-      padding: 0;
       max-width: 440px;
     }
   }
