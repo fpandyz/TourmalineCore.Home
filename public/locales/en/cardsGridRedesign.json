@@ -20,10 +20,10 @@
         "link": "https://github.com/TourmalineCore/TourmalineCore.AspNetCore.JwtAuthentication"
       },
       {
-        "name": "TourmalineCore.AccountsApi.Template",
+        "name": "inner-circle-documentation",
         "description": "",
         "language": "TypeScript",
-        "link": "https://github.com/TourmalineCore/TourmalineCore.AccountsApi.Template"
+        "link": "https://github.com/TourmalineCore/inner-circle-documentation"
       }
     ],
     "markdownText": "It is important for us to share experience, improve the quality of code and bring our projects to the next level, so we share our code <a href='https://github.com/TourmalineCore'>on\u00A0GitHub</a>"
