@@ -28,7 +28,7 @@ export default function HomePage() {
   const { width } = useDeviceSize();
   const [clickedAccordion, setClickedAccordion] = useState(false);
 
-  const isDesktop = width >= 1366;
+  const isTablet = width >= 768;
 
   useEffect(() => {
     AOS.refresh();
@@ -55,8 +55,8 @@ export default function HomePage() {
         <ProjectsWithTextBlockRedesign targetId="projects" translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
-        {isDesktop && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
-        {isDesktop && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> }
+        {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
+        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> }
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />

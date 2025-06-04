@@ -9,7 +9,7 @@
   &__cards {
     gap: $grid-mobile-gap;
 
-    @include desktop {
+    @include tablet {
       gap: $grid-desktop-gap;
     }
   }

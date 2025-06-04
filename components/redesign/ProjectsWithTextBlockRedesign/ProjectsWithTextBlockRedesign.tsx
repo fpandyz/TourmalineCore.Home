@@ -19,7 +19,7 @@ export function ProjectsWithTextBlockRedesign({
 
   return (
     <section
-      className="projects-with-text-block-redesign"
+      className="projects-with-text-block-redesign projects-redesign"
       {...(targetId && { id: targetId })}
     >
       <div className="container-redesign projects-with-text-block-redesign__wrapper">
@@ -35,7 +35,7 @@ export function ProjectsWithTextBlockRedesign({
           }) => (
             <ProjectsCardWithImageRedesign
               key={title}
-              className="projects-with-text-block-redesign__card col-desktop-4"
+              className="projects-with-text-block-redesign__card  col-tablet-4"
               title={title}
               description={description}
               imageUrl={imageUrl}
@@ -45,7 +45,7 @@ export function ProjectsWithTextBlockRedesign({
             />
           ))}
 
-          <li className="projects-with-text-block-redesign__text-block col-desktop-4">
+          <li className="projects-with-text-block-redesign__text-block col-tablet-4">
             {textBlockTitle && (
               <h3 className="projects-with-text-block-redesign__subtitle">
                 {textBlockTitle}
