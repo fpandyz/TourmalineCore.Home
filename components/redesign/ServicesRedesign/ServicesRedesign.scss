@@ -185,6 +185,10 @@
       rotate: 5deg;
     }
 
+    @include tablet-xl {
+      top: 3px;
+    }
+
     @include desktop {
       top: 17px;
     }
@@ -193,6 +197,10 @@
   &__teams {
     position: relative;
     padding: 8px 0 40px;
+
+    @include tablet-xl {
+      padding: 12px 20px;
+    }
 
     @include desktop {
       padding: 42px 32px;
