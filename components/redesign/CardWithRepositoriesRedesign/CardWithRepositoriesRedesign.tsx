@@ -44,6 +44,8 @@ export function CardWithRepositoriesRedesign({
             <a
               className="card-with-repositories-redesign__link"
               href={link}
+              target="_blank"
+              rel="noreferrer"
             >
               <div className="card-with-repositories-redesign__item-inner">
                 <h3 className={clsx('card-with-repositories-redesign__name', {

@@ -20,10 +20,10 @@
         "link": "https://github.com/TourmalineCore/TourmalineCore.AspNetCore.JwtAuthentication"
       },
       {
-        "name": "TourmalineCore.AccountsApi.Template",
+        "name": "pelican-documentation",
         "description": "",
         "language": "TypeScript",
-        "link": "https://github.com/TourmalineCore/TourmalineCore.AccountsApi.Template"
+        "link": "https://github.com/TourmalineCore/pelican-documentation"
       }
     ],
     "markdownText": "Нам важно обмениваться опытом, улучшать качество кода и\u00A0развивать проекты, поэтому делимся кодом <a href='https://github.com/TourmalineCore'>на\u00A0Github</a>"
