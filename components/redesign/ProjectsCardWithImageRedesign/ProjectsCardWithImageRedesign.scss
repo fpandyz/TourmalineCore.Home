@@ -52,6 +52,14 @@
     margin-bottom: 8px;
     color: $color-black;
 
+    @include tablet {
+      word-break: break-word;
+    }
+
+    @include tablet-xl {
+      word-break: normal;
+    }
+
     @include desktop {
       margin-bottom: 12px;
     }
