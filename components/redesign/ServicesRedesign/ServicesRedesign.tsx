@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { ServicesCardRedesign } from '../ServicesCardRedesign/ServicesCardRedesign';
 
 type NewServicesList = {
+  id: number;
   title?: string;
   skillsList?: string[];
   link?: string;
@@ -50,17 +51,17 @@ export function ServicesRedesign({
           </h2>
         </li>
         {newServicesList.map(({
+          id,
           title,
           skillsList,
           link,
           linkText,
           theme,
           imageUrl,
-        }, index) => (
+        }) => (
           <li
             className="services-redesign__card col-tablet-12 col-tablet-xl-3"
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
+            key={id}
           >
             <ServicesCardRedesign
               title={title}

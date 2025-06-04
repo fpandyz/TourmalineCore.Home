@@ -3,11 +3,13 @@
   "list":
   [
     {
+      "id": 0,
       "title": "Web Development",
       "skillsList": ["Single-page applications", "Websites and landing pages", "Enterprise systems", "CRM, ERP, personal accounts"],
       "theme": "black"
     },
     {
+      "id": 1,
       "title": "Embedded development",
       "skillsList": ["Drivers", "Software modules with complex logic", "Protocols and libraries", "Cross-compilation setup and technical documentation"],
       "link": "/embedded",
@@ -15,10 +17,12 @@
       "theme": "white"
     },
     {
+      "id": 2,
       "imageUrl": "/images/services-card.png",
       "theme": "blue"
     },
     {
+      "id": 3,
       "title": "Machine learning and data analysis",
       "skillsList": ["Business data analytics", "Computer vision models", "Text and audio processing models", "Sensor signal processing models"],
       "link": "/ml",
@@ -26,6 +30,7 @@
       "theme": "grey"
     },
     {
+      "id": 4,
       "title": "Testing",
       "skillsList": ["E2E testing", "UI & API testing", "Integration and unit testing", "Manual and automated testing"],
       "link": "/qa",
@@ -33,6 +38,7 @@
       "theme": "white"
     },
     {
+      "id": 5,
       "title": "Design",
       "skillsList": ["UI/UX design", "Websites and landing pages design", "No/Low-code websites"],
       "link": "/design",
@@ -40,6 +46,7 @@
       "theme": "grey"
     },
     {
+      "id": 6,
       "title": "Other",
       "skillsList": ["Launching MVP projects", "Architecture design", "Development of high-load services", "Setting up project’s environment and CI/CD", "Software architecture and development consulting"],
       "theme": "grey"
