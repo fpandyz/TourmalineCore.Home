@@ -1,10 +1,10 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 import clsx from 'clsx';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
 type PrimaryButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-function PrimaryButton({
+export function PrimaryButton({
   children,
   className,
   ...props
@@ -21,5 +21,3 @@ function PrimaryButton({
     </button>
   );
 }
-
-export default PrimaryButton;

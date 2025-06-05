@@ -1,8 +1,8 @@
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
-export default function Points() {
+export function Points() {
   const { slicePathname } = usePath();
   const { t } = useTranslationNamespace('points');
 

@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { MouseEventHandler } from 'react';
 
-import SocialLinks from '../SocialLinks/SocialLinks';
-import MobileLangSwitch from './components/MobileLangSwitch/MobileLangSwitch';
+import { SocialLinks } from '../SocialLinks/SocialLinks';
+import { MobileLangSwitch } from './components/MobileLangSwitch/MobileLangSwitch';
 
 import IconClose from '../../icons/close.svg';
 
@@ -18,7 +18,7 @@ type MobileMenuProps = {
   onCloseClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-function MobileMenu({
+export function MobileMenu({
   headerLinks,
   onCloseClick,
 }: MobileMenuProps) {
@@ -79,5 +79,3 @@ function MobileMenu({
     </div>
   );
 }
-
-export default MobileMenu;

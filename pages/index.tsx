@@ -1,9 +1,9 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
-import PageHead from '../components/PageHead/PageHead';
-import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
-import useDeviceSize from '../common/hooks/useDeviceSize';
+import { PageHead } from '../components/PageHead/PageHead';
+import { useSectionAutoPaddings } from '../common/hooks/useSectionAutoPaddings';
+import { useDeviceSize } from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';

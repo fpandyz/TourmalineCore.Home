@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from 'react';
-import useMinPaddingBetweenSections from './useMinPadding';
-import useDeviceSize from './useDeviceSize';
+import { useMinPaddingBetweenSections } from './useMinPadding';
+import { useDeviceSize } from './useDeviceSize';
 
 type Section = HTMLElement;
 type Element = HTMLElement;
@@ -10,7 +10,7 @@ const ELEMENT_SELECTOR = 'div[name]';
 
 const ZERO_HTML_PADDING = '0px';
 
-function useSectionAutoPaddings() {
+export function useSectionAutoPaddings() {
   const deviceSize = useDeviceSize();
   const minPadding = useMinPaddingBetweenSections();
 
@@ -199,5 +199,3 @@ function useSectionAutoPaddings() {
     return Number(padding.replace('px', ''));
   }
 }
-
-export default useSectionAutoPaddings;

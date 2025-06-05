@@ -1,7 +1,7 @@
 import { TStagesList } from '../../types';
-import StagesAccordion from '../StagesAccordion/StagesAccordion';
+import { StagesAccordion } from '../StagesAccordion/StagesAccordion';
 
-export default function StagesList({
+export function StagesList({
   list,
   clickedAccordion,
 }:{

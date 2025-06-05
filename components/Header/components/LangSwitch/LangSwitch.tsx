@@ -1,5 +1,7 @@
 import {
-  useState, useRef, useMemo,
+  useState,
+  useRef,
+  useMemo,
 } from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
@@ -10,9 +12,9 @@ import { languages } from '../../../../common/utils/consts/languages';
 
 import IconArrow from '../../../../icons/icon-arrow.svg';
 import { DEFAULT_LOCALE } from '../../../../common/utils/consts/localization';
-import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
 
-function LangSwitch() {
+export function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -82,5 +84,3 @@ function LangSwitch() {
     </div>
   );
 }
-
-export default LangSwitch;

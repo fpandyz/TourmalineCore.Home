@@ -1,7 +1,7 @@
 import { TCooperationList } from '../../types';
-import usePath from '../../../../common/hooks/usePath';
+import { usePath } from '../../../../common/hooks/usePath';
 
-export default function CooperationList({
+export function CooperationList({
   list,
 }: {
   list: TCooperationList

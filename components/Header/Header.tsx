@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import LangSwitch from './components/LangSwitch/LangSwitch';
+import { LangSwitch } from './components/LangSwitch/LangSwitch';
 import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
@@ -15,8 +15,8 @@ import IconBurgerDesign from '../../icons/burger-design.svg';
 import IconBurgerQA from '../../icons/burger-qa.svg';
 import IconBurgerBackend from '../../icons/burger-backend.svg';
 import IconBurgerCyan from '../../icons/burger-cyan.svg';
-import MobileMenu from '../MobileMenu/MobileMenu';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
 type HeaderLinks = {
@@ -78,7 +78,7 @@ const BURGER_ICONS = new Map(
   ],
 );
 
-function Header({
+export function Header({
   containerClass,
 }: {
   containerClass?: string;
@@ -142,5 +142,3 @@ function Header({
     </>
   );
 }
-
-export default Header;
