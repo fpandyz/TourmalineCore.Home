@@ -11,7 +11,7 @@
     {
       "id": 1,
       "title": "Embedded development",
-      "skillsList": ["Drivers", "Software modules with complex logic", "Protocols and libraries", "Cross-compilation setup and technical documentation"],
+      "skillsList": ["Drivers", "Software modules with complex logic", "Protocols and libraries", "Cross-compilation setup", "Technical documentation"],
       "link": "/embedded",
       "linkText": "Learn more",
       "theme": "white"
