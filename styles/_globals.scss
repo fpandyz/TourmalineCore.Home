@@ -103,8 +103,6 @@ a {
   }
 
   @include desktop {
-    display: flex;
-    justify-content: flex-end;
     padding-right: $pd-desktop;
     padding-left: $pd-desktop;
   }
