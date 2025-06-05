@@ -39,12 +39,8 @@
 
   &__title,
   &__description {
-    max-width: 646px;
+    max-width: 490px;
     text-align: center;
-
-    @include tablet {
-      max-width: 490px;
-    }
 
     @include desktop {
       max-width: 646px;
