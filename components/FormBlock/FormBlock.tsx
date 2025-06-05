@@ -1,6 +1,5 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { Element } from 'react-scroll';
 
 import clsx from 'clsx';
 import Form from '../Form/Form';
@@ -33,38 +32,36 @@ function FormBlock({
       id={id}
       {...props}
     >
-      <Element name={`scroll-to-${id}`}>
-        <div
-          className={clsx('form-block__inner')}
-        >
-          <h2 className="title-technology-type-2 form-block__title">
-            {t('title')}
-            {' '}
-            <span className="title-technology-type-2 form-block__title-technology">
-              {t('titleGradient')}
-            </span>
-          </h2>
-          {
-            !isSubmit
-              ? (
-                <Form
-                  onSubmit={onFormSubmit}
-                  buttonClassName={buttonClassName}
-                />
-              )
-              : (
-                <div>
-                  <span className="form-block__text">
-                    {t('text')}
-                    {' '}
-                    {email}
-                  </span>
-                  <PrimaryButton onClick={() => setIsSubmit(false)}>{t('buttonText')}</PrimaryButton>
-                </div>
-              )
-          }
-        </div>
-      </Element>
+      <div
+        className={clsx('form-block__inner')}
+      >
+        <h2 className="title-technology-type-2 form-block__title">
+          {t('title')}
+          {' '}
+          <span className="title-technology-type-2 form-block__title-technology">
+            {t('titleGradient')}
+          </span>
+        </h2>
+        {
+          !isSubmit
+            ? (
+              <Form
+                onSubmit={onFormSubmit}
+                buttonClassName={buttonClassName}
+              />
+            )
+            : (
+              <div>
+                <span className="form-block__text">
+                  {t('text')}
+                  {' '}
+                  {email}
+                </span>
+                <PrimaryButton onClick={() => setIsSubmit(false)}>{t('buttonText')}</PrimaryButton>
+              </div>
+            )
+        }
+      </div>
     </section>
   );
 
