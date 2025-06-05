@@ -1,4 +1,6 @@
 .signpost-redesign {
+  $this: &;
+
   &__subtitle {
     color: $color-middle-grey-redesign;
   }
@@ -6,6 +8,13 @@
   &__link-wrapper {
     text-decoration: none;
     color: inherit;
+
+    &:hover,
+    &:focus-visible {
+      #{$this}__title {
+        text-decoration-color: currentColor;
+      }
+    }
   }
 
   &__image-container {
@@ -29,6 +38,9 @@
 
   &__title {
     margin-bottom: 4px;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.3s;
   }
 
   &__title,
