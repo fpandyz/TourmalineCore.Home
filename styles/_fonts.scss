@@ -1,11 +1,11 @@
 @font-face {
-  src: url("/fonts/Unbounded-Light.ttf") format("woff");
+  src: url("/fonts/Unbounded-Light.ttf") format("truetype");
   font-family: Unbounded;
   font-weight: 300;
 }
 
 @font-face {
-  src: url("/fonts/Unbounded-Regular.ttf") format("woff");
+  src: url("/fonts/Unbounded-Regular.ttf") format("truetype");
   font-family: Unbounded;
   font-weight: 400;
 }
@@ -17,8 +17,14 @@
 }
 
 @font-face {
-  src: url("/fonts/Consolas.ttf") format("woff");
-  font-family: Consolas;
+  src: url("/fonts/SourceCodePro-Regular.ttf") format("truetype");
+  font-family: Source-Code-Pro;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url("/fonts/Comic-Sans.ttf") format("truetype");
+  font-family: Comic-Sans;
   font-weight: 400;
 }
 
@@ -39,4 +45,4 @@ $fallback-font: -apple-system,
 $ff-montserrat: Montserrat, $fallback-font;
 $ff-inter: Inter, $fallback-font;
 $ff-unbounded: Unbounded, $fallback-font;
-$ff-consolas: Consolas, $fallback-font;
+$ff-source-code-pro: Source-Code-Pro, $fallback-font;
