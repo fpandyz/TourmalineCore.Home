@@ -16,8 +16,6 @@ export default function StagesList({
           title={title}
           description={description}
           index={index}
-          data-aos="fade-up"
-          data-aos-delay={50 * (index + 1)}
           clickedAccordion={clickedAccordion}
         />
       ))}

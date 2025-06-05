@@ -41,7 +41,6 @@ function FormBlock({
       <Element name={`scroll-to-${id}`}>
         <div
           className={clsx('form-block__inner', notMainPage && 'form-block__inner--technology')}
-          data-aos={animationName}
         >
           <h2 className={`${notMainPage ? 'title-technology-type-2' : 'title-type-3'} form-block__title`}>
             {t('title')}

@@ -2,10 +2,9 @@ import clsx from 'clsx';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
-  FormEvent, KeyboardEvent, useMemo, useRef, useState,
+  FormEvent, useMemo, useRef, useState,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { isMobile as isMobileOrTablet } from 'react-device-detect';
 
 import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';

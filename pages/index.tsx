@@ -1,11 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
-import { useEffect, useState } from 'react';
-import AOS from 'aos';
-
 import PageHead from '../components/PageHead/PageHead';
-
 import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
 import useDeviceSize from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
@@ -26,13 +22,8 @@ export default function HomePage() {
   useSectionAutoPaddings();
 
   const { width } = useDeviceSize();
-  const [clickedAccordion, setClickedAccordion] = useState(false);
 
   const isTablet = width >= 768;
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [width, clickedAccordion]);
 
   return (
     <>
@@ -87,20 +78,6 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'conferenceSignpostsRedesign',
       'articleSignpostsRedesign',
       'singleImageRedesign',
-
-      // 'articles',
-      // 'heroBlockHomePage',
-      // 'skills',
-      // 'services',
-      // 'navigation',
-      // 'workStructure',
-      // 'mistakes',
-      // 'adaptationToProject',
-      // 'process',
-      // 'tools',
-      // 'form',
-      // 'formBlock',
-      // 'discussion',
     ])),
   },
 });

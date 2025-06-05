@@ -58,7 +58,6 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'cookie',
       'form',
       'formBlock',
-      'discussion',
       'heroFrontend-team',
       'pointsFrontend-team',
       'servicesTechnologyFrontend-team',
