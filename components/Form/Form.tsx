@@ -10,7 +10,7 @@ import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import Textarea from '../Textarea/Textarea';
-import Spinner from '../Spinner/Spinner';
+import { Spinner } from '../Spinner/Spinner';
 import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
