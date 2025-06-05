@@ -5,8 +5,8 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { languages } from '../../common/utils/consts/languages';
-import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
+import { languages } from '../../../../common/utils/consts/languages';
+import { DEFAULT_LOCALE } from '../../../../common/utils/consts/localization';
 
 function MobileLangSwitch() {
   const router = useRouter();

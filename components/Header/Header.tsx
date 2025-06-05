@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import LangSwitch from '../LangSwitch/LangSwitch';
+import LangSwitch from './components/LangSwitch/LangSwitch';
 import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';

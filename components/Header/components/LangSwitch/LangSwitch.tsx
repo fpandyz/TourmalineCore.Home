@@ -5,12 +5,12 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { useAutoClose } from '../../common/hooks/useAutoClose';
-import { languages } from '../../common/utils/consts/languages';
+import { useAutoClose } from '../../../../common/hooks/useAutoClose';
+import { languages } from '../../../../common/utils/consts/languages';
 
 import IconArrow from '../../icons/icon-arrow.svg';
-import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { DEFAULT_LOCALE } from '../../../../common/utils/consts/localization';
+import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
 
 function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);

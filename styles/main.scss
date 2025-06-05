@@ -11,11 +11,9 @@
 @import "../components/Header/Header";
 @import "../components/Footer/Footer";
 @import "../components/PrimaryButton/PrimaryButton";
-@import "../components/Input/Input";
-@import "../components/Textarea/Textarea";
-@import "../components/LangSwitch/LangSwitch";
-@import "../components/MobileLangSwitch/MobileLangSwitch";
+@import "../components/Header/components/LangSwitch/LangSwitch";
 @import "../components/MobileMenu/MobileMenu";
+@import "../components/MobileMenu/components/MobileLangSwitch/MobileLangSwitch";
 @import "../components/SocialLinks/SocialLinks";
 @import "../components/FormBlock/FormBlock";
 @import "../components/List/List";
@@ -23,6 +21,8 @@
 @import "../components/HeroBlock/HeroBlock";
 @import "../components/Cookie/Cookie";
 @import "../components/Form/Form";
+@import "../components/Form/components/Input/Input";
+@import "../components/Form/components/Textarea/Textarea";
 @import "../components/Spinner/Spinner";
 @import "../components/HeroBlockTechnology/HeroBlockTechnology";
 @import "../components/Points/Points";
