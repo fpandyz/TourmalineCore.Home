@@ -10,7 +10,7 @@ import ExternalLink from '../ExternalLink/ExternalLink';
 import Input from '../Input/Input';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import Textarea from '../Textarea/Textarea';
-import Spiner from '../Spiner/Spiner';
+import Spinner from '../Spinner/Spiner';
 import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
 
@@ -92,7 +92,7 @@ function Form({
           >
             {
               isLoading
-                ? <Spiner />
+                ? <Spinner />
                 : t('buttonText')
             }
           </PrimaryButton>
