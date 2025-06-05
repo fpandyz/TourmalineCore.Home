@@ -3,7 +3,7 @@
   "projectsCardsWithImage": [
     {
       "imageUrl": "/images/zoo-project.jpg",
-      "title": "Челябинский зоопарк",
+      "title": "Pelican",
       "description": "Open-source сайт для\u00A0Челябинского зоопарка, который мы\u00A0сделали на\u00A0благотворительной основе",
       "link": "https://github.com/TourmalineCore/pelican-documentation",
       "size": "M",

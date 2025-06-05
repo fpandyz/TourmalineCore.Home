@@ -18,12 +18,8 @@
   font-family: $ff-inter;
 }
 
-@mixin comic-sans-font {
-  font-family: $ff-comic-sans;
-}
-
-@mixin consolas-font {
-  font-family: $ff-consolas;
+@mixin source-code-pro-font {
+  font-family: $ff-source-code-pro;
 }
 
 @mixin h1 {
@@ -139,17 +135,9 @@
   }
 }
 
-@mixin handwritten-text {
-  @include regular-font;
-  @include comic-sans-font;
-
-  font-size: 24px;
-  line-height: 1.4;
-}
-
 @mixin caption {
   @include regular-font;
-  @include consolas-font;
+  @include source-code-pro-font;
 
   font-size: 18px;
   line-height: 1.2;
@@ -162,7 +150,7 @@
 
 @mixin link-text {
   @include regular-font;
-  @include consolas-font;
+  @include source-code-pro-font;
 
   font-size: 18px;
   line-height: 1;
