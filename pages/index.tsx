@@ -64,72 +64,6 @@ export default function HomePage() {
         <CardsGridRedesign />
         <CollageWithLinkRedesign />
       </LayoutRedesign>
-
-      {/* <LayoutHomePage
-        navigationLinks={navigationLinks}
-      >
-        <Services
-          id={NavigationLinks.services}
-          data-auto-padding={NavigationLinks.services}
-          animationName="fade-up"
-        />
-
-        <Skills
-          id={NavigationLinks.skills}
-          data-auto-padding={NavigationLinks.skills}
-          animationName="fade-up"
-          clickedAccordion={() => setClickedAccordion(!clickedAccordion)}
-        /> */}
-
-      {/* <section
-        id={NavigationLinks.experience}
-        data-auto-padding={NavigationLinks.experience}
-      >
-        <Element name={`scroll-to-${NavigationLinks.experience}`}>
-          <CompletedProjects
-            animationName="fade-up"
-          />
-
-          <Discussion
-            animationName="fade-up"
-          />
-        </Element>
-      </section> */}
-
-      {/* <div
-        id={NavigationLinks.approach}
-      >
-        <AdaptationToProject
-          id={NavigationLinks.approach}
-          animationName="fade-up"
-          data-auto-padding="adaptation-project"
-        />
-
-        <Process
-          animationName="fade-up"
-          data-auto-padding="process"
-        />
-        <Tools
-          animationName="fade-up"
-          data-auto-padding="tools"
-        />
-        <WorkStructure
-          animationName="fade-up"
-          data-auto-padding="work-structure"
-        />
-        <Mistakes
-          animationName="fade-up"
-          data-auto-padding="mistakes"
-        />
-      </div> */}
-
-      {/* <FormBlock
-        id={NavigationLinks.contact}
-        animationName="fade-up"
-        data-auto-padding="form-block"
-      /> */}
-
-      {/* </LayoutHomePage> */}
     </>
   );
 }
@@ -158,7 +92,6 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       // 'heroBlockHomePage',
       // 'skills',
       // 'services',
-      // 'completedProjects',
       // 'navigation',
       // 'workStructure',
       // 'mistakes',
