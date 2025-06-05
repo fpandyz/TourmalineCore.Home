@@ -3,14 +3,12 @@ import { useState } from 'react';
 import { Element } from 'react-scroll';
 
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
 import Form from '../Form/Form';
 import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
 import { SectionProps } from '../../types/globals';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
 import isChineseLanguage from '../../common/utils/isChineseLanguage';
-import { AppRoute } from '../../common/utils/consts/app-route';
 
 function FormBlock({
   animationName,
@@ -24,14 +22,11 @@ function FormBlock({
   const [isSubmit, setIsSubmit] = useState(false);
 
   const { t } = useTranslation('formBlock');
-  const { pathname } = useRouter();
-
-  const notMainPage = pathname !== AppRoute.Main;
 
   return (
     <section
       className={
-        clsx(`section container form-block ${notMainPage ? 'container--technology-page' : 'container--home-page'}`, {
+        clsx('section container form-block', {
           'form-block--zh': isChineseLanguage(),
         })
       }
@@ -40,17 +35,12 @@ function FormBlock({
     >
       <Element name={`scroll-to-${id}`}>
         <div
-          className={clsx('form-block__inner', notMainPage && 'form-block__inner--technology')}
+          className={clsx('form-block__inner')}
         >
-          <h2 className={`${notMainPage ? 'title-technology-type-2' : 'title-type-3'} form-block__title`}>
+          <h2 className="title-technology-type-2 form-block__title">
             {t('title')}
             {' '}
-            <span className={
-              notMainPage
-                ? 'title-technology-type-2 form-block__title-technology'
-                : 'form-block__title-gradient '
-            }
-            >
+            <span className="title-technology-type-2 form-block__title-technology">
               {t('titleGradient')}
             </span>
           </h2>

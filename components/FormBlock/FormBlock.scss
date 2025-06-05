@@ -4,30 +4,12 @@
   padding-bottom: 56px;
 
   &__inner {
-    @include tablet-xl {
-      max-width: 800px;
-
-      &--technology {
-        max-width: none;
-      }
-    }
-
     @include desktop {
-      max-width: 803px;
-
-      &--technology {
-        padding-left: 413px;
-        max-width: none;
-      }
+      padding-left: 413px;
     }
 
     @include desktop-xl {
-      max-width: 960px;
-
-      &--technology {
-        padding-left: 496px;
-        max-width: none;
-      }
+      padding-left: 496px;
     }
   }
 
@@ -37,10 +19,6 @@
     @include desktop {
       margin-bottom: 64px;
     }
-  }
-
-  &__title-gradient {
-    @include gradient-text;
   }
 
   &__title-technology {
@@ -61,26 +39,6 @@
     display: block;
     margin-bottom: 56px;
     color: $color-white-alpha-100;
-  }
-
-  &--zh {
-    #{$this}__inner {
-      @include tablet-xl {
-        max-width: 840px;
-
-        &--technology {
-          max-width: none;
-        }
-      }
-
-      @include desktop-xl {
-        max-width: 980px;
-
-        &--technology {
-          max-width: none;
-        }
-      }
-    }
   }
 
   @include tablet {
