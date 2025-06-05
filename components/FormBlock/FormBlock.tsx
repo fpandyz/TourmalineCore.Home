@@ -1,20 +1,17 @@
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, useState } from 'react';
 
 import clsx from 'clsx';
-import Form from '../Form/Form';
-import PrimaryButton from '../PrimaryButton/PrimaryButton';
-
-import { SectionProps } from '../../types/globals';
+import { Form } from '../Form/Form';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
-function FormBlock({
-  animationName,
+export function FormBlock({
   id,
   buttonClassName,
   ...props
-}: SectionProps & {
+}: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & {
   buttonClassName?: string;
 }) {
   const [email, setEmail] = useState('');
@@ -73,5 +70,3 @@ function FormBlock({
     setIsSubmit(true);
   }
 }
-
-export default FormBlock;

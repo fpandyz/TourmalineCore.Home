@@ -1,7 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import Layout from '../../components/Layout/Layout';
-import PageHead from '../../components/PageHead/PageHead';
+import { Layout } from '../../components/Layout/Layout';
+import { PageHead } from '../../components/PageHead/PageHead';
 import Article from '../../partials/Articles/Article/Article';
 
 import { fetchArticle } from '../../partials/Articles/fetchHelpers/fetchArticle';

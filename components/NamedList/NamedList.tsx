@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 
-export default function NamedList(
+export function NamedList(
   {
     title,
     data,

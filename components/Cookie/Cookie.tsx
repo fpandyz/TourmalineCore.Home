@@ -4,10 +4,10 @@ import { getCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
 import clsx from 'clsx';
-import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { OptionYM } from '../../types/globals';
-import ExternalLink from '../ExternalLink/ExternalLink';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { ExternalLink } from '../ExternalLink/ExternalLink';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
 const cookieAccept = 'cookieAccept';
 
@@ -21,7 +21,7 @@ export const optionYandexMetrika: OptionYM = {
   webvisor: true,
 };
 
-function Cookie() {
+export function Cookie() {
   const { t } = useTranslation('cookie');
   const [isCookie, setIsCookie] = useState(true);
   const [date, setDate] = useState<Date>();
@@ -97,5 +97,3 @@ function Cookie() {
     setIsCookie(true);
   }
 }
-
-export default Cookie;

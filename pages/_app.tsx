@@ -5,7 +5,7 @@ import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import { useEffect } from 'react';
-import Cookie from '../components/Cookie/Cookie';
+import { Cookie } from '../components/Cookie/Cookie';
 
 const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
 

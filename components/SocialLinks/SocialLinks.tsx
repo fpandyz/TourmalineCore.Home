@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import IconMail from '../../icons/mail.svg';
 import IconMailPurple from '../../icons/mail-frontend.svg';
 import IconMailFrontendPelicanTeam from '../../icons/mail-frontend-team.svg';
@@ -19,7 +19,7 @@ import IconTelegramBackend from '../../icons/telegram-backend.svg';
 import IconTelegramTeams from '../../icons/telegram-teams.svg';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
-function SocialLinks() {
+export function SocialLinks() {
   const { pathname } = useRouter();
 
   const icons = getIcons(pathname);
@@ -114,5 +114,3 @@ function SocialLinks() {
     }
   }
 }
-
-export default SocialLinks;

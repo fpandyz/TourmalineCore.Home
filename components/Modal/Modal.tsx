@@ -8,7 +8,7 @@ import IconCross from '../../icons/cross.svg';
 import { useOnClickOutside } from '../../common/hooks/useOnClickOutside';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
-function Modal({
+export function Modal({
   title,
   subtitle,
   subtitleClassName,
@@ -78,5 +78,3 @@ function Modal({
     </div>
   );
 }
-
-export default Modal;

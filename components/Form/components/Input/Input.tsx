@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
 
 interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   id: string;
@@ -9,7 +9,7 @@ interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
   isError?: boolean;
 }
 
-function Input({
+export function Input({
   id,
   label,
   description,
@@ -36,5 +36,3 @@ function Input({
     </div>
   );
 }
-
-export default Input;

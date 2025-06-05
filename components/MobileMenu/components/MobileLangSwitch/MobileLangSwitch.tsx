@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { languages } from '../../../../common/utils/consts/languages';
 import { DEFAULT_LOCALE } from '../../../../common/utils/consts/localization';
 
-function MobileLangSwitch() {
+export function MobileLangSwitch() {
   const router = useRouter();
 
   const routerLocale = useMemo(() => {
@@ -53,5 +53,3 @@ function MobileLangSwitch() {
     </div>
   );
 }
-
-export default MobileLangSwitch;

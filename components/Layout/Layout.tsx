@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import { ReactNode } from 'react';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
+import { Footer } from '../Footer/Footer';
+import { Header } from '../Header/Header';
 
-export default function Layout({
+export function Layout({
   children,
   mainClassName,
 }: {

@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import { getMetaLangLinks } from './getMetaLangLinks';
 
-export default function PageHead({ seoData }) {
+export function PageHead({ seoData }) {
   const {
     seo: {
       title,

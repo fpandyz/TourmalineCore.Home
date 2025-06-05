@@ -1,8 +1,8 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 
-import Layout from '../../components/Layout/Layout';
-import PageHead from '../../components/PageHead/PageHead';
+import { Layout } from '../../components/Layout/Layout';
+import { PageHead } from '../../components/PageHead/PageHead';
 import Articles from '../../partials/Articles/Articles';
 
 import { fetchArticlesListWithMeta } from '../../partials/Articles/fetchHelpers/fetchArticlesListWithMeta';

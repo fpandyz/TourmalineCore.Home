@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, TextareaHTMLAttributes } from 'react';
-import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
 
 interface TextareaProps extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
   id: string;
@@ -9,7 +9,7 @@ interface TextareaProps extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTex
   isError?: boolean;
 }
 
-function Textarea({
+export function Textarea({
   id,
   label,
   description,
@@ -36,5 +36,3 @@ function Textarea({
     </div>
   );
 }
-
-export default Textarea;

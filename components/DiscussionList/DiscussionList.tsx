@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
-import List from '../List/List';
+import { List } from '../List/List';
 
-export default function DiscussionList() {
+export function DiscussionList() {
   const { t } = useTranslation('discussion');
 
   const steps: string[] = t('steps', { returnObjects: true });

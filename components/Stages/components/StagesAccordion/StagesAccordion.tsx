@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react';
 import clsx from 'clsx';
-import usePath from '../../../../common/hooks/usePath';
-import useDeviceSize from '../../../../common/hooks/useDeviceSize';
-import IconlLargeArrow from '../../../../icons/icon-large-arrow.svg';
+import { usePath } from '../../../../common/hooks/usePath';
+import { useDeviceSize } from '../../../../common/hooks/useDeviceSize';
+import IconLargeArrow from '../../../../icons/icon-large-arrow.svg';
 
-export default function StagesAccordion({
+export function StagesAccordion({
   title,
   description,
   index,
@@ -42,7 +42,7 @@ export default function StagesAccordion({
               }}
             >
               {title}
-              <IconlLargeArrow className={clsx('stages-list__accordion-icon', {
+              <IconLargeArrow className={clsx('stages-list__accordion-icon', {
                 'stages-list__accordion-icon--is-open': isOpen,
               })}
               />

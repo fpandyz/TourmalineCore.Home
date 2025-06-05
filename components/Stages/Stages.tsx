@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
-import StagesList from './components/StagesList/StagesList';
+import { StagesList } from './components/StagesList/StagesList';
 import { TStagesList } from './types';
 
-export default function Stages() {
+export function Stages() {
   const { slicePathname } = usePath();
 
   const { t } = useTranslationNamespace('stages');
