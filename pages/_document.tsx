@@ -31,8 +31,6 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
 
           <link rel="preconnect" href="https://mc.yandex.ru" />
-
-          <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         </Head>
 
         <body className="default-scroll">
