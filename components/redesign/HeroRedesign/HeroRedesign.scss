@@ -41,9 +41,17 @@
   &__description {
     max-width: 646px;
     text-align: center;
+
+    @include tablet {
+      max-width: 490px;
+    }
+
+    @include desktop {
+      max-width: 646px;
+    }
   }
 
-  @include desktop {
+  @include tablet {
     padding-bottom: 130px;
   }
 }
