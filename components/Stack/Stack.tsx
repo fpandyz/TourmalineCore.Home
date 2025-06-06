@@ -1,5 +1,5 @@
-import NamedList from '../NamedList/NamedList';
-import usePath from '../../common/hooks/usePath';
+import { NamedList } from '../NamedList/NamedList';
+import { usePath } from '../../common/hooks/usePath';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
@@ -8,7 +8,7 @@ type StackList = {
   data: string[]
 }[];
 
-export default function Stack() {
+export function Stack() {
   const { slicePathname } = usePath();
 
   const { t } = useTranslationNamespace('stack');

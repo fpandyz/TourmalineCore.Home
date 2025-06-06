@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import IconMail from '../../icons/mail.svg';
 import IconMailPurple from '../../icons/mail-frontend.svg';
 import IconMailFrontendPelicanTeam from '../../icons/mail-frontend-team.svg';
@@ -8,6 +8,7 @@ import IconMailDesign from '../../icons/mail-design.svg';
 import IconMailEmbedded from '../../icons/mail-embedded.svg';
 import IconMailQA from '../../icons/mail-qa.svg';
 import IconMailBackend from '../../icons/mail-backend.svg';
+import IconMailTeams from '../../icons/mail-teams.svg';
 import IconTelegram from '../../icons/telegram.svg';
 import IconTelegramPurple from '../../icons/telegram-frontend.svg';
 import IconTelegramFrontendPelicanTeam from '../../icons/telegram-frontend-team.svg';
@@ -15,9 +16,10 @@ import IconTelegramDesign from '../../icons/telegram-design.svg';
 import IconTelegramEmbedded from '../../icons/telegram-embedded.svg';
 import IconTelegramQA from '../../icons/telegram-qa.svg';
 import IconTelegramBackend from '../../icons/telegram-backend.svg';
+import IconTelegramTeams from '../../icons/telegram-teams.svg';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
-function SocialLinks() {
+export function SocialLinks() {
   const { pathname } = useRouter();
 
   const icons = getIcons(pathname);
@@ -64,7 +66,7 @@ function SocialLinks() {
     switch (page) {
       case AppRoute.Ml:
       case AppRoute.Frontend:
-      case AppRoute.Teams:
+
         return {
           mail: <IconMailPurple />,
           telegram: <IconTelegramPurple />,
@@ -98,6 +100,12 @@ function SocialLinks() {
           telegram: <IconTelegramBackend />,
         };
 
+      case AppRoute.Teams:
+        return {
+          mail: <IconMailTeams />,
+          telegram: <IconTelegramTeams />,
+        };
+
       default:
         return {
           mail: <IconMail />,
@@ -106,5 +114,3 @@ function SocialLinks() {
     }
   }
 }
-
-export default SocialLinks;

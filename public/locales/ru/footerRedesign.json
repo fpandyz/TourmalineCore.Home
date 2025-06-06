@@ -22,13 +22,13 @@
         },
         {
           "label":"Статьи",
-          "path":"/articles",
+          "path":"/ru/articles",
           "openInNewTab":false
         }
       ]
     },
     {
-      "caption":"Соц сети",
+      "caption":"Соц. сети",
       "links":[
         {
           "label":"VK",

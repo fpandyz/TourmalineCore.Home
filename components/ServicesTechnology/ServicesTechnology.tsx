@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import ServicesTechnologyCard from './components/ServicesTechnologyCard/ServicesTechnologyCard';
+import { ServicesTechnologyCard } from './components/ServicesTechnologyCard/ServicesTechnologyCard';
 import { TServicesTechnologyList } from './types';
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
-export default function ServicesTechnology({
+export function ServicesTechnology({
   localeKeyName,
   isFilled,
 }: {
