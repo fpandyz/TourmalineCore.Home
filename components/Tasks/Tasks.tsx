@@ -1,9 +1,9 @@
-import TasksList from './components/TasksList/TasksList';
+import { TasksList } from './components/TasksList/TasksList';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
-export default function Tasks() {
+export function Tasks() {
   const { slicePathname } = usePath();
   const { t } = useTranslationNamespace('tasks');
 

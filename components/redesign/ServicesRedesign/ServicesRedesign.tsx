@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { ServicesCardRedesign } from '../ServicesCardRedesign/ServicesCardRedesign';
 
 type NewServicesList = {
+  id: number;
   title?: string;
   skillsList?: string[];
   link?: string;
@@ -50,6 +51,7 @@ export function ServicesRedesign({
           </h2>
         </li>
         {newServicesList.map(({
+          id,
           title,
           skillsList,
           link,
@@ -58,8 +60,8 @@ export function ServicesRedesign({
           imageUrl,
         }) => (
           <li
-            key={title}
             className="services-redesign__card col-tablet-12 col-tablet-xl-3"
+            key={id}
           >
             <ServicesCardRedesign
               title={title}

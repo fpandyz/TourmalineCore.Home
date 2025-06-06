@@ -88,7 +88,6 @@
   }
 
   &__image-container {
-    position: relative;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -96,6 +95,11 @@
     width: 212px;
     height: 276px;
     transform: translate(-50%, -50%);
+
+    img {
+      background-color: $color-black;
+      object-fit: cover;
+    }
   }
 
   &:hover {

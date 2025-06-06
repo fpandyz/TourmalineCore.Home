@@ -1,13 +1,9 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
-import { useEffect, useState } from 'react';
-import AOS from 'aos';
-
-import PageHead from '../components/PageHead/PageHead';
-
-import useSectionAutoPaddings from '../common/hooks/useSectionAutoPaddings';
-import useDeviceSize from '../common/hooks/useDeviceSize';
+import { PageHead } from '../components/PageHead/PageHead';
+import { useSectionAutoPaddings } from '../common/hooks/useSectionAutoPaddings';
+import { useDeviceSize } from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
@@ -26,13 +22,8 @@ export default function HomePage() {
   useSectionAutoPaddings();
 
   const { width } = useDeviceSize();
-  const [clickedAccordion, setClickedAccordion] = useState(false);
 
-  const isDesktop = width >= 1366;
-
-  useEffect(() => {
-    AOS.refresh();
-  }, [width, clickedAccordion]);
+  const isTablet = width >= 768;
 
   return (
     <>
@@ -55,8 +46,8 @@ export default function HomePage() {
         <ProjectsWithTextBlockRedesign targetId="projects" translationKey="projectsRedesignFirstSection" />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
-        {isDesktop && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
-        {isDesktop && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> }
+        {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
+        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> }
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />
@@ -64,72 +55,6 @@ export default function HomePage() {
         <CardsGridRedesign />
         <CollageWithLinkRedesign />
       </LayoutRedesign>
-
-      {/* <LayoutHomePage
-        navigationLinks={navigationLinks}
-      >
-        <Services
-          id={NavigationLinks.services}
-          data-auto-padding={NavigationLinks.services}
-          animationName="fade-up"
-        />
-
-        <Skills
-          id={NavigationLinks.skills}
-          data-auto-padding={NavigationLinks.skills}
-          animationName="fade-up"
-          clickedAccordion={() => setClickedAccordion(!clickedAccordion)}
-        /> */}
-
-      {/* <section
-        id={NavigationLinks.experience}
-        data-auto-padding={NavigationLinks.experience}
-      >
-        <Element name={`scroll-to-${NavigationLinks.experience}`}>
-          <CompletedProjects
-            animationName="fade-up"
-          />
-
-          <Discussion
-            animationName="fade-up"
-          />
-        </Element>
-      </section> */}
-
-      {/* <div
-        id={NavigationLinks.approach}
-      >
-        <AdaptationToProject
-          id={NavigationLinks.approach}
-          animationName="fade-up"
-          data-auto-padding="adaptation-project"
-        />
-
-        <Process
-          animationName="fade-up"
-          data-auto-padding="process"
-        />
-        <Tools
-          animationName="fade-up"
-          data-auto-padding="tools"
-        />
-        <WorkStructure
-          animationName="fade-up"
-          data-auto-padding="work-structure"
-        />
-        <Mistakes
-          animationName="fade-up"
-          data-auto-padding="mistakes"
-        />
-      </div> */}
-
-      {/* <FormBlock
-        id={NavigationLinks.contact}
-        animationName="fade-up"
-        data-auto-padding="form-block"
-      /> */}
-
-      {/* </LayoutHomePage> */}
     </>
   );
 }
@@ -140,6 +65,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'common',
       'cookie',
       'footerRedesign',
+      'discussion',
       'heroRedesign',
       'servicesRedesign',
       'projectsRedesignFirstSection',
@@ -153,21 +79,6 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'conferenceSignpostsRedesign',
       'articleSignpostsRedesign',
       'singleImageRedesign',
-
-      // 'articles',
-      // 'heroBlockHomePage',
-      // 'skills',
-      // 'services',
-      // 'completedProjects',
-      // 'navigation',
-      // 'workStructure',
-      // 'mistakes',
-      // 'adaptationToProject',
-      // 'process',
-      // 'tools',
-      // 'form',
-      // 'formBlock',
-      // 'discussion',
     ])),
   },
 });

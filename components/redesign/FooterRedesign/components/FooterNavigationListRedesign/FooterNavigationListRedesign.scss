@@ -35,7 +35,7 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       &::after {
         transform: scaleX(1);
         transform-origin: bottom left;

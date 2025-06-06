@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import NamedList from '../../../NamedList/NamedList';
+import { NamedList } from '../../../NamedList/NamedList';
 import { TPaymentList } from '../../types';
-import isChineseLanguage from '../../../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
 
-export default function PaymentList({
+export function PaymentList({
   list,
 }:{
   list: TPaymentList

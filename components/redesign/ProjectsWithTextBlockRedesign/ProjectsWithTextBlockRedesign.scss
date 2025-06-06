@@ -13,6 +13,10 @@
   &__text-block {
     padding: 16px 0;
 
+    @include tablet {
+      padding: 0;
+    }
+
     @include desktop {
       padding: 0 20px;
     }
@@ -21,7 +25,7 @@
   &__cards {
     gap: $grid-mobile-gap;
 
-    @include desktop {
+    @include tablet {
       gap: $grid-desktop-gap;
     }
   }

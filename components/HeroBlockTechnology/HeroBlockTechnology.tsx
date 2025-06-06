@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 import { useState } from 'react';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
-import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
+import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 
-function HeroBlockTechnology() {
+export function HeroBlockTechnology() {
   const { slicePathname } = usePath();
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslationNamespace('hero');
@@ -46,5 +46,3 @@ function HeroBlockTechnology() {
     </section>
   );
 }
-
-export default HeroBlockTechnology;

@@ -3,15 +3,14 @@
 
   &__images {
     position: relative;
+    overflow: hidden;
     margin-bottom: 12px;
+    border-radius: 2px;
     height: 280px;
 
     // Todo: move to global and fix other image
     img {
       display: block;
-
-      // do not delete the border-radius
-      border-radius: 2px;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -51,6 +50,14 @@
 
     margin-bottom: 8px;
     color: $color-black;
+
+    @include tablet {
+      word-break: break-word;
+    }
+
+    @include tablet-xl {
+      word-break: normal;
+    }
 
     @include desktop {
       margin-bottom: 12px;

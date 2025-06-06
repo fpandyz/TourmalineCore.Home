@@ -31,7 +31,7 @@
     &:nth-child(4) {
       display: none;
 
-      @include desktop {
+      @include tablet-xl {
         display: block;
       }
     }
@@ -40,7 +40,7 @@
   &__teams-list {
     padding: 0 22px;
 
-    @include desktop {
+    @include tablet {
       display: grid;
       padding: 0;
       grid-auto-flow: column;
@@ -153,7 +153,7 @@
       background-image: url("../../../public/images/edge-left-mobile.svg");
       pointer-events: none;
 
-      @include desktop {
+      @include tablet {
         width: 20px;
         background-image: url("../../../public/images/edge-left-desktop.svg");
       }
@@ -164,7 +164,7 @@
       width: 32px;
       background-image: url("../../../public/images/edge-right-mobile.svg");
 
-      @include desktop {
+      @include tablet {
         width: 20px;
         background-image: url("../../../public/images/edge-right-desktop.svg");
       }
@@ -175,20 +175,32 @@
       background-color: $color-pink-redesign;
     }
 
-    @include desktop {
+    @include tablet {
       position: absolute;
       right: -4px;
-      top: 17px;
+      top: 5px;
       margin-top: 0;
       padding: 10px 32px;
       max-width: 214px;
       rotate: 5deg;
+    }
+
+    @include tablet-xl {
+      top: 3px;
+    }
+
+    @include desktop {
+      top: 17px;
     }
   }
 
   &__teams {
     position: relative;
     padding: 8px 0 40px;
+
+    @include tablet-xl {
+      padding: 12px 20px;
+    }
 
     @include desktop {
       padding: 42px 32px;
@@ -201,9 +213,12 @@
     margin-bottom: 10px;
     padding: 0 22px;
 
+    @include tablet {
+      padding: 0;
+    }
+
     @include desktop {
       margin-bottom: 12px;
-      padding: 0;
     }
   }
 
@@ -215,9 +230,17 @@
     max-width: 440px;
     color: $color-grey-redesign;
 
+    @include tablet {
+      padding: 0;
+    }
+
+    @include tablet-xl {
+      max-width: 320px;
+    }
+
     @include desktop {
       margin-bottom: 30px;
-      padding: 0;
+      max-width: 440px;
     }
   }
 

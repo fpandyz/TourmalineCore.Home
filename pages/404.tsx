@@ -4,9 +4,9 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
-import Layout from '../components/Layout/Layout';
-import HeroBlock from '../components/HeroBlock/HeroBlock';
-import PrimaryButton from '../components/PrimaryButton/PrimaryButton';
+import { Layout } from '../components/Layout/Layout';
+import { HeroBlock } from '../components/HeroBlock/HeroBlock';
+import { PrimaryButton } from '../components/PrimaryButton/PrimaryButton';
 
 export default function PageNotFound() {
   const { t } = useTranslation('pageNotFound');

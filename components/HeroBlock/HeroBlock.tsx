@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
-function HeroBlock({
+export function HeroBlock({
   title,
   gradientTitle,
   description,
@@ -38,5 +38,3 @@ function HeroBlock({
     </section>
   );
 }
-
-export default HeroBlock;

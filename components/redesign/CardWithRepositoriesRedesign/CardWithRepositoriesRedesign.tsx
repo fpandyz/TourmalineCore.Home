@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { CardWithContent, CardWithContentRedesign } from '../CardWithContentRedesign/CardWithContentRedesign';
-import useDeviceSize from '../../../common/hooks/useDeviceSize';
+import { useDeviceSize } from '../../../common/hooks/useDeviceSize';
 
 export type CardWithRepositories = CardWithContent & {
   repositories: {
@@ -20,9 +20,9 @@ export function CardWithRepositoriesRedesign({
   className: string;
 }) {
   const { width } = useDeviceSize();
-  const isDesktop = width >= 1366;
+  const isTabletXl = width >= 1024;
 
-  const repositoriesList = isDesktop ? repositories : repositories.slice(0, 1);
+  const repositoriesList = isTabletXl ? repositories : repositories.slice(0, 1);
 
   return (
     <CardWithContentRedesign
@@ -44,6 +44,8 @@ export function CardWithRepositoriesRedesign({
             <a
               className="card-with-repositories-redesign__link"
               href={link}
+              target="_blank"
+              rel="noreferrer"
             >
               <div className="card-with-repositories-redesign__item-inner">
                 <h3 className={clsx('card-with-repositories-redesign__name', {

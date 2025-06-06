@@ -39,11 +39,15 @@
 
   &__title,
   &__description {
-    max-width: 646px;
+    max-width: 490px;
     text-align: center;
+
+    @include desktop {
+      max-width: 646px;
+    }
   }
 
-  @include desktop {
+  @include tablet {
     padding-bottom: 130px;
   }
 }
