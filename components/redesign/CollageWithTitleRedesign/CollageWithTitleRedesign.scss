@@ -1,6 +1,3 @@
-$max-desktop-wrapper-width: 1278px;
-$max-tablet-wrapper-width: 768px;
-
 .collage-with-title-redesign {
   background-color: $color-black;
 
@@ -15,12 +12,12 @@ $max-tablet-wrapper-width: 768px;
     max-width: 375px;
 
     @include tablet {
-      max-width: $max-tablet-wrapper-width;
+      max-width: 768px;
     }
 
     @include desktop {
       padding: 408px 0;
-      max-width: $max-desktop-wrapper-width;
+      max-width: 1278px;
 
       &::before {
         content: "";
