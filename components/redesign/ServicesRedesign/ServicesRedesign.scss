@@ -143,29 +143,30 @@
       content: "";
       position: absolute;
       top: -3px;
+      width: 38px;
       height: 65px;
       background-repeat: no-repeat;
+
+      @include tablet {
+        width: 20px;
+      }
     }
 
     &::before {
       left: -1px;
-      width: 38px;
       background-image: url("../../../public/images/edge-left-mobile.svg");
       pointer-events: none;
 
       @include tablet {
-        width: 20px;
         background-image: url("../../../public/images/edge-left-desktop.svg");
       }
     }
 
     &::after {
       right: -1px;
-      width: 32px;
       background-image: url("../../../public/images/edge-right-mobile.svg");
 
       @include tablet {
-        width: 20px;
         background-image: url("../../../public/images/edge-right-desktop.svg");
       }
     }
