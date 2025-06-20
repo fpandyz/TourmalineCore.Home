@@ -1,4 +1,4 @@
-import CasesCard from './components/CasesCard/CasesCard';
+import { CasesCard } from './components/CasesCard/CasesCard';
 import IconCamera from '../../icons/icon-camera.svg';
 import IconPeople from '../../icons/icon-people.svg';
 import IconMonitor from '../../icons/icon-monitor.svg';
@@ -34,7 +34,7 @@ type CasesList = {
   link: string;
 }[];
 
-export default function Cases() {
+export function Cases() {
   const { t } = useTranslationNamespace('cases');
 
   const casesList: CasesList = t('list', { returnObjects: true });

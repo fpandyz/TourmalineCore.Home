@@ -1,12 +1,12 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import Modal from '../Modal/Modal';
-import DiscussionList from '../DiscussionList/DiscussionList';
-import Form from '../Form/Form';
+import { Modal } from '../Modal/Modal';
+import { DiscussionList } from '../DiscussionList/DiscussionList';
+import { Form } from '../Form/Form';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 
-export default function FormTechnologyModal({
+export function FormTechnologyModal({
   setIsOpen,
 }:{
   setIsOpen: (isOpen: boolean) => void

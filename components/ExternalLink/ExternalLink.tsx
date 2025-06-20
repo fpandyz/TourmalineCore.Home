@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 type ExternalLinkProps = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
 
-function ExternalLink({
+export function ExternalLink({
   children,
   className,
   ...props
@@ -17,5 +17,3 @@ function ExternalLink({
     </a>
   );
 }
-
-export default ExternalLink;

@@ -1,6 +1,6 @@
-import usePath from '../../../../common/hooks/usePath';
+import { usePath } from '../../../../common/hooks/usePath';
 
-export default function TasksList({
+export function TasksList({
   tasks,
 }: {
   tasks: string[];

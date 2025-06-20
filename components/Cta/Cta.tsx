@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
-import PrimaryButton from '../PrimaryButton/PrimaryButton';
-import FormTechnologyModal from '../FormTechnologyModal/FormTechnologyModal';
-import usePath from '../../common/hooks/usePath';
+import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
+import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
+import { usePath } from '../../common/hooks/usePath';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
-export default function Cta() {
+export function Cta() {
   const { slicePathname } = usePath();
   const [isOpen, setIsOpen] = useState(false);
 
   const { t } = useTranslation('cta');
 
-  useBodyScrollHiden(isOpen);
+  useBodyScrollHidden(isOpen);
 
   return (
     <section

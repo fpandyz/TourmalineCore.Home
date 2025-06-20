@@ -5,12 +5,12 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import SocialLinks from '../SocialLinks/SocialLinks';
+import { SocialLinks } from '../SocialLinks/SocialLinks';
 
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
-function Footer() {
+export function Footer() {
   const { t } = useTranslation('footer');
   const { pathname } = useRouter();
   const [date, setDate] = useState<number>();
@@ -61,5 +61,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

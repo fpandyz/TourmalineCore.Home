@@ -1,0 +1,60 @@
+.footer-navigation-list-redesign {
+  overflow-wrap: break-word;
+
+  &__caption {
+    display: inline-block;
+    margin-bottom: 4px;
+
+    @extend %footer-redesign-caption;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__link {
+    @include body-m;
+
+    position: relative;
+    text-decoration: none;
+    color: $color-white;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $color-white;
+      transform: scaleX(0);
+      transform-origin: bottom left;
+      transition: transform 0.25s ease-out;
+    }
+
+    &:hover,
+    &:focus-visible {
+      &::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+
+  @include tablet {
+    min-width: 120px;
+    max-width: 180px;
+  }
+
+  @include tablet-xl {
+    min-width: 180px;
+    max-width: 200px;
+  }
+
+  @include desktop {
+    min-width: 213.5px;
+    max-width: 283.5px;
+  }
+}

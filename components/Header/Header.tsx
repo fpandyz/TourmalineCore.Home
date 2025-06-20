@@ -5,8 +5,8 @@ import { useTranslation } from 'next-i18next';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import LangSwitch from '../LangSwitch/LangSwitch';
-import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
+import { LangSwitch } from './components/LangSwitch/LangSwitch';
+import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
 import IconBurgerPurple from '../../icons/burger-purple.svg';
@@ -15,8 +15,8 @@ import IconBurgerDesign from '../../icons/burger-design.svg';
 import IconBurgerQA from '../../icons/burger-qa.svg';
 import IconBurgerBackend from '../../icons/burger-backend.svg';
 import IconBurgerCyan from '../../icons/burger-cyan.svg';
-import MobileMenu from '../MobileMenu/MobileMenu';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
 type HeaderLinks = {
@@ -54,8 +54,8 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Teams,
   },
   {
-    id: AppRoute.Frontend_team.slice(1),
-    link: AppRoute.Frontend_team,
+    id: AppRoute.FrontendTeam.slice(1),
+    link: AppRoute.FrontendTeam,
   },
   {
     id: AppRoute.Articles.slice(1),
@@ -72,18 +72,22 @@ const BURGER_ICONS = new Map(
     [AppRoute.Backend, <IconBurgerBackend />],
     [AppRoute.Design, <IconBurgerDesign />],
     [AppRoute.Teams, <IconBurgerPurple />],
-    [AppRoute.Frontend_team, <IconBurgerCyan />],
+    [AppRoute.FrontendTeam, <IconBurgerCyan />],
     [AppRoute.Main, <IconBurger />],
     [AppRoute.Articles, <IconBurger />],
   ],
 );
 
-function Header() {
+export function Header({
+  containerClass,
+}: {
+  containerClass?: string;
+}) {
   const { t } = useTranslation('common');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { pathname } = useRouter();
 
-  useBodyScrollHiden(isMobileMenuOpen);
+  useBodyScrollHidden(isMobileMenuOpen);
 
   return (
     <>
@@ -91,17 +95,17 @@ function Header() {
         'header--zh': isChineseLanguage(),
       })}
       >
-        <div className="container header__inner">
-          <Link
-            className="header__logo"
-            aria-label="Header logo"
-            href="/"
-          >
-            <Image
-              src="/images/logo.png"
-              fill
-              alt=""
-            />
+        <div className={clsx(`container header__inner ${containerClass}`)}>
+          <Link href="/">
+            <a
+              className="header__logo"
+              aria-label="Header logo"
+            >
+              <Image
+                src="/images/logo.png"
+                layout="fill"
+              />
+            </a>
           </Link>
 
           <div className="header__right-panel">
@@ -116,12 +120,10 @@ function Header() {
 
             <div className="header__desktop">
               {headerLinks.map((headerLink) => (
-                <Link
-                  className="header__link"
-                  key={headerLink.id}
-                  href={headerLink.link}
-                >
-                  {t(headerLink.id)}
+                <Link key={headerLink.id} href={headerLink.link}>
+                  <a className="header__link">
+                    {t(headerLink.id)}
+                  </a>
                 </Link>
               ))}
 
@@ -132,10 +134,11 @@ function Header() {
       </header>
 
       {isMobileMenuOpen && (
-        <MobileMenu onCloseClick={() => setIsMobileMenuOpen(false)} headerLinks={headerLinks} />
+        <MobileMenu
+          onCloseClick={() => setIsMobileMenuOpen(false)}
+          headerLinks={headerLinks}
+        />
       )}
     </>
   );
 }
-
-export default Header;

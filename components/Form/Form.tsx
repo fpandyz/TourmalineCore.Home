@@ -2,17 +2,20 @@ import clsx from 'clsx';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
-  FormEvent, useMemo, useRef, useState,
+  FormEvent,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import ExternalLink from '../ExternalLink/ExternalLink';
-import Input from '../Input/Input';
-import PrimaryButton from '../PrimaryButton/PrimaryButton';
-import Textarea from '../Textarea/Textarea';
-import Spiner from '../Spiner/Spiner';
+import { ExternalLink } from '../ExternalLink/ExternalLink';
+import { Input } from './components/Input/Input';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
+import { Textarea } from './components/Textarea/Textarea';
+import { Spinner } from '../Spinner/Spinner';
 import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
 enum ReCAPTCHALanguage {
   'en' = 'en',
@@ -20,7 +23,7 @@ enum ReCAPTCHALanguage {
   'zh' = 'zh-CN',
 }
 
-function Form({
+export function Form({
   onSubmit = () => {},
   buttonClassName,
 }: {
@@ -92,7 +95,7 @@ function Form({
           >
             {
               isLoading
-                ? <Spiner />
+                ? <Spinner />
                 : t('buttonText')
             }
           </PrimaryButton>
@@ -150,5 +153,3 @@ function Form({
     }
   }
 }
-
-export default Form;

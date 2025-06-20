@@ -1,6 +1,6 @@
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 
-function List({
+export function List({
   steps,
 }: {
   steps: string[];
@@ -21,5 +21,3 @@ function List({
     </ul>
   );
 }
-
-export default List;

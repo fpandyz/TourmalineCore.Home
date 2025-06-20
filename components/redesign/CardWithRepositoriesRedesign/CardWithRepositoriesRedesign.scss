@@ -1,0 +1,78 @@
+.card-with-repositories-redesign {
+  &__item {
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__item-inner {
+    border: 1px solid $color-medium-blue-redesign;
+    border-radius: 2px;
+    padding: 12px;
+
+    @include desktop {
+      padding: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__name {
+    @include h7;
+
+    margin-bottom: 8px;
+    word-break: break-all;
+
+    &--no-description {
+      margin-bottom: 24px;
+    }
+
+    @include desktop {
+      margin-bottom: 16px;
+
+      &--no-description {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 24px;
+    color: $color-middle-grey-redesign;
+
+    @include desktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__language {
+    display: flex;
+    align-items: center;
+
+    &--typescript::before,
+    &--c\#::before {
+      content: "";
+      display: block;
+      margin-right: 8px;
+      border-radius: 100%;
+      width: 16px;
+      height: 16px;
+    }
+
+    &--typescript::before {
+      background-color: $color-medium-blue-redesign;
+    }
+
+    &--c\#::before {
+      background-color: $color-light-blue-redesign;
+    }
+  }
+
+  &__description,
+  &__language {
+    @include body-m;
+  }
+}
