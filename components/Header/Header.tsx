@@ -104,6 +104,7 @@ export function Header({
               <Image
                 src="/images/logo.png"
                 layout="fill"
+                alt=""
               />
             </a>
           </Link>
