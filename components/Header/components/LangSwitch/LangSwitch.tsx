@@ -46,9 +46,14 @@ export function LangSwitch() {
         onClick={() => setIsTooltipOpened(!isTooltipOpened)}
         aria-label={t('ariaLabel')}
       >
-        {languages[routerLocale].icon()}
-        {languages[routerLocale].shortName}
+        <span aria-hidden="true">
+          {languages[routerLocale].icon()}
+        </span>
+        <span aria-label={t('currentLanguage')}>
+          {languages[routerLocale].shortName}
+        </span>
         <IconArrow
+          aria-hidden="true"
           className={clsx(
             'lang-switch__arrow',
             { 'lang-switch__arrow--open': isTooltipOpened },

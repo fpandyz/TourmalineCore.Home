@@ -1,3 +1,4 @@
 {
-  "ariaLabel": "Select language"
+  "ariaLabel": "Select language",
+  "currentLanguage": "Currently selected"
 }
