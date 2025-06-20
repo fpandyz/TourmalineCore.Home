@@ -69,6 +69,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'cooperationQa',
       'servicesTechnologyQa',
       'skipLink',
+      'langSwitch',
     ])),
   },
 });

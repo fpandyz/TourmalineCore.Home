@@ -99,7 +99,7 @@ export function Header({
           <Link href="/">
             <a
               className="header__logo"
-              aria-label="Header logo"
+              aria-label="Go to home page"
             >
               <Image
                 src="/images/logo.png"

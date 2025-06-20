@@ -80,6 +80,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'articleSignpostsRedesign',
       'singleImageRedesign',
       'skipLink',
+      'langSwitch',
     ])),
   },
 });

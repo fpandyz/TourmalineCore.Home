@@ -72,6 +72,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'servicesTechnologyMl',
       'casesMl',
       'skipLink',
+      'langSwitch',
     ])),
   },
 });
