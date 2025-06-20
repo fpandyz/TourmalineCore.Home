@@ -44,6 +44,7 @@ export async function getStaticProps({ locale }) {
         'articles',
         'footer',
         'cookie',
+        'skipLink',
       ])),
       articles: articlesWithMeta,
     },

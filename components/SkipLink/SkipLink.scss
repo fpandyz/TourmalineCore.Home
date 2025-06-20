@@ -1,0 +1,20 @@
+.skip-link {
+  position: fixed;
+  left: 50%;
+  top: -1px;
+  z-index: $skip-link;
+  display: block;
+  padding: 15px;
+  width: 80%;
+  color: $color-white;
+  background: $color-blue-redesign;
+  transform: translateY(-100%);
+
+  &:focus {
+    transform: translate(-50%, 0);
+  }
+
+  @include tablet {
+    width: auto;
+  }
+}

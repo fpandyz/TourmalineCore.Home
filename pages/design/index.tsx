@@ -74,6 +74,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'stagesDesign',
       'stackDesign',
       'servicesTechnologyDesign',
+      'skipLink',
     ])),
   },
 });

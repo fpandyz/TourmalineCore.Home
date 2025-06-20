@@ -65,6 +65,7 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
       'cta',
       'cooperationBackend',
       'servicesTechnologyBackend',
+      'skipLink',
     ])),
   },
 });
