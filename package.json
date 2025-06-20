@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
-    "clsx": "^1.2.1",
+    "clsx": "^2.1.1",
     "cookies-next": "^6.0.0",
     "gitalk": "^1.7.2",
     "moment": "^2.29.4",
