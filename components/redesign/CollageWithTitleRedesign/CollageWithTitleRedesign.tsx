@@ -17,7 +17,7 @@ export function CollageWithTitleRedesign() {
           >
             <Image
               src={imageUrl}
-              layout="fill"
+              fill
               alt=""
             />
           </div>

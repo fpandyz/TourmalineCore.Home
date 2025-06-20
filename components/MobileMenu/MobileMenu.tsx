@@ -28,15 +28,14 @@ export function MobileMenu({
     <div className="mobile-menu">
       <div className="container mobile-menu__inner">
         <div className="mobile-menu__top">
-          <Link href="/">
-            <a className="mobile-menu__logo">
-              <span onClick={onCloseClick} aria-hidden="true">
-                <Image
-                  src="/images/logo.png"
-                  layout="fill"
-                />
-              </span>
-            </a>
+          <Link className="mobile-menu__logo" href="/">
+            <span onClick={onCloseClick} aria-hidden="true">
+              <Image
+                src="/images/logo.png"
+                fill
+                alt=""
+              />
+            </span>
           </Link>
 
           <button
@@ -53,7 +52,7 @@ export function MobileMenu({
           <Image
             src="/images/tourmaline-core.webp"
             alt="tourmaline-core"
-            layout="fill"
+            fill
             loading="lazy"
           />
         </div>
@@ -62,12 +61,14 @@ export function MobileMenu({
           <MobileLangSwitch />
 
           {headerLinks.map((headerLink) => (
-            <Link key={headerLink.id} href={headerLink.link}>
-              <a className="mobile-menu__link">
-                <span className="title-type-2" onClick={onCloseClick} aria-hidden="true">
-                  {t(headerLink.id)}
-                </span>
-              </a>
+            <Link
+              className="mobile-menu__link"
+              key={headerLink.id}
+              href={headerLink.link}
+            >
+              <span className="title-type-2" onClick={onCloseClick} aria-hidden="true">
+                {t(headerLink.id)}
+              </span>
             </Link>
           ))}
         </div>

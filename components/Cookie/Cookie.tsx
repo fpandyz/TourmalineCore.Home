@@ -32,8 +32,7 @@ export function Cookie() {
 
   useEffect(() => {
     setDate(new Date());
-
-    if (typeof getCookie(cookieAccept) === 'boolean') {
+    if (getCookie(cookieAccept) !== undefined) {
       setIsCookie(true);
     } else {
       setIsCookie(false);

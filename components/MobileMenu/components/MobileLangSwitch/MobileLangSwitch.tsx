@@ -29,23 +29,23 @@ export function MobileLangSwitch() {
             key={locale}
             className="mobile-lang-switch__option"
           >
-            <Link href={router.pathname} locale={locale}>
-              <a
-                role="presentation"
-                className={clsx(
-                  'mobile-lang-switch__link',
-                  { 'mobile-lang-switch__link--active': routerLocale === locale },
-                )}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (routerLocale !== locale) {
-                    window.open((e.target as HTMLAnchorElement).href, '_self');
-                  }
-                }}
-              >
-                {languages[locale].icon()}
-                {languages[locale].shortName}
-              </a>
+            <Link
+              href={router.pathname}
+              locale={locale}
+              role="presentation"
+              className={clsx(
+                'mobile-lang-switch__link',
+                { 'mobile-lang-switch__link--active': routerLocale === locale },
+              )}
+              onClick={(e) => {
+                e.preventDefault();
+                if (routerLocale !== locale) {
+                  window.open((e.target as HTMLAnchorElement).href, '_self');
+                }
+              }}
+            >
+              {languages[locale].icon()}
+              {languages[locale].shortName}
             </Link>
           </li>
         ))}

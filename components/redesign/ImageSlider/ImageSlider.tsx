@@ -25,6 +25,7 @@ export function ImageSlider({
     <Image
       src={imageUrls[currentIndex]}
       {...imageProps}
+      alt=""
     />
   );
 }

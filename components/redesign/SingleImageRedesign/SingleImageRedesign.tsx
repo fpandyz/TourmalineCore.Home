@@ -9,7 +9,7 @@ export function SingleImageRedesign() {
       <div className="single-image-redesign__container">
         <Image
           src={t('imageUrl')}
-          layout="fill"
+          fill
           alt=""
         />
       </div>

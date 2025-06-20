@@ -13,6 +13,7 @@ export async function sendEmail(message: {
     const response = await emailjs.send(serviceId, templateId, message);
     return response;
   } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-throw-literal
     throw error || 'Error';
   }
 }

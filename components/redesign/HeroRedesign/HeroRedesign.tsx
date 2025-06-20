@@ -13,7 +13,7 @@ export function HeroRedesign() {
         <div className="hero-redesign__images">
           <ImageSlider
             imageUrls={imageUrls}
-            layout="fill"
+            fill
             interval={1600}
             priority
             alt=""
