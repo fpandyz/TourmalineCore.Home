@@ -76,7 +76,7 @@ export function ServicesCardRedesign({
             <div className="services-card-redesign__image-container">
               <Image
                 src={imageUrl}
-                layout="fill"
+                fill
                 priority
                 alt=""
               />

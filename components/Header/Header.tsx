@@ -96,16 +96,16 @@ export function Header({
       })}
       >
         <div className={clsx(`container header__inner ${containerClass}`)}>
-          <Link href="/">
-            <a
-              className="header__logo"
-              aria-label="Header logo"
-            >
-              <Image
-                src="/images/logo.png"
-                layout="fill"
-              />
-            </a>
+          <Link
+            href="/"
+            className="header__logo"
+            aria-label="Header logo"
+          >
+            <Image
+              src="/images/logo.png"
+              fill
+              alt=""
+            />
           </Link>
 
           <div className="header__right-panel">
@@ -120,10 +120,12 @@ export function Header({
 
             <div className="header__desktop">
               {headerLinks.map((headerLink) => (
-                <Link key={headerLink.id} href={headerLink.link}>
-                  <a className="header__link">
-                    {t(headerLink.id)}
-                  </a>
+                <Link
+                  key={headerLink.id}
+                  className="header__link"
+                  href={headerLink.link}
+                >
+                  {t(headerLink.id)}
                 </Link>
               ))}
 

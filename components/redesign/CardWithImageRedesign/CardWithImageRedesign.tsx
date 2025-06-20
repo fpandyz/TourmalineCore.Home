@@ -23,7 +23,7 @@ export function CardWithImageRedesign({
       <div className="card-with-image-redesign__image">
         <Image
           src={imageUrl}
-          layout="fill"
+          fill
           alt=""
         />
       </div>
