@@ -44,7 +44,7 @@ export function ProjectsCardWithImageRedesign({
           {isNda && <span className="project-card-with-image-redesign__nda">NDA</span>}
           <Image
             src={imageUrl}
-            layout="fill"
+            fill
             alt=""
           />
         </div>

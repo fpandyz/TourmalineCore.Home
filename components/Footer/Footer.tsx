@@ -32,13 +32,12 @@ export function Footer() {
       <div className="container footer__inner">
         <div className="footer__about-us">
           <div className="footer__short-information">
-            <Link href="/">
-              <a className="footer__logo" aria-label="Footer logo">
-                <Image
-                  src="/images/logo.png"
-                  layout="fill"
-                />
-              </a>
+            <Link className="footer__logo" href="/" aria-label="Footer logo">
+              <Image
+                src="/images/logo.png"
+                fill
+                alt=""
+              />
             </Link>
 
             <span className="footer__description">{t('description')}</span>

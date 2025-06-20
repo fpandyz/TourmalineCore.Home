@@ -31,7 +31,7 @@ export function SignpostRedesign({
         <div className="signpost-redesign__image-container">
           <Image
             src={imageUrl}
-            layout="fill"
+            fill
             alt=""
           />
         </div>

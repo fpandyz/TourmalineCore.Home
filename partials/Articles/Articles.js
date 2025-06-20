@@ -81,34 +81,37 @@ function ArticleLink({
   const image = getArticleUrl(articleFolder.name, articleFolder.locale);
 
   return (
-    <Link href={`/articles/${articleFolder.metadata.slug}`} locale={router.locale}>
-      <a className="articles-link" title={articleFolder.metadata.description}>
-        <div className="articles-link__image">
-          <Image
-            src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/article-preview.webp'}
-            alt="preview photo"
-            layout="fill"
-          />
+    <Link
+      className="articles-link"
+      title={articleFolder.metadata.description}
+      href={`/articles/${articleFolder.metadata.slug}`}
+      locale={router.locale}
+    >
+      <div className="articles-link__image">
+        <Image
+          src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/article-preview.webp'}
+          alt="preview photo"
+          fill
+        />
 
-          <ul className="articles-link__categories">
-            {articleFolder.metadata.categories.map((category) => (
-              <li
-                key={category}
-                className="articles-link__category"
-              >
-                {category}
-              </li>
-            ))}
-          </ul>
+        <ul className="articles-link__categories">
+          {articleFolder.metadata.categories.map((category) => (
+            <li
+              key={category}
+              className="articles-link__category"
+            >
+              {category}
+            </li>
+          ))}
+        </ul>
 
-        </div>
+      </div>
 
-        <div className="articles-link__description">{articleFolder.metadata.description}</div>
-        <div className="articles-link__info">
-          <span>{articleFolder.metadata.author}</span>
-          <span>{articleFolder.metadata.datePublication}</span>
-        </div>
-      </a>
+      <div className="articles-link__description">{articleFolder.metadata.description}</div>
+      <div className="articles-link__info">
+        <span>{articleFolder.metadata.author}</span>
+        <span>{articleFolder.metadata.datePublication}</span>
+      </div>
     </Link>
   );
 }

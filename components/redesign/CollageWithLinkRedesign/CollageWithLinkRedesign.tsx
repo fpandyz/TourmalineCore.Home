@@ -31,7 +31,7 @@ export function CollageWithLinkRedesign() {
           >
             <Image
               src={imageUrl}
-              layout="fill"
+              fill
               alt=""
             />
           </div>
