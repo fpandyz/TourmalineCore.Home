@@ -5,7 +5,7 @@ export function SingleImageRedesign() {
   const { t } = useTranslation('singleImageRedesign');
 
   return (
-    <div className="single-image-redesign container-redesign">
+    <section className="single-image-redesign container-redesign">
       <div className="single-image-redesign__container">
         <Image
           src={t('imageUrl')}
@@ -13,6 +13,6 @@ export function SingleImageRedesign() {
           alt=""
         />
       </div>
-    </div>
+    </section>
   );
 }

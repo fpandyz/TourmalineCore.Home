@@ -21,7 +21,7 @@ export function SignpostMultipleRedesign({
     <section
       className="signpost-multiple-redesign container-redesign"
     >
-      <h2 className="signpost-multiple-redesign__title">{t('title')}</h2>
+      <h3 className="signpost-multiple-redesign__title">{t('title')}</h3>
       <ul className="signpost-multiple-redesign__list grid">
         {signposts.map(({
           title,

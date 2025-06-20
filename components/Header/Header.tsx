@@ -119,7 +119,7 @@ export function Header({
               {BURGER_ICONS.get(pathname as AppRoute)}
             </button>
 
-            <div className="header__desktop">
+            <nav className="header__desktop">
               {headerLinks.map((headerLink) => (
                 <Link key={headerLink.id} href={headerLink.link}>
                   <a className="header__link">
@@ -129,7 +129,7 @@ export function Header({
               ))}
 
               <LangSwitch />
-            </div>
+            </nav>
           </div>
         </div>
       </header>
