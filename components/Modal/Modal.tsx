@@ -2,6 +2,7 @@ import {
   ReactNode, useEffect, useRef,
 } from 'react';
 
+import FocusLock from 'react-focus-lock';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
@@ -43,38 +44,42 @@ export function Modal({
   useOnClickOutside(refModal, onClose);
 
   return (
-    <div className="default-scroll modal">
-      <div
-        className="container modal__container"
-        style={{
-          maxWidth,
-        }}
-      >
+    <FocusLock
+      returnFocus
+    >
+      <div className="default-scroll modal">
         <div
-          className={clsx('modal__inner', pathname !== AppRoute.Main && 'modal__inner--technology')}
-          ref={refModal}
+          className="container modal__container"
+          style={{
+            maxWidth,
+          }}
         >
-          <div className="modal__header">
-            {title && (<div className="title-type-3 modal__title">{title}</div>)}
+          <div
+            className={clsx('modal__inner', pathname !== AppRoute.Main && 'modal__inner--technology')}
+            ref={refModal}
+          >
+            <div className="modal__header">
+              {title && (<div className="title-type-3 modal__title">{title}</div>)}
 
-            {subtitle && (
-              <div className={clsx('modal__subtitle', subtitleClassName)}>
-                {subtitle}
-              </div>
-            )}
+              {subtitle && (
+                <div className={clsx('modal__subtitle', subtitleClassName)}>
+                  {subtitle}
+                </div>
+              )}
 
-            <button
-              type="button"
-              className="modal__cross"
-              onClick={onClose}
-            >
-              <IconCross />
-            </button>
+              <button
+                type="button"
+                className="modal__cross"
+                onClick={onClose}
+              >
+                <IconCross />
+              </button>
+            </div>
+
+            <div className="modal__content">{content}</div>
           </div>
-
-          <div className="modal__content">{content}</div>
         </div>
       </div>
-    </div>
+    </FocusLock>
   );
 }

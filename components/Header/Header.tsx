@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
+import FocusLock from 'react-focus-lock';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -135,10 +136,14 @@ export function Header({
       </header>
 
       {isMobileMenuOpen && (
-        <MobileMenu
-          onCloseClick={() => setIsMobileMenuOpen(false)}
-          headerLinks={headerLinks}
-        />
+        <FocusLock
+          returnFocus
+        >
+          <MobileMenu
+            onCloseClick={() => setIsMobileMenuOpen(false)}
+            headerLinks={headerLinks}
+          />
+        </FocusLock>
       )}
     </>
   );
