@@ -1,14 +1,11 @@
 .modal {
   position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   z-index: $modal;
   display: flex;
   overflow: auto;
   font-weight: inherit;
   background-color: rgba($color-black, 0.5);
+  inset: 0;
 
   &__container {
     margin: auto;
@@ -20,14 +17,14 @@
     padding: 56px 16px;
     background-color: $color-gray;
 
-    &--technology {
-      border-radius: 32px;
-      background-image: $color-dark-card;
-    }
-
     @include tablet {
       padding: 56px 104px;
       min-height: 722px;
+    }
+
+    &--technology {
+      border-radius: 32px;
+      background-image: $color-dark-card;
     }
   }
 

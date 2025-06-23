@@ -9,18 +9,24 @@ export function ProjectsWithTextBlockRedesign({
   translationKey: string;
   targetId?: string;
 }) {
-  const { t } = useTranslation(translationKey);
+  const {
+    t,
+  } = useTranslation(translationKey);
 
-  const projectCardsWithImage: ProjectCardWithImage[] = t('projectsCardsWithImage', { returnObjects: true });
+  const projectCardsWithImage: ProjectCardWithImage[] = t(`projectsCardsWithImage`, {
+    returnObjects: true,
+  });
 
-  const sectionTitle = t('title');
+  const sectionTitle = t(`title`);
 
-  const textBlockTitle = t('textBlockTitle');
+  const textBlockTitle = t(`textBlockTitle`);
 
   return (
     <section
       className="projects-with-text-block-redesign projects-redesign"
-      {...(targetId && { id: targetId })}
+      {...(targetId && {
+        id: targetId,
+      })}
     >
       <div className="container-redesign projects-with-text-block-redesign__wrapper">
         {sectionTitle && <h2 className="projects-with-text-block-redesign__title">{sectionTitle}</h2>}
@@ -55,7 +61,7 @@ export function ProjectsWithTextBlockRedesign({
               isTargetBlank
               className="projects-with-text-block-redesign__markdown"
             >
-              {t('textBlockMarkdown')}
+              {t(`textBlockMarkdown`)}
             </MarkdownText>
           </li>
 

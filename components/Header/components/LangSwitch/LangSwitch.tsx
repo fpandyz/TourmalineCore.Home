@@ -1,8 +1,4 @@
-import {
-  useState,
-  useRef,
-  useMemo,
-} from 'react';
+import { useState, useRef, useMemo } from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -33,7 +29,7 @@ export function LangSwitch() {
   return (
     <div
       ref={containerRef}
-      className={clsx('lang-switch', {
+      className={clsx(`lang-switch`, {
         'lang-switch--zh': isChineseLanguage(),
       })}
     >
@@ -46,8 +42,10 @@ export function LangSwitch() {
         {languages[routerLocale].shortName}
         <IconArrow
           className={clsx(
-            'lang-switch__arrow',
-            { 'lang-switch__arrow--open': isTooltipOpened },
+            `lang-switch__arrow`,
+            {
+              'lang-switch__arrow--open': isTooltipOpened,
+            },
           )}
         />
       </button>
@@ -64,13 +62,15 @@ export function LangSwitch() {
                 href={router.asPath}
                 locale={locale}
                 className={clsx(
-                  'lang-switch__link',
-                  { 'lang-switch__link--active': routerLocale === locale },
+                  `lang-switch__link`,
+                  {
+                    'lang-switch__link--active': routerLocale === locale,
+                  },
                 )}
                 onClick={(e) => {
                   e.preventDefault();
                   if (routerLocale !== locale) {
-                    window.open((e.target as HTMLAnchorElement).href, '_self');
+                    window.open((e.target as HTMLAnchorElement).href, `_self`);
                   }
                 }}
               >

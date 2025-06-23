@@ -12,7 +12,7 @@ export function Layout({
   mainClassName?: string;
 }) {
   return (
-    <div className={clsx('layout', {
+    <div className={clsx(`layout`, {
       'layout--zh': isChineseLanguage(),
     })}
     >

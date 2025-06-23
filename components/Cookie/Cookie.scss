@@ -79,6 +79,17 @@
     }
   }
 
+  @include tablet {
+    bottom: 24px;
+    margin-left: 16px;
+    padding: 24px 32px;
+    width: auto;
+  }
+
+  @include tablet-xl {
+    margin-left: 24px;
+  }
+
   &--zh {
     font-size: 18px;
 
@@ -93,16 +104,5 @@
     @include desktop-xl {
       font-size: 24px;
     }
-  }
-
-  @include tablet {
-    bottom: 24px;
-    margin-left: 16px;
-    padding: 24px 32px;
-    width: auto;
-  }
-
-  @include tablet-xl {
-    margin-left: 24px;
   }
 }

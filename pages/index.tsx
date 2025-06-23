@@ -16,12 +16,16 @@ import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkR
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 
 export default function HomePage() {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
 
   // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
   useSectionAutoPaddings();
 
-  const { width } = useDeviceSize();
+  const {
+    width,
+  } = useDeviceSize();
 
   const isTablet = width >= 768;
 
@@ -30,24 +34,27 @@ export default function HomePage() {
       <PageHead
         seoData={{
           seo: {
-            title: t('title'),
-            description: t('description'),
+            title: t(`title`),
+            description: t(`description`),
           },
-          keywords: t('keywords'),
+          keywords: t(`keywords`),
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
 
       <LayoutRedesign>
         <HeroRedesign />
         <ServicesRedesign targetId="services" />
-        <ProjectsWithTextBlockRedesign targetId="projects" translationKey="projectsRedesignFirstSection" />
+        <ProjectsWithTextBlockRedesign
+          targetId="projects"
+          translationKey="projectsRedesignFirstSection"
+        />
         <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
-        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> }
+        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
         <SingleImageRedesign />
@@ -59,26 +66,28 @@ export default function HomePage() {
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
+export const getStaticProps: GetServerSideProps = async ({
+  locale,
+}) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
-      'common',
-      'cookie',
-      'footerRedesign',
-      'discussion',
-      'heroRedesign',
-      'servicesRedesign',
-      'projectsRedesignFirstSection',
-      'projectsRedesignSecondarySection',
-      'projectsRedesignThirdSection',
-      'projectsRedesignFourthSection',
-      'projectsRedesignFifthSection',
-      'cardsGridRedesign',
-      'collageWithTitleRedesign',
-      'collageWithLinkRedesign',
-      'conferenceSignpostsRedesign',
-      'articleSignpostsRedesign',
-      'singleImageRedesign',
+      `common`,
+      `cookie`,
+      `footerRedesign`,
+      `discussion`,
+      `heroRedesign`,
+      `servicesRedesign`,
+      `projectsRedesignFirstSection`,
+      `projectsRedesignSecondarySection`,
+      `projectsRedesignThirdSection`,
+      `projectsRedesignFourthSection`,
+      `projectsRedesignFifthSection`,
+      `cardsGridRedesign`,
+      `collageWithTitleRedesign`,
+      `collageWithLinkRedesign`,
+      `conferenceSignpostsRedesign`,
+      `articleSignpostsRedesign`,
+      `singleImageRedesign`,
     ])),
   },
 });

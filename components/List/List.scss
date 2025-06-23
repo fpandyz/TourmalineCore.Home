@@ -56,14 +56,21 @@
       opacity: 0.4;
     }
 
+    &--ml,
+    &--frontend,
+    &--teams {
+      background-image: none;
+      background-color: $color-purple-page-primary;
+    }
+
     &--backend {
       background-image:
         linear-gradient(
-          51deg,
-          $color-backend-page-primary 0%,
-          $color-backend-page-secondary 52%,
-          $color-backend-page-tertiary 100%
-        );
+            51deg,
+            $color-backend-page-primary 0%,
+            $color-backend-page-secondary 52%,
+            $color-backend-page-tertiary 100%
+          );
     }
 
     &--qa {
@@ -72,13 +79,6 @@
 
     &--embedded {
       background-image: linear-gradient(225deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
-    }
-
-    &--ml,
-    &--frontend,
-    &--teams {
-      background-image: none;
-      background-color: $color-purple-page-primary;
     }
 
     &--frontend-team {

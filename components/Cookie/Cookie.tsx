@@ -9,10 +9,10 @@ import { OptionYM } from '../../types/globals';
 import { ExternalLink } from '../ExternalLink/ExternalLink';
 import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
-const cookieAccept = 'cookieAccept';
+const cookieAccept = `cookieAccept`;
 
 const yandexId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
-const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';
+const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ``;
 
 export const optionYandexMetrika: OptionYM = {
   clickmap: true,
@@ -22,12 +22,14 @@ export const optionYandexMetrika: OptionYM = {
 };
 
 export function Cookie() {
-  const { t } = useTranslation('cookie');
+  const {
+    t,
+  } = useTranslation(`cookie`);
   const router = useRouter();
   const [isCookie, setIsCookie] = useState(true);
   const [date, setDate] = useState<Date | null>(null);
 
-  const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
+  const isMetricsEnabled = process.env.METRICS_ENABLED === `true`;
 
   useEffect(() => {
     setDate(new Date());
@@ -44,7 +46,7 @@ export function Cookie() {
 
   return (
     <div
-      className={clsx('cookie', {
+      className={clsx(`cookie`, {
         'cookie--zh': isChineseLanguage(),
       })}
       data-testid="cookie"
@@ -68,13 +70,13 @@ export function Cookie() {
           className="cookie__accept"
           onClick={acceptCookie}
         >
-          {t('accept')}
+          {t(`accept`)}
         </PrimaryButton>
         <PrimaryButton
           className="cookie__reject"
           onClick={rejectCookie}
         >
-          {t('reject')}
+          {t(`reject`)}
         </PrimaryButton>
       </div>
     </div>
@@ -85,10 +87,10 @@ export function Cookie() {
     setIsCookie(true);
 
     if (isMetricsEnabled) {
-      window.gtag('js', date);
-      window.gtag('config', googleId);
+      window.gtag(`js`, date);
+      window.gtag(`config`, googleId);
 
-      window.ym(Number(yandexId), 'init', optionYandexMetrika);
+      window.ym(Number(yandexId), `init`, optionYandexMetrika);
     }
   }
 

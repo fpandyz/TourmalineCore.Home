@@ -71,10 +71,6 @@
   width: 100%;
   min-height: 45.9px;
 
-  &--zh {
-    @include type-body-2-zh;
-  }
-
   @include tablet {
     padding: 20px 56px;
     width: auto;
@@ -82,6 +78,10 @@
 
   @include desktop {
     min-height: 52px;
+  }
+
+  &--zh {
+    @include type-body-2-zh;
   }
 }
 

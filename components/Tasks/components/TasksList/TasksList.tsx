@@ -5,7 +5,9 @@ export function TasksList({
 }: {
   tasks: string[];
 }) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   return (
     <ul className="tasks-list">

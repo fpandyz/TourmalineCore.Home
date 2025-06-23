@@ -20,13 +20,15 @@ import IconTelegramTeams from '../../icons/telegram-teams.svg';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
 export function SocialLinks() {
-  const { pathname } = useRouter();
+  const {
+    pathname,
+  } = useRouter();
 
   const icons = getIcons(pathname);
   const notMainPage = pathname !== AppRoute.Main;
 
   return (
-    <div className={clsx('social-links', {
+    <div className={clsx(`social-links`, {
       'social-links--zh': isChineseLanguage(),
     })}
     >
@@ -37,7 +39,7 @@ export function SocialLinks() {
         rel="noreferrer"
       >
         {icons.mail}
-        <span className={clsx('social-links__mail', {
+        <span className={clsx(`social-links__mail`, {
           'social-links__mail--technology': notMainPage,
         })}
         >
@@ -52,7 +54,7 @@ export function SocialLinks() {
         rel="noreferrer"
       >
         {icons.telegram}
-        <span className={clsx('social-links__telegram', {
+        <span className={clsx(`social-links__telegram`, {
           'social-links__telegram--technology': notMainPage,
         })}
         >

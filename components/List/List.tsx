@@ -5,7 +5,9 @@ export function List({
 }: {
   steps: string[];
 }) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   return (
     <ul className="list">
