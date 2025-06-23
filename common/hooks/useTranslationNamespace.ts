@@ -3,7 +3,9 @@ import { usePath } from './usePath';
 import { capitalize } from '../utils/capitalize';
 
 export function useTranslationNamespace(block: string) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
   const translation = useTranslation(`${block}${capitalize(slicePathname)}`);
 
   return translation;

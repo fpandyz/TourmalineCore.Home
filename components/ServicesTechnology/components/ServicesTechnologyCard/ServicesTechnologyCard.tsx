@@ -11,10 +11,12 @@ export function ServicesTechnologyCard({
 }: {
   title: string;
   description: string;
-  link: string,
-  isFilled?: boolean,
+  link: string;
+  isFilled?: boolean;
 }) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   return (
     <Link

@@ -5,10 +5,16 @@ import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-a
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 
 export function Cooperation() {
-  const { slicePathname } = usePath();
-  const { t } = useTranslationNamespace('cooperation');
+  const {
+    slicePathname,
+  } = usePath();
+  const {
+    t,
+  } = useTranslationNamespace(`cooperation`);
 
-  const cooperationList: TCooperationList = t('list', { returnObjects: true });
+  const cooperationList: TCooperationList = t(`list`, {
+    returnObjects: true,
+  });
 
   return (
     <section
@@ -17,7 +23,7 @@ export function Cooperation() {
     >
       <div className="container cooperation__wrapper">
         <div className="cooperation__inner">
-          <h2 className={`title-technology-type-1 cooperation__title cooperation__title--${slicePathname}`}>{t('title')}</h2>
+          <h2 className={`title-technology-type-1 cooperation__title cooperation__title--${slicePathname}`}>{t(`title`)}</h2>
           <CooperationList list={cooperationList} />
         </div>
         <div className={`cooperation__image cooperation__image--${slicePathname}`} />

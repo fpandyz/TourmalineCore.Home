@@ -85,18 +85,18 @@
       --s: -1;
     }
 
+    &--ml,
+    &--frontend,
+    &--teams {
+      color: $color-purple-page-primary;
+    }
+
     &--backend {
       color: $color-backend-page-tertiary;
     }
 
     &--qa {
       color: $color-qa-page-primary;
-    }
-
-    &--ml,
-    &--frontend,
-    &--teams {
-      color: $color-purple-page-primary;
     }
 
     &--frontend-team {

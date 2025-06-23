@@ -43,10 +43,6 @@
   &__title {
     margin-bottom: 48px;
 
-    &--teams {
-      max-width: 390px;
-    }
-
     @include tablet {
       margin-bottom: 64px;
     }
@@ -69,6 +65,10 @@
       &--teams {
         max-width: 740px;
       }
+    }
+
+    &--teams {
+      max-width: 390px;
     }
   }
 
@@ -110,6 +110,19 @@
       }
     }
 
+    &--frontend,
+    &--teams {
+      background-image: url("/images/cooperation-purple-element-mobile.png");
+    }
+
+    &--ml,
+    &--frontend,
+    &--teams {
+      @include tablet {
+        background-image: url("/images/ellipse-purple.svg");
+      }
+    }
+
     &--backend {
       background-image: url("/images/cooperation-backend-element-mobile.webp");
 
@@ -128,19 +141,6 @@
 
     &--ml {
       background-image: url("/images/cooperation-ml-element-mobile.webp");
-    }
-
-    &--frontend,
-    &--teams {
-      background-image: url("/images/cooperation-purple-element-mobile.png");
-    }
-
-    &--ml,
-    &--frontend,
-    &--teams {
-      @include tablet {
-        background-image: url("/images/ellipse-purple.svg");
-      }
     }
 
     &--embedded {

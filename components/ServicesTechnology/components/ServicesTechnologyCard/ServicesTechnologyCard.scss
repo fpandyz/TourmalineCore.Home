@@ -131,46 +131,6 @@
     }
   }
 
-  &--backend {
-    &::after {
-      background-image:
-        linear-gradient(
-          51deg,
-          $color-backend-page-primary 0%,
-          $color-backend-page-secondary 52%,
-          $color-backend-page-tertiary 100%
-        );
-    }
-  }
-
-  &--qa {
-    &::after {
-      background-image:
-        linear-gradient(
-          309deg,
-          $color-qa-page-primary 0%,
-          $color-qa-page-secondary 100%
-        );
-    }
-  }
-
-  &--ml {
-    &::after {
-      background-color: $color-ml-page-primary;
-    }
-  }
-
-  &--embedded {
-    &::after {
-      background-image:
-        linear-gradient(
-          225deg,
-          $color-embedded-page-primary 0%,
-          $color-embedded-page-secondary 100%
-        );
-    }
-  }
-
   &--frontend,
   &--teams {
     &::after {
@@ -182,27 +142,6 @@
   &--filled {
     &::after {
       background-image: $color-dark-cyan-card;
-    }
-  }
-
-  &--design {
-    &::after {
-      background-image:
-        linear-gradient(
-          233deg,
-          $color-design-page-primary -19.07%,
-          $color-design-page-secondary 73.95%
-        );
-    }
-  }
-
-  &--hover {
-    cursor: pointer;
-  }
-
-  &--hover:hover {
-    &::after {
-      opacity: 1;
     }
   }
 
@@ -228,6 +167,67 @@
 
     &--teams {
       padding-bottom: 40px;
+    }
+  }
+
+  &--backend {
+    &::after {
+      background-image:
+        linear-gradient(
+            51deg,
+            $color-backend-page-primary 0%,
+            $color-backend-page-secondary 52%,
+            $color-backend-page-tertiary 100%
+          );
+    }
+  }
+
+  &--qa {
+    &::after {
+      background-image:
+        linear-gradient(
+            309deg,
+            $color-qa-page-primary 0%,
+            $color-qa-page-secondary 100%
+          );
+    }
+  }
+
+  &--ml {
+    &::after {
+      background-color: $color-ml-page-primary;
+    }
+  }
+
+  &--embedded {
+    &::after {
+      background-image:
+        linear-gradient(
+            225deg,
+            $color-embedded-page-primary 0%,
+            $color-embedded-page-secondary 100%
+          );
+    }
+  }
+
+  &--design {
+    &::after {
+      background-image:
+        linear-gradient(
+            233deg,
+            $color-design-page-primary -19.07%,
+            $color-design-page-secondary 73.95%
+          );
+    }
+  }
+
+  &--hover {
+    cursor: pointer;
+  }
+
+  &--hover:hover {
+    &::after {
+      opacity: 1;
     }
   }
 }

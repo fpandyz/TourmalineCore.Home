@@ -18,14 +18,32 @@
     padding: 40px 16px;
     text-align: center;
 
+    &--frontend,
+    &--teams {
+      background-color: $color-purple-page-primary;
+    }
+
+    @include tablet {
+      display: flex;
+      align-items: flex-start;
+      flex-flow: column;
+      border-radius: 32px;
+      padding: 120px 32px 40px;
+    }
+
+    @include tablet-xl {
+      border-radius: 48px;
+      padding: 160px 64px 64px;
+    }
+
     &--backend {
       background-image:
         linear-gradient(
-          51deg,
-          $color-backend-page-primary 0%,
-          $color-backend-page-secondary 52%,
-          $color-backend-page-tertiary 100%
-        );
+            51deg,
+            $color-backend-page-primary 0%,
+            $color-backend-page-secondary 52%,
+            $color-backend-page-tertiary 100%
+          );
     }
 
     &--qa {
@@ -40,31 +58,13 @@
       background-image: linear-gradient(225deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
     }
 
-    &--frontend,
-    &--teams {
-      background-color: $color-purple-page-primary;
-    }
-
     &--design {
       background-image:
         linear-gradient(
-          233deg,
-          $color-design-page-primary -19.07%,
-          $color-design-page-secondary 73.95%
-        );
-    }
-
-    @include tablet {
-      display: flex;
-      align-items: flex-start;
-      flex-flow: column;
-      border-radius: 32px;
-      padding: 120px 32px 40px;
-    }
-
-    @include tablet-xl {
-      border-radius: 48px;
-      padding: 160px 64px 64px;
+            233deg,
+            $color-design-page-primary -19.07%,
+            $color-design-page-secondary 73.95%
+          );
     }
   }
 

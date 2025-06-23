@@ -4,9 +4,13 @@ import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-a
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 
 export function Payment() {
-  const { t } = useTranslationNamespace('payment');
+  const {
+    t,
+  } = useTranslationNamespace(`payment`);
 
-  const paymentList: TPaymentList = t('list', { returnObjects: true });
+  const paymentList: TPaymentList = t(`list`, {
+    returnObjects: true,
+  });
 
   return (
     <section
@@ -14,7 +18,7 @@ export function Payment() {
       className="payment"
     >
       <div className="container payment__wrapper">
-        <h2 className="title-technology-type-1 payment__title">{t('title')}</h2>
+        <h2 className="title-technology-type-1 payment__title">{t(`title`)}</h2>
         <PaymentList list={paymentList} />
       </div>
     </section>

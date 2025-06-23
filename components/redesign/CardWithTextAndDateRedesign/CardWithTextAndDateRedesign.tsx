@@ -20,12 +20,15 @@ export function CardWithTextAndDateRedesign({
 }: CardWithTextAndDate & {
   className: string;
 }) {
-  const { locale } = useRouter();
-  const formattedDate = moment(date).format(
-    locale === 'en'
-      ? 'MMMM D, YYYY'
-      : 'D MMMM YYYY',
-  );
+  const {
+    locale,
+  } = useRouter();
+  const formattedDate = moment(date)
+    .format(
+      locale === `en`
+        ? `MMMM D, YYYY`
+        : `D MMMM YYYY`,
+    );
 
   useEffect(() => {
     moment.locale(locale);
@@ -35,7 +38,7 @@ export function CardWithTextAndDateRedesign({
     <CardWithContentRedesign
       title={title}
       markdownText={markdownText}
-      className={clsx('card-with-text-and-date-redesign', className)}
+      className={clsx(`card-with-text-and-date-redesign`, className)}
     >
       <p className="card-with-text-and-date-redesign__text">{text}</p>
       <span className="card-with-text-and-date-redesign__date">

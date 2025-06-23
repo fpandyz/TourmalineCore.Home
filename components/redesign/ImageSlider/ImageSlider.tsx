@@ -6,7 +6,7 @@ export function ImageSlider({
   interval,
   ...imageProps
 }: Omit<ImageProps, 'src'> & {
-  imageUrls: string[]
+  imageUrls: string[];
   interval: number;
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);

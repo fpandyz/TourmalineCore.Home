@@ -9,21 +9,25 @@ import { usePath } from '../../common/hooks/usePath';
 export function FormTechnologyModal({
   setIsOpen,
 }:{
-  setIsOpen: (isOpen: boolean) => void
+  setIsOpen: (isOpen: boolean) => void;
 }) {
-  const { t } = useTranslation('discussion');
-  const { slicePathname } = usePath();
+  const {
+    t,
+  } = useTranslation(`discussion`);
+  const {
+    slicePathname,
+  } = usePath();
 
   const [isSubmit, setIsSubmit] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(``);
 
   return (
     <Modal
       maxWidth="1008px"
-      title={!isSubmit ? t('modalTitle') : t('modalTitleSuccessful')}
+      title={!isSubmit ? t(`modalTitle`) : t(`modalTitleSuccessful`)}
       subtitle={!isSubmit
-        ? t('modalSubtitle')
-        : `${t('modalSubtitleSuccessfulFirst')} ${email} ${t('modalSubtitleSuccessfulSecond')}`}
+        ? t(`modalSubtitle`)
+        : `${t(`modalSubtitleSuccessfulFirst`)} ${email} ${t(`modalSubtitleSuccessfulSecond`)}`}
       subtitleClassName="form-technology-modal__subtitle"
       content={(
         <>

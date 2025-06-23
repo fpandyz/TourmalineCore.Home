@@ -15,7 +15,9 @@ export function StagesAccordion({
   index: number;
   clickedAccordion?: () => unknown;
 }) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,7 +44,7 @@ export function StagesAccordion({
               }}
             >
               {title}
-              <IconLargeArrow className={clsx('stages-list__accordion-icon', {
+              <IconLargeArrow className={clsx(`stages-list__accordion-icon`, {
                 'stages-list__accordion-icon--is-open': isOpen,
               })}
               />

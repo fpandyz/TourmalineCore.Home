@@ -2,9 +2,9 @@ import { Page } from '@playwright/test';
 import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
 import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
 
-const TEST_ID = 'hero';
+const TEST_ID = `hero`;
 
-test.describe('HeroTests', () => {
+test.describe(`HeroTests`, () => {
   test.beforeEach(async ({
     goto,
     apiImageMock,
@@ -12,14 +12,14 @@ test.describe('HeroTests', () => {
   }) => {
     await apiImageMock();
 
-    await goto('/ru');
+    await goto(`/ru`);
 
     await hideCookie();
   });
 
-  test('MobileTest', mobileTest);
+  test(`MobileTest`, mobileTest);
 
-  test('DesktopTest', desktopTest);
+  test(`DesktopTest`, desktopTest);
 });
 
 async function mobileTest({
@@ -27,7 +27,7 @@ async function mobileTest({
   setViewportSize,
 }: {
   page: Page;
-  setViewportSize: CustomTestFixtures['setViewportSize']
+  setViewportSize: CustomTestFixtures['setViewportSize'];
 }) {
   await setViewportSize();
 
@@ -42,7 +42,7 @@ async function desktopTest({
   setViewportSize,
 }: {
   page: Page;
-  setViewportSize: CustomTestFixtures['setViewportSize']
+  setViewportSize: CustomTestFixtures['setViewportSize'];
 }) {
   await setViewportSize({
     width: Breakpoint.DESKTOP,

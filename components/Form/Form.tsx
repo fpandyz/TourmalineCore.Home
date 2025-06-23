@@ -18,9 +18,9 @@ import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
 import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
 enum ReCAPTCHALanguage {
-  'en' = 'en',
-  'ru' = 'ru',
-  'zh' = 'zh-CN',
+  'en' = `en`,
+  'ru' = `ru`,
+  'zh' = `zh-CN`,
 }
 
 export function Form({
@@ -30,7 +30,9 @@ export function Form({
   onSubmit: (formData: FormData) => unknown;
   buttonClassName?: string;
 }) {
-  const { t } = useTranslation('form');
+  const {
+    t,
+  } = useTranslation(`form`);
   const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -48,7 +50,7 @@ export function Form({
   return (
     <>
       <form
-        className={clsx('form', {
+        className={clsx(`form`, {
           'form--zh': isChineseLanguage(),
         })}
         onSubmit={handleFormSubmit}
@@ -57,10 +59,10 @@ export function Form({
           id="name"
           name="name"
           className="form__input"
-          label={t('name.label')}
-          description={t('name.description')}
+          label={t(`name.label`)}
+          description={t(`name.description`)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if (e.key === `Enter`) {
               e.preventDefault();
             }
           }}
@@ -70,11 +72,11 @@ export function Form({
           id="email"
           name="email"
           className="form__input"
-          label={t('email.label')}
-          description={t('email.description')}
+          label={t(`email.label`)}
+          description={t(`email.description`)}
           type="email"
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if (e.key === `Enter`) {
               e.preventDefault();
             }
           }}
@@ -83,20 +85,20 @@ export function Form({
         <Textarea
           id="message"
           name="message"
-          label={t('message.label')}
+          label={t(`message.label`)}
           className="form__message"
-          description={t('message.description')}
+          description={t(`message.description`)}
         />
 
         <div className="form__footer">
           <PrimaryButton
             type="submit"
-            className={clsx('form__button', buttonClassName)}
+            className={clsx(`form__button`, buttonClassName)}
           >
             {
               isLoading
                 ? <Spinner />
-                : t('buttonText')
+                : t(`buttonText`)
             }
           </PrimaryButton>
           <div className="form__approval">
@@ -120,7 +122,7 @@ export function Form({
       <ReCAPTCHA
         ref={recaptchaRef}
         size="invisible"
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ``}
         badge="bottomleft"
         hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
       />
@@ -143,7 +145,7 @@ export function Form({
       }
 
       const formData = new FormData(event.target as HTMLFormElement);
-      formData.append('g-recaptcha-response', token);
+      formData.append(`g-recaptcha-response`, token);
 
       onSubmit(formData);
 

@@ -10,7 +10,9 @@ export function StagesList({
 }) {
   return (
     <ul className="stages-list">
-      {list.map(({ title, description }, index) => (
+      {list.map(({
+        title, description,
+      }, index) => (
         <StagesAccordion
           key={title}
           title={title}

@@ -109,6 +109,10 @@
     }
   }
 
+  @include desktop {
+    min-height: 405px;
+  }
+
   &--blue {
     display: none;
     background-color: $color-blue-redesign;
@@ -144,9 +148,5 @@
         fill: $color-white;
       }
     }
-  }
-
-  @include desktop {
-    min-height: 405px;
   }
 }

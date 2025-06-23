@@ -21,18 +21,6 @@
     background-clip: padding-box, border-box;
     transition: background-position 0.3s linear;
 
-    &--design {
-      background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
-    }
-
-    &--teams {
-      background-color: $color-purple-page-primary;
-    }
-
-    &--frontend-team {
-      background-color: $color-cyan-page-primary;
-    }
-
     @include tablet {
       margin-right: 51px;
     }
@@ -43,6 +31,18 @@
 
     @include desktop {
       margin-right: 63px;
+    }
+
+    &--design {
+      background-image: linear-gradient(234deg, $color-design-page-primary 0%, $color-design-page-secondary 78.13%);
+    }
+
+    &--teams {
+      background-color: $color-purple-page-primary;
+    }
+
+    &--frontend-team {
+      background-color: $color-cyan-page-primary;
     }
   }
 
@@ -76,20 +76,9 @@
     display: none;
     white-space: pre-wrap;
 
-    &--is-open {
-      display: block;
-      margin-top: 10px;
-      padding-right: 20px;
-    }
-
     @include tablet {
       display: block;
       line-height: 1.33;
-
-      &--design {
-        font-size: 18px;
-        color: $color-white-alpha-100;
-      }
 
       &--teams,
       &--frontend-team {
@@ -128,6 +117,17 @@
           line-height: 1.8;
         }
       }
+
+      &--design {
+        font-size: 18px;
+        color: $color-white-alpha-100;
+      }
+    }
+
+    &--is-open {
+      display: block;
+      margin-top: 10px;
+      padding-right: 20px;
     }
   }
 

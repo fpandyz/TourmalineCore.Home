@@ -22,14 +22,22 @@ export function MobileMenu({
   headerLinks,
   onCloseClick,
 }: MobileMenuProps) {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
 
   return (
     <div className="mobile-menu">
       <div className="container mobile-menu__inner">
         <div className="mobile-menu__top">
-          <Link className="mobile-menu__logo" href="/">
-            <span onClick={onCloseClick} aria-hidden="true">
+          <Link
+            className="mobile-menu__logo"
+            href="/"
+          >
+            <span
+              onClick={onCloseClick}
+              aria-hidden="true"
+            >
               <Image
                 src="/images/logo.png"
                 fill
@@ -66,7 +74,11 @@ export function MobileMenu({
               key={headerLink.id}
               href={headerLink.link}
             >
-              <span className="title-type-2" onClick={onCloseClick} aria-hidden="true">
+              <span
+                className="title-type-2"
+                onClick={onCloseClick}
+                aria-hidden="true"
+              >
                 {t(headerLink.id)}
               </span>
             </Link>

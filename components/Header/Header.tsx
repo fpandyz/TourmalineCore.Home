@@ -65,16 +65,16 @@ const headerLinks: HeaderLinks = [
 
 const BURGER_ICONS = new Map(
   [
-    [AppRoute.Frontend, <IconBurgerPurple />],
-    [AppRoute.Ml, <IconBurgerPurple />],
-    [AppRoute.Embedded, <IconBurgerMagenta />],
-    [AppRoute.QA, <IconBurgerQA />],
-    [AppRoute.Backend, <IconBurgerBackend />],
-    [AppRoute.Design, <IconBurgerDesign />],
-    [AppRoute.Teams, <IconBurgerPurple />],
-    [AppRoute.FrontendTeam, <IconBurgerCyan />],
-    [AppRoute.Main, <IconBurger />],
-    [AppRoute.Articles, <IconBurger />],
+    [AppRoute.Frontend, <IconBurgerPurple key={AppRoute.Frontend} />],
+    [AppRoute.Ml, <IconBurgerPurple key={AppRoute.Ml} />],
+    [AppRoute.Embedded, <IconBurgerMagenta key={AppRoute.Embedded} />],
+    [AppRoute.QA, <IconBurgerQA key={AppRoute.QA} />],
+    [AppRoute.Backend, <IconBurgerBackend key={AppRoute.Backend} />],
+    [AppRoute.Design, <IconBurgerDesign key={AppRoute.Design} />],
+    [AppRoute.Teams, <IconBurgerPurple key={AppRoute.Teams} />],
+    [AppRoute.FrontendTeam, <IconBurgerCyan key={AppRoute.FrontendTeam} />],
+    [AppRoute.Main, <IconBurger key={AppRoute.Main} />],
+    [AppRoute.Articles, <IconBurger key={AppRoute.Articles} />],
   ],
 );
 
@@ -83,15 +83,19 @@ export function Header({
 }: {
   containerClass?: string;
 }) {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { pathname } = useRouter();
+  const {
+    pathname,
+  } = useRouter();
 
   useBodyScrollHidden(isMobileMenuOpen);
 
   return (
     <>
-      <header className={clsx('header', {
+      <header className={clsx(`header`, {
         'header--zh': isChineseLanguage(),
       })}
       >

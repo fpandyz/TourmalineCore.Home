@@ -5,10 +5,10 @@ import { useDeviceSize } from './useDeviceSize';
 type Section = HTMLElement;
 type Element = HTMLElement;
 
-const SECTION_SELECTOR = 'section[data-auto-padding]';
-const ELEMENT_SELECTOR = 'div[name]';
+const SECTION_SELECTOR = `section[data-auto-padding]`;
+const ELEMENT_SELECTOR = `div[name]`;
 
-const ZERO_HTML_PADDING = '0px';
+const ZERO_HTML_PADDING = `0px`;
 
 export function useSectionAutoPaddings() {
   const deviceSize = useDeviceSize();
@@ -25,6 +25,7 @@ export function useSectionAutoPaddings() {
 
     const differenceHeight = screenHeight - elementHeight;
     return differenceHeight > 0 ? Math.round(differenceHeight / 2) : 0;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deviceSize.width]);
 
   useEffect(() => {
@@ -180,13 +181,17 @@ export function useSectionAutoPaddings() {
   function getPreviousSectionPaddingBottom(section: Section) {
     const element = section.querySelector<Element>(ELEMENT_SELECTOR);
 
-    const { paddingBottom: sectionPaddingBottom } = getPadding(section);
+    const {
+      paddingBottom: sectionPaddingBottom,
+    } = getPadding(section);
 
     if (!element) {
       return sectionPaddingBottom;
     }
 
-    const { paddingBottom: elementPaddingBottom } = getPadding(element);
+    const {
+      paddingBottom: elementPaddingBottom,
+    } = getPadding(element);
 
     return sectionPaddingBottom + elementPaddingBottom;
   }
@@ -196,6 +201,6 @@ export function useSectionAutoPaddings() {
   }
 
   function convertToNumberPadding(padding: string) {
-    return Number(padding.replace('px', ''));
+    return Number(padding.replace(`px`, ``));
   }
 }

@@ -12,7 +12,7 @@ export function PrimaryButton({
   return (
     <button
       type="button"
-      className={clsx('button primary-button', className, {
+      className={clsx(`button primary-button`, className, {
         'primary-button--zh': isChineseLanguage(),
       })}
       {...props}

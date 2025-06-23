@@ -16,6 +16,10 @@
       object-fit: cover;
     }
 
+    @include desktop {
+      margin-bottom: 20px;
+    }
+
     &--XS {
       @include desktop {
         height: 290px;
@@ -38,10 +42,6 @@
       @include desktop {
         height: 545px;
       }
-    }
-
-    @include desktop {
-      margin-bottom: 20px;
     }
   }
 

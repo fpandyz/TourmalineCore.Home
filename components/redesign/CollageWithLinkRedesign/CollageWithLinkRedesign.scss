@@ -128,12 +128,9 @@
       height: 118px;
 
       @include tablet {
-        left: 150px;
-        right: auto;
-        top: 126px;
-        bottom: auto;
         width: 132px;
         height: 132px;
+        inset: 126px auto auto 150px;
       }
 
       @include desktop {
@@ -236,12 +233,9 @@
       height: 106px;
 
       @include tablet {
-        left: auto;
-        right: 184px;
-        top: auto;
-        bottom: 86px;
         width: 116px;
         height: 116px;
+        inset: auto 184px 86px auto;
       }
 
       @include desktop {

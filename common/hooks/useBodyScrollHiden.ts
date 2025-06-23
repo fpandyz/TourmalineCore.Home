@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const BODY_SCROLL_HIDDEN = 'body--scroll-hidden';
+const BODY_SCROLL_HIDDEN = `body--scroll-hidden`;
 
 export function useBodyScrollHidden(isOpen: boolean) {
   useEffect(() => {
