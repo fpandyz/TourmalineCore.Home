@@ -7,7 +7,7 @@
 	// https://playwright.dev/docs/docker
 	"image": "mcr.microsoft.com/playwright:v1.53.0-noble",
 	"features": {
-		// https://github.com/cypress-io/cypress-documentation/issues/2956#issuecomment-1691335689
+		// Enable VNC
 		"ghcr.io/devcontainers/features/desktop-lite:1.1.0": {},
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1.6.0": {}
 	},
