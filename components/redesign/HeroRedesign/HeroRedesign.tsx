@@ -6,7 +6,10 @@ export function HeroRedesign() {
   const imageUrls: string[] = t('imageUrls', { returnObjects: true });
 
   return (
-    <section className="hero-redesign">
+    <section
+      className="hero-redesign"
+      data-testid="hero"
+    >
       <div className="container-redesign hero-redesign__wrapper">
         <h1 className="hero-redesign__title">{t('title')}</h1>
         <p className="hero-redesign__description">{t('description')}</p>

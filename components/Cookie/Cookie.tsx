@@ -23,12 +23,11 @@ export const optionYandexMetrika: OptionYM = {
 
 export function Cookie() {
   const { t } = useTranslation('cookie');
+  const router = useRouter();
   const [isCookie, setIsCookie] = useState(true);
-  const [date, setDate] = useState<Date>();
+  const [date, setDate] = useState<Date | null>(null);
 
   const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
-
-  const router = useRouter();
 
   useEffect(() => {
     setDate(new Date());
@@ -44,9 +43,11 @@ export function Cookie() {
   }
 
   return (
-    <div className={clsx('cookie', {
-      'cookie--zh': isChineseLanguage(),
-    })}
+    <div
+      className={clsx('cookie', {
+        'cookie--zh': isChineseLanguage(),
+      })}
+      data-testid="cookie"
     >
       <div className="cookie__inner">
         <div className="cookie__text">
