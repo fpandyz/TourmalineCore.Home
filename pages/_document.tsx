@@ -112,6 +112,7 @@ export default class MyDocument extends Document {
           />
           <noscript>
             <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`https://mc.yandex.ru/watch/${yandexId}`}
                 style={{

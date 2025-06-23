@@ -108,6 +108,7 @@ export function ServicesRedesign({
                     key={teamName}
                   >
                     <span className="services-redesign__icon-wrapper">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={teamIcon}
                         alt=""
