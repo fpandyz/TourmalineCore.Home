@@ -13,7 +13,10 @@
     "lint:css:fix": "npm run lint:css -- --fix",
     "lint:ts": "eslint \"**/*.{ts,tsx}\" --no-error-on-unmatched-pattern",
     "lint:css": "npx stylelint \"**/*.{css,scss}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "playwright:run": "npx playwright test",
+    "playwright:open": "npx playwright test --ui",
+    "update-snapshots": "npx playwright test --update-snapshots"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
