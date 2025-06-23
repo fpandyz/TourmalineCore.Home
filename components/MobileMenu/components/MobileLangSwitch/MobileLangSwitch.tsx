@@ -1,6 +1,4 @@
-import {
-  useMemo,
-} from 'react';
+import { useMemo } from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -34,13 +32,15 @@ export function MobileLangSwitch() {
               locale={locale}
               role="presentation"
               className={clsx(
-                'mobile-lang-switch__link',
-                { 'mobile-lang-switch__link--active': routerLocale === locale },
+                `mobile-lang-switch__link`,
+                {
+                  'mobile-lang-switch__link--active': routerLocale === locale,
+                },
               )}
               onClick={(e) => {
                 e.preventDefault();
                 if (routerLocale !== locale) {
-                  window.open((e.target as HTMLAnchorElement).href, '_self');
+                  window.open((e.target as HTMLAnchorElement).href, `_self`);
                 }
               }}
             >

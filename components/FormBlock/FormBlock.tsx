@@ -14,15 +14,17 @@ export function FormBlock({
 }: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & {
   buttonClassName?: string;
 }) {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(``);
   const [isSubmit, setIsSubmit] = useState(false);
 
-  const { t } = useTranslation('formBlock');
+  const {
+    t,
+  } = useTranslation(`formBlock`);
 
   return (
     <section
       className={
-        clsx('section container form-block', {
+        clsx(`section container form-block`, {
           'form-block--zh': isChineseLanguage(),
         })
       }
@@ -30,13 +32,13 @@ export function FormBlock({
       {...props}
     >
       <div
-        className={clsx('form-block__inner')}
+        className={clsx(`form-block__inner`)}
       >
         <h2 className="title-technology-type-2 form-block__title">
-          {t('title')}
-          {' '}
+          {t(`title`)}
+          {` `}
           <span className="title-technology-type-2 form-block__title-technology">
-            {t('titleGradient')}
+            {t(`titleGradient`)}
           </span>
         </h2>
         {
@@ -50,11 +52,11 @@ export function FormBlock({
             : (
               <div>
                 <span className="form-block__text">
-                  {t('text')}
-                  {' '}
+                  {t(`text`)}
+                  {` `}
                   {email}
                 </span>
-                <PrimaryButton onClick={() => setIsSubmit(false)}>{t('buttonText')}</PrimaryButton>
+                <PrimaryButton onClick={() => setIsSubmit(false)}>{t(`buttonText`)}</PrimaryButton>
               </div>
             )
         }

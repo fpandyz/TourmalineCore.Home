@@ -35,9 +35,13 @@ type CasesList = {
 }[];
 
 export function Cases() {
-  const { t } = useTranslationNamespace('cases');
+  const {
+    t,
+  } = useTranslationNamespace(`cases`);
 
-  const casesList: CasesList = t('list', { returnObjects: true });
+  const casesList: CasesList = t(`list`, {
+    returnObjects: true,
+  });
 
   return (
     <section
@@ -46,7 +50,7 @@ export function Cases() {
     >
       <div className="container cases__wrapper">
         <div className="cases__inner">
-          <h2 className="title-technology-type-1 cases__title">{t('title')}</h2>
+          <h2 className="title-technology-type-1 cases__title">{t(`title`)}</h2>
           {casesList.map((item, index) => (
             <CasesCard
               // eslint-disable-next-line react/no-array-index-key

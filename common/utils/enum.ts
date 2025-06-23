@@ -7,9 +7,9 @@ export enum Breakpoint {
 }
 
 export enum BreakpointName {
-  MOBILE = 'mobile',
-  TABLET = 'tablet',
-  TABLET_XL = 'tablet-xl',
-  DESKTOP = 'desktop',
-  DESKTOP_XL = 'desktop-xl',
+  MOBILE = `mobile`,
+  TABLET = `tablet`,
+  TABLET_XL = `tablet-xl`,
+  DESKTOP = `desktop`,
+  DESKTOP_XL = `desktop-xl`,
 }

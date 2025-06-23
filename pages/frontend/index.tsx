@@ -16,20 +16,22 @@ import { FormBlock } from '../../components/FormBlock/FormBlock';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
 export default function FrontendPage() {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t('title'),
-            description: t('description'),
+            title: t(`title`),
+            description: t(`description`),
           },
-          keywords: t('keywords'),
+          keywords: t(`keywords`),
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
       <Layout mainClassName="frontend">
@@ -53,24 +55,26 @@ export default function FrontendPage() {
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
+export const getStaticProps: GetServerSideProps = async ({
+  locale,
+}) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
-      'common',
-      'footer',
-      'cookie',
-      'form',
-      'discussion',
-      'formBlock',
-      'heroFrontend',
-      'pointsFrontend',
-      'tasksFrontend',
-      'paymentFrontend',
-      'cta',
-      'stackFrontend',
-      'cooperationFrontend',
-      'servicesTechnologyFrontend',
-      'casesFrontend',
+      `common`,
+      `footer`,
+      `cookie`,
+      `form`,
+      `discussion`,
+      `formBlock`,
+      `heroFrontend`,
+      `pointsFrontend`,
+      `tasksFrontend`,
+      `paymentFrontend`,
+      `cta`,
+      `stackFrontend`,
+      `cooperationFrontend`,
+      `servicesTechnologyFrontend`,
+      `casesFrontend`,
     ])),
   },
 });

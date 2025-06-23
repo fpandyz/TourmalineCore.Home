@@ -4,11 +4,19 @@ import { CardWithRepositories, CardWithRepositoriesRedesign } from '../CardWithR
 import { CardWithTextAndDate, CardWithTextAndDateRedesign } from '../CardWithTextAndDateRedesign/CardWithTextAndDateRedesign';
 
 export function CardsGridRedesign() {
-  const { t } = useTranslation('cardsGridRedesign');
+  const {
+    t,
+  } = useTranslation(`cardsGridRedesign`);
 
-  const cardWithImage: CardWithImage = t('cardWithImage', { returnObjects: true });
-  const cardWithRepositories: CardWithRepositories = t('cardWithRepositories', { returnObjects: true });
-  const cardWithTextAndDate: CardWithTextAndDate = t('cardWithTextAndDate', { returnObjects: true });
+  const cardWithImage: CardWithImage = t(`cardWithImage`, {
+    returnObjects: true,
+  });
+  const cardWithRepositories: CardWithRepositories = t(`cardWithRepositories`, {
+    returnObjects: true,
+  });
+  const cardWithTextAndDate: CardWithTextAndDate = t(`cardWithTextAndDate`, {
+    returnObjects: true,
+  });
 
   return (
     <section className="cards-grid-redesign">

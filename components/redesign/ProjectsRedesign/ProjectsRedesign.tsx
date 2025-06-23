@@ -6,11 +6,15 @@ const GRID_COLUMNS = 12;
 export function ProjectsRedesign({
   translationKey,
 }:{
-  translationKey: string
+  translationKey: string;
 }) {
-  const { t } = useTranslation(translationKey);
+  const {
+    t,
+  } = useTranslation(translationKey);
 
-  const projectCardsWithImage: ProjectCardWithImage[] = t('projectsCardsWithImage', { returnObjects: true });
+  const projectCardsWithImage: ProjectCardWithImage[] = t(`projectsCardsWithImage`, {
+    returnObjects: true,
+  });
 
   const columnsCount = GRID_COLUMNS / projectCardsWithImage.length;
 

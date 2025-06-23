@@ -9,13 +9,19 @@ export function ServicesTechnology({
   localeKeyName,
   isFilled,
 }: {
-  localeKeyName?: string,
-  isFilled?: boolean,
+  localeKeyName?: string;
+  isFilled?: boolean;
 }) {
-  const { slicePathname } = usePath();
-  const { t } = useTranslationNamespace(localeKeyName || 'servicesTechnology');
+  const {
+    slicePathname,
+  } = usePath();
+  const {
+    t,
+  } = useTranslationNamespace(localeKeyName || `servicesTechnology`);
 
-  const servicesTechnologyList: TServicesTechnologyList = t('list', { returnObjects: true });
+  const servicesTechnologyList: TServicesTechnologyList = t(`list`, {
+    returnObjects: true,
+  });
 
   return (
     <section
@@ -29,15 +35,20 @@ export function ServicesTechnology({
               'services-technology__title--filled': isFilled,
             })}
           >
-            {t('title')}
+            {t(`title`)}
           </h2>
           <ul
             className={clsx(`services-technology__list services-technology__list--${slicePathname}`, {
               'services-technology__list--filled': isFilled,
             })}
           >
-            {servicesTechnologyList.map(({ title, description, link }) => (
-              <li key={description} className="services-technology__item">
+            {servicesTechnologyList.map(({
+              title, description, link,
+            }) => (
+              <li
+                key={description}
+                className="services-technology__item"
+              >
                 <ServicesTechnologyCard
                   title={title}
                   description={description}

@@ -16,13 +16,13 @@
     @include tablet {
       margin-bottom: 80px;
 
-      &--embedded {
-        max-width: 665px;
-      }
-
       &--teams,
       &--filled {
         max-width: 910px;
+      }
+
+      &--embedded {
+        max-width: 665px;
       }
     }
 
@@ -37,13 +37,13 @@
     @include desktop {
       max-width: 850px;
 
-      &--embedded {
-        max-width: 1110px;
-      }
-
       &--teams,
       &--filled {
         max-width: 1220px;
+      }
+
+      &--embedded {
+        max-width: 1110px;
       }
     }
 

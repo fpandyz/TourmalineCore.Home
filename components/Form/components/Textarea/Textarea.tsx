@@ -18,7 +18,7 @@ export function Textarea({
   ...props
 }: TextareaProps) {
   return (
-    <div className={clsx('textarea', className, {
+    <div className={clsx(`textarea`, className, {
       'textarea--is-error': isError,
       'textarea--zh': isChineseLanguage(),
     })}
@@ -30,7 +30,12 @@ export function Textarea({
           placeholder=" "
           {...props}
         />
-        <label htmlFor={id} className="textarea__label">{label}</label>
+        <label
+          htmlFor={id}
+          className="textarea__label"
+        >
+          {label}
+        </label>
       </div>
       {description && <div className="textarea__description">{description}</div>}
     </div>

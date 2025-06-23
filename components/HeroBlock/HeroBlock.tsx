@@ -7,13 +7,13 @@ export function HeroBlock({
   description,
   Button,
 }: {
-  title: string,
-  gradientTitle: string,
-  description: string,
+  title: string;
+  gradientTitle: string;
+  description: string;
   Button: JSX.Element;
 }) {
   return (
-    <section className={clsx('hero-block', {
+    <section className={clsx(`hero-block`, {
       'hero-block--zh': isChineseLanguage(),
     })}
     >
@@ -30,7 +30,14 @@ export function HeroBlock({
         </div>
         <div className="hero-block__video">
 
-          <video poster="/images/tourmaline-core-poster.webp" src="/images/video.mp4" autoPlay loop playsInline muted>
+          <video
+            poster="/images/tourmaline-core-poster.webp"
+            src="/images/video.mp4"
+            autoPlay
+            loop
+            playsInline
+            muted
+          >
             <track kind="captions" />
           </video>
         </div>
