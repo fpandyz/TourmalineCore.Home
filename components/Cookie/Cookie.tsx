@@ -4,15 +4,15 @@ import { getCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
 import clsx from 'clsx';
-import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { OptionYM } from '../../types/globals';
-import ExternalLink from '../ExternalLink/ExternalLink';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { ExternalLink } from '../ExternalLink/ExternalLink';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
-const cookieAccept = 'cookieAccept';
+const cookieAccept = `cookieAccept`;
 
 const yandexId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
-const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '';
+const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ``;
 
 export const optionYandexMetrika: OptionYM = {
   clickmap: true,
@@ -21,19 +21,19 @@ export const optionYandexMetrika: OptionYM = {
   webvisor: true,
 };
 
-function Cookie() {
-  const { t } = useTranslation('cookie');
-  const [isCookie, setIsCookie] = useState(true);
-  const [date, setDate] = useState<Date>();
-
-  const isMetricsEnabled = process.env.METRICS_ENABLED === 'true';
-
+export function Cookie() {
+  const {
+    t,
+  } = useTranslation(`cookie`);
   const router = useRouter();
+  const [isCookie, setIsCookie] = useState(true);
+  const [date, setDate] = useState<Date | null>(null);
+
+  const isMetricsEnabled = process.env.METRICS_ENABLED === `true`;
 
   useEffect(() => {
     setDate(new Date());
-
-    if (typeof getCookie(cookieAccept) === 'boolean') {
+    if (getCookie(cookieAccept) !== undefined) {
       setIsCookie(true);
     } else {
       setIsCookie(false);
@@ -45,9 +45,11 @@ function Cookie() {
   }
 
   return (
-    <div className={clsx('cookie', {
-      'cookie--zh': isChineseLanguage(),
-    })}
+    <div
+      className={clsx(`cookie`, {
+        'cookie--zh': isChineseLanguage(),
+      })}
+      data-testid="cookie"
     >
       <div className="cookie__inner">
         <div className="cookie__text">
@@ -68,13 +70,13 @@ function Cookie() {
           className="cookie__accept"
           onClick={acceptCookie}
         >
-          {t('accept')}
+          {t(`accept`)}
         </PrimaryButton>
         <PrimaryButton
           className="cookie__reject"
           onClick={rejectCookie}
         >
-          {t('reject')}
+          {t(`reject`)}
         </PrimaryButton>
       </div>
     </div>
@@ -85,10 +87,10 @@ function Cookie() {
     setIsCookie(true);
 
     if (isMetricsEnabled) {
-      window.gtag('js', date);
-      window.gtag('config', googleId);
+      window.gtag(`js`, date);
+      window.gtag(`config`, googleId);
 
-      window.ym(Number(yandexId), 'init', optionYandexMetrika);
+      window.ym(Number(yandexId), `init`, optionYandexMetrika);
     }
   }
 
@@ -97,5 +99,3 @@ function Cookie() {
     setIsCookie(true);
   }
 }
-
-export default Cookie;

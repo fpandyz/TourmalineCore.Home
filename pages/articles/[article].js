@@ -1,7 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import Layout from '../../components/Layout/Layout';
-import PageHead from '../../components/PageHead/PageHead';
+import { Layout } from '../../components/Layout/Layout';
+import { PageHead } from '../../components/PageHead/PageHead';
 import Article from '../../partials/Articles/Article/Article';
 
 import { fetchArticle } from '../../partials/Articles/fetchHelpers/fetchArticle';
@@ -22,10 +22,10 @@ export default function ArticlesPage({
             title: metadata.title,
             description: metadata.description,
           },
-          keywords: metadata.keywords || '',
+          keywords: metadata.keywords || ``,
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
 
@@ -44,7 +44,9 @@ export async function getStaticPaths() {
   const articles = await fetchArticlesListWithMeta();
 
   const paths = articles.map((articleItem) => ({
-    params: { article: articleItem.metadata.slug },
+    params: {
+      article: articleItem.metadata.slug,
+    },
     locale: articleItem.locale,
   }));
 
@@ -66,10 +68,10 @@ export async function getStaticProps({
     return {
       props: {
         ...(await serverSideTranslations(locale, [
-          'common',
-          'footer',
-          'articles',
-          'cookie',
+          `common`,
+          `footer`,
+          `articles`,
+          `cookie`,
         ])),
         article: {},
         metadata: {},
@@ -84,10 +86,10 @@ export async function getStaticProps({
   return {
     props: {
       ...(await serverSideTranslations(locale, [
-        'common',
-        'footer',
-        'articles',
-        'cookie',
+        `common`,
+        `footer`,
+        `articles`,
+        `cookie`,
       ])),
       article,
       metadata,

@@ -2,33 +2,37 @@ import clsx from 'clsx';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import {
-  FormEvent, KeyboardEvent, useMemo, useRef, useState,
+  FormEvent,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { isMobile as isMobileOrTablet } from 'react-device-detect';
 
-import ExternalLink from '../ExternalLink/ExternalLink';
-import Input from '../Input/Input';
-import PrimaryButton from '../PrimaryButton/PrimaryButton';
-import Textarea from '../Textarea/Textarea';
-import Spiner from '../Spiner/Spiner';
+import { ExternalLink } from '../ExternalLink/ExternalLink';
+import { Input } from './components/Input/Input';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
+import { Textarea } from './components/Textarea/Textarea';
+import { Spinner } from '../Spinner/Spinner';
 import { DEFAULT_LOCALE } from '../../common/utils/consts/localization';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
 enum ReCAPTCHALanguage {
-  'en' = 'en',
-  'ru' = 'ru',
-  'zh' = 'zh-CN',
+  'en' = `en`,
+  'ru' = `ru`,
+  'zh' = `zh-CN`,
 }
 
-function Form({
+export function Form({
   onSubmit = () => {},
   buttonClassName,
 }: {
   onSubmit: (formData: FormData) => unknown;
   buttonClassName?: string;
 }) {
-  const { t } = useTranslation('form');
+  const {
+    t,
+  } = useTranslation(`form`);
   const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -46,7 +50,7 @@ function Form({
   return (
     <>
       <form
-        className={clsx('form', {
+        className={clsx(`form`, {
           'form--zh': isChineseLanguage(),
         })}
         onSubmit={handleFormSubmit}
@@ -55,10 +59,10 @@ function Form({
           id="name"
           name="name"
           className="form__input"
-          label={t('name.label')}
-          description={t('name.description')}
+          label={t(`name.label`)}
+          description={t(`name.description`)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if (e.key === `Enter`) {
               e.preventDefault();
             }
           }}
@@ -68,11 +72,11 @@ function Form({
           id="email"
           name="email"
           className="form__input"
-          label={t('email.label')}
-          description={t('email.description')}
+          label={t(`email.label`)}
+          description={t(`email.description`)}
           type="email"
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if (e.key === `Enter`) {
               e.preventDefault();
             }
           }}
@@ -81,20 +85,20 @@ function Form({
         <Textarea
           id="message"
           name="message"
-          label={t('message.label')}
+          label={t(`message.label`)}
           className="form__message"
-          description={t('message.description')}
+          description={t(`message.description`)}
         />
 
         <div className="form__footer">
           <PrimaryButton
             type="submit"
-            className={clsx('form__button', buttonClassName)}
+            className={clsx(`form__button`, buttonClassName)}
           >
             {
               isLoading
-                ? <Spiner />
-                : t('buttonText')
+                ? <Spinner />
+                : t(`buttonText`)
             }
           </PrimaryButton>
           <div className="form__approval">
@@ -118,7 +122,7 @@ function Form({
       <ReCAPTCHA
         ref={recaptchaRef}
         size="invisible"
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ``}
         badge="bottomleft"
         hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
       />
@@ -141,7 +145,7 @@ function Form({
       }
 
       const formData = new FormData(event.target as HTMLFormElement);
-      formData.append('g-recaptcha-response', token);
+      formData.append(`g-recaptcha-response`, token);
 
       onSubmit(formData);
 
@@ -151,5 +155,3 @@ function Form({
     }
   }
 }
-
-export default Form;

@@ -4,15 +4,20 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  border-radius: 2px;
   padding: 24px 20px;
   height: 100%;
-  min-height: 405px;
+  min-height: 304px;
   color: $color-black;
 
   &__list {
     margin-bottom: 10px;
-    margin-left: 26px;
+    margin-left: 24px;
     color: $color-grey-redesign;
+
+    @include desktop {
+      margin-left: 26px;
+    }
   }
 
   &__title {
@@ -83,7 +88,6 @@
   }
 
   &__image-container {
-    position: relative;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -91,6 +95,11 @@
     width: 212px;
     height: 276px;
     transform: translate(-50%, -50%);
+
+    img {
+      background-color: $color-black;
+      object-fit: cover;
+    }
   }
 
   &:hover {
@@ -100,8 +109,17 @@
     }
   }
 
+  @include desktop {
+    min-height: 405px;
+  }
+
   &--blue {
+    display: none;
     background-color: $color-blue-redesign;
+
+    @include tablet-xl {
+      display: block;
+    }
   }
 
   &--grey {

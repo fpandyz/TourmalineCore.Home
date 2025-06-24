@@ -1,4 +1,6 @@
 .hero-redesign {
+  padding-top: 40px;
+  padding-bottom: 80px;
   background-color: $color-black;
 
   &__wrapper {
@@ -10,39 +12,38 @@
   &__title {
     @include h1;
 
-    @include desktop {
-      margin-bottom: 24px;
-    }
+    margin-bottom: 24px;
   }
 
   &__description {
     @include body-l;
 
-    @include desktop {
-      margin-bottom: 56px;
-      color: $color-white-60;
-    }
+    margin-bottom: 56px;
+    color: $color-white-60;
   }
 
   &__images {
     position: relative;
+    width: 352px;
+    height: 264px;
 
     // Todo: move to global and fix other image
     img {
       display: block;
+      border-radius: 2px;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
     @include desktop {
-      width: 352px;
       height: 332px;
     }
   }
 
   &__title,
   &__description {
+    max-width: 490px;
     text-align: center;
 
     @include desktop {
@@ -50,8 +51,7 @@
     }
   }
 
-  @include desktop {
-    padding-top: 40px;
+  @include tablet {
     padding-bottom: 130px;
   }
 }

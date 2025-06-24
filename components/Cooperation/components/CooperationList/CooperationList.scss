@@ -15,10 +15,6 @@
   &__description {
     color: $color-white-alpha-100;
 
-    &--teams {
-      display: block;
-    }
-
     @include tablet {
       &--teams {
         max-width: 520px;
@@ -35,6 +31,10 @@
       &--teams {
         max-width: 730px;
       }
+    }
+
+    &--teams {
+      display: block;
     }
   }
 

@@ -1,33 +1,35 @@
 import { GetServerSideProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import Layout from '../../components/Layout/Layout';
-import PageHead from '../../components/PageHead/PageHead';
-import HeroBlockTechnology from '../../components/HeroBlockTechnology/HeroBlockTechnology';
-import Points from '../../components/Points/Points';
-import ServicesTechnology from '../../components/ServicesTechnology/ServicesTechnology';
-import Tasks from '../../components/Tasks/Tasks';
-import Stack from '../../components/Stack/Stack';
-import Cases from '../../components/Cases/Cases';
-import Stages from '../../components/Stages/Stages';
-import FormBlock from '../../components/FormBlock/FormBlock';
+import { Layout } from '../../components/Layout/Layout';
+import { PageHead } from '../../components/PageHead/PageHead';
+import { HeroBlockTechnology } from '../../components/HeroBlockTechnology/HeroBlockTechnology';
+import { Points } from '../../components/Points/Points';
+import { ServicesTechnology } from '../../components/ServicesTechnology/ServicesTechnology';
+import { Tasks } from '../../components/Tasks/Tasks';
+import { Stack } from '../../components/Stack/Stack';
+import { Cases } from '../../components/Cases/Cases';
+import { Stages } from '../../components/Stages/Stages';
+import { FormBlock } from '../../components/FormBlock/FormBlock';
 import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 
 export default function FrontendTeamPage() {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t('title'),
-            description: t('description'),
+            title: t(`title`),
+            description: t(`description`),
           },
-          keywords: t('keywords'),
+          keywords: t(`keywords`),
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
       <Layout mainClassName="frontend-team">
@@ -36,7 +38,10 @@ export default function FrontendTeamPage() {
           <Points />
         </div>
         <Tasks />
-        <ServicesTechnology localeKeyName="benefits" isFilled />
+        <ServicesTechnology
+          localeKeyName="benefits"
+          isFilled
+        />
         <Cases />
         <Stages />
         <Stack />
@@ -50,23 +55,25 @@ export default function FrontendTeamPage() {
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
+export const getStaticProps: GetServerSideProps = async ({
+  locale,
+}) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
-      'common',
-      'footer',
-      'cookie',
-      'form',
-      'formBlock',
-      'discussion',
-      'heroFrontend-team',
-      'pointsFrontend-team',
-      'servicesTechnologyFrontend-team',
-      'benefitsFrontend-team',
-      'tasksFrontend-team',
-      'stackFrontend-team',
-      'casesFrontend-team',
-      'stagesFrontend-team',
+      `common`,
+      `footer`,
+      `cookie`,
+      `form`,
+      `discussion`,
+      `formBlock`,
+      `heroFrontend-team`,
+      `pointsFrontend-team`,
+      `servicesTechnologyFrontend-team`,
+      `benefitsFrontend-team`,
+      `tasksFrontend-team`,
+      `stackFrontend-team`,
+      `casesFrontend-team`,
+      `stagesFrontend-team`,
     ])),
   },
 });

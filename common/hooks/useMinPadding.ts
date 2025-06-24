@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import useDeviceSize from './useDeviceSize';
+import { useDeviceSize } from './useDeviceSize';
 
 const device = {
   desktopXl: {
@@ -20,14 +20,17 @@ const device = {
   },
 };
 
-function useMinPaddingBetweenSections() {
-  const { width } = useDeviceSize();
+export function useMinPaddingBetweenSections() {
+  const {
+    width,
+  } = useDeviceSize();
 
   return useMemo(() => {
-    const foundDevice = Object.values(device).find(({ width: deviceWidth }) => width >= deviceWidth) || device.mobile;
+    const foundDevice = Object.values(device)
+      .find(({
+        width: deviceWidth,
+      }) => width >= deviceWidth) || device.mobile;
 
     return foundDevice.minPaddingBetweenSections;
   }, [width]);
 }
-
-export default useMinPaddingBetweenSections;

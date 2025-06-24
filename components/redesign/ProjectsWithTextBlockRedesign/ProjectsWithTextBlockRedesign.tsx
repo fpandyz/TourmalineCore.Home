@@ -4,19 +4,33 @@ import { MarkdownText } from '../MarkdownText/MarkdownText';
 
 export function ProjectsWithTextBlockRedesign({
   translationKey,
+  targetId,
+  dataTestId,
 }:{
   translationKey: string;
+  targetId?: string;
+  dataTestId?: string;
 }) {
-  const { t } = useTranslation(translationKey);
+  const {
+    t,
+  } = useTranslation(translationKey);
 
-  const projectCardsWithImage: ProjectCardWithImage[] = t('projectsCardsWithImage', { returnObjects: true });
+  const projectCardsWithImage: ProjectCardWithImage[] = t(`projectsCardsWithImage`, {
+    returnObjects: true,
+  });
 
-  const sectionTitle = t('title');
+  const sectionTitle = t(`title`);
 
-  const textBlockTitle = t('textBlockTitle');
+  const textBlockTitle = t(`textBlockTitle`);
 
   return (
-    <section className="projects-with-text-block-redesign">
+    <section
+      className="projects-with-text-block-redesign projects-redesign"
+      {...(targetId && {
+        id: targetId,
+      })}
+      data-testid={dataTestId}
+    >
       <div className="container-redesign projects-with-text-block-redesign__wrapper">
         {sectionTitle && <h2 className="projects-with-text-block-redesign__title">{sectionTitle}</h2>}
         <ul className="projects-with-text-block-redesign__cards grid">
@@ -30,7 +44,7 @@ export function ProjectsWithTextBlockRedesign({
           }) => (
             <ProjectsCardWithImageRedesign
               key={title}
-              className="projects-with-text-block-redesign__card col-desktop-4"
+              className="projects-with-text-block-redesign__card  col-tablet-4"
               title={title}
               description={description}
               imageUrl={imageUrl}
@@ -40,7 +54,7 @@ export function ProjectsWithTextBlockRedesign({
             />
           ))}
 
-          <li className="projects-with-text-block-redesign__text-block col-desktop-4">
+          <li className="projects-with-text-block-redesign__text-block col-tablet-4">
             {textBlockTitle && (
               <h3 className="projects-with-text-block-redesign__subtitle">
                 {textBlockTitle}
@@ -50,7 +64,7 @@ export function ProjectsWithTextBlockRedesign({
               isTargetBlank
               className="projects-with-text-block-redesign__markdown"
             >
-              {t('textBlockMarkdown')}
+              {t(`textBlockMarkdown`)}
             </MarkdownText>
           </li>
 

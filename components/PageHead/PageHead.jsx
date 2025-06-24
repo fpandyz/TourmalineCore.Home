@@ -2,7 +2,9 @@ import Head from 'next/head';
 
 import { getMetaLangLinks } from './getMetaLangLinks';
 
-export default function PageHead({ seoData }) {
+export function PageHead({
+  seoData,
+}) {
   const {
     seo: {
       title,
@@ -23,11 +25,26 @@ export default function PageHead({ seoData }) {
       {getMetaLangLinks()}
 
       <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta property="og:image" content="/images/browser-preview.webp" />
-      <meta property="og:image:width" content="300" />
-      <meta property="og:image:height" content="300" />
+      <meta
+        name="description"
+        content={description}
+      />
+      <meta
+        name="keywords"
+        content={keywords}
+      />
+      <meta
+        property="og:image"
+        content="/images/browser-preview.webp"
+      />
+      <meta
+        property="og:image:width"
+        content="300"
+      />
+      <meta
+        property="og:image:height"
+        content="300"
+      />
 
       <script
         type="application/ld+json"
@@ -59,7 +76,12 @@ export default function PageHead({ seoData }) {
         props.content = element.content;
       }
 
-      return <meta key={element.name || element.property} {...props} />;
+      return (
+        <meta
+          key={element.name || element.property}
+          {...props}
+        />
+      );
     });
   }
 }

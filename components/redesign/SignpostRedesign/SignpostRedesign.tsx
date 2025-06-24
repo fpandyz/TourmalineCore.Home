@@ -8,8 +8,8 @@ export function SignpostRedesign({
 }: {
   title: string;
   subtitle: string;
-  link?: string,
-  imageUrl: string
+  link?: string;
+  imageUrl: string;
 }) {
   return (
     <div className="signpost-redesign">
@@ -31,13 +31,13 @@ export function SignpostRedesign({
         <div className="signpost-redesign__image-container">
           <Image
             src={imageUrl}
-            layout="fill"
+            fill
             alt=""
           />
         </div>
-        <h3 className="signpost-redesign__title">
+        <h4 className="signpost-redesign__title">
           {title}
-        </h3>
+        </h4>
         <span className="signpost-redesign__subtitle">
           {subtitle}
         </span>

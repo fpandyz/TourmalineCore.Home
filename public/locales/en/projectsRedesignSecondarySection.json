@@ -3,13 +3,13 @@
     {
       "imageUrl": "/images/clever-project.png",
       "title": "Clever",
-      "description": "Part of an ecosystem of\u00A0projects supporting a\u00A0salesperson’s bonus calculation and\u00A0employee incentive programme",
-      "link": "",
+      "description": "Part of an ecosystem of\u00A0projects supporting a\u00A0salesperson’s bonus calculation and\u00A0employee incentive program",
+      "link": "https://www.behance.net/gallery/107025505/Clever-Personal-managment",
       "size": "M",
       "isNda": false
     },
     {
-      "imageUrl": "/images/sine-project.png",
+      "imageUrl": "/images/sine-en.png",
       "title": "Sine",
       "description": "Human resource management system",
       "size": "M",
@@ -23,7 +23,7 @@
       "isNda": true
     },
     {
-      "imageUrl": "/images/protocol-project.png",
+      "imageUrl": "/images/protocol-en.png",
       "title": "Protocol",
       "description": "Development of application layer data transfer protocol",
       "size": "M",

@@ -91,6 +91,19 @@
       }
     }
 
+    &--frontend,
+    &--teams {
+      background-image: url("/images/stack-purple-element-mobile.png");
+
+      @include tablet {
+        background-image: url("/images/stack-purple-element-tablet.png");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-purple-element-desktop.png");
+      }
+    }
+
     &--backend {
       background-image: url("/images/stack-backend-element-mobile.webp");
 
@@ -136,19 +149,6 @@
 
       @include tablet-xl {
         background-image: url("/images/stack-ml-element-desktop.webp");
-      }
-    }
-
-    &--frontend,
-    &--teams {
-      background-image: url("/images/stack-purple-element-mobile.png");
-
-      @include tablet {
-        background-image: url("/images/stack-purple-element-tablet.png");
-      }
-
-      @include tablet-xl {
-        background-image: url("/images/stack-purple-element-desktop.png");
       }
     }
 

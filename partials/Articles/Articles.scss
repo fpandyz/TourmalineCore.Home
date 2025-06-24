@@ -70,7 +70,7 @@
     height: 100%;
     text-decoration: none;
     color: #c1dde2;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgb(255 255 255 / 5%);
     transition: opacity 0.3s ease-in-out;
 
     &::after {
@@ -83,11 +83,11 @@
       height: 100%;
       background-image:
         linear-gradient(
-          90.05deg,
-          rgba($color-pink, 0.1) 0.04%,
-          rgba($color-pink, 0.1) 0.05%,
-          rgba($color-green, 0.1) 99.96%
-        );
+            90.05deg,
+            rgba($color-pink, 0.1) 0.04%,
+            rgba($color-pink, 0.1) 0.05%,
+            rgba($color-green, 0.1) 99.96%
+          );
       background-color: #06040f;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;

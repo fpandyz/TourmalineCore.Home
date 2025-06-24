@@ -27,14 +27,38 @@
       height: auto;
     }
 
+    &--ml,
+    &--frontend,
+    &--teams {
+      background: $color-purple-page-primary;
+
+      &:hover {
+        border: 1px solid $color-purple-page-primary;
+        background: rgba($color-purple-page-primary, 0.3);
+      }
+    }
+
+    @include tablet {
+      width: auto;
+    }
+
+    @include desktop {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    @include desktop-xl {
+      font-size: 20px;
+    }
+
     &--backend {
       background-image:
         linear-gradient(
-          51deg,
-          $color-backend-page-primary 0%,
-          $color-backend-page-secondary 52%,
-          $color-backend-page-tertiary 100%
-        );
+            51deg,
+            $color-backend-page-primary 0%,
+            $color-backend-page-secondary 52%,
+            $color-backend-page-tertiary 100%
+          );
       background-clip: padding-box;
 
       &::after,
@@ -50,22 +74,22 @@
       &::before {
         background-image:
           linear-gradient(
-            51deg,
-            $color-backend-page-primary 0%,
-            $color-backend-page-secondary 52%,
-            $color-backend-page-tertiary 100%
-          );
+              51deg,
+              $color-backend-page-primary 0%,
+              $color-backend-page-secondary 52%,
+              $color-backend-page-tertiary 100%
+            );
         inset: -1px;
       }
 
       &::after {
         background-image:
           linear-gradient(
-            309deg,
-            rgba($color-backend-page-primary, 0.3) 0%,
-            rgba($color-backend-page-secondary, 0.3) 52%,
-            rgba($color-backend-page-tertiary, 0.3) 100%
-          );
+              309deg,
+              rgba($color-backend-page-primary, 0.3) 0%,
+              rgba($color-backend-page-secondary, 0.3) 52%,
+              rgba($color-backend-page-tertiary, 0.3) 100%
+            );
         background-color: $color-black;
         inset: 0;
       }
@@ -97,20 +121,20 @@
       &::before {
         background-image:
           linear-gradient(
-            309deg,
-            rgba($color-qa-page-primary, 0.3) 0%,
-            rgba($color-qa-page-secondary, 0.3) 100%
-          );
+              309deg,
+              rgba($color-qa-page-primary, 0.3) 0%,
+              rgba($color-qa-page-secondary, 0.3) 100%
+            );
         inset: -1px;
       }
 
       &::after {
         background-image:
           linear-gradient(
-            309deg,
-            rgba($color-qa-page-primary, 0.3) 0%,
-            rgba($color-qa-page-secondary, 0.3) 100%
-          );
+              309deg,
+              rgba($color-qa-page-primary, 0.3) 0%,
+              rgba($color-qa-page-secondary, 0.3) 100%
+            );
         background-color: $color-black;
         inset: 0;
       }
@@ -142,20 +166,20 @@
       &::before {
         background-image:
           linear-gradient(
-            225deg,
-            rgba($color-embedded-page-primary, 0.3) 0%,
-            rgba($color-embedded-page-secondary, 0.3) 100%
-          );
+              225deg,
+              rgba($color-embedded-page-primary, 0.3) 0%,
+              rgba($color-embedded-page-secondary, 0.3) 100%
+            );
         inset: -1px;
       }
 
       &::after {
         background-image:
           linear-gradient(
-            225deg,
-            rgba($color-embedded-page-primary, 0.3) 0%,
-            rgba($color-embedded-page-secondary, 0.3) 100%
-          );
+              225deg,
+              rgba($color-embedded-page-primary, 0.3) 0%,
+              rgba($color-embedded-page-secondary, 0.3) 100%
+            );
         background-color: $color-black;
         inset: 0;
       }
@@ -167,17 +191,6 @@
         &::before {
           opacity: 1;
         }
-      }
-    }
-
-    &--ml,
-    &--frontend,
-    &--teams {
-      background: $color-purple-page-primary;
-
-      &:hover {
-        border: 1px solid $color-purple-page-primary;
-        background: rgba($color-purple-page-primary, 0.3);
       }
     }
 
@@ -207,20 +220,20 @@
       &::before {
         background-image:
           linear-gradient(
-            234deg,
-            $color-design-page-primary 0%,
-            $color-design-page-secondary 78.13%
-          );
+              234deg,
+              $color-design-page-primary 0%,
+              $color-design-page-secondary 78.13%
+            );
         inset: -1px;
       }
 
       &::after {
         background-image:
           linear-gradient(
-            234deg,
-            $color-design-page-secondary-100 0%,
-            rgba($color-design-page-secondary, 0.3) 79.17%
-          );
+              234deg,
+              $color-design-page-secondary-100 0%,
+              rgba($color-design-page-secondary, 0.3) 79.17%
+            );
         background-color: $color-black;
         inset: 0;
       }
@@ -233,19 +246,6 @@
           opacity: 1;
         }
       }
-    }
-
-    @include tablet {
-      width: auto;
-    }
-
-    @include desktop {
-      font-size: 18px;
-      line-height: 28px;
-    }
-
-    @include desktop-xl {
-      font-size: 20px;
     }
   }
 }

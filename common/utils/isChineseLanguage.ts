@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router';
 
-const isChineseLanguage = () => {
+export const isChineseLanguage = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
 
-  return router.locale === 'zh';
+  return router.locale === `zh`;
 };
-
-export default isChineseLanguage;

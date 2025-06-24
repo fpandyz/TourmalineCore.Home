@@ -1,4 +1,4 @@
-import CasesCard from './components/CasesCard/CasesCard';
+import { CasesCard } from './components/CasesCard/CasesCard';
 import IconCamera from '../../icons/icon-camera.svg';
 import IconPeople from '../../icons/icon-people.svg';
 import IconMonitor from '../../icons/icon-monitor.svg';
@@ -34,10 +34,14 @@ type CasesList = {
   link: string;
 }[];
 
-export default function Cases() {
-  const { t } = useTranslationNamespace('cases');
+export function Cases() {
+  const {
+    t,
+  } = useTranslationNamespace(`cases`);
 
-  const casesList: CasesList = t('list', { returnObjects: true });
+  const casesList: CasesList = t(`list`, {
+    returnObjects: true,
+  });
 
   return (
     <section
@@ -46,7 +50,7 @@ export default function Cases() {
     >
       <div className="container cases__wrapper">
         <div className="cases__inner">
-          <h2 className="title-technology-type-1 cases__title">{t('title')}</h2>
+          <h2 className="title-technology-type-1 cases__title">{t(`title`)}</h2>
           {casesList.map((item, index) => (
             <CasesCard
               // eslint-disable-next-line react/no-array-index-key

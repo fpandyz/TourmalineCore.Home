@@ -1,19 +1,19 @@
 import clsx from 'clsx';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
-function HeroBlock({
+export function HeroBlock({
   title,
   gradientTitle,
   description,
   Button,
 }: {
-  title: string,
-  gradientTitle: string,
-  description: string,
+  title: string;
+  gradientTitle: string;
+  description: string;
   Button: JSX.Element;
 }) {
   return (
-    <section className={clsx('hero-block', {
+    <section className={clsx(`hero-block`, {
       'hero-block--zh': isChineseLanguage(),
     })}
     >
@@ -30,7 +30,14 @@ function HeroBlock({
         </div>
         <div className="hero-block__video">
 
-          <video poster="/images/tourmaline-core-poster.webp" src="/images/video.mp4" autoPlay loop playsInline muted>
+          <video
+            poster="/images/tourmaline-core-poster.webp"
+            src="/images/video.mp4"
+            autoPlay
+            loop
+            playsInline
+            muted
+          >
             <track kind="captions" />
           </video>
         </div>
@@ -38,5 +45,3 @@ function HeroBlock({
     </section>
   );
 }
-
-export default HeroBlock;

@@ -24,8 +24,8 @@ export function MarkdownText({
               href={props.href}
               className={clsx(props.className)}
               {...(isTargetBlank ? {
-                target: '_blank',
-                rel: 'noopener noreferrer',
+                target: `_blank`,
+                rel: `noopener noreferrer`,
               } : {
                 target: props.target,
                 rel: props.rel,
@@ -43,5 +43,5 @@ export function MarkdownText({
 }
 
 function formatTextWithLineBreaks(text: string) {
-  return text.replace(/\n/g, '<br />');
+  return text.replace(/\n/g, `<br />`);
 }

@@ -1,29 +1,33 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import Modal from '../Modal/Modal';
-import DiscussionList from '../DiscussionList/DiscussionList';
-import Form from '../Form/Form';
+import { Modal } from '../Modal/Modal';
+import { DiscussionList } from '../DiscussionList/DiscussionList';
+import { Form } from '../Form/Form';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 
-export default function FormTechnologyModal({
+export function FormTechnologyModal({
   setIsOpen,
 }:{
-  setIsOpen: (isOpen: boolean) => void
+  setIsOpen: (isOpen: boolean) => void;
 }) {
-  const { t } = useTranslation('discussion');
-  const { slicePathname } = usePath();
+  const {
+    t,
+  } = useTranslation(`discussion`);
+  const {
+    slicePathname,
+  } = usePath();
 
   const [isSubmit, setIsSubmit] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(``);
 
   return (
     <Modal
       maxWidth="1008px"
-      title={!isSubmit ? t('modalTitle') : t('modalTitleSuccessful')}
+      title={!isSubmit ? t(`modalTitle`) : t(`modalTitleSuccessful`)}
       subtitle={!isSubmit
-        ? t('modalSubtitle')
-        : `${t('modalSubtitleSuccessfulFirst')} ${email} ${t('modalSubtitleSuccessfulSecond')}`}
+        ? t(`modalSubtitle`)
+        : `${t(`modalSubtitleSuccessfulFirst`)} ${email} ${t(`modalSubtitleSuccessfulSecond`)}`}
       subtitleClassName="form-technology-modal__subtitle"
       content={(
         <>

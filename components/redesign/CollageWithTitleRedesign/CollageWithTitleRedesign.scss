@@ -1,0 +1,237 @@
+.collage-with-title-redesign {
+  background-color: $color-black;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 302px;
+    padding-bottom: 330px;
+    max-width: 375px;
+
+    @include tablet {
+      max-width: 768px;
+    }
+
+    @include desktop {
+      padding: 408px 0;
+      max-width: 1278px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../../../public/gif/text-surrounded-by-images-background.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        inset: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include h2;
+
+    max-width: 560px;
+    text-align: center;
+  }
+
+  &__image {
+    position: absolute;
+
+    img {
+      display: block;
+      border-radius: 2px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--1 {
+      display: none;
+
+      @include tablet {
+        left: 354px;
+        bottom: 190px;
+        display: block;
+        width: 104px;
+        height: 104px;
+      }
+
+      @include desktop {
+        left: 584px;
+        bottom: 160px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--2 {
+      left: 40px;
+      bottom: 64px;
+      width: 98px;
+      height: 98px;
+
+      @include tablet {
+        left: 192px;
+        bottom: 158px;
+        width: 104px;
+        height: 104px;
+      }
+
+      @include desktop {
+        left: 298px;
+        bottom: 103px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--3 {
+      left: 0;
+      bottom: 195px;
+      width: 98px;
+      height: 98px;
+
+      @include tablet {
+        left: 104px;
+        bottom: 260px;
+        width: 76px;
+        height: 76px;
+      }
+
+      @include desktop {
+        left: 140px;
+        bottom: 263px;
+        width: 134px;
+        height: 134px;
+      }
+    }
+
+    &--4 {
+      left: 15px;
+      bottom: 471px;
+      width: 106px;
+      height: 106px;
+
+      @include tablet {
+        left: 25px;
+        bottom: 366px;
+        width: 104px;
+        height: 104px;
+      }
+
+      @include desktop {
+        left: -2px;
+        bottom: 456px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--5 {
+      left: 164px;
+      bottom: 570px;
+      width: 98px;
+      height: 98px;
+
+      @include tablet {
+        left: 218px;
+        bottom: 476px;
+        width: 92px;
+        height: 92px;
+      }
+
+      @include desktop {
+        left: 341px;
+        bottom: 629px;
+        width: 162px;
+        height: 162px;
+      }
+    }
+
+    &--6 {
+      display: none;
+
+      @include tablet {
+        left: 394px;
+        bottom: 440px;
+        display: block;
+        width: 106px;
+        height: 106px;
+      }
+
+      @include desktop {
+        left: 653px;
+        bottom: 572px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--7 {
+      left: 259px;
+      bottom: 438px;
+      width: 112px;
+      height: 112px;
+
+      @include tablet {
+        width: 96px;
+        height: 96px;
+        inset: 156px 82px auto auto;
+      }
+
+      @include desktop {
+        right: 104px;
+        top: 148px;
+        width: 168px;
+        height: 168px;
+      }
+    }
+
+    &--8 {
+      left: 257px;
+      bottom: 180px;
+      width: 118px;
+      height: 118px;
+
+      @include tablet {
+        left: auto;
+        right: 60px;
+        bottom: 280px;
+        width: 104px;
+        height: 104px;
+      }
+
+      @include desktop {
+        bottom: 302px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+
+    &--9 {
+      left: 197px;
+      bottom: 40px;
+      width: 106px;
+      height: 106px;
+
+      @include tablet {
+        left: auto;
+        right: 184px;
+        bottom: 148px;
+        width: 104px;
+        height: 104px;
+      }
+
+      @include desktop {
+        left: 808px;
+        bottom: 84px;
+        width: 178px;
+        height: 178px;
+      }
+    }
+  }
+}

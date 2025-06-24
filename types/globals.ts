@@ -1,9 +1,3 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
-
-export interface SectionProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
-  animationName?: string;
-}
-
 export type OptionYM = {
   clickmap: boolean;
   trackLinks: boolean;
@@ -14,6 +8,7 @@ export type OptionYM = {
 declare global {
   interface Window {
     ym: (id: number, operationName: string, option: OptionYM | string) => unknown;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     gtag: (operationName: string, ...arg: any) => unknown;
   }
 }

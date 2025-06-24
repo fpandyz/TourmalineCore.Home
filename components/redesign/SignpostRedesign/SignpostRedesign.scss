@@ -1,17 +1,46 @@
 .signpost-redesign {
+  $this: &;
+
   &__subtitle {
-    color: $color-grey-redesign;
+    color: $color-middle-grey-redesign;
   }
 
   &__link-wrapper {
     text-decoration: none;
     color: inherit;
+
+    &:hover,
+    &:focus-visible {
+      #{$this}__title {
+        text-decoration-color: currentColor;
+      }
+    }
   }
 
   &__image-container {
     position: relative;
     margin-bottom: 16px;
+    width: 326px;
     height: 242px;
+
+    img {
+      border-radius: 2px;
+      object-fit: cover;
+
+      // Todo: think about what can be done with positioning
+      object-position: top;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.3s;
   }
 
   &__title,

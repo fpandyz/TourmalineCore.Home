@@ -1,11 +1,13 @@
-import usePath from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks/usePath';
 
-function List({
+export function List({
   steps,
 }: {
   steps: string[];
 }) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   return (
     <ul className="list">
@@ -21,5 +23,3 @@ function List({
     </ul>
   );
 }
-
-export default List;

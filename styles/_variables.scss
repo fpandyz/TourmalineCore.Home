@@ -4,43 +4,26 @@ $color-purple-black: #06040f;
 
 // White
 $color-white: #fff;
-$color-white-alpha-100: rgb(255, 255, 255, 0.8);
-$color-white-alpha-200: rgb(255, 255, 255, 0.5);
-$color-white-alpha-300: rgb(255, 255, 255, 0.3);
-$color-white-alpha-400: rgb(255, 255, 255, 0.1);
+$color-white-alpha-100: rgb(255 255 255 / 80%);
+$color-white-alpha-200: rgb(255 255 255 / 50%);
+$color-white-alpha-300: rgb(255 255 255 / 30%);
+$color-white-alpha-400: rgb(255 255 255 / 10%);
 
 // Main gradient
 $main-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #4fdae2 99.96%);
-$main-gradient-100: linear-gradient(
-  90.05deg,
-  rgba(228, 116, 241, 0.6) 0.04%,
-  rgba(228, 116, 241, 0.6) 0.05%,
-  rgba(79, 218, 226, 0.6) 99.96%
-);
-$main-gradient-200: linear-gradient(
-  90.05deg,
-  rgba(228, 116, 241, 0.4) 0.04%,
-  rgba(228, 116, 241, 0.4) 0.05%,
-  rgba(79, 218, 226, 0.4) 99.96%
-);
 $main-gradient-300: linear-gradient(
   90.05deg,
-  rgba(228, 116, 241, 0.1) 0.04%,
-  rgba(228, 116, 241, 0.1) 0.05%,
-  rgba(79, 218, 226, 0.1) 99.96%
+  rgb(228 116 241 / 10%) 0.04%,
+  rgb(228 116 241 / 10%) 0.05%,
+  rgb(79 218 226 / 10%) 99.96%
 );
 
 // Primary
-$pink-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #81b9e8 99.96%);
 $green-gradient: linear-gradient(90.05deg, #81b9e8 0.04%, #81b9e8 0.05%, #4fdae2 99.96%);
 $color-pink: #e474f1;
-$color-pink-alpha-100: rgba(228, 116, 241, 0.2);
 $color-purple: #b397ed;
-$color-purple-alpha-100: rgba(179, 151, 237, 0.2);
 $color-blue: #81b9e8;
-$color-blue-alpha-100: rgba(129, 185, 232, 0.2);
 $color-green: #4fdae2;
-$color-green-alpha-100: rgba(79, 218, 226, 0.2);
 
 // Frontend page
 $color-purple-page-primary: #7926ff;
@@ -49,40 +32,28 @@ $color-purple-page-primary: #7926ff;
 $color-design-page-primary: #ff7921;
 $color-design-page-secondary: #fd3866;
 $color-design-page-react-animation: #fe4b52;
-$color-design-page-secondary-100: rgba(253, 105, 7, 0.3);
+$color-design-page-secondary-100: rgb(253 105 7 / 30%);
 
 // Ml page
 $color-ml-page-primary: #7926ff;
 
 // Embedded page
-$color-embedded-page-primary: rgb(251, 138, 238);
-$color-embedded-page-secondary: rgb(108, 121, 240);
+$color-embedded-page-primary: rgb(251 138 238);
+$color-embedded-page-secondary: rgb(108 121 240);
 
 // QA page
-$color-qa-page-primary: rgb(229, 109, 217);
-$color-qa-page-secondary: rgb(112, 62, 163);
+$color-qa-page-primary: rgb(229 109 217);
+$color-qa-page-secondary: rgb(112 62 163);
 
 // Backend page
-$color-backend-page-primary: rgb(176, 58, 249);
-$color-backend-page-secondary: rgb(246, 125, 85);
-$color-backend-page-tertiary: rgb(255, 242, 84);
+$color-backend-page-primary: rgb(176 58 249);
+$color-backend-page-secondary: rgb(246 125 85);
+$color-backend-page-tertiary: rgb(255 242 84);
 
 // Frontend pelican team page
 $color-cyan-page-primary: #4d79ff;
 
 // Secondary
-$color-light-green: #009e4c;
-$color-dark-green: #1e5d23;
-$color-soft-green: #f3fff8;
-$color-bright-red: #a50038;
-$color-soft-red: #ffeff4;
-$color-bright-purple: #5e44fd;
-$color-soft-purple: #7b6deb;
-$color-bright-pink: #c800b9;
-$color-soft-pink: #fff0fe;
-$color-bright-lilac: #b900d8;
-$color-soft-lilac: #fef3ff;
-$color-yellow: #f8d830;
 $color-gray: #1b1926;
 $color-dark-card: linear-gradient(234deg, #17191c 0%, #101112 100%);
 $color-dark-purple-card: linear-gradient(234deg, #7926ff 0%, #090029 100%);
@@ -94,8 +65,8 @@ $color-error: #ff9994;
 // z-index
 $top-panel: 10;
 $mobile-menu: 20;
+$skip-link: 30;
 $cookie: 40;
-$mistake-item-cursor: 30;
 $modal: 50;
 
 // padding
@@ -105,10 +76,12 @@ $pd-desktop: 75px;
 $pd-desktop-xl: 232px;
 
 // redesign
-$color-black-60: rgba(0, 0, 0, 0.6);
-$color-white-60: rgb(255, 255, 255, 0.6);
-$color-deep-blue: rgba(13, 0, 255, 1);
+$color-white-60: #fff9;
+$color-deep-blue: #0d00ff;
 $color-pink-redesign: #fe00b0;
 $color-blue-redesign: #0d00ff;
+$color-medium-blue-redesign: #006fff;
+$color-light-blue-redesign: #39ddd9;
 $color-grey-redesign: #86868b;
+$color-middle-grey-redesign: #999;
 $color-light-grey-redesign: #f5f5f5;

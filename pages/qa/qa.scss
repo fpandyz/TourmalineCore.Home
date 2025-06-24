@@ -36,10 +36,10 @@
     &::after {
       background-image:
         linear-gradient(
-          309deg,
-          rgba($color-qa-page-primary, 0.3) 0%,
-          rgba($color-qa-page-secondary, 0.3) 100%
-        );
+            309deg,
+            rgba($color-qa-page-primary, 0.3) 0%,
+            rgba($color-qa-page-secondary, 0.3) 100%
+          );
       background-color: $color-black;
       inset: 0;
     }

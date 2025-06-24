@@ -4,7 +4,7 @@
       "imageUrl": "/images/best-by-project.png",
       "title": "Best By",
       "description": "Сервис для\u00A0отслеживания срока годности продукции",
-      "link": "",
+      "link": "https://best-by.ru/",
       "size": "M",
       "isNda": false
     },
@@ -13,6 +13,7 @@
       "title": "Senmotion",
       "description": "Подключение 'умных' стелек к\u00A0облачной инфраструктуре для\u00A0хранения, обработки и\u00A0анализа данных врачами и\u00A0пациентами",
       "size": "M",
+      "link": "https://www.behance.net/gallery/106976255/Sen-Motion",
       "isNda": false
     },
     {
@@ -20,6 +21,7 @@
       "title": "Умная система видеомониторинга",
       "description": "Система видеомониторинга на\u00A0автомойках самообслуживания, отслеживающая движение и\u00A0классифицирующая события",
       "size": "M",
+      "link": "https://disk.yandex.ru/i/CTXGo1K4KnulLQ",
       "isNda": false
     },
     {
@@ -27,6 +29,7 @@
       "title": "Tradehack",
       "description": "Cервис сбора аналитики по\u00A0товарам и\u00A0категориям товаров на\u00A0площадке маркетплейса Wildberries",
       "size": "M",
+      "link": "https://www.behance.net/gallery/160948093/Analytics-dashboard",
       "isNda": false
     }
   ]

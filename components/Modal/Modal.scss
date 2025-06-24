@@ -17,14 +17,14 @@
     padding: 56px 16px;
     background-color: $color-gray;
 
-    &--technology {
-      border-radius: 32px;
-      background-image: $color-dark-card;
-    }
-
     @include tablet {
       padding: 56px 104px;
       min-height: 722px;
+    }
+
+    &--technology {
+      border-radius: 32px;
+      background-image: $color-dark-card;
     }
   }
 

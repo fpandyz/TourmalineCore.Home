@@ -2,11 +2,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
+import FocusLock from 'react-focus-lock';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import LangSwitch from '../LangSwitch/LangSwitch';
-import { useBodyScrollHiden } from '../../common/hooks/useBodyScrollHiden';
+import { LangSwitch } from './components/LangSwitch/LangSwitch';
+import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 
 import IconBurger from '../../icons/burger.svg';
 import IconBurgerPurple from '../../icons/burger-purple.svg';
@@ -15,8 +16,8 @@ import IconBurgerDesign from '../../icons/burger-design.svg';
 import IconBurgerQA from '../../icons/burger-qa.svg';
 import IconBurgerBackend from '../../icons/burger-backend.svg';
 import IconBurgerCyan from '../../icons/burger-cyan.svg';
-import MobileMenu from '../MobileMenu/MobileMenu';
-import isChineseLanguage from '../../common/utils/isChineseLanguage';
+import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { AppRoute } from '../../common/utils/consts/app-route';
 
 type HeaderLinks = {
@@ -54,8 +55,8 @@ const headerLinks: HeaderLinks = [
     link: AppRoute.Teams,
   },
   {
-    id: AppRoute.Frontend_team.slice(1),
-    link: AppRoute.Frontend_team,
+    id: AppRoute.FrontendTeam.slice(1),
+    link: AppRoute.FrontendTeam,
   },
   {
     id: AppRoute.Articles.slice(1),
@@ -65,43 +66,51 @@ const headerLinks: HeaderLinks = [
 
 const BURGER_ICONS = new Map(
   [
-    [AppRoute.Frontend, <IconBurgerPurple />],
-    [AppRoute.Ml, <IconBurgerPurple />],
-    [AppRoute.Embedded, <IconBurgerMagenta />],
-    [AppRoute.QA, <IconBurgerQA />],
-    [AppRoute.Backend, <IconBurgerBackend />],
-    [AppRoute.Design, <IconBurgerDesign />],
-    [AppRoute.Teams, <IconBurgerPurple />],
-    [AppRoute.Frontend_team, <IconBurgerCyan />],
-    [AppRoute.Main, <IconBurger />],
-    [AppRoute.Articles, <IconBurger />],
+    [AppRoute.Frontend, <IconBurgerPurple key={AppRoute.Frontend} />],
+    [AppRoute.Ml, <IconBurgerPurple key={AppRoute.Ml} />],
+    [AppRoute.Embedded, <IconBurgerMagenta key={AppRoute.Embedded} />],
+    [AppRoute.QA, <IconBurgerQA key={AppRoute.QA} />],
+    [AppRoute.Backend, <IconBurgerBackend key={AppRoute.Backend} />],
+    [AppRoute.Design, <IconBurgerDesign key={AppRoute.Design} />],
+    [AppRoute.Teams, <IconBurgerPurple key={AppRoute.Teams} />],
+    [AppRoute.FrontendTeam, <IconBurgerCyan key={AppRoute.FrontendTeam} />],
+    [AppRoute.Main, <IconBurger key={AppRoute.Main} />],
+    [AppRoute.Articles, <IconBurger key={AppRoute.Articles} />],
   ],
 );
 
-function Header() {
-  const { t } = useTranslation('common');
+export function Header({
+  containerClass,
+}: {
+  containerClass?: string;
+}) {
+  const {
+    t,
+  } = useTranslation(`common`);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { pathname } = useRouter();
+  const {
+    pathname,
+  } = useRouter();
 
-  useBodyScrollHiden(isMobileMenuOpen);
+  useBodyScrollHidden(isMobileMenuOpen);
 
   return (
     <>
-      <header className={clsx('header', {
+      <header className={clsx(`header`, {
         'header--zh': isChineseLanguage(),
       })}
       >
-        <div className="container header__inner">
-          <Link href="/">
-            <a
-              className="header__logo"
-              aria-label="Header logo"
-            >
-              <Image
-                src="/images/logo.png"
-                layout="fill"
-              />
-            </a>
+        <div className={clsx(`container header__inner ${containerClass}`)}>
+          <Link
+            href="/"
+            className="header__logo"
+            aria-label="Go to home page"
+          >
+            <Image
+              src="/images/logo.png"
+              fill
+              alt=""
+            />
           </Link>
 
           <div className="header__right-panel">
@@ -114,26 +123,33 @@ function Header() {
               {BURGER_ICONS.get(pathname as AppRoute)}
             </button>
 
-            <div className="header__desktop">
+            <nav className="header__desktop">
               {headerLinks.map((headerLink) => (
-                <Link key={headerLink.id} href={headerLink.link}>
-                  <a className="header__link">
-                    {t(headerLink.id)}
-                  </a>
+                <Link
+                  key={headerLink.id}
+                  className="header__link"
+                  href={headerLink.link}
+                >
+                  {t(headerLink.id)}
                 </Link>
               ))}
 
               <LangSwitch />
-            </div>
+            </nav>
           </div>
         </div>
       </header>
 
       {isMobileMenuOpen && (
-        <MobileMenu onCloseClick={() => setIsMobileMenuOpen(false)} headerLinks={headerLinks} />
+        <FocusLock
+          returnFocus
+        >
+          <MobileMenu
+            onCloseClick={() => setIsMobileMenuOpen(false)}
+            headerLinks={headerLinks}
+          />
+        </FocusLock>
       )}
     </>
   );
 }
-
-export default Header;

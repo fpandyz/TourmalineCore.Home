@@ -18,21 +18,19 @@
   font-family: $ff-inter;
 }
 
-@mixin comic-sans-font {
-  font-family: $ff-comic-sans;
-}
-
-@mixin consolas-font {
-  font-family: $ff-consolas;
+@mixin source-code-pro-font {
+  font-family: $ff-source-code-pro;
 }
 
 @mixin h1 {
   @include light-font;
   @include unbounded-font;
 
+  font-size: 36px;
+  line-height: 1;
+
   @include desktop {
     font-size: 56px;
-    line-height: 1;
   }
 }
 
@@ -40,9 +38,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 32px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 48px;
-    line-height: 1.2;
   }
 }
 
@@ -50,9 +50,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 28px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 34px;
-    line-height: 1.2;
   }
 }
 
@@ -60,9 +62,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 24px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 28px;
-    line-height: 1.2;
   }
 }
 
@@ -70,9 +74,11 @@
   @include regular-font ;
   @include unbounded-font;
 
+  font-size: 22px;
+  line-height: 1.2;
+
   @include desktop {
     font-size: 24px;
-    line-height: 1.2;
   }
 }
 
@@ -80,35 +86,36 @@
   @include regular-font ;
   @include unbounded-font;
 
-  @include desktop {
-    font-size: 20px;
-    line-height: 1.2;
-  }
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 @mixin h7 {
   @include regular-font ;
   @include unbounded-font;
 
-  @include desktop {
-    font-size: 18px;
-    line-height: 1.2;
-  }
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 @mixin accent-text {
   @include medium-font;
   @include inter-font;
 
+  font-size: 26px;
+  line-height: 1.4;
+
   @include desktop {
     font-size: 28px;
-    line-height: 1.4;
   }
 }
 
 @mixin body-l {
   @include medium-font;
   @include inter-font;
+
+  font-size: 16px;
+  line-height: 1.2;
 
   @include desktop {
     font-size: 18px;
@@ -120,25 +127,20 @@
   @include medium-font;
   @include inter-font;
 
-  @include desktop {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-}
-
-@mixin handwritten-text {
-  @include regular-font;
-  @include comic-sans-font;
+  font-size: 16px;
+  line-height: 1.2;
 
   @include desktop {
-    font-size: 24px;
     line-height: 1.4;
   }
 }
 
 @mixin caption {
   @include regular-font;
-  @include consolas-font;
+  @include source-code-pro-font;
+
+  font-size: 18px;
+  line-height: 1.2;
 
   @include desktop {
     font-size: 20px;
@@ -148,10 +150,8 @@
 
 @mixin link-text {
   @include regular-font;
-  @include consolas-font;
+  @include source-code-pro-font;
 
-  @include desktop {
-    font-size: 18px;
-    line-height: 1;
-  }
+  font-size: 18px;
+  line-height: 1;
 }

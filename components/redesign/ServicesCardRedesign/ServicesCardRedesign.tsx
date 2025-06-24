@@ -12,10 +12,10 @@ export function ServicesCardRedesign({
 }: {
   title?: string;
   skillsList?: string[];
-  link?: string,
-  linkText?: string,
-  theme: 'white' | 'grey' | 'black' | 'blue',
-  imageUrl?: string
+  link?: string;
+  linkText?: string;
+  theme: 'white' | 'grey' | 'black' | 'blue';
+  imageUrl?: string;
 }) {
   return (
     <div className={clsx(
@@ -39,15 +39,12 @@ export function ServicesCardRedesign({
     return (
       <div
         className={clsx(
-          'services-card-redesign__inner',
+          `services-card-redesign__inner`,
         )}
       >
         {
           title && (
-            <h3
-              className={clsx('title-technology-type-2 services-card-redesign__title', {
-              })}
-            >
+            <h3 className="services-card-redesign__title">
               {title}
             </h3>
           )
@@ -79,7 +76,7 @@ export function ServicesCardRedesign({
             <div className="services-card-redesign__image-container">
               <Image
                 src={imageUrl}
-                layout="fill"
+                fill
                 priority
                 alt=""
               />

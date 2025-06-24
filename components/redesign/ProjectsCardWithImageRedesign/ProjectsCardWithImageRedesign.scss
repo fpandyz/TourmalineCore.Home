@@ -1,18 +1,25 @@
 .project-card-with-image-redesign {
+  display: flex;
+  flex-direction: column-reverse;
   height: max-content;
 
   &__images {
     position: relative;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border-radius: 2px;
+    height: 280px;
 
     // Todo: move to global and fix other image
     img {
       display: block;
-
-      // do not delete the border-radius
-      border-radius: 2px;
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @include desktop {
+      margin-bottom: 20px;
     }
 
     &--XS {
@@ -38,16 +45,21 @@
         height: 545px;
       }
     }
-
-    @include desktop {
-      margin-bottom: 20px;
-    }
   }
 
   &__title {
     @include h6;
 
+    margin-bottom: 8px;
     color: $color-black;
+
+    @include tablet {
+      word-break: break-word;
+    }
+
+    @include tablet-xl {
+      word-break: normal;
+    }
 
     @include desktop {
       margin-bottom: 12px;
@@ -57,10 +69,12 @@
   &__description {
     @include body-m;
 
-    color: $color-black-60;
+    color: $color-grey-redesign;
   }
 
   &__link {
+    display: flex;
+    flex-direction: column-reverse;
     text-decoration: none;
 
     img {

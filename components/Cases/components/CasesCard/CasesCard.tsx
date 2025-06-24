@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import IconCasesArrow from '../../../../icons/cases-arrow.svg';
-import usePath from '../../../../common/hooks/usePath';
+import { usePath } from '../../../../common/hooks/usePath';
 
-export default function CasesCard(
+export function CasesCard(
   {
     title,
     description,
@@ -12,10 +12,12 @@ export default function CasesCard(
     title: string;
     description: string;
     icon: JSX.Element;
-    link: string
+    link: string;
   },
 ) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   return (
     <a
@@ -39,7 +41,7 @@ export default function CasesCard(
         <span className="cases-card__arrow">
           <IconCasesArrow />
         </span>
-      ) }
+      )}
     </a>
   );
 }

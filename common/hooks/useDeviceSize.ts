@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const useDeviceSize = () => {
+export const useDeviceSize = () => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -11,9 +11,10 @@ const useDeviceSize = () => {
 
   useEffect(() => {
     handleWindowResize();
-    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener(`resize`, handleWindowResize);
 
-    return () => window.removeEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener(`resize`, handleWindowResize);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
@@ -21,5 +22,3 @@ const useDeviceSize = () => {
     height,
   };
 };
-
-export default useDeviceSize;

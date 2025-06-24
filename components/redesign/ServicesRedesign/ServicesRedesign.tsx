@@ -2,17 +2,18 @@ import { useTranslation } from 'next-i18next';
 import { ServicesCardRedesign } from '../ServicesCardRedesign/ServicesCardRedesign';
 
 type NewServicesList = {
+  id: number;
   title?: string;
   skillsList?: string[];
   link?: string;
   linkText?: string;
   theme: 'white' | 'grey' | 'black' | 'blue';
-  imageUrl?: string
+  imageUrl?: string;
 }[];
 
 type TeamsCard = {
   theme: 'white' | 'grey' | 'black' | 'blue';
-  imageUrl: string
+  imageUrl: string;
 };
 
 type Teams = {
@@ -22,29 +23,46 @@ type Teams = {
   linkText: string;
   teamsList: {
     teamName: string;
-    teamIcon: string
-    teamLink: string
-  }[]
+    teamIcon: string;
+    teamLink: string;
+  }[];
 };
 
-export function ServicesRedesign() {
-  const { t } = useTranslation('servicesRedesign');
+export function ServicesRedesign({
+  targetId,
+}: {
+  targetId?: string;
+}) {
+  const {
+    t,
+  } = useTranslation(`servicesRedesign`);
 
-  const newServicesList: NewServicesList = t('list', { returnObjects: true });
-  const teamsCard: TeamsCard = t('teamsCard', { returnObjects: true });
-  const teams: Teams = t('teams', { returnObjects: true });
+  const newServicesList: NewServicesList = t(`list`, {
+    returnObjects: true,
+  });
+  const teamsCard: TeamsCard = t(`teamsCard`, {
+    returnObjects: true,
+  });
+  const teams: Teams = t(`teams`, {
+    returnObjects: true,
+  });
 
   return (
     <section
-      className="services-redesign container-redesign"
+      className="services-redesign"
+      data-testid="services"
+      {...(targetId && {
+        id: targetId,
+      })}
     >
-      <ul className="grid">
-        <li className="services-redesign__card col-tablet-3">
+      <ul className="services-redesign__cards grid container-redesign">
+        <li className="services-redesign__card col-tablet-12 col-tablet-xl-3">
           <h2 className="services-redesign__title">
-            {t('title')}
+            {t(`title`)}
           </h2>
         </li>
         {newServicesList.map(({
+          id,
           title,
           skillsList,
           link,
@@ -53,8 +71,8 @@ export function ServicesRedesign() {
           imageUrl,
         }) => (
           <li
-            key={title}
-            className="services-redesign__card col-tablet-3"
+            className="services-redesign__card col-tablet-12 col-tablet-xl-3"
+            key={id}
           >
             <ServicesCardRedesign
               title={title}
@@ -66,14 +84,14 @@ export function ServicesRedesign() {
             />
           </li>
         ))}
-        <li className="services-redesign__card col-tablet-3" />
-        <li className="services-redesign__card col-tablet-3">
+        <li className="services-redesign__card col-tablet-12 col-tablet-xl-3" />
+        <li className="services-redesign__card col-tablet-12 col-tablet-xl-3">
           <ServicesCardRedesign
             theme={teamsCard.theme}
             imageUrl={teamsCard.imageUrl}
           />
         </li>
-        <li className="services-redesign__teams col-tablet-6">
+        <li className="services-redesign__teams col-tablet-12 col-tablet-xl-6">
           <div className="services-redesign__wrapper">
             <h3 className="services-redesign__subtitle">{teams.title}</h3>
             <p className="services-redesign__description">
@@ -91,7 +109,11 @@ export function ServicesRedesign() {
                     key={teamName}
                   >
                     <span className="services-redesign__icon-wrapper">
-                      <img src={teamIcon} alt="" />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={teamIcon}
+                        alt=""
+                      />
                     </span>
                     {
                       teamLink

@@ -1,16 +1,16 @@
 import { useEffect, useCallback } from 'react';
-import useMinPaddingBetweenSections from './useMinPadding';
-import useDeviceSize from './useDeviceSize';
+import { useMinPaddingBetweenSections } from './useMinPadding';
+import { useDeviceSize } from './useDeviceSize';
 
 type Section = HTMLElement;
 type Element = HTMLElement;
 
-const SECTION_SELECTOR = 'section[data-auto-padding]';
-const ELEMENT_SELECTOR = 'div[name]';
+const SECTION_SELECTOR = `section[data-auto-padding]`;
+const ELEMENT_SELECTOR = `div[name]`;
 
-const ZERO_HTML_PADDING = '0px';
+const ZERO_HTML_PADDING = `0px`;
 
-function useSectionAutoPaddings() {
+export function useSectionAutoPaddings() {
   const deviceSize = useDeviceSize();
   const minPadding = useMinPaddingBetweenSections();
 
@@ -25,6 +25,7 @@ function useSectionAutoPaddings() {
 
     const differenceHeight = screenHeight - elementHeight;
     return differenceHeight > 0 ? Math.round(differenceHeight / 2) : 0;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deviceSize.width]);
 
   useEffect(() => {
@@ -180,13 +181,17 @@ function useSectionAutoPaddings() {
   function getPreviousSectionPaddingBottom(section: Section) {
     const element = section.querySelector<Element>(ELEMENT_SELECTOR);
 
-    const { paddingBottom: sectionPaddingBottom } = getPadding(section);
+    const {
+      paddingBottom: sectionPaddingBottom,
+    } = getPadding(section);
 
     if (!element) {
       return sectionPaddingBottom;
     }
 
-    const { paddingBottom: elementPaddingBottom } = getPadding(element);
+    const {
+      paddingBottom: elementPaddingBottom,
+    } = getPadding(element);
 
     return sectionPaddingBottom + elementPaddingBottom;
   }
@@ -196,8 +201,6 @@ function useSectionAutoPaddings() {
   }
 
   function convertToNumberPadding(padding: string) {
-    return Number(padding.replace('px', ''));
+    return Number(padding.replace(`px`, ``));
   }
 }
-
-export default useSectionAutoPaddings;
