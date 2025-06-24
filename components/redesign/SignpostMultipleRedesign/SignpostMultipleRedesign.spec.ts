@@ -7,11 +7,8 @@ const TEST_ID = `signpost-multiple-articles`;
 test.describe(`SignpostMultipleTests`, () => {
   test.beforeEach(async ({
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();
