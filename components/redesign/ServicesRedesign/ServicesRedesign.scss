@@ -138,11 +138,6 @@
     background-color: $color-blue-redesign;
     transition: background-color 0.25s;
 
-    // this is to compensate for the svg edges on up to large mobile devices
-    @media (max-width: 480px) {
-      width: 104%;
-    }
-
     &::before,
     &::after {
       content: "";
@@ -197,6 +192,11 @@
 
     @include desktop {
       top: 17px;
+    }
+
+    // this is to compensate for the svg edges on up to large mobile devices
+    @media (width <= 480px) {
+      width: 104%;
     }
   }
 
