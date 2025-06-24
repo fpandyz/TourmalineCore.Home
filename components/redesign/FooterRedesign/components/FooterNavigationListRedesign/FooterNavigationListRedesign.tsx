@@ -18,7 +18,10 @@ export function FooterNavigationListRedesign({
       <span className="footer-navigation-list-redesign__caption">{caption}</span>
       <ul className="footer-navigation-list-redesign__list">
         {links.map((el) => (
-          <li key={el.label}>
+          <li
+            className="footer-navigation-list-redesign__item"
+            key={el.label}
+          >
             {/* TODO: Change when next will be upgrade to 12+ version */}
             <a
               className="footer-navigation-list-redesign__link"
