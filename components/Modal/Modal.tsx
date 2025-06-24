@@ -1,6 +1,4 @@
-import {
-  ReactNode, useEffect, useRef,
-} from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 
 import FocusLock from 'react-focus-lock';
 import clsx from 'clsx';
@@ -13,33 +11,36 @@ export function Modal({
   title,
   subtitle,
   subtitleClassName,
-  maxWidth = '',
+  maxWidth = ``,
   content,
   onClose = () => {},
 }: {
   title?: string;
   subtitle?: string;
-  subtitleClassName?: string,
+  subtitleClassName?: string;
   maxWidth?: string;
   content: ReactNode;
   onClose?:() => unknown;
 }) {
   useEffect(() => {
     function escFunction(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
+      if (event.key === `Escape`) {
         onClose();
       }
     }
 
-    document.addEventListener('keydown', escFunction, false);
+    document.addEventListener(`keydown`, escFunction, false);
 
     return () => {
-      document.removeEventListener('keydown', escFunction, false);
+      document.removeEventListener(`keydown`, escFunction, false);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const refModal = useRef<HTMLDivElement>(null);
-  const { pathname } = useRouter();
+  const {
+    pathname,
+  } = useRouter();
 
   useOnClickOutside(refModal, onClose);
 
@@ -55,14 +56,14 @@ export function Modal({
           }}
         >
           <div
-            className={clsx('modal__inner', pathname !== AppRoute.Main && 'modal__inner--technology')}
+            className={clsx(`modal__inner`, pathname !== AppRoute.Main && `modal__inner--technology`)}
             ref={refModal}
           >
             <div className="modal__header">
               {title && (<div className="title-type-3 modal__title">{title}</div>)}
 
               {subtitle && (
-                <div className={clsx('modal__subtitle', subtitleClassName)}>
+                <div className={clsx(`modal__subtitle`, subtitleClassName)}>
                   {subtitle}
                 </div>
               )}

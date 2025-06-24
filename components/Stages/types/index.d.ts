@@ -1,4 +1,4 @@
 export type TStagesList = {
   title: string;
-  description: string
+  description: string;
 }[];

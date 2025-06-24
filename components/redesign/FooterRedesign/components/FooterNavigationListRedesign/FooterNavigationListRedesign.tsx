@@ -6,7 +6,7 @@ export type FooterNavigationList = {
     label: string;
     path: string;
     openInNewTab: boolean;
-  }[],
+  }[];
 };
 
 export function FooterNavigationListRedesign({
@@ -25,8 +25,8 @@ export function FooterNavigationListRedesign({
               href={el.path}
               onClick={(e) => router.pathname === el.path && e.preventDefault()}
               {...(el.openInNewTab && {
-                target: '_blank',
-                rel: 'noopener noreferrer',
+                target: `_blank`,
+                rel: `noopener noreferrer`,
               })}
             >
               {el.label}

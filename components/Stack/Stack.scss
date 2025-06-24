@@ -46,13 +46,11 @@
 
   &__list {
     display: grid;
-    column-gap: 16px;
+    gap: 32px 16px;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 32px;
 
     @include tablet {
-      column-gap: 24px;
-      row-gap: 48px;
+      gap: 48px 24px;
     }
   }
 
@@ -90,6 +88,19 @@
 
       @include desktop-xl {
         bottom: 70px;
+      }
+    }
+
+    &--frontend,
+    &--teams {
+      background-image: url("/images/stack-purple-element-mobile.png");
+
+      @include tablet {
+        background-image: url("/images/stack-purple-element-tablet.png");
+      }
+
+      @include tablet-xl {
+        background-image: url("/images/stack-purple-element-desktop.png");
       }
     }
 
@@ -138,19 +149,6 @@
 
       @include tablet-xl {
         background-image: url("/images/stack-ml-element-desktop.webp");
-      }
-    }
-
-    &--frontend,
-    &--teams {
-      background-image: url("/images/stack-purple-element-mobile.png");
-
-      @include tablet {
-        background-image: url("/images/stack-purple-element-tablet.png");
-      }
-
-      @include tablet-xl {
-        background-image: url("/images/stack-purple-element-desktop.png");
       }
     }
 

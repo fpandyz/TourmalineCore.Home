@@ -50,7 +50,7 @@
 .article-page__info {
   margin-bottom: 32px;
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,7 +61,7 @@
 .article-page__date-publication {
   margin-top: 32px;
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     margin-top: 0;
   }
 }

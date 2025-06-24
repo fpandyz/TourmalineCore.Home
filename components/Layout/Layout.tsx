@@ -15,7 +15,7 @@ export function Layout({
   const mainElementRef = useRef<null | HTMLDivElement>(null);
 
   return (
-    <div className={clsx('layout', {
+    <div className={clsx(`layout`, {
       'layout--zh': isChineseLanguage(),
     })}
     >

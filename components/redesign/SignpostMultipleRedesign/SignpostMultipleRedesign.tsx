@@ -5,7 +5,7 @@ type Signpost = {
   title: string;
   subtitle: string;
   link?: string;
-  imageUrl: string
+  imageUrl: string;
 };
 
 export function SignpostMultipleRedesign({
@@ -13,15 +13,19 @@ export function SignpostMultipleRedesign({
 }: {
   translationKey: string;
 }) {
-  const { t } = useTranslation(translationKey);
+  const {
+    t,
+  } = useTranslation(translationKey);
 
-  const signposts: Signpost[] = t('signposts', { returnObjects: true });
+  const signposts: Signpost[] = t(`signposts`, {
+    returnObjects: true,
+  });
 
   return (
     <section
       className="signpost-multiple-redesign container-redesign"
     >
-      <h3 className="signpost-multiple-redesign__title">{t('title')}</h3>
+      <h2 className="signpost-multiple-redesign__title">{t(`title`)}</h2>
       <ul className="signpost-multiple-redesign__list grid">
         {signposts.map(({
           title,

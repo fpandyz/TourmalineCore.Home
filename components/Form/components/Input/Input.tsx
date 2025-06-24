@@ -18,7 +18,7 @@ export function Input({
   ...props
 }: InputProps) {
   return (
-    <div className={clsx('input', className, {
+    <div className={clsx(`input`, className, {
       'input--is-error': isError,
       'input--zh': isChineseLanguage(),
     })}
@@ -30,7 +30,12 @@ export function Input({
           placeholder=" "
           {...props}
         />
-        <label htmlFor={id} className="input__label">{label}</label>
+        <label
+          htmlFor={id}
+          className="input__label"
+        >
+          {label}
+        </label>
       </div>
       {description && <div className="input__description">{description}</div>}
     </div>

@@ -37,7 +37,7 @@
     @include body-m;
 
     display: grid;
-    align-self: end;
+    align-self: flex-end;
     color: $color-middle-grey-redesign;
     grid-column: 1 / 2;
     grid-row: 3 / 4;

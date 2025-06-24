@@ -26,16 +26,16 @@
     margin-bottom: 8px;
     word-break: break-all;
 
-    &--no-description {
-      margin-bottom: 24px;
-    }
-
     @include desktop {
       margin-bottom: 16px;
 
       &--no-description {
         margin-bottom: 32px;
       }
+    }
+
+    &--no-description {
+      margin-bottom: 24px;
     }
   }
 

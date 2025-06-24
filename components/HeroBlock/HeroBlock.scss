@@ -94,14 +94,6 @@
     }
   }
 
-  &--zh {
-    #{$this}__description {
-      @include desktop {
-        max-width: none;
-      }
-    }
-  }
-
   @include tablet {
     min-height: 463px;
   }
@@ -112,5 +104,13 @@
 
   @include desktop-xl {
     min-height: 806px;
+  }
+
+  &--zh {
+    #{$this}__description {
+      @include desktop {
+        max-width: none;
+      }
+    }
   }
 }

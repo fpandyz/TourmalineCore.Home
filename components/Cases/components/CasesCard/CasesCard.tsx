@@ -12,10 +12,12 @@ export function CasesCard(
     title: string;
     description: string;
     icon: JSX.Element;
-    link: string
+    link: string;
   },
 ) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   return (
     <a
@@ -39,7 +41,7 @@ export function CasesCard(
         <span className="cases-card__arrow">
           <IconCasesArrow />
         </span>
-      ) }
+      )}
     </a>
   );
 }

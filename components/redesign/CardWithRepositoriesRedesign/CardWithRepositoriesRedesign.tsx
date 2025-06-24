@@ -8,7 +8,7 @@ export type CardWithRepositories = CardWithContent & {
     description?: string;
     language: string;
     link: string;
-  }[]
+  }[];
 };
 
 export function CardWithRepositoriesRedesign({
@@ -19,7 +19,9 @@ export function CardWithRepositoriesRedesign({
 }: CardWithRepositories & {
   className: string;
 }) {
-  const { width } = useDeviceSize();
+  const {
+    width,
+  } = useDeviceSize();
   const isTabletXl = width >= 1024;
 
   const repositoriesList = isTabletXl ? repositories : repositories.slice(0, 1);
@@ -28,7 +30,7 @@ export function CardWithRepositoriesRedesign({
     <CardWithContentRedesign
       title={title}
       markdownText={markdownText}
-      className={clsx('card-with-repositories-redesign', className)}
+      className={clsx(`card-with-repositories-redesign`, className)}
     >
       <ul className="card-with-repositories-redesign__list">
         {repositoriesList.map(({
@@ -48,7 +50,7 @@ export function CardWithRepositoriesRedesign({
               rel="noreferrer"
             >
               <div className="card-with-repositories-redesign__item-inner">
-                <h3 className={clsx('card-with-repositories-redesign__name', {
+                <h3 className={clsx(`card-with-repositories-redesign__name`, {
                   'card-with-repositories-redesign__name--no-description': !description,
                 })}
                 >

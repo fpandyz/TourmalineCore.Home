@@ -22,10 +22,10 @@ export default function ArticlesPage({
             title: metadata.title,
             description: metadata.description,
           },
-          keywords: metadata.keywords || '',
+          keywords: metadata.keywords || ``,
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
 
@@ -44,7 +44,9 @@ export async function getStaticPaths() {
   const articles = await fetchArticlesListWithMeta();
 
   const paths = articles.map((articleItem) => ({
-    params: { article: articleItem.metadata.slug },
+    params: {
+      article: articleItem.metadata.slug,
+    },
     locale: articleItem.locale,
   }));
 
@@ -66,12 +68,10 @@ export async function getStaticProps({
     return {
       props: {
         ...(await serverSideTranslations(locale, [
-          'common',
-          'footer',
-          'articles',
-          'cookie',
-          'skipLink',
-          'langSwitch',
+          `common`,
+          `footer`,
+          `articles`,
+          `cookie`,
         ])),
         article: {},
         metadata: {},
@@ -86,12 +86,10 @@ export async function getStaticProps({
   return {
     props: {
       ...(await serverSideTranslations(locale, [
-        'common',
-        'footer',
-        'articles',
-        'cookie',
-        'skipLink',
-        'langSwitch',
+        `common`,
+        `footer`,
+        `articles`,
+        `cookie`,
       ])),
       article,
       metadata,

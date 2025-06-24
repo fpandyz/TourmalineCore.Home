@@ -4,18 +4,18 @@ $color-purple-black: #06040f;
 
 // White
 $color-white: #fff;
-$color-white-alpha-100: rgb(255, 255, 255, 0.8);
-$color-white-alpha-200: rgb(255, 255, 255, 0.5);
-$color-white-alpha-300: rgb(255, 255, 255, 0.3);
-$color-white-alpha-400: rgb(255, 255, 255, 0.1);
+$color-white-alpha-100: rgb(255 255 255 / 80%);
+$color-white-alpha-200: rgb(255 255 255 / 50%);
+$color-white-alpha-300: rgb(255 255 255 / 30%);
+$color-white-alpha-400: rgb(255 255 255 / 10%);
 
 // Main gradient
 $main-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #4fdae2 99.96%);
 $main-gradient-300: linear-gradient(
   90.05deg,
-  rgba(228, 116, 241, 0.1) 0.04%,
-  rgba(228, 116, 241, 0.1) 0.05%,
-  rgba(79, 218, 226, 0.1) 99.96%
+  rgb(228 116 241 / 10%) 0.04%,
+  rgb(228 116 241 / 10%) 0.05%,
+  rgb(79 218 226 / 10%) 99.96%
 );
 
 // Primary
@@ -32,23 +32,23 @@ $color-purple-page-primary: #7926ff;
 $color-design-page-primary: #ff7921;
 $color-design-page-secondary: #fd3866;
 $color-design-page-react-animation: #fe4b52;
-$color-design-page-secondary-100: rgba(253, 105, 7, 0.3);
+$color-design-page-secondary-100: rgb(253 105 7 / 30%);
 
 // Ml page
 $color-ml-page-primary: #7926ff;
 
 // Embedded page
-$color-embedded-page-primary: rgb(251, 138, 238);
-$color-embedded-page-secondary: rgb(108, 121, 240);
+$color-embedded-page-primary: rgb(251 138 238);
+$color-embedded-page-secondary: rgb(108 121 240);
 
 // QA page
-$color-qa-page-primary: rgb(229, 109, 217);
-$color-qa-page-secondary: rgb(112, 62, 163);
+$color-qa-page-primary: rgb(229 109 217);
+$color-qa-page-secondary: rgb(112 62 163);
 
 // Backend page
-$color-backend-page-primary: rgb(176, 58, 249);
-$color-backend-page-secondary: rgb(246, 125, 85);
-$color-backend-page-tertiary: rgb(255, 242, 84);
+$color-backend-page-primary: rgb(176 58 249);
+$color-backend-page-secondary: rgb(246 125 85);
+$color-backend-page-tertiary: rgb(255 242 84);
 
 // Frontend pelican team page
 $color-cyan-page-primary: #4d79ff;

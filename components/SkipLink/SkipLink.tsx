@@ -17,9 +17,9 @@ export function SkipLink({
       }}
     >
       {
-        router.locale === 'ru'
-          ? 'Перейти к основному контенту'
-          : 'Skip to main content'
+        router.locale === `ru`
+          ? `Перейти к основному контенту`
+          : `Skip to main content`
       }
     </a>
   );

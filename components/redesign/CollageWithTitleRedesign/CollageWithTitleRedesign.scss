@@ -22,13 +22,10 @@
       &::before {
         content: "";
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
         background-image: url("../../../public/gif/text-surrounded-by-images-background.gif");
         background-size: cover;
         background-repeat: no-repeat;
+        inset: 0;
       }
     }
   }
@@ -180,12 +177,9 @@
       height: 112px;
 
       @include tablet {
-        left: auto;
-        right: 82px;
-        top: 156px;
-        bottom: auto;
         width: 96px;
         height: 96px;
+        inset: 156px 82px auto auto;
       }
 
       @include desktop {

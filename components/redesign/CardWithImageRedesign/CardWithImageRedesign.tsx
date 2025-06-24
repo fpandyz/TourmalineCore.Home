@@ -18,12 +18,12 @@ export function CardWithImageRedesign({
     <CardWithContentRedesign
       title={title}
       markdownText={markdownText}
-      className={clsx('card-with-image-redesign', className)}
+      className={clsx(`card-with-image-redesign`, className)}
     >
       <div className="card-with-image-redesign__image">
         <Image
           src={imageUrl}
-          layout="fill"
+          fill
           alt=""
         />
       </div>

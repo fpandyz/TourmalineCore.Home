@@ -10,7 +10,7 @@ export function ExternalLink({
 }: ExternalLinkProps) {
   return (
     <a
-      className={clsx('external-link', className)}
+      className={clsx(`external-link`, className)}
       {...props}
     >
       {children}

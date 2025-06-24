@@ -21,10 +21,15 @@ const device = {
 };
 
 export function useMinPaddingBetweenSections() {
-  const { width } = useDeviceSize();
+  const {
+    width,
+  } = useDeviceSize();
 
   return useMemo(() => {
-    const foundDevice = Object.values(device).find(({ width: deviceWidth }) => width >= deviceWidth) || device.mobile;
+    const foundDevice = Object.values(device)
+      .find(({
+        width: deviceWidth,
+      }) => width >= deviceWidth) || device.mobile;
 
     return foundDevice.minPaddingBetweenSections;
   }, [width]);

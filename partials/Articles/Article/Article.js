@@ -21,7 +21,7 @@ export default function Article({
 
       <div className="article-page__info">
         <Link href="/articles">
-          <a>{t('backlinkLabel')}</a>
+          {t('backlinkLabel')}
         </Link>
 
         {datePublication && (
