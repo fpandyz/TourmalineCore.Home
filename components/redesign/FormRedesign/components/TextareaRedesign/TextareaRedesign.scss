@@ -1,0 +1,26 @@
+.textarea-redesign {
+  $this: &;
+
+  color: #afafb8;
+
+  &__box {
+    position: relative;
+    resize: inherit;
+  }
+
+  &__control {
+    display: block;
+    outline: none;
+    border: none;
+    padding: 0;
+    padding: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+    min-height: 92px;
+    font-family: inherit;
+    font-size: inherit;
+    color: #afafb8;
+    background-color: $color-deep-grey-redesign;
+    resize: inherit;
+  }
+}

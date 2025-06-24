@@ -1,3 +1,14 @@
 {
-  "title": "Happy to discuss your project"
+  "title": "Happy to discuss your project",
+  "description": "Describe your task - we will clarify the details and offer a suitable solution",
+  "nameInputPlaceholder": "Name",
+  "emailInputPlaceholder": "Email",
+  "textareaPlaceholder": "Describe your task",
+  "or": "или",
+  "attachFileText": "Attach a file",
+  "buttonText": "Send",
+  "note": "By clicking the button, you agree to the processing of personal data",
+  "asideText": "If it's inconvenient to fill out the form, you can write to us in",
+  "linkText": "telegram",
+  "link": "/"
 }
