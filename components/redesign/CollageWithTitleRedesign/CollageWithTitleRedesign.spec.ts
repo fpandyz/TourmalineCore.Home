@@ -2,15 +2,18 @@ import { Page } from '@playwright/test';
 import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
 import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
 
-const TEST_ID = `services`;
+const TEST_ID = `collage-with-title`;
 
-test.describe(`ServicesTests`, () => {
+test.describe(`CollageWithTitle`, () => {
   test.beforeEach(async ({
+    page,
     goto,
     apiImageMock,
     hideCookie,
   }) => {
     await apiImageMock();
+
+    await page.route(`**/**.gif`, (route) => route.abort());
 
     await goto();
 
@@ -31,7 +34,7 @@ async function mobileTest({
 }) {
   await setViewportSize();
 
-  await expect(getServicesRedesignByTestId({
+  await expect(getCollageWithTitleByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
@@ -48,13 +51,13 @@ async function desktopTest({
     width: Breakpoint.DESKTOP,
   });
 
-  await expect(getServicesRedesignByTestId({
+  await expect(getCollageWithTitleByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.DESKTOP}.png`);
 }
 
-function getServicesRedesignByTestId({
+function getCollageWithTitleByTestId({
   page,
 }: {
   page: Page;

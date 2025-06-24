@@ -19,6 +19,9 @@ export const test = base.extend<CustomTestFixtures>({
       endpoint?: string,
     ) => {
       await page.goto(endpoint || ``);
+
+      await page.getByTestId(`skip-link`)
+        .evaluate((element) => element.style.visibility = `hidden`);
     };
 
     // Use the fixture value in the test

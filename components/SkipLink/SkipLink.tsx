@@ -12,6 +12,7 @@ export function SkipLink({
     <a
       href="#main-content"
       className="skip-link button"
+      data-testid="skip-link"
       onClick={() => {
         mainElementRef.current!.focus();
       }}
