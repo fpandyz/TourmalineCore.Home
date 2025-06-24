@@ -7,7 +7,6 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { useTranslation } from 'next-i18next';
 import { useAutoClose } from '../../../../common/hooks/useAutoClose';
 import { languages } from '../../../../common/utils/consts/languages';
 
@@ -31,8 +30,6 @@ export function LangSwitch() {
     return router.locale;
   }, [router.locale]);
 
-  const { t } = useTranslation('langSwitch');
-
   return (
     <div
       ref={containerRef}
@@ -44,12 +41,19 @@ export function LangSwitch() {
         type="button"
         className="lang-switch__active"
         onClick={() => setIsTooltipOpened(!isTooltipOpened)}
-        aria-label={t('ariaLabel')}
+        aria-label={router.locale === 'ru'
+          ? 'Выбрать язык'
+          : 'Select language'}
       >
         <span aria-hidden="true">
           {languages[routerLocale].icon()}
         </span>
-        <span aria-label={t('currentLanguage')}>
+        <span aria-label={
+          router.locale === 'ru'
+            ? 'Сейчас выбран'
+            : 'Currently selected'
+        }
+        >
           {languages[routerLocale].shortName}
         </span>
         <IconArrow

@@ -1,12 +1,12 @@
-import { useTranslation } from 'next-i18next';
 import { MutableRefObject } from 'react';
+import { useRouter } from 'next/router';
 
 export function SkipLink({
   mainElementRef,
 }: {
   mainElementRef: MutableRefObject<null | HTMLElement>;
 }) {
-  const { t } = useTranslation('skipLink');
+  const router = useRouter();
 
   return (
     <a
@@ -16,7 +16,11 @@ export function SkipLink({
         mainElementRef.current!.focus();
       }}
     >
-      {t('title')}
+      {
+        router.locale === 'ru'
+          ? 'Перейти к основному контенту'
+          : 'Skip to main content'
+      }
     </a>
   );
 }
