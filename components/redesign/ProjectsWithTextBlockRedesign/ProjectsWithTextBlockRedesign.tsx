@@ -5,9 +5,11 @@ import { MarkdownText } from '../MarkdownText/MarkdownText';
 export function ProjectsWithTextBlockRedesign({
   translationKey,
   targetId,
+  dataTestId,
 }:{
   translationKey: string;
   targetId?: string;
+  dataTestId?: string;
 }) {
   const {
     t,
@@ -27,6 +29,7 @@ export function ProjectsWithTextBlockRedesign({
       {...(targetId && {
         id: targetId,
       })}
+      data-testid={dataTestId}
     >
       <div className="container-redesign projects-with-text-block-redesign__wrapper">
         {sectionTitle && <h2 className="projects-with-text-block-redesign__title">{sectionTitle}</h2>}

@@ -1,10 +1,11 @@
+
 import { Page } from '@playwright/test';
 import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
 import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
 
-const TEST_ID = `services`;
+const TEST_ID = `projects-with-three-cards`;
 
-test.describe(`ServicesTests`, () => {
+test.describe(`ProjectsWithThreeCards`, () => {
   test.beforeEach(async ({
     goto,
     apiImageMock,
@@ -31,7 +32,7 @@ async function mobileTest({
 }) {
   await setViewportSize();
 
-  await expect(getServicesRedesignByTestId({
+  await expect(getProjectsWithFourCardsByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
@@ -48,13 +49,13 @@ async function desktopTest({
     width: Breakpoint.DESKTOP,
   });
 
-  await expect(getServicesRedesignByTestId({
+  await expect(getProjectsWithFourCardsByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.DESKTOP}.png`);
 }
 
-function getServicesRedesignByTestId({
+function getProjectsWithFourCardsByTestId({
   page,
 }: {
   page: Page;

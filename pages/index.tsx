@@ -50,9 +50,16 @@ export default function HomePage() {
         <ProjectsWithTextBlockRedesign
           targetId="projects"
           translationKey="projectsRedesignFirstSection"
+          dataTestId="projects-with-text-block-first"
         />
-        <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
-        <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
+        <ProjectsRedesign
+          translationKey="projectsRedesignSecondarySection"
+          dataTestId="projects-with-four-cards"
+        />
+        <ProjectsRedesign
+          translationKey="projectsRedesignThirdSection"
+          dataTestId="projects-with-three-cards"
+        />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
         {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
         <CollageWithTitleRedesign />

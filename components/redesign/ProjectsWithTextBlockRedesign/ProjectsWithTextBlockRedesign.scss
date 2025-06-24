@@ -7,7 +7,9 @@
   background-color: $color-white;
 
   ~ .projects-redesign {
-    padding-top: 0;
+    @media (width < $tablet-width) {
+      padding-top: 0;
+    }
   }
 
   &__text-block {

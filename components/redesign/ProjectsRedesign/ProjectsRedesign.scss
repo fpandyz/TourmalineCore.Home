@@ -3,7 +3,7 @@
   $grid-desktop-gap: 12px;
 
   padding-top: 40px;
-  padding-bottom: 32px;
+  padding-bottom: 40px;
   background-color: $color-white;
 
   &__cards {
@@ -16,11 +16,17 @@
 
   // adds padding to the last block in the chain
   &:not(:has(+ &)) {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
+
+    @include desktop {
+      padding-bottom: 48px;
+    }
   }
 
   & + & {
-    padding-top: 0;
+    @media (width < $tablet-width) {
+      padding-top: 0;
+    }
   }
 
   @include desktop {
