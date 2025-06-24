@@ -31,7 +31,7 @@ async function mobileTest({
 }) {
   await setViewportSize();
 
-  await expect(getCollageWithTitleByTestId({
+  await expect(getFooterByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
@@ -48,13 +48,13 @@ async function desktopTest({
     width: Breakpoint.DESKTOP,
   });
 
-  await expect(getCollageWithTitleByTestId({
+  await expect(getFooterByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.DESKTOP}.png`);
 }
 
-function getCollageWithTitleByTestId({
+function getFooterByTestId({
   page,
 }: {
   page: Page;
