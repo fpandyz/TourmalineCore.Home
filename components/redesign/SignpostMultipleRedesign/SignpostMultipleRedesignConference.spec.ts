@@ -4,7 +4,7 @@ import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
 
 const TEST_ID = `signpost-multiple-conference`;
 
-test.describe(`SignpostMultipleTests`, () => {
+test.describe(`SignpostMultipleConferenceTests`, () => {
   test.beforeEach(async ({
     goto,
     apiImageMock,
@@ -31,7 +31,7 @@ async function mobileTest({
 }) {
   await setViewportSize();
 
-  await expect(getSignpostMultipleRedesignByTestId({
+  await expect(getSignpostMultipleConferenceRedesignByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
@@ -48,13 +48,13 @@ async function desktopTest({
     width: Breakpoint.DESKTOP,
   });
 
-  await expect(getSignpostMultipleRedesignByTestId({
+  await expect(getSignpostMultipleConferenceRedesignByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.DESKTOP}.png`);
 }
 
-function getSignpostMultipleRedesignByTestId({
+function getSignpostMultipleConferenceRedesignByTestId({
   page,
 }: {
   page: Page;
