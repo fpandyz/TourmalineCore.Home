@@ -7,7 +7,10 @@ export function SingleImageRedesign() {
   } = useTranslation(`singleImageRedesign`);
 
   return (
-    <section className="single-image-redesign container-redesign">
+    <section
+      className="single-image-redesign container-redesign"
+      data-testid="single-image"
+    >
       <div className="single-image-redesign__container">
         <Image
           src={t(`imageUrl`)}
