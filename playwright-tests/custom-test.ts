@@ -18,7 +18,7 @@ export const test = base.extend<CustomTestFixtures>({
     const goto = async (
       endpoint?: string,
     ) => {
-      await page.goto(endpoint ? `/ru${endpoint}` : `/ru`);
+      await page.goto(endpoint || ``);
 
       await page.getByTestId(`skip-link`)
         .evaluate((element) => element.style.visibility = `hidden`);
