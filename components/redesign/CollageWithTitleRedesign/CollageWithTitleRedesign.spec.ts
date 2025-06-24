@@ -8,11 +8,8 @@ test.describe(`CollageWithTitle`, () => {
   test.beforeEach(async ({
     page,
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await page.route(`**/**.gif`, (route) => route.abort());
 
     await goto();

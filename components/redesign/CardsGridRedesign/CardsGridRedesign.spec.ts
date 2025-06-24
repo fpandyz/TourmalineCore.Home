@@ -7,11 +7,8 @@ const TEST_ID = `cards-grid`;
 test.describe(`CardsGridRedesign`, () => {
   test.beforeEach(async ({
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();

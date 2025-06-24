@@ -7,11 +7,8 @@ const TEST_ID = `services`;
 test.describe(`ServicesTests`, () => {
   test.beforeEach(async ({
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();

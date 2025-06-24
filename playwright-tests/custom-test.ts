@@ -14,10 +14,13 @@ export type CustomTestFixtures = {
 export const test = base.extend<CustomTestFixtures>({
   goto: async ({
     page,
+    apiImageMock,
   }, use) => {
     const goto = async (
       endpoint?: string,
     ) => {
+      await apiImageMock();
+
       await page.goto(endpoint || ``);
 
       await page.getByTestId(`skip-link`)

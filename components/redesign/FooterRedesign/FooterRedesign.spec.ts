@@ -8,10 +8,7 @@ test.describe(`Footer`, () => {
   test.beforeEach(async ({
     goto,
     hideCookie,
-    apiImageMock,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();
