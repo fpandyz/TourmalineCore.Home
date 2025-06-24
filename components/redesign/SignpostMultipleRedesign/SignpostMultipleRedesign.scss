@@ -9,6 +9,7 @@
 
   &__list {
     overflow-x: scroll;
+    margin: 0 -12px;
     gap: $grid-mobile-gap;
     grid-template-columns: repeat(4, 1fr);
     -ms-overflow-style: none;
@@ -16,8 +17,27 @@
 
     @include desktop {
       overflow-x: auto;
+      margin: 0;
       gap: $grid-desktop-gap;
       grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__item {
+    &:first-child {
+      margin-left: 12px;
+
+      @include desktop {
+        margin: 0;
+      }
+    }
+
+    &:last-child {
+      margin-right: 12px;
+
+      @include desktop {
+        margin: 0;
+      }
     }
   }
 

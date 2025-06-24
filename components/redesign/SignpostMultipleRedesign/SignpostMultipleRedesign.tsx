@@ -10,8 +10,10 @@ type Signpost = {
 
 export function SignpostMultipleRedesign({
   translationKey,
+  dataTestId,
 }: {
   translationKey: string;
+  dataTestId?: string;
 }) {
   const {
     t,
@@ -24,6 +26,7 @@ export function SignpostMultipleRedesign({
   return (
     <section
       className="signpost-multiple-redesign container-redesign"
+      data-testid={dataTestId}
     >
       <h2 className="signpost-multiple-redesign__title">{t(`title`)}</h2>
       <ul className="signpost-multiple-redesign__list grid">
@@ -35,7 +38,7 @@ export function SignpostMultipleRedesign({
         }) => (
           <li
             key={title}
-            className="col-desktop-3"
+            className="signpost-multiple-redesign__item col-desktop-3"
           >
             <SignpostRedesign
               title={title}

@@ -11,7 +11,10 @@ export function CollageWithLinkRedesign() {
   });
 
   return (
-    <section className="collage-with-link-redesign">
+    <section
+      className="collage-with-link-redesign"
+      data-testid="collage-with-link"
+    >
       <div className="collage-with-link-redesign__wrapper">
         <a
           href={t(`link`)}

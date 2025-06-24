@@ -63,9 +63,14 @@ export default function HomePage() {
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
         {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
         <CollageWithTitleRedesign />
-        <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
+        <SignpostMultipleRedesign
+          translationKey="conferenceSignpostsRedesign"
+        />
         <SingleImageRedesign />
-        <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
+        <SignpostMultipleRedesign
+          translationKey="articleSignpostsRedesign"
+          dataTestId="signpost-multiple-articles"
+        />
         <CardsGridRedesign />
         <CollageWithLinkRedesign />
       </LayoutRedesign>
