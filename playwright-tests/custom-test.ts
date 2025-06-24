@@ -21,7 +21,9 @@ export const test = base.extend<CustomTestFixtures>({
     ) => {
       await apiImageMock();
 
-      await page.goto(endpoint || ``);
+      await page.goto(endpoint || ``, {
+        waitUntil: `networkidle`,
+      });
 
       await page.getByTestId(`skip-link`)
         .evaluate((element) => element.style.visibility = `hidden`);
