@@ -19,7 +19,10 @@ export function CardsGridRedesign() {
   });
 
   return (
-    <section className="cards-grid-redesign">
+    <section
+      className="cards-grid-redesign"
+      data-testid="cards-grid"
+    >
       <div className="container-redesign cards-grid-redesign__wrapper">
         <ul className="cards-grid-redesign__cards grid">
           <li className="cards-grid-redesign__card-item col-desktop-4 col-tablet-4">
