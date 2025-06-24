@@ -56,7 +56,10 @@ export default function HomePage() {
           translationKey="projectsRedesignSecondarySection"
           dataTestId="projects-with-four-cards"
         />
-        <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
+        <ProjectsRedesign
+          translationKey="projectsRedesignThirdSection"
+          dataTestId="projects-with-three-cards"
+        />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
         {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
         <CollageWithTitleRedesign />
