@@ -52,8 +52,10 @@ export default function HomePage() {
           translationKey="projectsRedesignFirstSection"
           dataTestId="projects-with-text-block-first"
         />
+        <ProjectsRedesign
+          translationKey="projectsRedesignSecondarySection"
+          dataTestId="projects-with-four-cards"
         />
-        <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
         <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
         {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}

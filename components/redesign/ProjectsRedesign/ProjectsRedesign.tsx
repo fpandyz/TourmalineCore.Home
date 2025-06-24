@@ -5,8 +5,10 @@ const GRID_COLUMNS = 12;
 
 export function ProjectsRedesign({
   translationKey,
+  dataTestId,
 }:{
   translationKey: string;
+  dataTestId?: string;
 }) {
   const {
     t,
@@ -19,7 +21,10 @@ export function ProjectsRedesign({
   const columnsCount = GRID_COLUMNS / projectCardsWithImage.length;
 
   return (
-    <section className="projects-redesign">
+    <section
+      className="projects-redesign"
+      data-testid={dataTestId}
+    >
       <div className="container-redesign projects-redesign__wrapper">
         <ul className="projects-redesign__cards grid">
           {projectCardsWithImage.map(({
