@@ -1,0 +1,26 @@
+import { MutableRefObject } from 'react';
+import { useRouter } from 'next/router';
+
+export function SkipLink({
+  mainElementRef,
+}: {
+  mainElementRef: MutableRefObject<null | HTMLElement>;
+}) {
+  const router = useRouter();
+
+  return (
+    <a
+      href="#main-content"
+      className="skip-link button"
+      onClick={() => {
+        mainElementRef.current!.focus();
+      }}
+    >
+      {
+        router.locale === `ru`
+          ? `Перейти к основному контенту`
+          : `Skip to main content`
+      }
+    </a>
+  );
+}

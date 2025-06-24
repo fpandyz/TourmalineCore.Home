@@ -37,10 +37,23 @@ export function LangSwitch() {
         type="button"
         className="lang-switch__active"
         onClick={() => setIsTooltipOpened(!isTooltipOpened)}
+        aria-label={router.locale === `ru`
+          ? `Выбрать язык`
+          : `Select language`}
       >
-        {languages[routerLocale].icon()}
-        {languages[routerLocale].shortName}
+        <span aria-hidden="true">
+          {languages[routerLocale].icon()}
+        </span>
+        <span aria-label={
+          router.locale === `ru`
+            ? `Сейчас выбран`
+            : `Currently selected`
+        }
+        >
+          {languages[routerLocale].shortName}
+        </span>
         <IconArrow
+          aria-hidden="true"
           className={clsx(
             `lang-switch__arrow`,
             {

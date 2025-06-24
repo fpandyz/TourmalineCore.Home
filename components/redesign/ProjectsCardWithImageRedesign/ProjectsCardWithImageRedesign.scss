@@ -1,4 +1,6 @@
 .project-card-with-image-redesign {
+  display: flex;
+  flex-direction: column-reverse;
   height: max-content;
 
   &__images {
@@ -71,6 +73,8 @@
   }
 
   &__link {
+    display: flex;
+    flex-direction: column-reverse;
     text-decoration: none;
 
     img {

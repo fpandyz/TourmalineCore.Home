@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
+import FocusLock from 'react-focus-lock';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -103,7 +104,7 @@ export function Header({
           <Link
             href="/"
             className="header__logo"
-            aria-label="Header logo"
+            aria-label="Go to home page"
           >
             <Image
               src="/images/logo.png"
@@ -122,7 +123,7 @@ export function Header({
               {BURGER_ICONS.get(pathname as AppRoute)}
             </button>
 
-            <div className="header__desktop">
+            <nav className="header__desktop">
               {headerLinks.map((headerLink) => (
                 <Link
                   key={headerLink.id}
@@ -134,16 +135,20 @@ export function Header({
               ))}
 
               <LangSwitch />
-            </div>
+            </nav>
           </div>
         </div>
       </header>
 
       {isMobileMenuOpen && (
-        <MobileMenu
-          onCloseClick={() => setIsMobileMenuOpen(false)}
-          headerLinks={headerLinks}
-        />
+        <FocusLock
+          returnFocus
+        >
+          <MobileMenu
+            onCloseClick={() => setIsMobileMenuOpen(false)}
+            headerLinks={headerLinks}
+          />
+        </FocusLock>
       )}
     </>
   );

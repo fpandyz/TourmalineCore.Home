@@ -19,6 +19,7 @@ export function CollageWithLinkRedesign() {
         >
           <span
             className="collage-with-link-redesign__link-box"
+            aria-hidden="true"
           >
             ?
           </span>
