@@ -50,6 +50,7 @@ export function ServicesRedesign({
   return (
     <section
       className="services-redesign"
+      data-testid="services"
       {...(targetId && {
         id: targetId,
       })}
