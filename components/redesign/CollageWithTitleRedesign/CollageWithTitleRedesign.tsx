@@ -11,7 +11,10 @@ export function CollageWithTitleRedesign() {
   });
 
   return (
-    <section className="collage-with-title-redesign">
+    <section
+      className="collage-with-title-redesign"
+      data-testid="collage-with-title"
+    >
       <div className="collage-with-title-redesign__wrapper">
         <h2 className="container-redesign collage-with-title-redesign__title">{t(`title`)}</h2>
         {imageUrls.map((imageUrl, index) => (
