@@ -12,7 +12,7 @@ test.describe(`ProjectsWithTextBlock`, () => {
   }) => {
     await apiImageMock();
 
-    await goto(`/ru`);
+    await goto();
 
     await hideCookie();
   });

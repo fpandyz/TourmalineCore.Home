@@ -13,7 +13,7 @@ test.describe(`ProjectsWithThreeCards`, () => {
   }) => {
     await apiImageMock();
 
-    await goto(`/ru`);
+    await goto();
 
     await hideCookie();
   });
