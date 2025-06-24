@@ -13,7 +13,7 @@ export function SignpostMultipleRedesign({
   dataTestId,
 }: {
   translationKey: string;
-  dataTestId: string;
+  dataTestId?: string;
 }) {
   const {
     t,

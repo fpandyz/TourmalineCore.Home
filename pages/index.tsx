@@ -65,7 +65,6 @@ export default function HomePage() {
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign
           translationKey="conferenceSignpostsRedesign"
-          dataTestId="signpost-multiple-conference"
         />
         <SingleImageRedesign />
         <SignpostMultipleRedesign

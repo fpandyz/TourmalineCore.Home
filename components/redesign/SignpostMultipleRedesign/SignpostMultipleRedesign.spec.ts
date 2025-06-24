@@ -2,9 +2,9 @@ import { Page } from '@playwright/test';
 import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
 import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
 
-const TEST_ID = `signpost-multiple-conference`;
+const TEST_ID = `signpost-multiple-articles`;
 
-test.describe(`SignpostMultipleConferenceTests`, () => {
+test.describe(`SignpostMultipleTests`, () => {
   test.beforeEach(async ({
     goto,
     apiImageMock,
@@ -12,7 +12,7 @@ test.describe(`SignpostMultipleConferenceTests`, () => {
   }) => {
     await apiImageMock();
 
-    await goto(`/ru`);
+    await goto();
 
     await hideCookie();
   });
@@ -31,7 +31,7 @@ async function mobileTest({
 }) {
   await setViewportSize();
 
-  await expect(getSignpostMultipleConferenceRedesignByTestId({
+  await expect(getSignpostMultipleArticlesRedesignByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
@@ -48,13 +48,13 @@ async function desktopTest({
     width: Breakpoint.DESKTOP,
   });
 
-  await expect(getSignpostMultipleConferenceRedesignByTestId({
+  await expect(getSignpostMultipleArticlesRedesignByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.DESKTOP}.png`);
 }
 
-function getSignpostMultipleConferenceRedesignByTestId({
+function getSignpostMultipleArticlesRedesignByTestId({
   page,
 }: {
   page: Page;
