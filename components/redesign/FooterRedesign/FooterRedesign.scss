@@ -7,11 +7,11 @@
 .footer-redesign {
   margin-top: auto;
   padding-top: 40px;
-  padding-bottom: 24px;
+  padding-bottom: 16px;
 
   &__inner {
     display: grid;
-    grid-template-columns: auto;
+    gap: 48px;
     grid-template-rows: repeat(3, auto);
 
     @include tablet {
@@ -21,52 +21,28 @@
     }
   }
 
-  &__info {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 48px;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-
-    @include tablet-xl {
-      margin-bottom: 0;
-    }
-  }
-
   &__copyright {
     @include body-m;
 
-    display: grid;
-    align-self: flex-end;
     color: $color-middle-grey-redesign;
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
+    grid-row: 3;
 
     @include tablet {
-      grid-row: 2 / 3;
+      align-self: flex-end;
     }
   }
 
   &__navigation {
     display: grid;
-    margin-bottom: 48px;
-    gap: 12px;
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    gap: 8px;
     grid-template-columns: repeat(2, auto);
 
     @include tablet {
-      grid-template-columns: repeat(3, auto);
-    }
-
-    @include tablet {
-      grid-column: 2 / 3;
-      grid-row: 1 / 3;
+      margin-right: 108px;
+      gap: 12px;
+      grid-column: 2;
+      grid-row: 1 / span 2;
       justify-self: end;
-    }
-
-    @include desktop {
-      margin-right: 96px;
     }
   }
 
@@ -86,5 +62,17 @@
     width: fit-content;
     text-decoration: none;
     color: $color-white;
+  }
+
+  &__info,
+  &__copyright {
+    @include tablet {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+  }
+
+  @include tablet {
+    padding-bottom: 24px;
   }
 }

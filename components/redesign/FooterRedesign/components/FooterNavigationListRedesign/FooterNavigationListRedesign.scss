@@ -8,10 +8,10 @@
     @extend %footer-redesign-caption;
   }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  &__item {
+    & + & {
+      margin-top: 4px;
+    }
   }
 
   &__link {

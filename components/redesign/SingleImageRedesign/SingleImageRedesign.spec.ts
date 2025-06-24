@@ -7,11 +7,8 @@ const TEST_ID = `single-image`;
 test.describe(`SingleImageTests`, () => {
   test.beforeEach(async ({
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();

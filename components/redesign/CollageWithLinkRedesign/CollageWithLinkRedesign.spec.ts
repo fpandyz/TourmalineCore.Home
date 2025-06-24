@@ -7,11 +7,8 @@ const TEST_ID = `collage-with-link`;
 test.describe(`CollageWithLinkTests`, () => {
   test.beforeEach(async ({
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();

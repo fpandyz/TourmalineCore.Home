@@ -7,11 +7,8 @@ const TEST_ID = `projects-with-text-block-first`;
 test.describe(`ProjectsWithTextBlock`, () => {
   test.beforeEach(async ({
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();

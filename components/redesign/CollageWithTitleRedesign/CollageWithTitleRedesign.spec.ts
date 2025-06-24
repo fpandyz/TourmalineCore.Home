@@ -6,15 +6,9 @@ const TEST_ID = `collage-with-title`;
 
 test.describe(`CollageWithTitle`, () => {
   test.beforeEach(async ({
-    page,
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
-    await page.route(`**/**.gif`, (route) => route.abort());
-
     await goto();
 
     await hideCookie();

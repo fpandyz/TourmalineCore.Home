@@ -2,9 +2,9 @@ import { Page } from '@playwright/test';
 import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
 import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
 
-const TEST_ID = `signpost-multiple-articles`;
+const TEST_ID = `footer`;
 
-test.describe(`SignpostMultipleTests`, () => {
+test.describe(`Footer`, () => {
   test.beforeEach(async ({
     goto,
     hideCookie,
@@ -28,7 +28,7 @@ async function mobileTest({
 }) {
   await setViewportSize();
 
-  await expect(getSignpostMultipleArticlesRedesignByTestId({
+  await expect(getFooterByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
@@ -45,13 +45,13 @@ async function desktopTest({
     width: Breakpoint.DESKTOP,
   });
 
-  await expect(getSignpostMultipleArticlesRedesignByTestId({
+  await expect(getFooterByTestId({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.DESKTOP}.png`);
 }
 
-function getSignpostMultipleArticlesRedesignByTestId({
+function getFooterByTestId({
   page,
 }: {
   page: Page;

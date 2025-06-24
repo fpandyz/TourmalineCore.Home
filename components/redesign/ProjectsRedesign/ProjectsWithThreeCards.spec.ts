@@ -8,11 +8,8 @@ const TEST_ID = `projects-with-three-cards`;
 test.describe(`ProjectsWithThreeCards`, () => {
   test.beforeEach(async ({
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();
