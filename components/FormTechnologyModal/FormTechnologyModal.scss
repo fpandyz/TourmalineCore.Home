@@ -48,10 +48,6 @@
       }
 
       &::before {
-        left: -1px;
-        right: -1px;
-        top: -1px;
-        bottom: -1px;
         background-image:
           linear-gradient(
             51deg,
@@ -59,13 +55,10 @@
             $color-backend-page-secondary 52%,
             $color-backend-page-tertiary 100%
           );
+        inset: -1px;
       }
 
       &::after {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
         background-image:
           linear-gradient(
             309deg,
@@ -74,6 +67,7 @@
             rgba($color-backend-page-tertiary, 0.3) 100%
           );
         background-color: $color-black;
+        inset: 0;
       }
 
       &:hover {
@@ -101,23 +95,16 @@
       }
 
       &::before {
-        left: -1px;
-        right: -1px;
-        top: -1px;
-        bottom: -1px;
         background-image:
           linear-gradient(
             309deg,
             rgba($color-qa-page-primary, 0.3) 0%,
             rgba($color-qa-page-secondary, 0.3) 100%
           );
+        inset: -1px;
       }
 
       &::after {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
         background-image:
           linear-gradient(
             309deg,
@@ -125,6 +112,7 @@
             rgba($color-qa-page-secondary, 0.3) 100%
           );
         background-color: $color-black;
+        inset: 0;
       }
 
       &:hover {
@@ -152,23 +140,16 @@
       }
 
       &::before {
-        left: -1px;
-        right: -1px;
-        top: -1px;
-        bottom: -1px;
         background-image:
           linear-gradient(
             225deg,
             rgba($color-embedded-page-primary, 0.3) 0%,
             rgba($color-embedded-page-secondary, 0.3) 100%
           );
+        inset: -1px;
       }
 
       &::after {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
         background-image:
           linear-gradient(
             225deg,
@@ -176,6 +157,7 @@
             rgba($color-embedded-page-secondary, 0.3) 100%
           );
         background-color: $color-black;
+        inset: 0;
       }
 
       &:hover {
@@ -223,23 +205,16 @@
       }
 
       &::before {
-        left: -1px;
-        right: -1px;
-        top: -1px;
-        bottom: -1px;
         background-image:
           linear-gradient(
             234deg,
             $color-design-page-primary 0%,
             $color-design-page-secondary 78.13%
           );
+        inset: -1px;
       }
 
       &::after {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
         background-image:
           linear-gradient(
             234deg,
@@ -247,6 +222,7 @@
             rgba($color-design-page-secondary, 0.3) 79.17%
           );
         background-color: $color-black;
+        inset: 0;
       }
 
       &:hover {

@@ -37,8 +37,7 @@
   &__list {
     display: flex;
     justify-content: space-between;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: auto hidden;
     margin: 0 -15px;
     padding-bottom: 32px;
 

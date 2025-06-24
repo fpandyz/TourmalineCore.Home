@@ -29,18 +29,11 @@
     }
 
     &::before {
-      left: -1px;
-      right: -1px;
-      top: -1px;
-      bottom: -1px;
       background-image: linear-gradient(225deg, $color-embedded-page-primary 0%, $color-embedded-page-secondary 100%);
+      inset: -1px;
     }
 
     &::after {
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
       background-image:
         linear-gradient(
           225deg,
@@ -48,6 +41,7 @@
           rgba($color-embedded-page-secondary, 0.3) 100%
         );
       background-color: $color-black;
+      inset: 0;
     }
 
     &:hover {
