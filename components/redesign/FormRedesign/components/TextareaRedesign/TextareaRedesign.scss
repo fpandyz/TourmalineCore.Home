@@ -9,6 +9,8 @@
   }
 
   &__control {
+    @include body-m;
+
     display: block;
     outline: none;
     border: none;
@@ -19,6 +21,7 @@
     min-height: 92px;
     font-family: inherit;
     font-size: inherit;
+    line-height: 1.4;
     color: #afafb8;
     background-color: $color-deep-grey-redesign;
     resize: inherit;

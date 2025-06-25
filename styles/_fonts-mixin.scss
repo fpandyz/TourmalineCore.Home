@@ -135,6 +135,14 @@
   }
 }
 
+@mixin body-s {
+  @include medium-font;
+  @include inter-font;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 @mixin caption {
   @include regular-font;
   @include source-code-pro-font;

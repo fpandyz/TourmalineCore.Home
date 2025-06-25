@@ -7,8 +7,10 @@
   "or": "или",
   "attachFileText": "Attach a file",
   "buttonText": "Send",
-  "note": "By clicking the button, you agree to the processing of personal data",
-  "asideText": "If it's inconvenient to fill out the form, you can write to us in",
-  "linkText": "telegram",
-  "link": "/"
+  "approvalText": "By clicking the button, you agree to",
+  "approvalLinkText": "the processing of personal data",
+  "approvalLink": "/",
+  "asideText": "Если неудобно заполнять форму, можно написать нам",
+  "asideLinkText": "telegram",
+  "asideLink": "/"
 }

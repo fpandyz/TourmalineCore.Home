@@ -8,14 +8,16 @@
   }
 
   &__control {
+    @include body-m;
+
     display: block;
     outline: none;
     border: none;
     padding: 16px;
     width: 100%;
-    min-height: 64px;
     font-family: inherit;
     font-size: inherit;
+    line-height: 1.4;
     color: #afafb8;
     background-color: $color-deep-grey-redesign;
   }

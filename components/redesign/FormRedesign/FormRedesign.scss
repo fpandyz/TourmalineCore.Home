@@ -1,10 +1,58 @@
 .form-redesign {
-  padding: 56px 16px;
-  background-color: $color-black;
+  padding: 40px 0 80px;
+  background-color: white;
+
+  &__wrapper {
+    margin: 0 auto;
+    padding: 56px 16px;
+    max-width: 716px;
+    background-color: $color-black;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 420px;
+  }
+
+  &__title {
+    @include h4;
+
+    margin-bottom: 24px;
+    max-width: 420px;
+    text-align: center;
+
+    @include desktop {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__description {
+    @include body-m;
+
+    margin: 0 auto 32px;
+    max-width: 80%;
+    text-align: center;
+    color: #afafb8;
+
+    @include tablet {
+      max-width: 420px;
+    }
+  }
 
   &__input {
+    width: 100%;
+    max-width: 420px;
+
     & + & {
       margin-top: 12px;
+
+      @include desktop {
+        margin-top: 8px;
+      }
     }
   }
 
@@ -12,18 +60,10 @@
     @include link-text;
 
     position: relative;
-    display: flex;
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-    margin-top: 36px;
     border: none;
     padding: 10px 60px;
     width: auto;
-    height: 59px;
-    line-height: 1;
-    text-align: center;
-    text-decoration: none;
+    height: 48px;
     color: $color-white;
     background-color: $color-blue-redesign;
     transition: background-color 0.25s;
@@ -66,9 +106,90 @@
       background-color: $color-pink-redesign;
     }
 
+    @include tablet {
+      width: 100%;
+    }
+
     // this is to compensate for the svg edges on up to large mobile devices
     @media (width <= 480px) {
       width: 104%;
     }
+  }
+
+  &__attach {
+    @include body-s;
+
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: 12px;
+    color: #afafb8;
+
+    @include desktop {
+      margin-top: 4px;
+    }
+  }
+
+  &__footer {
+    margin-top: 32px;
+    width: 100%;
+
+    @include desktop {
+      margin-top: 24px;
+    }
+  }
+
+  svg {
+    margin-right: 4px;
+    margin-left: 8px;
+  }
+
+  &__approval {
+    @include body-s;
+
+    margin-top: 12px;
+    text-align: center;
+
+    a {
+      margin-left: 4px;
+      color: inherit;
+    }
+  }
+
+  &__aside {
+    @include body-s;
+
+    display: flex;
+    padding: 40px 16px 80px;
+    color: $color-black;
+    gap: 16px;
+
+    @include desktop {
+      flex-direction: column;
+    }
+  }
+
+  &__aside-img {
+    position: relative;
+    flex-shrink: 0;
+    width: 101px;
+    height: 72px;
+
+    img {
+      object-fit: cover;
+    }
+
+    @include tablet {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__aside-link {
+    margin-left: 4px;
+  }
+
+  @include tablet {
+    padding: 100px 0 140px;
   }
 }

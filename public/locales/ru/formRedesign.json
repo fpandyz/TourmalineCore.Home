@@ -7,8 +7,10 @@
   "or": "или",
   "attachFileText": "Прикрепите файл",
   "buttonText": "Отправить",
-  "approvedText": "Нажимая на кнопку, вы даёте согласие на обработку персональных данных",
+  "approvalText": "Нажимая на кнопку, вы даёте",
+  "approvalLinkText": "согласие на обработку персональных данных",
+  "approvalLink": "/",
   "asideText": "Если неудобно заполнять форму, можно написать нам",
-  "linkText": "telegram",
-  "link": "/"
+  "asideLinkText": "telegram",
+  "asideLink": "/"
 }
