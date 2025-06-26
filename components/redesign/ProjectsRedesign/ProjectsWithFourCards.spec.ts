@@ -7,11 +7,8 @@ const TEST_ID = `projects-with-four-cards`;
 test.describe(`ProjectsWithFourCards`, () => {
   test.beforeEach(async ({
     goto,
-    apiImageMock,
     hideCookie,
   }) => {
-    await apiImageMock();
-
     await goto();
 
     await hideCookie();

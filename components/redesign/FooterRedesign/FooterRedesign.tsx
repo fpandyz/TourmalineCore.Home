@@ -15,10 +15,11 @@ export function FooterRedesign() {
     <footer
       id="footer-redesign"
       className="footer-redesign"
+      data-testid="footer"
     >
       <div className="container-redesign footer-redesign__inner">
         <div className="footer-redesign__info">
-          <span className="footer-redesign__caption">{t(`infoCaption`)}</span>
+          <p className="footer-redesign__caption">{t(`infoCaption`)}</p>
           {/* TODO: Change when next will be upgrade to 12+ version */}
           <a
             className="footer-redesign__email"

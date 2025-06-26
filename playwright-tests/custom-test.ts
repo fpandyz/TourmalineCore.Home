@@ -14,11 +14,19 @@ export type CustomTestFixtures = {
 export const test = base.extend<CustomTestFixtures>({
   goto: async ({
     page,
+    apiImageMock,
   }, use) => {
     const goto = async (
       endpoint?: string,
     ) => {
-      await page.goto(endpoint || ``);
+      await apiImageMock();
+
+      // interrupting the connection for gif, for more stable work of tests
+      await page.route(`**/**.gif`, (route) => route.abort());
+
+      await page.goto(endpoint || ``, {
+        waitUntil: `networkidle`,
+      });
 
       await page.getByTestId(`skip-link`)
         .evaluate((element) => element.style.visibility = `hidden`);
