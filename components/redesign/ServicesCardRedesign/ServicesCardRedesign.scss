@@ -115,7 +115,7 @@
 
   &--blue {
     display: none;
-    background-color: $color-blue-redesign;
+    background-color: $color-deep-blue-redesign;
 
     @include tablet-xl {
       display: block;
@@ -123,7 +123,7 @@
   }
 
   &--grey {
-    background-color: $color-light-grey-redesign;
+    background-color: $color-lighter-grey-redesign;
   }
 
   &--black {

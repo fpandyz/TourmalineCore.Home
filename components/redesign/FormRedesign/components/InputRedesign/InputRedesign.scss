@@ -1,24 +1,17 @@
 .input-redesign {
-  $this: &;
-
-  color: #afafb8;
-
-  &__box {
-    position: relative;
-  }
-
   &__control {
     @include body-m;
 
     display: block;
     outline: none;
     border: none;
+    border-radius: 2px;
     padding: 16px;
     width: 100%;
     font-family: inherit;
     font-size: inherit;
     line-height: 1.4;
-    color: #afafb8;
-    background-color: $color-deep-grey-redesign;
+    color: $color-light-grey-redesign;
+    background-color: $color-grey-900-redesign;
   }
 }

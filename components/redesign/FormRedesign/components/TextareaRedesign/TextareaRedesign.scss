@@ -1,13 +1,4 @@
 .textarea-redesign {
-  $this: &;
-
-  color: #afafb8;
-
-  &__box {
-    position: relative;
-    resize: inherit;
-  }
-
   &__control {
     @include body-m;
 
@@ -22,7 +13,7 @@
     font-family: inherit;
     font-size: inherit;
     line-height: 1.4;
-    color: #afafb8;
+    color: $color-light-grey-redesign;
     background-color: $color-deep-grey-redesign;
     resize: inherit;
   }

@@ -12,29 +12,23 @@ export function InputRedesign({
   id,
   label,
   description,
-  isError = false,
   className,
   ...props
 }: InputProps) {
   return (
-    <div className={clsx(`input-redesign`, className, {
-      'input-redesign--is-error': isError,
-    })}
-    >
-      <div className="input-redesign__box">
-        <input
-          id={id}
-          className="input-redesign__control"
-          placeholder={label}
-          {...props}
-        />
-        <label
-          htmlFor={id}
-          className="input-redesign__label visually-hidden"
-        >
-          {label}
-        </label>
-      </div>
+    <div className={clsx(`input-redesign`, className)}>
+      <input
+        id={id}
+        className="input-redesign__control"
+        placeholder={label}
+        {...props}
+      />
+      <label
+        htmlFor={id}
+        className="input-redesign__label visually-hidden"
+      >
+        {label}
+      </label>
     </div>
   );
 }
