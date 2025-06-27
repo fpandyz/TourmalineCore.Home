@@ -43,13 +43,14 @@ export default function ComponentsPage() {
         dataTestId="projects-with-four-cards"
       />
     );
-  // if (componentName === ComponentName.PROJECTS_WITH_FOUR_CARDS) {
-  //   return (
-  //     <ProjectsWithTextBlockRedesign
-  //       translationKey="projectsRedesignFirstSection"
-  //       dataTestId="projects-with-text-block-first"
-  //     />
-  //   );
+  }
+  if (componentName === ComponentName.PROJECTS_WITH_THREE_CARDS) {
+    return (
+      <ProjectsRedesign
+        translationKey="projectsRedesignThirdSection"
+        dataTestId="projects-with-three-cards"
+      />
+    );
   }
 
   return (
@@ -73,6 +74,9 @@ export default function ComponentsPage() {
         <li className="components-page__item">
           <Link href={ComponentName.PROJECTS_WITH_FOUR_CARDS}>Projects With Four Cards</Link>
         </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.PROJECTS_WITH_THREE_CARDS}>Projects With Three Cards</Link>
+        </li>
       </ul>
     </div>
   );
@@ -90,6 +94,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `heroRedesign`,
       `projectsRedesignFirstSection`,
       `projectsRedesignSecondarySection`,
+      `projectsRedesignThirdSection`,
     ])),
   },
 });
