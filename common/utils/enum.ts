@@ -18,4 +18,5 @@ export enum ComponentName {
   CARDS_GRID = `cards-grid`,
   COLLAGE_WITH_LINK = `collage-with-link`,
   COLLAGE_WITH_TITLE = `collage-with-title`,
+  FOOTER = `footer`,
 }
