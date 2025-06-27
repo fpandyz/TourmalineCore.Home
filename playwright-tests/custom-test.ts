@@ -40,13 +40,16 @@ export const test = base.extend<CustomTestFixtures>({
   goToComponentsPage: async ({
     page,
     apiImageMock,
+    hideCookie,
   }, use) => {
     const goToComponentsPage = async (path: string) => {
       await apiImageMock();
 
-      await page.goto(`/components/${path}`, {
+      await page.goto(`/ru/components/${path}`, {
         waitUntil: `networkidle`,
       });
+
+      await hideCookie();
     };
 
     await use(goToComponentsPage);

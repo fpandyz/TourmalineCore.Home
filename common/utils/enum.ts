@@ -13,3 +13,7 @@ export enum BreakpointName {
   DESKTOP = `desktop`,
   DESKTOP_XL = `desktop-xl`,
 }
+
+export enum ComponentName {
+  CARDS_GRID = `cards-grid`,
+}
