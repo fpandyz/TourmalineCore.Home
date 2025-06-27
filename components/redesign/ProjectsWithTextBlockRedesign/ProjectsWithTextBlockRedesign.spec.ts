@@ -4,18 +4,15 @@ import {
   CustomTestFixtures,
   Page,
 } from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
+import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
 
 const TEST_ID = `projects-with-text-block-first`;
 
 test.describe(`ProjectsWithTextBlock`, () => {
   test.beforeEach(async ({
-    goto,
-    hideCookie,
+    goToComponentsPage,
   }) => {
-    await goto();
-
-    await hideCookie();
+    await goToComponentsPage(ComponentName.PROJECTS_WITH_TEXT_BLOCK);
   });
 
   test(`MobileTest`, mobileTest);
