@@ -7,9 +7,9 @@
   "or": "или",
   "attachFileText": "Attach a file",
   "buttonText": "Send",
-  "approvalText": "By clicking the button, you agree to",
-  "approvalLinkText": "the processing of personal data",
-  "approvalLink": "/",
+  "consentText": "By clicking the button, you agree to",
+  "consentLinkText": "the processing of personal data",
+  "consentLink": "/",
   "asideText": "Если неудобно заполнять форму, можно написать нам",
   "asideLinkText": "telegram",
   "asideLink": "/"

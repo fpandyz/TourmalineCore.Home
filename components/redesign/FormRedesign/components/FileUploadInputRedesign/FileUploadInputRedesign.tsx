@@ -10,7 +10,7 @@ export function FileUploadInputRedesign({
   return (
     <div className={clsx(`file-upload-input-redesign`, className)}>
       <label
-        for="file-upload"
+        htmlFor="file-upload"
         className="file-upload-input-redesign__label"
       >
         <svg

@@ -72,12 +72,13 @@ export function FormRedesign() {
               >
                 {t(`buttonText`)}
               </button>
-              <div className="form-redesign__approval">
-                {t(`approvalText`)}
+              <div className="form-redesign__consent">
+                {t(`consentText`)}
                 <Link
-                  href={t(`approvalLink`)}
+                  className="form-redesign__consent-link"
+                  href={t(`consentLink`)}
                 >
-                  {t(`approvalLinkText`)}
+                  {t(`consentLinkText`)}
                 </Link>
               </div>
             </div>
@@ -109,6 +110,7 @@ export function FormRedesign() {
   );
 
   async function handleFormSubmit(event: FormEvent) {
+    event.preventDefault();
     console.log(event);
   }
 }

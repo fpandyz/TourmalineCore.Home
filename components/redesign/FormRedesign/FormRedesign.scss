@@ -115,7 +115,6 @@
     @include body-s;
 
     display: flex;
-    align-items: center;
     align-self: flex-start;
     margin-top: 12px;
     color: $color-light-grey-redesign;
@@ -134,16 +133,16 @@
     }
   }
 
-  &__approval {
+  &__consent {
     @include body-s;
 
     margin-top: 12px;
     text-align: center;
+  }
 
-    a {
-      margin-left: 4px;
-      color: inherit;
-    }
+  &__consent-link {
+    margin-left: 4px;
+    color: inherit;
   }
 
   &__aside {
