@@ -4,7 +4,7 @@
   &__subtitle {
     @include h2;
 
-    margin-top: 20px;
+    margin: 20px 0;
   }
 
   &__item {
@@ -15,7 +15,11 @@
     }
 
     & + & {
-      margin-top: 10px;
+      margin-top: 20px;
     }
+  }
+
+  a {
+    color: $color-white-60;
   }
 }

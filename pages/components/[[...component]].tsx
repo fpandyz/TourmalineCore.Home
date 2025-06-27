@@ -93,6 +93,9 @@ export default function ComponentsPage() {
 
   return (
     <div className="components-page container-redesign">
+      <h2 className="components-page__subtitle">
+        Redesigned Homepage
+      </h2>
       <ul className="components-page__list">
         <li className="components-page__item">
           <Link href={ComponentName.CARDS_GRID}>Cards grid</Link>
