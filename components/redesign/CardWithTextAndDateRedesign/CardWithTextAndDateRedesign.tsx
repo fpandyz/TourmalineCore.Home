@@ -3,7 +3,7 @@ import moment from 'moment';
 import 'moment/locale/ru';
 import 'moment/locale/en-gb';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { CardWithContent, CardWithContentRedesign } from '../CardWithContentRedesign/CardWithContentRedesign';
 
 export type CardWithTextAndDate = CardWithContent & {
@@ -23,15 +23,17 @@ export function CardWithTextAndDateRedesign({
   const {
     locale,
   } = useRouter();
-  const formattedDate = moment(date)
-    .format(
-      locale === `en`
-        ? `MMMM D, YYYY`
-        : `D MMMM YYYY`,
-    );
+  const [formattedDate, setFormattedDate] = useState(``);
 
   useEffect(() => {
     moment.locale(locale);
+
+    setFormattedDate(moment(date)
+      .format(
+        locale === `en`
+          ? `MMMM D, YYYY`
+          : `D MMMM YYYY`,
+      ));
   }, [locale]);
 
   return (
