@@ -20,4 +20,5 @@ export enum ComponentName {
   COLLAGE_WITH_TITLE = `collage-with-title`,
   FOOTER = `footer`,
   HERO = `hero`,
+  PROJECTS_WITH_FOUR_CARDS = `projects-with-four-cards`,
 }

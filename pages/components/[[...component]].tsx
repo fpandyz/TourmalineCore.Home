@@ -8,6 +8,7 @@ import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLi
 import { CollageWithTitleRedesign } from "../../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
 import { FooterRedesign } from "../../components/redesign/FooterRedesign/FooterRedesign";
 import { HeroRedesign } from "../../components/redesign/HeroRedesign/HeroRedesign";
+import { ProjectsRedesign } from "../../components/redesign/ProjectsRedesign/ProjectsRedesign";
 
 export default function ComponentsPage() {
   const router = useRouter();
@@ -35,6 +36,21 @@ export default function ComponentsPage() {
   if (componentName === ComponentName.HERO) {
     return <HeroRedesign />;
   }
+  if (componentName === ComponentName.PROJECTS_WITH_FOUR_CARDS) {
+    return (
+      <ProjectsRedesign
+        translationKey="projectsRedesignSecondarySection"
+        dataTestId="projects-with-four-cards"
+      />
+    );
+  // if (componentName === ComponentName.PROJECTS_WITH_FOUR_CARDS) {
+  //   return (
+  //     <ProjectsWithTextBlockRedesign
+  //       translationKey="projectsRedesignFirstSection"
+  //       dataTestId="projects-with-text-block-first"
+  //     />
+  //   );
+  }
 
   return (
     <div className="components-page container-redesign">
@@ -54,6 +70,9 @@ export default function ComponentsPage() {
         <li className="components-page__item">
           <Link href={ComponentName.HERO}>Hero</Link>
         </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.PROJECTS_WITH_FOUR_CARDS}>Projects With Four Cards</Link>
+        </li>
       </ul>
     </div>
   );
@@ -69,6 +88,8 @@ export const getStaticProps: GetServerSideProps = async ({
       `collageWithTitleRedesign`,
       `footerRedesign`,
       `heroRedesign`,
+      `projectsRedesignFirstSection`,
+      `projectsRedesignSecondarySection`,
     ])),
   },
 });
