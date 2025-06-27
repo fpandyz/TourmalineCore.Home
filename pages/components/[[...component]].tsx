@@ -10,6 +10,7 @@ import { FooterRedesign } from "../../components/redesign/FooterRedesign/FooterR
 import { HeroRedesign } from "../../components/redesign/HeroRedesign/HeroRedesign";
 import { ProjectsRedesign } from "../../components/redesign/ProjectsRedesign/ProjectsRedesign";
 import { ProjectsWithTextBlockRedesign } from "../../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign";
+import { ServicesRedesign } from "../../components/redesign/ServicesRedesign/ServicesRedesign";
 
 export default function ComponentsPage() {
   const router = useRouter();
@@ -67,6 +68,12 @@ export default function ComponentsPage() {
     );
   }
 
+  if (componentName === ComponentName.SERVICES) {
+    return (
+      <ServicesRedesign />
+    );
+  }
+
   return (
     <div className="components-page container-redesign">
       <ul className="components-page__list">
@@ -94,6 +101,9 @@ export default function ComponentsPage() {
         <li className="components-page__item">
           <Link href={ComponentName.PROJECTS_WITH_TEXT_BLOCK}>Projects with text block</Link>
         </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.SERVICES}>Services</Link>
+        </li>
       </ul>
     </div>
   );
@@ -112,6 +122,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `projectsRedesignFirstSection`,
       `projectsRedesignSecondarySection`,
       `projectsRedesignThirdSection`,
+      `servicesRedesign`,
     ])),
   },
 });
