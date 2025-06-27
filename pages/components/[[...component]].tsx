@@ -12,6 +12,7 @@ import { ProjectsRedesign } from "../../components/redesign/ProjectsRedesign/Pro
 import { ProjectsWithTextBlockRedesign } from "../../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign";
 import { ServicesRedesign } from "../../components/redesign/ServicesRedesign/ServicesRedesign";
 import { SignpostMultipleRedesign } from "../../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign";
+import { SingleImageRedesign } from "../../components/redesign/SingleImageRedesign/SingleImageRedesign";
 
 export default function ComponentsPage() {
   const router = useRouter();
@@ -74,12 +75,19 @@ export default function ComponentsPage() {
       <ServicesRedesign />
     );
   }
+
   if (componentName === ComponentName.SIGNPOST_MULTIPLE) {
     return (
       <SignpostMultipleRedesign
         translationKey="articleSignpostsRedesign"
         dataTestId="signpost-multiple-articles"
       />
+    );
+  }
+
+  if (componentName === ComponentName.SINGLE_IMAGE) {
+    return (
+      <SingleImageRedesign />
     );
   }
 
@@ -116,6 +124,9 @@ export default function ComponentsPage() {
         <li className="components-page__item">
           <Link href={ComponentName.SIGNPOST_MULTIPLE}>Articles Signpost</Link>
         </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.SINGLE_IMAGE}>Single Image</Link>
+        </li>
       </ul>
     </div>
   );
@@ -136,6 +147,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `projectsRedesignThirdSection`,
       `servicesRedesign`,
       `articleSignpostsRedesign`,
+      `singleImageRedesign`,
     ])),
   },
 });
