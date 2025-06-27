@@ -1,4 +1,11 @@
 .textarea-redesign {
+  $this: &;
+
+  &__box {
+    position: relative;
+    resize: inherit;
+  }
+
   &__control {
     @include body-m;
 
@@ -16,5 +23,33 @@
     color: $color-light-grey-redesign;
     background-color: $color-grey-700-redesign;
     resize: inherit;
+    transition: all 0.3s;
+    &:not(:placeholder-shown) ~ #{$this}__label {
+      @include type-body-2;
+
+      top: -24px;
+      letter-spacing: 0.02em;
+    }
+
+    &:focus {
+      border-color: $color-pink;
+
+      ~ #{$this}__label {
+        @include type-body-2;
+
+        top: -24px;
+        letter-spacing: 0.02em;
+        color: $color-pink;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    min-height: 30px;
+    color: inherit;
+    cursor: text;
+    transition: all 0.3s;
   }
 }

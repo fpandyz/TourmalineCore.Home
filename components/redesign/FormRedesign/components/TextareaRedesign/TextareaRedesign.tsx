@@ -17,18 +17,20 @@ export function TextareaRedesign({
 }: TextareaProps) {
   return (
     <div className={clsx(`textarea-redesign`, className)}>
-      <textarea
-        id={id}
-        className="textarea-redesign__control"
-        placeholder={label}
-        {...props}
-      />
-      <label
-        htmlFor={id}
-        className="textarea-redesign__label visually-hidden"
-      >
-        {label}
-      </label>
+      <div className="textarea-redesign__box">
+        <textarea
+          id={id}
+          className="textarea-redesign__control"
+          placeholder={label}
+          {...props}
+        />
+        <label
+          htmlFor={id}
+          className="textarea-redesign__label visually-hidden"
+        >
+          {label}
+        </label>
+      </div>
     </div>
   );
 }

@@ -2,6 +2,11 @@
   padding-top: 40px;
   background-color: $color-white;
 
+  &__box {
+    position: relative;
+    resize: inherit;
+  }
+
   &__wrapper {
     position: relative;
     background-color: $color-black;

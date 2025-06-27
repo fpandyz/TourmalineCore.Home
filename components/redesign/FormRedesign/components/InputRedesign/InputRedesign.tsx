@@ -17,18 +17,21 @@ export function InputRedesign({
 }: InputProps) {
   return (
     <div className={clsx(`input-redesign`, className)}>
-      <input
-        id={id}
-        className="input-redesign__control"
-        placeholder={label}
-        {...props}
-      />
-      <label
-        htmlFor={id}
-        className="input-redesign__label visually-hidden"
-      >
-        {label}
-      </label>
+      <div className="input-redesign__box">
+        <input
+          id={id}
+          className="input-redesign__control"
+          placeholder=""
+          {...props}
+        />
+        <label
+          htmlFor={id}
+          className="input-redesign__label"
+        >
+          {label}
+        </label>
+      </div>
+
     </div>
   );
 }
