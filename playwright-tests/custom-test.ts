@@ -3,7 +3,6 @@ import fs from 'fs';
 import { Breakpoint } from '../common/utils/enum';
 
 export type CustomTestFixtures = {
-  goto: (endpoint?: string) => void;
   apiImageMock: () => void;
   hideCookie: () => void;
   goToComponentsPage: (path: string) => void;
@@ -13,27 +12,6 @@ export type CustomTestFixtures = {
 // https://playwright.dev/docs/test-fixtures
 // Extend base playwright test
 export const test = base.extend<CustomTestFixtures>({
-  goto: async ({
-    page,
-    apiImageMock,
-  }, use) => {
-    const goto = async (
-      endpoint?: string,
-    ) => {
-      await apiImageMock();
-
-      await page.goto(endpoint || ``, {
-        waitUntil: `networkidle`,
-      });
-
-      await page.getByTestId(`skip-link`)
-        .evaluate((element) => element.style.visibility = `hidden`);
-    };
-
-    // Use the fixture value in the test
-    await use(goto);
-  },
-
   goToComponentsPage: async ({
     page,
     apiImageMock,
