@@ -24,4 +24,5 @@ export enum ComponentName {
   PROJECTS_WITH_THREE_CARDS = `projects-with-three-cards`,
   PROJECTS_WITH_TEXT_BLOCK = `projects-with-text-block`,
   SERVICES = `services`,
+  SIGNPOST_MULTIPLE = `signpost-multiple`,
 }

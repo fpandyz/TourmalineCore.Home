@@ -11,6 +11,7 @@ import { HeroRedesign } from "../../components/redesign/HeroRedesign/HeroRedesig
 import { ProjectsRedesign } from "../../components/redesign/ProjectsRedesign/ProjectsRedesign";
 import { ProjectsWithTextBlockRedesign } from "../../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign";
 import { ServicesRedesign } from "../../components/redesign/ServicesRedesign/ServicesRedesign";
+import { SignpostMultipleRedesign } from "../../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign";
 
 export default function ComponentsPage() {
   const router = useRouter();
@@ -73,6 +74,14 @@ export default function ComponentsPage() {
       <ServicesRedesign />
     );
   }
+  if (componentName === ComponentName.SIGNPOST_MULTIPLE) {
+    return (
+      <SignpostMultipleRedesign
+        translationKey="articleSignpostsRedesign"
+        dataTestId="signpost-multiple-articles"
+      />
+    );
+  }
 
   return (
     <div className="components-page container-redesign">
@@ -104,6 +113,9 @@ export default function ComponentsPage() {
         <li className="components-page__item">
           <Link href={ComponentName.SERVICES}>Services</Link>
         </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.SIGNPOST_MULTIPLE}>Articles Signpost</Link>
+        </li>
       </ul>
     </div>
   );
@@ -123,6 +135,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `projectsRedesignSecondarySection`,
       `projectsRedesignThirdSection`,
       `servicesRedesign`,
+      `articleSignpostsRedesign`,
     ])),
   },
 });
