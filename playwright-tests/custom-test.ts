@@ -6,6 +6,7 @@ export type CustomTestFixtures = {
   goto: (endpoint?: string) => void;
   apiImageMock: () => void;
   hideCookie: () => void;
+  goToComponentsPage: (path: string) => void;
   setViewportSize: (options?: { width?: number; height?: number; }) => void;
 };
 
@@ -36,6 +37,21 @@ export const test = base.extend<CustomTestFixtures>({
     await use(goto);
   },
 
+  goToComponentsPage: async ({
+    page,
+    apiImageMock,
+  }, use) => {
+    const goToComponentsPage = async (path: string) => {
+      await apiImageMock();
+
+      await page.goto(`/components/${path}`, {
+        waitUntil: `networkidle`,
+      });
+    };
+
+    await use(goToComponentsPage);
+  },
+
   setViewportSize: async ({
     page,
   }, use) => {
@@ -58,12 +74,10 @@ export const test = base.extend<CustomTestFixtures>({
   apiImageMock: async ({
     page,
   }, use) => {
-    const PNG_STUB_FILE = fs.readFileSync(`./public/images/stub.png`);
-
-    const regExp = /https?:\/\/[^/]+\/_next\/image\?([^&]*&)*url=([^&]*%2Fimages%2F[^&]+\.(png|jpg|jpeg|webp|gif|avif))(&[^&]*)*/i;
+    const PNG_STUB_FILE = fs.readFileSync(`./playwright-tests/fixtures/stub.png`);
 
     const apiImageMock = async () => {
-      await page.route(regExp, async (route, request) => {
+      await page.route(`**/_next/image*`, async (route, request) => {
         // Make sure that the browser is waiting for an image
         const accept = await request.headerValue(`accept`);
         const acceptsPng = accept?.includes(`image/*`);
@@ -94,4 +108,5 @@ export const test = base.extend<CustomTestFixtures>({
 
 export {
   expect,
+  type Page,
 } from '@playwright/test';

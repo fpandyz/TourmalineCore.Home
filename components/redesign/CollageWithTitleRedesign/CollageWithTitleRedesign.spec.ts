@@ -1,5 +1,9 @@
-import { Page } from '@playwright/test';
-import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
+import {
+  test,
+  expect,
+  CustomTestFixtures,
+  Page,
+} from '../../../playwright-tests/custom-test';
 import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
 
 const TEST_ID = `collage-with-title`;
