@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps } from "next";
 import { ComponentName } from "../../common/utils/enum";
 import { CardsGridRedesign } from "../../components/redesign/CardsGridRedesign/CardsGridRedesign";
+import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
 
 export default function ComponentsPage() {
   const router = useRouter();
@@ -17,13 +18,19 @@ export default function ComponentsPage() {
     return <CardsGridRedesign />;
   }
 
+  if (componentName === ComponentName.COLLAGE_WITH_LINK) {
+    return <CollageWithLinkRedesign />;
+  }
+
   return (
     <div className="components-page container-redesign">
       <ul className="components-page__list">
         <li className="components-page__item">
-          <Link href={ComponentName.CARDS_GRID}>Discounts categories</Link>
+          <Link href={ComponentName.CARDS_GRID}>Cards grid</Link>
         </li>
-
+        <li className="components-page__item">
+          <Link href={ComponentName.COLLAGE_WITH_LINK}>Collage with link</Link>
+        </li>
       </ul>
     </div>
   );
@@ -33,7 +40,7 @@ export const getStaticProps: GetServerSideProps = async ({
   locale,
 }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string, [`cardsGridRedesign`])),
+    ...(await serverSideTranslations(locale as string, [`cardsGridRedesign`, `collageWithLinkRedesign`])),
   },
 });
 

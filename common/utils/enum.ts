@@ -16,4 +16,5 @@ export enum BreakpointName {
 
 export enum ComponentName {
   CARDS_GRID = `cards-grid`,
+  COLLAGE_WITH_LINK = `collage-with-link`,
 }
