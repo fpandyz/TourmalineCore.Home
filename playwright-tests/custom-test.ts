@@ -22,9 +22,6 @@ export const test = base.extend<CustomTestFixtures>({
     ) => {
       await apiImageMock();
 
-      // interrupting the connection for gif, for more stable work of tests
-      await page.route(`**/**.gif`, (route) => route.abort());
-
       await page.goto(endpoint || ``, {
         waitUntil: `networkidle`,
       });
@@ -44,6 +41,9 @@ export const test = base.extend<CustomTestFixtures>({
   }, use) => {
     const goToComponentsPage = async (path: string) => {
       await apiImageMock();
+
+      // interrupting the connection for gif, for more stable work of tests
+      await page.route(`**/**.gif`, (route) => route.abort());
 
       await page.goto(`/ru/components/${path}`, {
         waitUntil: `networkidle`,

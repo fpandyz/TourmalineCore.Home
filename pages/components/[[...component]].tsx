@@ -5,6 +5,7 @@ import { GetServerSideProps } from "next";
 import { ComponentName } from "../../common/utils/enum";
 import { CardsGridRedesign } from "../../components/redesign/CardsGridRedesign/CardsGridRedesign";
 import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
+import { CollageWithTitleRedesign } from "../../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
 
 export default function ComponentsPage() {
   const router = useRouter();
@@ -22,6 +23,10 @@ export default function ComponentsPage() {
     return <CollageWithLinkRedesign />;
   }
 
+  if (componentName === ComponentName.COLLAGE_WITH_TITLE) {
+    return <CollageWithTitleRedesign />;
+  }
+
   return (
     <div className="components-page container-redesign">
       <ul className="components-page__list">
@@ -30,6 +35,9 @@ export default function ComponentsPage() {
         </li>
         <li className="components-page__item">
           <Link href={ComponentName.COLLAGE_WITH_LINK}>Collage with link</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.COLLAGE_WITH_TITLE}>Collage with title</Link>
         </li>
       </ul>
     </div>
@@ -40,7 +48,11 @@ export const getStaticProps: GetServerSideProps = async ({
   locale,
 }) => ({
   props: {
-    ...(await serverSideTranslations(locale as string, [`cardsGridRedesign`, `collageWithLinkRedesign`])),
+    ...(await serverSideTranslations(locale as string, [
+      `cardsGridRedesign`,
+      `collageWithLinkRedesign`,
+      `collageWithTitleRedesign`,
+    ])),
   },
 });
 
