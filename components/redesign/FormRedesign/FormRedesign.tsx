@@ -1,13 +1,18 @@
 import { useTranslation } from 'next-i18next';
-import { FormEvent, useMemo, useRef, useState } from 'react';
+import {
+  FormEvent,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { FileUploadInputRedesign } from './components/FileUploadInputRedesign/FileUploadInputRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
-import { useRouter } from 'next/router';
 import { DEFAULT_LOCALE } from '../../../common/utils/consts/localization';
 import { Spinner } from '../../Spinner/Spinner';
 
@@ -19,10 +24,10 @@ enum ReCAPTCHALanguage {
 
 export function FormRedesign(
   {
-  onSubmit = () => {},
-} : {
-  onSubmit: (formData: FormData) => unknown;
-}
+    onSubmit = () => {},
+  } : {
+    onSubmit: (formData: FormData) => unknown;
+  },
 ) {
   const {
     t,

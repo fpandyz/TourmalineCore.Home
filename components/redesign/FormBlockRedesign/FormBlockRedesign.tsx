@@ -2,15 +2,13 @@ import { useState } from 'react';
 import { FormRedesign } from '../FormRedesign/FormRedesign';
 import { getMessageFromForm, sendEmail } from '../../../common/utils/sendEmail';
 
-
 export function FormBlockRedesign() {
   const [email, setEmail] = useState(``);
   const [isSubmit, setIsSubmit] = useState(false);
 
   return (
     <section className="form-block-redesign">
-      <div className="form-block-redesign__inner"
-      >
+      <div className="form-block-redesign__inner">
         {
           !isSubmit
             ? (
