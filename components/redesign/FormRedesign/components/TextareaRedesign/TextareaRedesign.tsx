@@ -21,12 +21,12 @@ export function TextareaRedesign({
         <textarea
           id={id}
           className="textarea-redesign__control"
-          placeholder={label}
+          placeholder=""
           {...props}
         />
         <label
           htmlFor={id}
-          className="textarea-redesign__label visually-hidden"
+          className="textarea-redesign__label"
         >
           {label}
         </label>

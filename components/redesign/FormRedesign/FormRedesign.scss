@@ -146,8 +146,10 @@
   }
 
   &__consent-link {
+    position: relative;
     margin-left: 4px;
     color: inherit;
+    text-underline-offset: 2px;
   }
 
   &__aside {
@@ -207,6 +209,7 @@
   &__aside-link {
     margin-left: 4px;
     color: $color-deep-blue-redesign;
+    text-underline-offset: 2px;
   }
 
   @include desktop {
