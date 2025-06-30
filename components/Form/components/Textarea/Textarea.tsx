@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, TextareaHTMLAttributes } from 'react';
+import { useRouter } from 'next/router';
 import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
 
 interface TextareaProps extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
@@ -17,10 +18,14 @@ export function Textarea({
   className,
   ...props
 }: TextareaProps) {
+  const {
+    locale,
+  } = useRouter();
+
   return (
     <div className={clsx(`textarea`, className, {
       'textarea--is-error': isError,
-      'textarea--zh': isChineseLanguage(),
+      'textarea--zh': isChineseLanguage(locale),
     })}
     >
       <div className="textarea__box">

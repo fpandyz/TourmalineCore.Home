@@ -38,15 +38,20 @@
   }
 
   &__teams-list {
+    display: grid;
     padding: 0 22px;
+    gap: 8px;
 
     @include tablet {
-      display: grid;
       padding: 0;
+      gap: 8px;
       grid-auto-flow: column;
-      grid-gap: 8px 16px;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(4, 1fr);
+    }
+
+    @include desktop {
+      gap: 8px 16px;
     }
   }
 
@@ -55,14 +60,6 @@
 
     display: flex;
     align-items: center;
-
-    & + & {
-      margin-top: 8px;
-
-      @include desktop {
-        margin-top: 0;
-      }
-    }
   }
 
   &__wrapper {

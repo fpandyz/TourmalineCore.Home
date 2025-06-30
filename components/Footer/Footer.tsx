@@ -15,6 +15,7 @@ export function Footer() {
     t,
   } = useTranslation(`footer`);
   const {
+    locale,
     pathname,
   } = useRouter();
   const [date, setDate] = useState<number>();
@@ -29,7 +30,7 @@ export function Footer() {
       id="footer"
       className={clsx(`footer`, {
         'footer--technology': pathname !== AppRoute.Main,
-        'footer--zh': isChineseLanguage(),
+        'footer--zh': isChineseLanguage(locale),
       })}
       itemScope
       itemType="http://schema.org/Organization"

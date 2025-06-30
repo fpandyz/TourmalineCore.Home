@@ -1,20 +1,23 @@
-import { Page } from '@playwright/test';
-import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
+import {
+  test,
+  expect,
+  CustomTestFixtures,
+  Page,
+} from '../../../playwright-tests/custom-test';
+import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
 
 const TEST_ID = `services`;
 
 test.describe(`ServicesTests`, () => {
   test.beforeEach(async ({
-    goto,
-    hideCookie,
+    goToComponentsPage,
   }) => {
-    await goto();
-
-    await hideCookie();
+    await goToComponentsPage(ComponentName.SERVICES);
   });
 
   test(`MobileTest`, mobileTest);
+
+  test(`TabletTest`, tabletTest);
 
   test(`DesktopTest`, desktopTest);
 });
@@ -32,6 +35,23 @@ async function mobileTest({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
+}
+
+async function tabletTest({
+  page,
+  setViewportSize,
+}: {
+  page: Page;
+  setViewportSize: CustomTestFixtures['setViewportSize'];
+}) {
+  await setViewportSize({
+    width: Breakpoint.TABLET,
+  });
+
+  await expect(getServicesRedesignByTestId({
+    page,
+  }))
+    .toHaveScreenshot(`${TEST_ID}-${BreakpointName.TABLET}.png`);
 }
 
 async function desktopTest({

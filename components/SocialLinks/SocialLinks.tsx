@@ -22,6 +22,7 @@ import { AppRoute } from '../../common/utils/consts/app-route';
 export function SocialLinks() {
   const {
     pathname,
+    locale,
   } = useRouter();
 
   const icons = getIcons(pathname);
@@ -29,7 +30,7 @@ export function SocialLinks() {
 
   return (
     <div className={clsx(`social-links`, {
-      'social-links--zh': isChineseLanguage(),
+      'social-links--zh': isChineseLanguage(locale),
     })}
     >
       <a
