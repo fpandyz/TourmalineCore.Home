@@ -17,6 +17,8 @@ test.describe(`Footer`, () => {
 
   test(`MobileTest`, mobileTest);
 
+  test(`TabletTest`, tabletTest);
+
   test(`DesktopTest`, desktopTest);
 });
 
@@ -33,6 +35,23 @@ async function mobileTest({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
+}
+
+async function tabletTest({
+  page,
+  setViewportSize,
+}: {
+  page: Page;
+  setViewportSize: CustomTestFixtures['setViewportSize'];
+}) {
+  await setViewportSize({
+    width: Breakpoint.TABLET,
+  });
+
+  await expect(getFooterByTestId({
+    page,
+  }))
+    .toHaveScreenshot(`${TEST_ID}-${BreakpointName.TABLET}.png`);
 }
 
 async function desktopTest({

@@ -15,7 +15,7 @@
     grid-template-rows: repeat(3, auto);
 
     @include tablet {
-      column-gap: 12px;
+      gap: 48px 12px;
       grid-template-columns: repeat(2, auto);
       grid-template-rows: repeat(2, auto);
     }
@@ -29,6 +29,8 @@
 
     @include tablet {
       align-self: flex-end;
+      grid-column: 1;
+      grid-row: 2;
     }
   }
 
@@ -38,18 +40,23 @@
     grid-template-columns: repeat(2, auto);
 
     @include tablet {
+      gap: 16px;
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+    }
+
+    @include desktop {
       margin-right: 108px;
       gap: 12px;
-      grid-column: 2;
       grid-row: 1 / span 2;
-      justify-self: end;
     }
   }
 
   &__caption {
     margin-bottom: 4px;
 
-    @include desktop {
+    @include tablet {
       margin-bottom: 8px;
     }
 
@@ -64,15 +71,26 @@
     color: $color-white;
   }
 
+  &__info {
+    @include tablet {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
   &__info,
   &__copyright {
-    @include tablet {
+    @include desktop {
       grid-column: 1;
       grid-row: 1 / span 2;
     }
   }
 
   @include tablet {
+    padding-bottom: 16px;
+  }
+
+  @include desktop {
     padding-bottom: 24px;
   }
 }
