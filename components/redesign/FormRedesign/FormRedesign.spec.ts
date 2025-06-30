@@ -1,20 +1,14 @@
 import { Page } from '@playwright/test';
 import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
+import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
 
 const TEST_ID = `form`;
 
 test.describe(`FormRedesignTests`, () => {
   test.beforeEach(async ({
-    goto,
-    apiImageMock,
-    hideCookie,
+    goToComponentsPage
   }) => {
-    await apiImageMock();
-
-    await goto();
-
-    await hideCookie();
+    await goToComponentsPage(ComponentName.FORM_BLOCK);
   });
 
   test(`MobileTest`, mobileTest);
