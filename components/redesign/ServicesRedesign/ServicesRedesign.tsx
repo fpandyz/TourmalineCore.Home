@@ -71,7 +71,7 @@ export function ServicesRedesign({
           imageUrl,
         }) => (
           <li
-            className="services-redesign__card col-tablet-12 col-tablet-xl-3"
+            className="services-redesign__card col-tablet-6 col-tablet-xl-3"
             key={id}
           >
             <ServicesCardRedesign
