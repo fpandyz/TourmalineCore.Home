@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { DetailedHTMLProps, HTMLAttributes, useState } from 'react';
 
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import { Form } from '../Form/Form';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
@@ -14,6 +15,9 @@ export function FormBlock({
 }: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & {
   buttonClassName?: string;
 }) {
+  const {
+    locale,
+  } = useRouter();
   const [email, setEmail] = useState(``);
   const [isSubmit, setIsSubmit] = useState(false);
 
@@ -25,7 +29,7 @@ export function FormBlock({
     <section
       className={
         clsx(`section container form-block`, {
-          'form-block--zh': isChineseLanguage(),
+          'form-block--zh': isChineseLanguage(locale),
         })
       }
       id={id}

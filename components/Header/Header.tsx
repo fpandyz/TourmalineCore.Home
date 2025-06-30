@@ -90,6 +90,7 @@ export function Header({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const {
     pathname,
+    locale,
   } = useRouter();
 
   useBodyScrollHidden(isMobileMenuOpen);
@@ -97,7 +98,7 @@ export function Header({
   return (
     <>
       <header className={clsx(`header`, {
-        'header--zh': isChineseLanguage(),
+        'header--zh': isChineseLanguage(locale),
       })}
       >
         <div className={clsx(`container header__inner ${containerClass}`)}>

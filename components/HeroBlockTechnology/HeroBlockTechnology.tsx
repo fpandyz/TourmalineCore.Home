@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
@@ -12,6 +13,9 @@ export function HeroBlockTechnology() {
   } = usePath();
   const [isOpen, setIsOpen] = useState(false);
   const {
+    locale,
+  } = useRouter();
+  const {
     t,
   } = useTranslationNamespace(`hero`);
 
@@ -19,7 +23,7 @@ export function HeroBlockTechnology() {
 
   return (
     <section className={clsx(`hero-block-technology`, {
-      'hero-block-technology--zh': isChineseLanguage(),
+      'hero-block-technology--zh': isChineseLanguage(locale),
     })}
     >
       <div className="container hero-block-technology__wrapper">

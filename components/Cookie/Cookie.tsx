@@ -28,7 +28,6 @@ export function Cookie() {
   const router = useRouter();
   const [isCookie, setIsCookie] = useState(true);
   const [date, setDate] = useState<Date | null>(null);
-
   const isMetricsEnabled = process.env.METRICS_ENABLED === `true`;
 
   useEffect(() => {
@@ -47,7 +46,7 @@ export function Cookie() {
   return (
     <div
       className={clsx(`cookie`, {
-        'cookie--zh': isChineseLanguage(),
+        'cookie--zh': isChineseLanguage(router.locale),
       })}
       data-testid="cookie"
     >

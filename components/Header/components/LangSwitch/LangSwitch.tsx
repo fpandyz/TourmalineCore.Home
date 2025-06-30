@@ -30,7 +30,7 @@ export function LangSwitch() {
     <div
       ref={containerRef}
       className={clsx(`lang-switch`, {
-        'lang-switch--zh': isChineseLanguage(),
+        'lang-switch--zh': isChineseLanguage(router.locale),
       })}
     >
       <button

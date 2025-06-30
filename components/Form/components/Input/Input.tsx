@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import { useRouter } from 'next/router';
 import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
 
 interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
@@ -17,10 +18,14 @@ export function Input({
   className,
   ...props
 }: InputProps) {
+  const {
+    locale,
+  } = useRouter();
+
   return (
     <div className={clsx(`input`, className, {
       'input--is-error': isError,
-      'input--zh': isChineseLanguage(),
+      'input--zh': isChineseLanguage(locale),
     })}
     >
       <div className="input__box">

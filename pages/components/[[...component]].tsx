@@ -140,6 +140,7 @@ export const getStaticProps: GetServerSideProps = async ({
 }) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
+      `cookie`,
       `cardsGridRedesign`,
       `collageWithLinkRedesign`,
       `collageWithTitleRedesign`,

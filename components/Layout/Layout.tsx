@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { ReactNode, useRef } from 'react';
+import { useRouter } from 'next/router';
 import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
@@ -12,11 +13,15 @@ export function Layout({
   children: ReactNode;
   mainClassName?: string;
 }) {
+  const {
+    locale,
+  } = useRouter();
+
   const mainElementRef = useRef<null | HTMLDivElement>(null);
 
   return (
     <div className={clsx(`layout`, {
-      'layout--zh': isChineseLanguage(),
+      'layout--zh': isChineseLanguage(locale),
     })}
     >
       <SkipLink
