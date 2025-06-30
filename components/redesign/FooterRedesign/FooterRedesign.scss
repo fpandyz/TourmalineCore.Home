@@ -1,4 +1,4 @@
-%footer-redesign-caption {
+@mixin footer-caption {
   @include link-text;
 
   color: $color-pink-redesign;
@@ -32,6 +32,10 @@
       grid-column: 1;
       grid-row: 2;
     }
+
+    @include desktop {
+      grid-row: 1 / span 2;
+    }
   }
 
   &__navigation {
@@ -54,13 +58,13 @@
   }
 
   &__caption {
+    @include footer-caption;
+
     margin-bottom: 4px;
 
     @include tablet {
       margin-bottom: 8px;
     }
-
-    @extend %footer-redesign-caption;
   }
 
   &__email {
@@ -76,12 +80,8 @@
       grid-column: 1;
       grid-row: 1;
     }
-  }
 
-  &__info,
-  &__copyright {
     @include desktop {
-      grid-column: 1;
       grid-row: 1 / span 2;
     }
   }

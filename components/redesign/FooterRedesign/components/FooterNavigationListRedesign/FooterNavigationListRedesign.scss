@@ -2,14 +2,14 @@
   overflow-wrap: break-word;
 
   &__caption {
+    @include footer-caption;
+
     display: inline-block;
     margin-bottom: 4px;
 
     @include tablet {
       margin-bottom: 8px;
     }
-
-    @extend %footer-redesign-caption;
   }
 
   &__item {
@@ -54,7 +54,7 @@
 
   @include tablet-xl {
     min-width: 180px;
-    max-width: 200px;
+    max-width: 213.5px;
   }
 
   @include desktop {
