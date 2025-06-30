@@ -51,7 +51,7 @@ export function Form({
     <>
       <form
         className={clsx(`form`, {
-          'form--zh': isChineseLanguage(),
+          'form--zh': isChineseLanguage(router.locale),
         })}
         onSubmit={handleFormSubmit}
       >

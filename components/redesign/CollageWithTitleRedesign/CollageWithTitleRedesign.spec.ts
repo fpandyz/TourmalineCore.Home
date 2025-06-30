@@ -1,17 +1,18 @@
-import { Page } from '@playwright/test';
-import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
+import {
+  test,
+  expect,
+  CustomTestFixtures,
+  Page,
+} from '../../../playwright-tests/custom-test';
+import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
 
 const TEST_ID = `collage-with-title`;
 
 test.describe(`CollageWithTitle`, () => {
   test.beforeEach(async ({
-    goto,
-    hideCookie,
+    goToComponentsPage,
   }) => {
-    await goto();
-
-    await hideCookie();
+    await goToComponentsPage(ComponentName.COLLAGE_WITH_TITLE);
   });
 
   test(`MobileTest`, mobileTest);

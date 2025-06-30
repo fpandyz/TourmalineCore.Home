@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import { NamedList } from '../../../NamedList/NamedList';
 import { TPaymentList } from '../../types';
 import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
@@ -8,6 +9,10 @@ export function PaymentList({
 }:{
   list: TPaymentList;
 }) {
+  const {
+    locale,
+  } = useRouter();
+
   return (
     <ul className="payment-list">
       {list.map(({
@@ -27,7 +32,7 @@ export function PaymentList({
                 title={title}
                 data={data}
                 listClassName={clsx(`payment-list__named-list`, {
-                  'payment-list__named-list--zh': isChineseLanguage(),
+                  'payment-list__named-list--zh': isChineseLanguage(locale),
                 })}
                 titleClassName="payment-list__named-list-title"
               />

@@ -1,17 +1,18 @@
-import { Page } from '@playwright/test';
-import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
+import {
+  test,
+  expect,
+  CustomTestFixtures,
+  Page,
+} from '../../../playwright-tests/custom-test';
+import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
 
 const TEST_ID = `single-image`;
 
 test.describe(`SingleImageTests`, () => {
   test.beforeEach(async ({
-    goto,
-    hideCookie,
+    goToComponentsPage,
   }) => {
-    await goto();
-
-    await hideCookie();
+    await goToComponentsPage(ComponentName.SINGLE_IMAGE);
   });
 
   test(`MobileTest`, mobileTest);

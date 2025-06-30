@@ -1,17 +1,18 @@
-import { Page } from '@playwright/test';
-import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName } from '../../../common/utils/enum';
+import {
+  test,
+  expect,
+  CustomTestFixtures,
+  Page,
+} from '../../../playwright-tests/custom-test';
+import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
 
 const TEST_ID = `projects-with-four-cards`;
 
 test.describe(`ProjectsWithFourCards`, () => {
   test.beforeEach(async ({
-    goto,
-    hideCookie,
+    goToComponentsPage,
   }) => {
-    await goto();
-
-    await hideCookie();
+    await goToComponentsPage(ComponentName.PROJECTS_WITH_FOUR_CARDS);
   });
 
   test(`MobileTest`, mobileTest);

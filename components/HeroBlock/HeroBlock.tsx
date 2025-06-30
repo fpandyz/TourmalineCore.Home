@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 
 export function HeroBlock({
@@ -12,9 +13,13 @@ export function HeroBlock({
   description: string;
   Button: JSX.Element;
 }) {
+  const {
+    locale,
+  } = useRouter();
+
   return (
     <section className={clsx(`hero-block`, {
-      'hero-block--zh': isChineseLanguage(),
+      'hero-block--zh': isChineseLanguage(locale),
     })}
     >
       <div className="container hero-block__wrapper">
