@@ -1,4 +1,4 @@
-import { BreakpointName } from "../../common/utils/enum";
+import { Breakpoint, BreakpointName } from "../../common/utils/enum";
 import { CustomTestFixtures, test } from "../custom-test";
 
 test.describe(`Analyzing pages for accessibility using axe core `, () => {
@@ -30,9 +30,15 @@ async function mobileTest({
 
 async function tabletTest({
   axeCheckAndWriteReport,
+  setViewportSize,
 }: {
+  setViewportSize: CustomTestFixtures['setViewportSize'];
   axeCheckAndWriteReport: CustomTestFixtures['axeCheckAndWriteReport'];
 }) {
+  await setViewportSize({
+    width: Breakpoint.TABLET,
+  });
+
   await axeCheckAndWriteReport({
     pageName: `home`,
     viewport: BreakpointName.TABLET,
@@ -41,9 +47,15 @@ async function tabletTest({
 
 async function desktopTest({
   axeCheckAndWriteReport,
+  setViewportSize,
 }: {
+  setViewportSize: CustomTestFixtures['setViewportSize'];
   axeCheckAndWriteReport: CustomTestFixtures['axeCheckAndWriteReport'];
 }) {
+  await setViewportSize({
+    width: Breakpoint.DESKTOP,
+  });
+
   await axeCheckAndWriteReport({
     pageName: `home`,
     viewport: BreakpointName.DESKTOP,
