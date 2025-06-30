@@ -7,10 +7,8 @@
   "or": "или",
   "attachFileText": "Прикрепите файл",
   "buttonText": "Отправить заявку",
-  "consentText": "Нажимая на кнопку, вы даёте",
-  "consentLinkText": "согласие на обработку персональных данных",
-  "consentLink": "/",
+  "markdownText": "Нажимая на кнопку, вы даёте <a href='/'>согласие на обработку персональных данных</a>",
   "asideText": "Если неудобно заполнять форму, можно написать нам в",
   "asideLinkText": "telegram",
-  "asideLink": "/"
+  "asideLink": "https://t.me/tourmalinecore"
 }

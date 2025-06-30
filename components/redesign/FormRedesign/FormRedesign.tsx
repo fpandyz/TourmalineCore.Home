@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { FileUploadInputRedesign } from './components/FileUploadInputRedesign/FileUploadInputRedesign';
+import { MarkdownText } from '../MarkdownText/MarkdownText';
 
 export function FormRedesign() {
   const {
@@ -72,15 +73,9 @@ export function FormRedesign() {
               >
                 {t(`buttonText`)}
               </button>
-              <div className="form-redesign__consent">
-                {t(`consentText`)}
-                <Link
-                  className="form-redesign__consent-link"
-                  href={t(`consentLink`)}
-                >
-                  {t(`consentLinkText`)}
-                </Link>
-              </div>
+              <MarkdownText className="form-redesign__consent">
+                {t(`markdownText`)}
+              </MarkdownText>
             </div>
           </form>
         </div>

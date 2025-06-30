@@ -143,13 +143,13 @@
 
     margin-top: 12px;
     text-align: center;
-  }
 
-  &__consent-link {
-    position: relative;
-    margin-left: 4px;
-    color: inherit;
-    text-underline-offset: 2px;
+    a {
+      position: relative;
+      margin-left: 4px;
+      color: inherit;
+      text-underline-offset: 2px;
+    }
   }
 
   &__aside {

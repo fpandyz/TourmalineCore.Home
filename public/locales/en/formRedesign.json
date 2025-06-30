@@ -1,16 +1,14 @@
 {
   "title": "Happy to discuss your project",
-  "description": "Describe your task - we will clarify the details and offer a suitable solution",
+  "description": "Tell us how we can help - we will clarify the details and offer a solution",
   "nameInputPlaceholder": "Name",
   "emailInputPlaceholder": "Email",
-  "textareaPlaceholder": "Describe your task",
+  "textareaPlaceholder": "Describe your project",
   "or": "or",
   "attachFileText": "Attach a file",
   "buttonText": "Send",
-  "consentText": "By clicking the button, you agree to",
-  "consentLinkText": "the processing of personal data",
-  "consentLink": "/",
-  "asideText": "Если неудобно заполнять форму, можно написать нам",
-  "asideLinkText": "telegram",
-  "asideLink": "/"
+  "markdownText": "By clicking the button, you agree to <a href='/'>the processing of personal data</a>",
+  "asideText": "Drop us a line on",
+  "asideLinkText": "Telegram",
+  "asideLink": "https://t.me/tourmalinecore"
 }
