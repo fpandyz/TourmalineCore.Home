@@ -44,7 +44,7 @@ export function Cookie() {
   }
 
   return (
-    <div
+    <aside
       className={clsx(`cookie`, {
         'cookie--zh': isChineseLanguage(router.locale),
       })}
@@ -78,7 +78,7 @@ export function Cookie() {
           {t(`reject`)}
         </PrimaryButton>
       </div>
-    </div>
+    </aside>
   );
 
   function acceptCookie() {

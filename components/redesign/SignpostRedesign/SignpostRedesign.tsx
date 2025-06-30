@@ -35,9 +35,9 @@ export function SignpostRedesign({
             alt=""
           />
         </div>
-        <h4 className="signpost-redesign__title">
+        <h3 className="signpost-redesign__title">
           {title}
-        </h4>
+        </h3>
         <span className="signpost-redesign__subtitle">
           {subtitle}
         </span>

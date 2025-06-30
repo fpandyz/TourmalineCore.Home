@@ -11,6 +11,7 @@ export function SkipLink({
   return (
     <a
       href="#main-content"
+      role="button"
       className="skip-link button"
       data-testid="skip-link"
       onClick={() => {
