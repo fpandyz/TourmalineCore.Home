@@ -79,21 +79,6 @@ If you develop in a Dev container, you can view the generated report via VNC:
 npx playwright open localhost:9323
 ```
 
-## Husky
-
-
-We use husky so that all developers follow the standards of conventional commits during the development
-
-To learn more about conventional commits check the following resource:
-
-- [Conventional Commits Documentation](https://www.conventionalcommits.org/ru/v1.0.0-beta.4/)
-
-The rules for conventional commits validation are configured in the file `.commitlintrc`
-
-If you want to change the validation rules, you must:
-
-- check commitlint [rules settings](https://commitlint.js.org/#/reference-rules) 
-- change `rules` section in the `.commitlintrc` file based on your needs
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
