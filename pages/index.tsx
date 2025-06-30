@@ -14,7 +14,7 @@ import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/Projec
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { FormRedesign } from '../components/redesign/FormRedesign/FormRedesign';
+import { FormBlockRedesign } from '../components/redesign/FormBlockRedesign/FormBlockRedesign';
 
 export default function HomePage() {
   const {
@@ -63,7 +63,7 @@ export default function HomePage() {
         />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
         {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
-        <FormRedesign />
+        <FormBlockRedesign />
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign
           translationKey="conferenceSignpostsRedesign"

@@ -7,7 +7,13 @@ import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign
 import { FileUploadInputRedesign } from './components/FileUploadInputRedesign/FileUploadInputRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
 
-export function FormRedesign() {
+export function FormRedesign(
+  {
+  onSubmit = () => {},
+} : {
+  onSubmit: (formData: FormData) => unknown;
+}
+) {
   const {
     t,
   } = useTranslation(`formRedesign`);
@@ -106,6 +112,16 @@ export function FormRedesign() {
 
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
-    console.log(event);
+
+    try {
+      const formData = new FormData(event.target as HTMLFormElement);
+
+      // onSubmit(formData);
+      console.log("Try");
+      console.log(formData);
+
+    } finally {
+      console.log("Finally")
+    }
   }
 }
