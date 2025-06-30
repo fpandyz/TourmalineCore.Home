@@ -12,6 +12,7 @@
     max-width: 375px;
 
     @include tablet {
+      padding: 230px 0;
       max-width: 768px;
     }
 
@@ -53,8 +54,8 @@
       display: none;
 
       @include tablet {
-        left: 354px;
-        bottom: 190px;
+        left: 352px;
+        bottom: 90px;
         display: block;
         width: 104px;
         height: 104px;
@@ -75,8 +76,8 @@
       height: 98px;
 
       @include tablet {
-        left: 192px;
-        bottom: 158px;
+        left: 191px;
+        bottom: 57px;
         width: 104px;
         height: 104px;
       }
@@ -97,7 +98,7 @@
 
       @include tablet {
         left: 104px;
-        bottom: 260px;
+        bottom: 159px;
         width: 76px;
         height: 76px;
       }
@@ -117,8 +118,8 @@
       height: 106px;
 
       @include tablet {
-        left: 25px;
-        bottom: 366px;
+        left: 24px;
+        bottom: 265px;
         width: 104px;
         height: 104px;
       }
@@ -138,8 +139,8 @@
       height: 98px;
 
       @include tablet {
-        left: 218px;
-        bottom: 476px;
+        left: 217px;
+        bottom: 375px;
         width: 92px;
         height: 92px;
       }
@@ -156,11 +157,11 @@
       display: none;
 
       @include tablet {
-        left: 394px;
-        bottom: 440px;
+        left: 393px;
+        bottom: 341px;
         display: block;
-        width: 106px;
-        height: 106px;
+        width: 104px;
+        height: 104px;
       }
 
       @include desktop {
@@ -180,7 +181,7 @@
       @include tablet {
         width: 96px;
         height: 96px;
-        inset: 156px 82px auto auto;
+        inset: 84px 82px auto auto;
       }
 
       @include desktop {
@@ -200,7 +201,7 @@
       @include tablet {
         left: auto;
         right: 60px;
-        bottom: 280px;
+        bottom: 180px;
         width: 104px;
         height: 104px;
       }
@@ -220,8 +221,8 @@
 
       @include tablet {
         left: auto;
-        right: 184px;
-        bottom: 148px;
+        right: 186px;
+        bottom: 47px;
         width: 104px;
         height: 104px;
       }
