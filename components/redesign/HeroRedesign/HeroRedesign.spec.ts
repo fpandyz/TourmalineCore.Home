@@ -17,6 +17,8 @@ test.describe(`HeroTests`, () => {
 
   test(`MobileTest`, mobileTest);
 
+  test(`TabletTest`, tabletTest);
+
   test(`DesktopTest`, desktopTest);
 });
 
@@ -50,6 +52,23 @@ async function desktopTest({
     page,
   }))
     .toHaveScreenshot(`${TEST_ID}-${BreakpointName.DESKTOP}.png`);
+}
+
+async function tabletTest({
+  page,
+  setViewportSize,
+}: {
+  page: Page;
+  setViewportSize: CustomTestFixtures['setViewportSize'];
+}) {
+  await setViewportSize({
+    width: Breakpoint.TABLET,
+  });
+
+  await expect(getHeroRedesignByTestId({
+    page,
+  }))
+    .toHaveScreenshot(`${TEST_ID}-${BreakpointName.TABLET}.png`);
 }
 
 function getHeroRedesignByTestId({
