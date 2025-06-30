@@ -1,17 +1,40 @@
+/* eslint-disable no-console */
 import { test as base } from '@playwright/test';
-import fs from 'fs';
-import { Breakpoint } from '../common/utils/enum';
+import { AxeBuilder } from '@axe-core/playwright';
+import fs, { mkdirSync, writeFileSync } from 'fs';
+import { dirname } from "path";
+import { Breakpoint, BreakpointName } from '../common/utils/enum';
 
 export type CustomTestFixtures = {
   apiImageMock: () => void;
   hideCookie: () => void;
   goToComponentsPage: (path: string) => void;
+  goto: (path?: string) => void;
   setViewportSize: (options?: { width?: number; height?: number; }) => void;
+  axeCheckAndWriteReport: (options: { pageName: string; viewport: BreakpointName; }) => void;
 };
 
 // https://playwright.dev/docs/test-fixtures
 // Extend base playwright test
 export const test = base.extend<CustomTestFixtures>({
+  goto: async ({
+    page,
+    apiImageMock,
+  }, use) => {
+    const goto = async (path: string = ``) => {
+      await apiImageMock();
+
+      // interrupting the connection for gif, for more stable work of tests
+      await page.route(`**/**.gif`, (route) => route.abort());
+
+      await page.goto(`/ru/${path}`, {
+        waitUntil: `networkidle`,
+      });
+    };
+
+    await use(goto);
+  },
+
   goToComponentsPage: async ({
     page,
     apiImageMock,
@@ -84,6 +107,49 @@ export const test = base.extend<CustomTestFixtures>({
     };
 
     await use(hideCookie);
+  },
+
+  axeCheckAndWriteReport: async ({
+    page,
+  }, use) => {
+    const axeCheckAndWriteReport = async ({
+      pageName,
+      viewport,
+    }: {
+      pageName: string;
+      viewport: BreakpointName;
+    }) => {
+      const results = await new AxeBuilder({
+        page,
+      })
+        .analyze();
+
+      const {
+        violations,
+      } = results;
+
+      if (violations.length > 0) {
+        const reportPath = `./playwright-test-results/axe-reports/axe-report-${pageName}-${viewport}.json`;
+
+        mkdirSync(dirname(reportPath), {
+          recursive: true,
+        });
+
+        writeFileSync(reportPath, JSON.stringify(violations, null, 2));
+
+        violations.forEach((violation, index) => {
+          console.error(`\n${index + 1}. ${violation.id} (Impact: ${violation.impact})`);
+          console.error(`${violation.description}`);
+          console.error(`Help: ${violation.help}`);
+          console.error(`Affected ${violation.nodes.length} node(s)`);
+          console.error(`More info: ${violation.helpUrl}`);
+        });
+
+        throw new Error(`Accessibility violations found: ${violations.length}`);
+      }
+    };
+
+    await use(axeCheckAndWriteReport);
   },
 });
 
