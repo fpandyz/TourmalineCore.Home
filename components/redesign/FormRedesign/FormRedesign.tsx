@@ -1,11 +1,21 @@
 import { useTranslation } from 'next-i18next';
-import { FormEvent } from 'react';
+import { FormEvent, useMemo, useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import Link from 'next/link';
 import Image from 'next/image';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { FileUploadInputRedesign } from './components/FileUploadInputRedesign/FileUploadInputRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
+import { useRouter } from 'next/router';
+import { DEFAULT_LOCALE } from '../../../common/utils/consts/localization';
+import { Spinner } from '../../Spinner/Spinner';
+
+enum ReCAPTCHALanguage {
+  'en' = `en`,
+  'ru' = `ru`,
+  'zh' = `zh-CN`,
+}
 
 export function FormRedesign(
   {
@@ -17,6 +27,19 @@ export function FormRedesign(
   const {
     t,
   } = useTranslation(`formRedesign`);
+  const router = useRouter();
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  const routerLocale = useMemo(() => {
+    if (!router.locale) {
+      return DEFAULT_LOCALE;
+    }
+
+    return router.locale;
+  }, [router.locale]);
 
   return (
     <section
@@ -77,13 +100,26 @@ export function FormRedesign(
                 className="form-redesign__featured-link"
                 type="submit"
               >
-                {t(`buttonText`)}
+                {
+                  isLoading
+                    ? <Spinner />
+                    : t(`buttonText`)
+                }
               </button>
               <MarkdownText className="form-redesign__consent">
                 {t(`markdownText`)}
               </MarkdownText>
             </div>
           </form>
+
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size="invisible"
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ``}
+            badge="bottomleft"
+            hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
+          />
+
         </div>
         <div className="form-redesign__aside">
           <div className="form-redesign__aside-inner container-redesign">
@@ -112,16 +148,27 @@ export function FormRedesign(
 
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
+    setIsLoading(true);
 
     try {
+      if (!recaptchaRef.current) {
+        return;
+      }
+
+      const token = await recaptchaRef.current.executeAsync();
+
+      if (!token) {
+        return;
+      }
+
       const formData = new FormData(event.target as HTMLFormElement);
+      formData.append(`g-recaptcha-response`, token);
 
-      // onSubmit(formData);
-      console.log("Try");
-      console.log(formData);
+      onSubmit(formData);
 
+      recaptchaRef.current.reset();
     } finally {
-      console.log("Finally")
+      setIsLoading(false);
     }
   }
 }
