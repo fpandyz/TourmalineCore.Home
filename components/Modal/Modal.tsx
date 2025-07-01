@@ -1,11 +1,10 @@
 import { ReactNode, useEffect, useRef } from 'react';
-
 import FocusLock from 'react-focus-lock';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
 import { useOnClickOutside } from '../../common/hooks/useOnClickOutside';
-import { AppRoute } from '../../common/utils/consts/app-route';
+import { AppRoute } from '../../common/enums';
 
 export function Modal({
   title,

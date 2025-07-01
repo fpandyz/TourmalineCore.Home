@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps } from "next";
-import { ComponentName } from "../../common/utils/enum";
 import { CardsGridRedesign } from "../../components/redesign/CardsGridRedesign/CardsGridRedesign";
 import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
 import { CollageWithTitleRedesign } from "../../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
@@ -13,6 +12,7 @@ import { ProjectsWithTextBlockRedesign } from "../../components/redesign/Project
 import { ServicesRedesign } from "../../components/redesign/ServicesRedesign/ServicesRedesign";
 import { SignpostMultipleRedesign } from "../../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign";
 import { SingleImageRedesign } from "../../components/redesign/SingleImageRedesign/SingleImageRedesign";
+import { ComponentName } from "../../common/enums";
 
 export default function ComponentsPage() {
   const router = useRouter();

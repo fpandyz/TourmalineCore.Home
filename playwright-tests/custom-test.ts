@@ -1,6 +1,6 @@
 import { test as base } from '@playwright/test';
 import fs from 'fs';
-import { Breakpoint } from '../common/utils/enum';
+import { Breakpoint } from '../common/enums';
 
 export type CustomTestFixtures = {
   apiImageMock: () => void;

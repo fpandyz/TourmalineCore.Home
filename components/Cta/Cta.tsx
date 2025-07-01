@@ -4,7 +4,7 @@ import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
 import { usePath } from '../../common/hooks/usePath';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export function Cta() {
   const {

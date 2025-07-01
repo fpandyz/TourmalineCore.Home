@@ -3,7 +3,7 @@ import { useTranslationNamespace } from '../../common/hooks/useTranslationNamesp
 import { ServicesTechnologyCard } from './components/ServicesTechnologyCard/ServicesTechnologyCard';
 import { TServicesTechnologyList } from './types';
 import { usePath } from '../../common/hooks/usePath';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export function ServicesTechnology({
   localeKeyName,

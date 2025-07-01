@@ -1,7 +1,7 @@
 import { TasksList } from './components/TasksList/TasksList';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import { usePath } from '../../common/hooks/usePath';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export function Tasks() {
   const {

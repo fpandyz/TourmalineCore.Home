@@ -10,6 +10,8 @@ type Languages = {
   };
 };
 
+export const DEFAULT_LOCALE = `en`;
+
 export const languages: Languages = {
   en: {
     name: `English`,

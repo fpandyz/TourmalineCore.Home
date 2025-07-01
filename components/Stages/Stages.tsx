@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { usePath } from '../../common/hooks/usePath';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 import { StagesList } from './components/StagesList/StagesList';
 import { TStagesList } from './types';
+import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export function Stages() {
   const {

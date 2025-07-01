@@ -18,7 +18,7 @@ import IconBurgerBackend from '../../icons/burger-backend.svg';
 import IconBurgerCyan from '../../icons/burger-cyan.svg';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
-import { AppRoute } from '../../common/utils/consts/app-route';
+import { AppRoute } from '../../common/enums';
 
 type HeaderLinks = {
   id: string;

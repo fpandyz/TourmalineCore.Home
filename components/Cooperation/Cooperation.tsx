@@ -1,8 +1,8 @@
 import { CooperationList } from './components/CooperationList/CooperationList';
 import { usePath } from '../../common/hooks/usePath';
 import { TCooperationList } from './types';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
 import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
+import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export function Cooperation() {
   const {

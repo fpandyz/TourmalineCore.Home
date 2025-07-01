@@ -1,10 +1,10 @@
+import { Breakpoint, BreakpointName, ComponentName } from '../../../common/enums';
 import {
   test,
   expect,
   CustomTestFixtures,
   Page,
 } from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
 
 const TEST_ID = `collage-with-title`;
 

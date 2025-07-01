@@ -17,7 +17,7 @@ import IconTelegramEmbedded from '../../icons/telegram-embedded.svg';
 import IconTelegramQA from '../../icons/telegram-qa.svg';
 import IconTelegramBackend from '../../icons/telegram-backend.svg';
 import IconTelegramTeams from '../../icons/telegram-teams.svg';
-import { AppRoute } from '../../common/utils/consts/app-route';
+import { AppRoute } from '../../common/enums';
 
 export function SocialLinks() {
   const {
