@@ -5,8 +5,8 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { Form } from '../Form/Form';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
-import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
+import { getMessageFromForm, isChineseLanguage } from '../../common/utils';
+import { sendEmail } from '../../services/emailService/emailService';
 
 export function FormBlock({
   id,

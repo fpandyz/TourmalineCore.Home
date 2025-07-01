@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { NamedList } from '../../../NamedList/NamedList';
 import { TPaymentList } from '../../types';
-import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../../../common/utils';
 
 export function PaymentList({
   list,

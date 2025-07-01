@@ -15,9 +15,9 @@ import IconBurgerQA from '../../icons/burger-qa.svg';
 import IconBurgerBackend from '../../icons/burger-backend.svg';
 import IconBurgerCyan from '../../icons/burger-cyan.svg';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { AppRoute } from '../../common/enums';
 import { useBodyScrollHidden } from '../../common/hooks';
+import { isChineseLanguage } from '../../common/utils';
 
 type HeaderLinks = {
   id: string;

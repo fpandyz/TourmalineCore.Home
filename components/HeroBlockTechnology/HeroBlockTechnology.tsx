@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
 import { useBodyScrollHidden, usePath, useTranslationNamespace } from '../../common/hooks';
+import { isChineseLanguage } from '../../common/utils';
 
 export function HeroBlockTechnology() {
   const {

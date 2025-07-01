@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import IconArrow from '../../../../icons/icon-arrow.svg';
-import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
 import { DEFAULT_LOCALE, languages } from '../../../../common/constants';
 import { useAutoClose } from '../../../../common/hooks';
+import { isChineseLanguage } from '../../../../common/utils';
 
 export function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);

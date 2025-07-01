@@ -14,8 +14,8 @@ import { Input } from './components/Input/Input';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { Textarea } from './components/Textarea/Textarea';
 import { Spinner } from '../Spinner/Spinner';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { DEFAULT_LOCALE } from '../../common/constants';
+import { isChineseLanguage } from '../../common/utils';
 
 enum ReCAPTCHALanguage {
   'en' = `en`,
