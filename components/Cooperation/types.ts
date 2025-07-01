@@ -1,4 +1,4 @@
-export type TCooperationList = {
+export type Cooperations = {
   title: string;
   description: string;
 }[];

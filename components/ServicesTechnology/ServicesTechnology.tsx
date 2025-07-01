@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { ServicesTechnologyCard } from './components/ServicesTechnologyCard/ServicesTechnologyCard';
-import { TServicesTechnologyList } from './types';
+import { ServicesTechnologyList } from './types';
 import { TechnologyPageAnchorLink } from '../../common/enums';
 import { usePath, useTranslationNamespace } from '../../common/hooks';
 
@@ -18,7 +18,7 @@ export function ServicesTechnology({
     t,
   } = useTranslationNamespace(localeKeyName || `servicesTechnology`);
 
-  const servicesTechnologyList: TServicesTechnologyList = t(`list`, {
+  const servicesTechnologyList: ServicesTechnologyList = t(`list`, {
     returnObjects: true,
   });
 

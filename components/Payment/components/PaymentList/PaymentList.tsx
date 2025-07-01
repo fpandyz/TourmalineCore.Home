@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { NamedList } from '../../../NamedList/NamedList';
-import { TPaymentList } from '../../types';
+import { Payments } from '../../types';
 import { isChineseLanguage } from '../../../../common/utils';
 
 export function PaymentList({
   list,
 }:{
-  list: TPaymentList;
+  list: Payments;
 }) {
   const {
     locale,

@@ -1,5 +1,5 @@
 import { PaymentList } from './components/PaymentList/PaymentList';
-import { TPaymentList } from './types';
+import { Payments } from './types';
 import { TechnologyPageAnchorLink } from '../../common/enums';
 import { useTranslationNamespace } from '../../common/hooks';
 
@@ -8,7 +8,7 @@ export function Payment() {
     t,
   } = useTranslationNamespace(`payment`);
 
-  const paymentList: TPaymentList = t(`list`, {
+  const paymentList: Payments = t(`list`, {
     returnObjects: true,
   });
 

@@ -1,10 +1,10 @@
 import { usePath } from '../../../../common/hooks';
-import { TCooperationList } from '../../types';
+import { Cooperations } from '../../types';
 
 export function CooperationList({
   list,
 }: {
-  list: TCooperationList;
+  list: Cooperations;
 }) {
   const {
     slicePathname,
