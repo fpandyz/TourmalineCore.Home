@@ -2,12 +2,12 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { Layout } from '../../components/Layout/Layout';
 import { PageHead } from '../../components/PageHead/PageHead';
-import Article from '../../features/articles/components/Article/Article';
+import Article from '../../features/Articles/components/Article/Article';
 
-import { fetchArticle } from '../../features/articles/fetchHelpers/fetchArticle';
-import { fetchMetadata } from '../../features/articles/fetchHelpers/fetchMetadata';
-import { fetchArticlesListWithMeta } from '../../features/articles/fetchHelpers/fetchArticlesListWithMeta';
-import { getArticleUrl } from '../../features/articles/utils/getArticleUrl';
+import { fetchArticle } from '../../features/Articles/fetchHelpers/fetchArticle';
+import { fetchMetadata } from '../../features/Articles/fetchHelpers/fetchMetadata';
+import { fetchArticlesListWithMeta } from '../../features/Articles/fetchHelpers/fetchArticlesListWithMeta';
+import { getArticleUrl } from '../../features/Articles/utils/getArticleUrl';
 
 export default function ArticlesPage({
   article,
