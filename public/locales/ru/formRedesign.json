@@ -4,8 +4,6 @@
   "nameInputPlaceholder": "Имя",
   "emailInputPlaceholder": "Почта",
   "textareaPlaceholder": "Расскажите о вашей задаче",
-  "or": "или",
-  "attachFileText": "Прикрепите файл",
   "buttonText": "Отправить заявку",
   "markdownText": "Нажимая на кнопку, вы даёте <a href='/'>согласие на обработку персональных данных</a>",
   "asideText": "Если неудобно заполнять форму, можно написать нам в",

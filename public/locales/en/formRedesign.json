@@ -4,8 +4,6 @@
   "nameInputPlaceholder": "Name",
   "emailInputPlaceholder": "Email",
   "textareaPlaceholder": "Describe your project",
-  "or": "or",
-  "attachFileText": "Attach a file",
   "buttonText": "Send",
   "markdownText": "By clicking the button, you agree to <a href='/'>the processing of personal data</a>",
   "asideText": "Drop us a line on",

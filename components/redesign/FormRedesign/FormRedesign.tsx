@@ -1,17 +1,15 @@
 import { useTranslation } from 'next-i18next';
 import {
-  ChangeEvent,
   FormEvent,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
-import { FileUploadInputRedesign } from './components/FileUploadInputRedesign/FileUploadInputRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
 import { DEFAULT_LOCALE } from '../../../common/utils/consts/localization';
 import { Spinner } from '../../Spinner/Spinner';
@@ -86,16 +84,6 @@ export function FormRedesign({
               className="form-redesign__input"
               description={t(`message.description`)}
             />
-
-            <div className="form-redesign__file-upload">
-              <span>{t(`or`)}</span>
-              <FileUploadInputRedesign
-                id="file-upload"
-                name="file-upload"
-                onChange={(e: ChangeEvent<HTMLInputElement>) => setIsFileUpload(e.target.files?.[0])}
-                description={isFileUpload?.name || t(`attachFileText`)}
-              />
-            </div>
             <div className="form-redesign__footer">
               <button
                 className="form-redesign__featured-link"
