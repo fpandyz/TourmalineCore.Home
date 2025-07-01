@@ -6,7 +6,6 @@ import {
   useRef,
   useState,
 } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -17,14 +16,7 @@ import { MarkdownText } from '../MarkdownText/MarkdownText';
 import { DEFAULT_LOCALE } from '../../../common/utils/consts/localization';
 import { Spinner } from '../../Spinner/Spinner';
 
-enum ReCAPTCHALanguage {
-  'en' = `en`,
-  'ru' = `ru`,
-  'zh' = `zh-CN`,
-}
-
-export function FormRedesign(
-  {
+export function FormRedesign({
     onSubmit = () => {},
   } : {
     onSubmit: (formData: FormData) => unknown;
@@ -120,15 +112,6 @@ export function FormRedesign(
               </MarkdownText>
             </div>
           </form>
-
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            size="invisible"
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ``}
-            badge="bottomleft"
-            hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
-          />
-
         </div>
         <div className="form-redesign__aside">
           <div className="form-redesign__aside-inner container-redesign">
@@ -160,22 +143,9 @@ export function FormRedesign(
     setIsLoading(true);
 
     try {
-      if (!recaptchaRef.current) {
-        return;
-      }
-
-      const token = await recaptchaRef.current.executeAsync();
-
-      if (!token) {
-        return;
-      }
-
       const formData = new FormData(event.target as HTMLFormElement);
-      formData.append(`g-recaptcha-response`, token);
 
       onSubmit(formData);
-
-      recaptchaRef.current.reset();
     } finally {
       setIsLoading(false);
     }
