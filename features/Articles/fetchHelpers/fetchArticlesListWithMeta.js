@@ -18,7 +18,7 @@ export async function fetchArticlesListWithMeta() {
 
   const currentArticles = await Promise.all(flattenedArticleFolders.map(async (articleFolder) => {
     const files = articleFolder.children;
-    const articleFilename = files.filter((file) => file.name.indexOf('.md') !== -1)[0].name;
+    const articleFilename = files.filter((file) => file.name.indexOf(`.md`) !== -1)[0].name;
 
     const metadata = await fetchMetadata(articleFilename, articleFolder.locale);
 

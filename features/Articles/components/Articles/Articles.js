@@ -5,19 +5,21 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import moment from 'moment';
-import { getArticleUrl } from '../../common/utils/articleUrl';
+import { getArticleUrl } from '../../utils/getArticleUrl';
 
 export default function Articles({
   articles,
 }) {
-  const { t } = useTranslation('articles');
+  const {
+    t,
+  } = useTranslation(`articles`);
   const router = useRouter();
-  const all = t('sortAll');
+  const all = t(`sortAll`);
 
   const [sortingValue, setSortingValue] = useState(all);
 
   const articlesFilteredByLocale = articles.filter((article) => article.locale === router.locale)
-    .sort((firstElement, secondElement) => (moment(secondElement.metadata.datePublication, 'DD.MM.YYYY') - moment(firstElement.metadata.datePublication, 'DD.MM.YYYY')));
+    .sort((firstElement, secondElement) => (moment(secondElement.metadata.datePublication, `DD.MM.YYYY`) - moment(firstElement.metadata.datePublication, `DD.MM.YYYY`)));
 
   const article = Array.from(new Set(articlesFilteredByLocale.flatMap((item) => item.metadata.categories)));
   const sortElements = [all, ...article];
@@ -34,7 +36,7 @@ export default function Articles({
                 {sortElements.map((item) => (
                   <li key={item}>
                     <button
-                      className={clsx('articles__sort-item', {
+                      className={clsx(`articles__sort-item`, {
                         'articles__sort-item--active': item === sortingValue,
                       })}
                       type="button"
@@ -48,7 +50,10 @@ export default function Articles({
             )}
             <ul className="articles__list">
               {sortedArticles.map((folder) => (
-                <li key={folder.name} className="articles__item">
+                <li
+                  key={folder.name}
+                  className="articles__item"
+                >
                   <ArticleLink
                     articleFolder={folder}
                     router={router}
@@ -60,7 +65,7 @@ export default function Articles({
           </div>
         )
         : (
-          <div className="articles-list-placeholder">{t('emptyPlaceholder')}</div>
+          <div className="articles-list-placeholder">{t(`emptyPlaceholder`)}</div>
         )}
     </div>
   );
@@ -89,7 +94,7 @@ function ArticleLink({
     >
       <div className="articles-link__image">
         <Image
-          src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : '/images/article-preview.webp'}
+          src={articleFolder.metadata.previewImage ? `${image}/images/${articleFolder.metadata.previewImage}` : `/images/article-preview.webp`}
           alt="preview photo"
           fill
         />

@@ -1,12 +1,12 @@
 export async function fetchArticlesList() {
-  const response = await fetch('https://api.github.com/repos/TourmalineCore/TourmalineCore.Articles/git/trees/master?recursive=true');
+  const response = await fetch(`https://api.github.com/repos/TourmalineCore/TourmalineCore.Articles/git/trees/master?recursive=true`);
   const articles = await response.json();
 
   return getAdaptedArticles(listToTree(articles.tree));
 }
 
 function getAdaptedArticles(tree = []) {
-  const articlesFolder = tree.find((item) => item.name === 'articles');
+  const articlesFolder = tree.find((item) => item.name === `articles`);
 
   if (!articlesFolder || !articlesFolder.children) {
     return;
@@ -18,19 +18,26 @@ function getAdaptedArticles(tree = []) {
   );
 }
 
-const filterDraftFiles = (list) => list.filter((listItem) => !listItem.path.includes('[draft]'));
+const filterDraftFiles = (list) => list.filter((listItem) => !listItem.path.includes(`[draft]`));
 
 function listToTree(list) {
   const result = [];
-  const level = { result };
+  const level = {
+    result,
+  };
 
   filterDraftFiles(list)
     .forEach((item) => {
-      item.path.split('/')
+      item.path.split(`/`)
         .reduce((acc, name) => {
           if (!acc[name]) {
-            acc[name] = { result: [] };
-            acc.result.push({ name, children: acc[name].result });
+            acc[name] = {
+              result: [],
+            };
+            acc.result.push({
+              name,
+              children: acc[name].result,
+            });
           }
 
           return acc[name];

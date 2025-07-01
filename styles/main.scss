@@ -44,9 +44,9 @@
 @import "../components/Stages/components/StagesList/StagesList";
 @import "../components/SkipLink/SkipLink";
 
-// partials
-@import "../partials/Articles/Articles";
-@import "../partials/Articles/Article/Article";
+// features
+@import "../features/Articles/components/Articles/Articles";
+@import "../features/Articles/components/Article/Article";
 
 // pages
 @import "../pages/frontend/frontend";
