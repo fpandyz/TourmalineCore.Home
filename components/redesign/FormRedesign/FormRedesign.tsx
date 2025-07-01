@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import {
+  ChangeEvent,
   FormEvent,
   useMemo,
   useRef,
@@ -33,6 +34,8 @@ export function FormRedesign(
     t,
   } = useTranslation(`formRedesign`);
   const router = useRouter();
+
+  const [isFileUpload, setIsFileUpload] = useState<File>();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -97,7 +100,8 @@ export function FormRedesign(
               <FileUploadInputRedesign
                 id="file-upload"
                 name="file-upload"
-                description={t(`attachFileText`)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setIsFileUpload(e.target.files?.[0])}
+                description={isFileUpload?.name || t(`attachFileText`)}
               />
             </div>
             <div className="form-redesign__footer">

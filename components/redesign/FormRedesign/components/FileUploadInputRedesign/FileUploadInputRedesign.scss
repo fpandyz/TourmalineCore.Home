@@ -6,6 +6,7 @@
   &__label {
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
     transition: all 0.25s;
 
     &:hover,
