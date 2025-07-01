@@ -2,7 +2,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 import { PageHead } from '../components/PageHead/PageHead';
-import { useSectionAutoPaddings } from '../common/hooks/useSectionAutoPaddings';
 import { useDeviceSize } from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
@@ -19,9 +18,6 @@ export default function HomePage() {
   const {
     t,
   } = useTranslation(`common`);
-
-  // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
-  useSectionAutoPaddings();
 
   const {
     width,
