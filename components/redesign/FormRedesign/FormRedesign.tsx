@@ -1,129 +1,118 @@
 import { useTranslation } from 'next-i18next';
 import {
-  FormEvent,
-  useMemo,
-  useRef,
-  useState
+  ChangeEvent,
+  FormEvent, useState
 } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
-import { DEFAULT_LOCALE } from '../../../common/utils/consts/localization';
 import { Spinner } from '../../Spinner/Spinner';
 
 export function FormRedesign({
     onSubmit = () => {},
+    isSubmit,
+    setIsSubmit,
   } : {
     onSubmit: (formData: FormData) => unknown;
+    isSubmit: boolean;
+    setIsSubmit: (value: boolean) => void;
   },
 ) {
   const {
     t,
   } = useTranslation(`formRedesign`);
-  const router = useRouter();
-
-  const [isFileUpload, setIsFileUpload] = useState<File>();
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
-
-  const routerLocale = useMemo(() => {
-    if (!router.locale) {
-      return DEFAULT_LOCALE;
-    }
-
-    return router.locale;
-  }, [router.locale]);
+  const [email, setEmail] = useState('');
 
   return (
-    <section
-      className="form-redesign"
-      data-testid="form"
+    <form
+      className="form-redesign__form"
+      onSubmit={handleFormSubmit}
     >
-      <div className="form-redesign__wrapper container-redesign">
-        <div className="form-redesign__inner">
-          <form
-            className="form-redesign__form"
-            onSubmit={handleFormSubmit}
-          >
-            <h2 className="form-redesign__title">{t(`title`)}</h2>
-            <p className="form-redesign__description">{t(`description`)}</p>
-            <InputRedesign
-              id="name"
-              name="name"
-              className="form-redesign__input"
-              label={t(`nameInputPlaceholder`)}
-              onKeyDown={(e) => {
-                if (e.key === `Enter`) {
-                  e.preventDefault();
-                }
-              }}
-              required
-            />
-            <InputRedesign
-              id="email"
-              name="email"
-              className="form-redesign__input"
-              label={t(`emailInputPlaceholder`)}
-              type="email"
-              onKeyDown={(e) => {
-                if (e.key === `Enter`) {
-                  e.preventDefault();
-                }
-              }}
-              required
-            />
-            <TextareaRedesign
-              id="message"
-              name="message"
-              label={t(`textareaPlaceholder`)}
-              className="form-redesign__input"
-              description={t(`message.description`)}
-            />
-            <div className="form-redesign__footer">
-              <button
+      <h2 className="form-redesign__title">{isSubmit ? 'Спасибо за заявку!' : t(`title`)}</h2>
+      <p className="form-redesign__description">
+        {isSubmit 
+        ? (
+            `Мы ответим на вашу почту ${email} в течение одного рабочего дня. 
+            Если вопрос срочный, смело пишите в Telegram`
+          )
+        : t(`description`)}
+      </p>
+      {
+        !isSubmit && (
+          <>
+          <InputRedesign
+            id="name"
+            name="name"
+            className="form-redesign__input"
+            label={t(`nameInputPlaceholder`)}
+            onKeyDown={(e) => {
+              if (e.key === `Enter`) {
+                e.preventDefault();
+              }
+            }}
+            required
+          />
+          <InputRedesign
+            id="email"
+            name="email"
+            className="form-redesign__input"
+            label={t(`emailInputPlaceholder`)}
+            type="email"
+            value={email}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === `Enter`) {
+                e.preventDefault();
+              }
+            }}
+            required
+          />
+          <TextareaRedesign
+            id="message"
+            name="message"
+            label={t(`textareaPlaceholder`)}
+            className="form-redesign__input"
+            description={t(`message.description`)}
+          />
+          </>
+        )
+      }
+      <div className="form-redesign__footer">
+        {
+          isSubmit ? (
+            <button
+              className="form-redesign__featured-link"
+              type="button"
+              onClick={() => setIsSubmit(false)}
+            >
+              Заполнить еще раз
+            </button>
+            
+          ) : (
+            <button
                 className="form-redesign__featured-link"
                 type="submit"
               >
-                {
-                  isLoading
-                    ? <Spinner />
-                    : t(`buttonText`)
-                }
-              </button>
-              <MarkdownText className="form-redesign__consent">
-                {t(`markdownText`)}
-              </MarkdownText>
-            </div>
-          </form>
-        </div>
-        <div className="form-redesign__aside">
-          <div className="form-redesign__aside-inner container-redesign">
-            <div className="form-redesign__aside-img">
-              <Image
-                src="/images/img-aside.png"
-                alt=""
-                fill
-              />
-            </div>
-            <p className="form-redesign__aside-text">
-              {t(`asideText`)}
-              <Link
-                href={t(`asideLink`)}
-                className="form-redesign__aside-link"
-              >
-                {t(`asideLinkText`)}
-              </Link>
-            </p>
-          </div>
-        </div>
+              {
+                isLoading
+                  ? <Spinner />
+                  : t(`buttonText`)
+              }
+            </button>
+          )
+        }
+        {
+          !isSubmit && (
+            <MarkdownText className="form-redesign__consent">
+              {t(`markdownText`)}
+            </MarkdownText>
+          )
+        }
       </div>
-
-    </section>
+    </form>
   );
 
   async function handleFormSubmit(event: FormEvent) {
