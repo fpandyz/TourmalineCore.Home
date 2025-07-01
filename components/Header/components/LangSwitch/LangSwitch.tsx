@@ -2,12 +2,10 @@ import { useState, useRef, useMemo } from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-
-import { useAutoClose } from '../../../../common/hooks/useAutoClose';
-
 import IconArrow from '../../../../icons/icon-arrow.svg';
 import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
 import { DEFAULT_LOCALE, languages } from '../../../../common/constants';
+import { useAutoClose } from '../../../../common/hooks';
 
 export function LangSwitch() {
   const containerRef = useRef<HTMLDivElement>(null);

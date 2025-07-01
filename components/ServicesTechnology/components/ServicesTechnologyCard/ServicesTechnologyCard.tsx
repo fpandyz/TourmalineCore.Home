@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import clsx from 'clsx';
-import { usePath } from '../../../../common/hooks/usePath';
 import IconArrow from '../../../../icons/cases-arrow.svg';
+import { usePath } from '../../../../common/hooks';
 
 export function ServicesTechnologyCard({
   title,

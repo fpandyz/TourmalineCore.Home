@@ -1,7 +1,7 @@
 import { PaymentList } from './components/PaymentList/PaymentList';
 import { TPaymentList } from './types';
-import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import { TechnologyPageAnchorLink } from '../../common/enums';
+import { useTranslationNamespace } from '../../common/hooks';
 
 export function Payment() {
   const {

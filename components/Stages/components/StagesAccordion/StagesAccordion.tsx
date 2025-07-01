@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-import { usePath } from '../../../../common/hooks/usePath';
-import { useDeviceSize } from '../../../../common/hooks/useDeviceSize';
 import IconLargeArrow from '../../../../icons/icon-large-arrow.svg';
+import { useDeviceSize, usePath } from '../../../../common/hooks';
 
 export function StagesAccordion({
   title,

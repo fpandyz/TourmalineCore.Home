@@ -3,8 +3,8 @@ import FocusLock from 'react-focus-lock';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
-import { useOnClickOutside } from '../../common/hooks/useOnClickOutside';
 import { AppRoute } from '../../common/enums';
+import { useOnClickOutside } from '../../common/hooks';
 
 export function Modal({
   title,

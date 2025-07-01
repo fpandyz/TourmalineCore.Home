@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { usePath } from '../../common/hooks/usePath';
-import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import { StagesList } from './components/StagesList/StagesList';
 import { TStagesList } from './types';
 import { TechnologyPageAnchorLink } from '../../common/enums';
+import { usePath, useTranslationNamespace } from '../../common/hooks';
 
 export function Stages() {
   const {

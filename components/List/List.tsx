@@ -1,4 +1,4 @@
-import { usePath } from '../../common/hooks/usePath';
+import { usePath } from "../../common/hooks";
 
 export function List({
   steps,

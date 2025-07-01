@@ -1,6 +1,5 @@
-import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import { usePath } from '../../common/hooks/usePath';
 import { TechnologyPageAnchorLink } from '../../common/enums';
+import { usePath, useTranslationNamespace } from '../../common/hooks';
 
 export function Points() {
   const {

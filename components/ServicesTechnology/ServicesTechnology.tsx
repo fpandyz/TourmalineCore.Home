@@ -1,9 +1,8 @@
 import clsx from 'clsx';
-import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import { ServicesTechnologyCard } from './components/ServicesTechnologyCard/ServicesTechnologyCard';
 import { TServicesTechnologyList } from './types';
-import { usePath } from '../../common/hooks/usePath';
 import { TechnologyPageAnchorLink } from '../../common/enums';
+import { usePath, useTranslationNamespace } from '../../common/hooks';
 
 export function ServicesTechnology({
   localeKeyName,

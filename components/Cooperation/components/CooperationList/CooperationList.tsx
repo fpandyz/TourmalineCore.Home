@@ -1,5 +1,5 @@
+import { usePath } from '../../../../common/hooks';
 import { TCooperationList } from '../../types';
-import { usePath } from '../../../../common/hooks/usePath';
 
 export function CooperationList({
   list,

@@ -4,7 +4,7 @@ import { Modal } from '../Modal/Modal';
 import { DiscussionList } from '../DiscussionList/DiscussionList';
 import { Form } from '../Form/Form';
 import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
-import { usePath } from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks';
 
 export function FormTechnologyModal({
   setIsOpen,
