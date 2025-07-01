@@ -34,6 +34,7 @@ export function CardWithTextAndDateRedesign({
           ? `MMMM D, YYYY`
           : `D MMMM YYYY`,
       ));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale]);
 
   return (
