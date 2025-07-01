@@ -20,9 +20,8 @@ export function CardWithRepositoriesRedesign({
   className: string;
 }) {
   const {
-    width,
+    isTabletXl,
   } = useDeviceSize();
-  const isTabletXl = width >= 1024;
 
   const repositoriesList = isTabletXl ? repositories : repositories.slice(0, 1);
 

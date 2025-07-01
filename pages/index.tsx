@@ -20,10 +20,8 @@ export default function HomePage() {
   } = useTranslation(`common`);
 
   const {
-    width,
+    isTablet,
   } = useDeviceSize();
-
-  const isTablet = width >= 768;
 
   return (
     <>
