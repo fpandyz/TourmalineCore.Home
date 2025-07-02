@@ -72,6 +72,12 @@
   padding: 8px;
 }
 
+.article-page ol,
+.article-page ul {
+  list-style: revert;
+  padding: revert;
+}
+
 code {
   border-radius: 5px;
   padding: 0 4px;
