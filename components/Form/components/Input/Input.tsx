@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import { useRouter } from 'next/router';
-import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../../../common/utils';
 
 interface InputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   id: string;

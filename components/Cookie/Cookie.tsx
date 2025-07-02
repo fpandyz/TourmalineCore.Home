@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { OptionYM } from '../../types/globals';
 import { ExternalLink } from '../ExternalLink/ExternalLink';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils';
 
 const cookieAccept = `cookieAccept`;
 

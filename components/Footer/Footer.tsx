@@ -6,9 +6,8 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { SocialLinks } from '../SocialLinks/SocialLinks';
-
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
-import { AppRoute } from '../../common/utils/consts/app-route';
+import { AppRoute } from '../../common/enums';
+import { isChineseLanguage } from '../../common/utils';
 
 export function Footer() {
   const {

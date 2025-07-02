@@ -1,7 +1,7 @@
 
 import { test } from '../../../playwright-tests/custom-test';
-import { ComponentName } from '../../../common/utils/enum';
 import { BREAKPOINTS } from '../../../playwright-tests/constants/breakpoints';
+import { ComponentName } from '../../../common/enums';
 
 const TEST_ID = `projects-with-three-cards`;
 

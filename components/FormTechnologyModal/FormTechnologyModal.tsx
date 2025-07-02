@@ -1,10 +1,11 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { Modal } from '../Modal/Modal';
-import { DiscussionList } from '../DiscussionList/DiscussionList';
+import { Discussions } from '../Discussions/Discussions';
 import { Form } from '../Form/Form';
-import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
-import { usePath } from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks';
+import { getMessageFromForm } from '../../common/utils';
+import { sendEmail } from '../../services/emailService/emailService';
 
 export function FormTechnologyModal({
   setIsOpen,
@@ -37,7 +38,7 @@ export function FormTechnologyModal({
               buttonClassName={`form-technology-modal__button form-technology-modal__button--${slicePathname}`}
             />
           )}
-          {isSubmit && <DiscussionList />}
+          {isSubmit && <Discussions />}
         </>
       )}
       onClose={onClose}

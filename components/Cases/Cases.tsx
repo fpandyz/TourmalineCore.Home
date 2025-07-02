@@ -10,8 +10,8 @@ import IconWatch from '../../icons/icon-watch.svg';
 import IconGear from '../../icons/icon-gear.svg';
 import IconVideoCamera from '../../icons/icon-video-camera.svg';
 import IconNotepad from '../../icons/icon-notepad.svg';
-import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
+import { useTranslationNamespace } from '../../common/hooks';
 
 const ICONS = {
   camera: <IconCamera />,
