@@ -102,7 +102,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `conferenceSignpostsRedesign`,
       `articleSignpostsRedesign`,
       `singleImageRedesign`,
-      `formRedesign`,
+      `formBlockRedesign`,
     ])),
   },
 });

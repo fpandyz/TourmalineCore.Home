@@ -7,7 +7,7 @@ import { FormRedesign } from '../FormRedesign/FormRedesign';
 export function FormBlockRedesign() {
   const {
     t,
-  } = useTranslation(`formRedesign`);
+  } = useTranslation(`formBlockRedesign`);
 
   const [email, setEmail] = useState(``);
   const [isSubmit, setIsSubmit] = useState(true);

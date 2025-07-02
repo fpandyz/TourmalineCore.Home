@@ -19,7 +19,7 @@ export function FormRedesign({
 }) {
   const {
     t,
-  } = useTranslation(`formRedesign`);
+  } = useTranslation(`formBlockRedesign`);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -56,6 +56,7 @@ export function FormRedesign({
               <Link
                 className="form-redesign__contact-link"
                 href={t(`contanctLink`)}
+                target="_blank"
               >
                 {t(`contanctLinkText`)}
               </Link>
