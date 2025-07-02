@@ -6,16 +6,20 @@
     position: relative;
     background-color: $color-black;
 
-    @include desktop {
+    @include tablet {
       background-color: $color-white;
     }
   }
 
   &__inner {
-    @include desktop {
+    @include tablet {
       margin: 0 auto;
-      max-width: 716px;
+      max-width: 556px;
       background-color: $color-black;
+    }
+
+    @include desktop {
+      max-width: 716px;
     }
   }
 
@@ -59,7 +63,7 @@
       object-fit: cover;
     }
 
-    @include tablet {
+    @include desktop {
       width: 100px;
       height: 100px;
     }
