@@ -1,7 +1,7 @@
 {
   "title": "Happy to discuss your project",
   "description": "Tell us how we can help - we will clarify the details and offer a solution",
-  "markdownText": "By clicking the button, you agree to <a href='/'>the processing of personal data</a>",
+  "consentText": "By clicking the button, you agree to <bolt>the processing of personal data</bolt>",
   "asideText": "Drop us a line on",
   "imageUrl": "/images/submitted-form-image.png",
   "contactLink": "https://t.me/tourmalinecore",

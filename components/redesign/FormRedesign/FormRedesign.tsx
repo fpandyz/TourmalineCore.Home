@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
-import { MarkdownText } from '../MarkdownText/MarkdownText';
 import { Spinner } from '../../Spinner/Spinner';
 
 export function FormRedesign({
@@ -175,9 +174,20 @@ export function FormRedesign({
         }
         {
           !isSubmit && (
-            <MarkdownText className="form-redesign__consent">
-              {t(`markdownText`)}
-            </MarkdownText>
+            <div className="form-redesign__consent">
+              <Trans
+                i18nKey="formBlockRedesign:consentText"
+                components={{
+                  bolt: <a
+                    className="form-redesign__consent-link"
+                    href={`documents/policy-${router.locale}.pdf`}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label=""
+                  />,
+                }}
+              />
+            </div>
           )
         }
       </div>
