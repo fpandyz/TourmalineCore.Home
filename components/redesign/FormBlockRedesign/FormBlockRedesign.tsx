@@ -18,6 +18,7 @@ export function FormBlockRedesign({
     t,
   } = useTranslation(`formBlockRedesign`);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [email, setEmail] = useState(``);
   const [isSubmit, setIsSubmit] = useState(initializeIsSubmit);
 
