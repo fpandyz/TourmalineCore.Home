@@ -1,6 +1,7 @@
 import { Page } from '@playwright/test';
 import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
+import { ComponentName } from '../../../common/enums/component-name';
+import { Breakpoint, BreakpointName } from '../../../common/enums/breakpoint';
 
 const TEST_ID = `submitted-form-block`;
 

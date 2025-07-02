@@ -12,7 +12,7 @@ export function FormBlockRedesign({
   testId,
 }: {
   initializeIsSubmit?: boolean;
-  testId: string;
+  testId?: string;
 }) {
   const {
     t,
