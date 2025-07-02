@@ -1,10 +1,16 @@
-import { test as base } from '@playwright/test';
+import { test as base, expect } from '@playwright/test';
 import fs from 'fs';
-import { Breakpoint } from '../common/enums';
+import { Breakpoint, BreakpointName } from '../common/enums';
 
 export type CustomTestFixtures = {
   apiImageMock: () => void;
   hideCookie: () => void;
+  testScreenshotAtBreakpoint: (
+    options: {
+      testId: string;
+      breakpoint: Breakpoint;
+      breakpointName: BreakpointName;
+    }) => void;
   goToComponentsPage: (path: string) => void;
   setViewportSize: (options?: { width?: number; height?: number; }) => void;
 };
@@ -31,6 +37,30 @@ export const test = base.extend<CustomTestFixtures>({
     };
 
     await use(goToComponentsPage);
+  },
+
+  testScreenshotAtBreakpoint: async ({
+    page,
+    setViewportSize,
+  }, use) => {
+    const testScreenshotAtBreakpoint = async ({
+      testId,
+      breakpoint,
+      breakpointName,
+    }: {
+      testId: string;
+      breakpoint: Breakpoint;
+      breakpointName: BreakpointName;
+    }) => {
+      await setViewportSize({
+        width: breakpoint,
+      });
+
+      await expect(page.getByTestId(testId))
+        .toHaveScreenshot(`${testId}-${breakpointName}.png`);
+    };
+
+    await use(testScreenshotAtBreakpoint);
   },
 
   setViewportSize: async ({
