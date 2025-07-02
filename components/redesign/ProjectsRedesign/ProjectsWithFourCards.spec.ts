@@ -1,10 +1,6 @@
-import {
-  test,
-  expect,
-  CustomTestFixtures,
-  Page,
-} from '../../../playwright-tests/custom-test';
-import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
+import { test } from '../../../playwright-tests/custom-test';
+import { BREAKPOINTS } from '../../../playwright-tests/constants/breakpoints';
+import { ComponentName } from '../../../common/enums';
 
 const TEST_ID = `projects-with-four-cards`;
 
@@ -15,47 +11,19 @@ test.describe(`ProjectsWithFourCards`, () => {
     await goToComponentsPage(ComponentName.PROJECTS_WITH_FOUR_CARDS);
   });
 
-  test(`MobileTest`, mobileTest);
-
-  test(`DesktopTest`, desktopTest);
+  for (const {
+    name,
+    breakpoint,
+    breakpointName,
+  } of BREAKPOINTS) {
+    test(name, async ({
+      testScreenshotAtBreakpoint,
+    }) => {
+      await testScreenshotAtBreakpoint({
+        testId: TEST_ID,
+        breakpoint,
+        breakpointName,
+      });
+    });
+  }
 });
-
-async function mobileTest({
-  page,
-  setViewportSize,
-}: {
-  page: Page;
-  setViewportSize: CustomTestFixtures['setViewportSize'];
-}) {
-  await setViewportSize();
-
-  await expect(getProjectsWithFourCardsByTestId({
-    page,
-  }))
-    .toHaveScreenshot(`${TEST_ID}-${BreakpointName.MOBILE}.png`);
-}
-
-async function desktopTest({
-  page,
-  setViewportSize,
-}: {
-  page: Page;
-  setViewportSize: CustomTestFixtures['setViewportSize'];
-}) {
-  await setViewportSize({
-    width: Breakpoint.DESKTOP,
-  });
-
-  await expect(getProjectsWithFourCardsByTestId({
-    page,
-  }))
-    .toHaveScreenshot(`${TEST_ID}-${BreakpointName.DESKTOP}.png`);
-}
-
-function getProjectsWithFourCardsByTestId({
-  page,
-}: {
-  page: Page;
-}) {
-  return page.getByTestId(TEST_ID);
-}

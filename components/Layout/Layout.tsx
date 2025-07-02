@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import { ReactNode, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { SkipLink } from '../SkipLink/SkipLink';
+import { isChineseLanguage } from '../../common/utils';
 
 export function Layout({
   children,

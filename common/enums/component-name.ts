@@ -1,0 +1,13 @@
+export enum ComponentName {
+  CARDS_GRID = `cards-grid`,
+  COLLAGE_WITH_LINK = `collage-with-link`,
+  COLLAGE_WITH_TITLE = `collage-with-title`,
+  FOOTER = `footer`,
+  HERO = `hero`,
+  PROJECTS_WITH_FOUR_CARDS = `projects-with-four-cards`,
+  PROJECTS_WITH_THREE_CARDS = `projects-with-three-cards`,
+  PROJECTS_WITH_TEXT_BLOCK = `projects-with-text-block`,
+  SERVICES = `services`,
+  SIGNPOST_MULTIPLE = `signpost-multiple`,
+  SINGLE_IMAGE = `single-image`,
+}

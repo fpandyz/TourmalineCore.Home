@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { Breakpoint } from '../enums';
 
 export const useDeviceSize = () => {
   const [width, setWidth] = useState(0);
@@ -20,5 +21,10 @@ export const useDeviceSize = () => {
   return {
     width,
     height,
+    isMobile: width < Breakpoint.TABLET,
+    isTablet: width >= Breakpoint.TABLET,
+    isTabletXl: width >= Breakpoint.TABLET_XL,
+    isDesktop: width >= Breakpoint.DESKTOP,
+    isDesktopXL: width >= Breakpoint.DESKTOP_XL,
   };
 };

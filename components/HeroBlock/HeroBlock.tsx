@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../common/utils';
 
 export function HeroBlock({
   title,
