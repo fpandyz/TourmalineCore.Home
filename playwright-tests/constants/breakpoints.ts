@@ -1,4 +1,4 @@
-import { Breakpoint, BreakpointName } from "../../common/utils/enum";
+import { Breakpoint, BreakpointName } from "../../common/enums";
 
 export const BREAKPOINTS = [
   {
