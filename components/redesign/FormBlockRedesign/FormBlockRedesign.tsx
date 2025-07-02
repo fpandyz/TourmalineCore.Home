@@ -47,10 +47,11 @@ export function FormBlockRedesign({
                         <p className="form-block-redesign__aside-text">
                           {t(`asideText`)}
                           <Link
-                            href={t(`asideLink`)}
+                            href={t(`contactLink`)}
                             className="form-block-redesign__aside-link"
+                            target="_blank"
                           >
-                            {t(`asideLinkText`)}
+                            {t(`contactLinkText`)}
                           </Link>
                         </p>
                       </div>

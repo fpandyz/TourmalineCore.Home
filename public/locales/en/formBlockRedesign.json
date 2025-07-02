@@ -1,15 +1,9 @@
 {
   "title": "Happy to discuss your project",
   "description": "Tell us how we can help - we will clarify the details and offer a solution",
-  "nameInputPlaceholder": "Name",
-  "emailInputPlaceholder": "Email",
-  "textareaPlaceholder": "Describe your project",
-  "buttonText": "Send",
   "markdownText": "By clicking the button, you agree to <a href='/'>the processing of personal data</a>",
   "asideText": "Drop us a line on",
-  "asideLinkText": "Telegram",
-  "asideLink": "https://t.me/tourmalinecore",
   "imageUrl": "/images/submitted-form-image.png",
-  "contanctLink": "https://t.me/tourmalinecore",
-  "contanctLinkText": "Telegram"
+  "contactLink": "https://t.me/tourmalinecore",
+  "contactLinkText": "Telegram"
 }

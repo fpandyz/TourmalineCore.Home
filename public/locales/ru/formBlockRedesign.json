@@ -1,15 +1,9 @@
 {
   "title": "Будем рады обсудить ваш проект",
   "description": "Напишите пару слов о задаче — мы уточним детали и предложим подходящее решение",
-  "nameInputPlaceholder": "Имя",
-  "emailInputPlaceholder": "Почта",
-  "textareaPlaceholder": "Расскажите о вашей задаче",
-  "buttonText": "Отправить заявку",
   "markdownText": "Нажимая на кнопку, вы даёте <a href='/'>согласие на обработку персональных данных</a>",
   "asideText": "Если неудобно заполнять форму, можно написать нам в",
-  "asideLinkText": "telegram",
-  "asideLink": "https://t.me/tourmalinecore",
   "imageUrl": "/images/submitted-form-image.png",
-  "contanctLink": "https://t.me/tourmalinecore",
-  "contanctLinkText": "Telegram"
+  "contactLink": "https://t.me/tourmalinecore",
+  "contactLinkText": "Telegram"
 }

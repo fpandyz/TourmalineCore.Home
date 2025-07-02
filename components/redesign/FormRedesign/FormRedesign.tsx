@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
@@ -20,6 +21,8 @@ export function FormRedesign({
   const {
     t,
   } = useTranslation(`formBlockRedesign`);
+
+  const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -43,30 +46,51 @@ export function FormRedesign({
           </div>
         )
       }
-      <h2 className="form-redesign__title">{isSubmit ? `Спасибо за заявку!` : t(`title`)}</h2>
       {
         isSubmit
-          ? (
+       && (
+         <h2 className="form-redesign__title">
+           {
+             router.locale === `ru`
+               ? `Спасибо за заявку!`
+               : `Thank you!`
+           }
+         </h2>
+       )
+      }
+      {
+        !isSubmit
+       && (
+         <h2 className="form-redesign__title">{t(`title`)}</h2>
+       )
+      }
+      {
+        isSubmit
+          && (
             <p className="form-redesign__description">
-              Мы ответим на вашу почту
-              {` `}
-              {email}
-              {` `}
-              в течение одного рабочего дня. Если вопрос срочный, смело пишите в
+              {
+                router.locale === `ru`
+                  ? `Мы ответим на вашу почту ${email} в течение одного рабочего дня. Если вопрос срочный, смело пишите в`
+                  : `We will send a message to your email ${email} within 1 working day. If urgent, please contact us on`
+              }
+
               <Link
                 className="form-redesign__contact-link"
-                href={t(`contanctLink`)}
+                href={t(`contactLink`)}
                 target="_blank"
               >
-                {t(`contanctLinkText`)}
+                {t(`contactLinkText`)}
               </Link>
             </p>
           )
-          : (
-            <p className="form-redesign__description">
-              {t(`description`)}
-            </p>
-          )
+
+      }
+      {
+        !isSubmit && (
+          <p className="form-redesign__description">
+            {t(`description`)}
+          </p>
+        )
       }
 
       {
@@ -76,7 +100,11 @@ export function FormRedesign({
               id="name"
               name="name"
               className="form-redesign__input"
-              label={t(`nameInputPlaceholder`)}
+              label={
+                router.locale === `ru`
+                  ? `Имя`
+                  : `Name`
+              }
               onKeyDown={(e) => {
                 if (e.key === `Enter`) {
                   e.preventDefault();
@@ -88,7 +116,11 @@ export function FormRedesign({
               id="email"
               name="email"
               className="form-redesign__input"
-              label={t(`emailInputPlaceholder`)}
+              label={
+                router.locale === `ru`
+                  ? `Почта`
+                  : `Email`
+              }
               type="email"
               value={email}
               onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
@@ -102,7 +134,11 @@ export function FormRedesign({
             <TextareaRedesign
               id="message"
               name="message"
-              label={t(`textareaPlaceholder`)}
+              label={
+                router.locale === `ru`
+                  ? `Расскажите о вашей задаче`
+                  : `Describe your project`
+              }
               className="form-redesign__input"
               description={t(`message.description`)}
             />
@@ -117,19 +153,23 @@ export function FormRedesign({
               type="button"
               onClick={() => setIsSubmit(false)}
             >
-              Заполнить еще раз
+              {
+                router.locale === `ru`
+                  ? `Заполнить еще раз`
+                  : `Write more`
+              }
             </button>
-
           ) : (
             <button
               className="form-redesign__featured-link"
               type="submit"
             >
-              {
-                isLoading
-                  ? <Spinner />
-                  : t(`buttonText`)
-              }
+              {isLoading && <Spinner />}
+              {!isLoading && (
+                router.locale === `ru`
+                  ? `Отправить заявку`
+                  : `Send`
+              )}
             </button>
           )
         }
