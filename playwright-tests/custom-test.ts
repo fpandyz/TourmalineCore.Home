@@ -8,8 +8,8 @@ export type CustomTestFixtures = {
   testScreenshotAtBreakpoint: (
     options: {
       testId: string;
-      breakpoint?: Breakpoint;
-      breakpointName?: BreakpointName;
+      breakpoint: Breakpoint;
+      breakpointName: BreakpointName;
     }) => void;
   goToComponentsPage: (path: string) => void;
   setViewportSize: (options?: { width?: number; height?: number; }) => void;
@@ -45,12 +45,12 @@ export const test = base.extend<CustomTestFixtures>({
   }, use) => {
     const testScreenshotAtBreakpoint = async ({
       testId,
-      breakpoint = Breakpoint.MOBILE,
-      breakpointName = BreakpointName.MOBILE,
+      breakpoint,
+      breakpointName,
     }: {
       testId: string;
-      breakpoint?: Breakpoint;
-      breakpointName?: BreakpointName;
+      breakpoint: Breakpoint;
+      breakpointName: BreakpointName;
     }) => {
       await setViewportSize({
         width: breakpoint,
