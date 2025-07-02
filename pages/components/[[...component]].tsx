@@ -94,7 +94,7 @@ export default function ComponentsPage() {
 
   if (componentName === ComponentName.FORM_BLOCK) {
     return (
-      <FormBlockRedesign testId="form" />
+      <FormBlockRedesign testId="form-block" />
     );
   }
 
@@ -103,7 +103,7 @@ export default function ComponentsPage() {
 
       <FormBlockRedesign
         initializeIsSubmit
-        testId="submitted-form"
+        testId="submitted-form-block"
       />
     );
   }

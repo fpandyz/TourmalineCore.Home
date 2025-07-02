@@ -2,7 +2,7 @@ import { Page } from '@playwright/test';
 import { test, expect, CustomTestFixtures } from '../../../playwright-tests/custom-test';
 import { Breakpoint, BreakpointName, ComponentName } from '../../../common/utils/enum';
 
-const TEST_ID = `submitted-form`;
+const TEST_ID = `submitted-form-block`;
 
 test.describe(`SubmittedFormBlockRedesignTests`, () => {
   test.beforeEach(async ({
