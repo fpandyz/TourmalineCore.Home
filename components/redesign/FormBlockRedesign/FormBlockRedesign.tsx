@@ -4,18 +4,24 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { FormRedesign } from '../FormRedesign/FormRedesign';
 
-export function FormBlockRedesign() {
+export function FormBlockRedesign({
+  initializeIsSubmit = false,
+  testId,
+}: {
+  initializeIsSubmit?: boolean;
+  testId: string;
+}) {
   const {
     t,
   } = useTranslation(`formBlockRedesign`);
 
   const [email, setEmail] = useState(``);
-  const [isSubmit, setIsSubmit] = useState(true);
+  const [isSubmit, setIsSubmit] = useState(initializeIsSubmit);
 
   return (
     <section
       className="form-block-redesign"
-      data-testid="form"
+      data-testid={testId}
     >
       <div className="form-block-redesign__wrapper container-redesign">
         <div className="form-block-redesign__inner">

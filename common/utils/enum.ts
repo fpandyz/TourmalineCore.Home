@@ -27,4 +27,5 @@ export enum ComponentName {
   SIGNPOST_MULTIPLE = `signpost-multiple`,
   SINGLE_IMAGE = `single-image`,
   FORM_BLOCK = `form-block`,
+  SUBMITTED_FORM_BLOCK = `submitted-form-block`,
 }
