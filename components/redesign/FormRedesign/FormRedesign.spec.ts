@@ -6,7 +6,7 @@ const TEST_ID = `form`;
 
 test.describe(`FormRedesignTests`, () => {
   test.beforeEach(async ({
-    goToComponentsPage
+    goToComponentsPage,
   }) => {
     await goToComponentsPage(ComponentName.FORM_BLOCK);
   });

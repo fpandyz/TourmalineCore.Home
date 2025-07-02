@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import { FormRedesign } from '../FormRedesign/FormRedesign';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import { FormRedesign } from '../FormRedesign/FormRedesign';
 
 export function FormBlockRedesign() {
   const {
@@ -58,10 +58,10 @@ export function FormBlockRedesign() {
                     setIsSubmit={setIsSubmit}
                   />
                 )
-              }
-            </div>
+            }
           </div>
         </div>
+      </div>
     </section>
   );
 

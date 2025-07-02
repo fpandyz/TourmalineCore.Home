@@ -1,82 +1,79 @@
 import { useTranslation } from 'next-i18next';
-import {
-  ChangeEvent,
-  FormEvent, useState
-} from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
 import { Spinner } from '../../Spinner/Spinner';
 
 export function FormRedesign({
-    onSubmit = () => {},
-    isSubmit,
-    setIsSubmit,
-  } : {
-    onSubmit: (formData: FormData) => unknown;
-    isSubmit: boolean;
-    setIsSubmit: (value: boolean) => void;
-  },
-) {
+  onSubmit = () => {},
+  isSubmit,
+  setIsSubmit,
+} : {
+  onSubmit: (formData: FormData) => unknown;
+  isSubmit: boolean;
+  setIsSubmit: (value: boolean) => void;
+}) {
   const {
     t,
   } = useTranslation(`formRedesign`);
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(``);
 
   return (
     <form
       className="form-redesign__form"
       onSubmit={handleFormSubmit}
     >
-      <h2 className="form-redesign__title">{isSubmit ? 'Спасибо за заявку!' : t(`title`)}</h2>
+
+      <h2 className="form-redesign__title">{isSubmit ? `Спасибо за заявку!` : t(`title`)}</h2>
       <p className="form-redesign__description">
-        {isSubmit 
-        ? (
+        {isSubmit
+          ? (
             `Мы ответим на вашу почту ${email} в течение одного рабочего дня. 
             Если вопрос срочный, смело пишите в Telegram`
           )
-        : t(`description`)}
+          : t(`description`)}
       </p>
       {
         !isSubmit && (
           <>
-          <InputRedesign
-            id="name"
-            name="name"
-            className="form-redesign__input"
-            label={t(`nameInputPlaceholder`)}
-            onKeyDown={(e) => {
-              if (e.key === `Enter`) {
-                e.preventDefault();
-              }
-            }}
-            required
-          />
-          <InputRedesign
-            id="email"
-            name="email"
-            className="form-redesign__input"
-            label={t(`emailInputPlaceholder`)}
-            type="email"
-            value={email}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === `Enter`) {
-                e.preventDefault();
-              }
-            }}
-            required
-          />
-          <TextareaRedesign
-            id="message"
-            name="message"
-            label={t(`textareaPlaceholder`)}
-            className="form-redesign__input"
-            description={t(`message.description`)}
-          />
+            <InputRedesign
+              id="name"
+              name="name"
+              className="form-redesign__input"
+              label={t(`nameInputPlaceholder`)}
+              onKeyDown={(e) => {
+                if (e.key === `Enter`) {
+                  e.preventDefault();
+                }
+              }}
+              required
+            />
+            <InputRedesign
+              id="email"
+              name="email"
+              className="form-redesign__input"
+              label={t(`emailInputPlaceholder`)}
+              type="email"
+              value={email}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === `Enter`) {
+                  e.preventDefault();
+                }
+              }}
+              required
+            />
+            <TextareaRedesign
+              id="message"
+              name="message"
+              label={t(`textareaPlaceholder`)}
+              className="form-redesign__input"
+              description={t(`message.description`)}
+            />
           </>
         )
       }
@@ -90,12 +87,12 @@ export function FormRedesign({
             >
               Заполнить еще раз
             </button>
-            
+
           ) : (
             <button
-                className="form-redesign__featured-link"
-                type="submit"
-              >
+              className="form-redesign__featured-link"
+              type="submit"
+            >
               {
                 isLoading
                   ? <Spinner />

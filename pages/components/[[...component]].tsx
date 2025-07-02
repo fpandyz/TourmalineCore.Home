@@ -92,7 +92,7 @@ export default function ComponentsPage() {
     );
   }
 
-    if (componentName === ComponentName.FORM_BLOCK) {
+  if (componentName === ComponentName.FORM_BLOCK) {
     return (
       <FormBlockRedesign />
     );
