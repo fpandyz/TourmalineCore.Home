@@ -11,7 +11,12 @@ export type CustomTestFixtures = {
   goToComponentsPage: (path: string) => void;
   goto: (path?: string) => void;
   setViewportSize: (options?: { width?: number; height?: number; }) => void;
-  axeCheckAndWriteReport: (options: { pageName: string; viewport: BreakpointName; }) => void;
+  testAxeCoreCheckAtBreakpoint: (
+    options: {
+      pageName: string;
+      breakpoint: Breakpoint;
+      breakpointName: BreakpointName;
+    }) => void;
 };
 
 // https://playwright.dev/docs/test-fixtures
@@ -109,16 +114,23 @@ export const test = base.extend<CustomTestFixtures>({
     await use(hideCookie);
   },
 
-  axeCheckAndWriteReport: async ({
+  testAxeCoreCheckAtBreakpoint: async ({
     page,
+    setViewportSize,
   }, use) => {
-    const axeCheckAndWriteReport = async ({
+    const testAxeCoreCheckAtBreakpoint = async ({
       pageName,
-      viewport,
+      breakpoint,
+      breakpointName,
     }: {
       pageName: string;
-      viewport: BreakpointName;
+      breakpoint: Breakpoint;
+      breakpointName: BreakpointName;
     }) => {
+      await setViewportSize({
+        width: breakpoint,
+      });
+
       const results = await new AxeBuilder({
         page,
       })
@@ -129,7 +141,7 @@ export const test = base.extend<CustomTestFixtures>({
       } = results;
 
       if (violations.length > 0) {
-        const reportPath = `./playwright-test-results/axe-reports/axe-report-${pageName}-${viewport}.json`;
+        const reportPath = `./playwright-test-results/axe-reports/axe-report-${pageName}-${breakpointName}.json`;
 
         mkdirSync(dirname(reportPath), {
           recursive: true,
@@ -149,7 +161,7 @@ export const test = base.extend<CustomTestFixtures>({
       }
     };
 
-    await use(axeCheckAndWriteReport);
+    await use(testAxeCoreCheckAtBreakpoint);
   },
 });
 
