@@ -1,8 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import clsx from 'clsx';
-import { usePath } from '../../../../common/hooks/usePath';
-import { useDeviceSize } from '../../../../common/hooks/useDeviceSize';
 import IconLargeArrow from '../../../../icons/icon-large-arrow.svg';
+import { useDeviceSize, usePath } from '../../../../common/hooks';
 
 export function StagesAccordion({
   title,
@@ -21,8 +20,9 @@ export function StagesAccordion({
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const deviceSize = useDeviceSize();
-  const isMobile = useMemo(() => deviceSize.width < 768, [deviceSize.width]);
+  const {
+    isMobile,
+  } = useDeviceSize();
 
   return (
     <li

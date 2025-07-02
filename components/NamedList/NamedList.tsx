@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { usePath } from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks';
 
 export function NamedList(
   {

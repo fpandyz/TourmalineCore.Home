@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { GetServerSideProps } from "next";
-import { ComponentName } from "../../common/utils/enum";
+import { GetStaticProps } from "next";
 import { CardsGridRedesign } from "../../components/redesign/CardsGridRedesign/CardsGridRedesign";
 import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
 import { CollageWithTitleRedesign } from "../../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
@@ -14,6 +13,7 @@ import { ServicesRedesign } from "../../components/redesign/ServicesRedesign/Ser
 import { SignpostMultipleRedesign } from "../../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign";
 import { SingleImageRedesign } from "../../components/redesign/SingleImageRedesign/SingleImageRedesign";
 import { FormBlockRedesign } from "../../components/redesign/FormBlockRedesign/FormBlockRedesign";
+import { ComponentName } from "../../common/enums";
 
 export default function ComponentsPage() {
   const router = useRouter();
@@ -157,7 +157,7 @@ export default function ComponentsPage() {
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({
+export const getStaticProps: GetStaticProps = async ({
   locale,
 }) => ({
   props: {
@@ -180,8 +180,27 @@ export const getStaticProps: GetServerSideProps = async ({
 });
 
 export async function getStaticPaths() {
+  const paths = Object.values(ComponentName)
+    .map((component) => ({
+      params: {
+        component: [component],
+      },
+    }));
+
+  const basePath = {
+    params: {
+      component: [],
+    },
+  };
+
+  const locales = [`en`, `ru`];
+  const localizedPaths = locales.flatMap((locale) => [basePath, ...paths].map((path) => ({
+    params: path.params,
+    locale,
+  })));
+
   return {
-    paths: [`/components/*`],
-    fallback: true,
+    paths: localizedPaths,
+    fallback: false,
   };
 }

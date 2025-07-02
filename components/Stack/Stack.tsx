@@ -1,7 +1,6 @@
 import { NamedList } from '../NamedList/NamedList';
-import { usePath } from '../../common/hooks/usePath';
-import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
+import { usePath, useTranslationNamespace } from '../../common/hooks';
 
 type StackList = {
   title: string;

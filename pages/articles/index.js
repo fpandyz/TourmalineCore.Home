@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 import { Layout } from '../../components/Layout/Layout';
 import { PageHead } from '../../components/PageHead/PageHead';
-import Articles from '../../partials/Articles/Articles';
+import Articles from '../../features/Articles/components/Articles/Articles';
 
-import { fetchArticlesListWithMeta } from '../../partials/Articles/fetchHelpers/fetchArticlesListWithMeta';
+import { fetchArticlesListWithMeta } from '../../features/Articles/fetchHelpers/fetchArticlesListWithMeta';
 
 export default function ArticlesPage({
   articles,

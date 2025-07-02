@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { DetailedHTMLProps, TextareaHTMLAttributes } from 'react';
 import { useRouter } from 'next/router';
-import { isChineseLanguage } from '../../../../common/utils/isChineseLanguage';
+import { isChineseLanguage } from '../../../../common/utils';
 
 interface TextareaProps extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
   id: string;

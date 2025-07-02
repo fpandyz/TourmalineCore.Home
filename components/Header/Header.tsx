@@ -7,8 +7,6 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { LangSwitch } from './components/LangSwitch/LangSwitch';
-import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
-
 import IconBurger from '../../icons/burger.svg';
 import IconBurgerPurple from '../../icons/burger-purple.svg';
 import IconBurgerMagenta from '../../icons/burger-magenta.svg';
@@ -17,8 +15,9 @@ import IconBurgerQA from '../../icons/burger-qa.svg';
 import IconBurgerBackend from '../../icons/burger-backend.svg';
 import IconBurgerCyan from '../../icons/burger-cyan.svg';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
-import { AppRoute } from '../../common/utils/consts/app-route';
+import { AppRoute } from '../../common/enums';
+import { useBodyScrollHidden } from '../../common/hooks';
+import { isChineseLanguage } from '../../common/utils';
 
 type HeaderLinks = {
   id: string;
