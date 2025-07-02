@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import clsx from 'clsx';
 import { FormRedesign } from '../FormRedesign/FormRedesign';
 
 export function FormBlockRedesign({
@@ -20,7 +21,9 @@ export function FormBlockRedesign({
 
   return (
     <section
-      className="form-block-redesign"
+      className={clsx(`form-block-redesign`, {
+        'form-block-redesign--is-submitted': isSubmit,
+      })}
       data-testid={testId}
     >
       <div className="form-block-redesign__wrapper container-redesign">

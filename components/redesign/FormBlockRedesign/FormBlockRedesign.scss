@@ -83,6 +83,10 @@
     text-underline-offset: 2px;
   }
 
+  @include tablet {
+    padding: 40px 0 184px;
+  }
+
   @include desktop {
     padding: 100px 0 140px;
   }

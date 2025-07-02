@@ -44,7 +44,7 @@
     text-align: center;
     color: $color-light-grey-redesign;
 
-    @include tablet {
+    @include desktop {
       max-width: 420px;
     }
   }
@@ -148,6 +148,28 @@
 
     #{$this}__footer {
       margin-top: 0;
+
+      @include tablet {
+        max-width: 352px;
+      }
+
+      @include desktop {
+        max-width: 318px;
+      }
+    }
+
+    #{$this}__description {
+      @include tablet {
+        max-width: 290px;
+      }
+
+      @include desktop {
+        max-width: 420px;
+      }
+    }
+
+    @include tablet {
+      padding-bottom: 130px;
     }
 
     @include desktop {
