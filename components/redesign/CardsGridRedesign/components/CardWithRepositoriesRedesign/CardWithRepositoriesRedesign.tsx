@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { CardWithContent, CardWithContentRedesign } from '../CardWithContentRedesign/CardWithContentRedesign';
-import { useDeviceSize } from '../../../common/hooks';
+import { CardWithContent, CardWithContentRedesign } from '../../../CardWithContentRedesign/CardWithContentRedesign';
+import { useDeviceSize } from '../../../../../common/hooks';
 
 export type CardWithRepositories = CardWithContent & {
   repositories: {

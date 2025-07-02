@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
-import { CardWithImage, CardWithImageRedesign } from '../CardWithImageRedesign/CardWithImageRedesign';
-import { CardWithRepositories, CardWithRepositoriesRedesign } from '../CardWithRepositoriesRedesign/CardWithRepositoriesRedesign';
-import { CardWithTextAndDate, CardWithTextAndDateRedesign } from '../CardWithTextAndDateRedesign/CardWithTextAndDateRedesign';
+import { CardWithImage, CardWithImageRedesign } from './components/CardWithImageRedesign/CardWithImageRedesign';
+import { CardWithRepositories, CardWithRepositoriesRedesign } from './components/CardWithRepositoriesRedesign/CardWithRepositoriesRedesign';
+import { CardWithTextAndDate, CardWithTextAndDateRedesign } from './components/CardWithTextAndDateRedesign/CardWithTextAndDateRedesign';
 
 export function CardsGridRedesign() {
   const {

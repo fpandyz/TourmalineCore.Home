@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import clsx from 'clsx';
-import { CardWithContent, CardWithContentRedesign } from '../CardWithContentRedesign/CardWithContentRedesign';
+import { CardWithContent, CardWithContentRedesign } from '../../../CardWithContentRedesign/CardWithContentRedesign';
 
 export type CardWithImage = CardWithContent & {
   imageUrl: string;

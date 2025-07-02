@@ -4,7 +4,7 @@ import 'moment/locale/ru';
 import 'moment/locale/en-gb';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { CardWithContent, CardWithContentRedesign } from '../CardWithContentRedesign/CardWithContentRedesign';
+import { CardWithContent, CardWithContentRedesign } from '../../../CardWithContentRedesign/CardWithContentRedesign';
 
 export type CardWithTextAndDate = CardWithContent & {
   text: string;
