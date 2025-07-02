@@ -1,5 +1,8 @@
 import { useTranslation } from 'next-i18next';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import Image from 'next/image';
+import clsx from 'clsx';
+import Link from 'next/link';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
@@ -24,19 +27,47 @@ export function FormRedesign({
 
   return (
     <form
-      className="form-redesign__form"
+      className={clsx(`form-redesign`, {
+        'form-redesign--is-submitted': isSubmit,
+      })}
       onSubmit={handleFormSubmit}
     >
-
+      {
+        isSubmit && (
+          <div className="form-redesign__img-container">
+            <Image
+              src={t(`imageUrl`)}
+              fill
+              alt=""
+            />
+          </div>
+        )
+      }
       <h2 className="form-redesign__title">{isSubmit ? `Спасибо за заявку!` : t(`title`)}</h2>
-      <p className="form-redesign__description">
-        {isSubmit
+      {
+        isSubmit
           ? (
-            `Мы ответим на вашу почту ${email} в течение одного рабочего дня. 
-            Если вопрос срочный, смело пишите в Telegram`
+            <p className="form-redesign__description">
+              Мы ответим на вашу почту
+              {` `}
+              {email}
+              {` `}
+              в течение одного рабочего дня. Если вопрос срочный, смело пишите в
+              <Link
+                className="form-redesign__contact-link"
+                href={t(`contanctLink`)}
+              >
+                {t(`contanctLinkText`)}
+              </Link>
+            </p>
           )
-          : t(`description`)}
-      </p>
+          : (
+            <p className="form-redesign__description">
+              {t(`description`)}
+            </p>
+          )
+      }
+
       {
         !isSubmit && (
           <>

@@ -8,5 +8,8 @@
   "markdownText": "By clicking the button, you agree to <a href='/'>the processing of personal data</a>",
   "asideText": "Drop us a line on",
   "asideLinkText": "Telegram",
-  "asideLink": "https://t.me/tourmalinecore"
+  "asideLink": "https://t.me/tourmalinecore",
+  "imageUrl": "/images/submitted-form-image.png",
+  "contanctLink": "/",
+  "contanctLinkText": "Telegram"
 }

@@ -8,5 +8,8 @@
   "markdownText": "Нажимая на кнопку, вы даёте <a href='/'>согласие на обработку персональных данных</a>",
   "asideText": "Если неудобно заполнять форму, можно написать нам в",
   "asideLinkText": "telegram",
-  "asideLink": "https://t.me/tourmalinecore"
+  "asideLink": "https://t.me/tourmalinecore",
+  "imageUrl": "/images/submitted-form-image.png",
+  "contanctLink": "/",
+  "contanctLinkText": "Telegram"
 }

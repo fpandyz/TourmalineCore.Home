@@ -1,23 +1,27 @@
 .form-redesign {
+  $this: &;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  max-width: 420px;
+
   &__box {
     position: relative;
     resize: inherit;
   }
 
-  &__form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
+  &__img-container {
+    position: relative;
+    margin-bottom: 56px;
     border-radius: 2px;
-    padding-top: 56px;
-    padding-bottom: 56px;
-    max-width: 420px;
-
-    @include desktop {
-      max-width: 436px;
-    }
+    width: 260px;
+    height: 172px;
   }
 
   &__title {
@@ -43,6 +47,12 @@
     @include tablet {
       max-width: 420px;
     }
+  }
+
+  &__contact-link {
+    margin-left: 4px;
+    color: inherit;
+    text-underline-offset: 2px;
   }
 
   &__input {
@@ -116,6 +126,23 @@
       margin-left: 4px;
       color: inherit;
       text-underline-offset: 2px;
+    }
+  }
+
+  @include desktop {
+    max-width: 436px;
+  }
+
+  &--is-submitted {
+    padding-top: 88px;
+    padding-bottom: 148px;
+
+    #{$this}__footer {
+      margin-top: 0;
+    }
+
+    @include desktop {
+      padding-bottom: 123px;
     }
   }
 }
