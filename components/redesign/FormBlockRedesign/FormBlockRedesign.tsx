@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import clsx from 'clsx';
 import { FormRedesign } from '../FormRedesign/FormRedesign';
+import { sendEmail } from '../../../services/emailService/emailService';
+import { getMessageFromForm } from '../../../common/utils';
 
 export function FormBlockRedesign({
   initializeIsSubmit = false,
@@ -76,10 +78,10 @@ export function FormBlockRedesign({
   );
 
   async function onFormSubmit(formData: FormData) {
-    // const messageSend = getMessageFromForm(formData);
+    const messageSend = getMessageFromForm(formData);
 
-    // await sendEmail(messageSend);
-    // setEmail(messageSend.email);
+    await sendEmail(messageSend);
+    setEmail(messageSend.email);
     setIsSubmit(true);
   }
 }
