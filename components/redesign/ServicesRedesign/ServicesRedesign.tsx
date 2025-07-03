@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { ServicesCardRedesign } from '../ServicesCardRedesign/ServicesCardRedesign';
+import { AnimatedLink } from '../AnimatedLink/AnimatedLink';
 
 type NewServicesList = {
   id: number;
@@ -118,12 +119,13 @@ export function ServicesRedesign({
                     {
                       teamLink
                         ? (
-                          <a
+                          <AnimatedLink
                             className="services-redesign__team-link"
                             href={teamLink}
+                            reverse
                           >
                             {teamName}
-                          </a>
+                          </AnimatedLink>
                         )
                         : (
                           <span className="services-redesign__team-name">
