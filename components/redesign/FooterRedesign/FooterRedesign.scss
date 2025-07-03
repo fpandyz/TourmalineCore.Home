@@ -69,10 +69,15 @@
 
   &__email {
     @include h7;
+    @include animated-underline;
 
     width: fit-content;
     text-decoration: none;
     color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
   }
 
   &__info {
