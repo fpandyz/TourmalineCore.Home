@@ -16,12 +16,7 @@ import { Textarea } from './components/Textarea/Textarea';
 import { Spinner } from '../Spinner/Spinner';
 import { DEFAULT_LOCALE } from '../../common/constants';
 import { isChineseLanguage } from '../../common/utils';
-
-enum ReCAPTCHALanguage {
-  'en' = `en`,
-  'ru' = `ru`,
-  'zh' = `zh-CN`,
-}
+import { ReCAPTCHALanguage } from '../../common/enums/captcha';
 
 export function Form({
   onSubmit = () => {},

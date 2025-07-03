@@ -16,15 +16,10 @@ import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { Spinner } from '../../Spinner/Spinner';
 import { DEFAULT_LOCALE } from '../../../common/constants';
-
-enum ReCAPTCHALanguage {
-  'en' = `en`,
-  'ru' = `ru`,
-  'zh' = `zh-CN`,
-}
+import { ReCAPTCHALanguage } from '../../../common/enums/captcha';
 
 export function FormRedesign({
-  onSubmit = () => {},
+  onSubmit,
   isSubmit,
   setIsSubmit,
 } : {
@@ -36,21 +31,33 @@ export function FormRedesign({
     t,
   } = useTranslation(`formBlockRedesign`);
 
-  const router = useRouter();
+  const {
+    locale,
+  } = useRouter();
 
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const routerLocale = useMemo(() => {
-    if (!router.locale) {
+    if (!locale) {
       return DEFAULT_LOCALE;
     }
 
-    return router.locale;
-  }, [router.locale]);
+    return locale;
+  }, [locale]);
 
   const [isLoading, setIsLoading] = useState(false);
 
   const [email, setEmail] = useState(``);
+
+  const {
+    nameLabel,
+    emailLabel,
+    descriptionLabel,
+    textareaLabel,
+    buttonSubmitLabel,
+    buttonSubmittedLabel,
+    titleSubmitted,
+  } = getTranslations();
 
   return (
     <>
@@ -75,30 +82,21 @@ export function FormRedesign({
           isSubmit
        && (
          <h2 className="form-redesign__title">
-           {
-             router.locale === `ru`
-               ? `Спасибо за заявку!`
-               : `Thank you!`
-           }
+           {titleSubmitted}
          </h2>
        )
         }
         {
           !isSubmit
-       && (
-         <h2 className="form-redesign__title">{t(`title`)}</h2>
-       )
+          && (
+            <h2 className="form-redesign__title">{t(`title`)}</h2>
+          )
         }
         {
           isSubmit
           && (
             <p className="form-redesign__description">
-              {
-                router.locale === `ru`
-                  ? `Мы ответим на вашу почту ${email} в течение одного рабочего дня. Если вопрос срочный, смело пишите в`
-                  : `We will send a message to your email ${email} within 1 working day. If urgent, please contact us on`
-              }
-
+              {descriptionLabel}
               <Link
                 className="form-redesign__contact-link"
                 href={t(`contactLink`)}
@@ -123,11 +121,7 @@ export function FormRedesign({
                 id="name"
                 name="name"
                 className="form-redesign__input"
-                label={
-                  router.locale === `ru`
-                    ? `Имя`
-                    : `Name`
-                }
+                label={nameLabel}
                 onKeyDown={(e) => {
                   if (e.key === `Enter`) {
                     e.preventDefault();
@@ -139,11 +133,7 @@ export function FormRedesign({
                 id="email"
                 name="email"
                 className="form-redesign__input"
-                label={
-                  router.locale === `ru`
-                    ? `Почта`
-                    : `Email`
-                }
+                label={emailLabel}
                 type="email"
                 value={email}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
@@ -157,11 +147,7 @@ export function FormRedesign({
               <TextareaRedesign
                 id="message"
                 name="message"
-                label={
-                  router.locale === `ru`
-                    ? `Расскажите о вашей задаче`
-                    : `Describe your project`
-                }
+                label={textareaLabel}
                 className="form-redesign__input"
                 description={t(`message.description`)}
               />
@@ -176,11 +162,7 @@ export function FormRedesign({
                 type="button"
                 onClick={() => setIsSubmit(false)}
               >
-                {
-                  router.locale === `ru`
-                    ? `Заполнить еще раз`
-                    : `Write more`
-                }
+                {buttonSubmittedLabel}
               </button>
             ) : (
               <button
@@ -188,11 +170,7 @@ export function FormRedesign({
                 type="submit"
               >
                 {isLoading && <Spinner />}
-                {!isLoading && (
-                  router.locale === `ru`
-                    ? `Отправить заявку`
-                    : `Send`
-                )}
+                {!isLoading && buttonSubmitLabel}
               </button>
             )
           }
@@ -204,7 +182,7 @@ export function FormRedesign({
                   components={{
                     bolt: <a
                       className="form-redesign__consent-link"
-                      href={`documents/policy-${router.locale}.pdf`}
+                      href={`documents/policy-${locale}.pdf`}
                       target="_blank"
                       rel="noreferrer"
                       aria-label=""
@@ -227,11 +205,33 @@ export function FormRedesign({
     </>
   );
 
+  function getTranslations() {
+    if (locale === `ru`) {
+      return {
+        nameLabel: `Имя`,
+        emailLabel: `Почта`,
+        descriptionLabel: `Мы ответим на вашу почту ${email} в течение одного рабочего дня. Если вопрос срочный, смело пишите в`,
+        textareaLabel: `Расскажите о вашей задаче`,
+        buttonSubmitLabel: `Отправить заявку`,
+        buttonSubmittedLabel: `Заполнить еще раз`,
+        titleSubmitted: `Спасибо за заявку!`,
+      };
+    }
+
+    return {
+      nameLabel: `Name`,
+      emailLabel: `Email`,
+      descriptionLabel: `We will send a message to your email ${email} within 1 working day. If urgent, please contact us on`,
+      textareaLabel: `Describe your project`,
+      buttonSubmitLabel: `Send`,
+      buttonSubmittedLabel: `Write more`,
+      titleSubmitted: `Thank you!`,
+    };
+  }
+
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
-    console.log(isLoading);
     setIsLoading(true);
-    console.log(isLoading);
 
     try {
       if (!recaptchaRef.current) {
