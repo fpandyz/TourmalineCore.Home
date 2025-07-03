@@ -52,7 +52,7 @@ export function FormRedesign({
   const {
     nameLabel,
     emailLabel,
-    descriptionLabel,
+    description,
     textareaLabel,
     buttonSubmitLabel,
     buttonSubmittedLabel,
@@ -78,25 +78,14 @@ export function FormRedesign({
             </div>
           )
         }
-        {
-          isSubmit
-       && (
-         <h2 className="form-redesign__title">
-           {titleSubmitted}
-         </h2>
-       )
-        }
-        {
-          !isSubmit
-          && (
-            <h2 className="form-redesign__title">{t(`title`)}</h2>
-          )
-        }
+        <h2 className="form-redesign__title">
+          {isSubmit ? `${titleSubmitted}` : t(`title`)}
+        </h2>
         {
           isSubmit
           && (
             <p className="form-redesign__description">
-              {descriptionLabel}
+              {description}
               <Link
                 className="form-redesign__contact-link"
                 href={t(`contactLink`)}
@@ -169,8 +158,7 @@ export function FormRedesign({
                 className="form-redesign__featured-link"
                 type="submit"
               >
-                {isLoading && <Spinner />}
-                {!isLoading && buttonSubmitLabel}
+                {isLoading ? <Spinner /> : buttonSubmitLabel}
               </button>
             )
           }
@@ -210,7 +198,7 @@ export function FormRedesign({
       return {
         nameLabel: `Имя`,
         emailLabel: `Почта`,
-        descriptionLabel: `Мы ответим на вашу почту ${email} в течение одного рабочего дня. Если вопрос срочный, смело пишите в`,
+        description: `Мы ответим на вашу почту ${email} в течение одного рабочего дня. Если вопрос срочный, смело пишите в`,
         textareaLabel: `Расскажите о вашей задаче`,
         buttonSubmitLabel: `Отправить заявку`,
         buttonSubmittedLabel: `Заполнить еще раз`,
@@ -221,7 +209,7 @@ export function FormRedesign({
     return {
       nameLabel: `Name`,
       emailLabel: `Email`,
-      descriptionLabel: `We will send a message to your email ${email} within 1 working day. If urgent, please contact us on`,
+      description: `We will send a message to your email ${email} within 1 working day. If urgent, please contact us on`,
       textareaLabel: `Describe your project`,
       buttonSubmitLabel: `Send`,
       buttonSubmittedLabel: `Write more`,
