@@ -43,15 +43,16 @@
 
   &__privacy-policy {
     @include body-m;
+    @include animated-underline;
 
-    text-decoration-line: none;
+    width: fit-content;
 
     // todo: change to $color-light-grey-redesign
     color: #afafb8;
 
-    &:hover,
-    &:focus-visible {
-      text-decoration-line: underline;
+    &::after {
+      // todo: change to $color-light-grey-redesign
+      background-color: #afafb8;
     }
   }
 
