@@ -24,7 +24,10 @@
   &__copyright {
     @include body-m;
 
+    display: flex;
+    flex-direction: column;
     color: $color-middle-grey-redesign;
+    gap: 4px;
     grid-row: 3;
 
     @include tablet {
@@ -35,6 +38,20 @@
 
     @include desktop {
       grid-row: 1 / span 2;
+    }
+  }
+
+  &__privacy-policy {
+    @include body-m;
+
+    text-decoration-line: none;
+
+    // todo: change to $color-light-grey-redesign
+    color: #afafb8;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration-line: underline;
     }
   }
 
