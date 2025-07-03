@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import IconArrow from '../../../icons/icon-arrow-redesign.svg';
-import { AnimatedLink } from '../AnimatedLink/AnimatedLink';
 
 export function ServicesCardRedesign({
   title,
@@ -65,12 +64,12 @@ export function ServicesCardRedesign({
           )
         }
         {link && (
-          <AnimatedLink
+          <span
             className="services-card-redesign__link-text"
           >
             {linkText}
             <IconArrow />
-          </AnimatedLink>
+          </span>
         )}
         {
           imageUrl && (

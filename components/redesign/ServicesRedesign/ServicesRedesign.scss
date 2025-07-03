@@ -71,6 +71,10 @@
     }
   }
 
+  &__team-link {
+    @include animated-underline-reverse;
+  }
+
   &__icon-wrapper {
     position: relative;
     display: block;

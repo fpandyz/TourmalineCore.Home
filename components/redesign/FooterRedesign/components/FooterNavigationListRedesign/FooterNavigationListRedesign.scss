@@ -20,6 +20,7 @@
 
   &__link {
     @include body-m;
+    @include animated-underline;
 
     color: $color-white;
 

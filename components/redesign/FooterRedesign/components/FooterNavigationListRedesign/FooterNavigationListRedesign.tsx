@@ -1,5 +1,4 @@
 import router from 'next/router';
-import { AnimatedLink } from '../../../AnimatedLink/AnimatedLink';
 
 export type FooterNavigationList = {
   caption: string;
@@ -24,7 +23,7 @@ export function FooterNavigationListRedesign({
             key={el.label}
           >
             {/* TODO: Change when next will be upgrade to 12+ version */}
-            <AnimatedLink
+            <a
               className="footer-navigation-list-redesign__link"
               href={el.path}
               onClick={(e) => router.pathname === el.path && e.preventDefault()}
@@ -34,7 +33,7 @@ export function FooterNavigationListRedesign({
               })}
             >
               {el.label}
-            </AnimatedLink>
+            </a>
           </li>
         ))}
       </ul>
