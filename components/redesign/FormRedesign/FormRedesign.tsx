@@ -147,7 +147,7 @@ export function FormRedesign({
           {
             isSubmit ? (
               <button
-                className="form-redesign__featured-link"
+                className="form-redesign__featured-button"
                 type="button"
                 onClick={() => setIsSubmit(false)}
               >
@@ -155,7 +155,7 @@ export function FormRedesign({
               </button>
             ) : (
               <button
-                className="form-redesign__featured-link"
+                className="form-redesign__featured-button"
                 type="submit"
               >
                 {isLoading ? <Spinner /> : buttonSubmitLabel}

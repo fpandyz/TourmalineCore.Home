@@ -67,7 +67,7 @@
     }
   }
 
-  &__featured-link {
+  &__featured-button {
     @include link-text;
 
     position: relative;
@@ -77,6 +77,7 @@
     height: 48px;
     color: $color-white;
     background-color: $color-deep-blue-redesign;
+    cursor: pointer;
     transition: background-color 0.25s;
 
     &::before,

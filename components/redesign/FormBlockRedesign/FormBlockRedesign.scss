@@ -72,15 +72,14 @@
   &__aside-text {
     max-width: 190px;
 
+    a {
+      color: $color-deep-blue-redesign;
+      text-underline-offset: 2px;
+    }
+
     @include desktop {
       max-width: none;
     }
-  }
-
-  &__aside-link {
-    margin-left: 4px;
-    color: $color-deep-blue-redesign;
-    text-underline-offset: 2px;
   }
 
   @include tablet {

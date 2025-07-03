@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import clsx from 'clsx';
 import { FormRedesign } from '../FormRedesign/FormRedesign';
 import { sendEmail } from '../../../services/emailService/emailService';
 import { getMessageFromForm } from '../../../common/utils';
+import { MarkdownText } from '../MarkdownText/MarkdownText';
 
 export function FormBlockRedesign({
   initializeIsSubmit = false,
@@ -22,9 +21,7 @@ export function FormBlockRedesign({
 
   return (
     <section
-      className={clsx(`form-block-redesign`, {
-        'form-block-redesign--is-submitted': isSubmit,
-      })}
+      className="form-block-redesign"
       data-testid={testId}
     >
       <div className="form-block-redesign__wrapper container-redesign">
@@ -48,16 +45,12 @@ export function FormBlockRedesign({
                             fill
                           />
                         </div>
-                        <p className="form-block-redesign__aside-text">
+                        <MarkdownText
+                          isTargetBlank
+                          className="form-block-redesign__aside-text"
+                        >
                           {t(`asideText`)}
-                          <Link
-                            href={t(`contactLink`)}
-                            className="form-block-redesign__aside-link"
-                            target="_blank"
-                          >
-                            {t(`contactLinkText`)}
-                          </Link>
-                        </p>
+                        </MarkdownText>
                       </div>
                     </div>
                   </>
