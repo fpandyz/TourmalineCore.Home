@@ -12,6 +12,7 @@ import { ProjectsWithTextBlockRedesign } from "../../components/redesign/Project
 import { ServicesRedesign } from "../../components/redesign/ServicesRedesign/ServicesRedesign";
 import { SignpostMultipleRedesign } from "../../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign";
 import { SingleImageRedesign } from "../../components/redesign/SingleImageRedesign/SingleImageRedesign";
+import { FormBlockRedesign } from "../../components/redesign/FormBlockRedesign/FormBlockRedesign";
 import { ComponentName } from "../../common/enums";
 
 export default function ComponentsPage() {
@@ -91,6 +92,21 @@ export default function ComponentsPage() {
     );
   }
 
+  if (componentName === ComponentName.FORM_BLOCK) {
+    return (
+      <FormBlockRedesign testId="form-block" />
+    );
+  }
+
+  if (componentName === ComponentName.SUBMITTED_FORM_BLOCK) {
+    return (
+
+      <FormBlockRedesign
+        initializeIsSubmit
+        testId="submitted-form-block"
+      />
+    );
+  }
   return (
     <div className="components-page container-redesign">
       <h2 className="components-page__subtitle">
@@ -125,10 +141,16 @@ export default function ComponentsPage() {
           <Link href={ComponentName.SERVICES}>Services</Link>
         </li>
         <li className="components-page__item">
-          <Link href={ComponentName.SIGNPOST_MULTIPLE}>Articles Signpost</Link>
+          <Link href={ComponentName.SIGNPOST_MULTIPLE}>Articles signpost</Link>
         </li>
         <li className="components-page__item">
-          <Link href={ComponentName.SINGLE_IMAGE}>Single Image</Link>
+          <Link href={ComponentName.SINGLE_IMAGE}>Single image</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.FORM_BLOCK}>Form block</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.SUBMITTED_FORM_BLOCK}>Submitted form</Link>
         </li>
       </ul>
     </div>
@@ -152,6 +174,7 @@ export const getStaticProps: GetStaticProps = async ({
       `servicesRedesign`,
       `articleSignpostsRedesign`,
       `singleImageRedesign`,
+      `formBlockRedesign`,
     ])),
   },
 });
