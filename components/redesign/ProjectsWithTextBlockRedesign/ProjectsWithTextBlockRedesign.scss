@@ -5,7 +5,7 @@
   background-color: $color-white;
 
   ~ .projects-redesign {
-    @include tablet {
+    @media (width < $tablet-width) {
       padding-top: 0;
     }
   }
