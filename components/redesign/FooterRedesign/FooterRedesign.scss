@@ -26,7 +26,7 @@
 
     display: flex;
     flex-direction: column;
-    color: $color-middle-grey-redesign;
+    color: $color-white;
     gap: 4px;
     grid-row: 3;
 
@@ -46,10 +46,10 @@
     @include animated-underline;
 
     width: fit-content;
-    color: $color-light-grey-redesign;
+    color: $color-grey-300-redesign;
 
     &::after {
-      background-color: $color-light-grey-redesign;
+      background-color: $color-grey-300-redesign;
     }
   }
 

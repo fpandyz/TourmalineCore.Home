@@ -13,7 +13,7 @@
   &__list {
     margin-bottom: 10px;
     margin-left: 24px;
-    color: $color-grey-redesign;
+    color: $color-grey-500-redesign;
 
     @include desktop {
       margin-left: 26px;
@@ -103,11 +103,15 @@
   }
 
   &--grey {
-    background-color: $color-lighter-grey-redesign;
+    background-color: $color-grey-100-redesign;
   }
 
   &--black {
     background-color: $color-black;
+
+    #{$this}__list {
+      color: $color-grey-300-redesign;
+    }
 
     #{$this}__link,
     #{$this}__title {

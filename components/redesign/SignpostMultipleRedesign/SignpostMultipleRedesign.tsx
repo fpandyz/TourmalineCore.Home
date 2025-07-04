@@ -29,7 +29,9 @@ export function SignpostMultipleRedesign({
       data-testid={dataTestId}
     >
       <h2 className="signpost-multiple-redesign__title">{t(`title`)}</h2>
-      <ul className="signpost-multiple-redesign__list grid">
+      <ul
+        className="signpost-multiple-redesign__list grid"
+      >
         {signposts.map(({
           title,
           subtitle,
@@ -38,6 +40,10 @@ export function SignpostMultipleRedesign({
         }) => (
           <li
             key={title}
+            // This element has scrolling on a mobile device, so axe-core recommends adding a tabIndex
+            // More info - https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=playwright
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+            tabIndex={0}
             className="signpost-multiple-redesign__item col-desktop-3"
           >
             <SignpostRedesign

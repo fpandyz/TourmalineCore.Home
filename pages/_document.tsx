@@ -11,20 +11,27 @@ import { optionYandexMetrika } from '../components/Cookie/Cookie';
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
+    const {
+      locale,
+    } = ctx;
 
     return {
       ...initialProps,
+      locale,
     };
   }
 
   render() {
+    const {
+      locale,
+    } = this.props;
     const isMetricsEnabled = process.env.METRICS_ENABLED === `true`;
 
     const yandexId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
     const googleId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
     return (
-      <Html>
+      <Html lang={locale}>
         <Head>
           <meta
             name="theme-color"
