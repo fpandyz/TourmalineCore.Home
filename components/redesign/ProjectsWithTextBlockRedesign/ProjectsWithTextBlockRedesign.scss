@@ -2,12 +2,10 @@
   $grid-mobile-gap: 32px;
   $grid-desktop-gap: 12px;
 
-  padding-top: 40px;
-  padding-bottom: 32px;
   background-color: $color-white;
 
   ~ .projects-redesign {
-    @media (width < $tablet-width) {
+    @include tablet {
       padding-top: 0;
     }
   }
@@ -17,6 +15,10 @@
 
     @include tablet {
       padding: 0;
+    }
+
+    @include tablet-xl {
+      padding: 0 8px;
     }
 
     @include desktop {
@@ -37,6 +39,10 @@
 
     margin-bottom: 32px;
     color: $color-black;
+
+    @include tablet-xl {
+      margin-top: 16px;
+    }
 
     @include desktop {
       margin-top: 32px;
@@ -73,10 +79,5 @@
         text-decoration: none;
       }
     }
-  }
-
-  @include desktop {
-    padding-top: 48px;
-    padding-bottom: 48px;
   }
 }

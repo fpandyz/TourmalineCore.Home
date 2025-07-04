@@ -24,7 +24,7 @@
   }
 
   & + & {
-    @media (width < $tablet-width) {
+    @include tablet {
       padding-top: 0;
     }
   }
