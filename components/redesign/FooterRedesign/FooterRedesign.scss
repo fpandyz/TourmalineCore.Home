@@ -24,7 +24,10 @@
   &__copyright {
     @include body-m;
 
+    display: flex;
+    flex-direction: column;
     color: $color-middle-grey-redesign;
+    gap: 4px;
     grid-row: 3;
 
     @include tablet {
@@ -35,6 +38,18 @@
 
     @include desktop {
       grid-row: 1 / span 2;
+    }
+  }
+
+  &__privacy-policy {
+    @include body-m;
+    @include animated-underline;
+
+    width: fit-content;
+    color: $color-light-grey-redesign;
+
+    &::after {
+      background-color: $color-light-grey-redesign;
     }
   }
 
@@ -69,10 +84,15 @@
 
   &__email {
     @include h7;
+    @include animated-underline;
 
     width: fit-content;
     text-decoration: none;
     color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
   }
 
   &__info {

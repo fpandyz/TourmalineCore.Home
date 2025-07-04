@@ -1,11 +1,15 @@
 import { useTranslation } from 'next-i18next';
 
+import { useRouter } from 'next/router';
 import { FooterNavigationList, FooterNavigationListRedesign } from './components/FooterNavigationListRedesign/FooterNavigationListRedesign';
 
 export function FooterRedesign() {
   const {
     t,
   } = useTranslation(`footerRedesign`);
+  const {
+    locale,
+  } = useRouter();
 
   const footerNavigationLists: FooterNavigationList[] = t(`navigationLists`, {
     returnObjects: true,
@@ -33,6 +37,14 @@ export function FooterRedesign() {
             {`© 2019-${new Date()
               .getFullYear()} Tourmaline Core`}
           </span>
+          <a
+            href={`documents/policy-${locale}.pdf`}
+            target="_blank"
+            rel="noreferrer"
+            className="footer-redesign__privacy-policy"
+          >
+            {locale === `ru` ? `Политика конфиденциальности` : `Privacy policy`}
+          </a>
         </div>
         <ul className="footer-redesign__navigation">
           {footerNavigationLists.map((el) => (

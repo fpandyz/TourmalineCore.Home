@@ -80,6 +80,11 @@ export const test = base.extend<CustomTestFixtures>({
       breakpoint: Breakpoint;
       breakpointName: BreakpointName;
     }) => {
+      // This is necessary so that the tests do not crop the screenshots.
+      await page.addStyleTag({
+        content: `html, body, #__next { height: auto !important; min-height: 100% !important; }`,
+      });
+
       await setViewportSize({
         width: breakpoint,
       });

@@ -1,0 +1,55 @@
+.textarea-redesign {
+  $this: &;
+
+  &__box {
+    position: relative;
+    resize: inherit;
+  }
+
+  &__control {
+    @include body-m;
+
+    display: block;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 0;
+    padding: 24px 16px 8px;
+    width: 100%;
+    min-height: 92px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.4;
+    color: $color-white;
+    background-color: $color-grey-700-redesign;
+    resize: inherit;
+    transition: all 0.3s;
+    caret-color: $color-deep-blue-redesign;
+
+    &:not(:placeholder-shown) ~ #{$this}__label {
+      top: 0;
+      font-size: 14px;
+    }
+
+    &:focus-visible {
+      border-color: $color-deep-blue-redesign;
+      background-color: $color-grey-900-redesign;
+      transition: all 0.3s;
+
+      ~ #{$this}__label {
+        top: 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    min-height: 30px;
+    color: $color-light-grey-redesign;
+    cursor: text;
+    transition: all 0.3s;
+  }
+}

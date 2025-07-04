@@ -1,0 +1,57 @@
+.input-redesign {
+  $this: &;
+
+  &__box {
+    position: relative;
+  }
+
+  &__control {
+    @include body-m;
+
+    display: block;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 2px;
+    padding: 24px 16px 8px;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.4;
+    color: $color-white;
+    background-color: $color-grey-700-redesign;
+    caret-color: $color-deep-blue-redesign;
+
+    &:not(:placeholder-shown) ~ #{$this}__label {
+      top: 0;
+      font-size: 14px;
+    }
+
+    &:focus-visible {
+      border-color: $color-deep-blue-redesign;
+      background-color: $color-grey-900-redesign;
+      transition: all 0.3s;
+
+      ~ #{$this}__label {
+        top: 0;
+        font-size: 14px;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus-visible {
+      transition: background-color 9999s ease-in-out 0s;
+      -webkit-text-fill-color: #fff;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    color: $color-light-grey-redesign;
+    cursor: text;
+    transition: all 0.3s;
+  }
+}
