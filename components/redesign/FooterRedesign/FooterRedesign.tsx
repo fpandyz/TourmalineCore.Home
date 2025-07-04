@@ -43,7 +43,7 @@ export function FooterRedesign() {
             rel="noreferrer"
             className="footer-redesign__privacy-policy"
           >
-            {locale === `ru` ? `Политика конфиденциальность` : `Privacy policy`}
+            {locale === `ru` ? `Политика конфиденциальности` : `Privacy policy`}
           </a>
         </div>
         <ul className="footer-redesign__navigation">
