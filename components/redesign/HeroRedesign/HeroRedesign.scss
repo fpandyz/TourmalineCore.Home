@@ -13,6 +13,10 @@
     @include h1;
 
     margin-bottom: 24px;
+
+    @include desktop-xl {
+      margin-bottom: 32px;
+    }
   }
 
   &__description {
@@ -20,6 +24,10 @@
 
     margin-bottom: 56px;
     color: $color-grey-300-redesign;
+
+    @include desktop-xl {
+      margin-bottom: 80px;
+    }
   }
 
   &__images {
@@ -39,6 +47,11 @@
     @include tablet {
       height: 332px;
     }
+
+    @include desktop-xl {
+      width: 496px;
+      height: 468px;
+    }
   }
 
   &__title,
@@ -49,9 +62,18 @@
     @include desktop {
       max-width: 646px;
     }
+
+    @include desktop {
+      max-width: 938px;
+    }
   }
 
   @include tablet {
     padding-bottom: 130px;
+  }
+
+  @include desktop-xl {
+    padding-top: 56px;
+    padding-bottom: 180px;
   }
 }
