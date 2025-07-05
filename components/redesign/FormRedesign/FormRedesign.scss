@@ -31,6 +31,10 @@
     max-width: 420px;
     text-align: center;
 
+    @include tablet-xl {
+      max-width: unset;
+    }
+
     @include desktop {
       margin-bottom: 17px;
     }
@@ -43,6 +47,10 @@
     max-width: 80%;
     text-align: center;
     color: $color-grey-300-redesign;
+
+    @include tablet-xl {
+      max-width: unset;
+    }
 
     @include desktop {
       max-width: 420px;
@@ -126,6 +134,10 @@
       margin: 12px auto 0;
       max-width: 436px;
     }
+
+    @include tablet-xl {
+      max-width: unset;
+    }
   }
 
   &__consent-link {
@@ -137,6 +149,10 @@
 
   @include tablet {
     max-width: 492px;
+  }
+
+  @include tablet-xl {
+    max-width: 600px;
   }
 
   @include desktop {
@@ -164,6 +180,10 @@
         max-width: 290px;
       }
 
+      @include tablet-xl {
+        max-width: 360px;
+      }
+
       @include desktop {
         max-width: 420px;
       }
@@ -171,6 +191,10 @@
 
     @include tablet {
       padding-bottom: 130px;
+    }
+
+    @include tablet-xl {
+      padding-bottom: 100px;
     }
 
     @include desktop {

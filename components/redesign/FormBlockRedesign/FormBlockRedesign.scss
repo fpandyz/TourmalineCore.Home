@@ -18,6 +18,10 @@
       background-color: $color-black;
     }
 
+    @include tablet-xl {
+      max-width: 658px;
+    }
+
     @include desktop {
       max-width: 716px;
     }
