@@ -114,7 +114,7 @@ a {
   padding-left: 12px;
   max-width: 1920px;
 
-  @include desktop {
+  @include tablet-xl {
     padding-right: 16px;
     padding-left: 16px;
   }
