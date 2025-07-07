@@ -22,9 +22,17 @@
       margin-bottom: 20px;
     }
 
+    @include desktop-xl {
+      margin-bottom: 28px;
+    }
+
     &--XS {
       @include desktop {
         height: 290px;
+      }
+
+      @include desktop-xl {
+        height: 408px;
       }
     }
 
@@ -32,17 +40,29 @@
       @include desktop {
         height: 364px;
       }
+
+      @include desktop-xl {
+        height: 512px;
+      }
     }
 
     &--M {
       @include desktop {
         height: 432px;
       }
+
+      @include desktop-xl {
+        height: 608px;
+      }
     }
 
     &--L {
       @include desktop {
         height: 545px;
+      }
+
+      @include desktop-xl {
+        height: 764px;
       }
     }
   }
@@ -63,6 +83,10 @@
 
     @include desktop {
       margin-bottom: 12px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 16px;
     }
   }
 
