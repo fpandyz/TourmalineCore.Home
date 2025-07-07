@@ -35,6 +35,10 @@
     color: $color-black;
     background-color: $color-white;
 
+    @include tablet-xl {
+      margin: 0 -16px;
+    }
+
     @include desktop {
       position: absolute;
       left: 0;
