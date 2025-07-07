@@ -22,6 +22,12 @@
     border-radius: 2px;
     width: 260px;
     height: 172px;
+
+    @include desktop-xl {
+      margin-bottom: 80px;
+      width: 450px;
+      height: 297px;
+    }
   }
 
   &__title {
@@ -218,6 +224,10 @@
       @include desktop {
         max-width: 318px;
       }
+
+      @include desktop-xl {
+        max-width: 510px;
+      }
     }
 
     #{$this}__description {
@@ -232,6 +242,10 @@
       @include desktop {
         max-width: 420px;
       }
+
+      @include desktop-xl {
+        max-width: unset;
+      }
     }
 
     @include tablet {
@@ -244,6 +258,11 @@
 
     @include desktop {
       padding-bottom: 123px;
+    }
+
+    @include desktop-xl {
+      padding-top: 104px;
+      padding-bottom: 80px;
     }
   }
 }
