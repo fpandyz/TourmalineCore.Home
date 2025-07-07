@@ -15,8 +15,6 @@
   &__item {
     @include body-m;
 
-    height: 20px;
-
     & + & {
       margin-top: 8px;
     }
