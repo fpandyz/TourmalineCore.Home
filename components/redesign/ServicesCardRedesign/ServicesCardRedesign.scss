@@ -15,7 +15,7 @@
     margin-left: 24px;
     color: $color-grey-500-redesign;
 
-    @include desktop {
+    @include tablet-xl {
       margin-left: 26px;
     }
 
@@ -107,6 +107,10 @@
     }
   }
 
+  @include tablet-xl {
+    min-height: 386px;
+  }
+
   @include desktop {
     min-height: 405px;
   }
@@ -120,7 +124,7 @@
     display: none;
     background-color: $color-deep-blue-redesign;
 
-    @include tablet-xl {
+    @include desktop {
       display: block;
     }
   }

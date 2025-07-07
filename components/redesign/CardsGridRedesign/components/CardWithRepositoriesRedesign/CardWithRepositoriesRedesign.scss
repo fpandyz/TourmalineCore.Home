@@ -2,6 +2,14 @@
   &__item {
     & + & {
       margin-top: 20px;
+
+      @include tablet-xl {
+        margin-top: 14px;
+      }
+
+      @include desktop {
+        margin-top: 20px;
+      }
     }
   }
 

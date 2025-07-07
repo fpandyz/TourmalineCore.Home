@@ -15,7 +15,7 @@
     grid-template-rows: repeat(3, auto);
 
     @include tablet {
-      gap: 48px 12px;
+      gap: 0 48px;
       grid-template-columns: repeat(2, auto);
       grid-template-rows: repeat(2, auto);
     }
@@ -33,10 +33,6 @@
     @include tablet {
       align-self: flex-end;
       grid-column: 1;
-      grid-row: 2;
-    }
-
-    @include desktop {
       grid-row: 1 / span 2;
     }
   }
@@ -59,16 +55,23 @@
     grid-template-columns: repeat(2, auto);
 
     @include tablet {
+      margin-right: 56px;
+      margin-bottom: 26px;
       gap: 16px;
       grid-column: 2;
       grid-row: 1;
-      justify-self: end;
+      justify-self: flex-start;
+    }
+
+    @include tablet-xl {
+      margin-right: 114px;
+      gap: 12px;
+      grid-row: 1 / span 2;
+      justify-self: flex-end;
     }
 
     @include desktop {
       margin-right: 108px;
-      gap: 12px;
-      grid-row: 1 / span 2;
     }
   }
 
@@ -98,10 +101,6 @@
   &__info {
     @include tablet {
       grid-column: 1;
-      grid-row: 1;
-    }
-
-    @include desktop {
       grid-row: 1 / span 2;
     }
   }

@@ -22,6 +22,10 @@
   &__cards {
     grid-gap: 8px;
 
+    @include tablet-xl {
+      grid-gap: 12px;
+    }
+
     @include desktop {
       grid-gap: 12px;
     }
@@ -35,8 +39,19 @@
     &:nth-child(4) {
       display: none;
 
-      @include tablet-xl {
+      @include desktop {
         display: block;
+      }
+    }
+
+    @include tablet-xl {
+      &:nth-child(9),
+      &:nth-child(10) {
+        display: none;
+
+        @include desktop {
+          display: block;
+        }
       }
     }
   }
@@ -192,10 +207,12 @@
     }
 
     @include tablet-xl {
-      top: 3px;
+      right: 0;
+      top: 42px;
     }
 
     @include desktop {
+      right: -4px;
       top: 17px;
     }
 
@@ -215,7 +232,7 @@
     padding: 8px 0 40px;
 
     @include tablet-xl {
-      padding: 12px 20px;
+      padding: 34px 20px;
     }
 
     @include desktop {
@@ -235,6 +252,10 @@
 
     @include tablet {
       padding: 0;
+    }
+
+    @include tablet-xl {
+      max-width: 420px;
     }
 
     @include desktop {
@@ -259,7 +280,7 @@
     }
 
     @include tablet-xl {
-      max-width: 320px;
+      max-width: 400px;
     }
 
     @include desktop {
@@ -271,6 +292,10 @@
       margin-bottom: 48px;
       max-width: 660px;
     }
+  }
+
+  @include tablet-xl {
+    padding-bottom: 40px;
   }
 
   @include desktop {
