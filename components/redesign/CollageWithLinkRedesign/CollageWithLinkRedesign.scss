@@ -24,6 +24,11 @@
       padding: 80px 0;
       max-width: 1366px;
     }
+
+    @include desktop-xl {
+      padding: 112px 0;
+      max-width: 1872px;
+    }
   }
 
   &__accent-link {
@@ -55,6 +60,12 @@
       top: 80px;
       max-width: 252px;
     }
+
+    @include desktop-xl {
+      left: 20px;
+      top: 110px;
+      max-width: 290px;
+    }
   }
 
   &__link-box {
@@ -82,6 +93,12 @@
     @include desktop {
       width: 260px;
       height: 200px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 12px;
+      width: 360px;
+      height: 280px;
     }
   }
 
@@ -132,6 +149,13 @@
         width: 202px;
         height: 202px;
       }
+
+      @include desktop-xl {
+        left: -20px;
+        bottom: 336px;
+        width: 283px;
+        height: 283px;
+      }
     }
 
     &--2 {
@@ -158,6 +182,13 @@
         top: 152px;
         width: 251px;
         height: 249px;
+      }
+
+      @include desktop-xl {
+        left: 338px;
+        top: 210px;
+        width: 348px;
+        height: 348px;
       }
     }
 
@@ -188,6 +219,13 @@
         width: 424px;
         height: 421px;
       }
+
+      @include desktop-xl {
+        left: 596px;
+        top: 366px;
+        width: 596px;
+        height: 596px;
+      }
     }
 
     &--4 {
@@ -216,6 +254,13 @@
         top: 87px;
         width: 295px;
         height: 296px;
+      }
+
+      @include desktop-xl {
+        right: 328px;
+        top: 122px;
+        width: 416px;
+        height: 416px;
       }
     }
 
@@ -246,6 +291,13 @@
         width: 209px;
         height: 209px;
       }
+
+      @include desktop-xl {
+        right: 86px;
+        top: 404px;
+        width: 292px;
+        height: 292px;
+      }
     }
 
     &--6 {
@@ -272,6 +324,13 @@
         bottom: 142px;
         width: 192px;
         height: 192px;
+      }
+
+      @include desktop-xl {
+        right: -30px;
+        bottom: 204px;
+        width: 270px;
+        height: 270px;
       }
     }
 
@@ -300,6 +359,13 @@
         width: 202px;
         height: 202px;
       }
+
+      @include desktop-xl {
+        right: 442px;
+        bottom: 150px;
+        width: 284px;
+        height: 284px;
+      }
     }
 
     &--8 {
@@ -319,6 +385,7 @@
       @include tablet-xl {
         left: 268px;
         bottom: 144px;
+        z-index: 0;
         width: 159px;
         height: 159px;
       }
@@ -328,6 +395,13 @@
         bottom: 78px;
         width: 246px;
         height: 220px;
+      }
+
+      @include desktop-xl {
+        left: 334px;
+        bottom: 116px;
+        width: 314px;
+        height: 314px;
       }
     }
   }
@@ -342,5 +416,9 @@
 
   @include desktop {
     height: 874px;
+  }
+
+  @include desktop-xl {
+    height: 1233px;
   }
 }

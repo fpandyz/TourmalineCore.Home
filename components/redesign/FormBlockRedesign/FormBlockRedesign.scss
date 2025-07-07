@@ -25,6 +25,10 @@
     @include desktop {
       max-width: 716px;
     }
+
+    @include desktop-xl {
+      max-width: 1006px;
+    }
   }
 
   &__aside {
@@ -49,6 +53,10 @@
       max-width: 220px;
       background-color: transparent;
     }
+
+    @include desktop-xl {
+      max-width: 320px;
+    }
   }
 
   &__aside-inner {
@@ -57,6 +65,10 @@
 
     @include desktop {
       flex-direction: column;
+    }
+
+    @include desktop-xl {
+      gap: 22px;
     }
   }
 
@@ -74,6 +86,11 @@
     @include desktop {
       width: 100px;
       height: 100px;
+    }
+
+    @include desktop-xl {
+      width: 140px;
+      height: 140px;
     }
   }
 
@@ -96,5 +113,9 @@
 
   @include desktop {
     padding: 100px 0 140px;
+  }
+
+  @include desktop-xl {
+    padding: 140px 0 200px;
   }
 }

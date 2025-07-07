@@ -22,6 +22,12 @@
     border-radius: 2px;
     width: 260px;
     height: 172px;
+
+    @include desktop-xl {
+      margin-bottom: 80px;
+      width: 450px;
+      height: 297px;
+    }
   }
 
   &__title {
@@ -37,6 +43,11 @@
 
     @include desktop {
       margin-bottom: 17px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 26px;
+      max-width: unset;
     }
   }
 
@@ -55,6 +66,11 @@
     @include desktop {
       max-width: 420px;
     }
+
+    @include desktop-xl {
+      margin-bottom: 42px;
+      max-width: unset;
+    }
   }
 
   &__contact-link {
@@ -71,6 +87,10 @@
 
       @include desktop {
         margin-top: 8px;
+      }
+
+      @include desktop-xl {
+        margin-top: 12px;
       }
     }
   }
@@ -96,22 +116,40 @@
       width: 31px;
       height: 51px;
       background-repeat: no-repeat;
+
+      @include desktop-xl {
+        width: 50px;
+        height: 74px;
+      }
     }
 
     &::before {
       left: 0;
       background-image: url("../../../public/images/edge-left-black.svg");
       pointer-events: none;
+
+      @include desktop-xl {
+        left: -1px;
+        background-image: url("../../../public/images/edge-left-black-desktop-xl.svg");
+      }
     }
 
     &::after {
       right: -1px;
       background-image: url("../../../public/images/edge-right-black.svg");
+
+      @include desktop-xl {
+        background-image: url("../../../public/images/edge-right-black-desktop-xl.svg");
+      }
     }
 
     &:hover,
     &:focus-visible {
       background-color: $color-pink-redesign;
+    }
+
+    @include desktop-xl {
+      height: 70px;
     }
   }
 
@@ -121,6 +159,10 @@
 
     @include desktop {
       margin-top: 24px;
+    }
+
+    @include desktop-xl {
+      margin-top: 32px;
     }
   }
 
@@ -137,6 +179,10 @@
 
     @include tablet-xl {
       max-width: unset;
+    }
+
+    @include desktop-xl {
+      margin-top: 16px;
     }
   }
 
@@ -159,6 +205,11 @@
     max-width: 436px;
   }
 
+  @include desktop-xl {
+    padding: 80px 0;
+    max-width: 614px;
+  }
+
   &--is-submitted {
     padding-top: 88px;
     padding-bottom: 148px;
@@ -172,6 +223,10 @@
 
       @include desktop {
         max-width: 318px;
+      }
+
+      @include desktop-xl {
+        max-width: 510px;
       }
     }
 
@@ -187,6 +242,10 @@
       @include desktop {
         max-width: 420px;
       }
+
+      @include desktop-xl {
+        max-width: unset;
+      }
     }
 
     @include tablet {
@@ -199,6 +258,11 @@
 
     @include desktop {
       padding-bottom: 123px;
+    }
+
+    @include desktop-xl {
+      padding-top: 104px;
+      padding-bottom: 80px;
     }
   }
 }

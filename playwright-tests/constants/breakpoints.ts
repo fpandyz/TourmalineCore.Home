@@ -21,4 +21,9 @@ export const BREAKPOINTS = [
     breakpoint: Breakpoint.DESKTOP,
     breakpointName: BreakpointName.DESKTOP,
   },
+  {
+    name: `DesktopXlTest`,
+    breakpoint: Breakpoint.DESKTOP_XL,
+    breakpointName: BreakpointName.DESKTOP_XL,
+  },
 ];
