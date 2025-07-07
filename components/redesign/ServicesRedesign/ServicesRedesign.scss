@@ -23,7 +23,11 @@
     grid-gap: 8px;
 
     @include desktop {
-      grid-gap: 11px;
+      grid-gap: 12px;
+    }
+
+    @include desktop-xl {
+      grid-gap: 16px;
     }
   }
 
@@ -52,6 +56,10 @@
 
     @include desktop {
       gap: 8px 16px;
+    }
+
+    @include desktop-xl {
+      gap: 12px 16px;
     }
   }
 
@@ -90,6 +98,16 @@
       width: 28px;
       height: 28px;
       transform: translate(-50%, -50%);
+
+      @include desktop-xl {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @include desktop-xl {
+      width: 64px;
+      height: 64px;
     }
   }
 
@@ -124,6 +142,11 @@
       @include tablet {
         width: 20px;
       }
+
+      @include desktop-xl {
+        width: 28px;
+        height: 80px;
+      }
     }
 
     &::before {
@@ -134,6 +157,10 @@
       @include tablet {
         background-image: url("../../../public/images/edge-left-desktop.svg");
       }
+
+      @include desktop-xl {
+        background-image: url("../../../public/images/edge-left-desktop-xl.svg");
+      }
     }
 
     &::after {
@@ -142,6 +169,10 @@
 
       @include tablet {
         background-image: url("../../../public/images/edge-right-desktop.svg");
+      }
+
+      @include desktop-xl {
+        background-image: url("../../../public/images/edge-right-desktop-xl.svg");
       }
     }
 
@@ -168,6 +199,11 @@
       top: 17px;
     }
 
+    @include desktop-xl {
+      height: 76px;
+      max-width: 286px;
+    }
+
     // this is to compensate for the svg edges on up to large mobile devices
     @media (width <= 480px) {
       width: 104%;
@@ -185,6 +221,10 @@
     @include desktop {
       padding: 42px 32px;
     }
+
+    @include desktop-xl {
+      padding: 68px 44px;
+    }
   }
 
   &__subtitle {
@@ -199,6 +239,10 @@
 
     @include desktop {
       margin-bottom: 12px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 16px;
     }
   }
 
@@ -222,10 +266,20 @@
       margin-bottom: 30px;
       max-width: 440px;
     }
+
+    @include desktop-xl {
+      margin-bottom: 48px;
+      max-width: 660px;
+    }
   }
 
   @include desktop {
     padding-top: 88px;
     padding-bottom: 128px;
+  }
+
+  @include desktop {
+    padding-top: 120px;
+    padding-bottom: 180px;
   }
 }

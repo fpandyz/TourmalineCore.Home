@@ -18,6 +18,10 @@
     @include desktop {
       margin-left: 26px;
     }
+
+    @include desktop-xl {
+      margin-left: 36px;
+    }
   }
 
   &__title {
@@ -27,6 +31,10 @@
 
     @include desktop {
       margin-bottom: 32px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 44px;
     }
   }
 
@@ -52,6 +60,10 @@
 
     & + & {
       margin-top: 12px;
+
+      @include desktop-xl {
+        margin-top: 16px;
+      }
     }
   }
 
@@ -80,6 +92,12 @@
       background-color: $color-black;
       object-fit: cover;
     }
+
+    @include desktop-xl {
+      border: 11px solid $color-black;
+      width: 298px;
+      height: 388px;
+    }
   }
 
   &:hover {
@@ -91,6 +109,11 @@
 
   @include desktop {
     min-height: 405px;
+  }
+
+  @include desktop-xl {
+    padding: 32px 28px;
+    min-height: 607px;
   }
 
   &--blue {
