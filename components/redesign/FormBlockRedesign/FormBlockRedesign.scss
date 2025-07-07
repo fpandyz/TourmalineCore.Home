@@ -18,6 +18,10 @@
       background-color: $color-black;
     }
 
+    @include tablet-xl {
+      max-width: 658px;
+    }
+
     @include desktop {
       max-width: 716px;
     }
@@ -30,6 +34,10 @@
     padding: 32px 0 80px;
     color: $color-black;
     background-color: $color-white;
+
+    @include tablet-xl {
+      margin: 0 -16px;
+    }
 
     @include desktop {
       position: absolute;

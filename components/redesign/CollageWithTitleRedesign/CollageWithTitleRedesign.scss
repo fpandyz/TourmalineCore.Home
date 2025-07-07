@@ -16,6 +16,11 @@
       max-width: 768px;
     }
 
+    @include tablet-xl {
+      padding: 320px 0;
+      max-width: 960px;
+    }
+
     @include desktop {
       padding: 408px 0;
       max-width: 1278px;
@@ -61,6 +66,13 @@
         height: 104px;
       }
 
+      @include tablet-xl {
+        left: 440px;
+        bottom: 140px;
+        width: 132px;
+        height: 132px;
+      }
+
       @include desktop {
         left: 584px;
         bottom: 160px;
@@ -80,6 +92,13 @@
         bottom: 57px;
         width: 104px;
         height: 104px;
+      }
+
+      @include tablet-xl {
+        left: 225px;
+        bottom: 98px;
+        width: 132px;
+        height: 132px;
       }
 
       @include desktop {
@@ -103,6 +122,13 @@
         height: 76px;
       }
 
+      @include tablet-xl {
+        left: 107px;
+        bottom: 216px;
+        width: 100px;
+        height: 100px;
+      }
+
       @include desktop {
         left: 140px;
         bottom: 263px;
@@ -122,6 +148,13 @@
         bottom: 265px;
         width: 104px;
         height: 104px;
+      }
+
+      @include tablet-xl {
+        left: 0;
+        bottom: 363px;
+        width: 132px;
+        height: 132px;
       }
 
       @include desktop {
@@ -145,6 +178,13 @@
         height: 92px;
       }
 
+      @include tablet-xl {
+        left: 258px;
+        bottom: 488px;
+        width: 124px;
+        height: 124px;
+      }
+
       @include desktop {
         left: 341px;
         bottom: 629px;
@@ -162,6 +202,13 @@
         display: block;
         width: 104px;
         height: 104px;
+      }
+
+      @include tablet-xl {
+        left: 490px;
+        bottom: 452px;
+        width: 132px;
+        height: 132px;
       }
 
       @include desktop {
@@ -182,6 +229,13 @@
         width: 96px;
         height: 96px;
         inset: 84px 82px auto auto;
+      }
+
+      @include tablet-xl {
+        right: 77px;
+        top: 111px;
+        width: 128px;
+        height: 128px;
       }
 
       @include desktop {
@@ -206,7 +260,15 @@
         height: 104px;
       }
 
+      @include tablet-xl {
+        right: 50px;
+        bottom: 246px;
+        width: 132px;
+        height: 132px;
+      }
+
       @include desktop {
+        right: 65px;
         bottom: 302px;
         width: 178px;
         height: 178px;
@@ -225,6 +287,13 @@
         bottom: 47px;
         width: 104px;
         height: 104px;
+      }
+
+      @include tablet-xl {
+        right: 220px;
+        bottom: 84px;
+        width: 132px;
+        height: 132px;
       }
 
       @include desktop {

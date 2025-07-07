@@ -13,13 +13,14 @@
   }
 
   &__item {
+    @include body-m;
+
     & + & {
-      margin-top: 4px;
+      margin-top: 8px;
     }
   }
 
   &__link {
-    @include body-m;
     @include animated-underline;
 
     color: $color-white;
@@ -35,7 +36,7 @@
   }
 
   @include tablet-xl {
-    min-width: 180px;
+    min-width: 138px;
     max-width: 214px;
   }
 

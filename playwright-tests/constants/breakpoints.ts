@@ -12,6 +12,11 @@ export const BREAKPOINTS = [
     breakpointName: BreakpointName.TABLET,
   },
   {
+    name: `TabletXlTest`,
+    breakpoint: Breakpoint.TABLET_XL,
+    breakpointName: BreakpointName.TABLET_XL,
+  },
+  {
     name: `DesktopTest`,
     breakpoint: Breakpoint.DESKTOP,
     breakpointName: BreakpointName.DESKTOP,
