@@ -13,5 +13,9 @@
     @include desktop {
       height: 290px;
     }
+
+    @include desktop-xl {
+      height: 408px;
+    }
   }
 }

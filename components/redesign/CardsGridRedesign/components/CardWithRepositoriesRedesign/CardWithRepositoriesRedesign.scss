@@ -10,6 +10,10 @@
       @include desktop {
         margin-top: 20px;
       }
+
+      @include desktop-xl {
+        margin-top: 28px;
+      }
     }
   }
 
@@ -20,6 +24,10 @@
 
     @include desktop {
       padding: 20px;
+    }
+
+    @include desktop-xl {
+      padding: 28px;
     }
   }
 
@@ -38,11 +46,19 @@
       margin-bottom: 16px;
     }
 
+    @include desktop-xl {
+      margin-bottom: 20px;
+    }
+
     &--no-description {
       margin-bottom: 24px;
 
       @include desktop {
         margin-bottom: 32px;
+      }
+
+      @include desktop-xl {
+        margin-bottom: 44px;
       }
     }
   }
@@ -53,6 +69,10 @@
 
     @include desktop {
       margin-bottom: 32px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 44px;
     }
   }
 
@@ -68,6 +88,12 @@
       border-radius: 100%;
       width: 16px;
       height: 16px;
+
+      @include desktop-xl {
+        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+      }
     }
 
     &--typescript::before {
