@@ -17,6 +17,10 @@
 
     & + & {
       margin-top: 8px;
+
+      @include desktop-xl {
+        margin-top: 12px;
+      }
     }
   }
 
@@ -43,5 +47,10 @@
   @include desktop {
     min-width: 214px;
     max-width: 283.5px;
+  }
+
+  @include desktop-xl {
+    min-width: 299px;
+    max-width: 350px;
   }
 }

@@ -3,6 +3,10 @@
     @include caption;
 
     margin-bottom: 4px;
+
+    @include desktop-xl {
+      margin-bottom: 8px;
+    }
   }
 
   &__date {

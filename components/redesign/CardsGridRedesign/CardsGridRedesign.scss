@@ -16,10 +16,19 @@
     @include desktop {
       gap: 32px;
     }
+
+    @include desktop-xl {
+      gap: 44px;
+    }
   }
 
   @include desktop {
     padding-top: 80px;
     padding-bottom: 80px;
+  }
+
+  @include desktop-xl {
+    padding-top: 112px;
+    padding-bottom: 112px;
   }
 }
