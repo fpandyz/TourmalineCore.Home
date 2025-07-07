@@ -73,6 +73,12 @@
     @include desktop {
       margin-right: 108px;
     }
+
+    @include desktop-xl {
+      margin-right: 157px;
+      margin-bottom: 38px;
+      gap: 16px;
+    }
   }
 
   &__caption {
@@ -82,6 +88,10 @@
 
     @include tablet {
       margin-bottom: 8px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 12px;
     }
   }
 
@@ -111,5 +121,10 @@
 
   @include desktop {
     padding-bottom: 24px;
+  }
+
+  @include desktop-xl {
+    padding-top: 56px;
+    padding-bottom: 32px;
   }
 }
