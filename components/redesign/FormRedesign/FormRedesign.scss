@@ -34,6 +34,11 @@
     @include desktop {
       margin-bottom: 17px;
     }
+
+    @include desktop-xl {
+      margin-bottom: 26px;
+      max-width: unset;
+    }
   }
 
   &__description {
@@ -46,6 +51,11 @@
 
     @include desktop {
       max-width: 420px;
+    }
+
+    @include desktop-xl {
+      margin-bottom: 42px;
+      max-width: unset;
     }
   }
 
@@ -63,6 +73,10 @@
 
       @include desktop {
         margin-top: 8px;
+      }
+
+      @include desktop-xl {
+        margin-top: 12px;
       }
     }
   }
@@ -114,6 +128,10 @@
     @include desktop {
       margin-top: 24px;
     }
+
+    @include desktop-xl {
+      margin-top: 32px;
+    }
   }
 
   &__consent {
@@ -125,6 +143,11 @@
     @include tablet {
       margin: 12px auto 0;
       max-width: 436px;
+    }
+
+    @include desktop-xl {
+      margin-top: 16px;
+      max-width: unset;
     }
   }
 
@@ -141,6 +164,11 @@
 
   @include desktop {
     max-width: 436px;
+  }
+
+  @include desktop-xl {
+    padding: 80px 0;
+    max-width: 614px;
   }
 
   &--is-submitted {
