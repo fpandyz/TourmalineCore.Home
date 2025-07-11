@@ -1,17 +1,28 @@
 import { useTranslation } from 'next-i18next';
-import { CardWithImage, CardWithImageRedesign } from '../CardWithImageRedesign/CardWithImageRedesign';
-import { CardWithRepositories, CardWithRepositoriesRedesign } from '../CardWithRepositoriesRedesign/CardWithRepositoriesRedesign';
-import { CardWithTextAndDate, CardWithTextAndDateRedesign } from '../CardWithTextAndDateRedesign/CardWithTextAndDateRedesign';
+import { CardWithImage, CardWithImageRedesign } from './components/CardWithImageRedesign/CardWithImageRedesign';
+import { CardWithRepositories, CardWithRepositoriesRedesign } from './components/CardWithRepositoriesRedesign/CardWithRepositoriesRedesign';
+import { CardWithTextAndDate, CardWithTextAndDateRedesign } from './components/CardWithTextAndDateRedesign/CardWithTextAndDateRedesign';
 
 export function CardsGridRedesign() {
-  const { t } = useTranslation('cardsGridRedesign');
+  const {
+    t,
+  } = useTranslation(`cardsGridRedesign`);
 
-  const cardWithImage: CardWithImage = t('cardWithImage', { returnObjects: true });
-  const cardWithRepositories: CardWithRepositories = t('cardWithRepositories', { returnObjects: true });
-  const cardWithTextAndDate: CardWithTextAndDate = t('cardWithTextAndDate', { returnObjects: true });
+  const cardWithImage: CardWithImage = t(`cardWithImage`, {
+    returnObjects: true,
+  });
+  const cardWithRepositories: CardWithRepositories = t(`cardWithRepositories`, {
+    returnObjects: true,
+  });
+  const cardWithTextAndDate: CardWithTextAndDate = t(`cardWithTextAndDate`, {
+    returnObjects: true,
+  });
 
   return (
-    <section className="cards-grid-redesign">
+    <section
+      className="cards-grid-redesign"
+      data-testid="cards-grid"
+    >
       <div className="container-redesign cards-grid-redesign__wrapper">
         <ul className="cards-grid-redesign__cards grid">
           <li className="cards-grid-redesign__card-item col-desktop-4 col-tablet-4">

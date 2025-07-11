@@ -10,8 +10,8 @@ import IconWatch from '../../icons/icon-watch.svg';
 import IconGear from '../../icons/icon-gear.svg';
 import IconVideoCamera from '../../icons/icon-video-camera.svg';
 import IconNotepad from '../../icons/icon-notepad.svg';
-import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
+import { useTranslationNamespace } from '../../common/hooks';
 
 const ICONS = {
   camera: <IconCamera />,
@@ -35,9 +35,13 @@ type CasesList = {
 }[];
 
 export function Cases() {
-  const { t } = useTranslationNamespace('cases');
+  const {
+    t,
+  } = useTranslationNamespace(`cases`);
 
-  const casesList: CasesList = t('list', { returnObjects: true });
+  const casesList: CasesList = t(`list`, {
+    returnObjects: true,
+  });
 
   return (
     <section
@@ -46,7 +50,7 @@ export function Cases() {
     >
       <div className="container cases__wrapper">
         <div className="cases__inner">
-          <h2 className="title-technology-type-1 cases__title">{t('title')}</h2>
+          <h2 className="title-technology-type-1 cases__title">{t(`title`)}</h2>
           {casesList.map((item, index) => (
             <CasesCard
               // eslint-disable-next-line react/no-array-index-key

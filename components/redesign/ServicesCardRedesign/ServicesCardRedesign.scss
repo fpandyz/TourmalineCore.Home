@@ -13,10 +13,14 @@
   &__list {
     margin-bottom: 10px;
     margin-left: 24px;
-    color: $color-grey-redesign;
+    color: $color-grey-500-redesign;
 
-    @include desktop {
+    @include tablet-xl {
       margin-left: 26px;
+    }
+
+    @include desktop-xl {
+      margin-left: 36px;
     }
   }
 
@@ -28,40 +32,24 @@
     @include desktop {
       margin-bottom: 32px;
     }
+
+    @include desktop-xl {
+      margin-bottom: 44px;
+    }
   }
 
   &__link-text {
     @include link-text;
+    @include animated-underline;
 
-    position: relative;
     display: inline-flex;
     align-items: center;
     margin-top: auto;
     width: fit-content;
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: $color-black;
-      transform: scaleX(0);
-      transform-origin: bottom left;
-      transition: transform 0.25s ease-out;
-    }
-
     svg {
       display: block;
       margin-left: 12px;
-    }
-
-    &:focus-visible {
-      &::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
     }
   }
 
@@ -72,6 +60,10 @@
 
     & + & {
       margin-top: 12px;
+
+      @include desktop-xl {
+        margin-top: 16px;
+      }
     }
   }
 
@@ -100,6 +92,12 @@
       background-color: $color-black;
       object-fit: cover;
     }
+
+    @include desktop-xl {
+      border: 11px solid $color-black;
+      width: 298px;
+      height: 388px;
+    }
   }
 
   &:hover {
@@ -109,21 +107,38 @@
     }
   }
 
+  @include tablet-xl {
+    min-height: 386px;
+  }
+
+  @include desktop {
+    min-height: 405px;
+  }
+
+  @include desktop-xl {
+    padding: 32px 28px;
+    min-height: 607px;
+  }
+
   &--blue {
     display: none;
-    background-color: $color-blue-redesign;
+    background-color: $color-deep-blue-redesign;
 
-    @include tablet-xl {
+    @include desktop {
       display: block;
     }
   }
 
   &--grey {
-    background-color: $color-light-grey-redesign;
+    background-color: $color-grey-100-redesign;
   }
 
   &--black {
     background-color: $color-black;
+
+    #{$this}__list {
+      color: $color-grey-300-redesign;
+    }
 
     #{$this}__link,
     #{$this}__title {
@@ -144,9 +159,5 @@
         fill: $color-white;
       }
     }
-  }
-
-  @include desktop {
-    min-height: 405px;
   }
 }

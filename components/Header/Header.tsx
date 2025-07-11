@@ -2,12 +2,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
+import FocusLock from 'react-focus-lock';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { LangSwitch } from './components/LangSwitch/LangSwitch';
-import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
-
 import IconBurger from '../../icons/burger.svg';
 import IconBurgerPurple from '../../icons/burger-purple.svg';
 import IconBurgerMagenta from '../../icons/burger-magenta.svg';
@@ -16,8 +15,9 @@ import IconBurgerQA from '../../icons/burger-qa.svg';
 import IconBurgerBackend from '../../icons/burger-backend.svg';
 import IconBurgerCyan from '../../icons/burger-cyan.svg';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
-import { AppRoute } from '../../common/utils/consts/app-route';
+import { AppRoute } from '../../common/enums';
+import { useBodyScrollHidden } from '../../common/hooks';
+import { isChineseLanguage } from '../../common/utils';
 
 type HeaderLinks = {
   id: string;
@@ -65,16 +65,16 @@ const headerLinks: HeaderLinks = [
 
 const BURGER_ICONS = new Map(
   [
-    [AppRoute.Frontend, <IconBurgerPurple />],
-    [AppRoute.Ml, <IconBurgerPurple />],
-    [AppRoute.Embedded, <IconBurgerMagenta />],
-    [AppRoute.QA, <IconBurgerQA />],
-    [AppRoute.Backend, <IconBurgerBackend />],
-    [AppRoute.Design, <IconBurgerDesign />],
-    [AppRoute.Teams, <IconBurgerPurple />],
-    [AppRoute.FrontendTeam, <IconBurgerCyan />],
-    [AppRoute.Main, <IconBurger />],
-    [AppRoute.Articles, <IconBurger />],
+    [AppRoute.Frontend, <IconBurgerPurple key={AppRoute.Frontend} />],
+    [AppRoute.Ml, <IconBurgerPurple key={AppRoute.Ml} />],
+    [AppRoute.Embedded, <IconBurgerMagenta key={AppRoute.Embedded} />],
+    [AppRoute.QA, <IconBurgerQA key={AppRoute.QA} />],
+    [AppRoute.Backend, <IconBurgerBackend key={AppRoute.Backend} />],
+    [AppRoute.Design, <IconBurgerDesign key={AppRoute.Design} />],
+    [AppRoute.Teams, <IconBurgerPurple key={AppRoute.Teams} />],
+    [AppRoute.FrontendTeam, <IconBurgerCyan key={AppRoute.FrontendTeam} />],
+    [AppRoute.Main, <IconBurger key={AppRoute.Main} />],
+    [AppRoute.Articles, <IconBurger key={AppRoute.Articles} />],
   ],
 );
 
@@ -83,23 +83,28 @@ export function Header({
 }: {
   containerClass?: string;
 }) {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { pathname } = useRouter();
+  const {
+    pathname,
+    locale,
+  } = useRouter();
 
   useBodyScrollHidden(isMobileMenuOpen);
 
   return (
     <>
-      <header className={clsx('header', {
-        'header--zh': isChineseLanguage(),
+      <header className={clsx(`header`, {
+        'header--zh': isChineseLanguage(locale),
       })}
       >
         <div className={clsx(`container header__inner ${containerClass}`)}>
           <Link
             href="/"
             className="header__logo"
-            aria-label="Header logo"
+            aria-label="Go to home page"
           >
             <Image
               src="/images/logo.png"
@@ -118,7 +123,7 @@ export function Header({
               {BURGER_ICONS.get(pathname as AppRoute)}
             </button>
 
-            <div className="header__desktop">
+            <nav className="header__desktop">
               {headerLinks.map((headerLink) => (
                 <Link
                   key={headerLink.id}
@@ -130,16 +135,20 @@ export function Header({
               ))}
 
               <LangSwitch />
-            </div>
+            </nav>
           </div>
         </div>
       </header>
 
       {isMobileMenuOpen && (
-        <MobileMenu
-          onCloseClick={() => setIsMobileMenuOpen(false)}
-          headerLinks={headerLinks}
-        />
+        <FocusLock
+          returnFocus
+        >
+          <MobileMenu
+            onCloseClick={() => setIsMobileMenuOpen(false)}
+            headerLinks={headerLinks}
+          />
+        </FocusLock>
       )}
     </>
   );

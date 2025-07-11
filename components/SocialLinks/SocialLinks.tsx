@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
 import IconMail from '../../icons/mail.svg';
 import IconMailPurple from '../../icons/mail-frontend.svg';
 import IconMailFrontendPelicanTeam from '../../icons/mail-frontend-team.svg';
@@ -17,17 +16,21 @@ import IconTelegramEmbedded from '../../icons/telegram-embedded.svg';
 import IconTelegramQA from '../../icons/telegram-qa.svg';
 import IconTelegramBackend from '../../icons/telegram-backend.svg';
 import IconTelegramTeams from '../../icons/telegram-teams.svg';
-import { AppRoute } from '../../common/utils/consts/app-route';
+import { AppRoute } from '../../common/enums';
+import { isChineseLanguage } from '../../common/utils';
 
 export function SocialLinks() {
-  const { pathname } = useRouter();
+  const {
+    pathname,
+    locale,
+  } = useRouter();
 
   const icons = getIcons(pathname);
   const notMainPage = pathname !== AppRoute.Main;
 
   return (
-    <div className={clsx('social-links', {
-      'social-links--zh': isChineseLanguage(),
+    <div className={clsx(`social-links`, {
+      'social-links--zh': isChineseLanguage(locale),
     })}
     >
       <a
@@ -37,7 +40,7 @@ export function SocialLinks() {
         rel="noreferrer"
       >
         {icons.mail}
-        <span className={clsx('social-links__mail', {
+        <span className={clsx(`social-links__mail`, {
           'social-links__mail--technology': notMainPage,
         })}
         >
@@ -52,7 +55,7 @@ export function SocialLinks() {
         rel="noreferrer"
       >
         {icons.telegram}
-        <span className={clsx('social-links__telegram', {
+        <span className={clsx(`social-links__telegram`, {
           'social-links__telegram--technology': notMainPage,
         })}
         >

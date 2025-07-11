@@ -37,7 +37,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    outline: none;
     border: none;
     padding: 0;
     box-shadow: none;
@@ -94,11 +93,11 @@
       height: 100%;
       background-image:
         linear-gradient(
-          90.05deg,
-          rgba($color-pink, 0.1) 0.04%,
-          rgba($color-pink, 0.1) 0.05%,
-          rgba($color-green, 0.1) 99.96%
-        );
+            90.05deg,
+            rgba($color-pink, 0.1) 0.04%,
+            rgba($color-pink, 0.1) 0.05%,
+            rgba($color-green, 0.1) 99.96%
+          );
       opacity: 0;
       transition: opacity 0.3s;
     }
@@ -113,11 +112,11 @@
     &--active {
       background-image:
         linear-gradient(
-          90.05deg,
-          rgba($color-pink, 0.1) 0.04%,
-          rgba($color-pink, 0.1) 0.05%,
-          rgba($color-green, 0.1) 99.96%
-        );
+            90.05deg,
+            rgba($color-pink, 0.1) 0.04%,
+            rgba($color-pink, 0.1) 0.05%,
+            rgba($color-green, 0.1) 99.96%
+          );
       cursor: not-allowed;
 
       &::before {

@@ -1,21 +1,26 @@
 import clsx from 'clsx';
-import { useTranslationNamespace } from '../../common/hooks/useTranslationNamespace';
 import { ServicesTechnologyCard } from './components/ServicesTechnologyCard/ServicesTechnologyCard';
-import { TServicesTechnologyList } from './types';
-import { usePath } from '../../common/hooks/usePath';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { ServicesTechnologyList } from './types';
+import { TechnologyPageAnchorLink } from '../../common/enums';
+import { usePath, useTranslationNamespace } from '../../common/hooks';
 
 export function ServicesTechnology({
   localeKeyName,
   isFilled,
 }: {
-  localeKeyName?: string,
-  isFilled?: boolean,
+  localeKeyName?: string;
+  isFilled?: boolean;
 }) {
-  const { slicePathname } = usePath();
-  const { t } = useTranslationNamespace(localeKeyName || 'servicesTechnology');
+  const {
+    slicePathname,
+  } = usePath();
+  const {
+    t,
+  } = useTranslationNamespace(localeKeyName || `servicesTechnology`);
 
-  const servicesTechnologyList: TServicesTechnologyList = t('list', { returnObjects: true });
+  const servicesTechnologyList: ServicesTechnologyList = t(`list`, {
+    returnObjects: true,
+  });
 
   return (
     <section
@@ -29,15 +34,20 @@ export function ServicesTechnology({
               'services-technology__title--filled': isFilled,
             })}
           >
-            {t('title')}
+            {t(`title`)}
           </h2>
           <ul
             className={clsx(`services-technology__list services-technology__list--${slicePathname}`, {
               'services-technology__list--filled': isFilled,
             })}
           >
-            {servicesTechnologyList.map(({ title, description, link }) => (
-              <li key={description} className="services-technology__item">
+            {servicesTechnologyList.map(({
+              title, description, link,
+            }) => (
+              <li
+                key={description}
+                className="services-technology__item"
+              >
                 <ServicesTechnologyCard
                   title={title}
                   description={description}

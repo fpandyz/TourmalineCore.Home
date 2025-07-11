@@ -111,10 +111,6 @@
     transform: rotate(45deg);
   }
 
-  &--hover {
-    cursor: pointer;
-  }
-
   &--frontend::after,
   &--design::after,
   &--teams::after,
@@ -143,6 +139,22 @@
     }
   }
 
+  @include tablet {
+    min-height: 238px;
+  }
+
+  @include desktop {
+    min-height: 312px;
+  }
+
+  @include desktop-xl {
+    min-height: 350px;
+  }
+
+  &--hover {
+    cursor: pointer;
+  }
+
   &--frontend-team#{$this}--hover {
     &::after {
       background-image: $color-dark-cyan-card;
@@ -158,26 +170,14 @@
     &::after {
       background-image:
         linear-gradient(
-          233deg,
-          $color-design-page-primary -19.07%,
-          $color-design-page-secondary 73.95%
-        );
+            233deg,
+            $color-design-page-primary -19.07%,
+            $color-design-page-secondary 73.95%
+          );
     }
 
     &:hover::after {
       opacity: 1;
     }
-  }
-
-  @include tablet {
-    min-height: 238px;
-  }
-
-  @include desktop {
-    min-height: 312px;
-  }
-
-  @include desktop-xl {
-    min-height: 350px;
   }
 }

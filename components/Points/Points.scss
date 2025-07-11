@@ -54,10 +54,9 @@
       }
 
       &--frontend-team {
-        column-gap: 0;
+        gap: 30px 0;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, auto);
-        row-gap: 30px;
       }
     }
 
@@ -135,6 +134,15 @@
     height: 135px;
     background-size: cover;
 
+    &--frontend,
+    &--teams {
+      background-image: url("/images/points-purple-element.webp");
+    }
+
+    @include tablet {
+      display: none;
+    }
+
     &--backend {
       background-image: url("/images/points-backend-element.webp");
     }
@@ -147,11 +155,6 @@
       background-image: url("/images/points-embedded-element.webp");
     }
 
-    &--frontend,
-    &--teams {
-      background-image: url("/images/points-purple-element.webp");
-    }
-
     &--frontend-team {
       background-image: url("/images/points-frontend-team-element.webp");
     }
@@ -162,10 +165,6 @@
 
     &--design {
       background-image: url("/images/points-design-element.webp");
-    }
-
-    @include tablet {
-      display: none;
     }
   }
 }

@@ -5,24 +5,33 @@ type Signpost = {
   title: string;
   subtitle: string;
   link?: string;
-  imageUrl: string
+  imageUrl: string;
 };
 
 export function SignpostMultipleRedesign({
   translationKey,
+  dataTestId,
 }: {
   translationKey: string;
+  dataTestId?: string;
 }) {
-  const { t } = useTranslation(translationKey);
+  const {
+    t,
+  } = useTranslation(translationKey);
 
-  const signposts: Signpost[] = t('signposts', { returnObjects: true });
+  const signposts: Signpost[] = t(`signposts`, {
+    returnObjects: true,
+  });
 
   return (
     <section
       className="signpost-multiple-redesign container-redesign"
+      data-testid={dataTestId}
     >
-      <h2 className="signpost-multiple-redesign__title">{t('title')}</h2>
-      <ul className="signpost-multiple-redesign__list grid">
+      <h2 className="signpost-multiple-redesign__title">{t(`title`)}</h2>
+      <ul
+        className="signpost-multiple-redesign__list grid"
+      >
         {signposts.map(({
           title,
           subtitle,
@@ -31,7 +40,11 @@ export function SignpostMultipleRedesign({
         }) => (
           <li
             key={title}
-            className="col-desktop-3"
+            // This element has scrolling on a mobile device, so axe-core recommends adding a tabIndex
+            // More info - https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=playwright
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+            tabIndex={0}
+            className="signpost-multiple-redesign__item col-desktop-3"
           >
             <SignpostRedesign
               title={title}

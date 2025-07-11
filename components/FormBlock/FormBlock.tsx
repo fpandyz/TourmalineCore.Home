@@ -2,10 +2,11 @@ import { useTranslation } from 'next-i18next';
 import { DetailedHTMLProps, HTMLAttributes, useState } from 'react';
 
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import { Form } from '../Form/Form';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
-import { getMessageFromForm, sendEmail } from '../../common/utils/sendEmail';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
+import { getMessageFromForm, isChineseLanguage } from '../../common/utils';
+import { sendEmail } from '../../services/emailService/emailService';
 
 export function FormBlock({
   id,
@@ -14,29 +15,34 @@ export function FormBlock({
 }: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & {
   buttonClassName?: string;
 }) {
-  const [email, setEmail] = useState('');
+  const {
+    locale,
+  } = useRouter();
+  const [email, setEmail] = useState(``);
   const [isSubmit, setIsSubmit] = useState(false);
 
-  const { t } = useTranslation('formBlock');
+  const {
+    t,
+  } = useTranslation(`formBlock`);
 
   return (
     <section
       className={
-        clsx('section container form-block', {
-          'form-block--zh': isChineseLanguage(),
+        clsx(`section container form-block`, {
+          'form-block--zh': isChineseLanguage(locale),
         })
       }
       id={id}
       {...props}
     >
       <div
-        className={clsx('form-block__inner')}
+        className={clsx(`form-block__inner`)}
       >
         <h2 className="title-technology-type-2 form-block__title">
-          {t('title')}
-          {' '}
+          {t(`title`)}
+          {` `}
           <span className="title-technology-type-2 form-block__title-technology">
-            {t('titleGradient')}
+            {t(`titleGradient`)}
           </span>
         </h2>
         {
@@ -50,11 +56,11 @@ export function FormBlock({
             : (
               <div>
                 <span className="form-block__text">
-                  {t('text')}
-                  {' '}
+                  {t(`text`)}
+                  {` `}
                   {email}
                 </span>
-                <PrimaryButton onClick={() => setIsSubmit(false)}>{t('buttonText')}</PrimaryButton>
+                <PrimaryButton onClick={() => setIsSubmit(false)}>{t(`buttonText`)}</PrimaryButton>
               </div>
             )
         }

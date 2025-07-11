@@ -3,27 +3,29 @@ import { useTranslation } from 'react-i18next';
 
 import { Layout } from '../../components/Layout/Layout';
 import { PageHead } from '../../components/PageHead/PageHead';
-import Articles from '../../partials/Articles/Articles';
+import Articles from '../../features/Articles/components/Articles/Articles';
 
-import { fetchArticlesListWithMeta } from '../../partials/Articles/fetchHelpers/fetchArticlesListWithMeta';
+import { fetchArticlesListWithMeta } from '../../features/Articles/fetchHelpers/fetchArticlesListWithMeta';
 
 export default function ArticlesPage({
   articles,
 }) {
-  const { t } = useTranslation('articles');
+  const {
+    t,
+  } = useTranslation(`articles`);
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t('title'),
-            description: t('description'),
+            title: t(`title`),
+            description: t(`description`),
           },
-          keywords: t('keywords'),
+          keywords: t(`keywords`),
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
 
@@ -34,16 +36,18 @@ export default function ArticlesPage({
   );
 }
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({
+  locale,
+}) {
   const articlesWithMeta = await fetchArticlesListWithMeta();
 
   return {
     props: {
       ...(await serverSideTranslations(locale, [
-        'common',
-        'articles',
-        'footer',
-        'cookie',
+        `common`,
+        `articles`,
+        `footer`,
+        `cookie`,
       ])),
       articles: articlesWithMeta,
     },

@@ -2,7 +2,7 @@
   $this: &;
 
   &__subtitle {
-    color: $color-middle-grey-redesign;
+    color: $color-grey-300-redesign;
   }
 
   &__link-wrapper {
@@ -34,6 +34,11 @@
     @include desktop {
       width: 100%;
     }
+
+    @include desktop-xl {
+      margin-bottom: 24px;
+      height: 340px;
+    }
   }
 
   &__title {
@@ -41,6 +46,10 @@
     text-decoration: underline;
     text-decoration-color: transparent;
     transition: text-decoration-color 0.3s;
+
+    @include desktop-xl {
+      margin-bottom: 8px;
+    }
   }
 
   &__title,

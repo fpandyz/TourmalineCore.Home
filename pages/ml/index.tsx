@@ -13,23 +13,25 @@ import { Payment } from '../../components/Payment/Payment';
 import { Cooperation } from '../../components/Cooperation/Cooperation';
 import { ServicesTechnology } from '../../components/ServicesTechnology/ServicesTechnology';
 import { FormBlock } from '../../components/FormBlock/FormBlock';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export default function MlPage() {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t('title'),
-            description: t('description'),
+            title: t(`title`),
+            description: t(`description`),
           },
-          keywords: t('keywords'),
+          keywords: t(`keywords`),
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
       <Layout mainClassName="ml">
@@ -53,24 +55,26 @@ export default function MlPage() {
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
+export const getStaticProps: GetServerSideProps = async ({
+  locale,
+}) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
-      'common',
-      'footer',
-      'cookie',
-      'form',
-      'discussion',
-      'formBlock',
-      'heroMl',
-      'pointsMl',
-      'tasksMl',
-      'paymentMl',
-      'cta',
-      'stackMl',
-      'cooperationMl',
-      'servicesTechnologyMl',
-      'casesMl',
+      `common`,
+      `footer`,
+      `cookie`,
+      `form`,
+      `discussion`,
+      `formBlock`,
+      `heroMl`,
+      `pointsMl`,
+      `tasksMl`,
+      `paymentMl`,
+      `cta`,
+      `stackMl`,
+      `cooperationMl`,
+      `servicesTechnologyMl`,
+      `casesMl`,
     ])),
   },
 });

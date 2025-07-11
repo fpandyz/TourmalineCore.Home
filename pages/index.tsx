@@ -2,8 +2,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetServerSideProps } from 'next';
 import { PageHead } from '../components/PageHead/PageHead';
-import { useSectionAutoPaddings } from '../common/hooks/useSectionAutoPaddings';
-import { useDeviceSize } from '../common/hooks/useDeviceSize';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
 import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
@@ -14,44 +12,61 @@ import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/Projec
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
+import { FormBlockRedesign } from '../components/redesign/FormBlockRedesign/FormBlockRedesign';
+import { useDeviceSize } from '../common/hooks';
 
 export default function HomePage() {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
 
-  // in order for the hook to automatically add indents you must use the tag "section" with the attribute "data-auto-padding={id}"
-  useSectionAutoPaddings();
-
-  const { width } = useDeviceSize();
-
-  const isTablet = width >= 768;
+  const {
+    isTablet,
+  } = useDeviceSize();
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t('title'),
-            description: t('description'),
+            title: t(`title`),
+            description: t(`description`),
           },
-          keywords: t('keywords'),
+          keywords: t(`keywords`),
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
 
       <LayoutRedesign>
         <HeroRedesign />
         <ServicesRedesign targetId="services" />
-        <ProjectsWithTextBlockRedesign targetId="projects" translationKey="projectsRedesignFirstSection" />
-        <ProjectsRedesign translationKey="projectsRedesignSecondarySection" />
-        <ProjectsRedesign translationKey="projectsRedesignThirdSection" />
+        <ProjectsWithTextBlockRedesign
+          targetId="projects"
+          translationKey="projectsRedesignFirstSection"
+          dataTestId="projects-with-text-block-first"
+        />
+        <ProjectsRedesign
+          translationKey="projectsRedesignSecondarySection"
+          dataTestId="projects-with-four-cards"
+        />
+        <ProjectsRedesign
+          translationKey="projectsRedesignThirdSection"
+          dataTestId="projects-with-three-cards"
+        />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
-        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" /> }
+        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
+        <FormBlockRedesign />
         <CollageWithTitleRedesign />
-        <SignpostMultipleRedesign translationKey="conferenceSignpostsRedesign" />
+        <SignpostMultipleRedesign
+          translationKey="conferenceSignpostsRedesign"
+        />
         <SingleImageRedesign />
-        <SignpostMultipleRedesign translationKey="articleSignpostsRedesign" />
+        <SignpostMultipleRedesign
+          translationKey="articleSignpostsRedesign"
+          dataTestId="signpost-multiple-articles"
+        />
         <CardsGridRedesign />
         <CollageWithLinkRedesign />
       </LayoutRedesign>
@@ -59,26 +74,29 @@ export default function HomePage() {
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
+export const getStaticProps: GetServerSideProps = async ({
+  locale,
+}) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
-      'common',
-      'cookie',
-      'footerRedesign',
-      'discussion',
-      'heroRedesign',
-      'servicesRedesign',
-      'projectsRedesignFirstSection',
-      'projectsRedesignSecondarySection',
-      'projectsRedesignThirdSection',
-      'projectsRedesignFourthSection',
-      'projectsRedesignFifthSection',
-      'cardsGridRedesign',
-      'collageWithTitleRedesign',
-      'collageWithLinkRedesign',
-      'conferenceSignpostsRedesign',
-      'articleSignpostsRedesign',
-      'singleImageRedesign',
+      `common`,
+      `cookie`,
+      `footerRedesign`,
+      `discussion`,
+      `heroRedesign`,
+      `servicesRedesign`,
+      `projectsRedesignFirstSection`,
+      `projectsRedesignSecondarySection`,
+      `projectsRedesignThirdSection`,
+      `projectsRedesignFourthSection`,
+      `projectsRedesignFifthSection`,
+      `cardsGridRedesign`,
+      `collageWithTitleRedesign`,
+      `collageWithLinkRedesign`,
+      `conferenceSignpostsRedesign`,
+      `articleSignpostsRedesign`,
+      `singleImageRedesign`,
+      `formBlockRedesign`,
     ])),
   },
 });

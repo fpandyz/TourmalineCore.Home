@@ -12,10 +12,10 @@ export function ServicesCardRedesign({
 }: {
   title?: string;
   skillsList?: string[];
-  link?: string,
-  linkText?: string,
-  theme: 'white' | 'grey' | 'black' | 'blue',
-  imageUrl?: string
+  link?: string;
+  linkText?: string;
+  theme: 'white' | 'grey' | 'black' | 'blue';
+  imageUrl?: string;
 }) {
   return (
     <div className={clsx(
@@ -39,7 +39,7 @@ export function ServicesCardRedesign({
     return (
       <div
         className={clsx(
-          'services-card-redesign__inner',
+          `services-card-redesign__inner`,
         )}
       >
         {

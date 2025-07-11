@@ -1,32 +1,50 @@
 import { useTranslation } from 'next-i18next';
 
+import { useRouter } from 'next/router';
 import { FooterNavigationList, FooterNavigationListRedesign } from './components/FooterNavigationListRedesign/FooterNavigationListRedesign';
 
 export function FooterRedesign() {
-  const { t } = useTranslation('footerRedesign');
+  const {
+    t,
+  } = useTranslation(`footerRedesign`);
+  const {
+    locale,
+  } = useRouter();
 
-  const footerNavigationLists: FooterNavigationList[] = t('navigationLists', { returnObjects: true });
+  const footerNavigationLists: FooterNavigationList[] = t(`navigationLists`, {
+    returnObjects: true,
+  });
 
   return (
     <footer
       id="footer-redesign"
       className="footer-redesign"
+      data-testid="footer"
     >
       <div className="container-redesign footer-redesign__inner">
         <div className="footer-redesign__info">
-          <span className="footer-redesign__caption">{t('infoCaption')}</span>
+          <p className="footer-redesign__caption">{t(`infoCaption`)}</p>
           {/* TODO: Change when next will be upgrade to 12+ version */}
           <a
             className="footer-redesign__email"
-            href={`mailto:${t('email')}`}
+            href={`mailto:${t(`email`)}`}
           >
-            {t('email')}
+            {t(`email`)}
           </a>
         </div>
         <div className="footer-redesign__copyright">
           <span>
-            {`© 2019-${new Date().getFullYear()} Tourmaline Core`}
+            {`© 2019-${new Date()
+              .getFullYear()} Tourmaline Core`}
           </span>
+          <a
+            href={`documents/policy-${locale}.pdf`}
+            target="_blank"
+            rel="noreferrer"
+            className="footer-redesign__privacy-policy"
+          >
+            {locale === `ru` ? `Политика конфиденциальности` : `Privacy policy`}
+          </a>
         </div>
         <ul className="footer-redesign__navigation">
           {footerNavigationLists.map((el) => (

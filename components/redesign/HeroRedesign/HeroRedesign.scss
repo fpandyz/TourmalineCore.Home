@@ -13,19 +13,27 @@
     @include h1;
 
     margin-bottom: 24px;
+
+    @include desktop-xl {
+      margin-bottom: 32px;
+    }
   }
 
   &__description {
     @include body-l;
 
     margin-bottom: 56px;
-    color: $color-white-60;
+    color: $color-grey-300-redesign;
+
+    @include desktop-xl {
+      margin-bottom: 80px;
+    }
   }
 
   &__images {
     position: relative;
     width: 352px;
-    height: 332px;
+    height: 264px;
 
     // Todo: move to global and fix other image
     img {
@@ -34,6 +42,15 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @include tablet {
+      height: 332px;
+    }
+
+    @include desktop-xl {
+      width: 496px;
+      height: 468px;
     }
   }
 
@@ -45,9 +62,18 @@
     @include desktop {
       max-width: 646px;
     }
+
+    @include desktop-xl {
+      max-width: 938px;
+    }
   }
 
   @include tablet {
     padding-bottom: 130px;
+  }
+
+  @include desktop-xl {
+    padding-top: 56px;
+    padding-bottom: 180px;
   }
 }

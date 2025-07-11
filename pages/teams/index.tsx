@@ -10,23 +10,25 @@ import { Stack } from '../../components/Stack/Stack';
 import { Cases } from '../../components/Cases/Cases';
 import { Stages } from '../../components/Stages/Stages';
 import { FormBlock } from '../../components/FormBlock/FormBlock';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export default function TeamsPage() {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t('title'),
-            description: t('description'),
+            title: t(`title`),
+            description: t(`description`),
           },
-          keywords: t('keywords'),
+          keywords: t(`keywords`),
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
       <Layout mainClassName="teams">
@@ -47,22 +49,24 @@ export default function TeamsPage() {
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
+export const getStaticProps: GetServerSideProps = async ({
+  locale,
+}) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
-      'common',
-      'footer',
-      'cookie',
-      'form',
-      'discussion',
-      'formBlock',
-      'heroTeams',
-      'pointsTeams',
-      'tasksTeams',
-      'stackTeams',
-      'casesTeams',
-      'stagesTeams',
-      'servicesTechnologyTeams',
+      `common`,
+      `footer`,
+      `cookie`,
+      `form`,
+      `discussion`,
+      `formBlock`,
+      `heroTeams`,
+      `pointsTeams`,
+      `tasksTeams`,
+      `stackTeams`,
+      `casesTeams`,
+      `stagesTeams`,
+      `servicesTechnologyTeams`,
     ])),
   },
 });

@@ -1,11 +1,13 @@
-import { usePath } from '../../../../common/hooks/usePath';
+import { usePath } from "../../../../common/hooks";
 
 export function TasksList({
   tasks,
 }: {
   tasks: string[];
 }) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   return (
     <ul className="tasks-list">

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { usePath } from '../../common/hooks/usePath';
+import { usePath } from '../../common/hooks';
 
 export function NamedList(
   {
@@ -14,10 +14,12 @@ export function NamedList(
     titleClassName?: string;
   },
 ) {
-  const { slicePathname } = usePath();
+  const {
+    slicePathname,
+  } = usePath();
 
   return (
-    <div className={clsx('named-list', listClassName)}>
+    <div className={clsx(`named-list`, listClassName)}>
       <h4 className={clsx(`title-technology-type-3 named-list__title named-list__title--${slicePathname} ${titleClassName}`)}>{title}</h4>
       <ul className="named-list__items">
         {data.map((text) => (

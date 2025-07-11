@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import { isChineseLanguage } from '../../common/utils/isChineseLanguage';
+import { useRouter } from 'next/router';
+import { isChineseLanguage } from '../../common/utils';
 
 export function HeroBlock({
   title,
@@ -7,14 +8,18 @@ export function HeroBlock({
   description,
   Button,
 }: {
-  title: string,
-  gradientTitle: string,
-  description: string,
+  title: string;
+  gradientTitle: string;
+  description: string;
   Button: JSX.Element;
 }) {
+  const {
+    locale,
+  } = useRouter();
+
   return (
-    <section className={clsx('hero-block', {
-      'hero-block--zh': isChineseLanguage(),
+    <section className={clsx(`hero-block`, {
+      'hero-block--zh': isChineseLanguage(locale),
     })}
     >
       <div className="container hero-block__wrapper">
@@ -30,7 +35,14 @@ export function HeroBlock({
         </div>
         <div className="hero-block__video">
 
-          <video poster="/images/tourmaline-core-poster.webp" src="/images/video.mp4" autoPlay loop playsInline muted>
+          <video
+            poster="/images/tourmaline-core-poster.webp"
+            src="/images/video.mp4"
+            autoPlay
+            loop
+            playsInline
+            muted
+          >
             <track kind="captions" />
           </video>
         </div>

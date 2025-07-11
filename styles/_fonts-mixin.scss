@@ -32,6 +32,10 @@
   @include desktop {
     font-size: 56px;
   }
+
+  @include desktop-xl {
+    font-size: 80px;
+  }
 }
 
 @mixin h2 {
@@ -43,6 +47,10 @@
 
   @include desktop {
     font-size: 48px;
+  }
+
+  @include desktop-xl {
+    font-size: 68px;
   }
 }
 
@@ -56,6 +64,10 @@
   @include desktop {
     font-size: 34px;
   }
+
+  @include desktop-xl {
+    font-size: 48px;
+  }
 }
 
 @mixin h4 {
@@ -67,6 +79,10 @@
 
   @include desktop {
     font-size: 28px;
+  }
+
+  @include desktop-xl {
+    font-size: 40px;
   }
 }
 
@@ -80,6 +96,10 @@
   @include desktop {
     font-size: 24px;
   }
+
+  @include desktop-xl {
+    font-size: 36px;
+  }
 }
 
 @mixin h6 {
@@ -88,6 +108,10 @@
 
   font-size: 20px;
   line-height: 1.2;
+
+  @include desktop-xl {
+    font-size: 28px;
+  }
 }
 
 @mixin h7 {
@@ -96,6 +120,10 @@
 
   font-size: 18px;
   line-height: 1.2;
+
+  @include desktop-xl {
+    font-size: 26px;
+  }
 }
 
 @mixin accent-text {
@@ -105,8 +133,16 @@
   font-size: 26px;
   line-height: 1.4;
 
+  @include tablet {
+    font-size: 22px;
+  }
+
   @include desktop {
     font-size: 28px;
+  }
+
+  @include desktop-xl {
+    font-size: 40px;
   }
 }
 
@@ -121,6 +157,10 @@
     font-size: 18px;
     line-height: 1.4;
   }
+
+  @include desktop-xl {
+    font-size: 24px;
+  }
 }
 
 @mixin body-m {
@@ -132,6 +172,22 @@
 
   @include desktop {
     line-height: 1.4;
+  }
+
+  @include desktop-xl {
+    font-size: 24px;
+  }
+}
+
+@mixin body-s {
+  @include medium-font;
+  @include inter-font;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  @include desktop-xl {
+    font-size: 20px;
   }
 }
 
@@ -146,6 +202,10 @@
     font-size: 20px;
     line-height: 1.4;
   }
+
+  @include desktop-xl {
+    font-size: 28px;
+  }
 }
 
 @mixin link-text {
@@ -154,4 +214,8 @@
 
   font-size: 18px;
   line-height: 1;
+
+  @include desktop-xl {
+    font-size: 26px;
+  }
 }

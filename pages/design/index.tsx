@@ -14,23 +14,25 @@ import { Payment } from '../../components/Payment/Payment';
 import { Cooperation } from '../../components/Cooperation/Cooperation';
 import { ServicesTechnology } from '../../components/ServicesTechnology/ServicesTechnology';
 import { FormBlock } from '../../components/FormBlock/FormBlock';
-import { TechnologyPageAnchorLink } from '../../common/utils/consts/technology-anchor-link';
+import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export default function DesignPage() {
-  const { t } = useTranslation('common');
+  const {
+    t,
+  } = useTranslation(`common`);
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t('title'),
-            description: t('description'),
+            title: t(`title`),
+            description: t(`description`),
           },
-          keywords: t('keywords'),
+          keywords: t(`keywords`),
           metaTags: [],
-          structuredData: '',
-          additionalCode: '',
+          structuredData: ``,
+          additionalCode: ``,
         }}
       />
       <Layout mainClassName="design">
@@ -55,25 +57,27 @@ export default function DesignPage() {
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => ({
+export const getStaticProps: GetServerSideProps = async ({
+  locale,
+}) => ({
   props: {
     ...(await serverSideTranslations(locale as string, [
-      'common',
-      'footer',
-      'cookie',
-      'form',
-      'discussion',
-      'formBlock',
-      'paymentDesign',
-      'cta',
-      'cooperationDesign',
-      'casesDesign',
-      'heroDesign',
-      'pointsDesign',
-      'tasksDesign',
-      'stagesDesign',
-      'stackDesign',
-      'servicesTechnologyDesign',
+      `common`,
+      `footer`,
+      `cookie`,
+      `form`,
+      `discussion`,
+      `formBlock`,
+      `paymentDesign`,
+      `cta`,
+      `cooperationDesign`,
+      `casesDesign`,
+      `heroDesign`,
+      `pointsDesign`,
+      `tasksDesign`,
+      `stagesDesign`,
+      `stackDesign`,
+      `servicesTechnologyDesign`,
     ])),
   },
 });

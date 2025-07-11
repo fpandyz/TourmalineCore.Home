@@ -1,19 +1,19 @@
 {
-	"extends": "stylelint-config-standard-scss",
-	"customSyntax": "postcss-scss",
-	"plugins": [
-		"stylelint-scss",
-		"stylelint-order"
+	"extends": [
+    "stylelint-config-standard-scss", 
+    "@stylistic/stylelint-config"
   ],
+	"customSyntax": "postcss-scss",
+	"plugins": ["stylelint-order"],
   "ignoreFiles": [
     "**/public/**/*",
     "**/dist/**/*",
-    "**/node_modules/**/*"
+    "**/node_modules/**/*",
+		"**/playwright-report/**"
   ],
 	"rules": {
-		"color-function-notation": "legacy",
-		"alpha-value-notation": "number",
 		"keyframes-name-pattern": null,
+		"import-notation": "string",
 		"selector-class-pattern": null,
 		"declaration-block-no-duplicate-properties": [
 			true,
@@ -39,7 +39,7 @@
 				]
 			}
 		],
-		"block-closing-brace-newline-after": [
+		"@stylistic/block-closing-brace-newline-after": [
 			"always",
 			{
 				"ignoreAtRules": [
@@ -51,15 +51,16 @@
 		"block-no-empty": null,
 		"color-named": "never",
 		"function-url-quotes": "always",
-		"indentation": 2,
+		"@stylistic/indentation": [ 2, { "baseIndentLevel": 0, "indentInsideParens": "once-at-root-twice-in-block" } ],
 		"no-empty-source": null,
-		"string-quotes": "double",
+		"@stylistic/string-quotes": "double",
+		"@stylistic/max-empty-lines": 1,
 		"value-keyword-case": null,
+		"media-query-no-invalid": null,
 		"scss/at-else-closing-brace-newline-after": "always-last-in-chain",
 		"scss/at-else-closing-brace-space-after": "always-intermediate",
 		"scss/at-if-closing-brace-newline-after": "always-last-in-chain",
 		"scss/at-if-closing-brace-space-after": "always-intermediate",
-		"scss/at-import-no-partial-leading-underscore": true,
 		"scss/at-mixin-argumentless-call-parentheses": "never",
 		"scss/dollar-variable-colon-space-after": "always-single-line",
 		"scss/dollar-variable-colon-space-before": "never",
@@ -84,7 +85,16 @@
 					"stylelint-commands"
 				]
 			}
-		],
+		],	
+		"declaration-property-value-disallowed-list":  {
+      "justify-content": ["start", "end"],
+      "align-content": ["start", "end"],
+      "align-items": ["start", "end"],
+      "align-self": ["start", "end"],
+      "place-content": ["start", "end"],
+      "place-items": ["start", "end"],
+      "place-self": ["start", "end"]
+    },
 		"scss/double-slash-comment-whitespace-inside": "always",
 		"scss/declaration-nested-properties": "never",
 		"scss/operator-no-unspaced": true,
@@ -153,16 +163,16 @@
 			},
 			{
 				"type": "rule",
-				"selector": "&--.+"
-			},
-			{
-				"type": "rule",
 				"selector": ".* &"
 			},
 			{
 				"type": "at-rule",
 				"name": "include",
 				"hasBlock": true
+			},
+			{
+				"type": "rule",
+				"selector": "&--.+"
 			},
 			"at-rules"
 		],
@@ -358,4 +368,3 @@
 		]
 	}
 }
- 

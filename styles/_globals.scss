@@ -114,9 +114,14 @@ a {
   padding-left: 12px;
   max-width: 1920px;
 
-  @include desktop {
+  @include tablet-xl {
     padding-right: 16px;
     padding-left: 16px;
+  }
+
+  @include desktop-xl {
+    padding-right: 24px;
+    padding-left: 24px;
   }
 }
 
@@ -133,7 +138,7 @@ a {
   scroll-padding-right: 20px;
   scrollbar-color:
     $color-blue
-    rgba(255, 255, 255, 0.2);
+    rgb(255 255 255 / 20%);
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -145,7 +150,7 @@ a {
   &::-webkit-scrollbar-track {
     margin: 0 16px;
     height: 1px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 20%);
 
     @include desktop-xl {
       margin: 0;

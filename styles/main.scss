@@ -5,6 +5,7 @@
 @import "typography";
 @import "grid";
 @import "fonts-mixin";
+@import "mixins";
 
 // components
 @import "../components/Layout/Layout";
@@ -16,7 +17,7 @@
 @import "../components/MobileMenu/components/MobileLangSwitch/MobileLangSwitch";
 @import "../components/SocialLinks/SocialLinks";
 @import "../components/FormBlock/FormBlock";
-@import "../components/List/List";
+@import "../components/Discussions/Discussions";
 @import "../components/Modal/Modal";
 @import "../components/HeroBlock/HeroBlock";
 @import "../components/Cookie/Cookie";
@@ -42,10 +43,11 @@
 @import "../components/Payment/components/PaymentList/PaymentList";
 @import "../components/Stages/Stages";
 @import "../components/Stages/components/StagesList/StagesList";
+@import "../components/SkipLink/SkipLink";
 
-// partials
-@import "../partials/Articles/Articles";
-@import "../partials/Articles/Article/Article";
+// features
+@import "../features/Articles/components/Articles/Articles";
+@import "../features/Articles/components/Article/Article";
 
 // pages
 @import "../pages/frontend/frontend";
@@ -56,6 +58,7 @@
 @import "../pages/backend/backend";
 @import "../pages/teams/teams";
 @import "../pages/frontend-team/frontend-team";
+@import "../pages/components/components-page";
 
 // redesign
 @import "../components/redesign/LayoutRedesign/LayoutRedesign";
@@ -66,14 +69,18 @@
 @import "../components/redesign/ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign";
 @import "../components/redesign/ProjectsRedesign/ProjectsRedesign";
 @import "../components/redesign/CardWithContentRedesign/CardWithContentRedesign";
-@import "../components/redesign/CardWithImageRedesign/CardWithImageRedesign";
-@import "../components/redesign/CardWithRepositoriesRedesign/CardWithRepositoriesRedesign";
 @import "../components/redesign/CardsGridRedesign/CardsGridRedesign";
-@import "../components/redesign/CardWithTextAndDateRedesign/CardWithTextAndDateRedesign";
+@import "../components/redesign/CardsGridRedesign/components/CardWithTextAndDateRedesign/CardWithTextAndDateRedesign";
+@import "../components/redesign/CardsGridRedesign/components/CardWithImageRedesign/CardWithImageRedesign";
+@import "../components/redesign/CardsGridRedesign/components/CardWithRepositoriesRedesign/CardWithRepositoriesRedesign";
 @import "../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
 @import "../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
 @import "../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign";
 @import "../components/redesign/SignpostRedesign/SignpostRedesign";
 @import "../components/redesign/SingleImageRedesign/SingleImageRedesign";
 @import "../components/redesign/FooterRedesign/FooterRedesign";
+@import "../components/redesign/FormBlockRedesign/FormBlockRedesign";
+@import "../components/redesign/FormRedesign/FormRedesign";
+@import "../components/redesign/FormRedesign/components/InputRedesign/InputRedesign";
+@import "../components/redesign/FormRedesign/components/TextareaRedesign/TextareaRedesign";
 @import "../components/redesign/FooterRedesign/components/FooterNavigationListRedesign/FooterNavigationListRedesign";
