@@ -17,7 +17,7 @@
     }
 
     @include tablet-xl {
-      max-width: unset;
+      max-width: 1024px;
     }
 
     @include desktop {
