@@ -2,7 +2,7 @@
 
 image:
   registry: ghcr.io
-  repository: fpandyz/TourmalineCore.Home
+  repository: fpandyz/tourmalinecore.home
   pullPolicy: Always
   debug: true
 
