@@ -1,7 +1,6 @@
 # *
 User-agent: *
 Disallow: /components
-Allow: /
 
 # Host
 Host: https://tourmalinecore.com
