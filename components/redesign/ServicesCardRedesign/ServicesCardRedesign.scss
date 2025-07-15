@@ -50,6 +50,16 @@
     svg {
       display: block;
       margin-left: 12px;
+      width: 12px;
+      height: auto;
+
+      path {
+        fill: $color-black;
+      }
+
+      @include desktop-xl {
+        width: 20px;
+      }
     }
   }
 
