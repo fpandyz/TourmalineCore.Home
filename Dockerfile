@@ -15,8 +15,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-ENV NEXT_PUBLIC_ARTICLE_URL=https://raw.githubusercontent.com/TourmalineCore/TourmalineCore.Articles/master/articles/
-
 RUN npm run build
 
 # Runner
