@@ -55,6 +55,10 @@ jobs:
           REPO_LOWER=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
           echo "OWNER_REPO_LOWER=$OWNER_LOWER/$REPO_LOWER" >> $GITHUB_OUTPUT
 
+      - name: Print OWNER_REPO_LOWER
+        run: |
+          echo "Output value: ${{ steps.get-lowercase.outputs.OWNER_REPO_LOWER }}"
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
