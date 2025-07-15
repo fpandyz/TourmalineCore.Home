@@ -52,7 +52,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/fpandyz/${{ github.event.repository.name }}
+          images: ghcr.io/fpandyz/tourmalinecore.home
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -63,7 +63,7 @@ jobs:
         with:
           platforms: linux/amd64
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ghcr.io/fpandyz/${{ github.event.repository.name }}
+          tags: ghcr.io/fpandyz/tourmalinecore.home
           build-args: ${{ inputs.build-args }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
 
