@@ -15,6 +15,8 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+ENV NEXT_PUBLIC_ARTICLE_URL=https://raw.githubusercontent.com/TourmalineCore/TourmalineCore.Articles/master/articles/
+
 RUN npm run build
 
 # Runner
@@ -23,7 +25,6 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV NEXT_PUBLIC_ARTICLE_URL=https://raw.githubusercontent.com/TourmalineCore/TourmalineCore.Articles/master/articles/
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
