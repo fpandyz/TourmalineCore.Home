@@ -23,6 +23,7 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_PUBLIC_ARTICLE_URL=https://raw.githubusercontent.com/TourmalineCore/TourmalineCore.Articles/master/articles/
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
