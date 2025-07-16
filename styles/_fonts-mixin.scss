@@ -22,22 +22,6 @@
   font-family: $ff-source-code-pro;
 }
 
-@mixin h0 {
-  @include regular-font;
-  @include unbounded-font;
-
-  font-size: 120px;
-  line-height: 1;
-
-  @include desktop {
-    font-size: 160px;
-  }
-
-  @include desktop-xl {
-    font-size: 240px;
-  }
-}
-
 @mixin h1 {
   @include light-font;
   @include unbounded-font;
@@ -139,6 +123,22 @@
 
   @include desktop-xl {
     font-size: 26px;
+  }
+}
+
+@mixin accent-big-text {
+  @include regular-font;
+  @include unbounded-font;
+
+  font-size: 120px;
+  line-height: 1;
+
+  @include desktop {
+    font-size: 160px;
+  }
+
+  @include desktop-xl {
+    font-size: 240px;
   }
 }
 
