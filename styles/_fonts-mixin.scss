@@ -38,6 +38,22 @@
   }
 }
 
+@mixin h1-xl {
+  @include regular-font;
+  @include unbounded-font;
+
+  font-size: 120px;
+  line-height: 1;
+
+  @include desktop {
+    font-size: 160px;
+  }
+
+  @include desktop-xl {
+    font-size: 240px;
+  }
+}
+
 @mixin h2 {
   @include regular-font ;
   @include unbounded-font;

@@ -1,1 +1,3 @@
-{"buttonText":"Back to Homepage","description":"Sorry, we can no longer find the page you're looking for","gradientTitle":"Page not found"}
+{
+  "message": "We couldn't find the page you're looking for. It may have been moved or deleted."
+}
