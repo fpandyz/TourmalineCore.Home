@@ -1,5 +1,7 @@
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import { SignpostRedesign } from '../SignpostRedesign/SignpostRedesign';
+import IconArrow from '../../../icons/icon-arrow-redesign.svg';
 
 type Signpost = {
   title: string;
@@ -28,7 +30,19 @@ export function SignpostMultipleRedesign({
       className="signpost-multiple-redesign container-redesign"
       data-testid={dataTestId}
     >
-      <h2 className="signpost-multiple-redesign__title">{t(`title`)}</h2>
+      <div className="signpost-multiple-redesign__head">
+        <h2 className="signpost-multiple-redesign__title">{t(`title`)}</h2>
+        {t(`viewAllLink`)
+        && (
+          <Link
+            className="signpost-multiple-redesign__view-all-link"
+            href={t(`viewAllLink`)}
+          >
+            {t(`viewAllLinkText`)}
+            <IconArrow />
+          </Link>
+        )}
+      </div>
       <ul
         className="signpost-multiple-redesign__list grid"
       >

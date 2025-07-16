@@ -1,7 +1,7 @@
 {
   "projectsCardsWithImage": [
     {
-      "imageUrl": "/images/best-by-project.png",
+      "videoUrl": "/video/best-by.mp4",
       "title": "Best By",
       "description": "Сервис для\u00A0отслеживания срока годности продукции",
       "link": "https://best-by.ru/",

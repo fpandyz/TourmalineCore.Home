@@ -1,5 +1,7 @@
 {
   "title": "Пишем статьи",
+  "viewAllLinkText": "Все статьи",
+  "viewAllLink": "/articles",
   "signposts": [
     {
       "imageUrl": "/images/article-1.png",

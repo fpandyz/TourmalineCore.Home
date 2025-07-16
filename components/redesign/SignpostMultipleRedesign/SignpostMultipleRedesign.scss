@@ -41,9 +41,10 @@
     }
   }
 
-  &__title {
-    @include h5;
-
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 32px;
 
     @include desktop {
@@ -52,6 +53,42 @@
 
     @include desktop-xl {
       margin-bottom: 56px;
+    }
+  }
+
+  &__title {
+    @include h5;
+  }
+
+  &__view-all-link {
+    @include link-text;
+    @include animated-underline;
+
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  svg {
+    margin-left: 6px;
+    width: 12px;
+    height: auto;
+
+    path {
+      fill: $color-white;
+    }
+
+    @include tablet {
+      margin-left: 12px;
+    }
+
+    @include desktop-xl {
+      width: 20px;
     }
   }
 
