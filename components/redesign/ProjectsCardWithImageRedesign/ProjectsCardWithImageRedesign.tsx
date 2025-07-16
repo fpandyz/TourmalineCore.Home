@@ -50,23 +50,23 @@ export function ProjectsCardWithImageRedesign({
           {isNda && <span className="project-card-with-image-redesign__nda">NDA</span>}
           {
             imageUrl && (
-            <Image
-              src={imageUrl}
-              fill
-              alt=""
-            />
+              <Image
+                src={imageUrl}
+                fill
+                alt=""
+              />
             )
           }
           {
             videoUrl && (
-            <video
-              className="project-card-with-image-redesign__video"
-              src={videoUrl}
-              playsInline
-              loop
-              muted
-              autoPlay
-            />
+              <video
+                className="project-card-with-image-redesign__video"
+                src={videoUrl}
+                playsInline
+                loop
+                muted
+                autoPlay
+              />
             )
           }
         </div>
