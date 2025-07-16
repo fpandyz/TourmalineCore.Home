@@ -57,6 +57,8 @@
   }
 
   &__label {
+    @include inter-font;
+
     position: absolute;
     left: 16px;
     top: 15px;

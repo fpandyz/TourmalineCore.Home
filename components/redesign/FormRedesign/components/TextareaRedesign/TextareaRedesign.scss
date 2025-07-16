@@ -22,7 +22,7 @@
     line-height: 1.4;
     color: $color-white;
     background-color: $color-grey-900-redesign;
-    resize: inherit;
+    resize: vertical;
     transition: all 0.3s;
     caret-color: $color-deep-blue-redesign;
 
@@ -53,6 +53,8 @@
   }
 
   &__label {
+    @include body-m;
+
     position: absolute;
     left: 16px;
     top: 15px;
