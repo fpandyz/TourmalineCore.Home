@@ -31,6 +31,7 @@ export function ProjectsRedesign({
             title,
             description,
             imageUrl,
+            videoUrl,
             size,
             link,
             isNda,
@@ -41,6 +42,7 @@ export function ProjectsRedesign({
               title={title}
               description={description}
               imageUrl={imageUrl}
+              videoUrl={videoUrl}
               size={size}
               link={link}
               isNda={isNda}

@@ -4,7 +4,8 @@ import clsx from 'clsx';
 export type ProjectCardWithImage = {
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
+  videoUrl?: string;
   link?: string;
   isNda?: boolean;
   size: 'L' | 'M' | 'S' | 'XS';
@@ -14,6 +15,7 @@ export function ProjectsCardWithImageRedesign({
   title,
   description,
   imageUrl,
+  videoUrl,
   size,
   link,
   isNda,
@@ -46,11 +48,27 @@ export function ProjectsCardWithImageRedesign({
         </div>
         <div className={`project-card-with-image-redesign__images project-card-with-image-redesign__images--${size.toUpperCase()}`}>
           {isNda && <span className="project-card-with-image-redesign__nda">NDA</span>}
-          <Image
-            src={imageUrl}
-            fill
-            alt=""
-          />
+          {
+            imageUrl && (
+            <Image
+              src={imageUrl}
+              fill
+              alt=""
+            />
+            )
+          }
+          {
+            videoUrl && (
+            <video
+              className="project-card-with-image-redesign__video"
+              src={videoUrl}
+              playsInline
+              loop
+              muted
+              autoPlay
+            />
+            )
+          }
         </div>
       </>
     );
