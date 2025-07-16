@@ -19,7 +19,8 @@
     font-size: inherit;
     line-height: 1.4;
     color: $color-white;
-    background-color: $color-grey-700-redesign;
+    background-color: $color-grey-900-redesign;
+    transition: all 0.3s;
     caret-color: $color-deep-blue-redesign;
 
     &:not(:placeholder-shown) ~ #{$this}__label {
@@ -36,6 +37,11 @@
         top: 0;
         font-size: 14px;
       }
+    }
+
+    &:hover {
+      background-color: $color-grey-700-redesign;
+      transition: all 0.3s;
     }
 
     &:-webkit-autofill,
