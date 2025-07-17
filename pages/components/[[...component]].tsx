@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
+import { useTranslation } from "next-i18next";
 import { CardsGridRedesign } from "../../components/redesign/CardsGridRedesign/CardsGridRedesign";
 import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
 import { CollageWithTitleRedesign } from "../../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
@@ -15,8 +16,13 @@ import { SingleImageRedesign } from "../../components/redesign/SingleImageRedesi
 import { FormBlockRedesign } from "../../components/redesign/FormBlockRedesign/FormBlockRedesign";
 import { ComponentName } from "../../common/enums";
 import { Cookie } from "../../components/Cookie/Cookie";
+import { CustomError } from "../../components/redesign/CustomError/CustomError";
 
 export default function ComponentsPage() {
+  const {
+    t: pageNotFoundTranslation,
+  } = useTranslation(`pageNotFound`);
+
   const router = useRouter();
   const {
     query,
@@ -110,8 +116,15 @@ export default function ComponentsPage() {
 
   if (componentName === ComponentName.COOKIE) {
     return (
-      <Cookie
-        isComponentPage
+      <Cookie isComponentPage />
+    );
+  }
+
+  if (componentName === ComponentName.NOT_FOUND) {
+    return (
+      <CustomError
+        statusCode={404}
+        message={pageNotFoundTranslation(`message`)}
       />
     );
   }
@@ -162,6 +175,10 @@ export default function ComponentsPage() {
           <Link href={ComponentName.SUBMITTED_FORM_BLOCK}>Submitted form</Link>
         </li>
         <li className="components-page__item">
+
+          <Link href={ComponentName.NOT_FOUND}>Not found</Link>
+        </li>
+        <li className="components-page__item">
           <Link href={ComponentName.COOKIE}>Cookie</Link>
         </li>
       </ul>
@@ -187,6 +204,7 @@ export const getStaticProps: GetStaticProps = async ({
       `articleSignpostsRedesign`,
       `singleImageRedesign`,
       `formBlockRedesign`,
+      `pageNotFound`,
     ])),
   },
 });

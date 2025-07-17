@@ -31,18 +31,18 @@
       "caption":"Socials",
       "links":[
         {
-          "label":"Github",
+          "label":"GitHub",
           "path":"https://github.com/TourmalineCore",
-          "openInNewTab":true
-        },
-        {
-          "label":"Behance",
-          "path":"https://www.behance.net/tourmalinecore",
           "openInNewTab":true
         },
         {
           "label":"Telegram",
           "path":"https://t.me/tourmalinecore",
+          "openInNewTab":true
+        },
+        {
+          "label":"Behance",
+          "path":"https://www.behance.net/tourmalinecore",
           "openInNewTab":true
         }
       ]
