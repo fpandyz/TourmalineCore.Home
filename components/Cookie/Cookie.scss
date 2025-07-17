@@ -2,107 +2,102 @@
   $this: &;
 
   position: fixed;
-  left: 0;
-  bottom: 0;
+  left: 12px;
+  right: 12px;
+  bottom: 24px;
   z-index: $cookie;
-  border-radius: 6px;
-  padding: 24px 16px;
-  width: 100%;
-  background-image: $main-gradient-300;
-  background-color: $color-purple-black;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 16px 24px;
+  background-color: $color-black-900;
 
   &__link {
-    font-size: 16px;
-  }
+    @include animated-underline-reverse;
 
-  &__inner {
-    @include tablet {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    font-size: inherit;
+    color: inherit;
 
-    @include tablet-xl {
-      justify-content: flex-start;
+    &::after {
+      background-color: $color-white;
     }
   }
 
   &__text {
-    margin-bottom: 24px;
-    color: $color-white-alpha-100;
+    @include body-m;
 
-    @include tablet {
-      margin-right: 48px;
-      margin-bottom: 0;
-      max-width: 497px;
+    margin-bottom: 16px;
+    color: $color-white;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__button {
+    @include link-text;
+
+    position: relative;
+    border: none;
+    padding: 15px 20px;
+    width: 100%;
+    height: 48px;
+    color: $color-white;
+    background-color: $color-deep-blue-redesign;
+    cursor: pointer;
+    transition: background-color 0.25s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      width: 31px;
+      height: 51px;
+      background-image: url("../../public/images/cookie-button-edge.svg");
+      background-repeat: no-repeat;
+
+      @include desktop-xl {
+        width: 50px;
+        height: 74px;
+        background-image: url("../../public/images/cookie-button-edge-xl.svg");
+      }
+    }
+
+    &::before {
+      left: -2px;
+      pointer-events: none;
+    }
+
+    &::after {
+      right: -2px;
+      transform: scale(-1, 1);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-pink-redesign;
     }
 
     @include desktop-xl {
-      max-width: 600px;
-    }
-  }
-
-  &__reject {
-    margin-top: 16px;
-    color: $color-white;
-    background-image:
-      linear-gradient(180deg, rgba($color-purple-black, 0.9), rgba($color-purple-black, 0.9)),
-      linear-gradient(90deg, $color-white, $color-white);
-    opacity: 0.5;
-    transition: opacity 0.3s linear;
-
-    &:focus,
-    &:active {
-      opacity: 0.8;
-    }
-
-    @include tablet {
-      margin-top: 0;
-      margin-left: 16px;
-      padding: 16px 28px;
-    }
-
-    @media (hover: hover) {
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-  }
-
-  &__accept {
-    background-image:
-      linear-gradient(180deg, rgba($color-purple-black, 0.9), rgba($color-purple-black, 0.9)),
-      linear-gradient(90deg, $color-pink, $color-green, $color-green, $color-pink);
-
-    @include tablet {
-      padding: 16px 36px;
+      height: 70px;
     }
   }
 
   @include tablet {
-    bottom: 24px;
-    margin-left: 16px;
-    padding: 24px 32px;
-    width: auto;
+    left: unset;
+    right: 12px;
+    width: 369px;
   }
 
-  @include tablet-xl {
-    margin-left: 24px;
+  @include desktop {
+    right: 16px;
+    bottom: 48px;
+    width: 437px;
   }
 
-  &--zh {
-    font-size: 18px;
-
-    #{$this}__link {
-      font-size: 18px;
-
-      @include desktop-xl {
-        font-size: 24px;
-      }
-    }
-
-    @include desktop-xl {
-      font-size: 24px;
-    }
+  @include desktop-xl {
+    right: 24px;
+    width: 618px;
   }
 }

@@ -15,6 +15,7 @@ import { SignpostMultipleRedesign } from "../../components/redesign/SignpostMult
 import { SingleImageRedesign } from "../../components/redesign/SingleImageRedesign/SingleImageRedesign";
 import { FormBlockRedesign } from "../../components/redesign/FormBlockRedesign/FormBlockRedesign";
 import { ComponentName } from "../../common/enums";
+import { Cookie } from "../../components/Cookie/Cookie";
 import { CustomError } from "../../components/redesign/CustomError/CustomError";
 
 export default function ComponentsPage() {
@@ -106,11 +107,16 @@ export default function ComponentsPage() {
 
   if (componentName === ComponentName.SUBMITTED_FORM_BLOCK) {
     return (
-
       <FormBlockRedesign
         initializeIsSubmit
         testId="submitted-form-block"
       />
+    );
+  }
+
+  if (componentName === ComponentName.COOKIE) {
+    return (
+      <Cookie isComponentPage />
     );
   }
 
@@ -169,7 +175,11 @@ export default function ComponentsPage() {
           <Link href={ComponentName.SUBMITTED_FORM_BLOCK}>Submitted form</Link>
         </li>
         <li className="components-page__item">
+
           <Link href={ComponentName.NOT_FOUND}>Not found</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.COOKIE}>Cookie</Link>
         </li>
       </ul>
     </div>
