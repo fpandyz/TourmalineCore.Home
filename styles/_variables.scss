@@ -1,5 +1,6 @@
 // Black
 $color-black: #000;
+$color-black-900: #18181a;
 $color-purple-black: #06040f;
 
 // White
@@ -11,12 +12,6 @@ $color-white-alpha-400: rgb(255 255 255 / 10%);
 
 // Main gradient
 $main-gradient: linear-gradient(90.05deg, #e474f1 0.04%, #e474f1 0.05%, #4fdae2 99.96%);
-$main-gradient-300: linear-gradient(
-  90.05deg,
-  rgb(228 116 241 / 10%) 0.04%,
-  rgb(228 116 241 / 10%) 0.05%,
-  rgb(79 218 226 / 10%) 99.96%
-);
 
 // Primary
 $green-gradient: linear-gradient(90.05deg, #81b9e8 0.04%, #81b9e8 0.05%, #4fdae2 99.96%);

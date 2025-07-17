@@ -7,7 +7,6 @@ import { Breakpoint, BreakpointName } from '../common/enums';
 
 export type CustomTestFixtures = {
   apiImageMock: () => void;
-  hideCookie: () => void;
   testScreenshotAtBreakpoint: (
     options: {
       testId: string;
@@ -49,9 +48,19 @@ export const test = base.extend<CustomTestFixtures>({
   goToComponentsPage: async ({
     page,
     apiImageMock,
-    hideCookie,
   }, use) => {
     const goToComponentsPage = async (path: string) => {
+      // hide cookie banner
+      await page.context()
+        .addCookies([
+          {
+            name: `cookieAccept`,
+            value: `false`,
+            domain: `localhost`,
+            path: `/`,
+          },
+        ]);
+
       await apiImageMock();
 
       // interrupting the connection for gif, for more stable work of tests
@@ -60,8 +69,6 @@ export const test = base.extend<CustomTestFixtures>({
       await page.goto(`/ru/components/${path}`, {
         waitUntil: `networkidle`,
       });
-
-      await hideCookie();
     };
 
     await use(goToComponentsPage);
@@ -136,17 +143,6 @@ export const test = base.extend<CustomTestFixtures>({
     };
 
     await use(apiImageMock);
-  },
-
-  hideCookie: async ({
-    page,
-  }, use) => {
-    const hideCookie = async () => {
-      await page.getByTestId(`cookie`)
-        .evaluate((element) => element.style.visibility = `hidden`);
-    };
-
-    await use(hideCookie);
   },
 
   testAxeCoreCheckAtBreakpoint: async ({
