@@ -141,6 +141,10 @@
 
     &--ml {
       background-image: url("/images/cooperation-ml-element-mobile.webp");
+
+      @include tablet {
+        background-image: url("/images/ellipse-purple.svg");
+      }
     }
 
     &--embedded {
