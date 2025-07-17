@@ -73,8 +73,6 @@ const BURGER_ICONS = new Map(
     [AppRoute.Design, <IconBurgerDesign key={AppRoute.Design} />],
     [AppRoute.Teams, <IconBurgerPurple key={AppRoute.Teams} />],
     [AppRoute.FrontendTeam, <IconBurgerCyan key={AppRoute.FrontendTeam} />],
-    [AppRoute.Main, <IconBurger key={AppRoute.Main} />],
-    [AppRoute.Articles, <IconBurger key={AppRoute.Articles} />],
   ],
 );
 
@@ -120,7 +118,7 @@ export function Header({
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open header"
             >
-              {BURGER_ICONS.get(pathname as AppRoute)}
+              {BURGER_ICONS.get(pathname as AppRoute) || <IconBurger />}
             </button>
 
             <nav className="header__desktop">

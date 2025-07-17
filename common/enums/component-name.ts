@@ -12,4 +12,5 @@ export enum ComponentName {
   SINGLE_IMAGE = `single-image`,
   FORM_BLOCK = `form-block`,
   SUBMITTED_FORM_BLOCK = `submitted-form-block`,
+  NOT_FOUND = `not-found`,
 }

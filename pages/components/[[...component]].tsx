@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
+import { useTranslation } from "next-i18next";
 import { CardsGridRedesign } from "../../components/redesign/CardsGridRedesign/CardsGridRedesign";
 import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
 import { CollageWithTitleRedesign } from "../../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
@@ -14,8 +15,13 @@ import { SignpostMultipleRedesign } from "../../components/redesign/SignpostMult
 import { SingleImageRedesign } from "../../components/redesign/SingleImageRedesign/SingleImageRedesign";
 import { FormBlockRedesign } from "../../components/redesign/FormBlockRedesign/FormBlockRedesign";
 import { ComponentName } from "../../common/enums";
+import { CustomError } from "../../components/redesign/CustomError/CustomError";
 
 export default function ComponentsPage() {
+  const {
+    t: pageNotFoundTranslation,
+  } = useTranslation(`pageNotFound`);
+
   const router = useRouter();
   const {
     query,
@@ -107,6 +113,16 @@ export default function ComponentsPage() {
       />
     );
   }
+
+  if (componentName === ComponentName.NOT_FOUND) {
+    return (
+      <CustomError
+        statusCode={404}
+        message={pageNotFoundTranslation(`message`)}
+      />
+    );
+  }
+
   return (
     <div className="components-page container-redesign">
       <h2 className="components-page__subtitle">
@@ -152,6 +168,9 @@ export default function ComponentsPage() {
         <li className="components-page__item">
           <Link href={ComponentName.SUBMITTED_FORM_BLOCK}>Submitted form</Link>
         </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.NOT_FOUND}>Not found</Link>
+        </li>
       </ul>
     </div>
   );
@@ -175,6 +194,7 @@ export const getStaticProps: GetStaticProps = async ({
       `articleSignpostsRedesign`,
       `singleImageRedesign`,
       `formBlockRedesign`,
+      `pageNotFound`,
     ])),
   },
 });
