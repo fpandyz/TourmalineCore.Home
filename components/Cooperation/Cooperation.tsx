@@ -1,7 +1,8 @@
+import { useTranslation } from 'next-i18next';
 import { CooperationList } from './components/CooperationList/CooperationList';
 import { Cooperations } from './types';
 import { TechnologyPageAnchorLink } from '../../common/enums';
-import { usePath, useTranslationNamespace } from '../../common/hooks';
+import { usePath } from '../../common/hooks';
 
 export function Cooperation() {
   const {
@@ -9,7 +10,7 @@ export function Cooperation() {
   } = usePath();
   const {
     t,
-  } = useTranslationNamespace(`cooperation`);
+  } = useTranslation(`cooperation`);
 
   const cooperationList: Cooperations = t(`list`, {
     returnObjects: true,

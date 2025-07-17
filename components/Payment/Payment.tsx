@@ -1,12 +1,12 @@
+import { useTranslation } from 'next-i18next';
 import { PaymentList } from './components/PaymentList/PaymentList';
 import { Payments } from './types';
 import { TechnologyPageAnchorLink } from '../../common/enums';
-import { useTranslationNamespace } from '../../common/hooks';
 
 export function Payment() {
   const {
     t,
-  } = useTranslationNamespace(`payment`);
+  } = useTranslation(`payment`);
 
   const paymentList: Payments = t(`list`, {
     returnObjects: true,
