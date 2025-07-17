@@ -3,11 +3,7 @@ import { useState, useEffect } from 'react';
 import { getCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
-import clsx from 'clsx';
-import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { OptionYM } from '../../types/globals';
-import { ExternalLink } from '../ExternalLink/ExternalLink';
-import { isChineseLanguage } from '../../common/utils';
 
 const cookieAccept = `cookieAccept`;
 
@@ -21,80 +17,97 @@ export const optionYandexMetrika: OptionYM = {
   webvisor: true,
 };
 
-export function Cookie() {
+export function Cookie({
+  isComponentPage,
+}: {
+  isComponentPage?: boolean;
+}) {
   const {
     t,
   } = useTranslation(`cookie`);
-  const router = useRouter();
-  const [isCookie, setIsCookie] = useState(true);
+  const {
+    locale,
+  } = useRouter();
+
+  const [isCookieVisible, setIsCookieVisible] = useState(isComponentPage || false);
   const [date, setDate] = useState<Date | null>(null);
   const isMetricsEnabled = process.env.METRICS_ENABLED === `true`;
 
   useEffect(() => {
-    setDate(new Date());
-    if (getCookie(cookieAccept) !== undefined) {
-      setIsCookie(true);
-    } else {
-      setIsCookie(false);
+    if (!isComponentPage) {
+      setDate(new Date());
+      if (getCookie(cookieAccept) !== undefined) {
+        setIsCookieVisible(false);
+      } else {
+        setIsCookieVisible(true);
+      }
     }
   }, []);
 
-  if (isCookie) {
+  if (!isCookieVisible) {
     return null;
   }
 
   return (
     <aside
-      className={clsx(`cookie`, {
-        'cookie--zh': isChineseLanguage(router.locale),
-      })}
+      className="cookie"
       data-testid="cookie"
     >
-      <div className="cookie__inner">
-        <div className="cookie__text">
-          <Trans
-            i18nKey="cookie:text"
-            components={{
-              bolt: <ExternalLink
-                className="cookie__link"
-                href={`documents/cookie-information-${router.locale}.pdf`}
-                target="_blank"
-                rel="noreferrer"
-              />,
-            }}
-          />
-        </div>
-
-        <PrimaryButton
-          className="cookie__accept"
+      <div className="cookie__text">
+        <Trans
+          i18nKey="cookie:text"
+          components={{
+            bolt: <a
+              className="cookie__link"
+              href={`/documents/policy-${locale}.pdf#page=5`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label=""
+            />,
+          }}
+        />
+      </div>
+      <div className="cookie__buttons">
+        <button
+          type="button"
+          className="cookie__button"
           onClick={acceptCookie}
+          data-testid="accept-button"
         >
           {t(`accept`)}
-        </PrimaryButton>
-        <PrimaryButton
-          className="cookie__reject"
+        </button>
+        <button
+          type="button"
+          className="cookie__button"
           onClick={rejectCookie}
+          data-testid="reject-button"
         >
           {t(`reject`)}
-        </PrimaryButton>
+        </button>
       </div>
     </aside>
   );
 
   function acceptCookie() {
-    setCookie(cookieAccept, true);
-    setIsCookie(true);
+    if (!isComponentPage) {
+      setCookie(cookieAccept, true);
 
-    if (isMetricsEnabled) {
-      window.gtag(`js`, date);
-      window.gtag(`config`, googleId);
+      if (isMetricsEnabled) {
+        window.gtag(`js`, date);
+        window.gtag(`config`, googleId);
 
-      window.ym(Number(yandexId), `init`, optionYandexMetrika);
+        window.ym(Number(yandexId), `init`, optionYandexMetrika);
+      }
     }
+
+    setIsCookieVisible(false);
   }
 
   function rejectCookie() {
-    setCookie(cookieAccept, false);
-    setIsCookie(true);
+    if (!isComponentPage) {
+      setCookie(cookieAccept, false);
+    }
+
+    setIsCookieVisible(false);
   }
 }

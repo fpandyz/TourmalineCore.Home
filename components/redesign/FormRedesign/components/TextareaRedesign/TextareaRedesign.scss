@@ -21,8 +21,8 @@
     font-size: inherit;
     line-height: 1.4;
     color: $color-white;
-    background-color: $color-grey-700-redesign;
-    resize: inherit;
+    background-color: $color-grey-900-redesign;
+    resize: vertical;
     transition: all 0.3s;
     caret-color: $color-deep-blue-redesign;
 
@@ -42,12 +42,19 @@
       }
     }
 
+    &:hover {
+      background-color: $color-grey-700-redesign;
+      transition: all 0.3s;
+    }
+
     @include desktop-xl {
       min-height: 138px;
     }
   }
 
   &__label {
+    @include body-m;
+
     position: absolute;
     left: 16px;
     top: 15px;

@@ -50,6 +50,16 @@
     svg {
       display: block;
       margin-left: 12px;
+      width: 12px;
+      height: auto;
+
+      path {
+        fill: $color-black;
+      }
+
+      @include desktop-xl {
+        width: 20px;
+      }
     }
   }
 
@@ -86,6 +96,7 @@
     border: 10px solid $color-black;
     width: 212px;
     height: 276px;
+    background-color: $color-grey-100-redesign;
     transform: translate(-50%, -50%);
 
     img {

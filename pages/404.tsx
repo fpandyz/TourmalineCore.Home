@@ -1,37 +1,22 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
-import { useCallback } from 'react';
 
-import { Layout } from '../components/Layout/Layout';
-import { HeroBlock } from '../components/HeroBlock/HeroBlock';
-import { PrimaryButton } from '../components/PrimaryButton/PrimaryButton';
+import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
+import { CustomError } from '../components/redesign/CustomError/CustomError';
 
-export default function PageNotFound() {
+export default function Custom404() {
   const {
     t,
   } = useTranslation(`pageNotFound`);
-  const router = useRouter();
-
-  const goToHomePage = useCallback(() => {
-    router.replace(`/`);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
-    <Layout>
-      <HeroBlock
-        title="404"
-        gradientTitle={t(`gradientTitle`)}
-        description={t(`description`)}
-        Button={(
-          <PrimaryButton onClick={goToHomePage}>
-            {t(`buttonText`)}
-          </PrimaryButton>
-        )}
+    <LayoutRedesign>
+      <CustomError
+        statusCode={404}
+        message={t(`message`)}
       />
-    </Layout>
+    </LayoutRedesign>
   );
 }
 
@@ -42,7 +27,7 @@ export const getStaticProps: GetServerSideProps = async ({
     ...(await serverSideTranslations(locale as string, [
       `common`,
       `articles`,
-      `footer`,
+      `footerRedesign`,
       `pageNotFound`,
       `cookie`,
     ])),
