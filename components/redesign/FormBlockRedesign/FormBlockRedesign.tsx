@@ -31,11 +31,13 @@ export function FormBlockRedesign({
               !isSubmit
                 ? (
                   <>
-                    <FormRedesign
-                      onSubmit={onFormSubmit}
-                      isSubmit={isSubmit}
-                      setIsSubmit={setIsSubmit}
-                    />
+                    <div className="form-block-redesign__form-wrapper">
+                      <FormRedesign
+                        onSubmit={onFormSubmit}
+                        isSubmit={isSubmit}
+                        setIsSubmit={setIsSubmit}
+                      />
+                    </div>
                     <div className="form-block-redesign__aside">
                       <div className="form-block-redesign__aside-inner container-redesign">
                         <div className="form-block-redesign__aside-img">
@@ -56,11 +58,13 @@ export function FormBlockRedesign({
                   </>
                 )
                 : (
-                  <FormRedesign
-                    onSubmit={onFormSubmit}
-                    isSubmit={isSubmit}
-                    setIsSubmit={setIsSubmit}
-                  />
+                  <div className="form-block-redesign__form-wrapper">
+                    <FormRedesign
+                      onSubmit={onFormSubmit}
+                      isSubmit={isSubmit}
+                      setIsSubmit={setIsSubmit}
+                    />
+                  </div>
                 )
             }
           </div>

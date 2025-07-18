@@ -1,8 +1,9 @@
 .card-with-image-redesign {
   &__image {
     position: relative;
+    overflow: hidden;
+    border-radius: 2px;
     height: 242px;
-    background-color: $color-grey-100-redesign;
 
     img {
       display: block;
