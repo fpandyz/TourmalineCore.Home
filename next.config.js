@@ -13,6 +13,9 @@ module.exports = withReactSvg({
   env: {
     METRICS_ENABLED: process.env.METRICS_ENABLED,
   },
+
+  output: "standalone",
+  
   webpack(webpackConfig) {
     webpackConfig.resolve.fallback = { fs: false };
 
