@@ -19,13 +19,13 @@
 
   &__image-container {
     position: relative;
+    overflow: hidden;
     margin-bottom: 16px;
+    border-radius: 2px;
     width: 326px;
     height: 242px;
-    background-color: $color-grey-100-redesign;
 
     img {
-      border-radius: 2px;
       object-fit: cover;
 
       // Todo: think about what can be done with positioning

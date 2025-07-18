@@ -64,7 +64,7 @@
     @include desktop-xl {
       left: 20px;
       top: 110px;
-      max-width: 290px;
+      max-width: 352px;
     }
   }
 
@@ -72,33 +72,52 @@
     @include tablet-xl {
       @include h1;
 
-      position: relative;
       z-index: 1;
       display: flex;
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      margin-bottom: 4px;
-      border-right: 8px solid $color-black;
-      border-bottom: 8px solid  $color-black;
+      margin-bottom: 12px;
       border-radius: 2px;
-      width: 204px;
-      height: 155px;
+      width: 196px;
+      height: 147px;
       font-size: 56px;
       color: $color-black;
       background-color: $color-pink-redesign;
       transition: background-color 0.3s ease-in-out;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -7px;
+        top: 0;
+        z-index: -1;
+        width: 204px;
+        height: 157px;
+        background-color: $color-black;
+
+        @include desktop {
+          right: -8px;
+          width: 260px;
+          height: 200px;
+        }
+
+        @include desktop-xl {
+          width: 360px;
+          height: 280px;
+        }
+      }
     }
 
     @include desktop {
-      width: 260px;
-      height: 200px;
+      width: 254px;
+      height: 192px;
     }
 
     @include desktop-xl {
-      margin-bottom: 12px;
-      width: 360px;
-      height: 280px;
+      margin-bottom: 20px;
+      width: 352px;
+      height: 272px;
     }
   }
 
