@@ -2,29 +2,23 @@
   position: fixed;
   z-index: $modal;
   display: flex;
-  overflow: auto;
+  overflow-y: auto;
   font-weight: inherit;
   background-color: rgba($color-black, 0.5);
   inset: 0;
 
   &__container {
     margin: auto;
+    width: 100%;
   }
 
   &__inner {
     position: relative;
-    border-radius: 5px;
-    padding: 56px 16px;
-    background-color: $color-gray;
+    background-color: $color-white;
 
     @include tablet {
       padding: 56px 104px;
       min-height: 722px;
-    }
-
-    &--technology {
-      border-radius: 32px;
-      background-image: $color-dark-card;
     }
   }
 
@@ -37,13 +31,13 @@
 
   &__cross {
     position: absolute;
-    right: 19px;
-    top: 19px;
+    right: 21px;
+    top: 28px;
     border: none;
     padding: 0;
-    width: 18px;
-    height: 18px;
-    background-color: inherit;
+    width: 22px;
+    height: 22px;
+    background-color: $color-black;
     cursor: pointer;
     transition: transform 0.3s;
 
@@ -51,7 +45,14 @@
       display: block;
       width: 100%;
       height: 100%;
-      color: $color-white-alpha-200;
+
+      path {
+        color: $color-white;
+
+        @include tablet {
+          color: $color-black;
+        }
+      }
     }
 
     &:hover,
@@ -65,14 +66,6 @@
       top: 36px;
       width: 24px;
       height: 24px;
-    }
-  }
-
-  &__content {
-    margin-top: 48px;
-
-    @include desktop {
-      margin-top: 32px;
     }
   }
 }

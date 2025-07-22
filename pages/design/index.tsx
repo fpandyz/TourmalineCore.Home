@@ -78,6 +78,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `stagesDesign`,
       `stackDesign`,
       `servicesTechnologyDesign`,
+      `formBlockRedesign`,
     ])),
   },
 });

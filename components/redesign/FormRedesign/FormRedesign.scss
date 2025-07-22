@@ -193,6 +193,10 @@
     text-underline-offset: 2px;
   }
 
+  &.is-modal {
+    padding-top: 32px;
+  }
+
   @include tablet {
     max-width: 492px;
   }

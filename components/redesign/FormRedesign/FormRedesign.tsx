@@ -6,9 +6,9 @@ import {
   useRef,
   useState,
 } from 'react';
-import Image from 'next/image';
 import clsx from 'clsx';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -22,10 +22,12 @@ export function FormRedesign({
   onSubmit,
   isSubmit,
   setIsSubmit,
+  className,
 } : {
   onSubmit: (formData: FormData) => unknown;
   isSubmit: boolean;
   setIsSubmit: (value: boolean) => void;
+  className?: string;
 }) {
   const {
     t,
@@ -62,7 +64,7 @@ export function FormRedesign({
   return (
     <>
       <form
-        className={clsx(`form-redesign`, {
+        className={clsx(`form-redesign`, className, {
           'form-redesign--is-submitted': isSubmit,
         })}
         onSubmit={handleFormSubmit}

@@ -1,4 +1,6 @@
 .form-block-redesign {
+  $this: &;
+
   padding-top: 40px;
   background-color: $color-white;
 
@@ -110,6 +112,15 @@
 
     @include desktop {
       max-width: none;
+    }
+  }
+
+  &.is-modal {
+    padding-top: 50px;
+    background-color: $color-black;
+
+    #{$this}__aside {
+      padding-bottom: 32px;
     }
   }
 

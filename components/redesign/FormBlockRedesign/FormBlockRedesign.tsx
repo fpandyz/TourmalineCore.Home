@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
@@ -9,9 +10,11 @@ import { MarkdownText } from '../MarkdownText/MarkdownText';
 export function FormBlockRedesign({
   initializeIsSubmit = false,
   testId,
+  className,
 }: {
   initializeIsSubmit?: boolean;
   testId?: string;
+  className?: string;
 }) {
   const {
     t,
@@ -21,7 +24,7 @@ export function FormBlockRedesign({
 
   return (
     <section
-      className="form-block-redesign"
+      className={clsx(`form-block-redesign`, className)}
       data-testid={testId}
     >
       <div className="form-block-redesign__wrapper container-redesign">
@@ -36,6 +39,7 @@ export function FormBlockRedesign({
                         onSubmit={onFormSubmit}
                         isSubmit={isSubmit}
                         setIsSubmit={setIsSubmit}
+                        className={className}
                       />
                     </div>
                     <div className="form-block-redesign__aside">
@@ -63,6 +67,7 @@ export function FormBlockRedesign({
                       onSubmit={onFormSubmit}
                       isSubmit={isSubmit}
                       setIsSubmit={setIsSubmit}
+                      className={className}
                     />
                   </div>
                 )

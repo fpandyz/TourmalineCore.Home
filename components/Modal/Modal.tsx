@@ -1,23 +1,12 @@
 import { ReactNode, useEffect, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
-import clsx from 'clsx';
-import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
-import { AppRoute } from '../../common/enums';
 import { useOnClickOutside } from '../../common/hooks';
 
 export function Modal({
-  title,
-  subtitle,
-  subtitleClassName,
-  maxWidth = ``,
   content,
   onClose = () => {},
 }: {
-  title?: string;
-  subtitle?: string;
-  subtitleClassName?: string;
-  maxWidth?: string;
   content: ReactNode;
   onClose?:() => unknown;
 }) {
@@ -37,9 +26,6 @@ export function Modal({
   }, []);
 
   const refModal = useRef<HTMLDivElement>(null);
-  const {
-    pathname,
-  } = useRouter();
 
   useOnClickOutside(refModal, onClose);
 
@@ -48,34 +34,18 @@ export function Modal({
       returnFocus
     >
       <div className="default-scroll modal">
-        <div
-          className="container modal__container"
-          style={{
-            maxWidth,
-          }}
-        >
+        <div className="modal__container">
           <div
-            className={clsx(`modal__inner`, pathname !== AppRoute.Main && `modal__inner--technology`)}
+            className="modal__inner"
             ref={refModal}
           >
-            <div className="modal__header">
-              {title && (<div className="title-type-3 modal__title">{title}</div>)}
-
-              {subtitle && (
-                <div className={clsx(`modal__subtitle`, subtitleClassName)}>
-                  {subtitle}
-                </div>
-              )}
-
-              <button
-                type="button"
-                className="modal__cross"
-                onClick={onClose}
-              >
-                <IconCross />
-              </button>
-            </div>
-
+            <button
+              type="button"
+              className="modal__cross"
+              onClick={onClose}
+            >
+              <IconCross />
+            </button>
             <div className="modal__content">{content}</div>
           </div>
         </div>
