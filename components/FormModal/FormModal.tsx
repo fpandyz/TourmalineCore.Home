@@ -1,7 +1,7 @@
 import { Modal } from '../Modal/Modal';
 import { FormBlockRedesign } from '../redesign/FormBlockRedesign/FormBlockRedesign';
 
-export function FormTechnologyModal(
+export function FormModal(
   {
     setIsOpen,
   }:{

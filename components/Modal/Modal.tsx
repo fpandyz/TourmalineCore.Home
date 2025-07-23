@@ -35,7 +35,7 @@ export function Modal({
     >
       <div
         className="default-scroll modal"
-        data-testid="form-technology-modal"
+        data-testid="form-modal"
       >
         <div className="modal__container">
           <div

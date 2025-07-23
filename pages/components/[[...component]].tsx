@@ -17,7 +17,7 @@ import { FormBlockRedesign } from "../../components/redesign/FormBlockRedesign/F
 import { ComponentName } from "../../common/enums";
 import { Cookie } from "../../components/Cookie/Cookie";
 import { CustomError } from "../../components/redesign/CustomError/CustomError";
-import { FormTechnologyModal } from "../../components/FormTechnologyModal/FormTechnologyModal";
+import { FormModal } from "../../components/FormModal/FormModal";
 
 export default function ComponentsPage() {
   const {
@@ -130,9 +130,9 @@ export default function ComponentsPage() {
     );
   }
 
-  if (componentName === ComponentName.FORM_TECHNOLOGY_MODAL) {
+  if (componentName === ComponentName.FORM_MODAL) {
     return (
-      <FormTechnologyModal setIsOpen={() => {}} />
+      <FormModal setIsOpen={() => {}} />
     );
   }
 
@@ -189,7 +189,7 @@ export default function ComponentsPage() {
           <Link href={ComponentName.COOKIE}>Cookie</Link>
         </li>
         <li className="components-page__item">
-          <Link href={ComponentName.FORM_TECHNOLOGY_MODAL}>FORM_TECHNOLOGY_MODAL</Link>
+          <Link href={ComponentName.FORM_MODAL}>FORM_MODAL</Link>
         </li>
       </ul>
     </div>

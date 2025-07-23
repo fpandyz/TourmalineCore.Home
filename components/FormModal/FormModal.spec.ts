@@ -2,13 +2,13 @@ import { test } from '../../playwright-tests/custom-test';
 import { ComponentName } from '../../common/enums';
 import { BREAKPOINTS } from '../../playwright-tests/constants/breakpoints';
 
-const TEST_ID = `form-technology-modal`;
+const TEST_ID = `form-modal`;
 
-test.describe(`FormTechnologyModal`, () => {
+test.describe(`FormModal`, () => {
   test.beforeEach(async ({
     goToComponentsPage,
   }) => {
-    await goToComponentsPage(ComponentName.FORM_TECHNOLOGY_MODAL);
+    await goToComponentsPage(ComponentName.FORM_MODAL);
   });
 
   for (const {

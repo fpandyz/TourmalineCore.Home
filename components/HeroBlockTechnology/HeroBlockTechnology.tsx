@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
 import { useBodyScrollHidden, usePath, useTranslationNamespace } from '../../common/hooks';
 import { isChineseLanguage } from '../../common/utils';
+import { FormModal } from '../FormModal/FormModal';
 
 export function HeroBlockTechnology() {
   const {
@@ -51,7 +51,7 @@ export function HeroBlockTechnology() {
           />
         </picture>
       </div>
-      {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}
+      {isOpen && <FormModal setIsOpen={setIsOpen} />}
     </section>
   );
 }
