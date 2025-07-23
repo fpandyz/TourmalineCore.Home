@@ -10,6 +10,7 @@ export function FormModal(
 ) {
   return (
     <Modal
+      dataTestId="form-modal"
       content={(
         <FormBlockRedesign className="is-modal" />
       )}
