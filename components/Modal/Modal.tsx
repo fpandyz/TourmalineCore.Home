@@ -6,11 +6,11 @@ import { useOnClickOutside } from '../../common/hooks';
 export function Modal({
   content,
   onClose = () => {},
-  dataTestId,
+  testId,
 }: {
   content: ReactNode;
   onClose?:() => unknown;
-  dataTestId?: string;
+  testId?: string;
 }) {
   useEffect(() => {
     function escFunction(event: KeyboardEvent) {
@@ -37,7 +37,7 @@ export function Modal({
     >
       <div
         className="default-scroll modal"
-        data-testid={dataTestId}
+        data-testid={testId}
       >
         <div className="modal__container">
           <div

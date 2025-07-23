@@ -5,14 +5,16 @@ export function FormModal(
   {
     setIsOpen,
     initializeIsSubmit,
+    testId,
   }:{
     setIsOpen: (isOpen: boolean) => void;
     initializeIsSubmit?: boolean;
+    testId?: string;
   },
 ) {
   return (
     <Modal
-      dataTestId="form-modal"
+      testId={testId}
       content={(
         <FormBlockRedesign
           className="is-modal"

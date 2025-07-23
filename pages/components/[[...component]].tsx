@@ -134,6 +134,7 @@ export default function ComponentsPage() {
     return (
       <FormModal
         setIsOpen={() => {}}
+        testId="form-modal"
       />
     );
   }
@@ -142,6 +143,7 @@ export default function ComponentsPage() {
     return (
       <FormModal
         setIsOpen={() => {}}
+        testId="submitted-form-modal"
         initializeIsSubmit
       />
     );
