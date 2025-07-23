@@ -4,15 +4,20 @@ import { FormBlockRedesign } from '../redesign/FormBlockRedesign/FormBlockRedesi
 export function FormModal(
   {
     setIsOpen,
+    initializeIsSubmit,
   }:{
     setIsOpen: (isOpen: boolean) => void;
+    initializeIsSubmit?: boolean;
   },
 ) {
   return (
     <Modal
       dataTestId="form-modal"
       content={(
-        <FormBlockRedesign className="is-modal" />
+        <FormBlockRedesign
+          className="is-modal"
+          initializeIsSubmit={initializeIsSubmit}
+        />
       )}
       onClose={onClose}
     />

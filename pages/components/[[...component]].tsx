@@ -132,7 +132,18 @@ export default function ComponentsPage() {
 
   if (componentName === ComponentName.FORM_MODAL) {
     return (
-      <FormModal setIsOpen={() => {}} />
+      <FormModal
+        setIsOpen={() => {}}
+      />
+    );
+  }
+
+  if (componentName === ComponentName.SUBMITTED_FORM_MODAL) {
+    return (
+      <FormModal
+        setIsOpen={() => {}}
+        initializeIsSubmit
+      />
     );
   }
 
@@ -189,7 +200,10 @@ export default function ComponentsPage() {
           <Link href={ComponentName.COOKIE}>Cookie</Link>
         </li>
         <li className="components-page__item">
-          <Link href={ComponentName.FORM_MODAL}>FORM_MODAL</Link>
+          <Link href={ComponentName.FORM_MODAL}>Form Modal</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.SUBMITTED_FORM_MODAL}>Submitted Form Modal</Link>
         </li>
       </ul>
     </div>
