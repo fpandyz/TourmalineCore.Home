@@ -33,7 +33,10 @@ export function Modal({
     <FocusLock
       returnFocus
     >
-      <div className="default-scroll modal">
+      <div
+        className="default-scroll modal"
+        data-testid="form-technology-modal"
+      >
         <div className="modal__container">
           <div
             className="modal__inner"
