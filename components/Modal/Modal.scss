@@ -4,12 +4,15 @@
   display: flex;
   overflow-y: auto;
   font-weight: inherit;
-  background-color: rgba($color-black, 0.5);
+  background-color: $color-white;
   inset: 0;
 
   &__container {
-    margin: auto;
     width: 100%;
+
+    @include tablet {
+      margin: auto;
+    }
   }
 
   &__inner {
@@ -17,8 +20,18 @@
     background-color: $color-white;
 
     @include tablet {
-      padding: 56px 104px;
+      padding-top: 149px;
       min-height: 722px;
+    }
+
+    @include tablet-xl {
+      padding-top: 173px;
+    }
+
+    @include desktop {
+      position: static;
+      padding-top: 0;
+      min-height: unset;
     }
   }
 
@@ -63,10 +76,23 @@
     }
 
     @include tablet {
-      right: 36px;
-      top: 36px;
-      width: 24px;
-      height: 24px;
+      background-color: $color-white;
+    }
+
+    @include tablet {
+      right: 22px;
+      top: 30px;
+      width: 22px;
+      height: 22px;
+    }
+
+    @include tablet-xl {
+      right: 25px;
+      top: 25px;
     }
   }
+
+  // @include tablet {
+  //   background-color: $color-white;
+  // }
 }

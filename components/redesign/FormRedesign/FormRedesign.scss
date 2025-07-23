@@ -195,6 +195,10 @@
 
   &.is-modal {
     padding-top: 28px;
+
+    @include tablet {
+      padding-top: 56px;
+    }
   }
 
   @include tablet {
