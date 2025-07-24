@@ -12,6 +12,7 @@ export type CustomTestFixtures = {
       testId: string;
       breakpoint: Breakpoint;
       breakpointName: BreakpointName;
+      height?: number;
     }) => void;
   goToComponentsPage: (path: string) => void;
   goto: (path?: string) => void;
@@ -82,10 +83,12 @@ export const test = base.extend<CustomTestFixtures>({
       testId,
       breakpoint,
       breakpointName,
+      height,
     }: {
       testId: string;
       breakpoint: Breakpoint;
       breakpointName: BreakpointName;
+      height?: number;
     }) => {
       // This is necessary so that the tests do not crop the screenshots.
       await page.addStyleTag({
@@ -94,6 +97,7 @@ export const test = base.extend<CustomTestFixtures>({
 
       await setViewportSize({
         width: breakpoint,
+        height,
       });
 
       await expect(page.getByTestId(testId))

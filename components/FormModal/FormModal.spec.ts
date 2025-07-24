@@ -1,8 +1,17 @@
+/* eslint-disable no-nested-ternary */
 import { test } from '../../playwright-tests/custom-test';
-import { ComponentName } from '../../common/enums';
+import { BreakpointName, ComponentName } from '../../common/enums';
 import { BREAKPOINTS } from '../../playwright-tests/constants/breakpoints';
 
 const TEST_ID = `form-modal`;
+
+const heightMap: Record<BreakpointName, number> = {
+  mobile: 801,
+  tablet: 1024,
+  'tablet-xl': 1024,
+  desktop: 768,
+  'desktop-xl': 1080,
+};
 
 test.describe(`FormModal`, () => {
   test.beforeEach(async ({
@@ -23,6 +32,7 @@ test.describe(`FormModal`, () => {
         testId: TEST_ID,
         breakpoint,
         breakpointName,
+        height: heightMap[breakpointName] ?? undefined,
       });
     });
   }
