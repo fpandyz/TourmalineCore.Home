@@ -1,0 +1,14 @@
+.header-mobile-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: $mobile-menu;
+  width: 100%;
+  height: calc(100vh - 100%);
+  background-color: $color-black;
+  animation: showLangTooltip 0.15s ease-out forwards;
+
+  &__accordion {
+    @include h4;
+  }
+}
