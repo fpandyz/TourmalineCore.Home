@@ -1,0 +1,46 @@
+.header-button {
+  @include link-text;
+
+  position: relative;
+  border: none;
+  color: $color-white;
+  background-color: $color-deep-blue-redesign;
+  cursor: pointer;
+  transition: background-color 0.25s;
+
+  &::before {
+    left: -4px;
+    background-image: url("../../../../../public/images/header-button-edge-left-desktop-xl.svg");
+    pointer-events: none;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include desktop-xl {
+      width: 27px;
+      height: 74px;
+    }
+  }
+
+  &::after {
+    right: -4px;
+    background-image: url("../../../../../public/images/header-button-edge-right-desktop-xl.svg");
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-pink-redesign;
+  }
+
+  @include desktop-xl {
+    margin-left: 32px;
+    padding: 22px 40px;
+    height: 70px;
+  }
+}
