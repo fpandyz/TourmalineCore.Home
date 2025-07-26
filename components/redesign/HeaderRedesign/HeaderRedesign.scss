@@ -1,17 +1,22 @@
 .header-redesign {
   @include inter-font;
 
+  position: relative;
   background-color: $color-black;
 
   &__inner {
     display: flex;
     align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   &__link-wrapper {
     position: relative;
     display: inline-block;
-    margin-right: 300px;
+    margin-right: auto;
+    width: 135px;
+    height: 40px;
 
     @include desktop-xl {
       width: 190px;
@@ -25,51 +30,41 @@
     }
   }
 
-  &__button {
-    @include link-text;
-
-    position: relative;
+  &__burger {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     border: none;
-    color: $color-white;
-    background-color: $color-deep-blue-redesign;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
     cursor: pointer;
-    transition: background-color 0.25s;
+    gap: 8px;
 
-    &::before {
-      left: -4px;
-      background-image: url("../../../public/images/header-button-edge-left-desktop-xl.svg");
-      pointer-events: none;
-    }
+    &--open {
+      :nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+      }
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: -3px;
-      background-size: cover;
-      background-repeat: no-repeat;
-
-      @include desktop-xl {
-        width: 27px;
-        height: 74px;
+      :nth-child(2) {
+        transform: translateY(-5px) rotate(-45deg);
       }
     }
+  }
 
-    &::after {
-      right: -4px;
-      background-image: url("../../../public/images/header-button-edge-right-desktop-xl.svg");
-    }
+  &__line {
+    display: block;
+    border-radius: 4px;
+    width: 28px;
+    height: 2px;
+    background-color: $color-white;
+    transition: all 0.3s ease-in-out;
+  }
 
-    &:hover,
-    &:focus-visible {
-      background-color: $color-pink-redesign;
-    }
-
-    @include desktop-xl {
-      margin-left: 32px;
-      padding: 22px 40px;
-      height: 70px;
-    }
+  &__button {
+    display: none;
   }
 
   @include desktop-xl {

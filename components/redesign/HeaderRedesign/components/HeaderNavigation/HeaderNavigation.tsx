@@ -1,11 +1,11 @@
-import { Accordion } from "../../../Accordion/Accordion";
+import { HeaderAccordion } from "../HeaderAccordion/HeaderAccordion";
 
 export function HeaderNavigation() {
   return (
     <nav>
       <ul>
         <li>
-          <Accordion />
+          <HeaderAccordion />
         </li>
       </ul>
     </nav>

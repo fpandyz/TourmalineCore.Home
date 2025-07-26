@@ -30,7 +30,7 @@ export function LangSwitchRedesign({
     >
       <button
         type="button"
-        className="lang-switch-redesign__active"
+        className="lang-switch-redesign__button"
         aria-label={router.locale === `ru`
           ? `Выбрать язык`
           : `Select language`}

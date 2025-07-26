@@ -1,9 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import clsx from "clsx";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
-import { HeaderNavigation } from "./components/HeaderNavigation/HeaderNavigation";
+import { HeaderMobileMenu } from "./components/HeaderMobileMenu/HeaderMobileMenu";
+import { HeaderButton } from "./components/HeaderButton/HeaderButton";
+// import { HeaderNavigation } from "./components/HeaderNavigation/HeaderNavigation";
 
 export function HeaderRedesign() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header
       className="header-redesign"
@@ -11,8 +17,8 @@ export function HeaderRedesign() {
     >
       <div className="header-redesign__inner container-redesign">
         <Link
-          href="#"
           className="header-redesign__link-wrapper"
+          href="/"
         >
           <Image
             src="/images/logo.png"
@@ -20,15 +26,28 @@ export function HeaderRedesign() {
             fill
           />
         </Link>
-        <HeaderNavigation />
+
+        {/* <HeaderNavigation /> */}
+
         <LangSwitchRedesign className="header-redesign__lang-switch" />
+
         <button
-          className="header-redesign__button"
+          className={clsx(`header-redesign__burger`, {
+            'header-redesign__burger--open': isMobileMenuOpen,
+          })}
           type="button"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          Обсудить проект
+          <span className="header-redesign__line" />
+          <span className="header-redesign__line" />
         </button>
+
+        <HeaderButton className="header-redesign__button" />
       </div>
+
+      {isMobileMenuOpen && (
+        <HeaderMobileMenu />
+      )}
     </header>
   );
 }
