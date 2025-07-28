@@ -7,6 +7,7 @@ export function FooterRedesign() {
   const {
     t,
   } = useTranslation(`footerRedesign`);
+
   const {
     locale,
   } = useRouter();
