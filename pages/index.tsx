@@ -81,6 +81,7 @@ export const getStaticProps: GetServerSideProps = async ({
     ...(await serverSideTranslations(locale as string, [
       `common`,
       `cookie`,
+      `headerRedesign`,
       `footerRedesign`,
       `discussion`,
       `heroRedesign`,

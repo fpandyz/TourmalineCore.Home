@@ -1,0 +1,70 @@
+.header-popup {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: $mobile-menu;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  height: calc(100vh - 100%);
+  background-color: $color-black;
+  animation: showLangTooltip 0.15s ease-out forwards;
+
+  &__nav {
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    margin-bottom: 88px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  &__caption {
+    @include link-text;
+
+    margin-bottom: 4px;
+    color: $color-pink-redesign;
+  }
+
+  &__email {
+    @include h7;
+    @include animated-underline;
+
+    width: max-content;
+    text-decoration: none;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__list-item {
+    &:not(:last-child)::after {
+      content: "/";
+      margin: 0 12px;
+      color: $color-grey-500-redesign;
+    }
+  }
+
+  &__link {
+    @include body-s;
+    @include animated-underline;
+
+    text-decoration: none;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+}

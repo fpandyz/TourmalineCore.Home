@@ -2,13 +2,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import clsx from "clsx";
+import { useTranslation } from "next-i18next";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
-import { HeaderMobileMenu } from "./components/HeaderMobileMenu/HeaderMobileMenu";
 import { HeaderButton } from "./components/HeaderButton/HeaderButton";
-// import { HeaderNavigation } from "./components/HeaderNavigation/HeaderNavigation";
+import { HeaderPopup } from "./components/HeaderPopup/HeaderPopup";
+import { HeaderNavigationItem } from "./components/HeaderNavigationListRedesign/HeaderNavigationListRedesign";
+import { useBodyScrollHidden } from "../../../common/hooks/useBodyScrollHiden";
 
 export function HeaderRedesign() {
+  const {
+    t,
+  } = useTranslation(`headerRedesign`);
+
+  const headerNavigationLists: HeaderNavigationItem[] = t(`navigationLists`, {
+    returnObjects: true,
+  });
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useBodyScrollHidden(isMobileMenuOpen);
 
   return (
     <header
@@ -27,7 +39,7 @@ export function HeaderRedesign() {
           />
         </Link>
 
-        {/* <HeaderNavigation /> */}
+        {/* <HeaderNavigationListRedesign navigationList={headerNavigationLists} /> */}
 
         <LangSwitchRedesign className="header-redesign__lang-switch" />
 
@@ -46,7 +58,7 @@ export function HeaderRedesign() {
       </div>
 
       {isMobileMenuOpen && (
-        <HeaderMobileMenu />
+        <HeaderPopup navigationList={headerNavigationLists} />
       )}
     </header>
   );

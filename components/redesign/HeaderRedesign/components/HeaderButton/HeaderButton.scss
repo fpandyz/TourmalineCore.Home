@@ -2,23 +2,21 @@
   @include link-text;
 
   position: relative;
+  outline-offset: 4px;
   border: none;
+  padding: 15px 26px;
   color: $color-white;
   background-color: $color-deep-blue-redesign;
   cursor: pointer;
   transition: background-color 0.25s;
-
-  &::before {
-    left: -4px;
-    background-image: url("../../../../../public/images/header-button-edge-left-desktop-xl.svg");
-    pointer-events: none;
-  }
 
   &::before,
   &::after {
     content: "";
     position: absolute;
     top: -3px;
+    width: 19px;
+    height: 52px;
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -26,6 +24,12 @@
       width: 27px;
       height: 74px;
     }
+  }
+
+  &::before {
+    left: -4px;
+    background-image: url("../../../../../public/images/header-button-edge-left-desktop-xl.svg");
+    pointer-events: none;
   }
 
   &::after {
@@ -41,6 +45,5 @@
   @include desktop-xl {
     margin-left: 32px;
     padding: 22px 40px;
-    height: 70px;
   }
 }
