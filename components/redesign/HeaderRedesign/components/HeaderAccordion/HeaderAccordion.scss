@@ -20,6 +20,10 @@
     @include regular-font;
 
     color: $color-white;
+
+    @include tablet-xl {
+      @include body-m;
+    }
   }
 
   &__arrow {
@@ -27,6 +31,12 @@
     width: 20px;
     height: 20px;
     transition: transform 0.3s;
+
+    @include tablet-xl {
+      margin-left: 4px;
+      width: 16px;
+      height: 16px;
+    }
 
     &--open {
       transform: rotate(-0.5turn);
@@ -39,6 +49,12 @@
     padding: 16px 0;
     animation: showLangTooltip 0.15s ease-out forwards;
     gap: 4px;
+
+    @include tablet-xl {
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
   }
 
   &__list-item {

@@ -1,4 +1,23 @@
 .header-navigation-list-redesign {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include tablet-xl {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  &__list-item {
+    @include tablet-xl {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+    }
+  }
+
   &__link {
     @include h4;
     @include animated-underline;
@@ -10,11 +29,13 @@
     &::after {
       background-color: $color-white;
     }
+
+    @include tablet-xl {
+      @include body-m;
+    }
   }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  @include tablet-xl {
+    margin-right: 32px;
   }
 }

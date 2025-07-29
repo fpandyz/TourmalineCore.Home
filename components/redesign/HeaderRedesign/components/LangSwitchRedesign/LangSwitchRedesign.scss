@@ -103,6 +103,10 @@
       display: block;
     }
   }
+
+  @include tablet-xl {
+    margin-right: 16px;
+  }
 }
 
 @keyframes showLangTooltip {

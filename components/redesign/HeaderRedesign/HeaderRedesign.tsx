@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
 import { HeaderButton } from "./components/HeaderButton/HeaderButton";
 import { HeaderPopup } from "./components/HeaderPopup/HeaderPopup";
-import { HeaderNavigationItem } from "./components/HeaderNavigationListRedesign/HeaderNavigationListRedesign";
+import { HeaderNavigationItem, HeaderNavigationListRedesign } from "./components/HeaderNavigationListRedesign/HeaderNavigationListRedesign";
 import { useBodyScrollHidden } from "../../../common/hooks/useBodyScrollHiden";
 
 export function HeaderRedesign() {
@@ -65,7 +65,10 @@ export function HeaderRedesign() {
           />
         </Link>
 
-        {/* <HeaderNavigationListRedesign navigationList={headerNavigationLists} /> */}
+        <HeaderNavigationListRedesign
+          className="header-redesign__nav"
+          navigationList={headerNavigationLists}
+        />
 
         <LangSwitchRedesign className="header-redesign__lang-switch" />
 
