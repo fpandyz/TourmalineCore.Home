@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { useTranslation } from "next-i18next";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
@@ -22,9 +22,35 @@ export function HeaderRedesign() {
 
   useBodyScrollHidden(isMobileMenuOpen);
 
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const bodyElement = document.querySelector(`body`);
+    const handleScroll = () => {
+      const currentScrollY = bodyElement?.scrollTop || 0;
+
+      if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 50) {
+        setIsHidden(true);
+      } else if (currentScrollY < lastScrollY && lastScrollY - currentScrollY > 50) {
+        setIsHidden(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    bodyElement?.addEventListener(`scroll`, handleScroll, {
+      passive: true,
+    });
+
+    return () => window.removeEventListener(`scroll`, handleScroll);
+  }, [lastScrollY]);
+
   return (
     <header
-      className="header-redesign"
+      className={clsx(`header-redesign`, {
+        'header-redesign--hidden': isHidden,
+      })}
       data-testid="header-redesign"
     >
       <div className="header-redesign__inner container-redesign">

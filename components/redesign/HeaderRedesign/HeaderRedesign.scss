@@ -1,8 +1,11 @@
 .header-redesign {
   @include inter-font;
 
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: $header;
   background-color: $color-black;
+  transition: transform 0.3s ease-in-out;
 
   &__inner {
     display: flex;
@@ -70,5 +73,9 @@
 
   @include desktop-xl {
     padding: 24px 0;
+  }
+
+  &--hidden {
+    transform: translateY(-100%);
   }
 }
