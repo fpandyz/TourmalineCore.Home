@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import IconDownArrow from '../../../../../icons/icon-arrow-down-redesign2.svg';
 // TODO: Move the type to a separate file?
 // eslint-disable-next-line import/no-cycle
@@ -19,6 +19,18 @@ export function HeaderAccordion({
   } = navigationListItem;
 
   const [isTooltipOpened, setIsTooltipOpened] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.matchMedia(`(max-width: 1023px)`).matches);
+    };
+
+    checkScreenSize();
+    window.addEventListener(`resize`, checkScreenSize);
+
+    return () => window.removeEventListener(`resize`, checkScreenSize);
+  }, []);
 
   return (
     <div
@@ -26,11 +38,17 @@ export function HeaderAccordion({
         `header-accordion`,
         className,
       )}
+      {...(!isMobile ? {
+        onMouseEnter: () => setIsTooltipOpened(true),
+        onMouseLeave: () => setIsTooltipOpened(false),
+      } : {})}
     >
       <button
         className="header-accordion__button"
         type="button"
-        onClick={() => setIsTooltipOpened(!isTooltipOpened)}
+        {...(isMobile ? {
+          onClick: () => setIsTooltipOpened(!isTooltipOpened),
+        } : {})}
       >
         <span className="header-accordion__label">
           {name}
