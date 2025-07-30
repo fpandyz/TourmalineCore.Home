@@ -10,7 +10,7 @@
   &__container {
     width: 100%;
 
-    @include tablet {
+    @include desktop {
       margin: auto;
     }
   }
@@ -61,10 +61,10 @@
       height: 100%;
 
       path {
-        color: $color-white;
+        fill: $color-white;
 
         @include tablet {
-          color: $color-grey-500-redesign;
+          fill: $color-grey-500-redesign;
         }
       }
     }

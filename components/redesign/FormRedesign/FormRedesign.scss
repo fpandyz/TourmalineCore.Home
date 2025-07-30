@@ -255,6 +255,30 @@
       }
     }
 
+    &.is-modal {
+      padding-top: 42px;
+
+      @include tablet {
+        padding-top: 88px;
+        padding-bottom: 116px;
+      }
+
+      @include tablet-xl {
+        padding-top: 72px;
+        padding-bottom: 83px;
+      }
+
+      @include desktop {
+        padding-top: 80px;
+        padding-bottom: 110px;
+      }
+
+      @include desktop-xl {
+        padding-top: 96px;
+        padding-bottom: 131px;
+      }
+    }
+
     @include tablet {
       padding-bottom: 130px;
     }
