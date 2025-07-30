@@ -64,7 +64,7 @@
         color: $color-white;
 
         @include tablet {
-          color: $color-black;
+          color: $color-grey-500-redesign;
         }
       }
     }
@@ -90,9 +90,12 @@
       right: 25px;
       top: 25px;
     }
-  }
 
-  // @include tablet {
-  //   background-color: $color-white;
-  // }
+    @include desktop-xl {
+      right: 36px;
+      top: 36px;
+      width: 32px;
+      height: 32px;
+    }
+  }
 }

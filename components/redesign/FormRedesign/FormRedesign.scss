@@ -199,6 +199,10 @@
     @include tablet {
       padding-top: 56px;
     }
+
+    @include desktop-xl {
+      padding-top: 80px;
+    }
   }
 
   @include tablet {
