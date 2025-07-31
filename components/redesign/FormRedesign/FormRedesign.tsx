@@ -23,11 +23,13 @@ export function FormRedesign({
   isSubmit,
   setIsSubmit,
   className,
+  isModal,
 } : {
   onSubmit: (formData: FormData) => unknown;
   isSubmit: boolean;
   setIsSubmit: (value: boolean) => void;
   className?: string;
+  isModal?: boolean;
 }) {
   const {
     t,
@@ -58,6 +60,7 @@ export function FormRedesign({
     textareaLabel,
     buttonSubmitLabel,
     buttonSubmittedLabel,
+    buttonSubmittedLabelModal,
     titleSubmitted,
   } = getTranslations();
 
@@ -153,7 +156,7 @@ export function FormRedesign({
                 type="button"
                 onClick={() => setIsSubmit(false)}
               >
-                {buttonSubmittedLabel}
+                {!isModal ? buttonSubmittedLabel : buttonSubmittedLabelModal}
               </button>
             ) : (
               <button
@@ -204,6 +207,7 @@ export function FormRedesign({
         textareaLabel: `Расскажите о вашей задаче`,
         buttonSubmitLabel: `Отправить заявку`,
         buttonSubmittedLabel: `Заполнить еще раз`,
+        buttonSubmittedLabelModal: `Вернуться к сайту`,
         titleSubmitted: `Спасибо за заявку!`,
       };
     }
@@ -215,6 +219,7 @@ export function FormRedesign({
       textareaLabel: `Describe your project`,
       buttonSubmitLabel: `Send`,
       buttonSubmittedLabel: `Write more`,
+      buttonSubmittedLabelModal: `Back to the website`,
       titleSubmitted: `Thank you!`,
     };
   }

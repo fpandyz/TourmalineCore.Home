@@ -18,6 +18,7 @@ export function FormModal(
       content={(
         <FormBlockRedesign
           className="is-modal"
+          isModal
           initializeIsSubmit={initializeIsSubmit}
         />
       )}

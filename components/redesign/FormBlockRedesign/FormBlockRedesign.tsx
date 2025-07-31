@@ -11,10 +11,12 @@ export function FormBlockRedesign({
   initializeIsSubmit = false,
   testId,
   className,
+  isModal,
 }: {
   initializeIsSubmit?: boolean;
   testId?: string;
   className?: string;
+  isModal?: boolean;
 }) {
   const {
     t,
@@ -68,6 +70,7 @@ export function FormBlockRedesign({
                       isSubmit={isSubmit}
                       setIsSubmit={setIsSubmit}
                       className={className}
+                      isModal={isModal}
                     />
                   </div>
                 )
