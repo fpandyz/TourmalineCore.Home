@@ -156,7 +156,7 @@ export function FormRedesign({
                 type="button"
                 onClick={() => setIsSubmit(false)}
               >
-                {!isModal ? buttonSubmittedLabel : buttonSubmittedLabelModal}
+                {isModal ? buttonSubmittedLabelModal : buttonSubmittedLabel}
               </button>
             ) : (
               <button
