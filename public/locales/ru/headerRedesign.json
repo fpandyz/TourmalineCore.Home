@@ -2,7 +2,7 @@
   "navigationLists":[
     {
       "id": 0,
-      "name": "Services",
+      "name": "Направления",
       "link": "",
       "navItems": [
         {
@@ -22,87 +22,47 @@
         },
         {
           "id": 3,
-          "name": "ML",
+          "name": "Машинное обучение",
           "link": "/ml"
         },
         {
           "id": 4,
-          "name": "QA",
+          "name": "Тестирование",
           "link": "/qa"
         },
         {
           "id": 5,
-          "name": "UI/UX design",
-          "link": "/design"
-        },
-        {
-          "id": 6,
-          "name": "Test 7",
-          "link": "/design"
-        },
-        {
-          "id": 7,
-          "name": "Test 8",
-          "link": "/design"
-        },
-        {
-          "id": 8,
-          "name": "Test 9",
-          "link": "/design"
-        },
-        {
-          "id": 9,
-          "name": "Test 10",
-          "link": "/design"
-        },
-        {
-          "id": 10,
-          "name": "Test 11",
-          "link": "/design"
-        },
-        {
-          "id": 11,
-          "name": "Test 12",
-          "link": "/design"
-        },
-        {
-          "id": 12,
-          "name": "Test 13",
-          "link": "/design"
-        },
-        {
-          "id": 13,
-          "name": "Test 14",
+          "name": "UI/UX дизайн",
           "link": "/design"
         }
       ]
     },
     {
       "id": 1,
-      "name": "Teams",
+      "name": "Команды",
       "link": "",
       "navItems": [
         {
           "id": 0,
-          "name": "Outsourcing",
+          "name": "Аутсорсинг",
           "link": "/teams"
         },
         {
           "id": 1,
-          "name": "Frontend team",
+          "name": "Frontend-команда",
           "link": "/frontend-team"
         }
       ]
     },
     {
       "id": 2,
-      "name": "Articles",
+      "name": "Статьи",
       "link": "/articles",
       "navItems": []
     }
   ],
   "button": {
-    "label": "Discuss the project"
+    "label": "Обсудить проект"
   },
   "email": {
     "caption": "По всем вопросам",
@@ -111,13 +71,28 @@
   "socialLinks": [
     {
       "id": 0,
+      "name": "VK",
+      "link": "https://vk.com/tourmalinecore"
+    },
+    {
+      "id": 1,
+      "name": "Habr",
+      "link": "https://habr.com/ru/users/TourmalineCore/"
+    },
+    {
+      "id": 2,
       "name": "GitHub",
       "link": "https://github.com/TourmalineCore"
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "Telegram",
       "link": "https://t.me/tourmalinecore"
+    },
+    {
+      "id": 4,
+      "name": "YouTube",
+      "link": "https://youtube.com/@tourmalinecore"
     }
   ]
 }
