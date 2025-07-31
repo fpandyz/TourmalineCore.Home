@@ -190,7 +190,14 @@
     position: relative;
     margin-left: 4px;
     color: inherit;
+    transition: text-decoration-color 0.1s;
     text-underline-offset: 2px;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration-color: transparent;
+      transition: text-decoration-color 0.1s;
+    }
   }
 
   @include tablet {
