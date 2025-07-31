@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
+import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
 import { useOnClickOutside } from '../../common/hooks';
 
@@ -12,6 +13,10 @@ export function Modal({
   onClose?:() => unknown;
   testId?: string;
 }) {
+  const {
+    locale,
+  } = useRouter();
+
   useEffect(() => {
     function escFunction(event: KeyboardEvent) {
       if (event.key === `Escape`) {
@@ -48,6 +53,11 @@ export function Modal({
               type="button"
               className="modal__cross"
               onClick={onClose}
+              aria-label={
+                locale === `ru`
+                  ? `Закрыть модальное окно с формой`
+                  : `Close modal window with form`
+              }
             >
               <IconCross />
             </button>

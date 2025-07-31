@@ -178,7 +178,11 @@ export function FormRedesign({
                       href={`documents/policy-${locale}.pdf`}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label=""
+                      aria-label={
+                        locale === `ru`
+                          ? `согласие на обработку персональных данных`
+                          : `processing of personal data`
+                      }
                     />,
                   }}
                 />
