@@ -18,12 +18,6 @@
     color: inherit;
     background-color: transparent;
     cursor: pointer;
-    transition: opacity 0.3s;
-
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
   }
 
   &__icon {
@@ -44,6 +38,12 @@
     height: 16px;
     transition: transform 0.3s;
 
+    @include desktop-xl {
+      margin-left: 6px;
+      width: 24px;
+      height: 24px;
+    }
+
     &--open {
       transform: rotate(-0.5turn);
     }
@@ -54,69 +54,51 @@
 
     position: absolute;
     left: 0;
-    top: calc(100%);
+    top: 100%;
     z-index: $modal;
     display: none;
-    padding: 4px 0 20px;
+    flex-direction: column;
+    padding: 16px 0 24px;
     min-width: max-content;
-    background-color: $color-black;
-    animation: showLangTooltip 0.15s ease-out forwards;
-  }
-
-  &__link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 12px 40px;
-    text-decoration: none;
-    color: inherit;
+    animation: showSmoothАppearance 0.15s ease-out forwards;
+    gap: 16px;
 
     &::before {
       content: "";
       position: absolute;
-      left: 0;
-      top: 0;
       width: 100%;
-      height: 100%;
-      background-image:
-        linear-gradient(
-            90.05deg,
-            rgba($color-pink, 0.1) 0.04%,
-            rgba($color-pink, 0.1) 0.05%,
-            rgba($color-green, 0.1) 99.96%
-          );
-      opacity: 0;
-      transition: opacity 0.3s;
+      height: calc(100% - 16px);
+      background-color: $color-black;
     }
 
-    &:hover,
-    &:focus {
-      &::before {
-        opacity: 1;
-      }
+    @include desktop-xl {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__option {
+    padding: 0 38px 0 28px;
+
+    @include desktop-xl {
+      padding: 0 55px 0 40px;
+    }
+  }
+
+  &__link {
+    @include animated-underline;
+
+    text-decoration: none;
+    color: inherit;
+
+    &::after {
+      background-color: $color-white;
     }
   }
 
   &:hover,
   &:focus {
     #{$this}__list {
-      display: block;
+      display: flex;
     }
-  }
-
-  @include tablet-xl {
-    margin-right: 16px;
-  }
-}
-
-@keyframes showLangTooltip {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -10px, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
   }
 }

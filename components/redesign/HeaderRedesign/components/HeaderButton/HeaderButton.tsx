@@ -1,8 +1,11 @@
 import clsx from "clsx";
+import { ReactNode } from "react";
 
 export function HeaderButton({
+  children,
   className,
 }: {
+  children: ReactNode;
   className?: string;
 }) {
   return (
@@ -13,7 +16,7 @@ export function HeaderButton({
       )}
       type="button"
     >
-      Обсудить проект
+      {children}
     </button>
   );
 }

@@ -1,5 +1,5 @@
 .header-accordion {
-  position: relative;
+  $this: &;
 
   &__button {
     @include body-m;
@@ -8,11 +8,14 @@
     align-items: center;
     border: none;
     padding: 0;
-    width: 100%;
     box-shadow: none;
     background-color: transparent;
     cursor: pointer;
     transition: opacity 0.3s;
+
+    @include tablet-xl {
+      position: relative;
+    }
   }
 
   &__label {
@@ -43,47 +46,102 @@
     }
   }
 
-  &__list {
+  &__list-wrapper {
     display: flex;
-    flex-direction: column;
-    padding: 16px 0;
-    animation: showLangTooltip 0.15s ease-out forwards;
-    gap: 4px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+    animation: showSmoothАppearance 0.15s ease-out forwards;
 
     @include tablet-xl {
       position: absolute;
       left: 0;
-      top: 100%;
+      display: flex;
+      padding-top: 21px;
+      padding-bottom: 48px;
+      gap: 56px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: calc(100% - 21px);
+        background-color: $color-black;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+
+      &.container-redesign {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    @include desktop-xl {
+      padding-top: 34px;
+      padding-bottom: 64px;
+      gap: 80px;
+
+      &::before,
+      &::after {
+        height: calc(100% - 34px);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @include tablet-xl {
+      z-index: $top-panel;
+      gap: 16px;
+    }
+
+    @include desktop-xl {
+      gap: 24px;
     }
   }
 
   &__list-item {
-    padding: 6px 0;
-    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: max-content;
+
+    @include tablet-xl {
+      padding-top: 0;
+      padding-bottom: 0;
+      max-width: 224px;
+    }
   }
 
   &__link {
     @include body-m;
-    @include animated-underline;
 
-    display: inline-block;
     text-decoration: none;
     color: $color-grey-300-redesign;
+    overflow-wrap: break-word;
 
-    &::after {
-      background-color: $color-grey-300-redesign;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    @include tablet-xl {
+      color: $color-white;
     }
   }
-}
 
-@keyframes showLangTooltip {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -10px, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  &--left-align {
+    position: relative;
   }
 }

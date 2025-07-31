@@ -18,12 +18,17 @@
     position: relative;
     display: inline-block;
     margin-right: auto;
-    width: 135px;
-    height: 40px;
+    width: 100%;
+    max-width: 135px;
+    aspect-ratio: 135 / 40;
+
+    @include tablet-xl {
+      z-index: 1;
+    }
 
     @include desktop-xl {
-      width: 190px;
-      height: 56px;
+      max-width: 190px;
+      aspect-ratio: 190 / 56;
     }
   }
 
@@ -36,9 +41,7 @@
   }
 
   &__lang-switch {
-    @include desktop-xl {
-      margin-left: 80px;
-    }
+    margin-right: 24px;
   }
 
   &__burger {
@@ -46,7 +49,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin-left: 24px;
     border: none;
     padding: 0;
     width: 40px;

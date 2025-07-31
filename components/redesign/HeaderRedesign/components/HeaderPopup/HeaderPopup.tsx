@@ -1,73 +1,62 @@
 import Link from "next/link";
 import { HeaderButton } from "../HeaderButton/HeaderButton";
-import { HeaderNavigationItem, HeaderNavigationListRedesign } from "../HeaderNavigationListRedesign/HeaderNavigationListRedesign";
+import { HeaderRedesignProps } from "../../../../../common/types";
+import { HeaderNavigationList } from "../HeaderNavigationList/HeaderNavigationList";
 
 export function HeaderPopup({
   navigationList,
+  buttonLabel,
+  email,
+  socialLinks,
 }: {
-  navigationList: HeaderNavigationItem[];
+  navigationList: HeaderRedesignProps["navigationLists"];
+  buttonLabel: HeaderRedesignProps["button"]["label"];
+  email: HeaderRedesignProps["email"];
+  socialLinks: HeaderRedesignProps["socialLinks"];
 }) {
   return (
-    <div className="header-popup container-redesign">
-      <HeaderNavigationListRedesign
+    <div
+      className="header-popup container-redesign"
+      data-testid="header-popup"
+    >
+      <HeaderNavigationList
         className="header-popup__nav"
         navigationList={navigationList}
       />
 
-      <HeaderButton className="header-popup__button" />
+      <HeaderButton className="header-popup__button">
+        {buttonLabel}
+      </HeaderButton>
 
       <div className="header-popup__footer">
         <div className="header-popup__contact">
-          <span className="header-popup__caption">По всем вопросам</span>
+          <span className="header-popup__caption">{email.caption}</span>
           <Link
             className="header-popup__email"
-            href="mailto:contact@tourmalinecore.com"
+            href={`mailto:${email.address}`}
           >
-            contact@tourmalinecore.com
+            {email.address}
           </Link>
         </div>
         <nav className="header-popup__nav">
           <ul className="header-popup__list">
-            <li className="header-popup__list-item">
-              <Link
-                className="header-popup__link"
-                href="#"
+            {socialLinks.map(({
+              id,
+              name,
+              link,
+            }) => (
+              <li
+                key={id}
+                className="header-popup__list-item"
               >
-                VK
-              </Link>
-            </li>
-            <li className="header-popup__list-item">
-              <Link
-                className="header-popup__link"
-                href="#"
-              >
-                Habr
-              </Link>
-            </li>
-            <li className="header-popup__list-item">
-              <Link
-                className="header-popup__link"
-                href="#"
-              >
-                GitHub
-              </Link>
-            </li>
-            <li className="header-popup__list-item">
-              <Link
-                className="header-popup__link"
-                href="#"
-              >
-                Telegram
-              </Link>
-            </li>
-            <li className="header-popup__list-item">
-              <Link
-                className="header-popup__link"
-                href="#"
-              >
-                YouTube
-              </Link>
-            </li>
+                <Link
+                  className="header-popup__link"
+                  href={link}
+                >
+                  {name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

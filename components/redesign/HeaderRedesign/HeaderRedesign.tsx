@@ -1,20 +1,39 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { useTranslation } from "next-i18next";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
 import { HeaderButton } from "./components/HeaderButton/HeaderButton";
 import { HeaderPopup } from "./components/HeaderPopup/HeaderPopup";
-import { HeaderNavigationItem, HeaderNavigationListRedesign } from "./components/HeaderNavigationListRedesign/HeaderNavigationListRedesign";
-import { useBodyScrollHidden } from "../../../common/hooks/useBodyScrollHiden";
+import { useBodyScrollHidden } from "../../../common/hooks/useBodyScrollHidden";
+import { useWindowWidth } from "../../../common/hooks/useWindowWidth";
+import { HeaderRedesignProps } from "../../../common/types";
+import { useOnScrollDirections } from "../../../common/hooks";
+import { HeaderNavigationList } from "./components/HeaderNavigationList/HeaderNavigationList";
 
 export function HeaderRedesign() {
   const {
     t,
   } = useTranslation(`headerRedesign`);
 
-  const headerNavigationLists: HeaderNavigationItem[] = t(`navigationLists`, {
+  const {
+    isTabletXl,
+  } = useWindowWidth();
+
+  const headerNavigationLists: HeaderRedesignProps["navigationLists"] = t(`navigationLists`, {
+    returnObjects: true,
+  });
+
+  const headerButton: HeaderRedesignProps["button"] = t(`button`, {
+    returnObjects: true,
+  });
+
+  const headerEmail: HeaderRedesignProps["email"] = t(`email`, {
+    returnObjects: true,
+  });
+
+  const headerSocialLinks: HeaderRedesignProps["socialLinks"] = t(`socialLinks`, {
     returnObjects: true,
   });
 
@@ -22,29 +41,7 @@ export function HeaderRedesign() {
 
   useBodyScrollHidden(isMobileMenuOpen);
 
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const bodyElement = document.querySelector(`body`);
-    const handleScroll = () => {
-      const currentScrollY = bodyElement?.scrollTop || 0;
-
-      if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 50) {
-        setIsHidden(true);
-      } else if (currentScrollY < lastScrollY && lastScrollY - currentScrollY > 50) {
-        setIsHidden(false);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    bodyElement?.addEventListener(`scroll`, handleScroll, {
-      passive: true,
-    });
-
-    return () => window.removeEventListener(`scroll`, handleScroll);
-  }, [lastScrollY]);
+  const isHidden = useOnScrollDirections();
 
   return (
     <header
@@ -65,7 +62,7 @@ export function HeaderRedesign() {
           />
         </Link>
 
-        <HeaderNavigationListRedesign
+        <HeaderNavigationList
           className="header-redesign__nav"
           navigationList={headerNavigationLists}
         />
@@ -76,6 +73,7 @@ export function HeaderRedesign() {
           className={clsx(`header-redesign__burger`, {
             'header-redesign__burger--open': isMobileMenuOpen,
           })}
+          data-testid="header-redesign-burger"
           type="button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -83,11 +81,18 @@ export function HeaderRedesign() {
           <span className="header-redesign__line" />
         </button>
 
-        <HeaderButton className="header-redesign__button" />
+        <HeaderButton className="header-redesign__button">
+          {headerButton.label}
+        </HeaderButton>
       </div>
 
-      {isMobileMenuOpen && (
-        <HeaderPopup navigationList={headerNavigationLists} />
+      {isMobileMenuOpen && !isTabletXl && (
+        <HeaderPopup
+          navigationList={headerNavigationLists}
+          buttonLabel={headerButton.label}
+          email={headerEmail}
+          socialLinks={headerSocialLinks}
+        />
       )}
     </header>
   );

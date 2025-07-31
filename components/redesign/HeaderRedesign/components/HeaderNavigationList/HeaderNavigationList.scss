@@ -1,4 +1,4 @@
-.header-navigation-list-redesign {
+.header-navigation-list {
   &__list {
     display: flex;
     flex-direction: column;
@@ -20,14 +20,14 @@
 
   &__link {
     @include h4;
-    @include animated-underline;
 
     width: 100%;
     text-decoration: none;
     color: $color-white;
 
-    &::after {
-      background-color: $color-white;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
 
     @include tablet-xl {
@@ -36,6 +36,10 @@
   }
 
   @include tablet-xl {
-    margin-right: 32px;
+    margin-right: 56px;
+  }
+
+  @include desktop-xl {
+    margin-right: 80px;
   }
 }
