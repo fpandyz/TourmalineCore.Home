@@ -39,6 +39,7 @@ export function HeaderAccordion({
           'header-accordion--left-align': chunks.length <= 2,
         },
       )}
+      data-testid="header-accordion"
       {...(isTabletXl ? {
         onMouseEnter: () => onToggle(id),
         onMouseLeave: () => onToggle(id),
@@ -46,11 +47,13 @@ export function HeaderAccordion({
     >
       <button
         className="header-accordion__button"
+        data-testid="header-accordion-button"
         type="button"
         {...(!isTabletXl ? {
           onClick: () => onToggle(id),
-        } : {})}
-        onFocus={() => onToggle(id)}
+        } : {
+          onFocus: () => onToggle(id),
+        })}
       >
         <span className="header-accordion__label">
           {name}
@@ -74,6 +77,7 @@ export function HeaderAccordion({
               'container-redesign': chunks.length > 2,
             },
           )}
+          data-testid="header-accordion-list"
         >
           {chunks.map((group, index) => (
             <ul

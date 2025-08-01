@@ -1,6 +1,11 @@
-import { test } from '../../../playwright-tests/custom-test';
+import {
+  CustomTestFixtures,
+  expect,
+  Page,
+  test,
+} from '../../../playwright-tests/custom-test';
 import { BREAKPOINTS } from '../../../playwright-tests/constants/breakpoints';
-import { ComponentName } from '../../../common/enums';
+import { Breakpoint, ComponentName } from '../../../common/enums';
 
 const TEST_ID = `header-redesign`;
 
@@ -26,4 +31,85 @@ test.describe(`Header`, () => {
       });
     });
   }
+
+  test.describe(`ShowSubmenuTests`, () => {
+    const breakpoints = BREAKPOINTS.filter((breakpoint) => breakpoint.breakpoint === Breakpoint.TABLET_XL
+      || breakpoint.breakpoint === Breakpoint.DESKTOP_XL);
+
+    for (const {
+      name,
+      breakpoint,
+      breakpointName,
+    } of breakpoints) {
+      test(name, async ({
+        page,
+        setViewportSize,
+      }: {
+        page: Page;
+        setViewportSize: CustomTestFixtures["setViewportSize"];
+      }) => {
+        // This is necessary so that the tests do not crop the screenshots.
+        await page.addStyleTag({
+          content: `html, body, #__next { height: auto !important; min-height: 100% !important; }`,
+        });
+
+        await setViewportSize({
+          width: breakpoint,
+        });
+
+        await page.getByTestId(`header-accordion`)
+          .first()
+          .hover();
+
+        await page.getByTestId(`header-redesign`)
+          .evaluate((el) => {
+            el.style.paddingBottom = `400px`;
+          });
+
+        await expect(page.getByTestId(`header-redesign`))
+          .toHaveScreenshot(`${TEST_ID}-submenu-${breakpointName}.png`);
+      });
+    }
+  });
+
+  test.describe(`ShowLangTooltipTests`, () => {
+    const breakpoints = BREAKPOINTS.filter((breakpoint) => breakpoint.breakpoint === Breakpoint.MOBILE
+      || breakpoint.breakpoint === Breakpoint.DESKTOP_XL);
+
+    for (const {
+      name,
+      breakpoint,
+      breakpointName,
+    } of breakpoints) {
+      test(name, async ({
+        page,
+        setViewportSize,
+      }: {
+        page: Page;
+        setViewportSize: CustomTestFixtures["setViewportSize"];
+      }) => {
+        // This is necessary so that the tests do not crop the screenshots.
+        await page.addStyleTag({
+          content: `html, body, #__next { height: auto !important; min-height: 100% !important; }`,
+        });
+
+        await setViewportSize({
+          width: breakpoint,
+        });
+
+        await page.getByTestId(`lang-switch-redesign`)
+          .hover();
+
+        await page.waitForTimeout(150);
+
+        await page.getByTestId(`header-redesign`)
+          .evaluate((el) => {
+            el.style.paddingBottom = `120px`;
+          });
+
+        await expect(page.getByTestId(`header-redesign`))
+          .toHaveScreenshot(`${TEST_ID}-lang-tooltip-${breakpointName}.png`);
+      });
+    }
+  });
 });

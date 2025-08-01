@@ -27,6 +27,7 @@ export function LangSwitchRedesign({
         `lang-switch-redesign`,
         className,
       )}
+      data-testid="lang-switch-redesign"
     >
       <button
         type="button"

@@ -1,10 +1,15 @@
-import { test } from '../../../../../playwright-tests/custom-test';
+import {
+  CustomTestFixtures,
+  expect,
+  Page,
+  test,
+} from '../../../../../playwright-tests/custom-test';
 import { ComponentName } from '../../../../../common/enums';
 import { BREAKPOINTS } from '../../../../../playwright-tests/constants/breakpoints';
 
 const TEST_ID = `header-popup`;
 
-test.describe(`HeaderPopupRedesign`, () => {
+test.describe(`HeaderPopupTests`, () => {
   test.beforeEach(async ({
     goToComponentsPage,
   }) => {
@@ -26,4 +31,33 @@ test.describe(`HeaderPopupRedesign`, () => {
       });
     });
   }
+
+  test(`ShowAccordionTest`, showAccordion);
 });
+
+async function showAccordion({
+  page,
+  setViewportSize,
+}: {
+  page: Page;
+  setViewportSize: CustomTestFixtures["setViewportSize"];
+}) {
+  // This is necessary so that the tests do not crop the screenshots.
+  await page.addStyleTag({
+    content: `html, body, #__next { height: auto !important; min-height: 100% !important; }`,
+  });
+
+  await setViewportSize();
+
+  await page.getByTestId(`header-popup`)
+    .evaluate((el) => {
+      el.style.height = `100vh`;
+    });
+
+  await page.getByTestId(`header-accordion-button`)
+    .first()
+    .click();
+
+  await expect(page.getByTestId(`header-popup`))
+    .toHaveScreenshot(`${TEST_ID}-accordion.png`);
+}
