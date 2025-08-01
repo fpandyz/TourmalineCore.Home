@@ -3,6 +3,7 @@
 
   &__box {
     position: relative;
+    overflow: hidden;
     resize: inherit;
   }
 
@@ -28,7 +29,8 @@
     caret-color: $color-deep-blue-redesign;
 
     &:not(:placeholder-shown) ~ #{$this}__label {
-      top: 4px;
+      top: 0;
+      padding-top: 4px;
       font-size: 14px;
     }
 
@@ -38,14 +40,20 @@
       transition: all 0.3s;
 
       ~ #{$this}__label {
-        top: 4px;
+        top: 0;
+        padding-top: 4px;
         font-size: 14px;
+        background-color: $color-grey-900-redesign;
       }
     }
 
     &:hover {
       background-color: $color-grey-700-redesign;
       transition: all 0.3s;
+
+      ~ #{$this}__label {
+        background-color: $color-grey-700-redesign;
+      }
     }
 
     @include desktop-xl {
@@ -59,8 +67,10 @@
     position: absolute;
     left: 16px;
     top: 15px;
-    min-height: 30px;
+    width: calc(100% - 16px * 2);
+    min-height: 26px;
     color: $color-grey-300-redesign;
+    background-color: $color-grey-900-redesign;
     cursor: text;
     transition: all 0.3s;
 
