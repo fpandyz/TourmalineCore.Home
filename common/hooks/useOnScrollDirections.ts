@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export function useOnScrollDirections() {
-  const [isHidden, setIsHidden] = useState(false);
+  const [isScrollUp, setIsScrollUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
@@ -9,10 +9,10 @@ export function useOnScrollDirections() {
     const handleScroll = () => {
       const currentScrollY = bodyElement?.scrollTop || 0;
 
-      if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 50) {
-        setIsHidden(true);
-      } else if (currentScrollY < lastScrollY && lastScrollY - currentScrollY > 50) {
-        setIsHidden(false);
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsScrollUp(false);
+      } else if (currentScrollY < lastScrollY) {
+        setIsScrollUp(true);
       }
 
       setLastScrollY(currentScrollY);
@@ -25,5 +25,7 @@ export function useOnScrollDirections() {
     return () => window.removeEventListener(`scroll`, handleScroll);
   }, [lastScrollY]);
 
-  return isHidden;
+  return {
+    isScrollUp,
+  };
 }

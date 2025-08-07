@@ -40,12 +40,14 @@ export function HeaderRedesign() {
 
   useBodyScrollHidden(isMobileMenuOpen);
 
-  const isHidden = useOnScrollDirections();
+  const {
+    isScrollUp,
+  } = useOnScrollDirections();
 
   return (
     <header
       className={clsx(`header-redesign`, {
-        'header-redesign--hidden': isHidden,
+        'header-redesign--hidden': !isScrollUp,
       })}
       data-testid="header-redesign"
     >

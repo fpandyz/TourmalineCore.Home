@@ -25,7 +25,9 @@ export function HeaderAccordion({
     isTabletXl,
   } = useDeviceSize();
 
-  const isHidden = useOnScrollDirections();
+  const {
+    isScrollUp,
+  } = useOnScrollDirections();
 
   const chunks = isTabletXl ? chunksArray(navItems) : [navItems];
 
@@ -62,7 +64,7 @@ export function HeaderAccordion({
         />
       </button>
 
-      {(isTabletXl || isOpen) && !isHidden && (
+      {(isTabletXl || isOpen) && isScrollUp && (
         <div
           className={clsx(
             `header-accordion__list-wrapper`,
