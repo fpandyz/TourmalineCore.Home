@@ -36,7 +36,7 @@ export function HeaderAccordion({
         `header-accordion`,
         className,
         {
-          'header-accordion--left-align': chunks.length <= 2,
+          'header-accordion--left-align': chunks.length > 2,
         },
       )}
       data-testid="header-accordion"
@@ -77,7 +77,6 @@ export function HeaderAccordion({
               'container-redesign': chunks.length > 2,
             },
           )}
-          data-testid="header-accordion-list"
         >
           {chunks.map((group, index) => (
             <ul
