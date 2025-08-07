@@ -32,7 +32,7 @@ export function HeaderNavigationList({
           >
             <HeaderAccordion
               className="header-navigation-list__accordion"
-              navigationListItem={el}
+              navigationItems={el}
               isOpen={openId === el.id}
               onToggle={handleToggle}
             />
