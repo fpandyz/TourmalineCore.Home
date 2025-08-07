@@ -174,7 +174,7 @@ export function FormRedesign({
                   components={{
                     bolt: <a
                       className="form-redesign__consent-link"
-                      href={`documents/policy-${locale}.pdf`}
+                      href={`/documents/policy-${locale}.pdf`}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={
