@@ -58,7 +58,22 @@ export default function ComponentsPage() {
   }
 
   if (componentName === ComponentName.HEADER) {
-    return <HeaderRedesign />;
+    return (
+      <HeaderRedesign
+        navigationLists={headerRedesignTranslation(`navigationLists`, {
+          returnObjects: true,
+        })}
+        button={headerRedesignTranslation(`button`, {
+          returnObjects: true,
+        })}
+        email={headerRedesignTranslation(`email`, {
+          returnObjects: true,
+        })}
+        socialLinks={headerRedesignTranslation(`socialLinks`, {
+          returnObjects: true,
+        })}
+      />
+    );
   }
 
   if (componentName === ComponentName.HEADER_POPUP) {
