@@ -14,9 +14,18 @@ const heightMap: Record<BreakpointName, number> = {
 
 test.describe(`FormModal`, () => {
   test.beforeEach(async ({
+    page,
     goToComponentsPage,
   }) => {
     await goToComponentsPage(ComponentName.FORM_MODAL);
+
+    await page.addStyleTag({
+      content: `
+    *:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }`,
+    });
   });
 
   for (const {
