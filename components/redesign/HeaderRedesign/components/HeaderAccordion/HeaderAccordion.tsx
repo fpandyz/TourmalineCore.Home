@@ -1,9 +1,8 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import IconDownArrow from '../../../../../icons/icon-arrow-down-redesign.svg';
-import { useWindowWidth } from '../../../../../common/hooks/useWindowWidth';
 import { HeaderNavigationItem } from '../../../../../common/types';
-import { useOnScrollDirections } from '../../../../../common/hooks';
+import { useDeviceSize, useOnScrollDirections } from '../../../../../common/hooks';
 
 export function HeaderAccordion({
   className,
@@ -24,7 +23,7 @@ export function HeaderAccordion({
 
   const {
     isTabletXl,
-  } = useWindowWidth();
+  } = useDeviceSize();
 
   const isHidden = useOnScrollDirections();
 

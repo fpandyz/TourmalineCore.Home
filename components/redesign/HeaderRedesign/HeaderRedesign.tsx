@@ -7,9 +7,8 @@ import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRe
 import { HeaderButton } from "./components/HeaderButton/HeaderButton";
 import { HeaderPopup } from "./components/HeaderPopup/HeaderPopup";
 import { useBodyScrollHidden } from "../../../common/hooks/useBodyScrollHidden";
-import { useWindowWidth } from "../../../common/hooks/useWindowWidth";
 import { HeaderRedesignProps } from "../../../common/types";
-import { useOnScrollDirections } from "../../../common/hooks";
+import { useDeviceSize, useOnScrollDirections } from "../../../common/hooks";
 import { HeaderNavigationList } from "./components/HeaderNavigationList/HeaderNavigationList";
 
 export function HeaderRedesign() {
@@ -19,7 +18,7 @@ export function HeaderRedesign() {
 
   const {
     isTabletXl,
-  } = useWindowWidth();
+  } = useDeviceSize();
 
   const headerNavigationLists: HeaderRedesignProps["navigationLists"] = t(`navigationLists`, {
     returnObjects: true,

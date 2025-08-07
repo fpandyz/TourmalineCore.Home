@@ -6,7 +6,6 @@ import Head from 'next/head';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import { useEffect } from 'react';
 import { Cookie } from '../components/Cookie/Cookie';
-import { WindowWidthProvider } from '../common/providers/WindowWidthProvider';
 
 const isMetricsEnabled = process.env.METRICS_ENABLED === `true`;
 
@@ -42,10 +41,8 @@ function MyApp({
         />
         <title>Tourmaline Core</title>
       </Head>
-      <WindowWidthProvider>
-        <Cookie />
-        <Component {...pageProps} />
-      </WindowWidthProvider>
+      <Cookie />
+      <Component {...pageProps} />
     </>
   );
 }
