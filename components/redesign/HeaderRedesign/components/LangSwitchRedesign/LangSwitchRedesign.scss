@@ -43,10 +43,6 @@
       width: 24px;
       height: 24px;
     }
-
-    &--open {
-      transform: rotate(-0.5turn);
-    }
   }
 
   &__list {
@@ -95,8 +91,12 @@
     }
   }
 
-  &:hover,
-  &:focus {
+  &:focus-within,
+  &:hover {
+    #{$this}__arrow {
+      transform: rotate(-0.5turn);
+    }
+
     #{$this}__list {
       display: flex;
     }
