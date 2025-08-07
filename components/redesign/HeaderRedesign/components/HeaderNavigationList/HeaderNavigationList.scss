@@ -32,13 +32,25 @@
     @include tablet-xl {
       @include body-m;
 
-      padding: 0 16px;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    @include desktop-xl {
+      padding-right: 24px;
+      padding-left: 24px;
     }
   }
 
   &__accordion {
     @include tablet-xl {
-      padding: 0 16px;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    @include desktop-xl {
+      padding-right: 24px;
+      padding-left: 24px;
     }
   }
 
