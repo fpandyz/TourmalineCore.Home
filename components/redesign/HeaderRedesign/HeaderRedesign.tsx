@@ -43,6 +43,7 @@ export function HeaderRedesign({
     >
       <div className="header-redesign__inner container-redesign">
         <Link
+          className="header-redesign__logo-wrapper"
           href={AppRoute.Main}
           aria-label={
             locale === `ru`
