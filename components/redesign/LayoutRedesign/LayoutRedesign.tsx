@@ -18,7 +18,6 @@ export function LayoutRedesign({
       <SkipLink
         mainElementRef={mainElementRef}
       />
-      {/* <Header containerClass="container-redesign" /> */}
       <HeaderRedesign />
       <main
         id="main-content"
