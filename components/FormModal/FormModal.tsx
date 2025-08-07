@@ -13,14 +13,13 @@ export function FormModal({
   return (
     <Modal
       testId={testId}
-      content={(
-        <FormBlockRedesign
-          isModal
-          initializeIsSubmit={initializeIsSubmit}
-        />
-      )}
       onClose={onClose}
-    />
+    >
+      <FormBlockRedesign
+        isModal
+        initializeIsSubmit={initializeIsSubmit}
+      />
+    </Modal>
   );
 
   function onClose() {

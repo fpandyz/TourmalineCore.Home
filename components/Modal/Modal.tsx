@@ -5,11 +5,11 @@ import IconCross from '../../icons/cross.svg';
 import { useOnClickOutside } from '../../common/hooks';
 
 export function Modal({
-  content,
+  children,
   onClose = () => {},
   testId,
 }: {
-  content: ReactNode;
+  children: ReactNode;
   onClose?:() => unknown;
   testId?: string;
 }) {
@@ -61,7 +61,7 @@ export function Modal({
             >
               <IconCross />
             </button>
-            <div className="modal__content">{content}</div>
+            <div className="modal__content">{children}</div>
           </div>
         </div>
       </div>
