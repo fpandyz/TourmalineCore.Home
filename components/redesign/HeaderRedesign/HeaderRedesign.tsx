@@ -73,6 +73,11 @@ export function HeaderRedesign({
           data-testid="header-redesign-burger"
           type="button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={
+            locale === `ru`
+              ? `Открыть мобильное меню`
+              : `Open mobile menu`
+          }
         >
           <span className="header-redesign__line" />
           <span className="header-redesign__line" />
