@@ -1,10 +1,10 @@
 import { test } from '../../playwright-tests/custom-test';
-import { ComponentName } from '../../common/enums';
+import { BreakpointName, ComponentName } from '../../common/enums';
 import { BREAKPOINTS } from '../../playwright-tests/constants/breakpoints';
 
 const TEST_ID = `submitted-form-modal`;
 
-const heightMap = {
+const heightMap: Record<BreakpointName, number> = {
   mobile: 665,
   tablet: 1024,
   'tablet-xl': 1024,
@@ -31,7 +31,7 @@ test.describe(`SubmittedFormModal`, () => {
         testId: TEST_ID,
         breakpoint,
         breakpointName,
-        height: heightMap[breakpointName] ?? undefined,
+        height: heightMap[breakpointName],
       });
     });
   }
