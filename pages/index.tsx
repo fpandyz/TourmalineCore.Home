@@ -14,6 +14,7 @@ import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkR
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { FormBlockRedesign } from '../components/redesign/FormBlockRedesign/FormBlockRedesign';
 import { useDeviceSize } from '../common/hooks';
+import { HeaderRedesignProps } from '../common/types';
 
 export default function HomePage() {
   const {
@@ -23,6 +24,25 @@ export default function HomePage() {
   const {
     isTablet,
   } = useDeviceSize();
+
+  const {
+    t: headerTranslations,
+  } = useTranslation(`headerRedesign`);
+
+  const headerContent: HeaderRedesignProps = {
+    navigationLists: headerTranslations(`navigationLists`, {
+      returnObjects: true,
+    }),
+    button: headerTranslations(`button`, {
+      returnObjects: true,
+    }),
+    email: headerTranslations(`email`, {
+      returnObjects: true,
+    }),
+    socialLinks: headerTranslations(`socialLinks`, {
+      returnObjects: true,
+    }),
+  };
 
   return (
     <>
@@ -39,7 +59,9 @@ export default function HomePage() {
         }}
       />
 
-      <LayoutRedesign>
+      <LayoutRedesign
+        headerContent={headerContent}
+      >
         <HeroRedesign />
         <ServicesRedesign targetId="services" />
         <ProjectsWithTextBlockRedesign

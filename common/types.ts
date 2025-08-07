@@ -1,4 +1,4 @@
-export type HeaderLink = {
+type HeaderLink = {
   id: number;
   name: string;
   link: string;

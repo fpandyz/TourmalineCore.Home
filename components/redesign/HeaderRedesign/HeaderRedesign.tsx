@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import clsx from "clsx";
-import { useTranslation } from "next-i18next";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
 import { HeaderButton } from "./components/HeaderButton/HeaderButton";
 import { HeaderPopup } from "./components/HeaderPopup/HeaderPopup";
@@ -10,31 +9,17 @@ import { useBodyScrollHidden } from "../../../common/hooks/useBodyScrollHidden";
 import { HeaderRedesignProps } from "../../../common/types";
 import { useDeviceSize, useOnScrollDirections } from "../../../common/hooks";
 import { HeaderNavigationList } from "./components/HeaderNavigationList/HeaderNavigationList";
+import { AppRoute } from "../../../common/enums";
 
-export function HeaderRedesign() {
-  const {
-    t,
-  } = useTranslation(`headerRedesign`);
-
+export function HeaderRedesign({
+  navigationLists,
+  button,
+  email,
+  socialLinks,
+}: HeaderRedesignProps) {
   const {
     isTabletXl,
   } = useDeviceSize();
-
-  const headerNavigationLists: HeaderRedesignProps["navigationLists"] = t(`navigationLists`, {
-    returnObjects: true,
-  });
-
-  const headerButton: HeaderRedesignProps["button"] = t(`button`, {
-    returnObjects: true,
-  });
-
-  const headerEmail: HeaderRedesignProps["email"] = t(`email`, {
-    returnObjects: true,
-  });
-
-  const headerSocialLinks: HeaderRedesignProps["socialLinks"] = t(`socialLinks`, {
-    returnObjects: true,
-  });
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -54,7 +39,7 @@ export function HeaderRedesign() {
       <div className="header-redesign__inner container-redesign">
         <Link
           className="header-redesign__link-wrapper"
-          href="/"
+          href={AppRoute.Main}
         >
           <Image
             src="/images/logo.png"
@@ -65,7 +50,7 @@ export function HeaderRedesign() {
 
         <HeaderNavigationList
           className="header-redesign__nav"
-          navigationList={headerNavigationLists}
+          navigationList={navigationLists}
         />
 
         <LangSwitchRedesign className="header-redesign__lang-switch" />
@@ -83,16 +68,16 @@ export function HeaderRedesign() {
         </button>
 
         <HeaderButton className="header-redesign__button">
-          {headerButton.label}
+          {button.label}
         </HeaderButton>
       </div>
 
       {isMobileMenuOpen && !isTabletXl && (
         <HeaderPopup
-          navigationList={headerNavigationLists}
-          buttonLabel={headerButton.label}
-          email={headerEmail}
-          socialLinks={headerSocialLinks}
+          navigationList={navigationLists}
+          buttonLabel={button.label}
+          email={email}
+          socialLinks={socialLinks}
         />
       )}
     </header>
