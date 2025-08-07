@@ -29,21 +29,3 @@ export const languages: Languages = {
     icon: () => <IconChinaFlag className="lang-switch__flag" />,
   },
 };
-
-type LanguagesRedesign = {
-  [key: string]: {
-    name: string;
-  };
-};
-
-export const languagesRedesign: LanguagesRedesign = {
-  en: {
-    name: `EN`,
-  },
-  ru: {
-    name: `RU`,
-  },
-  zh: {
-    name: `中文`,
-  },
-};

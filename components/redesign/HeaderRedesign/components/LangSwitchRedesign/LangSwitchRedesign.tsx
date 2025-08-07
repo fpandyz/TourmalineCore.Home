@@ -4,7 +4,25 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import IconDownArrow from '../../../../../icons/icon-arrow-down-redesign.svg';
 import GlobalIcon from '../../../../../icons/global-icon.svg';
-import { DEFAULT_LOCALE, languagesRedesign } from '../../../../../common/constants';
+import { DEFAULT_LOCALE } from '../../../../../common/constants';
+
+type Languages = {
+  [key: string]: {
+    name: string;
+  };
+};
+
+const LANGUAGES: Languages = {
+  en: {
+    name: `EN`,
+  },
+  ru: {
+    name: `RU`,
+  },
+  zh: {
+    name: `中文`,
+  },
+};
 
 export function LangSwitchRedesign({
   className,
@@ -46,7 +64,7 @@ export function LangSwitchRedesign({
             : `Currently selected`
         }
         >
-          {languagesRedesign[routerLocale].name}
+          {LANGUAGES[routerLocale].name}
         </span>
         <IconDownArrow
           aria-hidden="true"
@@ -75,7 +93,7 @@ export function LangSwitchRedesign({
                     }
                   }}
                 >
-                  {languagesRedesign[locale].name}
+                  {LANGUAGES[locale].name}
                 </Link>
               </li>
             ))}
