@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
+import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHidden';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
 import { TechnologyPageAnchorLink } from '../../common/enums';

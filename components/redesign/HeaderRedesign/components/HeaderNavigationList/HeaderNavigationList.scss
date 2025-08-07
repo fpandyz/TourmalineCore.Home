@@ -1,0 +1,45 @@
+.header-navigation-list {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include tablet-xl {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  &__list-item {
+    @include tablet-xl {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+    }
+  }
+
+  &__link {
+    @include h4;
+
+    width: 100%;
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    @include tablet-xl {
+      @include body-m;
+    }
+  }
+
+  @include tablet-xl {
+    margin-right: 56px;
+  }
+
+  @include desktop-xl {
+    margin-right: 80px;
+  }
+}
