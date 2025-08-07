@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
-import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
 import { TechnologyPageAnchorLink } from '../../common/enums';
 import { usePath } from '../../common/hooks';
+import { FormModal } from '../FormModal/FormModal';
 
 export function Cta() {
   const {
@@ -35,7 +35,7 @@ export function Cta() {
           <div className="cta__image" />
         </div>
       </div>
-      {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}
+      {isOpen && <FormModal setIsOpen={setIsOpen} />}
     </section>
   );
 }

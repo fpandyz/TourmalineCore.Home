@@ -38,7 +38,7 @@ export function FooterRedesign() {
               .getFullYear()} Tourmaline Core`}
           </span>
           <a
-            href={`documents/policy-${locale}.pdf`}
+            href={`/documents/policy-${locale}.pdf`}
             target="_blank"
             rel="noreferrer"
             className="footer-redesign__privacy-policy"

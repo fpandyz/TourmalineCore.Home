@@ -75,6 +75,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `cooperation`,
       `servicesTechnologyMl`,
       `casesMl`,
+      `formBlockRedesign`,
     ])),
   },
 });

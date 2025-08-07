@@ -69,6 +69,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `cta`,
       `cooperation`,
       `servicesTechnologyBackend`,
+      `formBlockRedesign`,
     ])),
   },
 });

@@ -193,6 +193,18 @@
     text-underline-offset: 2px;
   }
 
+  &.is-modal {
+    padding-top: 28px;
+
+    @include tablet {
+      padding-top: 56px;
+    }
+
+    @include desktop-xl {
+      padding-top: 80px;
+    }
+  }
+
   @include tablet {
     max-width: 492px;
   }
@@ -240,6 +252,30 @@
 
       @include desktop-xl {
         max-width: 614px;
+      }
+    }
+
+    &.is-modal {
+      padding-top: 42px;
+
+      @include tablet {
+        padding-top: 88px;
+        padding-bottom: 116px;
+      }
+
+      @include tablet-xl {
+        padding-top: 72px;
+        padding-bottom: 83px;
+      }
+
+      @include desktop {
+        padding-top: 80px;
+        padding-bottom: 110px;
+      }
+
+      @include desktop-xl {
+        padding-top: 96px;
+        padding-bottom: 131px;
       }
     }
 

@@ -67,6 +67,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `casesTeams`,
       `stagesTeams`,
       `servicesTechnologyTeams`,
+      `formBlockRedesign`,
     ])),
   },
 });

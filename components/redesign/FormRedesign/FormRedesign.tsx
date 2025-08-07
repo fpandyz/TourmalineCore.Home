@@ -6,9 +6,9 @@ import {
   useRef,
   useState,
 } from 'react';
-import Image from 'next/image';
 import clsx from 'clsx';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -22,10 +22,12 @@ export function FormRedesign({
   onSubmit,
   isSubmit,
   setIsSubmit,
+  isModal,
 } : {
   onSubmit: (formData: FormData) => unknown;
   isSubmit: boolean;
   setIsSubmit: (value: boolean) => void;
+  isModal?: boolean;
 }) {
   const {
     t,
@@ -56,6 +58,7 @@ export function FormRedesign({
     textareaLabel,
     buttonSubmitLabel,
     buttonSubmittedLabel,
+    buttonSubmittedLabelModal,
     titleSubmitted,
   } = getTranslations();
 
@@ -64,6 +67,7 @@ export function FormRedesign({
       <form
         className={clsx(`form-redesign`, {
           'form-redesign--is-submitted': isSubmit,
+          'is-modal': isModal,
         })}
         onSubmit={handleFormSubmit}
       >
@@ -151,7 +155,7 @@ export function FormRedesign({
                 type="button"
                 onClick={() => setIsSubmit(false)}
               >
-                {buttonSubmittedLabel}
+                {isModal ? buttonSubmittedLabelModal : buttonSubmittedLabel}
               </button>
             ) : (
               <button
@@ -170,10 +174,14 @@ export function FormRedesign({
                   components={{
                     bolt: <a
                       className="form-redesign__consent-link"
-                      href={`documents/policy-${locale}.pdf`}
+                      href={`/documents/policy-${locale}.pdf`}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label=""
+                      aria-label={
+                        locale === `ru`
+                          ? `согласие на обработку персональных данных`
+                          : `processing of personal data`
+                      }
                     />,
                   }}
                 />
@@ -202,6 +210,7 @@ export function FormRedesign({
         textareaLabel: `Расскажите о вашей задаче`,
         buttonSubmitLabel: `Отправить заявку`,
         buttonSubmittedLabel: `Заполнить еще раз`,
+        buttonSubmittedLabelModal: `Вернуться к сайту`,
         titleSubmitted: `Спасибо за заявку!`,
       };
     }
@@ -213,6 +222,7 @@ export function FormRedesign({
       textareaLabel: `Describe your project`,
       buttonSubmitLabel: `Send`,
       buttonSubmittedLabel: `Write more`,
+      buttonSubmittedLabelModal: `Back to the website`,
       titleSubmitted: `Thank you!`,
     };
   }
