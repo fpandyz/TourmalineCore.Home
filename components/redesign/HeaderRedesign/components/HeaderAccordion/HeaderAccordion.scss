@@ -57,7 +57,7 @@
     @include tablet-xl {
       position: absolute;
       left: 0;
-      display: flex;
+      display: none;
       padding-top: 21px;
       padding-bottom: 48px;
       gap: 56px;
@@ -139,6 +139,19 @@
 
     @include tablet-xl {
       color: $color-white;
+    }
+  }
+
+  @include tablet-xl {
+    &:focus-within,
+    &:hover {
+      #{$this}__arrow {
+        transform: rotate(-0.5turn);
+      }
+
+      #{$this}__list-wrapper {
+        display: flex;
+      }
     }
   }
 

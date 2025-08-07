@@ -7,12 +7,12 @@ import { useOnScrollDirections } from '../../../../../common/hooks';
 
 export function HeaderAccordion({
   className,
-  navigationListItem,
+  navigationItems,
   isOpen,
   onToggle,
 }: {
   className?: string;
-  navigationListItem: HeaderNavigationItem;
+  navigationItems: HeaderNavigationItem;
   isOpen: boolean;
   onToggle: (id: number) => void;
 }) {
@@ -20,7 +20,7 @@ export function HeaderAccordion({
     id,
     name,
     navItems,
-  } = navigationListItem;
+  } = navigationItems;
 
   const {
     isTabletXl,
@@ -40,36 +40,30 @@ export function HeaderAccordion({
         },
       )}
       data-testid="header-accordion"
-      {...(isTabletXl ? {
-        onMouseEnter: () => onToggle(id),
-        onMouseLeave: () => onToggle(id),
-      } : {})}
     >
       <button
         className="header-accordion__button"
         data-testid="header-accordion-button"
         type="button"
-        {...(!isTabletXl ? {
+        {...(!isTabletXl && {
           onClick: () => onToggle(id),
-        } : {
-          onFocus: () => onToggle(id),
         })}
       >
         <span className="header-accordion__label">
           {name}
         </span>
         <IconDownArrow
-          aria-hidden="true"
           className={clsx(
             `header-accordion__arrow`,
             {
               'header-accordion__arrow--open': isOpen,
             },
           )}
+          aria-hidden="true"
         />
       </button>
 
-      {isOpen && !isHidden && (
+      {(isTabletXl || isOpen) && !isHidden && (
         <div
           className={clsx(
             `header-accordion__list-wrapper`,
