@@ -1,23 +1,20 @@
 import { Modal } from '../Modal/Modal';
 import { FormBlockRedesign } from '../redesign/FormBlockRedesign/FormBlockRedesign';
 
-export function FormModal(
-  {
-    setIsOpen,
-    initializeIsSubmit,
-    testId,
-  }:{
-    setIsOpen: (isOpen: boolean) => void;
-    initializeIsSubmit?: boolean;
-    testId?: string;
-  },
-) {
+export function FormModal({
+  setIsOpen,
+  initializeIsSubmit,
+  testId,
+}:{
+  setIsOpen: (isOpen: boolean) => void;
+  initializeIsSubmit?: boolean;
+  testId?: string;
+}) {
   return (
     <Modal
       testId={testId}
       content={(
         <FormBlockRedesign
-          className="is-modal"
           isModal
           initializeIsSubmit={initializeIsSubmit}
         />

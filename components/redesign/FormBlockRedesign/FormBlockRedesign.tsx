@@ -10,12 +10,10 @@ import { MarkdownText } from '../MarkdownText/MarkdownText';
 export function FormBlockRedesign({
   initializeIsSubmit = false,
   testId,
-  className,
   isModal,
 }: {
   initializeIsSubmit?: boolean;
   testId?: string;
-  className?: string;
   isModal?: boolean;
 }) {
   const {
@@ -26,7 +24,9 @@ export function FormBlockRedesign({
 
   return (
     <section
-      className={clsx(`form-block-redesign`, className)}
+      className={clsx(`form-block-redesign`, {
+        'is-modal': isModal,
+      })}
       data-testid={testId}
     >
       <div className="form-block-redesign__wrapper container-redesign">
@@ -41,7 +41,7 @@ export function FormBlockRedesign({
                         onSubmit={onFormSubmit}
                         isSubmit={isSubmit}
                         setIsSubmit={setIsSubmit}
-                        className={className}
+                        isModal={isModal}
                       />
                     </div>
                     <div className="form-block-redesign__aside">
@@ -69,7 +69,6 @@ export function FormBlockRedesign({
                       onSubmit={onFormSubmit}
                       isSubmit={isSubmit}
                       setIsSubmit={setIsSubmit}
-                      className={className}
                       isModal={isModal}
                     />
                   </div>

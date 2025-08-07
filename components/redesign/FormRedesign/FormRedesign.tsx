@@ -22,13 +22,11 @@ export function FormRedesign({
   onSubmit,
   isSubmit,
   setIsSubmit,
-  className,
   isModal,
 } : {
   onSubmit: (formData: FormData) => unknown;
   isSubmit: boolean;
   setIsSubmit: (value: boolean) => void;
-  className?: string;
   isModal?: boolean;
 }) {
   const {
@@ -67,8 +65,9 @@ export function FormRedesign({
   return (
     <>
       <form
-        className={clsx(`form-redesign`, className, {
+        className={clsx(`form-redesign`, {
           'form-redesign--is-submitted': isSubmit,
+          'is-modal': isModal,
         })}
         onSubmit={handleFormSubmit}
       >
