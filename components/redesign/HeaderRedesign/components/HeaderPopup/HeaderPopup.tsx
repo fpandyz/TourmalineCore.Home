@@ -28,38 +28,36 @@ export function HeaderPopup({
         {buttonLabel}
       </HeaderButton>
 
-      <div className="header-popup__footer">
-        <div className="header-popup__contact">
-          <span className="header-popup__caption">{email.caption}</span>
-          <Link
-            className="header-popup__email"
-            href={`mailto:${email.address}`}
-          >
-            {email.address}
-          </Link>
-        </div>
-        <nav className="header-popup__nav">
-          <ul className="header-popup__list">
-            {socialLinks.map(({
-              id,
-              name,
-              link,
-            }) => (
-              <li
-                key={id}
-                className="header-popup__list-item"
-              >
-                <Link
-                  className="header-popup__link"
-                  href={link}
-                >
-                  {name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      <div className="header-popup__contact">
+        <span className="header-popup__caption">{email.caption}</span>
+        <Link
+          className="header-popup__email"
+          href={`mailto:${email.address}`}
+        >
+          {email.address}
+        </Link>
       </div>
+      <nav className="header-popup__nav">
+        <ul className="header-popup__list">
+          {socialLinks.map(({
+            id,
+            name,
+            link,
+          }) => (
+            <li
+              key={id}
+              className="header-popup__list-item"
+            >
+              <Link
+                className="header-popup__link"
+                href={link}
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 }

@@ -1,12 +1,14 @@
 .header-popup {
   position: relative;
   z-index: $mobile-menu;
+  overflow-y: auto;
   padding-top: 24px;
   padding-bottom: 24px;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 100vh;
   background-color: $color-black;
   animation: showSmoothАppearance 0.15s ease-out forwards;
+  scrollbar-width: 0;
 
   &__nav {
     margin-bottom: 40px;
@@ -67,6 +69,6 @@
   }
 
   @include desktop-xl {
-    height: calc(100vh - 118px);
+    min-height: calc(100vh - 118px);
   }
 }
