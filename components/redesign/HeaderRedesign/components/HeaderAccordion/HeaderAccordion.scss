@@ -49,8 +49,7 @@
 
   &__list-wrapper {
     display: flex;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding: 16px 0 16px 16px;
     width: 100%;
     animation: showSmoothАppearance 0.15s ease-out forwards;
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import clsx from "clsx";
+import { useRouter } from "next/router";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
 import { HeaderButton } from "./components/HeaderButton/HeaderButton";
 import { HeaderPopup } from "./components/HeaderPopup/HeaderPopup";
@@ -29,6 +30,10 @@ export function HeaderRedesign({
     isScrollUp,
   } = useOnScrollDirections();
 
+  const {
+    locale,
+  } = useRouter();
+
   return (
     <header
       className={clsx(`header-redesign`, {
@@ -38,12 +43,17 @@ export function HeaderRedesign({
     >
       <div className="header-redesign__inner container-redesign">
         <Link
-          className="header-redesign__link-wrapper"
           href={AppRoute.Main}
+          aria-label={
+            locale === `ru`
+              ? `Ссылка на главную страницу`
+              : `Link to home page`
+          }
         >
           <Image
             src="/images/logo.png"
             alt="Tourmaline core logo"
+            aria-hidden="true"
             fill
           />
         </Link>
