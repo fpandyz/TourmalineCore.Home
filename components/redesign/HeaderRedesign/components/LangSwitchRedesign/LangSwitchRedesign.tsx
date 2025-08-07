@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -31,14 +30,6 @@ export function LangSwitchRedesign({
 }) {
   const router = useRouter();
 
-  const routerLocale = useMemo(() => {
-    if (!router.locale) {
-      return DEFAULT_LOCALE;
-    }
-
-    return router.locale;
-  }, [router.locale]);
-
   return (
     <div
       className={clsx(
@@ -64,7 +55,7 @@ export function LangSwitchRedesign({
             : `Currently selected`
         }
         >
-          {LANGUAGES[routerLocale].name}
+          {LANGUAGES[router.locale || DEFAULT_LOCALE].name}
         </span>
         <IconDownArrow
           aria-hidden="true"
@@ -75,7 +66,7 @@ export function LangSwitchRedesign({
       {router.locales && (
         <ul className="lang-switch-redesign__list">
           {router.locales
-            .filter((locale) => locale !== routerLocale)
+            .filter((locale) => locale !== router.locale)
             .map((locale) => (
               <li
                 key={locale}
@@ -88,7 +79,7 @@ export function LangSwitchRedesign({
                   className="lang-switch-redesign__link"
                   onClick={(e) => {
                     e.preventDefault();
-                    if (routerLocale !== locale) {
+                    if (router.locale !== locale) {
                       window.open((e.target as HTMLAnchorElement).href, `_self`);
                     }
                   }}
