@@ -20,10 +20,11 @@ export default async function validateCaptchaToken(req: NextApiRequest, res: Nex
 
     const responseData = await response.json();
 
-    if (response.ok) {
+    if (responseData.status === `ok`) {
       return res.status(200)
         .json(responseData);
     }
+
     return res.status(400)
       .json({
         status: `failed`,
