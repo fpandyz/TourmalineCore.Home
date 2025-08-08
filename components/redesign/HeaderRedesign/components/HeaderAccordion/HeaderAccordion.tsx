@@ -29,7 +29,7 @@ export function HeaderAccordion({
     isScrollUp,
   } = useOnScrollDirections();
 
-  const chunks = isTabletXl ? chunksArray(navItems) : [navItems];
+  const chunks = isTabletXl ? getChunks(navItems) : [navItems];
 
   return (
     <div
@@ -100,7 +100,7 @@ export function HeaderAccordion({
   );
 }
 
-function chunksArray(items: HeaderNavigationItem["navItems"]) {
+function getChunks(items: HeaderNavigationItem["navItems"]) {
   const chunks: HeaderNavigationItem["navItems"][] = [];
 
   for (let i = 0; i < items.length; i += 6) {
