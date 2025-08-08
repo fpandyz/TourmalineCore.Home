@@ -37,7 +37,7 @@ export function HeaderRedesign({
   return (
     <header
       className={clsx(`header-redesign`, {
-        'header-redesign--hidden': !isScrollUp,
+        'header-redesign--hidden': !isScrollUp && !isMobileMenuOpen,
       })}
       data-testid="header-redesign"
     >
