@@ -1,4 +1,6 @@
 .form-block-redesign {
+  $this: &;
+
   padding-top: 40px;
   background-color: $color-white;
 
@@ -11,11 +13,15 @@
     }
   }
 
+  &__form-wrapper {
+    border-radius: 2px;
+    background-color: $color-black;
+  }
+
   &__inner {
     @include tablet {
       margin: 0 auto;
       max-width: 556px;
-      background-color: $color-black;
     }
 
     @include tablet-xl {
@@ -75,6 +81,7 @@
   &__aside-img {
     position: relative;
     flex-shrink: 0;
+    overflow: hidden;
     border-radius: 2px;
     width: 101px;
     height: 72px;
@@ -105,6 +112,29 @@
 
     @include desktop {
       max-width: none;
+    }
+  }
+
+  &.is-modal {
+    padding-top: 54px;
+    background-color: $color-black;
+
+    #{$this}__aside {
+      padding-bottom: 32px;
+    }
+
+    @include tablet {
+      padding-top: 0;
+      padding-bottom: 117px;
+      background-color: $color-white;
+    }
+
+    @include tablet-xl {
+      padding-bottom: 141px;
+    }
+
+    @include desktop {
+      padding-bottom: 0;
     }
   }
 

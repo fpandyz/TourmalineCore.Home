@@ -48,6 +48,7 @@ export async function getStaticProps({
         `articles`,
         `footer`,
         `cookie`,
+        `formBlockRedesign`,
       ])),
       articles: articlesWithMeta,
     },

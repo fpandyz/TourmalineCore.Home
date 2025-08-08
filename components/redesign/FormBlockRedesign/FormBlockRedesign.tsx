@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
@@ -9,9 +10,11 @@ import { MarkdownText } from '../MarkdownText/MarkdownText';
 export function FormBlockRedesign({
   initializeIsSubmit = false,
   testId,
+  isModal,
 }: {
   initializeIsSubmit?: boolean;
   testId?: string;
+  isModal?: boolean;
 }) {
   const {
     t,
@@ -21,7 +24,9 @@ export function FormBlockRedesign({
 
   return (
     <section
-      className="form-block-redesign"
+      className={clsx(`form-block-redesign`, {
+        'is-modal': isModal,
+      })}
       data-testid={testId}
     >
       <div className="form-block-redesign__wrapper container-redesign">
@@ -31,11 +36,14 @@ export function FormBlockRedesign({
               !isSubmit
                 ? (
                   <>
-                    <FormRedesign
-                      onSubmit={onFormSubmit}
-                      isSubmit={isSubmit}
-                      setIsSubmit={setIsSubmit}
-                    />
+                    <div className="form-block-redesign__form-wrapper">
+                      <FormRedesign
+                        onSubmit={onFormSubmit}
+                        isSubmit={isSubmit}
+                        setIsSubmit={setIsSubmit}
+                        isModal={isModal}
+                      />
+                    </div>
                     <div className="form-block-redesign__aside">
                       <div className="form-block-redesign__aside-inner container-redesign">
                         <div className="form-block-redesign__aside-img">
@@ -56,11 +64,14 @@ export function FormBlockRedesign({
                   </>
                 )
                 : (
-                  <FormRedesign
-                    onSubmit={onFormSubmit}
-                    isSubmit={isSubmit}
-                    setIsSubmit={setIsSubmit}
-                  />
+                  <div className="form-block-redesign__form-wrapper">
+                    <FormRedesign
+                      onSubmit={onFormSubmit}
+                      isSubmit={isSubmit}
+                      setIsSubmit={setIsSubmit}
+                      isModal={isModal}
+                    />
+                  </div>
                 )
             }
           </div>

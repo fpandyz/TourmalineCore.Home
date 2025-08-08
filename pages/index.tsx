@@ -12,7 +12,6 @@ import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/Projec
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { FormBlockRedesign } from '../components/redesign/FormBlockRedesign/FormBlockRedesign';
 import { useDeviceSize } from '../common/hooks';
 
 export default function HomePage() {
@@ -57,7 +56,7 @@ export default function HomePage() {
         />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
         {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
-        <FormBlockRedesign />
+        {/* <FormBlockRedesign /> */}
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign
           translationKey="conferenceSignpostsRedesign"

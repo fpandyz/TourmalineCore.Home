@@ -10,8 +10,6 @@ import { Cta } from '../../components/Cta/Cta';
 import { Payment } from '../../components/Payment/Payment';
 import { Cooperation } from '../../components/Cooperation/Cooperation';
 import { ServicesTechnology } from '../../components/ServicesTechnology/ServicesTechnology';
-import { FormBlock } from '../../components/FormBlock/FormBlock';
-import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export default function BackendPage() {
   const {
@@ -42,10 +40,10 @@ export default function BackendPage() {
         <Payment />
         <Cooperation />
         <ServicesTechnology />
-        <FormBlock
+        {/* <FormBlock
           id={TechnologyPageAnchorLink.Contact}
           buttonClassName="backend__form-button"
-        />
+        /> */}
       </Layout>
     </>
   );
@@ -69,6 +67,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `cta`,
       `cooperation`,
       `servicesTechnologyBackend`,
+      `formBlockRedesign`,
     ])),
   },
 });

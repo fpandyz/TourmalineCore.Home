@@ -14,4 +14,6 @@ export enum ComponentName {
   SUBMITTED_FORM_BLOCK = `submitted-form-block`,
   COOKIE = `cookie`,
   NOT_FOUND = `not-found`,
+  FORM_MODAL = `form-modal`,
+  SUBMITTED_FORM_MODAL = `submitted-form-modal`,
 }
