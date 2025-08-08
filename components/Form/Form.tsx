@@ -1,12 +1,7 @@
 import clsx from 'clsx';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import {
-  FormEvent,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 import { ExternalLink } from '../ExternalLink/ExternalLink';
@@ -14,9 +9,7 @@ import { Input } from './components/Input/Input';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { Textarea } from './components/Textarea/Textarea';
 import { Spinner } from '../Spinner/Spinner';
-import { DEFAULT_LOCALE } from '../../common/constants';
 import { isChineseLanguage } from '../../common/utils';
-import { ReCAPTCHALanguage } from '../../common/enums/captcha';
 
 export function Form({
   onSubmit = () => {},
@@ -34,13 +27,13 @@ export function Form({
 
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  const routerLocale = useMemo(() => {
-    if (!router.locale) {
-      return DEFAULT_LOCALE;
-    }
+  // const routerLocale = useMemo(() => {
+  //   if (!router.locale) {
+  //     return DEFAULT_LOCALE;
+  //   }
 
-    return router.locale;
-  }, [router.locale]);
+  //   return router.locale;
+  // }, [router.locale]);
 
   return (
     <>
@@ -113,14 +106,13 @@ export function Form({
           </div>
         </div>
       </form>
-
-      <ReCAPTCHA
+      {/* <ReCAPTCHA
         ref={recaptchaRef}
         size="invisible"
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ``}
         badge="bottomleft"
         hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
-      />
+      /> */}
     </>
   );
 

@@ -13,6 +13,7 @@ import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWi
 import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { useDeviceSize } from '../common/hooks';
+import { FormBlockRedesign } from '../components/redesign/FormBlockRedesign/FormBlockRedesign';
 
 export default function HomePage() {
   const {
@@ -56,7 +57,7 @@ export default function HomePage() {
         />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
         {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
-        {/* <FormBlockRedesign /> */}
+        <FormBlockRedesign />
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign
           translationKey="conferenceSignpostsRedesign"

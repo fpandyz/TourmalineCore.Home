@@ -1,6 +1,7 @@
 .form-redesign {
   $this: &;
 
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -191,6 +192,11 @@
     margin-left: 4px;
     color: inherit;
     text-underline-offset: 2px;
+  }
+
+  &__captcha {
+    position: absolute;
+    transform: translate(0, -20%);
   }
 
   &.is-modal {
