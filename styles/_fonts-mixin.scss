@@ -15,7 +15,7 @@
 }
 
 @mixin inter-font {
-  font-family: $ff-inter;
+  font-family: $ff-inter, sans-serif;
 }
 
 @mixin source-code-pro-font {
