@@ -3,6 +3,7 @@ import { useTranslation } from 'next-i18next';
 import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 import { TechnologyPageAnchorLink } from '../../common/enums';
 import { usePath } from '../../common/hooks';
+import { FormModal } from '../FormModal/FormModal';
 
 export function Cta() {
   const {
@@ -40,8 +41,7 @@ export function Cta() {
           <div className="cta__image" />
         </div>
       </div>
-      {/* Todo: uncomment after editing the form */}
-      {/* {isOpen && <FormModal setIsOpen={setIsOpen} />} */}
+      {isOpen && <FormModal setIsOpen={setIsOpen} />}
     </section>
   );
 }
