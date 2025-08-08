@@ -1,10 +1,7 @@
 import clsx from 'clsx';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import {
-  FormEvent, useRef,
-  useState
-} from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 import { ExternalLink } from '../ExternalLink/ExternalLink';
