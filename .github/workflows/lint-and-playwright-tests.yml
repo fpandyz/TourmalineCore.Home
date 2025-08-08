@@ -107,6 +107,10 @@ jobs:
     - name: Log Browser Version
       run: du -hs ~/.cache/ms-playwright/*
 
+    # Necessary for correct display of hieroglyphs
+    - name: Install CJK fonts
+      run: sudo apt-get install -y fonts-noto-cjk
+
     - name: Run Playwright Tests
       run: |
         npm run dev &
