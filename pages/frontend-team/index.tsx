@@ -10,8 +10,6 @@ import { Tasks } from '../../components/Tasks/Tasks';
 import { Stack } from '../../components/Stack/Stack';
 import { Cases } from '../../components/Cases/Cases';
 import { Stages } from '../../components/Stages/Stages';
-import { FormBlock } from '../../components/FormBlock/FormBlock';
-import { TechnologyPageAnchorLink } from '../../common/enums';
 
 export default function FrontendTeamPage() {
   const {
@@ -46,10 +44,10 @@ export default function FrontendTeamPage() {
         <Stages />
         <Stack />
         <ServicesTechnology />
-        <FormBlock
+        {/* <FormBlock
           id={TechnologyPageAnchorLink.Contact}
           buttonClassName="frontend-team__form-button"
-        />
+        /> */}
       </Layout>
     </>
   );
