@@ -34,7 +34,7 @@ export function FormRedesign({
   const [email, setEmail] = useState(``);
 
   const [showCaptcha, setShowCaptcha] = useState(false);
-  const [isVerified, setIsVerified] = useState<boolean>(false);
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
 
   const {
     nameLabel,
@@ -215,7 +215,7 @@ export function FormRedesign({
     const response = await validateCaptchaToken(captchaToken);
 
     if (response.status === `ok`) {
-      setIsVerified(true);
+      setIsCaptchaVerified(true);
     }
 
     setShowCaptcha(false);
@@ -226,7 +226,7 @@ export function FormRedesign({
     setIsLoading(true);
 
     try {
-      if (!isVerified) {
+      if (!isCaptchaVerified) {
         setShowCaptcha(true);
         return;
       }
@@ -235,7 +235,7 @@ export function FormRedesign({
 
       onSubmit(formData);
 
-      setIsVerified(false);
+      setIsCaptchaVerified(false);
     } finally {
       setIsLoading(false);
     }
