@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useBodyScrollHidden, usePath, useTranslationNamespace } from '../../common/hooks';
 import { isChineseLanguage } from '../../common/utils';
-import { FormModal } from '../FormModal/FormModal';
 
 export function HeroBlockTechnology() {
   const {
@@ -28,13 +27,20 @@ export function HeroBlockTechnology() {
         <div className="hero-block-technology__inner">
           <h1 className="hero-block-technology__title">{t(`title`)}</h1>
           <h2 className="hero-block-technology__description">{t(`description`)}</h2>
-          <button
+          {/* Todo: uncomment after editing the form */}
+          {/* <button
             type="button"
             onClick={() => setIsOpen(true)}
             className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}
           >
             <span className="hero-block-technology__button-text">{t(`buttonText`)}</span>
-          </button>
+          </button> */}
+          <a
+            href="mailto:contact@tourmalinecore.com"
+            className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}
+          >
+            <span className="hero-block-technology__button-text">{t(`buttonText`)}</span>
+          </a>
         </div>
         <picture className="hero-block-technology__image">
           <source
@@ -51,7 +57,8 @@ export function HeroBlockTechnology() {
           />
         </picture>
       </div>
-      {isOpen && <FormModal setIsOpen={setIsOpen} />}
+      {/* Todo: uncomment after editing the form */}
+      {/* {isOpen && <FormModal setIsOpen={setIsOpen} />} */}
     </section>
   );
 }
