@@ -42,17 +42,7 @@ async function showAccordion({
   page: Page;
   setViewportSize: CustomTestFixtures["setViewportSize"];
 }) {
-  // This is necessary so that the tests do not crop the screenshots.
-  await page.addStyleTag({
-    content: `html, body, #__next { height: auto !important; min-height: 100% !important; }`,
-  });
-
   await setViewportSize();
-
-  await page.getByTestId(`header-popup`)
-    .evaluate((el) => {
-      el.style.height = `100vh`;
-    });
 
   await page.getByTestId(`header-accordion-button`)
     .first()
