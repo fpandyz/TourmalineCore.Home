@@ -1,5 +1,4 @@
 import { ReactNode, useRef } from 'react';
-// import { Header } from '../../Header/Header';
 import { FooterRedesign } from '../FooterRedesign/FooterRedesign';
 import { SkipLink } from '../../SkipLink/SkipLink';
 import { HeaderRedesign } from '../HeaderRedesign/HeaderRedesign';
