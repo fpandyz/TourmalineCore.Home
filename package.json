@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
+    "@yandex/smart-captcha": "^2.8.0",
     "clsx": "^2.1.1",
     "cookies-next": "^6.0.0",
     "gitalk": "^1.7.2",
@@ -26,6 +27,7 @@
     "next": "^15.3.2",
     "next-i18next": "^8.6.0",
     "next-sitemap": "^3.1.11",
+    "nodemailer": "^7.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-focus-lock": "^2.13.6",

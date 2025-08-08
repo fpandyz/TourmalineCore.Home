@@ -1,22 +1,15 @@
 import { Trans, useTranslation } from 'next-i18next';
-import {
-  ChangeEvent,
-  FormEvent,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import ReCAPTCHA from 'react-google-recaptcha';
 
+import { SmartCaptcha } from '@yandex/smart-captcha';
 import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { Spinner } from '../../Spinner/Spinner';
-import { DEFAULT_LOCALE } from '../../../common/constants';
-import { ReCAPTCHALanguage } from '../../../common/enums/captcha';
+import { validateCaptchaToken } from '../../../services/smartCaptchaService/validateCaptchaToken';
 
 export function FormRedesign({
   onSubmit,
@@ -37,19 +30,11 @@ export function FormRedesign({
     locale,
   } = useRouter();
 
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
-
-  const routerLocale = useMemo(() => {
-    if (!locale) {
-      return DEFAULT_LOCALE;
-    }
-
-    return locale;
-  }, [locale]);
-
   const [isLoading, setIsLoading] = useState(false);
-
   const [email, setEmail] = useState(``);
+
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [isVerified, setIsVerified] = useState<boolean>(false);
 
   const {
     nameLabel,
@@ -63,30 +48,29 @@ export function FormRedesign({
   } = getTranslations();
 
   return (
-    <>
-      <form
-        className={clsx(`form-redesign`, {
-          'form-redesign--is-submitted': isSubmit,
-          'is-modal': isModal,
-        })}
-        onSubmit={handleFormSubmit}
-      >
-        {
-          isSubmit && (
-            <div className="form-redesign__img-container">
-              <Image
-                src={t(`imageUrl`)}
-                fill
-                alt=""
-              />
-            </div>
-          )
-        }
-        <h2 className="form-redesign__title">
-          {isSubmit ? `${titleSubmitted}` : t(`title`)}
-        </h2>
-        {
-          isSubmit
+    <form
+      className={clsx(`form-redesign`, {
+        'form-redesign--is-submitted': isSubmit,
+        'is-modal': isModal,
+      })}
+      onSubmit={handleFormSubmit}
+    >
+      {
+        isSubmit && (
+          <div className="form-redesign__img-container">
+            <Image
+              src={t(`imageUrl`)}
+              fill
+              alt=""
+            />
+          </div>
+        )
+      }
+      <h2 className="form-redesign__title">
+        {isSubmit ? `${titleSubmitted}` : t(`title`)}
+      </h2>
+      {
+        isSubmit
           && (
             <p className="form-redesign__description">
               {description}
@@ -99,106 +83,106 @@ export function FormRedesign({
               </Link>
             </p>
           )
-        }
+      }
+      {
+        !isSubmit && (
+          <p className="form-redesign__description">
+            {t(`description`)}
+          </p>
+        )
+      }
+      {
+        !isSubmit && (
+          <>
+            <InputRedesign
+              id="name"
+              name="name"
+              className="form-redesign__input"
+              label={nameLabel}
+              onKeyDown={(e) => {
+                if (e.key === `Enter`) {
+                  e.preventDefault();
+                }
+              }}
+              required
+            />
+            <InputRedesign
+              id="email"
+              name="email"
+              className="form-redesign__input"
+              label={emailLabel}
+              type="email"
+              value={email}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === `Enter`) {
+                  e.preventDefault();
+                }
+              }}
+              required
+            />
+            <TextareaRedesign
+              id="message"
+              name="message"
+              label={textareaLabel}
+              className="form-redesign__input"
+              description={t(`message.description`)}
+            />
+          </>
+        )
+      }
+      <div className="form-redesign__footer">
         {
-          !isSubmit && (
-            <p className="form-redesign__description">
-              {t(`description`)}
-            </p>
+          isSubmit ? (
+            <button
+              className="form-redesign__featured-button"
+              type="button"
+              onClick={() => setIsSubmit(false)}
+            >
+              {isModal ? buttonSubmittedLabelModal : buttonSubmittedLabel}
+            </button>
+          ) : (
+            <button
+              className="form-redesign__featured-button"
+              type="submit"
+            >
+              {isLoading ? <Spinner /> : buttonSubmitLabel}
+            </button>
           )
         }
         {
           !isSubmit && (
-            <>
-              <InputRedesign
-                id="name"
-                name="name"
-                className="form-redesign__input"
-                label={nameLabel}
-                onKeyDown={(e) => {
-                  if (e.key === `Enter`) {
-                    e.preventDefault();
-                  }
+            <div className="form-redesign__consent">
+              <Trans
+                i18nKey="formBlockRedesign:consentText"
+                components={{
+                  bolt: <a
+                    className="form-redesign__consent-link"
+                    href={`/documents/policy-${locale}.pdf`}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={
+                      locale === `ru`
+                        ? `согласие на обработку персональных данных`
+                        : `processing of personal data`
+                    }
+                  />,
                 }}
-                required
               />
-              <InputRedesign
-                id="email"
-                name="email"
-                className="form-redesign__input"
-                label={emailLabel}
-                type="email"
-                value={email}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === `Enter`) {
-                    e.preventDefault();
-                  }
-                }}
-                required
-              />
-              <TextareaRedesign
-                id="message"
-                name="message"
-                label={textareaLabel}
-                className="form-redesign__input"
-                description={t(`message.description`)}
-              />
-            </>
+            </div>
           )
         }
-        <div className="form-redesign__footer">
-          {
-            isSubmit ? (
-              <button
-                className="form-redesign__featured-button"
-                type="button"
-                onClick={() => setIsSubmit(false)}
-              >
-                {isModal ? buttonSubmittedLabelModal : buttonSubmittedLabel}
-              </button>
-            ) : (
-              <button
-                className="form-redesign__featured-button"
-                type="submit"
-              >
-                {isLoading ? <Spinner /> : buttonSubmitLabel}
-              </button>
-            )
-          }
-          {
-            !isSubmit && (
-              <div className="form-redesign__consent">
-                <Trans
-                  i18nKey="formBlockRedesign:consentText"
-                  components={{
-                    bolt: <a
-                      className="form-redesign__consent-link"
-                      href={`/documents/policy-${locale}.pdf`}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={
-                        locale === `ru`
-                          ? `согласие на обработку персональных данных`
-                          : `processing of personal data`
-                      }
-                    />,
-                  }}
-                />
-              </div>
-            )
-          }
-        </div>
-      </form>
+      </div>
 
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        size="invisible"
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ``}
-        badge="bottomleft"
-        hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
-      />
-    </>
+      {showCaptcha && (
+        <div className="form-redesign__captcha">
+          <SmartCaptcha
+            sitekey={process.env.NEXT_PUBLIC_SMARTCAPTCHA_CLIENT_KEY as string}
+            onSuccess={handleCaptchaSuccess}
+          />
+        </div>
+      )}
+    </form>
   );
 
   function getTranslations() {
@@ -227,26 +211,31 @@ export function FormRedesign({
     };
   }
 
+  async function handleCaptchaSuccess(captchaToken: string) {
+    const response = await validateCaptchaToken(captchaToken);
+
+    if (response.status === `ok`) {
+      setIsVerified(true);
+    }
+
+    setShowCaptcha(false);
+  }
+
   async function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
     setIsLoading(true);
 
     try {
-      if (!recaptchaRef.current) {
-        return;
-      }
-
-      const token = await recaptchaRef.current.executeAsync();
-
-      if (!token) {
+      if (!isVerified) {
+        setShowCaptcha(true);
         return;
       }
 
       const formData = new FormData(event.target as HTMLFormElement);
-      formData.append(`g-recaptcha-response`, token);
 
       onSubmit(formData);
-      recaptchaRef.current.reset();
+
+      setIsVerified(false);
     } finally {
       setIsLoading(false);
     }

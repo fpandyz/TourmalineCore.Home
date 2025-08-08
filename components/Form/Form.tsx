@@ -16,7 +16,6 @@ import { Textarea } from './components/Textarea/Textarea';
 import { Spinner } from '../Spinner/Spinner';
 import { DEFAULT_LOCALE } from '../../common/constants';
 import { isChineseLanguage } from '../../common/utils';
-import { ReCAPTCHALanguage } from '../../common/enums/captcha';
 
 export function Form({
   onSubmit = () => {},
@@ -113,14 +112,13 @@ export function Form({
           </div>
         </div>
       </form>
-
-      <ReCAPTCHA
+      {/* <ReCAPTCHA
         ref={recaptchaRef}
         size="invisible"
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ``}
         badge="bottomleft"
         hl={ReCAPTCHALanguage[routerLocale as keyof typeof ReCAPTCHALanguage]}
-      />
+      /> */}
     </>
   );
 
