@@ -99,6 +99,7 @@ export function HeaderRedesign({
           buttonLabel={button.label}
           email={email}
           socialLinks={socialLinks}
+          setIsModalOpen={setIsModalOpen}
         />
       )}
 

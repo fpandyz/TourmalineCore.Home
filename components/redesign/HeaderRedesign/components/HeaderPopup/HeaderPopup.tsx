@@ -8,11 +8,13 @@ export function HeaderPopup({
   buttonLabel,
   email,
   socialLinks,
+  setIsModalOpen,
 }: {
   navigationList: HeaderRedesignProps["navigationLists"];
   buttonLabel: HeaderRedesignProps["button"]["label"];
   email: HeaderRedesignProps["email"];
   socialLinks: HeaderRedesignProps["socialLinks"];
+  setIsModalOpen: (isOpen: boolean) => void;
 }) {
   return (
     <div
@@ -24,7 +26,10 @@ export function HeaderPopup({
         navigationList={navigationList}
       />
 
-      <HeaderButton className="header-popup__button">
+      <HeaderButton
+        className="header-popup__button"
+        onClick={setIsModalOpen}
+      >
         {buttonLabel}
       </HeaderButton>
 
