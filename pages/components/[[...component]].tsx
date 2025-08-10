@@ -94,6 +94,7 @@ export default function ComponentsPage() {
         socialLinks={headerRedesignTranslation(`socialLinks`, {
           returnObjects: true,
         })}
+        setIsModalOpen={() => {}}
       />
     );
   }
