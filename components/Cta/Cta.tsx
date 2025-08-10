@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
+import { useBodyScrollHidden, usePath } from '../../common/hooks';
 import { TechnologyPageAnchorLink } from '../../common/enums';
-import { usePath } from '../../common/hooks';
 import { FormModal } from '../FormModal/FormModal';
 
 export function Cta() {

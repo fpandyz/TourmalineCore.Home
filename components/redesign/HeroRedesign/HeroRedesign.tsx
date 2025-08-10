@@ -5,6 +5,7 @@ export function HeroRedesign() {
   const {
     t,
   } = useTranslation(`heroRedesign`);
+
   const imageUrls: string[] = t(`imageUrls`, {
     returnObjects: true,
   });
