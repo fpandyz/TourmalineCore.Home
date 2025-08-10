@@ -4,9 +4,11 @@ import { ReactNode } from "react";
 export function HeaderButton({
   children,
   className,
+  onClick,
 }: {
   children: ReactNode;
   className?: string;
+  onClick: (isOpen: boolean) => void;
 }) {
   return (
     <button
@@ -15,6 +17,7 @@ export function HeaderButton({
         className,
       )}
       type="button"
+      onClick={() => onClick(true)}
     >
       {children}
     </button>

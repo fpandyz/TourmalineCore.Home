@@ -11,6 +11,7 @@ import { HeaderRedesignProps } from "../../../common/types";
 import { useDeviceSize, useOnScrollDirections } from "../../../common/hooks";
 import { HeaderNavigationList } from "./components/HeaderNavigationList/HeaderNavigationList";
 import { AppRoute } from "../../../common/enums";
+import { FormModal } from "../../FormModal/FormModal";
 
 export function HeaderRedesign({
   navigationLists,
@@ -23,6 +24,7 @@ export function HeaderRedesign({
   } = useDeviceSize();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useBodyScrollHidden(isMobileMenuOpen);
 
@@ -83,7 +85,10 @@ export function HeaderRedesign({
           <span className="header-redesign__line" />
         </button>
 
-        <HeaderButton className="header-redesign__button">
+        <HeaderButton
+          className="header-redesign__button"
+          onClick={setIsModalOpen}
+        >
           {button.label}
         </HeaderButton>
       </div>
@@ -96,6 +101,8 @@ export function HeaderRedesign({
           socialLinks={socialLinks}
         />
       )}
+
+      {isModalOpen && <FormModal setIsOpen={setIsModalOpen} />}
     </header>
   );
 }
