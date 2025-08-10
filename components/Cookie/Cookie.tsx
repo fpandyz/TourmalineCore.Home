@@ -42,6 +42,7 @@ export function Cookie({
         setIsCookieVisible(true);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!isCookieVisible) {

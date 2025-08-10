@@ -1,26 +1,22 @@
 import { ReactNode, useEffect, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
-import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import IconCross from '../../icons/cross.svg';
-import { AppRoute } from '../../common/enums';
 import { useOnClickOutside } from '../../common/hooks';
 
 export function Modal({
-  title,
-  subtitle,
-  subtitleClassName,
-  maxWidth = ``,
-  content,
+  children,
   onClose = () => {},
+  testId,
 }: {
-  title?: string;
-  subtitle?: string;
-  subtitleClassName?: string;
-  maxWidth?: string;
-  content: ReactNode;
+  children: ReactNode;
   onClose?:() => unknown;
+  testId?: string;
 }) {
+  const {
+    locale,
+  } = useRouter();
+
   useEffect(() => {
     function escFunction(event: KeyboardEvent) {
       if (event.key === `Escape`) {
@@ -37,9 +33,6 @@ export function Modal({
   }, []);
 
   const refModal = useRef<HTMLDivElement>(null);
-  const {
-    pathname,
-  } = useRouter();
 
   useOnClickOutside(refModal, onClose);
 
@@ -47,36 +40,28 @@ export function Modal({
     <FocusLock
       returnFocus
     >
-      <div className="default-scroll modal">
-        <div
-          className="container modal__container"
-          style={{
-            maxWidth,
-          }}
-        >
+      <div
+        className="default-scroll modal"
+        data-testid={testId}
+      >
+        <div className="modal__container">
           <div
-            className={clsx(`modal__inner`, pathname !== AppRoute.Main && `modal__inner--technology`)}
+            className="modal__inner"
             ref={refModal}
           >
-            <div className="modal__header">
-              {title && (<div className="title-type-3 modal__title">{title}</div>)}
-
-              {subtitle && (
-                <div className={clsx(`modal__subtitle`, subtitleClassName)}>
-                  {subtitle}
-                </div>
-              )}
-
-              <button
-                type="button"
-                className="modal__cross"
-                onClick={onClose}
-              >
-                <IconCross />
-              </button>
-            </div>
-
-            <div className="modal__content">{content}</div>
+            <button
+              type="button"
+              className="modal__cross"
+              onClick={onClose}
+              aria-label={
+                locale === `ru`
+                  ? `Закрыть модальное окно с формой`
+                  : `Close modal window with form`
+              }
+            >
+              <IconCross />
+            </button>
+            <div className="modal__content">{children}</div>
           </div>
         </div>
       </div>

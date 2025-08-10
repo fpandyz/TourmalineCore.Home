@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHidden';
-import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
-import { FormTechnologyModal } from '../FormTechnologyModal/FormTechnologyModal';
+import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 import { TechnologyPageAnchorLink } from '../../common/enums';
 import { usePath } from '../../common/hooks';
+import { FormModal } from '../FormModal/FormModal';
 
 export function Cta() {
   const {
@@ -26,16 +25,23 @@ export function Cta() {
       <div className="container cta__wrapper">
         <div className={`cta__inner cta__inner--${slicePathname}`}>
           <h2 className="title-technology-type-1 cta__title">{t(`title`)}</h2>
-          <PrimaryButton
+          <a
+            href="mailto:contact@tourmalinecore.com"
+            className={`cta__button cta__button--${slicePathname}`}
+          >
+            {t(`buttonText`)}
+          </a>
+          {/* Todo: uncomment after editing the form */}
+          {/* <PrimaryButton
             onClick={() => setIsOpen(true)}
             className={`cta__button cta__button--${slicePathname}`}
           >
             {t(`buttonText`)}
-          </PrimaryButton>
+          </PrimaryButton> */}
           <div className="cta__image" />
         </div>
       </div>
-      {isOpen && <FormTechnologyModal setIsOpen={setIsOpen} />}
+      {isOpen && <FormModal setIsOpen={setIsOpen} />}
     </section>
   );
 }

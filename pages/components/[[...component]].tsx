@@ -17,6 +17,7 @@ import { FormBlockRedesign } from "../../components/redesign/FormBlockRedesign/F
 import { ComponentName } from "../../common/enums";
 import { Cookie } from "../../components/Cookie/Cookie";
 import { CustomError } from "../../components/redesign/CustomError/CustomError";
+import { FormModal } from "../../components/FormModal/FormModal";
 import { HeaderRedesign } from "../../components/redesign/HeaderRedesign/HeaderRedesign";
 import { HeaderPopup } from "../../components/redesign/HeaderRedesign/components/HeaderPopup/HeaderPopup";
 import { HeaderRedesignProps } from "../../common/types";
@@ -176,6 +177,25 @@ export default function ComponentsPage() {
     );
   }
 
+  if (componentName === ComponentName.FORM_MODAL) {
+    return (
+      <FormModal
+        setIsOpen={() => {}}
+        testId="form-modal"
+      />
+    );
+  }
+
+  if (componentName === ComponentName.SUBMITTED_FORM_MODAL) {
+    return (
+      <FormModal
+        setIsOpen={() => {}}
+        testId="submitted-form-modal"
+        initializeIsSubmit
+      />
+    );
+  }
+
   return (
     <div className="components-page container-redesign">
       <h2 className="components-page__subtitle">
@@ -233,6 +253,12 @@ export default function ComponentsPage() {
         </li>
         <li className="components-page__item">
           <Link href={ComponentName.COOKIE}>Cookie</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.FORM_MODAL}>Form Modal</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.SUBMITTED_FORM_MODAL}>Submitted Form Modal</Link>
         </li>
       </ul>
     </div>

@@ -50,6 +50,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `footerRedesign`,
       `pageNotFound`,
       `cookie`,
+      `formBlockRedesign`,
     ])),
   },
 });
