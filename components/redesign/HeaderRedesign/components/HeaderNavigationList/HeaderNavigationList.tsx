@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { useState } from "react";
 import { HeaderAccordion } from "../HeaderAccordion/HeaderAccordion";
 import { HeaderRedesignProps } from "../../../../../common/types";
+import { useDeviceSize } from "../../../../../common/hooks";
 
 export function HeaderNavigationList({
   className,
@@ -11,6 +12,10 @@ export function HeaderNavigationList({
   className?: string;
   navigationList: HeaderRedesignProps["navigationLists"];
 }) {
+  const {
+    isTabletXl,
+  } = useDeviceSize();
+
   const [openId, setOpenId] = useState<number | null>(null);
 
   const handleToggle = (id: number) => {
@@ -27,14 +32,29 @@ export function HeaderNavigationList({
       <ul className="header-navigation-list__list">
         {navigationList.map((el) => (el.navItems.length > 0 ? (
           <li
-            className="header-navigation-list__list-item"
+            className={clsx(
+              `header-navigation-list__list-item`,
+              {
+                'header-navigation-list__list-item--is-open': openId === el.id,
+              },
+            )}
             key={el.id}
+            {...(!isTabletXl ? {
+              onClick: () => handleToggle(el.id),
+            } : {
+              onMouseEnter: () => setOpenId(el.id),
+              onMouseLeave: () => setOpenId(null),
+              onFocus: () => setOpenId(el.id),
+              onBlurCapture: (e) => {
+                if (!(e.currentTarget as HTMLElement).contains(e.relatedTarget as Node)) {
+                  setOpenId(null);
+                }
+              },
+            })}
           >
             <HeaderAccordion
               className="header-navigation-list__accordion"
               navigationItems={el}
-              isOpen={openId === el.id}
-              onToggle={handleToggle}
             />
           </li>
         ) : (

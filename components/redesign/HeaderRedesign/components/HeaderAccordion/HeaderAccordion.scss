@@ -1,6 +1,4 @@
 .header-accordion {
-  $this: &;
-
   position: relative;
 
   &__button {
@@ -41,14 +39,10 @@
       width: 16px;
       height: 16px;
     }
-
-    &--open {
-      transform: rotate(-0.5turn);
-    }
   }
 
   &__list-wrapper {
-    display: flex;
+    display: none;
     padding-top: 16px;
     padding-bottom: 16px;
     width: 100%;
@@ -141,19 +135,6 @@
 
     @include tablet-xl {
       color: $color-white;
-    }
-  }
-
-  @include tablet-xl {
-    &:focus-within,
-    &:hover {
-      #{$this}__arrow {
-        transform: rotate(-0.5turn);
-      }
-
-      #{$this}__list-wrapper {
-        display: flex;
-      }
     }
   }
 

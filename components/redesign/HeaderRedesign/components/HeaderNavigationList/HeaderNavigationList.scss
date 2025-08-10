@@ -15,6 +15,26 @@
       display: flex;
       align-items: center;
     }
+
+    &--is-open .header-accordion__arrow {
+      transform: rotate(-0.5turn);
+    }
+
+    &--is-open .header-accordion__list-wrapper {
+      display: flex;
+    }
+  }
+
+  &__accordion {
+    @include tablet-xl {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+
+    @include desktop-xl {
+      padding-right: 24px;
+      padding-left: 24px;
+    }
   }
 
   &__link {

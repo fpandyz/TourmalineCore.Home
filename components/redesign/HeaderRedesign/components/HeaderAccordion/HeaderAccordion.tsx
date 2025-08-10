@@ -7,16 +7,11 @@ import { useDeviceSize, useOnScrollDirections } from '../../../../../common/hook
 export function HeaderAccordion({
   className,
   navigationItems,
-  isOpen,
-  onToggle,
 }: {
   className?: string;
   navigationItems: HeaderNavigationItem;
-  isOpen: boolean;
-  onToggle: (id: number) => void;
 }) {
   const {
-    id,
     name,
     navItems,
   } = navigationItems;
@@ -46,25 +41,17 @@ export function HeaderAccordion({
         className="header-accordion__button"
         data-testid="header-accordion-button"
         type="button"
-        {...(!isTabletXl && {
-          onClick: () => onToggle(id),
-        })}
       >
         <span className="header-accordion__label">
           {name}
         </span>
         <IconDownArrow
-          className={clsx(
-            `header-accordion__arrow`,
-            {
-              'header-accordion__arrow--open': isOpen,
-            },
-          )}
+          className="header-accordion__arrow"
           aria-hidden="true"
         />
       </button>
 
-      {(isTabletXl || isOpen) && isScrollUp && (
+      {isScrollUp && (
         <div
           className={clsx(
             `header-accordion__list-wrapper`,
