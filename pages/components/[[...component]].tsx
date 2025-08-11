@@ -94,7 +94,8 @@ export default function ComponentsPage() {
         socialLinks={headerRedesignTranslation(`socialLinks`, {
           returnObjects: true,
         })}
-        setIsModalOpen={() => {}}
+        // ToDo: uncomment after editing the form
+        // setIsModalOpen={() => {}}
       />
     );
   }

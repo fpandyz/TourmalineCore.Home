@@ -81,14 +81,6 @@
     transition: all 0.3s ease-in-out;
   }
 
-  &__button {
-    display: none;
-
-    @include tablet-xl {
-      display: block;
-    }
-  }
-
   @include desktop-xl {
     padding: 24px 0;
   }
