@@ -155,36 +155,33 @@
 
   &__footer {
     position: relative;
-    margin-top: 32px;
+    margin-top: 12px;
     width: 100%;
 
-    @include desktop {
-      margin-top: 24px;
-    }
-
     @include desktop-xl {
-      margin-top: 32px;
+      margin-top: 16px;
     }
   }
 
   &__consent {
     @include body-s;
 
-    margin-top: 12px;
-    text-align: center;
+    display: flex;
+    margin-top: 32px;
+    gap: 8px;
 
-    @include tablet {
-      margin: 12px auto 0;
-      max-width: 436px;
-    }
-
-    @include tablet-xl {
-      max-width: unset;
+    @include desktop {
+      margin-top: 24px;
     }
 
     @include desktop-xl {
-      margin-top: 16px;
+      gap: 16px;
     }
+  }
+
+  &__consent-checkbox {
+    flex-shrink: 0;
+    margin-top: 2px;
   }
 
   &__consent-link {

@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { FormEvent, useMemo, useState } from 'react';
 
 import { SmartCaptcha } from '@yandex/smart-captcha';
-import { ExternalLink } from '../ExternalLink/ExternalLink';
 import { Input } from './components/Input/Input';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { Textarea } from './components/Textarea/Textarea';
@@ -12,6 +11,7 @@ import { Spinner } from '../Spinner/Spinner';
 import { isChineseLanguage } from '../../common/utils';
 import { validateCaptchaToken } from '../../services/smartCaptchaService/validateCaptchaToken';
 import { DEFAULT_LOCALE } from '../../common/constants';
+import { CheckBox } from '../Checkbox/Checkbox';
 
 export function Form({
   onSubmit = () => {},
@@ -80,6 +80,42 @@ export function Form({
         description={t(`message.description`)}
       />
 
+      <div className="form__consent">
+        <CheckBox
+          className="form__consent-checkbox"
+          required
+        />
+        <div className="form__consent-text">
+          <Trans
+            i18nKey="formBlock:consentText"
+            components={{
+              personalData: <a
+                className="form__consent-link"
+                href={`/documents/policy-${routerLocale}.pdf#page=4`}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={
+                  routerLocale === `ru`
+                    ? `согласие на обработку персональных данных`
+                    : `processing of personal data`
+                }
+              />,
+              privacyPolicy: <a
+                className="form__consent-link"
+                href={`/documents/policy-${routerLocale}.pdf`}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={
+                  routerLocale === `ru`
+                    ? `политика конфиденциальности`
+                    : `privacy policy`
+                }
+              />,
+            }}
+          />
+        </div>
+      </div>
+
       <div className="form__footer">
         <PrimaryButton
           type="submit"
@@ -91,21 +127,6 @@ export function Form({
               : t(`buttonText`)
           }
         </PrimaryButton>
-        <div className="form__approval">
-          <Trans
-            i18nKey="form:recaptchaText"
-            components={{
-              privacyLink: <ExternalLink
-                target="_blank"
-                href="https://policies.google.com/privacy"
-              />,
-              termsLink: <ExternalLink
-                target="_blank"
-                href="https://policies.google.com/terms"
-              />,
-            }}
-          />
-        </div>
         {showCaptcha && (
           <div className="form__captcha">
             <SmartCaptcha

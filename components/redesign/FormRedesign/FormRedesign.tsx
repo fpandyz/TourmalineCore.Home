@@ -16,6 +16,7 @@ import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign
 import { Spinner } from '../../Spinner/Spinner';
 import { validateCaptchaToken } from '../../../services/smartCaptchaService/validateCaptchaToken';
 import { DEFAULT_LOCALE } from '../../../common/constants';
+import { CheckBox } from '../../Checkbox/Checkbox';
 
 export function FormRedesign({
   onSubmit,
@@ -144,6 +145,41 @@ export function FormRedesign({
               className="form-redesign__input"
               description={t(`message.description`)}
             />
+            <div className="form-redesign__consent">
+              <CheckBox
+                className="form-redesign__consent-checkbox"
+                required
+              />
+              <div className="form-redesign__consent-text">
+                <Trans
+                  i18nKey="formBlockRedesign:consentText"
+                  components={{
+                    personalData: <a
+                      className="form-redesign__consent-link"
+                      href={`/documents/policy-${locale}.pdf#page=4`}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={
+                        locale === `ru`
+                          ? `согласие на обработку персональных данных`
+                          : `processing of personal data`
+                      }
+                    />,
+                    privacyPolicy: <a
+                      className="form-redesign__consent-link"
+                      href={`/documents/policy-${locale}.pdf`}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={
+                        locale === `ru`
+                          ? `политика конфиденциальности`
+                          : `privacy policy`
+                      }
+                    />,
+                  }}
+                />
+              </div>
+            </div>
           </>
         )
       }
@@ -172,28 +208,7 @@ export function FormRedesign({
             </button>
           )
         }
-        {
-          !isSubmit && (
-            <div className="form-redesign__consent">
-              <Trans
-                i18nKey="formBlockRedesign:consentText"
-                components={{
-                  bolt: <a
-                    className="form-redesign__consent-link"
-                    href={`/documents/policy-${locale}.pdf`}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={
-                      locale === `ru`
-                        ? `согласие на обработку персональных данных`
-                        : `processing of personal data`
-                    }
-                  />,
-                }}
-              />
-            </div>
-          )
-        }
+
         {showCaptcha && (
           <div className="form-redesign__captcha">
             <SmartCaptcha
