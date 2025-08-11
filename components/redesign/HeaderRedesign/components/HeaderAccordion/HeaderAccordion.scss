@@ -1,5 +1,6 @@
 .header-accordion {
   position: relative;
+  cursor: pointer;
 
   &__button {
     @include body-m;
@@ -118,6 +119,10 @@
       padding-top: 0;
       padding-bottom: 0;
       max-width: 224px;
+    }
+
+    @include desktop-xl {
+      max-width: 246px;
     }
   }
 
