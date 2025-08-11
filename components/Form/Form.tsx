@@ -84,6 +84,11 @@ export function Form({
         <CheckBox
           className="form__consent-checkbox"
           required
+          aria-label={
+            router.locale === `ru`
+              ? `согласие на обработку персональных данных`
+              : `processing of personal data`
+          }
         />
         <div className="form__consent-text">
           <Trans

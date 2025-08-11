@@ -149,6 +149,11 @@ export function FormRedesign({
               <CheckBox
                 className="form-redesign__consent-checkbox"
                 required
+                aria-label={
+                  locale === `ru`
+                    ? `согласие на обработку персональных данных`
+                    : `processing of personal data`
+                }
               />
               <div className="form-redesign__consent-text">
                 <Trans
