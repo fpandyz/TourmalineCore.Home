@@ -155,8 +155,9 @@ export function FormRedesign({
               type="button"
               onClick={() => {
                 if (isModal) {
-                  onCloseModal();
+                  onCloseModal?.();
                 }
+                
                 setIsSubmit(false);
               }}
             >
