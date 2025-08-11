@@ -11,6 +11,8 @@ import { Stack } from '../../components/Stack/Stack';
 import { Payment } from '../../components/Payment/Payment';
 import { Cooperation } from '../../components/Cooperation/Cooperation';
 import { ServicesTechnology } from '../../components/ServicesTechnology/ServicesTechnology';
+import { TechnologyPageAnchorLink } from '../../common/enums';
+import { FormBlock } from '../../components/FormBlock/FormBlock';
 
 export default function QAPage() {
   const {
@@ -42,10 +44,10 @@ export default function QAPage() {
         <Payment />
         <Cooperation />
         <ServicesTechnology />
-        {/* <FormBlock
+        <FormBlock
           id={TechnologyPageAnchorLink.Contact}
           buttonClassName="qa__form-button"
-        /> */}
+        />
       </Layout>
     </>
   );

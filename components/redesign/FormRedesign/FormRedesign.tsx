@@ -1,5 +1,10 @@
 import { Trans, useTranslation } from 'next-i18next';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import {
+  ChangeEvent,
+  FormEvent,
+  useMemo,
+  useState,
+} from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,17 +15,20 @@ import { InputRedesign } from './components/InputRedesign/InputRedesign';
 import { TextareaRedesign } from './components/TextareaRedesign/TextareaRedesign';
 import { Spinner } from '../../Spinner/Spinner';
 import { validateCaptchaToken } from '../../../services/smartCaptchaService/validateCaptchaToken';
+import { DEFAULT_LOCALE } from '../../../common/constants';
 
 export function FormRedesign({
   onSubmit,
   isSubmit,
   setIsSubmit,
   isModal,
+  onCloseModal,
 } : {
   onSubmit: (formData: FormData) => unknown;
   isSubmit: boolean;
   setIsSubmit: (value: boolean) => void;
   isModal?: boolean;
+  onCloseModal?: () => void;
 }) {
   const {
     t,
@@ -32,6 +40,14 @@ export function FormRedesign({
 
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState(``);
+
+  const routerLocale = useMemo(() => {
+    if (!locale) {
+      return DEFAULT_LOCALE;
+    }
+
+    return locale;
+  }, [locale]);
 
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
@@ -137,7 +153,12 @@ export function FormRedesign({
             <button
               className="form-redesign__featured-button"
               type="button"
-              onClick={() => setIsSubmit(false)}
+              onClick={() => {
+                if (isModal) {
+                  onCloseModal();
+                }
+                setIsSubmit(false);
+              }}
             >
               {isModal ? buttonSubmittedLabelModal : buttonSubmittedLabel}
             </button>
@@ -172,16 +193,16 @@ export function FormRedesign({
             </div>
           )
         }
+        {showCaptcha && (
+          <div className="form-redesign__captcha">
+            <SmartCaptcha
+              sitekey={process.env.NEXT_PUBLIC_SMARTCAPTCHA_CLIENT_KEY as string}
+              language={routerLocale as 'ru' | 'en'}
+              onSuccess={handleCaptchaSuccess}
+            />
+          </div>
+        )}
       </div>
-
-      {showCaptcha && (
-        <div className="form-redesign__captcha">
-          <SmartCaptcha
-            sitekey={process.env.NEXT_PUBLIC_SMARTCAPTCHA_CLIENT_KEY as string}
-            onSuccess={handleCaptchaSuccess}
-          />
-        </div>
-      )}
     </form>
   );
 
@@ -233,7 +254,7 @@ export function FormRedesign({
 
       const formData = new FormData(event.target as HTMLFormElement);
 
-      onSubmit(formData);
+      await onSubmit(formData);
 
       setIsCaptchaVerified(false);
     } finally {

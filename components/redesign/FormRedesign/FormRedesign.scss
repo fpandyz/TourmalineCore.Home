@@ -1,7 +1,6 @@
 .form-redesign {
   $this: &;
 
-  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -155,6 +154,7 @@
   }
 
   &__footer {
+    position: relative;
     margin-top: 32px;
     width: 100%;
 
@@ -196,7 +196,8 @@
 
   &__captcha {
     position: absolute;
-    transform: translate(0, -20%);
+    left: 0;
+    top: 0;
   }
 
   &.is-modal {

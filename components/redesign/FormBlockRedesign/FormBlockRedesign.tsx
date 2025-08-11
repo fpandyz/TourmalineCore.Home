@@ -11,10 +11,12 @@ export function FormBlockRedesign({
   initializeIsSubmit = false,
   testId,
   isModal,
+  onCloseModal,
 }: {
   initializeIsSubmit?: boolean;
   testId?: string;
   isModal?: boolean;
+  onCloseModal?: () => void;
 }) {
   const {
     t,
@@ -42,6 +44,7 @@ export function FormBlockRedesign({
                         isSubmit={isSubmit}
                         setIsSubmit={setIsSubmit}
                         isModal={isModal}
+                        onCloseModal={onCloseModal}
                       />
                     </div>
                     <div className="form-block-redesign__aside">
@@ -70,6 +73,7 @@ export function FormBlockRedesign({
                       isSubmit={isSubmit}
                       setIsSubmit={setIsSubmit}
                       isModal={isModal}
+                      onCloseModal={onCloseModal}
                     />
                   </div>
                 )

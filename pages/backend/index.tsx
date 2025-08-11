@@ -10,6 +10,8 @@ import { Cta } from '../../components/Cta/Cta';
 import { Payment } from '../../components/Payment/Payment';
 import { Cooperation } from '../../components/Cooperation/Cooperation';
 import { ServicesTechnology } from '../../components/ServicesTechnology/ServicesTechnology';
+import { TechnologyPageAnchorLink } from '../../common/enums';
+import { FormBlock } from '../../components/FormBlock/FormBlock';
 
 export default function BackendPage() {
   const {
@@ -40,10 +42,10 @@ export default function BackendPage() {
         <Payment />
         <Cooperation />
         <ServicesTechnology />
-        {/* <FormBlock
+        <FormBlock
           id={TechnologyPageAnchorLink.Contact}
           buttonClassName="backend__form-button"
-        /> */}
+        />
       </Layout>
     </>
   );

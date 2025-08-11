@@ -28,20 +28,13 @@ export function HeroBlockTechnology() {
         <div className="hero-block-technology__inner">
           <h1 className="hero-block-technology__title">{t(`title`)}</h1>
           <h2 className="hero-block-technology__description">{t(`description`)}</h2>
-          {/* Todo: uncomment after editing the form */}
-          {/* <button
+          <button
             type="button"
             onClick={() => setIsOpen(true)}
             className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}
           >
             <span className="hero-block-technology__button-text">{t(`buttonText`)}</span>
-          </button> */}
-          <a
-            href="mailto:contact@tourmalinecore.com"
-            className={`hero-block-technology__button hero-block-technology__button--${slicePathname}`}
-          >
-            <span className="hero-block-technology__button-text">{t(`buttonText`)}</span>
-          </a>
+          </button>
         </div>
         <picture className="hero-block-technology__image">
           <source
