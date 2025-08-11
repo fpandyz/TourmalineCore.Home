@@ -3,6 +3,7 @@ import {
   ChangeEvent,
   FormEvent,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 import clsx from 'clsx';
@@ -39,8 +40,13 @@ export function FormRedesign({
     locale,
   } = useRouter();
 
+  const submitButtonRef = useRef<HTMLButtonElement>(null);
+
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState(``);
+
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
 
   const routerLocale = useMemo(() => {
     if (!locale) {
@@ -49,9 +55,6 @@ export function FormRedesign({
 
     return locale;
   }, [locale]);
-
-  const [showCaptcha, setShowCaptcha] = useState(false);
-  const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
 
   const {
     nameLabel,
@@ -206,6 +209,7 @@ export function FormRedesign({
             </button>
           ) : (
             <button
+              ref={submitButtonRef}
               className="form-redesign__featured-button"
               type="submit"
             >
@@ -261,6 +265,10 @@ export function FormRedesign({
     }
 
     setShowCaptcha(false);
+
+    if (submitButtonRef.current) {
+      submitButtonRef.current.focus();
+    }
   }
 
   async function handleFormSubmit(event: FormEvent) {

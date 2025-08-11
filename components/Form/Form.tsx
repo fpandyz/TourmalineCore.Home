@@ -1,7 +1,12 @@
 import clsx from 'clsx';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import { FormEvent, useMemo, useState } from 'react';
+import {
+  FormEvent,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 import { SmartCaptcha } from '@yandex/smart-captcha';
 import { Input } from './components/Input/Input';
@@ -25,7 +30,12 @@ export function Form({
   } = useTranslation(`form`);
   const router = useRouter();
 
+  const submitButtonRef = useRef<HTMLButtonElement>(null);
+
   const [isLoading, setIsLoading] = useState(false);
+
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
 
   const routerLocale = useMemo(() => {
     if (!router.locale) {
@@ -34,9 +44,6 @@ export function Form({
 
     return router.locale;
   }, [router.locale]);
-
-  const [showCaptcha, setShowCaptcha] = useState(false);
-  const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
 
   return (
     <form
@@ -124,6 +131,7 @@ export function Form({
       <div className="form__footer">
         <PrimaryButton
           type="submit"
+          ref={submitButtonRef}
           className={clsx(`form__button`, buttonClassName)}
         >
           {
@@ -153,6 +161,10 @@ export function Form({
     }
 
     setShowCaptcha(false);
+
+    if (submitButtonRef.current) {
+      submitButtonRef.current.focus();
+    }
   }
 
   async function handleFormSubmit(event: FormEvent) {
