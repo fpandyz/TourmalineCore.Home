@@ -11,6 +11,12 @@ export function CheckBox({
     <input
       className={clsx(`checkbox`, className)}
       type="checkbox"
+      onKeyDown={(e) => {
+        if (e.key === `Enter`) {
+          e.preventDefault();
+          e.target.checked = !e.target.checked;
+        }
+      }}
       {...props}
     />
   );
