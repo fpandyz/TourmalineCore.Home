@@ -2,6 +2,7 @@ import { Trans, useTranslation } from 'next-i18next';
 import {
   ChangeEvent,
   FormEvent,
+  KeyboardEvent,
   useMemo,
   useRef,
   useState,
@@ -90,22 +91,18 @@ export function FormRedesign({
         {isSubmit ? `${titleSubmitted}` : t(`title`)}
       </h2>
       {
-        isSubmit
-          && (
-            <p className="form-redesign__description">
-              {description}
-              <Link
-                className="form-redesign__contact-link"
-                href={t(`contactLink`)}
-                target="_blank"
-              >
-                {t(`contactLinkText`)}
-              </Link>
-            </p>
-          )
-      }
-      {
-        !isSubmit && (
+        isSubmit ? (
+          <p className="form-redesign__description">
+            {description}
+            <Link
+              className="form-redesign__contact-link"
+              href={t(`contactLink`)}
+              target="_blank"
+            >
+              {t(`contactLinkText`)}
+            </Link>
+          </p>
+        ) : (
           <p className="form-redesign__description">
             {t(`description`)}
           </p>
@@ -119,11 +116,7 @@ export function FormRedesign({
               name="name"
               className="form-redesign__input"
               label={nameLabel}
-              onKeyDown={(e) => {
-                if (e.key === `Enter`) {
-                  e.preventDefault();
-                }
-              }}
+              onKeyDown={handleOnKeyDown}
               required
             />
             <InputRedesign
@@ -134,11 +127,7 @@ export function FormRedesign({
               type="email"
               value={email}
               onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === `Enter`) {
-                  e.preventDefault();
-                }
-              }}
+              onKeyDown={handleOnKeyDown}
               required
             />
             <TextareaRedesign
@@ -222,7 +211,6 @@ export function FormRedesign({
           <div className="form-redesign__captcha">
             <SmartCaptcha
               sitekey={process.env.NEXT_PUBLIC_SMARTCAPTCHA_CLIENT_KEY as string}
-              language={routerLocale as 'ru' | 'en'}
               onSuccess={handleCaptchaSuccess}
             />
           </div>
@@ -288,6 +276,12 @@ export function FormRedesign({
       setIsCaptchaVerified(false);
     } finally {
       setIsLoading(false);
+    }
+  }
+
+  function handleOnKeyDown(e: KeyboardEvent<HTMLInputElement>) {
+    if (e.key === `Enter`) {
+      e.preventDefault();
     }
   }
 }

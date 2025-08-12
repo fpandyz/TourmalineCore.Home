@@ -5,6 +5,7 @@ import {
   FormEvent,
   useMemo,
   useRef,
+  KeyboardEvent,
   useState,
 } from 'react';
 
@@ -58,11 +59,7 @@ export function Form({
         className="form__input"
         label={t(`name.label`)}
         description={t(`name.description`)}
-        onKeyDown={(e) => {
-          if (e.key === `Enter`) {
-            e.preventDefault();
-          }
-        }}
+        onKeyDown={handleOnKeyDown}
         required
       />
       <Input
@@ -72,11 +69,7 @@ export function Form({
         label={t(`email.label`)}
         description={t(`email.description`)}
         type="email"
-        onKeyDown={(e) => {
-          if (e.key === `Enter`) {
-            e.preventDefault();
-          }
-        }}
+        onKeyDown={handleOnKeyDown}
         required
       />
       <Textarea
@@ -144,7 +137,6 @@ export function Form({
           <div className="form__captcha">
             <SmartCaptcha
               sitekey={process.env.NEXT_PUBLIC_SMARTCAPTCHA_CLIENT_KEY as string}
-              language={routerLocale as 'ru' | 'en'}
               onSuccess={handleCaptchaSuccess}
             />
           </div>
@@ -184,6 +176,12 @@ export function Form({
       setIsCaptchaVerified(false);
     } finally {
       setIsLoading(false);
+    }
+  }
+
+  function handleOnKeyDown(e: KeyboardEvent<HTMLInputElement>) {
+    if (e.key === `Enter`) {
+      e.preventDefault();
     }
   }
 }
