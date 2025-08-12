@@ -137,6 +137,7 @@ export function Form({
           <div className="form__captcha">
             <SmartCaptcha
               sitekey={process.env.NEXT_PUBLIC_SMARTCAPTCHA_CLIENT_KEY as string}
+              language={routerLocale === `ru` ? `ru` : `en`}
               onSuccess={handleCaptchaSuccess}
             />
           </div>
