@@ -12,7 +12,7 @@ import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/Projec
 import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
 import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { useDeviceSize } from '../common/hooks';
+import { useDeviceSize, useIsRussianCountry } from '../common/hooks';
 import { FormBlockRedesign } from '../components/redesign/FormBlockRedesign/FormBlockRedesign';
 
 export default function HomePage() {
@@ -23,6 +23,8 @@ export default function HomePage() {
   const {
     isTablet,
   } = useDeviceSize();
+
+  const isCountryRus = useIsRussianCountry();
 
   return (
     <>
@@ -57,7 +59,7 @@ export default function HomePage() {
         />
         {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
         {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
-        <FormBlockRedesign />
+        {isCountryRus && <FormBlockRedesign />}
         <CollageWithTitleRedesign />
         <SignpostMultipleRedesign
           translationKey="conferenceSignpostsRedesign"

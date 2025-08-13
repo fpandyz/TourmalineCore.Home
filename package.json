@@ -22,6 +22,7 @@
     "@yandex/smart-captcha": "^2.8.0",
     "clsx": "^2.1.1",
     "cookies-next": "^6.0.0",
+    "coordinate_to_country": "^1.1.0",
     "gitalk": "^1.7.2",
     "moment": "^2.29.4",
     "next": "^15.3.2",

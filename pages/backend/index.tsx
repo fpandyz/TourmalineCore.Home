@@ -12,11 +12,14 @@ import { Cooperation } from '../../components/Cooperation/Cooperation';
 import { ServicesTechnology } from '../../components/ServicesTechnology/ServicesTechnology';
 import { TechnologyPageAnchorLink } from '../../common/enums';
 import { FormBlock } from '../../components/FormBlock/FormBlock';
+import { useIsRussianCountry } from '../../common/hooks';
 
 export default function BackendPage() {
   const {
     t,
   } = useTranslation(`common`);
+
+  const isCountryRus = useIsRussianCountry();
 
   return (
     <>
@@ -42,10 +45,12 @@ export default function BackendPage() {
         <Payment />
         <Cooperation />
         <ServicesTechnology />
-        <FormBlock
-          id={TechnologyPageAnchorLink.Contact}
-          buttonClassName="backend__form-button"
-        />
+        {isCountryRus && (
+          <FormBlock
+            id={TechnologyPageAnchorLink.Contact}
+            buttonClassName="backend__form-button"
+          />
+        )}
       </Layout>
     </>
   );

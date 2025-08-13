@@ -15,11 +15,14 @@ import { Cooperation } from '../../components/Cooperation/Cooperation';
 import { ServicesTechnology } from '../../components/ServicesTechnology/ServicesTechnology';
 import { TechnologyPageAnchorLink } from '../../common/enums';
 import { FormBlock } from '../../components/FormBlock/FormBlock';
+import { useIsRussianCountry } from '../../common/hooks';
 
 export default function DesignPage() {
   const {
     t,
   } = useTranslation(`common`);
+
+  const isCountryRus = useIsRussianCountry();
 
   return (
     <>
@@ -48,10 +51,12 @@ export default function DesignPage() {
         <Payment />
         <Cooperation />
         <ServicesTechnology />
-        <FormBlock
-          id={TechnologyPageAnchorLink.Contact}
-          buttonClassName="design__form-button"
-        />
+        {isCountryRus && (
+          <FormBlock
+            id={TechnologyPageAnchorLink.Contact}
+            buttonClassName="design__form-button"
+          />
+        )}
       </Layout>
     </>
   );
