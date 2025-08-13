@@ -41,9 +41,7 @@ function MyApp({
         />
         <title>Tourmaline Core</title>
       </Head>
-
       <Cookie />
-
       <Component {...pageProps} />
     </>
   );

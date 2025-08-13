@@ -6,10 +6,12 @@
 
 .body--scroll-hidden {
   overflow: hidden;
+  scrollbar-gutter: stable;
 }
 
 html,
 body {
+  overflow-x: hidden;
   margin: 0;
   height: 100%;
   box-sizing: border-box;
@@ -57,10 +59,6 @@ body {
     height: 56px;
     background-color: #838389;
   }
-}
-
-body {
-  overflow-x: hidden;
 }
 
 code {
@@ -161,5 +159,15 @@ a {
     border-radius: 5px;
     height: 1px;
     background-image: linear-gradient(90.09deg, #e977f6 0.08%, #a2a6ee 99.85%);
+  }
+}
+
+@keyframes showSmoothАppearance {
+  0% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }

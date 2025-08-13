@@ -18,11 +18,18 @@ import { ComponentName } from "../../common/enums";
 import { Cookie } from "../../components/Cookie/Cookie";
 import { CustomError } from "../../components/redesign/CustomError/CustomError";
 import { FormModal } from "../../components/FormModal/FormModal";
+import { HeaderRedesign } from "../../components/redesign/HeaderRedesign/HeaderRedesign";
+import { HeaderPopup } from "../../components/redesign/HeaderRedesign/components/HeaderPopup/HeaderPopup";
+import { HeaderRedesignProps } from "../../common/types";
 
 export default function ComponentsPage() {
   const {
     t: pageNotFoundTranslation,
   } = useTranslation(`pageNotFound`);
+
+  const {
+    t: headerRedesignTranslation,
+  } = useTranslation(`headerRedesign`);
 
   const router = useRouter();
   const {
@@ -49,6 +56,48 @@ export default function ComponentsPage() {
 
   if (componentName === ComponentName.HERO) {
     return <HeroRedesign />;
+  }
+
+  if (componentName === ComponentName.HEADER) {
+    return (
+      <HeaderRedesign
+        navigationLists={headerRedesignTranslation(`navigationLists`, {
+          returnObjects: true,
+        })}
+        button={headerRedesignTranslation(`button`, {
+          returnObjects: true,
+        })}
+        email={headerRedesignTranslation(`email`, {
+          returnObjects: true,
+        })}
+        socialLinks={headerRedesignTranslation(`socialLinks`, {
+          returnObjects: true,
+        })}
+      />
+    );
+  }
+
+  if (componentName === ComponentName.HEADER_POPUP) {
+    const buttonLabel: HeaderRedesignProps["button"] = headerRedesignTranslation(`button`, {
+      returnObjects: true,
+    });
+
+    return (
+      <HeaderPopup
+        navigationList={headerRedesignTranslation(`navigationLists`, {
+          returnObjects: true,
+        })}
+        buttonLabel={buttonLabel.label}
+        email={headerRedesignTranslation(`email`, {
+          returnObjects: true,
+        })}
+        socialLinks={headerRedesignTranslation(`socialLinks`, {
+          returnObjects: true,
+        })}
+        // ToDo: uncomment after editing the form
+        // setIsModalOpen={() => {}}
+      />
+    );
   }
 
   if (componentName === ComponentName.PROJECTS_WITH_FOUR_CARDS) {
@@ -177,6 +226,12 @@ export default function ComponentsPage() {
           <Link href={ComponentName.HERO}>Hero</Link>
         </li>
         <li className="components-page__item">
+          <Link href={ComponentName.HEADER}>Header</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.HEADER_POPUP}>Header popup</Link>
+        </li>
+        <li className="components-page__item">
           <Link href={ComponentName.PROJECTS_WITH_FOUR_CARDS}>Projects with four cards</Link>
         </li>
         <li className="components-page__item">
@@ -228,6 +283,7 @@ export const getStaticProps: GetStaticProps = async ({
       `collageWithLinkRedesign`,
       `collageWithTitleRedesign`,
       `footerRedesign`,
+      `headerRedesign`,
       `heroRedesign`,
       `projectsRedesignFirstSection`,
       `projectsRedesignSecondarySection`,

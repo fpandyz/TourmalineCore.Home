@@ -13,6 +13,7 @@ import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWi
 import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
 import { useDeviceSize } from '../common/hooks';
+import { HeaderRedesignProps } from '../common/types';
 
 export default function HomePage() {
   const {
@@ -22,6 +23,25 @@ export default function HomePage() {
   const {
     isTablet,
   } = useDeviceSize();
+
+  const {
+    t: headerTranslations,
+  } = useTranslation(`headerRedesign`);
+
+  const headerContent: HeaderRedesignProps = {
+    navigationLists: headerTranslations(`navigationLists`, {
+      returnObjects: true,
+    }),
+    button: headerTranslations(`button`, {
+      returnObjects: true,
+    }),
+    email: headerTranslations(`email`, {
+      returnObjects: true,
+    }),
+    socialLinks: headerTranslations(`socialLinks`, {
+      returnObjects: true,
+    }),
+  };
 
   return (
     <>
@@ -38,7 +58,9 @@ export default function HomePage() {
         }}
       />
 
-      <LayoutRedesign>
+      <LayoutRedesign
+        headerContent={headerContent}
+      >
         <HeroRedesign />
         <ServicesRedesign targetId="services" />
         <ProjectsWithTextBlockRedesign
@@ -80,6 +102,7 @@ export const getStaticProps: GetServerSideProps = async ({
     ...(await serverSideTranslations(locale as string, [
       `common`,
       `cookie`,
+      `headerRedesign`,
       `footerRedesign`,
       `discussion`,
       `heroRedesign`,
