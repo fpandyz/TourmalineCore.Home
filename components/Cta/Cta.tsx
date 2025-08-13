@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
 import { TechnologyPageAnchorLink } from '../../common/enums';
-import { usePath } from '../../common/hooks';
+import { useIsRussianCountry, usePath } from '../../common/hooks';
 import { FormModal } from '../FormModal/FormModal';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 
 export function Cta() {
   const {
@@ -17,6 +18,8 @@ export function Cta() {
 
   useBodyScrollHidden(isOpen);
 
+  const isCountryRus = useIsRussianCountry();
+
   return (
     <section
       id={TechnologyPageAnchorLink.Cta}
@@ -25,19 +28,22 @@ export function Cta() {
       <div className="container cta__wrapper">
         <div className={`cta__inner cta__inner--${slicePathname}`}>
           <h2 className="title-technology-type-1 cta__title">{t(`title`)}</h2>
-          <a
-            href="mailto:contact@tourmalinecore.com"
-            className={`cta__button cta__button--${slicePathname}`}
-          >
-            {t(`buttonText`)}
-          </a>
-          {/* Todo: uncomment after editing the form */}
-          {/* <PrimaryButton
-            onClick={() => setIsOpen(true)}
-            className={`cta__button cta__button--${slicePathname}`}
-          >
-            {t(`buttonText`)}
-          </PrimaryButton> */}
+          {isCountryRus ? (
+            <PrimaryButton
+              onClick={() => setIsOpen(true)}
+              className={`cta__button cta__button--${slicePathname}`}
+            >
+              {t(`buttonText`)}
+            </PrimaryButton>
+          ) : (
+            <a
+              href="mailto:contact@tourmalinecore.com"
+              className={`cta__button cta__button--${slicePathname}`}
+              role="button"
+            >
+              {t(`buttonText`)}
+            </a>
+          )}
           <div className="cta__image" />
         </div>
       </div>

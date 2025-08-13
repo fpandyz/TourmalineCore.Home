@@ -11,11 +11,13 @@ export function FormBlockRedesign({
   initializeIsSubmit = false,
   testId,
   isModal,
+  onCloseModal,
   isComponentPage,
 }: {
   initializeIsSubmit?: boolean;
   testId?: string;
   isModal?: boolean;
+  onCloseModal?: () => void;
   isComponentPage?: boolean;
 }) {
   const {
@@ -29,7 +31,7 @@ export function FormBlockRedesign({
       className={clsx(`form-block-redesign`, {
         'is-modal': isModal,
       })}
-      data-testid={testId}
+      data-testid={testId || `form-block`}
     >
       <div className="form-block-redesign__wrapper container-redesign">
         <div className="form-block-redesign__inner">
@@ -44,6 +46,7 @@ export function FormBlockRedesign({
                         isSubmit={isSubmit}
                         setIsSubmit={setIsSubmit}
                         isModal={isModal}
+                        onCloseModal={onCloseModal}
                       />
                     </div>
                     <div className="form-block-redesign__aside">
@@ -72,6 +75,7 @@ export function FormBlockRedesign({
                       isSubmit={isSubmit}
                       setIsSubmit={setIsSubmit}
                       isModal={isModal}
+                      onCloseModal={onCloseModal}
                     />
                   </div>
                 )
