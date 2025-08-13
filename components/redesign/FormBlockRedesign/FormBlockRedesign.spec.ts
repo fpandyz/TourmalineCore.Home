@@ -1,4 +1,4 @@
-import { Browser } from '@playwright/test';
+import { Browser, Page } from '@playwright/test';
 import { expect, test } from '../../../playwright-tests/custom-test';
 import { BREAKPOINTS } from '../../../playwright-tests/constants/breakpoints';
 import { AppRoute, ComponentName } from '../../../common/enums';
@@ -24,12 +24,24 @@ test.describe(`FormBlockScreenshotTests`, () => {
       });
     });
   }
+});
 
-  test.describe(`FormDisplayDependingOnGeolocationTests`, () => {
-    test(`FormIsDisplayedInRussiaCountryTest`, formIsDisplayedInRussiaTest);
+test.describe(`FormDisplayDependingOnGeolocationTests`, () => {
+  test(`FormIsDisplayedInRussiaCountryTest`, formIsDisplayedInRussiaTest);
 
-    test(`FormIsNotDisplayedOutsideOfRussia`, formIsNotDisplayedOutsideOfRussia);
+  test(`FormIsNotDisplayedOutsideOfRussia`, formIsNotDisplayedOutsideOfRussia);
+});
+
+test.describe(`SubmitButtonStateBasedOnPrivacyPolicyConsentTests`, () => {
+  test.beforeEach(async ({
+    goToComponentsPage,
+  }) => {
+    await goToComponentsPage(ComponentName.FORM_BLOCK);
   });
+
+  test(`SubmitButtonIsDisabledWithoutConsentTest`, submitButtonIsDisabledWithoutConsentTest);
+
+  test(`SubmitButtonIsEnabledWithConsentTest`, submitButtonIsEnabledWithConsentTest);
 });
 
 async function formIsNotDisplayedOutsideOfRussia({
@@ -79,4 +91,34 @@ async function formIsDisplayedInRussiaTest({
     .toBeVisible();
 
   await browser.close();
+}
+
+async function submitButtonIsDisabledWithoutConsentTest({
+  page,
+}: {
+  page: Page;
+}) {
+  await expect(page.getByTestId(`form-block-consent-checkbox`))
+    .not
+    .toBeChecked();
+
+  await expect(page.getByTestId(`form-block-submit-button`))
+    .toBeDisabled();
+}
+
+async function submitButtonIsEnabledWithConsentTest({
+  page,
+}: {
+  page: Page;
+}) {
+  await expect(page.getByTestId(`form-block-consent-checkbox`))
+    .not
+    .toBeChecked();
+
+  await page.getByTestId(`form-block-consent-checkbox`)
+    .check();
+
+  await expect(page.getByTestId(`form-block-submit-button`))
+    .not
+    .toBeDisabled();
 }
