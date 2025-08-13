@@ -45,6 +45,7 @@ export function FormRedesign({
 
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState(``);
+  const [isConsentAccepted, setIsConsentAccepted] = useState(false);
 
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
@@ -146,6 +147,9 @@ export function FormRedesign({
                     ? `согласие на обработку персональных данных`
                     : `processing of personal data`
                 }
+                data-testid="form-block-consent-checkbox"
+                checked={isConsentAccepted}
+                onChange={() => setIsConsentAccepted(!isConsentAccepted)}
               />
               <div className="form-redesign__consent-text">
                 <Trans
@@ -201,6 +205,8 @@ export function FormRedesign({
               ref={submitButtonRef}
               className="form-redesign__featured-button"
               type="submit"
+              data-testid="form-block-submit-button"
+              disabled={!isConsentAccepted}
             >
               {isLoading ? <Spinner /> : buttonSubmitLabel}
             </button>

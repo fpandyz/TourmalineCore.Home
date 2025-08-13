@@ -143,8 +143,12 @@
       }
     }
 
-    &:hover,
-    &:focus-visible {
+    &:disabled {
+      background-color: $color-grey-500-redesign;
+    }
+
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
       background-color: $color-pink-redesign;
     }
 
