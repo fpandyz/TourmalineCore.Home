@@ -11,10 +11,12 @@ export function FormBlockRedesign({
   initializeIsSubmit = false,
   testId,
   isModal,
+  isComponentPage,
 }: {
   initializeIsSubmit?: boolean;
   testId?: string;
   isModal?: boolean;
+  isComponentPage?: boolean;
 }) {
   const {
     t,
@@ -81,9 +83,11 @@ export function FormBlockRedesign({
   );
 
   async function onFormSubmit(formData: FormData) {
-    const messageSend = getMessageFromForm(formData);
+    if (!isComponentPage) {
+      const messageSend = getMessageFromForm(formData);
 
-    await sendEmail(messageSend);
-    setIsSubmit(true);
+      await sendEmail(messageSend);
+      setIsSubmit(true);
+    }
   }
 }
