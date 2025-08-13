@@ -10,8 +10,8 @@ export async function sendEmail(messageData: {
       body: JSON.stringify({
         to: process.env.NEXT_PUBLIC_TARGET_EMAIL,
         subject: `Text`,
-        message: `Email: ${messageData.email}\nИмя: ${messageData.name}\n\nОписание задачи:\n${messageData.message}`,
-        html: `Email: ${messageData.email}<br/>Имя: ${messageData.name}<br/><br/>Описание задачи:<br/> ${messageData.message}`,
+        message: `Email: ${messageData.email}\nИмя: ${messageData.name}\n\n${messageData.message ? `Описание задачи:\n${messageData.message}` : ``}`,
+        html: `Email: ${messageData.email}<br/>Имя: ${messageData.name}<br/><br/>${messageData.message ? `Описание задачи:<br/>${messageData.message}` : ``}`,
       }),
     });
   } catch (error) {
