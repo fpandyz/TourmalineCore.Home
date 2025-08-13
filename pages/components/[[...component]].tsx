@@ -102,7 +102,10 @@ export default function ComponentsPage() {
 
   if (componentName === ComponentName.FORM_BLOCK) {
     return (
-      <FormBlockRedesign testId="form-block" />
+      <FormBlockRedesign
+        testId="form-block"
+        isComponentPage
+      />
     );
   }
 
@@ -111,6 +114,7 @@ export default function ComponentsPage() {
       <FormBlockRedesign
         initializeIsSubmit
         testId="submitted-form-block"
+        isComponentPage
       />
     );
   }
@@ -135,6 +139,7 @@ export default function ComponentsPage() {
       <FormModal
         setIsOpen={() => {}}
         testId="form-modal"
+        isComponentPage
       />
     );
   }
@@ -145,6 +150,7 @@ export default function ComponentsPage() {
         setIsOpen={() => {}}
         testId="submitted-form-modal"
         initializeIsSubmit
+        isComponentPage
       />
     );
   }
