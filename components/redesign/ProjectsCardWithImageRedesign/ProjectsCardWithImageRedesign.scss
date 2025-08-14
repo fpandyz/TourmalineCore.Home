@@ -102,12 +102,15 @@
     flex-direction: column-reverse;
     text-decoration: none;
 
-    img {
+    img,
+    video {
       transition: transform 0.2s ease-out;
     }
 
     &:hover img,
-    &:focus-visible img {
+    &:hover video,
+    &:focus-visible img,
+    &:focus-visible video {
       transform: scale(1.05);
     }
   }
