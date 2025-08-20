@@ -1,22 +1,19 @@
-import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
-export function CollageWithTitleRedesign() {
-  const {
-    t,
-  } = useTranslation(`collageWithTitleRedesign`);
-
-  const imageUrls: string[] = t(`imageUrls`, {
-    returnObjects: true,
-  });
-
+export function CollageWithTitleRedesign({
+  title,
+  imageUrls,
+}: {
+  title: string;
+  imageUrls: string[];
+}) {
   return (
     <section
       className="collage-with-title-redesign"
       data-testid="collage-with-title"
     >
       <div className="collage-with-title-redesign__wrapper">
-        <h2 className="container-redesign collage-with-title-redesign__title">{t(`title`)}</h2>
+        <h2 className="container-redesign collage-with-title-redesign__title">{title}</h2>
         {imageUrls.map((imageUrl, index) => (
           <div
             key={imageUrl}

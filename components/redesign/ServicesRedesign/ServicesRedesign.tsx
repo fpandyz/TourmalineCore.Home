@@ -1,7 +1,6 @@
-import { useTranslation } from 'next-i18next';
 import { ServicesCardRedesign } from '../ServicesCardRedesign/ServicesCardRedesign';
 
-type NewServicesList = {
+type Service = {
   id: number;
   title?: string;
   skillsList?: string[];
@@ -16,7 +15,7 @@ type TeamsCard = {
   imageUrl: string;
 };
 
-type Teams = {
+type Team = {
   title: string;
   description: string;
   link: string;
@@ -29,24 +28,19 @@ type Teams = {
 };
 
 export function ServicesRedesign({
+  title,
+  services,
+  teamsCard,
+  teams,
   targetId,
 }: {
+  title: string;
+
+  services: Service;
+  teamsCard: TeamsCard;
+  teams: Team;
   targetId?: string;
 }) {
-  const {
-    t,
-  } = useTranslation(`servicesRedesign`);
-
-  const newServicesList: NewServicesList = t(`list`, {
-    returnObjects: true,
-  });
-  const teamsCard: TeamsCard = t(`teamsCard`, {
-    returnObjects: true,
-  });
-  const teams: Teams = t(`teams`, {
-    returnObjects: true,
-  });
-
   return (
     <section
       className="services-redesign"
@@ -58,12 +52,12 @@ export function ServicesRedesign({
       <ul className="services-redesign__cards grid container-redesign">
         <li className="services-redesign__card col-tablet-12 col-tablet-xl-4 col-desktop-3">
           <h2 className="services-redesign__title">
-            {t(`title`)}
+            {title}
           </h2>
         </li>
-        {newServicesList.map(({
+        {services.map(({
           id,
-          title,
+          title: servicesTitle,
           skillsList,
           link,
           linkText,
@@ -75,7 +69,7 @@ export function ServicesRedesign({
             key={id}
           >
             <ServicesCardRedesign
-              title={title}
+              title={servicesTitle}
               skillsList={skillsList}
               link={link}
               linkText={linkText}

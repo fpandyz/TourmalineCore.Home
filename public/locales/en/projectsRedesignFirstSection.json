@@ -1,6 +1,6 @@
 {
   "title": "Projects",
-  "projectsCardsWithImage": [
+  "projectCardsWithImage": [
     {
       "imageUrl": "/images/pelican-en.png",
       "title": "Pelican",

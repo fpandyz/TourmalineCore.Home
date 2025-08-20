@@ -1,6 +1,6 @@
 {
   "title": "Проекты",
-  "projectsCardsWithImage": [
+  "projectCardsWithImage": [
     {
       "imageUrl": "/images/zoo-project.jpg",
       "title": "Pelican",

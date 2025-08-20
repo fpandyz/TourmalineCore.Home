@@ -24,6 +24,30 @@ export default function ComponentsPage() {
     t: pageNotFoundTranslation,
   } = useTranslation(`pageNotFound`);
 
+  const {
+    t: heroTranslation,
+  } = useTranslation(`heroRedesign`);
+
+  const {
+    t: collageWithTitleTranslation,
+  } = useTranslation(`collageWithTitleRedesign`);
+
+  const {
+    t: projectsFirstSectionTranslation,
+  } = useTranslation(`projectsRedesignFirstSection`);
+
+  const {
+    t: projectsSecondarySectionTranslation,
+  } = useTranslation(`projectsRedesignSecondarySection`);
+
+  const {
+    t: projectsThirdSectionTranslation,
+  } = useTranslation(`projectsRedesignThirdSection`);
+
+  const {
+    t: servicesTranslation,
+  } = useTranslation(`servicesRedesign`);
+
   const router = useRouter();
   const {
     query,
@@ -40,7 +64,14 @@ export default function ComponentsPage() {
   }
 
   if (componentName === ComponentName.COLLAGE_WITH_TITLE) {
-    return <CollageWithTitleRedesign />;
+    return (
+      <CollageWithTitleRedesign
+        title={collageWithTitleTranslation(`title`)}
+        imageUrls={collageWithTitleTranslation(`imageUrls`, {
+          returnObjects: true,
+        })}
+      />
+    );
   }
 
   if (componentName === ComponentName.FOOTER) {
@@ -48,14 +79,24 @@ export default function ComponentsPage() {
   }
 
   if (componentName === ComponentName.HERO) {
-    return <HeroRedesign />;
+    return (
+      <HeroRedesign
+        title={heroTranslation(`title`)}
+        description={heroTranslation(`description`)}
+        imageUrls={heroTranslation(`imageUrls`, {
+          returnObjects: true,
+        })}
+      />
+    );
   }
 
   if (componentName === ComponentName.PROJECTS_WITH_FOUR_CARDS) {
     return (
       <ProjectsRedesign
-        translationKey="projectsRedesignSecondarySection"
         dataTestId="projects-with-four-cards"
+        projectCardsWithImage={projectsSecondarySectionTranslation(`projectCardsWithImage`, {
+          returnObjects: true,
+        })}
       />
     );
   }
@@ -63,7 +104,9 @@ export default function ComponentsPage() {
   if (componentName === ComponentName.PROJECTS_WITH_THREE_CARDS) {
     return (
       <ProjectsRedesign
-        translationKey="projectsRedesignThirdSection"
+        projectCardsWithImage={projectsThirdSectionTranslation(`projectCardsWithImage`, {
+          returnObjects: true,
+        })}
         dataTestId="projects-with-three-cards"
       />
     );
@@ -73,15 +116,31 @@ export default function ComponentsPage() {
     return (
       <ProjectsWithTextBlockRedesign
         targetId="projects"
-        translationKey="projectsRedesignFirstSection"
         dataTestId="projects-with-text-block-first"
+        sectionTitle={projectsFirstSectionTranslation(`title`)}
+        textBlockTitle={projectsFirstSectionTranslation(`textBlockTitle`)}
+        projectCardsWithImage={projectsFirstSectionTranslation(`projectCardsWithImage`, {
+          returnObjects: true,
+        })}
+        textBlockMarkdown={projectsFirstSectionTranslation(`textBlockMarkdown`)}
       />
     );
   }
 
   if (componentName === ComponentName.SERVICES) {
     return (
-      <ServicesRedesign />
+      <ServicesRedesign
+        title={servicesTranslation(`title`)}
+        services={servicesTranslation(`services`, {
+          returnObjects: true,
+        })}
+        teamsCard={servicesTranslation(`teamsCard`, {
+          returnObjects: true,
+        })}
+        teams={servicesTranslation(`teams`, {
+          returnObjects: true,
+        })}
+      />
     );
   }
 

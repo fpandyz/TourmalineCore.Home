@@ -1,37 +1,32 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import { GetServerSideProps } from 'next';
 import { PageHead } from '../components/PageHead/PageHead';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
-import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
-import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
-import { CardsGridRedesign } from '../components/redesign/CardsGridRedesign/CardsGridRedesign';
-import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
-import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
-import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
-import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
-import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
-import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { useDeviceSize } from '../common/hooks';
+import { BlockRenderer, BlockTypes } from '../components/BlockRenderer/BlockRenderer';
+import { getTranslationsFromFile } from '../common/utils/getTranslationsFromFile';
 
-export default function HomePage() {
+export default function HomePage({
+  pageData,
+}: {
+  pageData: any;
+}) {
   const {
-    t,
-  } = useTranslation(`common`);
+    blocks,
+    seo,
+  } = pageData;
 
-  const {
-    isTablet,
-  } = useDeviceSize();
+  // const {
+  //   isTablet,
+  // } = useDeviceSize();
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t(`title`),
-            description: t(`description`),
+            title: seo.title,
+            description: seo.description,
           },
-          keywords: t(`keywords`),
+          keywords: seo.keywords,
           metaTags: [],
           structuredData: ``,
           additionalCode: ``,
@@ -39,26 +34,17 @@ export default function HomePage() {
       />
 
       <LayoutRedesign>
-        <HeroRedesign />
-        <ServicesRedesign targetId="services" />
-        <ProjectsWithTextBlockRedesign
-          targetId="projects"
-          translationKey="projectsRedesignFirstSection"
-          dataTestId="projects-with-text-block-first"
-        />
-        <ProjectsRedesign
-          translationKey="projectsRedesignSecondarySection"
-          dataTestId="projects-with-four-cards"
-        />
-        <ProjectsRedesign
-          translationKey="projectsRedesignThirdSection"
-          dataTestId="projects-with-three-cards"
-        />
-        {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
-        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
+
+        {blocks?.map((block: any) => (
+          <BlockRenderer
+            key={block.id}
+            block={block}
+          />
+        ))}
+        {/* {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
+        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />} */}
         {/* <FormBlockRedesign /> */}
-        <CollageWithTitleRedesign />
-        <SignpostMultipleRedesign
+        {/* <SignpostMultipleRedesign
           translationKey="conferenceSignpostsRedesign"
         />
         <SingleImageRedesign />
@@ -67,17 +53,19 @@ export default function HomePage() {
           dataTestId="signpost-multiple-articles"
         />
         <CardsGridRedesign />
-        <CollageWithLinkRedesign />
+        <CollageWithLinkRedesign /> */}
       </LayoutRedesign>
     </>
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({
+export async function getServerSideProps({
   locale,
-}) => ({
-  props: {
-    ...(await serverSideTranslations(locale as string, [
+}: {
+  locale: string;
+}) {
+  if (process.env.IS_STATIC_MODE === `true`) {
+    const translationsPageData = await getTranslationsFromFile(locale, [
       `common`,
       `cookie`,
       `footerRedesign`,
@@ -96,6 +84,66 @@ export const getStaticProps: GetServerSideProps = async ({
       `articleSignpostsRedesign`,
       `singleImageRedesign`,
       `formBlockRedesign`,
-    ])),
-  },
-});
+    ]);
+
+    return {
+      props: {
+        pageData: {
+          blocks: [
+            {
+              __component: BlockTypes.HOME_HERO,
+              ...translationsPageData.heroRedesign,
+            },
+            {
+              __component: BlockTypes.HOME_SERVICES,
+              ...translationsPageData.servicesRedesign,
+            },
+            {
+              __component: BlockTypes.HOME_PROJECTS_WITH_TEXT_BLOCK,
+              ...translationsPageData.projectsRedesignFirstSection,
+            },
+            {
+              __component: BlockTypes.HOME_PROJECTS,
+              ...translationsPageData.projectsRedesignSecondarySection,
+            },
+            {
+              __component: BlockTypes.HOME_PROJECTS,
+              ...translationsPageData.projectsRedesignThirdSection,
+            },
+            {
+              __component: BlockTypes.HOME_COLLAGE_WITH_TITLE,
+              ...translationsPageData.collageWithTitleRedesign,
+            },
+          ],
+          seo: {
+            title: translationsPageData.common.title,
+            description: translationsPageData.common.description,
+            keywords: translationsPageData.common.keywords,
+          },
+        },
+        ...(await serverSideTranslations(locale, [
+          `common`,
+          `cookie`,
+          `footerRedesign`,
+          `discussion`,
+          // `heroRedesign`,
+          // `servicesRedesign`,
+          // `projectsRedesignFirstSection`,
+          // `projectsRedesignSecondarySection`,
+          // `projectsRedesignThirdSection`,
+          `projectsRedesignFourthSection`,
+          `projectsRedesignFifthSection`,
+          `cardsGridRedesign`,
+          // `collageWithTitleRedesign`,
+          `collageWithLinkRedesign`,
+          `conferenceSignpostsRedesign`,
+          `articleSignpostsRedesign`,
+          `singleImageRedesign`,
+          `formBlockRedesign`,
+        ])),
+      },
+    };
+  }
+
+  return {};
+}

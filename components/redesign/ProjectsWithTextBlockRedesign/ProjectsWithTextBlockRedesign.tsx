@@ -1,28 +1,21 @@
-import { useTranslation } from 'next-i18next';
 import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
 
 export function ProjectsWithTextBlockRedesign({
-  translationKey,
+  sectionTitle,
+  textBlockTitle,
+  projectCardsWithImage,
+  textBlockMarkdown,
   targetId,
   dataTestId,
 }:{
-  translationKey: string;
+  sectionTitle: string;
+  textBlockTitle: string;
+  projectCardsWithImage: ProjectCardWithImage[];
+  textBlockMarkdown: string;
   targetId?: string;
   dataTestId?: string;
 }) {
-  const {
-    t,
-  } = useTranslation(translationKey);
-
-  const projectCardsWithImage: ProjectCardWithImage[] = t(`projectsCardsWithImage`, {
-    returnObjects: true,
-  });
-
-  const sectionTitle = t(`title`);
-
-  const textBlockTitle = t(`textBlockTitle`);
-
   return (
     <section
       className="projects-with-text-block-redesign projects-redesign"
@@ -64,7 +57,7 @@ export function ProjectsWithTextBlockRedesign({
               isTargetBlank
               className="projects-with-text-block-redesign__markdown"
             >
-              {t(`textBlockMarkdown`)}
+              {textBlockMarkdown}
             </MarkdownText>
           </li>
 

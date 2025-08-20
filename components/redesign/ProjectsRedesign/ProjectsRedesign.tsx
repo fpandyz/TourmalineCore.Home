@@ -1,23 +1,14 @@
-import { useTranslation } from 'next-i18next';
 import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 
 const GRID_COLUMNS = 12;
 
 export function ProjectsRedesign({
-  translationKey,
+  projectCardsWithImage,
   dataTestId,
 }:{
-  translationKey: string;
+  projectCardsWithImage: ProjectCardWithImage[];
   dataTestId?: string;
 }) {
-  const {
-    t,
-  } = useTranslation(translationKey);
-
-  const projectCardsWithImage: ProjectCardWithImage[] = t(`projectsCardsWithImage`, {
-    returnObjects: true,
-  });
-
   const columnsCount = GRID_COLUMNS / projectCardsWithImage.length;
 
   return (
