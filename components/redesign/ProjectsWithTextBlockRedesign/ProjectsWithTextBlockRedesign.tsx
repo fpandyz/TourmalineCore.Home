@@ -1,11 +1,13 @@
 import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
+import { useDeviceSize } from '../../../common/hooks';
 
 export function ProjectsWithTextBlockRedesign({
   sectionTitle,
   textBlockTitle,
   projectCardsWithImage,
   textBlockMarkdown,
+  showOnMobile,
   targetId,
   dataTestId,
 }:{
@@ -13,9 +15,17 @@ export function ProjectsWithTextBlockRedesign({
   textBlockTitle: string;
   projectCardsWithImage: ProjectCardWithImage[];
   textBlockMarkdown: string;
+  showOnMobile: boolean;
   targetId?: string;
   dataTestId?: string;
 }) {
+  const {
+    isTablet,
+  } = useDeviceSize();
+
+  if (!showOnMobile && !isTablet) {
+    return null;
+  }
   return (
     <section
       className="projects-with-text-block-redesign projects-redesign"

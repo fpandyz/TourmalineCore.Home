@@ -1,15 +1,26 @@
+import { useDeviceSize } from '../../../common/hooks';
 import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 
 const GRID_COLUMNS = 12;
 
 export function ProjectsRedesign({
   projectCardsWithImage,
+  showOnMobile,
   dataTestId,
 }:{
   projectCardsWithImage: ProjectCardWithImage[];
+  showOnMobile: boolean;
   dataTestId?: string;
 }) {
   const columnsCount = GRID_COLUMNS / projectCardsWithImage.length;
+
+  const {
+    isTablet,
+  } = useDeviceSize();
+
+  if (!showOnMobile && !isTablet) {
+    return null;
+  }
 
   return (
     <section

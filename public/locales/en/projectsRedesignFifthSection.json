@@ -17,5 +17,6 @@
     }
   ],
   "textBlockTitle": "",
-  "textBlockMarkdown": "<span className='blue-deep-color'>27 more cases</span>,\n<span>where we solved\n clients' problems</span>"
+  "textBlockMarkdown": "<span className='blue-deep-color'>27 more cases</span>,\n<span>where we solved\n clients' problems</span>",
+  "showOnMobile": false
 }

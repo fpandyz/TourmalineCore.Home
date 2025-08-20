@@ -14,10 +14,6 @@ export default function HomePage({
     seo,
   } = pageData;
 
-  // const {
-  //   isTablet,
-  // } = useDeviceSize();
-
   return (
     <>
       <PageHead
@@ -34,15 +30,12 @@ export default function HomePage({
       />
 
       <LayoutRedesign>
-
         {blocks?.map((block: any) => (
           <BlockRenderer
             key={block.id}
             block={block}
           />
         ))}
-        {/* {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
-        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />} */}
         {/* <FormBlockRedesign /> */}
         {/* <SignpostMultipleRedesign
           translationKey="conferenceSignpostsRedesign"
@@ -111,6 +104,14 @@ export async function getServerSideProps({
               ...translationsPageData.projectsRedesignThirdSection,
             },
             {
+              __component: BlockTypes.HOME_PROJECTS,
+              ...translationsPageData.projectsRedesignFourthSection,
+            },
+            {
+              __component: BlockTypes.HOME_PROJECTS_WITH_TEXT_BLOCK,
+              ...translationsPageData.projectsRedesignFifthSection,
+            },
+            {
               __component: BlockTypes.HOME_COLLAGE_WITH_TITLE,
               ...translationsPageData.collageWithTitleRedesign,
             },
@@ -131,8 +132,8 @@ export async function getServerSideProps({
           // `projectsRedesignFirstSection`,
           // `projectsRedesignSecondarySection`,
           // `projectsRedesignThirdSection`,
-          `projectsRedesignFourthSection`,
-          `projectsRedesignFifthSection`,
+          // `projectsRedesignFourthSection`,
+          // `projectsRedesignFifthSection`,
           `cardsGridRedesign`,
           // `collageWithTitleRedesign`,
           `collageWithLinkRedesign`,

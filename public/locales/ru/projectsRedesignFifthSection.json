@@ -17,5 +17,6 @@
     }
   ],
   "textBlockTitle": "",
-  "textBlockMarkdown": "<span className='blue-deep-color'>еще 27 кейсов</span>,\n<span>в которых мы\nрешили проблемы\nклиентов</span>"
+  "textBlockMarkdown": "<span className='blue-deep-color'>еще 27 кейсов</span>,\n<span>в которых мы\nрешили проблемы\nклиентов</span>",
+  "showOnMobile": false
 }

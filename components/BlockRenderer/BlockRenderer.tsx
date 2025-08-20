@@ -46,6 +46,7 @@ export const BlockRenderer = ({
         textBlockTitle={block.textBlockTitle}
         projectCardsWithImage={block.projectCardsWithImage}
         textBlockMarkdown={block.textBlockMarkdown}
+        showOnMobile={block.showOnMobile}
         targetId="projects"
       />
     );
@@ -53,7 +54,10 @@ export const BlockRenderer = ({
 
   if (block.__component === BlockTypes.HOME_PROJECTS) {
     return (
-      <ProjectsRedesign projectCardsWithImage={block.projectCardsWithImage} />
+      <ProjectsRedesign
+        projectCardsWithImage={block.projectCardsWithImage}
+        showOnMobile={block.showOnMobile}
+      />
     );
   }
 
