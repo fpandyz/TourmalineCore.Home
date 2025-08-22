@@ -2,7 +2,7 @@ import path from "path";
 import fs from 'fs';
 import { DEFAULT_LOCALE } from "../constants";
 
-export async function getTranslationsFromFile<T extends string>(locale: string, namespaces: T[]): Promise<Record<T, any>> {
+export async function loadTranslations<T extends string>(locale: string, namespaces: T[]): Promise<Record<T, any>> {
   const translationPromises = namespaces.map(async (namespace) => {
     try {
       const filePath = path.join(process.cwd(), `public`, `locales`, locale === `zh` ? DEFAULT_LOCALE : locale, `${namespace}.json`);

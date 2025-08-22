@@ -2,8 +2,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { PageHead } from '../components/PageHead/PageHead';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
 import { BlockRenderer } from '../components/BlockRenderer/BlockRenderer';
-import { getTranslationsFromFile } from '../common/utils/getTranslationsFromFile';
 import { BlockType } from '../common/enums';
+import { loadTranslations } from '../common/utils';
 
 type PageData = {
   seo: {
@@ -56,7 +56,7 @@ export async function getServerSideProps({
 }: {
   locale: string;
 }) {
-  const translationsPageData = await getTranslationsFromFile(locale, [
+  const translationsPageData = await loadTranslations(locale, [
     `common`,
     `heroRedesign`,
     `servicesRedesign`,

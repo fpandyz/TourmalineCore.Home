@@ -16,7 +16,7 @@ import { ComponentName } from "../../common/enums";
 import { Cookie } from "../../components/Cookie/Cookie";
 import { CustomError } from "../../components/redesign/CustomError/CustomError";
 import { FormModal } from "../../components/FormModal/FormModal";
-import { getTranslationsFromFile } from "../../common/utils/getTranslationsFromFile";
+import { loadTranslations } from "../../common/utils";
 
 export default function ComponentsPage({
   pageData,
@@ -278,7 +278,7 @@ export async function getStaticProps({
 }: {
   locale: string;
 }) {
-  const translationsPageData = await getTranslationsFromFile(locale, [
+  const translationsPageData = await loadTranslations(locale, [
     `cardsGridRedesign`,
     `collageWithLinkRedesign`,
     `collageWithTitleRedesign`,
