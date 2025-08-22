@@ -1,3 +1,4 @@
+import { BlockType } from '../../common/enums';
 import { CardsGridRedesign } from '../redesign/CardsGridRedesign/CardsGridRedesign';
 import { CollageWithLinkRedesign } from '../redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { CollageWithTitleRedesign } from '../redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
@@ -9,25 +10,12 @@ import { ServicesRedesign } from '../redesign/ServicesRedesign/ServicesRedesign'
 import { SignpostMultipleRedesign } from '../redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
 import { SingleImageRedesign } from '../redesign/SingleImageRedesign/SingleImageRedesign';
 
-export enum BlockTypes {
-  HOME_HERO = `home.hero`,
-  HOME_SERVICES = `home.services`,
-  HOME_PROJECTS_WITH_TEXT_BLOCK = `home.project-with-text-block`,
-  HOME_PROJECTS = `home.projects`,
-  HOME_COLLAGE_WITH_TITLE = `home.collage-with-title`,
-  HOME_SIGNPOST_MULTIPLE = `home.signpost-multiple`,
-  HOME_SINGLE_IMAGE = `home.single-image`,
-  HOME_CARDS_GRID = `home.cards-grid`,
-  HOME_COLLAGE_WITH_LINK = `home.collage-with-link`,
-  HOME_FORM_BLOCK = `home.form-block`,
-}
-
 export const BlockRenderer = ({
   block,
 }: {
   block: any;
 }) => {
-  if (block.__component === BlockTypes.HOME_HERO) {
+  if (block.__component === BlockType.HOME_HERO) {
     return (
       <HeroRedesign
         title={block.title}
@@ -37,7 +25,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_SERVICES) {
+  if (block.__component === BlockType.HOME_SERVICES) {
     return (
       <ServicesRedesign
         title={block.title}
@@ -49,7 +37,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_PROJECTS_WITH_TEXT_BLOCK) {
+  if (block.__component === BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK) {
     return (
       <ProjectsWithTextBlockRedesign
         sectionTitle={block.title}
@@ -62,7 +50,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_PROJECTS) {
+  if (block.__component === BlockType.HOME_PROJECTS) {
     return (
       <ProjectsRedesign
         projectCardsWithImage={block.projectCardsWithImage}
@@ -71,7 +59,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_COLLAGE_WITH_TITLE) {
+  if (block.__component === BlockType.HOME_COLLAGE_WITH_TITLE) {
     return (
       <CollageWithTitleRedesign
         title={block.title}
@@ -80,7 +68,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_SIGNPOST_MULTIPLE) {
+  if (block.__component === BlockType.HOME_SIGNPOST_MULTIPLE) {
     return (
       <SignpostMultipleRedesign
         title={block.title}
@@ -91,7 +79,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_SINGLE_IMAGE) {
+  if (block.__component === BlockType.HOME_SINGLE_IMAGE) {
     return (
       <SingleImageRedesign
         imageUrl={block.imageUrl}
@@ -99,7 +87,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_CARDS_GRID) {
+  if (block.__component === BlockType.HOME_CARDS_GRID) {
     return (
       <CardsGridRedesign
         cardWithImage={block.cardWithImage}
@@ -109,7 +97,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_COLLAGE_WITH_LINK) {
+  if (block.__component === BlockType.HOME_COLLAGE_WITH_LINK) {
     return (
       <CollageWithLinkRedesign
         text={block.text}
@@ -119,7 +107,7 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockTypes.HOME_COLLAGE_WITH_LINK) {
+  if (block.__component === BlockType.HOME_COLLAGE_WITH_LINK) {
     return (
       <FormBlockRedesign
         asideText={block.asideText}

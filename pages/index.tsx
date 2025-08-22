@@ -1,8 +1,9 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { PageHead } from '../components/PageHead/PageHead';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
-import { BlockRenderer, BlockTypes } from '../components/BlockRenderer/BlockRenderer';
+import { BlockRenderer } from '../components/BlockRenderer/BlockRenderer';
 import { getTranslationsFromFile } from '../common/utils/getTranslationsFromFile';
+import { BlockType } from '../common/enums';
 
 type PageData = {
   seo: {
@@ -78,55 +79,55 @@ export async function getServerSideProps({
       pageData: {
         blocks: [
           {
-            __component: BlockTypes.HOME_HERO,
+            __component: BlockType.HOME_HERO,
             ...translationsPageData.heroRedesign,
           },
           {
-            __component: BlockTypes.HOME_SERVICES,
+            __component: BlockType.HOME_SERVICES,
             ...translationsPageData.servicesRedesign,
           },
           {
-            __component: BlockTypes.HOME_PROJECTS_WITH_TEXT_BLOCK,
+            __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
             ...translationsPageData.projectsRedesignFirstSection,
           },
           {
-            __component: BlockTypes.HOME_PROJECTS,
+            __component: BlockType.HOME_PROJECTS,
             ...translationsPageData.projectsRedesignSecondarySection,
           },
           {
-            __component: BlockTypes.HOME_PROJECTS,
+            __component: BlockType.HOME_PROJECTS,
             ...translationsPageData.projectsRedesignThirdSection,
           },
           {
-            __component: BlockTypes.HOME_PROJECTS,
+            __component: BlockType.HOME_PROJECTS,
             ...translationsPageData.projectsRedesignFourthSection,
           },
           {
-            __component: BlockTypes.HOME_PROJECTS_WITH_TEXT_BLOCK,
+            __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
             ...translationsPageData.projectsRedesignFifthSection,
           },
           {
-            __component: BlockTypes.HOME_COLLAGE_WITH_TITLE,
+            __component: BlockType.HOME_COLLAGE_WITH_TITLE,
             ...translationsPageData.collageWithTitleRedesign,
           },
           {
-            __component: BlockTypes.HOME_SIGNPOST_MULTIPLE,
+            __component: BlockType.HOME_SIGNPOST_MULTIPLE,
             ...translationsPageData.conferenceSignpostsRedesign,
           },
           {
-            __component: BlockTypes.HOME_SINGLE_IMAGE,
+            __component: BlockType.HOME_SINGLE_IMAGE,
             ...translationsPageData.singleImageRedesign,
           },
           {
-            __component: BlockTypes.HOME_SIGNPOST_MULTIPLE,
+            __component: BlockType.HOME_SIGNPOST_MULTIPLE,
             ...translationsPageData.articleSignpostsRedesign,
           },
           {
-            __component: BlockTypes.HOME_CARDS_GRID,
+            __component: BlockType.HOME_CARDS_GRID,
             ...translationsPageData.cardsGridRedesign,
           },
           {
-            __component: BlockTypes.HOME_COLLAGE_WITH_LINK,
+            __component: BlockType.HOME_COLLAGE_WITH_LINK,
             ...translationsPageData.collageWithLinkRedesign,
           },
         ],
