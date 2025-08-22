@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { useBodyScrollHidden, usePath, useTranslationNamespace } from '../../common/hooks';
 import { isChineseLanguage } from '../../common/utils';
 import { FormModal } from '../FormModal/FormModal';
@@ -16,6 +17,10 @@ export function HeroBlockTechnology() {
   const {
     t,
   } = useTranslationNamespace(`hero`);
+
+  const {
+    t: formBlockTranslation,
+  } = useTranslation(`formBlockRedesign`);
 
   useBodyScrollHidden(isOpen);
 
@@ -58,7 +63,12 @@ export function HeroBlockTechnology() {
           />
         </picture>
       </div>
-      {isOpen && <FormModal setIsOpen={setIsOpen} />}
+      {isOpen && (
+        <FormModal
+          setIsOpen={setIsOpen}
+          asideText={formBlockTranslation(`asideText`)}
+        />
+      )}
     </section>
   );
 }

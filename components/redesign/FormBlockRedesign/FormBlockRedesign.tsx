@@ -1,27 +1,24 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import Image from 'next/image';
-import { useTranslation } from 'next-i18next';
 import { FormRedesign } from '../FormRedesign/FormRedesign';
 import { sendEmail } from '../../../services/emailService/emailService';
 import { getMessageFromForm } from '../../../common/utils';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
 
 export function FormBlockRedesign({
+  asideText,
   initializeIsSubmit = false,
   testId,
   isModal,
   isComponentPage,
 }: {
+  asideText: string;
   initializeIsSubmit?: boolean;
   testId?: string;
   isModal?: boolean;
   isComponentPage?: boolean;
 }) {
-  const {
-    t,
-  } = useTranslation(`formBlockRedesign`);
-
   const [isSubmit, setIsSubmit] = useState(initializeIsSubmit);
 
   return (
@@ -59,7 +56,7 @@ export function FormBlockRedesign({
                           isTargetBlank
                           className="form-block-redesign__aside-text"
                         >
-                          {t(`asideText`)}
+                          {asideText}
                         </MarkdownText>
                       </div>
                     </div>

@@ -1,23 +1,16 @@
-import { useTranslation } from 'next-i18next';
 import { CardWithImage, CardWithImageRedesign } from './components/CardWithImageRedesign/CardWithImageRedesign';
 import { CardWithRepositories, CardWithRepositoriesRedesign } from './components/CardWithRepositoriesRedesign/CardWithRepositoriesRedesign';
 import { CardWithTextAndDate, CardWithTextAndDateRedesign } from './components/CardWithTextAndDateRedesign/CardWithTextAndDateRedesign';
 
-export function CardsGridRedesign() {
-  const {
-    t,
-  } = useTranslation(`cardsGridRedesign`);
-
-  const cardWithImage: CardWithImage = t(`cardWithImage`, {
-    returnObjects: true,
-  });
-  const cardWithRepositories: CardWithRepositories = t(`cardWithRepositories`, {
-    returnObjects: true,
-  });
-  const cardWithTextAndDate: CardWithTextAndDate = t(`cardWithTextAndDate`, {
-    returnObjects: true,
-  });
-
+export function CardsGridRedesign({
+  cardWithImage,
+  cardWithRepositories,
+  cardWithTextAndDate,
+}: {
+  cardWithImage: CardWithImage;
+  cardWithRepositories: CardWithRepositories;
+  cardWithTextAndDate: CardWithTextAndDate;
+}) {
   return (
     <section
       className="cards-grid-redesign"
