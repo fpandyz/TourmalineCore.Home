@@ -110,7 +110,7 @@ export default function ComponentsPage({
       <ProjectsWithTextBlockRedesign
         targetId="projects"
         dataTestId="projects-with-text-block-first"
-        sectionTitle={projectsRedesignFirstSection.title}
+        title={projectsRedesignFirstSection.title}
         textBlockTitle={projectsRedesignFirstSection.textBlockTitle}
         projectCardsWithImage={projectsRedesignFirstSection.projectCardsWithImage}
         textBlockMarkdown={projectsRedesignFirstSection.textBlockMarkdown}
