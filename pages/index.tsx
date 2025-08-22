@@ -4,10 +4,19 @@ import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRede
 import { BlockRenderer, BlockTypes } from '../components/BlockRenderer/BlockRenderer';
 import { getTranslationsFromFile } from '../common/utils/getTranslationsFromFile';
 
+type PageData = {
+  seo: {
+    title:string;
+    description: string;
+    keywords: string;
+  };
+  blocks: any[];
+};
+
 export default function HomePage({
   pageData,
 }: {
-  pageData: any;
+  pageData: PageData;
 }) {
   const {
     blocks,
