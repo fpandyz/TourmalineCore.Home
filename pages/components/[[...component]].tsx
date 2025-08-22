@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CardsGridRedesign } from "../../components/redesign/CardsGridRedesign/CardsGridRedesign";
 import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
 import { CollageWithTitleRedesign } from "../../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
@@ -23,11 +24,9 @@ export default function ComponentsPage({
   pageData: Record<string, any>;
 }) {
   const {
-    // cookie,
     cardsGridRedesign,
     collageWithLinkRedesign,
     collageWithTitleRedesign,
-    // footerRedesign,
     heroRedesign,
     projectsRedesignFirstSection,
     projectsRedesignSecondarySection,
@@ -280,11 +279,9 @@ export async function getStaticProps({
   locale: string;
 }) {
   const translationsPageData = await getTranslationsFromFile(locale, [
-    `cookie`,
     `cardsGridRedesign`,
     `collageWithLinkRedesign`,
     `collageWithTitleRedesign`,
-    `footerRedesign`,
     `heroRedesign`,
     `projectsRedesignFirstSection`,
     `projectsRedesignSecondarySection`,
@@ -299,6 +296,7 @@ export async function getStaticProps({
   return {
     props: {
       pageData: translationsPageData,
+      ...(await serverSideTranslations(locale, [`cookie`, `footerRedesign`])),
     },
   };
 }
