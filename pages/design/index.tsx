@@ -64,7 +64,6 @@ export const getStaticProps: GetServerSideProps = async ({
       `footer`,
       `cookie`,
       `form`,
-      `discussion`,
       `formBlock`,
       `payment`,
       `cta`,

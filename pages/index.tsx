@@ -57,9 +57,6 @@ export async function getServerSideProps({
 }) {
   const translationsPageData = await getTranslationsFromFile(locale, [
     `common`,
-    `cookie`,
-    `footerRedesign`,
-    `discussion`,
     `heroRedesign`,
     `servicesRedesign`,
     `projectsRedesignFirstSection`,
@@ -143,7 +140,6 @@ export async function getServerSideProps({
         `common`,
         `cookie`,
         `footerRedesign`,
-        `discussion`,
       ])),
     },
   };
