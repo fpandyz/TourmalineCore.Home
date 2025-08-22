@@ -4,14 +4,11 @@ import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRede
 import { BlockRenderer } from '../components/BlockRenderer/BlockRenderer';
 import { BlockType } from '../common/enums';
 import { loadTranslations } from '../common/utils';
+import { Block, SeoBlock } from '../common/types';
 
 type PageData = {
-  seo: {
-    title:string;
-    description: string;
-    keywords: string;
-  };
-  blocks: any[];
+  seo: SeoBlock;
+  blocks: Block[];
 };
 
 export default function HomePage({
@@ -29,10 +26,10 @@ export default function HomePage({
       <PageHead
         seoData={{
           seo: {
-            title: seo.title,
-            description: seo.description,
+            title: seo.metaTitle,
+            description: seo.metaDescription,
           },
-          keywords: seo.keywords,
+          keywords: seo.metaKeywords,
           metaTags: [],
           structuredData: ``,
           additionalCode: ``,
@@ -40,7 +37,7 @@ export default function HomePage({
       />
 
       <LayoutRedesign>
-        {blocks?.map((block: any) => (
+        {blocks.map((block: Block) => (
           <BlockRenderer
             key={block.id}
             block={block}
@@ -135,9 +132,9 @@ export async function getServerSideProps({
           },
         ],
         seo: {
-          title: translationsPageData.common.title,
-          description: translationsPageData.common.description,
-          keywords: translationsPageData.common.keywords,
+          metaTitle: translationsPageData.common.metaTitle,
+          metaDescription: translationsPageData.common.metaDescription,
+          metaKeywords: translationsPageData.common.metaKeywords,
         },
       },
       ...(await serverSideTranslations(locale, [

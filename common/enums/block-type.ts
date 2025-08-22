@@ -9,4 +9,6 @@ export enum BlockType {
   HOME_CARDS_GRID = `home.cards-grid`,
   HOME_COLLAGE_WITH_LINK = `home.collage-with-link`,
   HOME_FORM_BLOCK = `home.form-block`,
+
+  SHARED_SEO_BLOCK = `shared.seo`,
 }
