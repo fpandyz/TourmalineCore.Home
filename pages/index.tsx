@@ -71,66 +71,73 @@ export async function getServerSideProps({
     `formBlockRedesign`,
   ]);
 
+  const mapStaticBlocksWithId = (blocks: Block[]) => blocks.map((block, index) => ({
+    id: index,
+    ...block,
+  }));
+
+  const blocks = mapStaticBlocksWithId([
+    {
+      __component: BlockType.HOME_HERO,
+      ...translationsPageData.heroRedesign,
+    },
+    {
+      __component: BlockType.HOME_SERVICES,
+      ...translationsPageData.servicesRedesign,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
+      ...translationsPageData.projectsRedesignFirstSection,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS,
+      ...translationsPageData.projectsRedesignSecondarySection,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS,
+      ...translationsPageData.projectsRedesignThirdSection,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS,
+      ...translationsPageData.projectsRedesignFourthSection,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
+      ...translationsPageData.projectsRedesignFifthSection,
+    },
+    // {
+    //   __component: BlockType.HOME_FORM_BLOCK,
+    // },
+    {
+      __component: BlockType.HOME_COLLAGE_WITH_TITLE,
+      ...translationsPageData.collageWithTitleRedesign,
+    },
+    {
+      __component: BlockType.HOME_SIGNPOST_MULTIPLE,
+      ...translationsPageData.conferenceSignpostsRedesign,
+    },
+    {
+      __component: BlockType.HOME_SINGLE_IMAGE,
+      ...translationsPageData.singleImageRedesign,
+    },
+    {
+      __component: BlockType.HOME_SIGNPOST_MULTIPLE,
+      ...translationsPageData.articleSignpostsRedesign,
+    },
+    {
+      __component: BlockType.HOME_CARDS_GRID,
+      ...translationsPageData.cardsGridRedesign,
+    },
+    {
+      __component: BlockType.HOME_COLLAGE_WITH_LINK,
+      ...translationsPageData.collageWithLinkRedesign,
+    },
+  ]);
+
   return {
     props: {
       pageData: {
-        blocks: [
-          {
-            __component: BlockType.HOME_HERO,
-            ...translationsPageData.heroRedesign,
-          },
-          {
-            __component: BlockType.HOME_SERVICES,
-            ...translationsPageData.servicesRedesign,
-          },
-          {
-            __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
-            ...translationsPageData.projectsRedesignFirstSection,
-          },
-          {
-            __component: BlockType.HOME_PROJECTS,
-            ...translationsPageData.projectsRedesignSecondarySection,
-          },
-          {
-            __component: BlockType.HOME_PROJECTS,
-            ...translationsPageData.projectsRedesignThirdSection,
-          },
-          {
-            __component: BlockType.HOME_PROJECTS,
-            ...translationsPageData.projectsRedesignFourthSection,
-          },
-          {
-            __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
-            ...translationsPageData.projectsRedesignFifthSection,
-          },
-          // {
-          //   __component: BlockType.HOME_FORM_BLOCK,
-          // },
-          {
-            __component: BlockType.HOME_COLLAGE_WITH_TITLE,
-            ...translationsPageData.collageWithTitleRedesign,
-          },
-          {
-            __component: BlockType.HOME_SIGNPOST_MULTIPLE,
-            ...translationsPageData.conferenceSignpostsRedesign,
-          },
-          {
-            __component: BlockType.HOME_SINGLE_IMAGE,
-            ...translationsPageData.singleImageRedesign,
-          },
-          {
-            __component: BlockType.HOME_SIGNPOST_MULTIPLE,
-            ...translationsPageData.articleSignpostsRedesign,
-          },
-          {
-            __component: BlockType.HOME_CARDS_GRID,
-            ...translationsPageData.cardsGridRedesign,
-          },
-          {
-            __component: BlockType.HOME_COLLAGE_WITH_LINK,
-            ...translationsPageData.collageWithLinkRedesign,
-          },
-        ],
+        blocks,
         seo: {
           metaTitle: translationsPageData.common.metaTitle,
           metaDescription: translationsPageData.common.metaDescription,
