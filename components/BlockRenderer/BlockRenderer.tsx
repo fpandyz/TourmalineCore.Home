@@ -107,11 +107,9 @@ export const BlockRenderer = ({
     );
   }
 
-  if (block.__component === BlockType.HOME_COLLAGE_WITH_LINK) {
+  if (block.__component === BlockType.HOME_FORM_BLOCK) {
     return (
-      <FormBlockRedesign
-        asideText={block.asideText}
-      />
+      <FormBlockRedesign />
     );
   }
 

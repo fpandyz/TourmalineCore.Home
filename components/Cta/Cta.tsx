@@ -15,10 +15,6 @@ export function Cta() {
     t,
   } = useTranslation(`cta`);
 
-  const {
-    t: formBlockTranslation,
-  } = useTranslation(`formBlockRedesign`);
-
   useBodyScrollHidden(isOpen);
 
   return (
@@ -45,12 +41,7 @@ export function Cta() {
           <div className="cta__image" />
         </div>
       </div>
-      {isOpen && (
-        <FormModal
-          setIsOpen={setIsOpen}
-          asideText={formBlockTranslation(`asideText`)}
-        />
-      )}
+      {isOpen && <FormModal setIsOpen={setIsOpen} />}
     </section>
   );
 }

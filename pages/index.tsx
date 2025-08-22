@@ -106,6 +106,9 @@ export async function getServerSideProps({
             __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
             ...translationsPageData.projectsRedesignFifthSection,
           },
+          // {
+          //   __component: BlockType.HOME_FORM_BLOCK,
+          // },
           {
             __component: BlockType.HOME_COLLAGE_WITH_TITLE,
             ...translationsPageData.collageWithTitleRedesign,
@@ -141,6 +144,7 @@ export async function getServerSideProps({
         `common`,
         `cookie`,
         `footerRedesign`,
+        `formBlockRedesign`,
       ])),
     },
   };

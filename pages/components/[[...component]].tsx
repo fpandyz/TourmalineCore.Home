@@ -16,7 +16,7 @@ import { ComponentName } from "../../common/enums";
 import { Cookie } from "../../components/Cookie/Cookie";
 import { CustomError } from "../../components/redesign/CustomError/CustomError";
 import { FormModal } from "../../components/FormModal/FormModal";
-import { loadTranslations } from "../../common/utils";
+import { loadTranslations } from "../../common/utils/loadTranslations";
 
 export default function ComponentsPage({
   pageData,
@@ -34,7 +34,6 @@ export default function ComponentsPage({
     servicesRedesign,
     articleSignpostsRedesign,
     singleImageRedesign,
-    formBlockRedesign,
     pageNotFound,
   } = pageData;
 
@@ -153,7 +152,6 @@ export default function ComponentsPage({
   if (componentName === ComponentName.FORM_BLOCK) {
     return (
       <FormBlockRedesign
-        asideText={formBlockRedesign.asideText}
         testId="form-block"
         isComponentPage
 
@@ -164,7 +162,6 @@ export default function ComponentsPage({
   if (componentName === ComponentName.SUBMITTED_FORM_BLOCK) {
     return (
       <FormBlockRedesign
-        asideText={formBlockRedesign.asideText}
         initializeIsSubmit
         testId="submitted-form-block"
         isComponentPage
@@ -190,7 +187,6 @@ export default function ComponentsPage({
   if (componentName === ComponentName.FORM_MODAL) {
     return (
       <FormModal
-        asideText={formBlockRedesign.asideText}
         setIsOpen={() => {}}
         testId="form-modal"
         isComponentPage
@@ -201,7 +197,6 @@ export default function ComponentsPage({
   if (componentName === ComponentName.SUBMITTED_FORM_MODAL) {
     return (
       <FormModal
-        asideText={formBlockRedesign.asideText}
         setIsOpen={() => {}}
         testId="submitted-form-modal"
         initializeIsSubmit
@@ -289,14 +284,17 @@ export async function getStaticProps({
     `servicesRedesign`,
     `articleSignpostsRedesign`,
     `singleImageRedesign`,
-    `formBlockRedesign`,
     `pageNotFound`,
   ]);
 
   return {
     props: {
       pageData: translationsPageData,
-      ...(await serverSideTranslations(locale, [`cookie`, `footerRedesign`])),
+      ...(await serverSideTranslations(locale, [
+        `cookie`,
+        `footerRedesign`,
+        `formBlockRedesign`,
+      ])),
     },
   };
 }
