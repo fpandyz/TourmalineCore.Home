@@ -7,7 +7,7 @@ export function ProjectsWithTextBlockRedesign({
   textBlockTitle,
   projectCardsWithImage,
   textBlockMarkdown,
-  showOnMobile,
+  showOnMobile = true,
   targetId,
   dataTestId,
 }:{
@@ -15,7 +15,7 @@ export function ProjectsWithTextBlockRedesign({
   textBlockTitle: string;
   projectCardsWithImage: ProjectCardWithImage[];
   textBlockMarkdown: string;
-  showOnMobile: boolean;
+  showOnMobile?: boolean;
   targetId?: string;
   dataTestId?: string;
 }) {

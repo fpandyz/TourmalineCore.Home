@@ -5,11 +5,11 @@ const GRID_COLUMNS = 12;
 
 export function ProjectsRedesign({
   projectCardsWithImage,
-  showOnMobile,
+  showOnMobile = true,
   dataTestId,
 }:{
   projectCardsWithImage: ProjectCardWithImage[];
-  showOnMobile: boolean;
+  showOnMobile?: boolean;
   dataTestId?: string;
 }) {
   const columnsCount = GRID_COLUMNS / projectCardsWithImage.length;
