@@ -1,10 +1,9 @@
 import Image from 'next/image';
+import { SingleImageBlock } from '../../../common/types';
 
 export function SingleImageRedesign({
   imageUrl,
-}:{
-  imageUrl: string;
-}) {
+}: Omit<SingleImageBlock, "__component">) {
   return (
     <section
       className="single-image-redesign container-redesign"

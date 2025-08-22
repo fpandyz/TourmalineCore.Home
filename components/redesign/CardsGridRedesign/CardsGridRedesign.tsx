@@ -1,16 +1,13 @@
-import { CardWithImage, CardWithImageRedesign } from './components/CardWithImageRedesign/CardWithImageRedesign';
-import { CardWithRepositories, CardWithRepositoriesRedesign } from './components/CardWithRepositoriesRedesign/CardWithRepositoriesRedesign';
-import { CardWithTextAndDate, CardWithTextAndDateRedesign } from './components/CardWithTextAndDateRedesign/CardWithTextAndDateRedesign';
+import { CardsGridBlock } from '../../../common/types';
+import { CardWithImageRedesign } from './components/CardWithImageRedesign/CardWithImageRedesign';
+import { CardWithRepositoriesRedesign } from './components/CardWithRepositoriesRedesign/CardWithRepositoriesRedesign';
+import { CardWithTextAndDateRedesign } from './components/CardWithTextAndDateRedesign/CardWithTextAndDateRedesign';
 
 export function CardsGridRedesign({
   cardWithImage,
   cardWithRepositories,
   cardWithTextAndDate,
-}: {
-  cardWithImage: CardWithImage;
-  cardWithRepositories: CardWithRepositories;
-  cardWithTextAndDate: CardWithTextAndDate;
-}) {
+}: Omit<CardsGridBlock, "__component">) {
   return (
     <section
       className="cards-grid-redesign"

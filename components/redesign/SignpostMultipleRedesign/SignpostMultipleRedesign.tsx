@@ -1,13 +1,7 @@
 import Link from 'next/link';
 import { SignpostRedesign } from '../SignpostRedesign/SignpostRedesign';
 import IconArrow from '../../../icons/icon-arrow-redesign.svg';
-
-type Signpost = {
-  title: string;
-  subtitle: string;
-  link?: string;
-  imageUrl: string;
-};
+import { SignpostMultipleBlock } from '../../../common/types';
 
 export function SignpostMultipleRedesign({
   title,
@@ -15,11 +9,7 @@ export function SignpostMultipleRedesign({
   viewAllLinkText,
   signposts,
   dataTestId,
-}: {
-  title: string;
-  viewAllLink: string;
-  viewAllLinkText: string;
-  signposts: Signpost[];
+}: Omit<SignpostMultipleBlock, "__component"> & {
   dataTestId?: string;
 }) {
   return (

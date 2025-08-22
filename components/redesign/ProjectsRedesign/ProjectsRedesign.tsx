@@ -1,5 +1,5 @@
 import { useDeviceSize } from '../../../common/hooks';
-import { ProjectCardWithImage } from '../../../common/types';
+import { ProjectBlock } from '../../../common/types';
 import { ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 
 const GRID_COLUMNS = 12;
@@ -8,9 +8,7 @@ export function ProjectsRedesign({
   projectCardsWithImage,
   showOnMobile = true,
   dataTestId,
-}:{
-  projectCardsWithImage: ProjectCardWithImage[];
-  showOnMobile?: boolean;
+}: Omit<ProjectBlock, "__component"> & {
   dataTestId?: string;
 }) {
   const columnsCount = GRID_COLUMNS / projectCardsWithImage.length;

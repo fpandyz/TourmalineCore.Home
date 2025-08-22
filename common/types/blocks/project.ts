@@ -1,11 +1,8 @@
 import { BlockType } from "../../enums";
 import { BaseBlock } from "./base-block";
 
-export interface ProjectWithTextBlock extends BaseBlock<BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK> {
-  sectionTitle: string;
-  textBlockTitle: string;
+export interface BaseProject<T extends BlockType> extends BaseBlock<T> {
   projectCardsWithImage: ProjectCardWithImage[];
-  textBlockMarkdown: string;
   showOnMobile?: boolean;
 }
 
@@ -18,3 +15,11 @@ export interface ProjectCardWithImage {
   isNda?: boolean;
   size: 'L' | 'M' | 'S' | 'XS';
 }
+
+export interface ProjectWithTextBlock extends BaseProject<BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK> {
+  sectionTitle: string;
+  textBlockTitle: string;
+  textBlockMarkdown: string;
+}
+
+export interface ProjectBlock extends BaseProject<BlockType.HOME_PROJECTS> {}

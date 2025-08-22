@@ -1,12 +1,10 @@
 import Image from 'next/image';
+import { CollageWithTitleBlock } from '../../../common/types';
 
 export function CollageWithTitleRedesign({
   title,
   imageUrls,
-}: {
-  title: string;
-  imageUrls: string[];
-}) {
+}: Omit<CollageWithTitleBlock, "__component">) {
   return (
     <section
       className="collage-with-title-redesign"

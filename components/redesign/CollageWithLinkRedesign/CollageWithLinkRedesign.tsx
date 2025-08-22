@@ -1,14 +1,11 @@
 import Image from 'next/image';
+import { CollageWithLinkBlock } from '../../../common/types';
 
 export function CollageWithLinkRedesign({
   text,
   link,
   imageUrls,
-}: {
-  text: string;
-  link: string;
-  imageUrls: string[];
-}) {
+}: Omit<CollageWithLinkBlock, "__component">) {
   return (
     <section
       className="collage-with-link-redesign"
