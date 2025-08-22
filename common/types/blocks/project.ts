@@ -17,7 +17,7 @@ export interface ProjectCardWithImage {
 }
 
 export interface ProjectWithTextBlock extends BaseProject<BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK> {
-  sectionTitle: string;
+  title: string;
   textBlockTitle: string;
   textBlockMarkdown: string;
 }

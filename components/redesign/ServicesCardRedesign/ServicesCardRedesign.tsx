@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import IconArrow from '../../../icons/icon-arrow-redesign.svg';
+import { Service } from '../../../common/types';
 
 export function ServicesCardRedesign({
   title,
@@ -9,14 +10,7 @@ export function ServicesCardRedesign({
   linkText,
   theme,
   imageUrl,
-}: {
-  title?: string;
-  skillsList?: string[];
-  link?: string;
-  linkText?: string;
-  theme: 'white' | 'grey' | 'black' | 'blue';
-  imageUrl?: string;
-}) {
+}: Omit<Service, 'id'>) {
   return (
     <div className={clsx(
       `services-card-redesign services-card-redesign--${theme.toLowerCase()}`,

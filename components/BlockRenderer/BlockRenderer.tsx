@@ -1,4 +1,5 @@
 import { BlockType } from '../../common/enums';
+import { Block } from '../../common/types';
 import { CardsGridRedesign } from '../redesign/CardsGridRedesign/CardsGridRedesign';
 import { CollageWithLinkRedesign } from '../redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
 import { CollageWithTitleRedesign } from '../redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
@@ -13,7 +14,7 @@ import { SingleImageRedesign } from '../redesign/SingleImageRedesign/SingleImage
 export const BlockRenderer = ({
   block,
 }: {
-  block: any;
+  block: Block;
 }) => {
   if (block.__component === BlockType.HOME_HERO) {
     return (
@@ -40,7 +41,7 @@ export const BlockRenderer = ({
   if (block.__component === BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK) {
     return (
       <ProjectsWithTextBlockRedesign
-        sectionTitle={block.title}
+        title={block.title}
         textBlockTitle={block.textBlockTitle}
         projectCardsWithImage={block.projectCardsWithImage}
         textBlockMarkdown={block.textBlockMarkdown}

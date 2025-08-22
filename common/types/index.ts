@@ -7,4 +7,5 @@ export * from './blocks/collage-with-link-block';
 export * from './blocks/collage-with-title-block';
 export * from './blocks/signpost-multiple-block';
 export * from './blocks/single-image-block';
+export * from './blocks/blocks-collection';
 export * from './blocks/seo-block';

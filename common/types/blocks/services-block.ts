@@ -8,7 +8,7 @@ export interface ServicesBlock extends BaseBlock<BlockType.HOME_SERVICES> {
   teams: TeamSection;
 }
 
-interface Service {
+export interface Service {
   id: number;
   title?: string;
   skillsList?: string[];

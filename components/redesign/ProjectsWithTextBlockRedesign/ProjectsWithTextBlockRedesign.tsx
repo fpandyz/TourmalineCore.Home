@@ -4,7 +4,7 @@ import { useDeviceSize } from '../../../common/hooks';
 import { ProjectWithTextBlock } from '../../../common/types';
 
 export function ProjectsWithTextBlockRedesign({
-  sectionTitle,
+  title,
   textBlockTitle,
   projectCardsWithImage,
   textBlockMarkdown,
@@ -32,10 +32,10 @@ export function ProjectsWithTextBlockRedesign({
       data-testid={dataTestId}
     >
       <div className="container-redesign projects-with-text-block-redesign__wrapper">
-        {sectionTitle && <h2 className="projects-with-text-block-redesign__title">{sectionTitle}</h2>}
+        {title && <h2 className="projects-with-text-block-redesign__title">{title}</h2>}
         <ul className="projects-with-text-block-redesign__cards grid">
           {projectCardsWithImage.map(({
-            title,
+            title: projectCardWithImageTitle,
             description,
             imageUrl,
             size,
@@ -43,9 +43,9 @@ export function ProjectsWithTextBlockRedesign({
             isNda,
           }) => (
             <ProjectsCardWithImageRedesign
-              key={title}
+              key={projectCardWithImageTitle}
               className="projects-with-text-block-redesign__card  col-tablet-4"
-              title={title}
+              title={projectCardWithImageTitle}
               description={description}
               imageUrl={imageUrl}
               size={size}
