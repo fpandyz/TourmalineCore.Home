@@ -1,14 +1,11 @@
+import { HeroBlock } from '../../../common/types';
 import { ImageSlider } from '../ImageSlider/ImageSlider';
 
 export function HeroRedesign({
   title,
   description,
   imageUrls,
-}: {
-  title: string;
-  description: string;
-  imageUrls: string[];
-}) {
+}: Omit<HeroBlock, '__component' | 'id'>) {
   return (
     <section
       className="hero-redesign"

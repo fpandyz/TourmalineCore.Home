@@ -1,6 +1,7 @@
-import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
+import { ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
 import { useDeviceSize } from '../../../common/hooks';
+import { ProjectWithTextBlock } from '../../../common/types';
 
 export function ProjectsWithTextBlockRedesign({
   sectionTitle,
@@ -10,12 +11,7 @@ export function ProjectsWithTextBlockRedesign({
   showOnMobile = true,
   targetId,
   dataTestId,
-}:{
-  sectionTitle: string;
-  textBlockTitle: string;
-  projectCardsWithImage: ProjectCardWithImage[];
-  textBlockMarkdown: string;
-  showOnMobile?: boolean;
+}: Omit<ProjectWithTextBlock, '__component' | 'id'> & {
   targetId?: string;
   dataTestId?: string;
 }) {
@@ -26,6 +22,7 @@ export function ProjectsWithTextBlockRedesign({
   if (!showOnMobile && !isTablet) {
     return null;
   }
+
   return (
     <section
       className="projects-with-text-block-redesign projects-redesign"

@@ -1,31 +1,5 @@
+import { ServicesBlock } from '../../../common/types';
 import { ServicesCardRedesign } from '../ServicesCardRedesign/ServicesCardRedesign';
-
-type Service = {
-  id: number;
-  title?: string;
-  skillsList?: string[];
-  link?: string;
-  linkText?: string;
-  theme: 'white' | 'grey' | 'black' | 'blue';
-  imageUrl?: string;
-}[];
-
-type TeamsCard = {
-  theme: 'white' | 'grey' | 'black' | 'blue';
-  imageUrl: string;
-};
-
-type Team = {
-  title: string;
-  description: string;
-  link: string;
-  linkText: string;
-  teamsList: {
-    teamName: string;
-    teamIcon: string;
-    teamLink: string;
-  }[];
-};
 
 export function ServicesRedesign({
   title,
@@ -33,12 +7,7 @@ export function ServicesRedesign({
   teamsCard,
   teams,
   targetId,
-}: {
-  title: string;
-
-  services: Service;
-  teamsCard: TeamsCard;
-  teams: Team;
+}: Omit<ServicesBlock, '__component' | 'id'> & {
   targetId?: string;
 }) {
   return (

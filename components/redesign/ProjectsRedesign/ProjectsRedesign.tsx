@@ -1,5 +1,6 @@
 import { useDeviceSize } from '../../../common/hooks';
-import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
+import { ProjectCardWithImage } from '../../../common/types';
+import { ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 
 const GRID_COLUMNS = 12;
 
