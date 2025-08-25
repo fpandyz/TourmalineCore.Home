@@ -4,11 +4,7 @@ import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRede
 import { BlockRenderer } from '../components/BlockRenderer/BlockRenderer';
 import { BlockType } from '../common/enums';
 import { loadTranslations } from '../common/utils';
-import { Block, HeaderRedesignProps, SeoBlock } from '../common/types';
-
-type LayoutData = {
-  headerContent: HeaderRedesignProps;
-};
+import { Block, LayoutData, SeoBlock } from '../common/types';
 
 type PageData = {
   seo: SeoBlock;

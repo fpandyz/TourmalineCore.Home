@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useRouter } from "next/router";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
 import { HeaderButton } from "./components/HeaderButton/HeaderButton";
-import { MobileMenu } from "./components/MobileMenu/MobileMenu";
+import { MobileMenu } from "./components/MobileMenuRedesign/MobileMenuRedesign";
 import { useBodyScrollHidden } from "../../../common/hooks/useBodyScrollHidden";
 import { HeaderRedesignProps } from "../../../common/types";
 import { useDeviceSize, useOnScrollDirections } from "../../../common/hooks";

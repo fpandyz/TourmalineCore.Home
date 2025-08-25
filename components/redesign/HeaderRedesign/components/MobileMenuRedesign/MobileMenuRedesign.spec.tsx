@@ -7,7 +7,7 @@ import {
 import { ComponentName } from '../../../../../common/enums';
 import { BREAKPOINTS } from '../../../../../playwright-tests/constants/breakpoints';
 
-const TEST_ID = `mobile-menu`;
+const TEST_ID = `mobile-menu-redesign`;
 
 test.describe(`MobileMenuTests`, () => {
   test.beforeEach(async ({
@@ -48,6 +48,6 @@ async function showAccordion({
     .first()
     .click();
 
-  await expect(page.getByTestId(`mobile-menu`))
+  await expect(page.getByTestId(TEST_ID))
     .toHaveScreenshot(`${TEST_ID}-accordion.png`);
 }

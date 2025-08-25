@@ -18,7 +18,7 @@ import { CustomError } from "../../components/redesign/CustomError/CustomError";
 import { FormModal } from "../../components/FormModal/FormModal";
 import { loadTranslations } from "../../common/utils/loadTranslations";
 import { HeaderRedesign } from "../../components/redesign/HeaderRedesign/HeaderRedesign";
-import { MobileMenu } from "../../components/redesign/HeaderRedesign/components/MobileMenu/MobileMenu";
+import { MobileMenu } from "../../components/redesign/HeaderRedesign/components/MobileMenuRedesign/MobileMenuRedesign";
 
 export default function ComponentsPage({
   pageData,
