@@ -6,6 +6,7 @@ import { FormRedesign } from '../FormRedesign/FormRedesign';
 import { sendEmail } from '../../../services/emailService/emailService';
 import { getMessageFromForm } from '../../../common/utils';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
+import { useIsRussianCountry } from '../../../common/hooks';
 
 export function FormBlockRedesign({
   initializeIsSubmit = false,
@@ -25,6 +26,12 @@ export function FormBlockRedesign({
   } = useTranslation(`formBlockRedesign`);
 
   const [isSubmit, setIsSubmit] = useState(initializeIsSubmit);
+
+  const isCountryRus = useIsRussianCountry();
+
+  if (!isCountryRus && !isComponentPage) {
+    return null;
+  }
 
   return (
     <section

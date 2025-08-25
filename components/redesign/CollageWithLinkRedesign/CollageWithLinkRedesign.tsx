@@ -1,15 +1,11 @@
-import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { CollageWithLinkBlock } from '../../../common/types';
 
-export function CollageWithLinkRedesign() {
-  const {
-    t,
-  } = useTranslation(`collageWithLinkRedesign`);
-
-  const imagesUrl: string[] = t(`imagesUrl`, {
-    returnObjects: true,
-  });
-
+export function CollageWithLinkRedesign({
+  text,
+  link,
+  imageUrls,
+}: Omit<CollageWithLinkBlock, "__component">) {
   return (
     <section
       className="collage-with-link-redesign"
@@ -17,7 +13,7 @@ export function CollageWithLinkRedesign() {
     >
       <div className="collage-with-link-redesign__wrapper">
         <a
-          href={t(`link`)}
+          href={link}
           className="collage-with-link-redesign__accent-link"
         >
           <span
@@ -29,10 +25,10 @@ export function CollageWithLinkRedesign() {
           <span
             className="collage-with-link-redesign__cta"
           >
-            {t(`text`)}
+            {text}
           </span>
         </a>
-        {imagesUrl.map((imageUrl, index) => (
+        {imageUrls.map((imageUrl, index) => (
           <div
             key={imageUrl}
             className={`collage-with-link-redesign__image collage-with-link-redesign__image--${index + 1}`}

@@ -1,104 +1,161 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import { GetServerSideProps } from 'next';
 import { PageHead } from '../components/PageHead/PageHead';
 import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRedesign';
-import { HeroRedesign } from '../components/redesign/HeroRedesign/HeroRedesign';
-import { CollageWithTitleRedesign } from '../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign';
-import { CardsGridRedesign } from '../components/redesign/CardsGridRedesign/CardsGridRedesign';
-import { SignpostMultipleRedesign } from '../components/redesign/SignpostMultipleRedesign/SignpostMultipleRedesign';
-import { SingleImageRedesign } from '../components/redesign/SingleImageRedesign/SingleImageRedesign';
-import { ProjectsRedesign } from '../components/redesign/ProjectsRedesign/ProjectsRedesign';
-import { ProjectsWithTextBlockRedesign } from '../components/redesign/ProjectsWithTextBlockRedesign/ProjectsWithTextBlockRedesign';
-import { CollageWithLinkRedesign } from '../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign';
-import { ServicesRedesign } from '../components/redesign/ServicesRedesign/ServicesRedesign';
-import { useDeviceSize, useIsRussianCountry } from '../common/hooks';
-import { FormBlockRedesign } from '../components/redesign/FormBlockRedesign/FormBlockRedesign';
+import { BlockRenderer } from '../components/BlockRenderer/BlockRenderer';
+import { BlockType } from '../common/enums';
+import { loadTranslations } from '../common/utils';
+import { Block, LayoutData, SeoBlock } from '../common/types';
 
-export default function HomePage() {
+type PageData = {
+  seo: SeoBlock;
+  blocks: Block[];
+};
+
+export default function HomePage({
+  layoutData,
+  pageData,
+}: {
+  layoutData: LayoutData;
+  pageData: PageData;
+}) {
   const {
-    t,
-  } = useTranslation(`common`);
-
-  const {
-    isTablet,
-  } = useDeviceSize();
-
-  const isCountryRus = useIsRussianCountry();
+    blocks,
+    seo,
+  } = pageData;
 
   return (
     <>
       <PageHead
         seoData={{
           seo: {
-            title: t(`title`),
-            description: t(`description`),
+            title: seo.metaTitle,
+            description: seo.metaDescription,
           },
-          keywords: t(`keywords`),
+          keywords: seo.metaKeywords,
           metaTags: [],
           structuredData: ``,
           additionalCode: ``,
         }}
       />
 
-      <LayoutRedesign>
-        <HeroRedesign />
-        <ServicesRedesign targetId="services" />
-        <ProjectsWithTextBlockRedesign
-          targetId="projects"
-          translationKey="projectsRedesignFirstSection"
-          dataTestId="projects-with-text-block-first"
-        />
-        <ProjectsRedesign
-          translationKey="projectsRedesignSecondarySection"
-          dataTestId="projects-with-four-cards"
-        />
-        <ProjectsRedesign
-          translationKey="projectsRedesignThirdSection"
-          dataTestId="projects-with-three-cards"
-        />
-        {isTablet && <ProjectsRedesign translationKey="projectsRedesignFourthSection" />}
-        {isTablet && <ProjectsWithTextBlockRedesign translationKey="projectsRedesignFifthSection" />}
-        {isCountryRus && <FormBlockRedesign />}
-        <CollageWithTitleRedesign />
-        <SignpostMultipleRedesign
-          translationKey="conferenceSignpostsRedesign"
-        />
-        <SingleImageRedesign />
-        <SignpostMultipleRedesign
-          translationKey="articleSignpostsRedesign"
-          dataTestId="signpost-multiple-articles"
-        />
-        <CardsGridRedesign />
-        <CollageWithLinkRedesign />
+      <LayoutRedesign headerContent={layoutData.headerContent}>
+        {blocks.map((block: Block) => (
+          <BlockRenderer
+            key={block.id}
+            block={block}
+          />
+        ))}
       </LayoutRedesign>
     </>
   );
 }
 
-export const getStaticProps: GetServerSideProps = async ({
+export async function getServerSideProps({
   locale,
-}) => ({
-  props: {
-    ...(await serverSideTranslations(locale as string, [
-      `common`,
-      `cookie`,
-      `footerRedesign`,
-      `discussion`,
-      `heroRedesign`,
-      `servicesRedesign`,
-      `projectsRedesignFirstSection`,
-      `projectsRedesignSecondarySection`,
-      `projectsRedesignThirdSection`,
-      `projectsRedesignFourthSection`,
-      `projectsRedesignFifthSection`,
-      `cardsGridRedesign`,
-      `collageWithTitleRedesign`,
-      `collageWithLinkRedesign`,
-      `conferenceSignpostsRedesign`,
-      `articleSignpostsRedesign`,
-      `singleImageRedesign`,
-      `formBlockRedesign`,
-    ])),
-  },
-});
+}: {
+  locale: string;
+}) {
+  const translationsPageData = await loadTranslations(locale, [
+    `common`,
+    `heroRedesign`,
+    `servicesRedesign`,
+    `projectsRedesignFirstSection`,
+    `projectsRedesignSecondarySection`,
+    `projectsRedesignThirdSection`,
+    `projectsRedesignFourthSection`,
+    `projectsRedesignFifthSection`,
+    `cardsGridRedesign`,
+    `collageWithTitleRedesign`,
+    `collageWithLinkRedesign`,
+    `conferenceSignpostsRedesign`,
+    `articleSignpostsRedesign`,
+    `singleImageRedesign`,
+    `formBlockRedesign`,
+    `headerRedesign`,
+  ]);
+
+  const mapStaticBlocksWithId = (blocks: Block[]) => blocks.map((block) => ({
+    id: crypto.randomUUID(),
+    ...block,
+  }));
+
+  const blocks = mapStaticBlocksWithId([
+    {
+      __component: BlockType.HOME_HERO,
+      ...translationsPageData.heroRedesign,
+    },
+    {
+      __component: BlockType.HOME_SERVICES,
+      ...translationsPageData.servicesRedesign,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
+      ...translationsPageData.projectsRedesignFirstSection,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS,
+      ...translationsPageData.projectsRedesignSecondarySection,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS,
+      ...translationsPageData.projectsRedesignThirdSection,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS,
+      ...translationsPageData.projectsRedesignFourthSection,
+    },
+    {
+      __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
+      ...translationsPageData.projectsRedesignFifthSection,
+    },
+    {
+      __component: BlockType.HOME_FORM_BLOCK,
+    },
+    {
+      __component: BlockType.HOME_COLLAGE_WITH_TITLE,
+      ...translationsPageData.collageWithTitleRedesign,
+    },
+    {
+      __component: BlockType.HOME_SIGNPOST_MULTIPLE,
+      ...translationsPageData.conferenceSignpostsRedesign,
+    },
+    {
+      __component: BlockType.HOME_SINGLE_IMAGE,
+      ...translationsPageData.singleImageRedesign,
+    },
+    {
+      __component: BlockType.HOME_SIGNPOST_MULTIPLE,
+      ...translationsPageData.articleSignpostsRedesign,
+    },
+    {
+      __component: BlockType.HOME_CARDS_GRID,
+      ...translationsPageData.cardsGridRedesign,
+    },
+    {
+      __component: BlockType.HOME_COLLAGE_WITH_LINK,
+      ...translationsPageData.collageWithLinkRedesign,
+    },
+  ]);
+
+  return {
+    props: {
+      layoutData: {
+        headerContent: translationsPageData.headerRedesign,
+      },
+      pageData: {
+        blocks,
+        seo: {
+          metaTitle: translationsPageData.common.metaTitle,
+          metaDescription: translationsPageData.common.metaDescription,
+          metaKeywords: translationsPageData.common.metaKeywords,
+        },
+      },
+      ...(await serverSideTranslations(locale, [
+        `common`,
+        `cookie`,
+        `footerRedesign`,
+        `formBlockRedesign`,
+      ])),
+    },
+  };
+}

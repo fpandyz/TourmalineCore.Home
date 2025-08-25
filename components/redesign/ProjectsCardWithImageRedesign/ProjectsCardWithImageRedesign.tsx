@@ -1,15 +1,6 @@
 import Image from 'next/image';
 import clsx from 'clsx';
-
-export type ProjectCardWithImage = {
-  title: string;
-  description: string;
-  imageUrl?: string;
-  videoUrl?: string;
-  link?: string;
-  isNda?: boolean;
-  size: 'L' | 'M' | 'S' | 'XS';
-};
+import { ProjectCardWithImage } from '../../../common/types';
 
 export function ProjectsCardWithImageRedesign({
   title,

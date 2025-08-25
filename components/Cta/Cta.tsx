@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { useBodyScrollHidden } from '../../common/hooks/useBodyScrollHiden';
+import { useBodyScrollHidden, useIsRussianCountry, usePath } from '../../common/hooks';
 import { TechnologyPageAnchorLink } from '../../common/enums';
-import { useIsRussianCountry, usePath } from '../../common/hooks';
 import { FormModal } from '../FormModal/FormModal';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 

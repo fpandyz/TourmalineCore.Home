@@ -26,10 +26,10 @@ export default function FrontendTeamPage() {
       <PageHead
         seoData={{
           seo: {
-            title: t(`title`),
-            description: t(`description`),
+            title: t(`metaTitle`),
+            description: t(`metaDescription`),
           },
-          keywords: t(`keywords`),
+          keywords: t(`metaKeywords`),
           metaTags: [],
           structuredData: ``,
           additionalCode: ``,
@@ -69,7 +69,6 @@ export const getStaticProps: GetServerSideProps = async ({
       `footer`,
       `cookie`,
       `form`,
-      `discussion`,
       `formBlock`,
       `heroFrontend-team`,
       `pointsFrontend-team`,
