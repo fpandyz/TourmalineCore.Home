@@ -1,14 +1,8 @@
-type HeaderLink = {
-  id: number;
-  name: string;
-  link: string;
-};
+export interface LayoutData {
+  headerContent: HeaderRedesignProps;
+}
 
-export type HeaderNavigationItem = HeaderLink & {
-  navItems: HeaderLink[];
-};
-
-export type HeaderRedesignProps = {
+export interface HeaderRedesignProps {
   navigationLists: HeaderNavigationItem[];
   button: {
     label: string;
@@ -18,4 +12,14 @@ export type HeaderRedesignProps = {
     address: string;
   };
   socialLinks: HeaderLink[];
-};
+}
+
+export interface HeaderNavigationItem extends HeaderLink {
+  navItems: HeaderLink[];
+}
+
+interface HeaderLink {
+  id: number;
+  name: string;
+  link: string;
+}
