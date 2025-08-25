@@ -18,7 +18,7 @@
     {
       "imageUrl": "/images/inner-circle-project.png",
       "title": "Inner Circle",
-      "description": "Часть экосистемы проектов по\u00A0поддержке расчета бонусов продавцов и\u00A0мотивации персонала",
+      "description": "Сервис для расчета финансовых показателей компании",
       "size": "S",
       "link": "https://github.com/TourmalineCore/inner-circle-documentation",
       "isNda": false
