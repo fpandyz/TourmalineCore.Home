@@ -1,27 +1,27 @@
-import { useTranslation } from 'next-i18next';
-import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
+import { ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 import { MarkdownText } from '../MarkdownText/MarkdownText';
+import { useDeviceSize } from '../../../common/hooks';
+import { ProjectWithTextBlock } from '../../../common/types';
 
 export function ProjectsWithTextBlockRedesign({
-  translationKey,
+  title,
+  textBlockTitle,
+  projectCardsWithImage,
+  textBlockMarkdown,
+  showOnMobile = true,
   targetId,
   dataTestId,
-}:{
-  translationKey: string;
+}: Omit<ProjectWithTextBlock, '__component' | 'id'> & {
   targetId?: string;
   dataTestId?: string;
 }) {
   const {
-    t,
-  } = useTranslation(translationKey);
+    isTablet,
+  } = useDeviceSize();
 
-  const projectCardsWithImage: ProjectCardWithImage[] = t(`projectsCardsWithImage`, {
-    returnObjects: true,
-  });
-
-  const sectionTitle = t(`title`);
-
-  const textBlockTitle = t(`textBlockTitle`);
+  if (!showOnMobile && !isTablet) {
+    return null;
+  }
 
   return (
     <section
@@ -32,10 +32,10 @@ export function ProjectsWithTextBlockRedesign({
       data-testid={dataTestId}
     >
       <div className="container-redesign projects-with-text-block-redesign__wrapper">
-        {sectionTitle && <h2 className="projects-with-text-block-redesign__title">{sectionTitle}</h2>}
+        {title && <h2 className="projects-with-text-block-redesign__title">{title}</h2>}
         <ul className="projects-with-text-block-redesign__cards grid">
           {projectCardsWithImage.map(({
-            title,
+            title: projectCardWithImageTitle,
             description,
             imageUrl,
             size,
@@ -43,9 +43,9 @@ export function ProjectsWithTextBlockRedesign({
             isNda,
           }) => (
             <ProjectsCardWithImageRedesign
-              key={title}
+              key={projectCardWithImageTitle}
               className="projects-with-text-block-redesign__card  col-tablet-4"
-              title={title}
+              title={projectCardWithImageTitle}
               description={description}
               imageUrl={imageUrl}
               size={size}
@@ -64,7 +64,7 @@ export function ProjectsWithTextBlockRedesign({
               isTargetBlank
               className="projects-with-text-block-redesign__markdown"
             >
-              {t(`textBlockMarkdown`)}
+              {textBlockMarkdown}
             </MarkdownText>
           </li>
 

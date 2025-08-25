@@ -1,16 +1,12 @@
 import Image from 'next/image';
+import { Signpost } from '../../../common/types';
 
 export function SignpostRedesign({
   title,
   subtitle,
   link,
   imageUrl,
-}: {
-  title: string;
-  subtitle: string;
-  link?: string;
-  imageUrl: string;
-}) {
+}: Signpost) {
   return (
     <div className="signpost-redesign">
       {link ? (

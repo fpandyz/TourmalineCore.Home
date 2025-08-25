@@ -1,6 +1,6 @@
 {
   "title": "",
-  "projectsCardsWithImage": [
+  "projectCardsWithImage": [
     {
       "imageUrl": "/images/real-estate-project.png",
       "title": "Real estate",
@@ -17,5 +17,6 @@
     }
   ],
   "textBlockTitle": "",
-  "textBlockMarkdown": "<span className='blue-deep-color'>еще 27 кейсов</span>,\n<span>в которых мы решили\nпроблемы клиентов</span>"
+  "textBlockMarkdown": "<span className='blue-deep-color'>еще 27 кейсов</span>,\n<span>в которых мы решили\nпроблемы клиентов</span>",
+  "showOnMobile": false
 }

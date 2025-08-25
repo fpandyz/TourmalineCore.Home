@@ -1,5 +1,5 @@
 {
-  "projectsCardsWithImage": [
+  "projectCardsWithImage": [
     {
       "imageUrl": "/images/capybara-project.png",
       "title": "Capybara",
@@ -23,6 +23,7 @@
       "link": "https://github.com/TourmalineCore/inner-circle-documentation",
       "isNda": false
     }
-  ]
+  ],
+  "showOnMobile": true
 }
 

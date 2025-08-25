@@ -1,5 +1,5 @@
 {
-  "projectsCardsWithImage": [
+  "projectCardsWithImage": [
     {
       "videoUrl": "/video/best-by.mp4",
       "title": "Best By",
@@ -31,6 +31,7 @@
       "link": "https://www.behance.net/gallery/160948093/Analytics-dashboard",
       "isNda": false
     }
-  ]
+  ],
+  "showOnMobile": false
 }
 
