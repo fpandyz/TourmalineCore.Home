@@ -4,7 +4,7 @@ import { LayoutRedesign } from '../components/redesign/LayoutRedesign/LayoutRede
 import { BlockRenderer } from '../components/BlockRenderer/BlockRenderer';
 import { BlockType } from '../common/enums';
 import { loadTranslations } from '../common/utils';
-import { Block, SeoBlock } from '../common/types';
+import { Block, LayoutData, SeoBlock } from '../common/types';
 
 type PageData = {
   seo: SeoBlock;
@@ -12,8 +12,10 @@ type PageData = {
 };
 
 export default function HomePage({
+  layoutData,
   pageData,
 }: {
+  layoutData: LayoutData;
   pageData: PageData;
 }) {
   const {
@@ -36,7 +38,7 @@ export default function HomePage({
         }}
       />
 
-      <LayoutRedesign>
+      <LayoutRedesign headerContent={layoutData.headerContent}>
         {blocks.map((block: Block) => (
           <BlockRenderer
             key={block.id}
@@ -69,6 +71,7 @@ export async function getServerSideProps({
     `articleSignpostsRedesign`,
     `singleImageRedesign`,
     `formBlockRedesign`,
+    `headerRedesign`,
   ]);
 
   const mapStaticBlocksWithId = (blocks: Block[]) => blocks.map((block) => ({
@@ -105,6 +108,7 @@ export async function getServerSideProps({
       __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
       ...translationsPageData.projectsRedesignFifthSection,
     },
+    // Todo: uncomment after fix form
     // {
     //   __component: BlockType.HOME_FORM_BLOCK,
     // },
@@ -136,6 +140,9 @@ export async function getServerSideProps({
 
   return {
     props: {
+      layoutData: {
+        headerContent: translationsPageData.headerRedesign,
+      },
       pageData: {
         blocks,
         seo: {

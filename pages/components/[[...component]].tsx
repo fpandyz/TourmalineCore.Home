@@ -17,6 +17,8 @@ import { Cookie } from "../../components/Cookie/Cookie";
 import { CustomError } from "../../components/redesign/CustomError/CustomError";
 import { FormModal } from "../../components/FormModal/FormModal";
 import { loadTranslations } from "../../common/utils/loadTranslations";
+import { HeaderRedesign } from "../../components/redesign/HeaderRedesign/HeaderRedesign";
+import { MobileMenu } from "../../components/redesign/HeaderRedesign/components/MobileMenuRedesign/MobileMenuRedesign";
 
 export default function ComponentsPage({
   pageData,
@@ -35,6 +37,7 @@ export default function ComponentsPage({
     articleSignpostsRedesign,
     singleImageRedesign,
     pageNotFound,
+    headerRedesign,
   } = pageData;
 
   const router = useRouter();
@@ -83,6 +86,30 @@ export default function ComponentsPage({
         title={heroRedesign.title}
         description={heroRedesign.description}
         imageUrls={heroRedesign.imageUrls}
+      />
+    );
+  }
+
+  if (componentName === ComponentName.HEADER) {
+    return (
+      <HeaderRedesign
+        navigationLists={headerRedesign.navigationLists}
+        button={headerRedesign.button}
+        email={headerRedesign.email}
+        socialLinks={headerRedesign.socialLinks}
+      />
+    );
+  }
+
+  if (componentName === ComponentName.MOBILE_MENU) {
+    return (
+      <MobileMenu
+        navigationLists={headerRedesign.navigationLists}
+        buttonLabel={headerRedesign.button.label}
+        email={headerRedesign.email}
+        socialLinks={headerRedesign.socialLinks}
+        // ToDo: uncomment after editing the form
+        // setIsModalOpen={() => {}}
       />
     );
   }
@@ -227,6 +254,12 @@ export default function ComponentsPage({
           <Link href={ComponentName.HERO}>Hero</Link>
         </li>
         <li className="components-page__item">
+          <Link href={ComponentName.HEADER}>Header</Link>
+        </li>
+        <li className="components-page__item">
+          <Link href={ComponentName.MOBILE_MENU}>Header popup</Link>
+        </li>
+        <li className="components-page__item">
           <Link href={ComponentName.PROJECTS_WITH_FOUR_CARDS}>Projects with four cards</Link>
         </li>
         <li className="components-page__item">
@@ -285,6 +318,7 @@ export async function getStaticProps({
     `articleSignpostsRedesign`,
     `singleImageRedesign`,
     `pageNotFound`,
+    `headerRedesign`,
   ]);
 
   return {
