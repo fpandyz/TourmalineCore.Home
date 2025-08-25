@@ -10,11 +10,16 @@ import { Tasks } from '../../components/Tasks/Tasks';
 import { Stack } from '../../components/Stack/Stack';
 import { Cases } from '../../components/Cases/Cases';
 import { Stages } from '../../components/Stages/Stages';
+import { FormBlock } from '../../components/FormBlock/FormBlock';
+import { TechnologyPageAnchorLink } from '../../common/enums';
+import { useIsRussianCountry } from '../../common/hooks';
 
 export default function FrontendTeamPage() {
   const {
     t,
   } = useTranslation(`common`);
+
+  const isCountryRus = useIsRussianCountry();
 
   return (
     <>
@@ -44,10 +49,12 @@ export default function FrontendTeamPage() {
         <Stages />
         <Stack />
         <ServicesTechnology />
-        {/* <FormBlock
-          id={TechnologyPageAnchorLink.Contact}
-          buttonClassName="frontend-team__form-button"
-        /> */}
+        {isCountryRus && (
+          <FormBlock
+            id={TechnologyPageAnchorLink.Contact}
+            buttonClassName="frontend-team__form-button"
+          />
+        )}
       </Layout>
     </>
   );
