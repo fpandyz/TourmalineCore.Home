@@ -37,7 +37,7 @@ export default function ComponentsPage({
     articleSignpostsRedesign,
     singleImageRedesign,
     pageNotFound,
-    headerRedesign
+    headerRedesign,
   } = pageData;
 
   const router = useRouter();
@@ -104,7 +104,7 @@ export default function ComponentsPage({
   if (componentName === ComponentName.MOBILE_MENU) {
     return (
       <MobileMenu
-        navigationList={headerRedesign.navigationLists}
+        navigationLists={headerRedesign.navigationLists}
         buttonLabel={headerRedesign.button.label}
         email={headerRedesign.email}
         socialLinks={headerRedesign.socialLinks}

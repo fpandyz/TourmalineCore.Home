@@ -7,10 +7,10 @@ import { useDeviceSize } from "../../../../../common/hooks";
 
 export function HeaderNavigationList({
   className,
-  navigationList,
+  navigationLists,
 }: {
   className?: string;
-  navigationList: HeaderRedesignProps["navigationLists"];
+  navigationLists: HeaderRedesignProps["navigationLists"];
 }) {
   const {
     isTabletXl,
@@ -30,7 +30,7 @@ export function HeaderNavigationList({
       )}
     >
       <ul className="header-navigation-list__list">
-        {navigationList.map((el) => (el.navItems.length > 0 ? (
+        {navigationLists.map((el) => (el.navItems.length > 0 ? (
           <li
             className={clsx(
               `header-navigation-list__list-item`,

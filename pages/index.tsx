@@ -5,7 +5,10 @@ import { BlockRenderer } from '../components/BlockRenderer/BlockRenderer';
 import { BlockType } from '../common/enums';
 import { loadTranslations } from '../common/utils';
 import { Block, HeaderRedesignProps, SeoBlock } from '../common/types';
-import { useTranslation } from 'next-i18next';
+
+type LayoutData = {
+  headerContent: HeaderRedesignProps;
+};
 
 type PageData = {
   seo: SeoBlock;
@@ -13,33 +16,16 @@ type PageData = {
 };
 
 export default function HomePage({
+  layoutData,
   pageData,
 }: {
+  layoutData: LayoutData;
   pageData: PageData;
 }) {
   const {
     blocks,
     seo,
   } = pageData;
-
-  const {
-    t: headerTranslations,
-  } = useTranslation(`headerRedesign`);
-
-  const headerContent: HeaderRedesignProps = {
-    navigationLists: headerTranslations(`navigationLists`, {
-      returnObjects: true,
-    }),
-    button: headerTranslations(`button`, {
-      returnObjects: true,
-    }),
-    email: headerTranslations(`email`, {
-      returnObjects: true,
-    }),
-    socialLinks: headerTranslations(`socialLinks`, {
-      returnObjects: true,
-    }),
-  };
 
   return (
     <>
@@ -56,7 +42,7 @@ export default function HomePage({
         }}
       />
 
-      <LayoutRedesign headerContent={headerContent}>
+      <LayoutRedesign headerContent={layoutData.headerContent}>
         {blocks.map((block: Block) => (
           <BlockRenderer
             key={block.id}
@@ -89,6 +75,7 @@ export async function getServerSideProps({
     `articleSignpostsRedesign`,
     `singleImageRedesign`,
     `formBlockRedesign`,
+    `headerRedesign`,
   ]);
 
   const mapStaticBlocksWithId = (blocks: Block[]) => blocks.map((block) => ({
@@ -156,6 +143,9 @@ export async function getServerSideProps({
 
   return {
     props: {
+      layoutData: {
+        headerContent: translationsPageData.headerRedesign,
+      },
       pageData: {
         blocks,
         seo: {
@@ -169,7 +159,6 @@ export async function getServerSideProps({
         `cookie`,
         `footerRedesign`,
         `formBlockRedesign`,
-        `headerRedesign`
       ])),
     },
   };

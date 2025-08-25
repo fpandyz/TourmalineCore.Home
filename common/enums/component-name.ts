@@ -4,7 +4,7 @@ export enum ComponentName {
   COLLAGE_WITH_TITLE = `collage-with-title`,
   FOOTER = `footer`,
   HEADER = `header`,
-  HEADER_POPUP = `header-popup`,
+  MOBILE_MENU = `mobile-menu`,
   HERO = `hero`,
   PROJECTS_WITH_FOUR_CARDS = `projects-with-four-cards`,
   PROJECTS_WITH_THREE_CARDS = `projects-with-three-cards`,

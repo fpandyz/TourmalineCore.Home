@@ -7,13 +7,13 @@ import {
 import { ComponentName } from '../../../../../common/enums';
 import { BREAKPOINTS } from '../../../../../playwright-tests/constants/breakpoints';
 
-const TEST_ID = `header-popup`;
+const TEST_ID = `mobile-menu`;
 
-test.describe(`HeaderPopupTests`, () => {
+test.describe(`MobileMenuTests`, () => {
   test.beforeEach(async ({
     goToComponentsPage,
   }) => {
-    await goToComponentsPage(ComponentName.HEADER_POPUP);
+    await goToComponentsPage(ComponentName.MOBILE_MENU);
   });
 
   for (const {
@@ -48,6 +48,6 @@ async function showAccordion({
     .first()
     .click();
 
-  await expect(page.getByTestId(`header-popup`))
+  await expect(page.getByTestId(`mobile-menu`))
     .toHaveScreenshot(`${TEST_ID}-accordion.png`);
 }

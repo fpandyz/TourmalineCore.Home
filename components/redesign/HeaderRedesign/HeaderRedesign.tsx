@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useRouter } from "next/router";
 import { LangSwitchRedesign } from "./components/LangSwitchRedesign/LangSwitchRedesign";
 import { HeaderButton } from "./components/HeaderButton/HeaderButton";
-import { HeaderPopup } from "./components/HeaderPopup/HeaderPopup";
+import { MobileMenu } from "./components/MobileMenu/MobileMenu";
 import { useBodyScrollHidden } from "../../../common/hooks/useBodyScrollHidden";
 import { HeaderRedesignProps } from "../../../common/types";
 import { useDeviceSize, useOnScrollDirections } from "../../../common/hooks";
@@ -63,7 +63,7 @@ export function HeaderRedesign({
 
         <HeaderNavigationList
           className="header-redesign__nav"
-          navigationList={navigationLists}
+          navigationLists={navigationLists}
         />
 
         <LangSwitchRedesign className="header-redesign__lang-switch" />
@@ -88,6 +88,7 @@ export function HeaderRedesign({
         {isTabletXl && (
           <HeaderButton
             className="header-redesign__button"
+            // onClick={setIsModalOpen}
           >
             {button.label}
           </HeaderButton>
@@ -95,8 +96,8 @@ export function HeaderRedesign({
       </div>
 
       {isMobileMenuOpen && !isTabletXl && (
-        <HeaderPopup
-          navigationList={navigationLists}
+        <MobileMenu
+          navigationLists={navigationLists}
           buttonLabel={button.label}
           email={email}
           socialLinks={socialLinks}

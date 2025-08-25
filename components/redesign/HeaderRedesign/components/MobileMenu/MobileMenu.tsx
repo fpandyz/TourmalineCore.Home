@@ -3,14 +3,14 @@ import { HeaderButton } from "../HeaderButton/HeaderButton";
 import { HeaderRedesignProps } from "../../../../../common/types";
 import { HeaderNavigationList } from "../HeaderNavigationList/HeaderNavigationList";
 
-export function HeaderPopup({
-  navigationList,
+export function MobileMenu({
+  navigationLists,
   buttonLabel,
   email,
   socialLinks,
   // setIsModalOpen,
 }: {
-  navigationList: HeaderRedesignProps["navigationLists"];
+  navigationLists: HeaderRedesignProps["navigationLists"];
   buttonLabel: HeaderRedesignProps["button"]["label"];
   email: HeaderRedesignProps["email"];
   socialLinks: HeaderRedesignProps["socialLinks"];
@@ -18,33 +18,33 @@ export function HeaderPopup({
 }) {
   return (
     <div
-      className="header-popup container-redesign"
-      data-testid="header-popup"
+      className="mobile-menu container-redesign"
+      data-testid="mobile-menu"
     >
       <HeaderNavigationList
-        className="header-popup__nav"
-        navigationList={navigationList}
+        className="mobile-menu__nav"
+        navigationLists={navigationLists}
       />
 
       <HeaderButton
-        className="header-popup__button"
+        className="mobile-menu__button"
         // ToDo: uncomment after editing the form
         // onClick={setIsModalOpen}
       >
         {buttonLabel}
       </HeaderButton>
 
-      <div className="header-popup__contact">
-        <span className="header-popup__caption">{email.caption}</span>
+      <div className="mobile-menu__contact">
+        <span className="mobile-menu__caption">{email.caption}</span>
         <Link
-          className="header-popup__email"
+          className="mobile-menu__email"
           href={`mailto:${email.address}`}
         >
           {email.address}
         </Link>
       </div>
-      <nav className="header-popup__nav">
-        <ul className="header-popup__list">
+      <nav className="mobile-menu__nav">
+        <ul className="mobile-menu__list">
           {socialLinks.map(({
             id,
             name,
@@ -52,10 +52,10 @@ export function HeaderPopup({
           }) => (
             <li
               key={id}
-              className="header-popup__list-item"
+              className="mobile-menu__list-item"
             >
               <Link
-                className="header-popup__link"
+                className="mobile-menu__link"
                 href={link}
               >
                 {name}

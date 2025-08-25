@@ -51,6 +51,7 @@ export const getStaticProps: GetServerSideProps = async ({
       `pageNotFound`,
       `cookie`,
       `formBlockRedesign`,
+      `headerRedesign`,
     ])),
   },
 });
