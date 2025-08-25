@@ -11,6 +11,7 @@ import { HeaderRedesignProps } from "../../../common/types";
 import { useDeviceSize, useOnScrollDirections } from "../../../common/hooks";
 import { HeaderNavigationList } from "./components/HeaderNavigationList/HeaderNavigationList";
 import { AppRoute } from "../../../common/enums";
+import { FormModal } from "../../FormModal/FormModal";
 
 export function HeaderRedesign({
   navigationLists,
@@ -23,8 +24,7 @@ export function HeaderRedesign({
   } = useDeviceSize();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // ToDo: uncomment after editing the form
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useBodyScrollHidden(isMobileMenuOpen);
 
@@ -88,7 +88,7 @@ export function HeaderRedesign({
         {isTabletXl && (
           <HeaderButton
             className="header-redesign__button"
-            // onClick={setIsModalOpen}
+            onClick={setIsModalOpen}
           >
             {button.label}
           </HeaderButton>
@@ -101,13 +101,10 @@ export function HeaderRedesign({
           buttonLabel={button.label}
           email={email}
           socialLinks={socialLinks}
-          // ToDo: uncomment after editing the form
-          // setIsModalOpen={setIsModalOpen}
+          setIsModalOpen={setIsModalOpen}
         />
       )}
-
-      {/* ToDo: uncomment after editing the form */}
-      {/* {isModalOpen && <FormModal setIsOpen={setIsModalOpen} />} */}
+      {isModalOpen && <FormModal setIsOpen={setIsModalOpen} />}
     </header>
   );
 }
