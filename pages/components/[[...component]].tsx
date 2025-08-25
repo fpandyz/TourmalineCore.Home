@@ -108,8 +108,7 @@ export default function ComponentsPage({
         buttonLabel={headerRedesign.button.label}
         email={headerRedesign.email}
         socialLinks={headerRedesign.socialLinks}
-        // ToDo: uncomment after editing the form
-        // setIsModalOpen={() => {}}
+        setIsModalOpen={() => {}}
       />
     );
   }
