@@ -71,8 +71,8 @@ export async function getServerSideProps({
     `formBlockRedesign`,
   ]);
 
-  const mapStaticBlocksWithId = (blocks: Block[]) => blocks.map((block, index) => ({
-    id: index,
+  const mapStaticBlocksWithId = (blocks: Block[]) => blocks.map((block) => ({
+    id: crypto.randomUUID(),
     ...block,
   }));
 
