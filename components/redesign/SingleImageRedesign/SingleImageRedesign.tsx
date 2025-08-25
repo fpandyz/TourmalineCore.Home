@@ -1,11 +1,9 @@
-import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { SingleImageBlock } from '../../../common/types';
 
-export function SingleImageRedesign() {
-  const {
-    t,
-  } = useTranslation(`singleImageRedesign`);
-
+export function SingleImageRedesign({
+  imageUrl,
+}: Omit<SingleImageBlock, "__component">) {
   return (
     <section
       className="single-image-redesign container-redesign"
@@ -13,7 +11,7 @@ export function SingleImageRedesign() {
     >
       <div className="single-image-redesign__container">
         <Image
-          src={t(`imageUrl`)}
+          src={imageUrl}
           fill
           alt=""
         />

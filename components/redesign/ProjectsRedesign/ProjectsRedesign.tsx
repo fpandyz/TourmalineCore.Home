@@ -1,24 +1,25 @@
-import { useTranslation } from 'next-i18next';
-import { ProjectCardWithImage, ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
+import { useDeviceSize } from '../../../common/hooks';
+import { ProjectBlock } from '../../../common/types';
+import { ProjectsCardWithImageRedesign } from '../ProjectsCardWithImageRedesign/ProjectsCardWithImageRedesign';
 
 const GRID_COLUMNS = 12;
 
 export function ProjectsRedesign({
-  translationKey,
+  projectCardsWithImage,
+  showOnMobile = true,
   dataTestId,
-}:{
-  translationKey: string;
+}: Omit<ProjectBlock, "__component"> & {
   dataTestId?: string;
 }) {
-  const {
-    t,
-  } = useTranslation(translationKey);
-
-  const projectCardsWithImage: ProjectCardWithImage[] = t(`projectsCardsWithImage`, {
-    returnObjects: true,
-  });
-
   const columnsCount = GRID_COLUMNS / projectCardsWithImage.length;
+
+  const {
+    isTablet,
+  } = useDeviceSize();
+
+  if (!showOnMobile && !isTablet) {
+    return null;
+  }
 
   return (
     <section

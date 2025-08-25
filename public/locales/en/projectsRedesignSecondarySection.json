@@ -1,5 +1,5 @@
 {
-  "projectsCardsWithImage": [
+  "projectCardsWithImage": [
     {
       "imageUrl": "/images/clever-project.png",
       "title": "Clever",
@@ -29,6 +29,7 @@
       "size": "M",
       "isNda": true
     }
-  ]
+  ],
+  "showOnMobile": true
 }
 

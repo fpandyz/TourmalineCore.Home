@@ -15,11 +15,11 @@
     position: relative;
     display: block;
     width: 135px;
-    height: 40px;
+    height: $header-logo-height;
 
     @include desktop-xl {
       width: 162px;
-      height: 48px;
+      height: $header-logo-height-desktop-xl;
     }
 
     // svg {

@@ -5,10 +5,12 @@ export function FormModal({
   setIsOpen,
   initializeIsSubmit,
   testId,
+  isComponentPage,
 }:{
   setIsOpen: (isOpen: boolean) => void;
   initializeIsSubmit?: boolean;
   testId?: string;
+  isComponentPage?: boolean;
 }) {
   return (
     <Modal
@@ -18,6 +20,7 @@ export function FormModal({
       <FormBlockRedesign
         isModal
         initializeIsSubmit={initializeIsSubmit}
+        isComponentPage={isComponentPage}
       />
     </Modal>
   );

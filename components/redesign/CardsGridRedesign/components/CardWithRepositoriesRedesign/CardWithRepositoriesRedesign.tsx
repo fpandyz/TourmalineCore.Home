@@ -1,15 +1,7 @@
 import clsx from 'clsx';
-import { CardWithContent, CardWithContentRedesign } from '../../../CardWithContentRedesign/CardWithContentRedesign';
+import { CardWithContentRedesign } from '../../../CardWithContentRedesign/CardWithContentRedesign';
 import { useDeviceSize } from '../../../../../common/hooks';
-
-export type CardWithRepositories = CardWithContent & {
-  repositories: {
-    name: string;
-    description?: string;
-    language: string;
-    link: string;
-  }[];
-};
+import { CardWithRepositories } from '../../../../../common/types';
 
 export function CardWithRepositoriesRedesign({
   title,

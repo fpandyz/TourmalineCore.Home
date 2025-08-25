@@ -1,23 +1,19 @@
-import { useTranslation } from 'next-i18next';
+import { HeroBlock } from '../../../common/types';
 import { ImageSlider } from '../ImageSlider/ImageSlider';
 
-export function HeroRedesign() {
-  const {
-    t,
-  } = useTranslation(`heroRedesign`);
-
-  const imageUrls: string[] = t(`imageUrls`, {
-    returnObjects: true,
-  });
-
+export function HeroRedesign({
+  title,
+  description,
+  imageUrls,
+}: Omit<HeroBlock, '__component' | 'id'>) {
   return (
     <section
       className="hero-redesign"
       data-testid="hero"
     >
       <div className="container-redesign hero-redesign__wrapper">
-        <h1 className="hero-redesign__title">{t(`title`)}</h1>
-        <p className="hero-redesign__description">{t(`description`)}</p>
+        <h1 className="hero-redesign__title">{title}</h1>
+        <p className="hero-redesign__description">{description}</p>
         <div className="hero-redesign__images">
           <ImageSlider
             imageUrls={imageUrls}

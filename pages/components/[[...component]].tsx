@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { GetStaticProps } from "next";
-import { useTranslation } from "next-i18next";
 import { CardsGridRedesign } from "../../components/redesign/CardsGridRedesign/CardsGridRedesign";
 import { CollageWithLinkRedesign } from "../../components/redesign/CollageWithLinkRedesign/CollageWithLinkRedesign";
 import { CollageWithTitleRedesign } from "../../components/redesign/CollageWithTitleRedesign/CollageWithTitleRedesign";
@@ -18,18 +16,29 @@ import { ComponentName } from "../../common/enums";
 import { Cookie } from "../../components/Cookie/Cookie";
 import { CustomError } from "../../components/redesign/CustomError/CustomError";
 import { FormModal } from "../../components/FormModal/FormModal";
+import { loadTranslations } from "../../common/utils/loadTranslations";
 import { HeaderRedesign } from "../../components/redesign/HeaderRedesign/HeaderRedesign";
-import { HeaderPopup } from "../../components/redesign/HeaderRedesign/components/HeaderPopup/HeaderPopup";
-import { HeaderRedesignProps } from "../../common/types";
+import { MobileMenu } from "../../components/redesign/HeaderRedesign/components/MobileMenu/MobileMenu";
 
-export default function ComponentsPage() {
+export default function ComponentsPage({
+  pageData,
+}: {
+  pageData: Record<string, any>;
+}) {
   const {
-    t: pageNotFoundTranslation,
-  } = useTranslation(`pageNotFound`);
-
-  const {
-    t: headerRedesignTranslation,
-  } = useTranslation(`headerRedesign`);
+    cardsGridRedesign,
+    collageWithLinkRedesign,
+    collageWithTitleRedesign,
+    heroRedesign,
+    projectsRedesignFirstSection,
+    projectsRedesignSecondarySection,
+    projectsRedesignThirdSection,
+    servicesRedesign,
+    articleSignpostsRedesign,
+    singleImageRedesign,
+    pageNotFound,
+    headerRedesign
+  } = pageData;
 
   const router = useRouter();
   const {
@@ -39,15 +48,32 @@ export default function ComponentsPage() {
   const componentName = query.component?.[0];
 
   if (componentName === ComponentName.CARDS_GRID) {
-    return <CardsGridRedesign />;
+    return (
+      <CardsGridRedesign
+        cardWithImage={cardsGridRedesign.cardWithImage}
+        cardWithRepositories={cardsGridRedesign.cardWithRepositories}
+        cardWithTextAndDate={cardsGridRedesign.cardWithTextAndDate}
+      />
+    );
   }
 
   if (componentName === ComponentName.COLLAGE_WITH_LINK) {
-    return <CollageWithLinkRedesign />;
+    return (
+      <CollageWithLinkRedesign
+        text={collageWithLinkRedesign.text}
+        link={collageWithLinkRedesign.link}
+        imageUrls={collageWithLinkRedesign.imageUrls}
+      />
+    );
   }
 
   if (componentName === ComponentName.COLLAGE_WITH_TITLE) {
-    return <CollageWithTitleRedesign />;
+    return (
+      <CollageWithTitleRedesign
+        title={collageWithTitleRedesign.title}
+        imageUrls={collageWithTitleRedesign.imageUrls}
+      />
+    );
   }
 
   if (componentName === ComponentName.FOOTER) {
@@ -55,45 +81,33 @@ export default function ComponentsPage() {
   }
 
   if (componentName === ComponentName.HERO) {
-    return <HeroRedesign />;
+    return (
+      <HeroRedesign
+        title={heroRedesign.title}
+        description={heroRedesign.description}
+        imageUrls={heroRedesign.imageUrls}
+      />
+    );
   }
 
   if (componentName === ComponentName.HEADER) {
     return (
       <HeaderRedesign
-        navigationLists={headerRedesignTranslation(`navigationLists`, {
-          returnObjects: true,
-        })}
-        button={headerRedesignTranslation(`button`, {
-          returnObjects: true,
-        })}
-        email={headerRedesignTranslation(`email`, {
-          returnObjects: true,
-        })}
-        socialLinks={headerRedesignTranslation(`socialLinks`, {
-          returnObjects: true,
-        })}
+        navigationLists={headerRedesign.navigationLists}
+        button={headerRedesign.button}
+        email={headerRedesign.email}
+        socialLinks={headerRedesign.socialLinks}
       />
     );
   }
 
-  if (componentName === ComponentName.HEADER_POPUP) {
-    const buttonLabel: HeaderRedesignProps["button"] = headerRedesignTranslation(`button`, {
-      returnObjects: true,
-    });
-
+  if (componentName === ComponentName.MOBILE_MENU) {
     return (
-      <HeaderPopup
-        navigationList={headerRedesignTranslation(`navigationLists`, {
-          returnObjects: true,
-        })}
-        buttonLabel={buttonLabel.label}
-        email={headerRedesignTranslation(`email`, {
-          returnObjects: true,
-        })}
-        socialLinks={headerRedesignTranslation(`socialLinks`, {
-          returnObjects: true,
-        })}
+      <MobileMenu
+        navigationList={headerRedesign.navigationLists}
+        buttonLabel={headerRedesign.button.label}
+        email={headerRedesign.email}
+        socialLinks={headerRedesign.socialLinks}
         // ToDo: uncomment after editing the form
         // setIsModalOpen={() => {}}
       />
@@ -103,8 +117,8 @@ export default function ComponentsPage() {
   if (componentName === ComponentName.PROJECTS_WITH_FOUR_CARDS) {
     return (
       <ProjectsRedesign
-        translationKey="projectsRedesignSecondarySection"
         dataTestId="projects-with-four-cards"
+        projectCardsWithImage={projectsRedesignSecondarySection.projectCardsWithImage}
       />
     );
   }
@@ -112,7 +126,7 @@ export default function ComponentsPage() {
   if (componentName === ComponentName.PROJECTS_WITH_THREE_CARDS) {
     return (
       <ProjectsRedesign
-        translationKey="projectsRedesignThirdSection"
+        projectCardsWithImage={projectsRedesignThirdSection.projectCardsWithImage}
         dataTestId="projects-with-three-cards"
       />
     );
@@ -122,22 +136,33 @@ export default function ComponentsPage() {
     return (
       <ProjectsWithTextBlockRedesign
         targetId="projects"
-        translationKey="projectsRedesignFirstSection"
         dataTestId="projects-with-text-block-first"
+        title={projectsRedesignFirstSection.title}
+        textBlockTitle={projectsRedesignFirstSection.textBlockTitle}
+        projectCardsWithImage={projectsRedesignFirstSection.projectCardsWithImage}
+        textBlockMarkdown={projectsRedesignFirstSection.textBlockMarkdown}
       />
     );
   }
 
   if (componentName === ComponentName.SERVICES) {
     return (
-      <ServicesRedesign />
+      <ServicesRedesign
+        title={servicesRedesign.title}
+        services={servicesRedesign.services}
+        teamsCard={servicesRedesign.teamsCard}
+        teams={servicesRedesign.teams}
+      />
     );
   }
 
   if (componentName === ComponentName.SIGNPOST_MULTIPLE) {
     return (
       <SignpostMultipleRedesign
-        translationKey="articleSignpostsRedesign"
+        title={articleSignpostsRedesign.title}
+        viewAllLink={articleSignpostsRedesign.viewAllLink}
+        viewAllLinkText={articleSignpostsRedesign.viewAllLinkText}
+        signposts={articleSignpostsRedesign.signposts}
         dataTestId="signpost-multiple-articles"
       />
     );
@@ -145,13 +170,19 @@ export default function ComponentsPage() {
 
   if (componentName === ComponentName.SINGLE_IMAGE) {
     return (
-      <SingleImageRedesign />
+      <SingleImageRedesign
+        imageUrl={singleImageRedesign.imageUrl}
+      />
     );
   }
 
   if (componentName === ComponentName.FORM_BLOCK) {
     return (
-      <FormBlockRedesign testId="form-block" />
+      <FormBlockRedesign
+        testId="form-block"
+        isComponentPage
+
+      />
     );
   }
 
@@ -160,6 +191,7 @@ export default function ComponentsPage() {
       <FormBlockRedesign
         initializeIsSubmit
         testId="submitted-form-block"
+        isComponentPage
       />
     );
   }
@@ -174,7 +206,7 @@ export default function ComponentsPage() {
     return (
       <CustomError
         statusCode={404}
-        message={pageNotFoundTranslation(`message`)}
+        message={pageNotFound.message}
       />
     );
   }
@@ -184,6 +216,7 @@ export default function ComponentsPage() {
       <FormModal
         setIsOpen={() => {}}
         testId="form-modal"
+        isComponentPage
       />
     );
   }
@@ -194,6 +227,7 @@ export default function ComponentsPage() {
         setIsOpen={() => {}}
         testId="submitted-form-modal"
         initializeIsSubmit
+        isComponentPage
       />
     );
   }
@@ -223,7 +257,7 @@ export default function ComponentsPage() {
           <Link href={ComponentName.HEADER}>Header</Link>
         </li>
         <li className="components-page__item">
-          <Link href={ComponentName.HEADER_POPUP}>Header popup</Link>
+          <Link href={ComponentName.MOBILE_MENU}>Header popup</Link>
         </li>
         <li className="components-page__item">
           <Link href={ComponentName.PROJECTS_WITH_FOUR_CARDS}>Projects with four cards</Link>
@@ -267,29 +301,37 @@ export default function ComponentsPage() {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({
+export async function getStaticProps({
   locale,
-}) => ({
-  props: {
-    ...(await serverSideTranslations(locale as string, [
-      `cookie`,
-      `cardsGridRedesign`,
-      `collageWithLinkRedesign`,
-      `collageWithTitleRedesign`,
-      `footerRedesign`,
-      `headerRedesign`,
-      `heroRedesign`,
-      `projectsRedesignFirstSection`,
-      `projectsRedesignSecondarySection`,
-      `projectsRedesignThirdSection`,
-      `servicesRedesign`,
-      `articleSignpostsRedesign`,
-      `singleImageRedesign`,
-      `formBlockRedesign`,
-      `pageNotFound`,
-    ])),
-  },
-});
+}: {
+  locale: string;
+}) {
+  const translationsPageData = await loadTranslations(locale, [
+    `cardsGridRedesign`,
+    `collageWithLinkRedesign`,
+    `collageWithTitleRedesign`,
+    `heroRedesign`,
+    `projectsRedesignFirstSection`,
+    `projectsRedesignSecondarySection`,
+    `projectsRedesignThirdSection`,
+    `servicesRedesign`,
+    `articleSignpostsRedesign`,
+    `singleImageRedesign`,
+    `pageNotFound`,
+    `headerRedesign`,
+  ]);
+
+  return {
+    props: {
+      pageData: translationsPageData,
+      ...(await serverSideTranslations(locale, [
+        `cookie`,
+        `footerRedesign`,
+        `formBlockRedesign`,
+      ])),
+    },
+  };
+}
 
 export async function getStaticPaths() {
   const paths = Object.values(ComponentName)
