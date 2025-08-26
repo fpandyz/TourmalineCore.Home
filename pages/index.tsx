@@ -33,7 +33,7 @@ export default function HomePage({
           },
           keywords: seo.metaKeywords,
           metaTags: [],
-          structuredData: ``,
+          structuredData: ` `,
           additionalCode: ``,
         }}
       />
