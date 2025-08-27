@@ -16,7 +16,8 @@
     "lint:css": "npx stylelint \"**/*.{css,scss}\"",
     "playwright:run": "npx playwright test",
     "playwright:open": "npx playwright test --ui",
-    "update-snapshots": "npx playwright test --update-snapshots"
+    "update-snapshots": "npx playwright test --update-snapshots",
+    "generate-api-types": "docker-compose -f ./api-types/docker-compose.yml up --build ts_generator"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
