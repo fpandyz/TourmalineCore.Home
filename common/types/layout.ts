@@ -4,13 +4,9 @@ export interface LayoutData {
 
 export interface HeaderRedesignProps {
   navigationLists: HeaderNavigationItem[];
-  button: {
-    label: string;
-  };
-  email: {
-    caption: string;
-    address: string;
-  };
+  buttonLabel: string;
+  emailCaption: string;
+  emailAddress: string;
   socialLinks: HeaderLink[];
 }
 

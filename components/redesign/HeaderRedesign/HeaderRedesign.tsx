@@ -14,8 +14,9 @@ import { AppRoute } from "../../../common/enums";
 
 export function HeaderRedesign({
   navigationLists,
-  button,
-  email,
+  buttonLabel,
+  emailCaption,
+  emailAddress,
   socialLinks,
 }: HeaderRedesignProps) {
   const {
@@ -90,7 +91,7 @@ export function HeaderRedesign({
             className="header-redesign__button"
             // onClick={setIsModalOpen}
           >
-            {button.label}
+            {buttonLabel}
           </HeaderButton>
         )}
       </div>
@@ -98,8 +99,9 @@ export function HeaderRedesign({
       {isMobileMenuOpen && !isTabletXl && (
         <MobileMenu
           navigationLists={navigationLists}
-          buttonLabel={button.label}
-          email={email}
+          buttonLabel={buttonLabel}
+          emailCaption={emailCaption}
+          emailAddress={emailAddress}
           socialLinks={socialLinks}
           // ToDo: uncomment after editing the form
           // setIsModalOpen={setIsModalOpen}

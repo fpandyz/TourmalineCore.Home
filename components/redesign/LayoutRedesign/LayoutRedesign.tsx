@@ -22,8 +22,9 @@ export function LayoutRedesign({
       />
       <HeaderRedesign
         navigationLists={headerContent.navigationLists}
-        button={headerContent.button}
-        email={headerContent.email}
+        buttonLabel={headerContent.buttonLabel}
+        emailCaption={headerContent.emailCaption}
+        emailAddress={headerContent.emailAddress}
         socialLinks={headerContent.socialLinks}
       />
       <main

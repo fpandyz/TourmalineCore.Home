@@ -6,13 +6,15 @@ import { HeaderNavigationList } from "../HeaderNavigationList/HeaderNavigationLi
 export function MobileMenu({
   navigationLists,
   buttonLabel,
-  email,
+  emailCaption,
+  emailAddress,
   socialLinks,
   // setIsModalOpen,
 }: {
   navigationLists: HeaderRedesignProps["navigationLists"];
-  buttonLabel: HeaderRedesignProps["button"]["label"];
-  email: HeaderRedesignProps["email"];
+  buttonLabel: HeaderRedesignProps['buttonLabel'];
+  emailCaption: HeaderRedesignProps['emailCaption'];
+  emailAddress: HeaderRedesignProps["emailAddress"];
   socialLinks: HeaderRedesignProps["socialLinks"];
   // setIsModalOpen: (isOpen: boolean) => void;
 }) {
@@ -35,12 +37,12 @@ export function MobileMenu({
       </HeaderButton>
 
       <div className="mobile-menu-redesign__contact">
-        <span className="mobile-menu-redesign__caption">{email.caption}</span>
+        <span className="mobile-menu-redesign__caption">{emailCaption}</span>
         <Link
           className="mobile-menu-redesign__email"
-          href={`mailto:${email.address}`}
+          href={`mailto:${emailAddress}`}
         >
-          {email.address}
+          {emailAddress}
         </Link>
       </div>
       <nav className="mobile-menu-redesign__nav">

@@ -61,13 +61,9 @@
       "navItems": []
     }
   ],
-  "button": {
-    "label": "Discuss the project"
-  },
-  "email": {
-    "caption": "For all questions",
-    "address": "contact@tourmalinecore.com"
-  },
+  "buttonLabel": "Discuss the project",
+  "emailCaption": "For all questions",
+  "emailAddress": "contact@tourmalinecore.com",
   "socialLinks": [
     {
       "id": 0,

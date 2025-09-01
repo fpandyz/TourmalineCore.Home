@@ -94,8 +94,9 @@ export default function ComponentsPage({
     return (
       <HeaderRedesign
         navigationLists={headerRedesign.navigationLists}
-        button={headerRedesign.button}
-        email={headerRedesign.email}
+        buttonLabel={headerRedesign.buttonLabel}
+        emailCaption={headerRedesign.emailCaption}
+        emailAddress={headerRedesign.emailAddress}
         socialLinks={headerRedesign.socialLinks}
       />
     );
@@ -105,8 +106,9 @@ export default function ComponentsPage({
     return (
       <MobileMenu
         navigationLists={headerRedesign.navigationLists}
-        buttonLabel={headerRedesign.button.label}
-        email={headerRedesign.email}
+        buttonLabel={headerRedesign.buttonLabel}
+        emailCaption={headerRedesign.emailCaption}
+        emailAddress={headerRedesign.emailAddress}
         socialLinks={headerRedesign.socialLinks}
         // ToDo: uncomment after editing the form
         // setIsModalOpen={() => {}}
