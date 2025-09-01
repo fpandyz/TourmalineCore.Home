@@ -1,5 +1,5 @@
 {
-  "projectsCardsWithImage": [
+  "projectCardsWithImage": [
     {
       "videoUrl": "/video/best-by.mp4",
       "title": "Best By",
@@ -11,7 +11,7 @@
     {
       "imageUrl": "/images/senmotion-project.png",
       "title": "Senmotion",
-      "description": "Connecting 'smart' insoles to\u00A0cloud infrastructure to\u00A0store, process, and\u00A0analyze patients’ data",
+      "description": "Connecting smart insoles to\u00A0cloud infrastructure to\u00A0store, process, and\u00A0analyze patients’ data",
       "size": "M",
       "link": "https://www.behance.net/gallery/106976255/Sen-Motion",
       "isNda": false
@@ -31,6 +31,7 @@
       "link": "https://www.behance.net/gallery/160948093/Analytics-dashboard",
       "isNda": false
     }
-  ]
+  ],
+  "showOnMobile": false
 }
 

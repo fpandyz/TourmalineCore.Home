@@ -1,14 +1,17 @@
 import { ReactNode, useRef } from 'react';
-import { Header } from '../../Header/Header';
 import { FooterRedesign } from '../FooterRedesign/FooterRedesign';
 import { SkipLink } from '../../SkipLink/SkipLink';
+import { HeaderRedesign } from '../HeaderRedesign/HeaderRedesign';
+import { HeaderRedesignProps } from '../../../common/types';
 
 export function LayoutRedesign({
   children,
   mainClassName,
+  headerContent,
 }: {
   children?: ReactNode;
   mainClassName?: string;
+  headerContent: HeaderRedesignProps;
 }) {
   const mainElementRef = useRef<null | HTMLDivElement>(null);
 
@@ -17,7 +20,12 @@ export function LayoutRedesign({
       <SkipLink
         mainElementRef={mainElementRef}
       />
-      <Header containerClass="container-redesign" />
+      <HeaderRedesign
+        navigationLists={headerContent.navigationLists}
+        button={headerContent.button}
+        email={headerContent.email}
+        socialLinks={headerContent.socialLinks}
+      />
       <main
         id="main-content"
         ref={mainElementRef}

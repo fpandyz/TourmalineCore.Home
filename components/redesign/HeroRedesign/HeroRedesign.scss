@@ -70,10 +70,12 @@
 
   @include tablet {
     padding-bottom: 130px;
+    min-height: calc(100vh - ($header-logo-height + $header-top-padding));
   }
 
   @include desktop-xl {
     padding-top: 56px;
     padding-bottom: 180px;
+    min-height: calc(100vh - ($header-logo-height-desktop-xl + $header-top-padding));
   }
 }

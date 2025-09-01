@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:static": "cross-env IS_STATIC_MODE=true npm run dev",
     "build": "next build",
     "postbuild": "npx next-sitemap",
     "start": "next start",
@@ -15,7 +16,8 @@
     "lint:css": "npx stylelint \"**/*.{css,scss}\"",
     "playwright:run": "npx playwright test",
     "playwright:open": "npx playwright test --ui",
-    "update-snapshots": "npx playwright test --update-snapshots"
+    "update-snapshots": "npx playwright test --update-snapshots",
+    "generate-api-types": "docker-compose -f ./api-types/docker-compose.yml up --build ts_generator"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
@@ -46,6 +48,7 @@
     "@types/react-google-recaptcha": "^2.1.5",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
+    "cross-env": "^10.0.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",

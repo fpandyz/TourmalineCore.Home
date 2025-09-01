@@ -1,52 +1,15 @@
-import { useTranslation } from 'next-i18next';
+import { ServicesBlock } from '../../../common/types';
 import { ServicesCardRedesign } from '../ServicesCardRedesign/ServicesCardRedesign';
 
-type NewServicesList = {
-  id: number;
-  title?: string;
-  skillsList?: string[];
-  link?: string;
-  linkText?: string;
-  theme: 'white' | 'grey' | 'black' | 'blue';
-  imageUrl?: string;
-}[];
-
-type TeamsCard = {
-  theme: 'white' | 'grey' | 'black' | 'blue';
-  imageUrl: string;
-};
-
-type Teams = {
-  title: string;
-  description: string;
-  link: string;
-  linkText: string;
-  teamsList: {
-    teamName: string;
-    teamIcon: string;
-    teamLink: string;
-  }[];
-};
-
 export function ServicesRedesign({
+  title,
+  services,
+  teamsCard,
+  teams,
   targetId,
-}: {
+}: Omit<ServicesBlock, '__component' | 'id'> & {
   targetId?: string;
 }) {
-  const {
-    t,
-  } = useTranslation(`servicesRedesign`);
-
-  const newServicesList: NewServicesList = t(`list`, {
-    returnObjects: true,
-  });
-  const teamsCard: TeamsCard = t(`teamsCard`, {
-    returnObjects: true,
-  });
-  const teams: Teams = t(`teams`, {
-    returnObjects: true,
-  });
-
   return (
     <section
       className="services-redesign"
@@ -58,12 +21,12 @@ export function ServicesRedesign({
       <ul className="services-redesign__cards grid container-redesign">
         <li className="services-redesign__card col-tablet-12 col-tablet-xl-4 col-desktop-3">
           <h2 className="services-redesign__title">
-            {t(`title`)}
+            {title}
           </h2>
         </li>
-        {newServicesList.map(({
+        {services.map(({
           id,
-          title,
+          title: servicesTitle,
           skillsList,
           link,
           linkText,
@@ -75,7 +38,7 @@ export function ServicesRedesign({
             key={id}
           >
             <ServicesCardRedesign
-              title={title}
+              title={servicesTitle}
               skillsList={skillsList}
               link={link}
               linkText={linkText}
