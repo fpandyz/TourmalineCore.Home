@@ -1,65 +1,66 @@
 {
-  "infoCaption":"По всем вопросам",
-  "email":"contact@tourmalinecore.com",
+  "emailCaption":"По всем вопросам",
+  "emailAddress":"contact@tourmalinecore.com",
   "navigationLists":[
     {
+      "id": 0,
       "caption":"Навигация",
       "links":[
         {
-          "label":"Услуги",
-          "path":"#services",
-          "openInNewTab":false
+          "id": 0,
+          "name":"Услуги",
+          "link":"#services"
         },
         {
-          "label":"Проекты",
-          "path":"#projects",
-          "openInNewTab":false
+          "id": 1,
+          "name":"Проекты",
+          "link":"#projects"
         },
         {
-          "label":"Команды",
-          "path":"/ru/teams",
-          "openInNewTab":false
+          "id": 2,
+          "name":"Команды",
+          "link":"/ru/teams"
         },
         {
-          "label":"Статьи",
-          "path":"/ru/articles",
-          "openInNewTab":false
+          "id": 3,
+          "name":"Статьи",
+          "link":"/ru/articles"
         }
       ]
     },
     {
+      "id": 1,
       "caption":"Соц. сети",
       "links":[
         {
-          "label":"VK",
-          "path":"https://vk.com/tourmalinecore",
-          "openInNewTab":true
+          "id": 0,
+          "name":"VK",
+          "link":"https://vk.com/tourmalinecore"
         },
         {
-          "label":"Habr",
-          "path":"https://habr.com/ru/users/TourmalineCore/",
-          "openInNewTab":true
+          "id": 1,
+          "name":"Habr",
+          "link":"https://habr.com/ru/users/TourmalineCore/"
         },
         {
-          "label":"GitHub",
-          "path":"https://github.com/TourmalineCore",
-          "openInNewTab":true
-        },
-        
-        {
-          "label":"Telegram",
-          "path":"https://t.me/tourmalinecore",
-          "openInNewTab":true
+          "id": 2,
+          "name":"GitHub",
+          "link":"https://github.com/TourmalineCore"
         },
         {
-          "label":"YouTube",
-          "path":"https://youtube.com/@tourmalinecore",
-          "openInNewTab":true
+          "id": 3,
+          "name":"Telegram",
+          "link":"https://t.me/tourmalinecore"
         },
         {
-          "label":"Behance",
-          "path":"https://www.behance.net/tourmalinecore",
-          "openInNewTab":true
+          "id": 4,
+          "name":"YouTube",
+          "link":"https://youtube.com/@tourmalinecore"
+        },
+        {
+          "id": 5,
+          "name":"Behance",
+          "link":"https://www.behance.net/tourmalinecore"
         }
       ]
     }

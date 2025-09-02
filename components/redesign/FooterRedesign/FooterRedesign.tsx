@@ -24,13 +24,13 @@ export function FooterRedesign() {
     >
       <div className="container-redesign footer-redesign__inner">
         <div className="footer-redesign__info">
-          <p className="footer-redesign__caption">{t(`infoCaption`)}</p>
+          <p className="footer-redesign__caption">{t(`emailCaption`)}</p>
           {/* TODO: Change when next will be upgrade to 12+ version */}
           <a
             className="footer-redesign__email"
-            href={`mailto:${t(`email`)}`}
+            href={`mailto:${t(`emailAddress`)}`}
           >
-            {t(`email`)}
+            {t(`emailAddress`)}
           </a>
         </div>
         <div className="footer-redesign__copyright">
@@ -50,7 +50,7 @@ export function FooterRedesign() {
         <ul className="footer-redesign__navigation">
           {footerNavigationLists.map((el) => (
             <FooterNavigationListRedesign
-              key={el.caption}
+              key={el.id}
               caption={el.caption}
               links={el.links}
             />

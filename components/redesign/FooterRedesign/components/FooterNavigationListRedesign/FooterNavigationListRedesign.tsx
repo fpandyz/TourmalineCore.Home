@@ -1,18 +1,20 @@
 import router from 'next/router';
+import { SmartLink } from '../../../../SmartLink/SmartLink';
 
 export type FooterNavigationList = {
+  id: number;
   caption: string;
   links: {
-    label: string;
-    path: string;
-    openInNewTab: boolean;
+    id: number;
+    name: string;
+    link: string;
   }[];
 };
 
 export function FooterNavigationListRedesign({
   caption,
   links,
-}: FooterNavigationList) {
+}: Omit<FooterNavigationList, 'id'>) {
   return (
     <li className="footer-navigation-list-redesign">
       <span className="footer-navigation-list-redesign__caption">{caption}</span>
@@ -20,20 +22,15 @@ export function FooterNavigationListRedesign({
         {links.map((el) => (
           <li
             className="footer-navigation-list-redesign__item"
-            key={el.label}
+            key={el.id}
           >
-            {/* TODO: Change when next will be upgrade to 12+ version */}
-            <a
+            <SmartLink
               className="footer-navigation-list-redesign__link"
-              href={el.path}
-              onClick={(e) => router.pathname === el.path && e.preventDefault()}
-              {...(el.openInNewTab && {
-                target: `_blank`,
-                rel: `noopener noreferrer`,
-              })}
+              href={el.link}
+              onClick={(e) => router.pathname === el.link && e.preventDefault()}
             >
-              {el.label}
-            </a>
+              {el.name}
+            </SmartLink>
           </li>
         ))}
       </ul>
