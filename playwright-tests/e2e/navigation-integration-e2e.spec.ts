@@ -42,19 +42,22 @@ test.describe(`Navigation integration e2e test`, () => {
     `,
       async ({
         goto,
+        authorizationInCms,
+        skipCmsTutorial,
         page,
       }: {
         goto: CustomTestFixtures['goto'];
+        authorizationInCms: CustomTestFixtures['authorizationInCms'];
+        skipCmsTutorial: CustomTestFixtures['skipCmsTutorial'];
         page: Page;
       }) => {
         await page.goto(process.env.CMS_URL as string);
 
-        await authorizationInStrapi({
-          page,
-        });
+        await authorizationInCms();
 
-        await createAndPublishNavigationUi({
+        await createAndPublishNavigationCmsUi({
           page,
+          skipCmsTutorial,
         });
 
         // Check navigation on UI
@@ -143,25 +146,12 @@ test.describe(`Navigation integration e2e test`, () => {
   });
 });
 
-async function authorizationInStrapi({
+async function createAndPublishNavigationCmsUi({
   page,
+  skipCmsTutorial,
 }: {
   page: Page;
-}) {
-  await page.locator(`input[name=email]`)
-    .fill(process.env.CMS_EMAIL as string);
-
-  await page.locator(`input[name=password]`)
-    .fill(process.env.CMS_PASSWORD as string);
-
-  await page.getByText(`Login`)
-    .click();
-}
-
-async function createAndPublishNavigationUi({
-  page,
-}: {
-  page: Page;
+  skipCmsTutorial: CustomTestFixtures['skipCmsTutorial'];
 }) {
   await page.getByText(`Content Manager`)
     .click();
@@ -169,9 +159,7 @@ async function createAndPublishNavigationUi({
   // We are waiting for the tutorial window to appear in order to close it
   await page.waitForTimeout(1500);
 
-  await skipTutorial({
-    page,
-  });
+  await skipCmsTutorial();
 
   await page.getByRole(`link`, {
     name: `Navigation`,
@@ -226,20 +214,6 @@ async function createAndPublishNavigationUi({
     name: `Publish`,
   })
     .click();
-}
-
-async function skipTutorial({
-  page,
-}: {
-  page: Page;
-}) {
-  const skipButton = await page.getByRole(`button`, {
-    name: `Skip`,
-  });
-
-  if (await skipButton.isVisible()) {
-    await skipButton.click();
-  }
 }
 
 async function createNavigationApi({
