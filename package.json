@@ -16,6 +16,8 @@
     "lint:css": "npx stylelint \"**/*.{css,scss}\"",
     "playwright:run": "npx playwright test",
     "playwright:open": "npx playwright test --ui",
+    "playwright:run:e2e": "npx playwright test --config=playwright.e2e.config.ts",
+    "playwright:open:e2e": "npx playwright test --ui --config=playwright.e2e.config.ts",
     "update-snapshots": "npx playwright test --update-snapshots",
     "generate-api-types": "docker-compose -f ./api-types/docker-compose.yml up --build ts_generator"
   },
@@ -23,6 +25,7 @@
     "@emailjs/browser": "^3.6.2",
     "clsx": "^2.1.1",
     "cookies-next": "^6.0.0",
+    "dotenv": "^17.2.1",
     "gitalk": "^1.7.2",
     "moment": "^2.29.4",
     "next": "^15.3.2",
