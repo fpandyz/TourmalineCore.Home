@@ -14,61 +14,133 @@ const SECOND_NAVIGATION_NAME = `${E2E_UI_NAME_PREFIX} Second navigation`;
 const ENDPOINT = `/navigations`;
 
 test.describe(`Navigation integration e2e test`, () => {
-  test.beforeEach(async () => {
-    await cleanupNavigationRecordByName({
-      name: FIRST_NAVIGATION_NAME,
+  test.describe(`Main scenario for adding navigation`, () => {
+    test.beforeEach(async () => {
+      await cleanupNavigationRecordByNameApi({
+        name: FIRST_NAVIGATION_NAME,
+      });
+
+      await cleanupNavigationRecordByNameApi({
+        name: SECOND_NAVIGATION_NAME,
+      });
     });
 
-    await cleanupNavigationRecordByName({
-      name: SECOND_NAVIGATION_NAME,
-    });
-  });
+    test.afterEach(async () => {
+      await cleanupNavigationRecordByNameApi({
+        name: FIRST_NAVIGATION_NAME,
+      });
 
-  test.afterEach(async () => {
-    await cleanupNavigationRecordByName({
-      name: FIRST_NAVIGATION_NAME,
+      await cleanupNavigationRecordByNameApi({
+        name: SECOND_NAVIGATION_NAME,
+      });
     });
 
-    await cleanupNavigationRecordByName({
-      name: SECOND_NAVIGATION_NAME,
-    });
-  });
-
-  test(
-    `GIVEN an empty navigation collection
-     WHEN create and publish navigation records in CMS UI
-     SHOULD see navigation item on frontend UI
+    test(
+      `GIVEN an empty navigation menu
+       WHEN creating and publishing navigation records in CMS UI
+       SHOULD see navigation items on frontend UI 
     `,
-    async ({
-      goto,
-      page,
-    }: {
-      goto: CustomTestFixtures['goto'];
-      page: Page;
-    }) => {
-      await page.goto(process.env.CMS_URL as string);
-
-      await authorizationInStrapi({
+      async ({
+        goto,
         page,
+      }: {
+        goto: CustomTestFixtures['goto'];
+        page: Page;
+      }) => {
+        await page.goto(process.env.CMS_URL as string);
+
+        await authorizationInStrapi({
+          page,
+        });
+
+        await createAndPublishNavigationUi({
+          page,
+        });
+
+        // Check navigation on UI
+        await goto();
+
+        await expect(page.getByText(FIRST_NAVIGATION_NAME))
+          .toBeVisible();
+
+        await page.getByText(FIRST_NAVIGATION_NAME)
+          .hover();
+
+        await expect(page.getByText(SECOND_NAVIGATION_NAME))
+          .toBeVisible();
+      },
+    );
+  });
+
+  test.describe(`Creating navigation in different languages`, () => {
+    test.beforeEach(async () => {
+      await cleanupNavigationRecordByNameApi({
+        name: FIRST_NAVIGATION_NAME,
       });
 
-      await createAndPublishNavigation({
-        page,
+      await cleanupNavigationRecordByNameApi({
+        name: SECOND_NAVIGATION_NAME,
+        locale: `ru`,
       });
 
-      // Check navigation on UI
-      await goto();
+      await createNavigationApi({
+        name: FIRST_NAVIGATION_NAME,
+      });
 
-      await page.getByText(FIRST_NAVIGATION_NAME)
-        .isVisible();
+      await createNavigationApi({
+        name: SECOND_NAVIGATION_NAME,
+        locale: `ru`,
+      });
+    });
 
-      await page.getByText(FIRST_NAVIGATION_NAME)
-        .hover();
+    test.afterEach(async () => {
+      await cleanupNavigationRecordByNameApi({
+        name: FIRST_NAVIGATION_NAME,
+      });
 
-      await page.getByText(SECOND_NAVIGATION_NAME)
-        .isVisible();
-    },
-  );
+      await cleanupNavigationRecordByNameApi({
+        name: SECOND_NAVIGATION_NAME,
+        locale: `ru`,
+      });
+    });
+
+    test(
+      `GIVEN an empty navigation menu
+       WHEN creating navigation records in different languages via API
+       AND checking the navigation items in different languages
+       THEN the user should see navigation items on the frontend UI with correct translations
+      `,
+      async ({
+        goto,
+        page,
+      }: {
+        goto: CustomTestFixtures['goto'];
+        page: Page;
+      }) => {
+        await goto();
+
+        await expect(page.getByText(FIRST_NAVIGATION_NAME))
+          .toBeVisible();
+
+        await expect(page.getByText(SECOND_NAVIGATION_NAME))
+          .toBeHidden();
+
+        await page.getByTestId(`lang-switch`)
+          .hover();
+
+        await page.getByText(`RU`)
+          .click();
+
+        await page.waitForLoadState(`networkidle`);
+
+        await expect(page.getByText(SECOND_NAVIGATION_NAME))
+          .toBeVisible();
+
+        await expect(page.getByText(FIRST_NAVIGATION_NAME))
+          .toBeHidden();
+      },
+    );
+  });
 });
 
 async function authorizationInStrapi({
@@ -86,7 +158,7 @@ async function authorizationInStrapi({
     .click();
 }
 
-async function createAndPublishNavigation({
+async function createAndPublishNavigationUi({
   page,
 }: {
   page: Page;
@@ -95,7 +167,7 @@ async function createAndPublishNavigation({
     .click();
 
   // We are waiting for the tutorial window to appear in order to close it
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(1500);
 
   await skipTutorial({
     page,
@@ -110,6 +182,7 @@ async function createAndPublishNavigation({
   await page.getByRole(`link`, {
     name: `Create new entry`,
   })
+    .last()
     .click();
 
   await page.locator(`input[name=name]`)
@@ -169,18 +242,49 @@ async function skipTutorial({
   }
 }
 
-async function cleanupNavigationRecordByName({
+async function createNavigationApi({
   name,
+  locale = `en`,
 }: {
   name: string;
+  locale?: 'ru' | 'en';
 }) {
   try {
-    const navigationList = await cmsFetch<NavigationListResponse>(`${ENDPOINT}?populate=*`);
+    const response = await cmsFetch(`${ENDPOINT}?locale=${locale}`, {
+      method: `post`,
+      headers: {
+        'Content-Type': `application/json`,
+      },
+      body: JSON.stringify({
+        data: {
+          name,
+          link: `/`,
+          isFirstLevelNavItem: true,
+        },
+      }),
+    });
+
+    await expect(response.status, `Navigation should be created with status 201`)
+      .toEqual(201);
+  } catch (error: any) {
+    throw new Error(`Failed to create test navigation: ${error.message}`);
+  }
+}
+
+async function cleanupNavigationRecordByNameApi({
+  name,
+  locale = `en`,
+}: {
+  name: string;
+  locale?: 'ru' | 'en';
+}) {
+  try {
+    const navigationList = await cmsFetch<NavigationListResponse>(`${ENDPOINT}?populate=*&locale=${locale}`);
 
     const navigation = navigationList?.data?.find((navigationItem: Navigation) => navigationItem.name === name);
 
     if (navigation) {
-      const response = await cmsFetch(`${ENDPOINT}/${navigation.documentId}`, {
+      const response = await cmsFetch(`${ENDPOINT}/${navigation.documentId}?locale=${locale}`, {
         method: `DELETE`,
       });
 

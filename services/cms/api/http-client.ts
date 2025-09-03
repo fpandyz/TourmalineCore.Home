@@ -13,16 +13,17 @@ const getCmsFetch = () => {
 
     const url = `${baseUrl}${endpoint}`;
     const updatedOptions: CustomRequestInit = {
-      ...(isPreview && {
-        headers: {
+      headers: {
+        'Content-Type': `application/json`,
+        ...(isPreview && {
           'Cache-Control': `no-cache`,
-        },
-      }),
+        }),
+      },
       ...restOptions,
     };
     const response = await fetch(url, updatedOptions);
 
-    if (options?.method === `DELETE` && response.status === 204) {
+    if (response.status === 204 || response.status === 201) {
       return response as T;
     }
 
