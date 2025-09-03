@@ -9,14 +9,14 @@ export function MobileMenu({
   emailCaption,
   emailAddress,
   socialLinks,
-  // setIsModalOpen,
+  setIsModalOpen,
 }: {
   navigationLists: HeaderRedesignProps["navigationLists"];
   buttonLabel: HeaderRedesignProps['buttonLabel'];
   emailCaption: HeaderRedesignProps['emailCaption'];
   emailAddress: HeaderRedesignProps["emailAddress"];
   socialLinks: HeaderRedesignProps["socialLinks"];
-  // setIsModalOpen: (isOpen: boolean) => void;
+  setIsModalOpen: (isOpen: boolean) => void;
 }) {
   return (
     <div
@@ -30,8 +30,7 @@ export function MobileMenu({
 
       <HeaderButton
         className="mobile-menu-redesign__button"
-        // ToDo: uncomment after editing the form
-        // onClick={setIsModalOpen}
+        onClick={setIsModalOpen}
       >
         {buttonLabel}
       </HeaderButton>

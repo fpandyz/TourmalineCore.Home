@@ -108,10 +108,9 @@ export async function getServerSideProps({
       __component: BlockType.HOME_PROJECTS_WITH_TEXT_BLOCK,
       ...translationsPageData.projectsRedesignFifthSection,
     },
-    // Todo: uncomment after fix form
-    // {
-    //   __component: BlockType.HOME_FORM_BLOCK,
-    // },
+    {
+      __component: BlockType.HOME_FORM_BLOCK,
+    },
     {
       __component: BlockType.HOME_COLLAGE_WITH_TITLE,
       ...translationsPageData.collageWithTitleRedesign,

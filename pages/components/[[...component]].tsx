@@ -110,8 +110,7 @@ export default function ComponentsPage({
         emailCaption={headerRedesign.emailCaption}
         emailAddress={headerRedesign.emailAddress}
         socialLinks={headerRedesign.socialLinks}
-        // ToDo: uncomment after editing the form
-        // setIsModalOpen={() => {}}
+        setIsModalOpen={() => {}}
       />
     );
   }
@@ -183,7 +182,6 @@ export default function ComponentsPage({
       <FormBlockRedesign
         testId="form-block"
         isComponentPage
-
       />
     );
   }
