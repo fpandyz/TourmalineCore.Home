@@ -73,6 +73,76 @@ test.describe(`Navigation integration e2e test`, () => {
           .toBeVisible();
       },
     );
+
+    async function createAndPublishNavigationCmsUi({
+      page,
+      skipCmsTutorial,
+    }: {
+      page: Page;
+      skipCmsTutorial: CustomTestFixtures['skipCmsTutorial'];
+    }) {
+      await page.getByText(`Content Manager`)
+        .click();
+
+      // We are waiting for the tutorial window to appear in order to close it
+      await page.waitForTimeout(1500);
+
+      await skipCmsTutorial();
+
+      await page.getByRole(`link`, {
+        name: `Navigation`,
+        exact: true,
+      })
+        .click();
+
+      await page.getByRole(`link`, {
+        name: `Create new entry`,
+      })
+        .last()
+        .click();
+
+      await page.locator(`input[name=name]`)
+        .fill(FIRST_NAVIGATION_NAME);
+
+      await page.locator(`input[name=navItems]`)
+        .click();
+
+      await page.getByText(`Create a relation`, {
+        exact: true,
+      })
+        .click();
+
+      await page.locator(`input[name=name]`)
+        .last()
+        .fill(SECOND_NAVIGATION_NAME);
+
+      await page.getByRole(`button`, {
+        name: `Publish`,
+      })
+        .last()
+        .click();
+
+      await page.getByRole(`button`, {
+        name: `Close modal`,
+      })
+        .click();
+
+      await page.locator(`input[name=navItems]`)
+        .click();
+
+      await page.getByText(SECOND_NAVIGATION_NAME)
+        .click();
+
+      await page.getByRole(`checkbox`, {
+        name: `isFirstLevelNavItem`,
+      })
+        .check();
+
+      await page.getByRole(`button`, {
+        name: `Publish`,
+      })
+        .click();
+    }
   });
 
   test.describe(`Creating navigation in different languages`, () => {
@@ -143,107 +213,37 @@ test.describe(`Navigation integration e2e test`, () => {
           .toBeHidden();
       },
     );
+
+    async function createNavigationApi({
+      name,
+      locale = `en`,
+    }: {
+      name: string;
+      locale?: 'ru' | 'en';
+    }) {
+      try {
+        const response = await cmsFetch(`${ENDPOINT}?locale=${locale}`, {
+          method: `post`,
+          headers: {
+            'Content-Type': `application/json`,
+          },
+          body: JSON.stringify({
+            data: {
+              name,
+              link: `/`,
+              isFirstLevelNavItem: true,
+            },
+          }),
+        });
+
+        await expect(response.status, `Navigation should be created with status 201`)
+          .toEqual(201);
+      } catch (error: any) {
+        throw new Error(`Failed to create test navigation: ${error.message}`);
+      }
+    }
   });
 });
-
-async function createAndPublishNavigationCmsUi({
-  page,
-  skipCmsTutorial,
-}: {
-  page: Page;
-  skipCmsTutorial: CustomTestFixtures['skipCmsTutorial'];
-}) {
-  await page.getByText(`Content Manager`)
-    .click();
-
-  // We are waiting for the tutorial window to appear in order to close it
-  await page.waitForTimeout(1500);
-
-  await skipCmsTutorial();
-
-  await page.getByRole(`link`, {
-    name: `Navigation`,
-    exact: true,
-  })
-    .click();
-
-  await page.getByRole(`link`, {
-    name: `Create new entry`,
-  })
-    .last()
-    .click();
-
-  await page.locator(`input[name=name]`)
-    .fill(FIRST_NAVIGATION_NAME);
-
-  await page.locator(`input[name=navItems]`)
-    .click();
-
-  await page.getByText(`Create a relation`, {
-    exact: true,
-  })
-    .click();
-
-  await page.locator(`input[name=name]`)
-    .last()
-    .fill(SECOND_NAVIGATION_NAME);
-
-  await page.getByRole(`button`, {
-    name: `Publish`,
-  })
-    .last()
-    .click();
-
-  await page.getByRole(`button`, {
-    name: `Close modal`,
-  })
-    .click();
-
-  await page.locator(`input[name=navItems]`)
-    .click();
-
-  await page.getByText(SECOND_NAVIGATION_NAME)
-    .click();
-
-  await page.getByRole(`checkbox`, {
-    name: `isFirstLevelNavItem`,
-  })
-    .check();
-
-  await page.getByRole(`button`, {
-    name: `Publish`,
-  })
-    .click();
-}
-
-async function createNavigationApi({
-  name,
-  locale = `en`,
-}: {
-  name: string;
-  locale?: 'ru' | 'en';
-}) {
-  try {
-    const response = await cmsFetch(`${ENDPOINT}?locale=${locale}`, {
-      method: `post`,
-      headers: {
-        'Content-Type': `application/json`,
-      },
-      body: JSON.stringify({
-        data: {
-          name,
-          link: `/`,
-          isFirstLevelNavItem: true,
-        },
-      }),
-    });
-
-    await expect(response.status, `Navigation should be created with status 201`)
-      .toEqual(201);
-  } catch (error: any) {
-    throw new Error(`Failed to create test navigation: ${error.message}`);
-  }
-}
 
 async function cleanupNavigationRecordByNameApi({
   name,
