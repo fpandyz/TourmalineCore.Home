@@ -153,6 +153,10 @@ test.describe(`Layout integration e2e test`, () => {
     test.beforeEach(async () => {
       await cleanupLayoutApi();
 
+      await cleanupLayoutApi({
+        locale: `ru`,
+      });
+
       await updateLayoutApi({
         emailAddress: EMAIL_ADDRESS,
         buttonLabel: BUTTON_LABEL_EN,
@@ -169,6 +173,10 @@ test.describe(`Layout integration e2e test`, () => {
 
     test.afterEach(async () => {
       await cleanupLayoutApi();
+
+      await cleanupLayoutApi({
+        locale: `ru`,
+      });
     });
 
     test(
@@ -249,9 +257,13 @@ test.describe(`Layout integration e2e test`, () => {
   }
 });
 
-async function cleanupLayoutApi() {
+async function cleanupLayoutApi({
+  locale = `en`,
+}: {
+  locale?: 'en' | 'ru';
+} = {}) {
   try {
-    const response = await cmsFetch(ENDPOINT, {
+    const response = await cmsFetch(`${ENDPOINT}?locale=${locale}`, {
       method: `DELETE`,
     });
 
