@@ -3,26 +3,17 @@ import { cmsFetch } from "./http-client";
 import {
   FooterNavigationItem,
   HeaderNavigationItem,
-  HeaderRedesignProps,
   LayoutData,
   LayoutResponse,
   NavigationLink,
-  NavigationListResponse,
 } from '../../../common/types';
 
 export async function getLayoutData(locale: string): Promise<LayoutData> {
-  const navigationQueryParams = {
-    populate: `*`,
-    locale,
-    filters: {
-      isFirstLevelNavItem: true,
-    },
-    sort: `rank:asc`,
-  };
-
-  const layoutQueryParams = {
+  const queryParams = {
     populate: [
       `header.socialLinks`,
+      `header.navigationLists`,
+      `header.navigationLists.navItems`,
       `footer.navigationLists`,
       `footer.navigationLists.links`,
       `footer.navigationLists.socialLinks`,
@@ -30,11 +21,7 @@ export async function getLayoutData(locale: string): Promise<LayoutData> {
     locale,
   };
 
-  const [navigationResponse, layoutResponse] = await Promise.all(
-    [cmsFetch<NavigationListResponse>(`/navigations?${qs.stringify(navigationQueryParams)}`), cmsFetch<LayoutResponse>(`/layout?${qs.stringify(layoutQueryParams)}`)],
-  );
-
-  const navigationLists = mapNavigationResponse(navigationResponse);
+  const layoutResponse = await cmsFetch<LayoutResponse>(`/layout?${qs.stringify(queryParams)}`);
 
   const {
     headerContent,
@@ -42,33 +29,19 @@ export async function getLayoutData(locale: string): Promise<LayoutData> {
   } = mapLayoutResponse(layoutResponse);
 
   return {
-    headerContent: {
-      navigationLists,
-      ...headerContent,
-    },
+    headerContent,
     footerContent,
   };
 }
 
-function mapNavigationResponse(navigationResponse: NavigationListResponse | null) {
-  if (!navigationResponse?.data) {
-    return [];
-  }
-
-  return navigationResponse.data as HeaderNavigationItem[];
-}
-
-type OmitLayoutData = Omit<LayoutData, 'headerContent'> & {
-  headerContent: Omit<HeaderRedesignProps, 'navigationLists'>;
-};
-
-function mapLayoutResponse(response: LayoutResponse | null): OmitLayoutData {
+function mapLayoutResponse(response: LayoutResponse | null): LayoutData {
   if (!response?.data) {
     return {
       headerContent: {
         buttonLabel: ``,
         emailCaption: ``,
         emailAddress: ``,
+        navigationLists: [],
         socialLinks: [],
       },
       footerContent: {
@@ -92,6 +65,7 @@ function mapLayoutResponse(response: LayoutResponse | null): OmitLayoutData {
       buttonLabel: header?.buttonLabel ?? ``,
       emailCaption: header?.emailCaption ?? ``,
       emailAddress: emailAddress ?? ``,
+      navigationLists: header?.navigationLists as HeaderNavigationItem[],
       socialLinks: header?.socialLinks as NavigationLink[],
     },
     footerContent: {

@@ -271,6 +271,10 @@ export interface SharedHeaderComponent {
     id?: number;
     documentId?: string;
   }[];
+  navigationLists?: {
+    id?: number;
+    documentId?: string;
+  }[];
 }
 
 export interface FooterFooterNavigationListComponent {
@@ -298,8 +302,6 @@ export interface NavigationRequest {
     name: string;
     link?: string;
     navItems?: (number | string)[];
-    rank?: number;
-    isFirstLevelNavItem: boolean;
     locale?: string;
     localizations?: (number | string)[];
   };
@@ -333,8 +335,6 @@ export interface Navigation {
       id?: number;
       documentId?: string;
     }[];
-    rank?: number;
-    isFirstLevelNavItem?: boolean;
     /** @format date-time */
     createdAt?: string;
     /** @format date-time */
@@ -446,8 +446,6 @@ export interface Navigation {
       documentId?: string;
     }[];
   }[];
-  rank?: number;
-  isFirstLevelNavItem: boolean;
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
